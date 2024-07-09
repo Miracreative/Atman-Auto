@@ -1,0 +1,62 @@
+.header {
+    border-bottom: 1px solid $grey;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    &__wrapper {
+        width: 81%;
+        display: flex;
+        background-color: $light-grey;
+    }
+    &__logo {
+        width: 28%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: calc((100vw - 1720px)/2);
+        a {
+            width: 85%;
+            svg {
+                width: 100%;
+            }
+        }
+    }
+    &__nav {
+        width: 72%;
+        border-left: 1px solid $grey;
+        border-right: 1px solid $grey;
+        padding: 58px 0;
+    }
+    &__list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__item {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+    &__contact {
+        position: relative;
+        padding-right: calc((100vw - 1720px)/4);
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: $red;
+        font-weight: 700;
+        font-size: 32px;
+    }
+    &__social {
+        display: flex;
+        position: absolute;
+        top: 400%;
+        right: calc((100vw - 1720px)/4);
+        gap: 20px;
+    }
+}
