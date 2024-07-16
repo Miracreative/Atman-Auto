@@ -5,22 +5,18 @@
   &__title {
     margin-bottom: 20px;
   }
-  &__left {
+  &__wrapper {
     padding-left: 100px;
-    width: 38%;
-    padding: 100px 0 100px calc((100vw - 1720px)/2);
-  }
-  &__right {
-    width: 62%;
+    width: 100%;
+    padding: 80px calc((100vw - 1760px)/2);
     background-image: url(/img/main/promo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    display: flex;
-    justify-content: flex-start;
-    height: auto;
   }
   &__descr {
     font-size: 32px;
-    width: 90%;
+    width: 30%;
     margin-bottom: 40px;
   }
   &__btn {

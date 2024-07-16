@@ -1,5 +1,4 @@
-<div class="main__slider">
-    
+<div class="main__slider border">
     <form action="#" id="form" class="main__slider-wrapper">
         <div class="main__slider-counter">
             <span id="current">03</span>
@@ -7,10 +6,10 @@
             <span id="total">04</span>
         </div>
         <div class="main__slider-buttons">
-            <button class="back main__slider-prev"></button>
-            <div class="button button--small main__slider-next">
+            <button class="back main__slider-prev" type="button"></button>
+            <button class="button button--small main__slider-next" type="button">
                 Продолжить
-            </div>
+            </button>
         </div>
         <div class="main__slider-inner">
             <div class="main__slide slide container">
@@ -29,7 +28,7 @@
                         Какая задача стоит перед Вами?
                     </h4>
                     <div class="slide__form">
-                        <label class="checkbox">
+                        <label class="checkbox checkbox--active">
                             <input type="checkbox" name="full-time-compound"/>
                             Создание надежного, долговременного соединения
                         </label>
@@ -65,14 +64,203 @@
                     
                 </div>
             </div>
-            <div class="main__slide">
-                <img src="img/slider/food-12.jpg" alt="food">
+            <div class="main__slide slide container">
+                <div class="slide__left">
+                    <h3 class="title slide__title">
+                        Выберите продукт,
+                        который соответствует
+                        вашим потребностям
+                    </h3>
+                    <p class="slide__descr">
+                        Узнайте, какой тип ленты лучше всего подходит для вашего случая использования, ответив на несколько вопросов.
+                    </p>
+                </div>
+                <div class="slide__right">
+                    <h4 class="title slide__subtitle">
+                        Виды склеиваемых поверхностей
+                    </h4>
+                    <div class="slide__form2">
+                        <div class="slide__wrapper">
+                            <h5>Поверхность 1</h5>
+                            <label class="checkbox checkbox--active">
+                                <input type="checkbox" name="full-time-compound"/>
+                                <p>
+                                    Неокрашенные металлы, стекло
+                                    <span>(Материалы с высокой поверхностной энергией)</span>
+                                </p>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="short-time-compound"/>
+                                <p>
+                                    АВС, Акрил, ПЭТ
+                                    <span>(Материалы с средней поверхностной энергией)</span>
+                                </p>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="plug-compound"/>
+                                <p>
+                                    Полипропилен, EPDM Порошковое покрытие
+                                    <span>(Материалы с низкой поверхностной энергией)</span>
+                                </p>
+                            </label>
+                        </div>
+                        <div class="slide__wrapper">
+                            <h5>Поверхность 2</h5>
+                            <label class="checkbox">
+                                <input type="checkbox" name="lamination"/>
+                                <p>
+                                    Неокрашенные металлы, стекло
+                                    <span>(Материалы с высокой поверхностной энергией)</span>
+                                </p>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="seals"/>
+                                <p>
+                                    АВС, Акрил, ПЭТ
+                                    <span>(Материалы с средней поверхностной энергией)</span>
+                                </p>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="protection"/>
+                                <p>
+                                    Полипропилен, EPDM Порошковое покрытие
+                                    <span>(Материалы с низкой поверхностной энергией)</span>
+                                </p>
+                            </label>
+                            <a href="#" target="_blank" class="slide__link">Таблица с поверхностной энергией материалов</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="main__slide">
-                <img src="img/slider/olive-oil.jpg" alt="oil">
+            <div class="main__slide slide container">
+                <div class="slide__left">
+                    <h3 class="title slide__title">
+                        Выберите продукт,
+                        который соответствует
+                        вашим потребностям
+                    </h3>
+                    <p class="slide__descr">
+                        Узнайте, какой тип ленты лучше всего подходит для вашего случая использования, ответив на несколько вопросов.
+                    </p>
+                </div>
+                <div class="slide__right">
+                    <h4 class="title slide__subtitle">
+                        Условия эксплуатации соединения
+                    </h4>
+                    <div class="slide__form slide__form--3">
+                        <label class="checkbox checkbox--active">
+                            <input type="checkbox" name="full-time-compound"/>
+                            Внутри помещения
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            Наличие контакта с водой 
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="plug-compound"/>
+                            Взаимодействие с хим.реагентами, маслами и автохимией
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            Вне помещения
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="plug-compound"/>
+                            Наличие вибрации
+                        </label>
+                    </div>
+                    <div class="slide__form slide__form--4">
+                        <label class="checkbox checkbox--active">
+                            <input type="checkbox" name="full-time-compound"/>
+                            от -40 до 70 С
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            от -40 до 90 С 
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="plug-compound"/>
+                            от -40 до 120 С 
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            от -40 до 150 С
+                        </label>
+                    </div>
+                    <a href="#" class="slide__link slide__link--outside">Влияние среды эксплуатации на соединение</a>
+                </div>
             </div>
-            <div class="main__slide">
-                <img src="img/slider/paprika.jpg" alt="paprika">
+            <div class="main__slide slide container">
+                <div class="slide__left">
+                    <h3 class="title slide__title">
+                        Выберите продукт,
+                        который соответствует
+                        вашим потребностям
+                    </h3>
+                    <p class="slide__descr">
+                        Узнайте, какой тип ленты лучше всего подходит для вашего случая использования, ответив на несколько вопросов.
+                    </p>
+                </div>
+                <div class="slide__right">
+                    <h4 class="title slide__subtitle">
+                        Состояние соединяемых поверхностей
+                    </h4>
+                    <div class="slide__form slide__form--2">
+                        <label class="checkbox checkbox--active">
+                            <input type="checkbox" name="full-time-compound"/>
+                            Поверхности двух материалов гладкие 
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            Обе поверхности шероховатые
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="plug-compound"/>
+                            Одна из поверхностей шероховатая
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            Поверхности с плохим сопряжением
+                        </label>
+                    </div>
+                    <a href="#" class="slide__link slide__link--outside">Статью о видах поверхностей  размещенной в базе знаний</a>
+                </div>
+            </div>
+            <div class="main__slide slide container">
+                <div class="slide__left">
+                    <h3 class="title slide__title">
+                        Выберите продукт,
+                        который соответствует
+                        вашим потребностям
+                    </h3>
+                    <p class="slide__descr">
+                        Узнайте, какой тип ленты лучше всего подходит для вашего случая использования, ответив на несколько вопросов.
+                    </p>
+                </div>
+                <div class="slide__right">
+                    <h4 class="title slide__subtitle">
+                        Состояние соединяемых поверхностей
+                    </h4>
+                    <div class="slide__form slide__form--2">
+                        <label class="checkbox checkbox--active">
+                            <input type="checkbox" name="full-time-compound"/>
+                            Поверхности двух материалов гладкие 
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            Обе поверхности шероховатые
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="plug-compound"/>
+                            Одна из поверхностей шероховатая
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="short-time-compound"/>
+                            Поверхности с плохим сопряжением
+                        </label>
+                    </div>
+                   
+                </div>
             </div>
         </div>
     </form>

@@ -7,8 +7,8 @@
 <body>
 	@include('./../components/header/_header.html')
 
-	<section class="promo">
-		<div class="promo__left">
+	<section class="promo border">
+		<div class="promo__wrapper">
 			<h1 class="title promo__title">
 				Клейкие
 				<span>ленты</span>
@@ -20,11 +20,14 @@
 				<a href="#">Каталог</a>
 			</button>
 		</div>
-		<div class="promo__right">
-			<div class="promo__box"></div>
-		</div>
 	</section>
+
+	<div class="divider"></div>
+
 	@include('./../components/mainSlider/_mainSlider.html')
+	
+	<div class="divider"></div>
+
 	<script src="/js/libs/gsap.min.js"></script>
 	<script src="/js/libs/swiper-bundle.min.js"></script>
 	<script src="/js/libs/ScrollTrigger.min.js"></script>
