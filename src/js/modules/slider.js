@@ -92,7 +92,6 @@ function slider() {
     
     
         offset = (slideIndex -1) * deleteNoDigits(width);
-        console.log(width)
         slidesField.style.transform = `translateX(-${offset}px)`;
     });
 

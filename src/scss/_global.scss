@@ -58,8 +58,9 @@ section {
   transition: all $time ease-in-out;
   cursor: pointer;
   width: 400px;
-  &:hover,
-  &:focus {
+  // &:focus,
+  &:hover 
+  {
     background-color: $hover-red;
   }
   &--small {
@@ -189,5 +190,75 @@ section {
   border: 0;
 }
 @media (max-width: 1920px) {
+  body {
+    font-size: calcVW(20);
+  }
+  section {
+    padding: calcVW(100) 0;
+    border-bottom: 1px solid $grey;
+  }
+  .title {
+    font-size: calcVW(96);
+    margin-bottom: calcVW(100);
+  }
   
+  .button {
+    border-radius: calcVW(20);
+    padding: calcVW(41) 0;
+    font-size: calcVW(24);
+    width: calcVW(400);
+    &--small {
+      padding: calcVW(26) 0;
+      width: calcVW(330);
+    }
+    &--long {
+      padding: calcVW(30) 0;
+      width: calcVW(500);
+    }
+
+  }
+  .back {
+    width: calcVW(80);
+    height: calcVW(80);
+    border-radius: calcVW(20);
+    transition: all $time ease-in-out;
+    &::after {
+      width: calcVW(80);
+      height: calcVW(80);
+    }
+  }
+  
+  .checkbox {
+    font-size: calcVW(16);
+    gap: calcVW(10);
+    input {
+      width: calcVW(45);
+      height: calcVW(45);
+      min-width: calcVW(45);
+    }
+    p {
+      span {
+        font-size: calcVW(14);
+      }
+    }
+    &::before {
+      width: calcVW(45);
+      height: calcVW(45);
+      border-radius: calcVW(10);
+    }
+  }
+  .border {
+    margin: calcVW(20);
+    border-radius: calcVW(20);
+  }
+}
+@media(max-width: 991px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+@media(max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
 }

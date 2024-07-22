@@ -40,6 +40,46 @@
         display: flex;
         gap: 5px;
         align-items: center;
+        white-space: nowrap;
+        position: relative;
+        color: $dark-grey;
+        transition: all $time ease-in-out;
+        svg {
+            width: 11px;
+            height: 11px;
+            display: block;
+            transform-origin: center;
+            transform: rotate(0);
+            transition: all $time ease-in-out;
+            path {
+                fill: $dark-grey;
+                transition: all $time ease-in-out;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: $red;
+            transition: all $time ease-in-out;
+        }
+        &--active,
+        &:hover,
+        &:focus {
+            color: $red;
+            svg {
+                transform: rotate(-180deg);
+                path {
+                    fill: $red;
+                }
+            }
+            &::after {
+                width: 35%;
+            }
+        }
     }
     &__contact {
         position: relative;
@@ -57,6 +97,171 @@
         position: absolute;
         top: 400%;
         right: calc((100vw - 1720px)/4 + 20px);
-        gap: 20px;
+        gap: 10%;
+        a {
+            width: 60px;
+            height: 60px;
+            display: block;
+            svg {
+                width: 100%;
+                height: 100%;
+                circle {
+                    fill: #ffffff;
+                    transition: all $time ease-in-out;
+                }
+                path {
+                    fill: $red;
+                    transition: all $time ease-in-out;
+                }
+                
+            }
+            &:hover {
+                svg {
+                    circle {
+                        fill: $hover-grey;
+                    }
+                    path {
+                        fill: #ffffff;
+                    }
+                }
+                
+            }
+        }
+    }
+    &__hamburger {
+        display: none;
+    }
+}
+
+@media(max-width: 1920px) {
+    .header {
+        &__logo {
+            padding-left: 100px;
+        }
+        &__nav {
+            padding: calcVW(58) 0;
+        }
+        &__item {
+            svg {
+                width: calcVW(11);
+                height: calcVW(11);
+            }
+        }
+        &__contact {
+            padding-right: 50px;
+            font-size: calcVW(32);
+        }
+        &__social {
+            right: 100px;
+            a {
+                width: calcVW(60);
+                height: calcVW(60);
+            }
+        }
+    }
+}
+@media(max-width: 991px) {
+    .header {
+        &__logo {
+            padding-left: 50px;
+        }
+        &__contact {
+            padding-right: 30px;
+        }
+    }
+}
+@media(max-width: 768px) {
+    .header {
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        &__logo {
+            padding: 10px;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $grey;
+            a {
+                width: 45%;
+            }
+        }
+        &__hamburger {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: $red;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            span {
+                width: 40%;
+                height: 1px;
+                background-color: #fff;
+                display: block;
+            }
+        }
+        &__nav {
+            width: 85%;
+            padding: 0 20px;
+            position: fixed;
+            top: 70px;
+            right: 0;
+            height: calc(100vh - 165px);
+            background-color: #fff;
+            border-bottom: 1px solid $grey;
+        }
+        &__list {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
+            font-size: 24px;
+            height: 100%;
+        }
+        &__item {
+            svg {
+                width: 10px;
+                height: 11px;
+            }
+        }
+        &__contact {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 85%;
+            height: 103px;
+            padding: 20px 0;
+            background-color: #fff;
+            border-left: 1px solid $grey;
+        }
+        &__social {
+            position: static;
+            width: 100%;
+            justify-content: center;
+            a {
+                width: 45px;
+                height: 45px;
+                svg {
+                    circle {
+                        fill: $red;
+                    }
+                    path {
+                        fill: #fff;
+                    }
+                    
+                }
+            }
+        }
+        &__tel {
+            display: none;
+        }
     }
 }

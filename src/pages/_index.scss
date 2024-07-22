@@ -28,3 +28,34 @@
     border-right: 1px solid $grey;
   }
 }
+
+@media(max-width: 1920px) {
+  .promo {
+    &__title {
+      margin-bottom: calcVW(20);
+    }
+    &__wrapper {
+      padding: calcVW(80) 100px;
+    }
+    &__descr {
+      font-size: calcVW(32);
+      margin-bottom: calcVW(40);
+    }
+  }
+}
+
+@media(max-width: 991px) {
+  .promo {
+    &__wrapper {
+      padding: calcVW(80) 50px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .promo {
+    &__wrapper {
+      padding: 30px 10px 10px 10px;
+    }
+  }
+}
