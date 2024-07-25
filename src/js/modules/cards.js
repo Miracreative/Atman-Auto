@@ -42,7 +42,7 @@ function cards() {
                 <a href="${this.link}">
                     ${typeBlock.outerHTML}
                     <img class="slide__image" src=${this.src} alt="foam">
-                    <h6 class="slide__title">${this.title}</h6>
+                    <h6 class="slide__title-card">${this.title}</h6>
                     <p>${this.descr}</p>
                 </a>
             `;

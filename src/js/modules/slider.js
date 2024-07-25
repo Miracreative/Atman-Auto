@@ -1,7 +1,7 @@
 function slider() {
     let slideIndex = 1;
     let offset = 0;
-    const slides = document.querySelectorAll('.main__slide'),
+    const slides = document.querySelectorAll('.slide'),
         slider = document.querySelector('.main__slider'),
         prev = document.querySelector('.main__slider-prev'),
         next = document.querySelector('.main__slider-next'),
@@ -29,7 +29,7 @@ function slider() {
     getCurrentZero();
     getTotalZero();
     
-    slidesField.style.width = 100 * slides.length + '%';
+    slidesField.style.width = 100 * slides.length + 'vw';
     
     slidesField.style.display = 'flex';
     slidesField.style.transition = '0.3s';
@@ -40,16 +40,27 @@ function slider() {
     });
 
     slider.style.position = 'relative';
-
+    console.log(offset)
 
     function sliceOffset() {
-        if (offset == deleteNoDigits(width) * (slides.length - 1)) { //'500px'
+        if (offset == deleteNoDigits(width) * (slides.length - 1)) {
             offset = 0;
         } else {
             offset += deleteNoDigits(width);
         }
-
         slidesField.style.transform = `translateX(-${offset}px)`;
+        
+    }
+
+    function sliceOffsetPrev() {
+        if(offset == 0) {
+            offset = deleteNoDigits(width) * (slides.length - 1)
+            console.log(deleteNoDigits(width) * (slides.length - 1))
+            slidesField.style.transform = `translateX(-${offset}px)`;
+        } else {
+            offset -= deleteNoDigits(width);
+            slidesField.style.transform = `translateX(-${offset}px)`;
+        }
     }
 
 
@@ -58,7 +69,6 @@ function slider() {
     }
 
     next.addEventListener('click', () => {
-
         if (slideIndex == slides.length) {
             slideIndex = 1;
         } else {
@@ -70,30 +80,29 @@ function slider() {
     });
 
     prev.addEventListener('click', () => {
-
         if (slideIndex == 1) {
             slideIndex = slides.length;
         } else {
             slideIndex--;
         }
 
-        sliceOffset();
+        sliceOffsetPrev();
         getCurrentZero();
     });
 
-    window.addEventListener('resize',() => {
-        width = window.getComputedStyle(slidesWrapper).width;
+    // window.addEventListener('resize',() => {
+    //     width = window.getComputedStyle(slidesWrapper).width;
         
-        slidesField.style.width = 100 * slides.length + '%';
+    //     slidesField.style.width = 100 * slides.length + '%';
         
-        slides.forEach(slide => {
-            slide.style.width = width;
-        });
+    //     slides.forEach(slide => {
+    //         slide.style.width = width;
+    //     });
     
     
-        offset = (slideIndex -1) * deleteNoDigits(width);
-        slidesField.style.transform = `translateX(-${offset}px)`;
-    });
+    //     offset = (slideIndex -1) * deleteNoDigits(width);
+    //     slidesField.style.transform = `translateX(-${offset}px)`;
+    // });
 
 }
 module.exports = slider;

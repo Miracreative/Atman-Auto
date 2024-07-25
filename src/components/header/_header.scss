@@ -148,11 +148,11 @@
             }
         }
         &__contact {
-            padding-right: 50px;
+            padding-right: 20px;
             font-size: calcVW(32);
         }
         &__social {
-            right: 100px;
+            right: 110px;
             a {
                 width: calcVW(60);
                 height: calcVW(60);
@@ -185,13 +185,11 @@
             width: 100%;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid $grey;
             a {
                 width: 45%;
             }
         }
         &__hamburger {
-            display: block;
             width: 50px;
             height: 50px;
             background-color: $red;
@@ -201,11 +199,32 @@
             align-items: center;
             justify-content: center;
             gap: 4px;
+            transition: all $time ease-in-out;
             span {
                 width: 40%;
                 height: 1px;
                 background-color: #fff;
                 display: block;
+                opacity: 1;
+                transition: all $time ease-in-out;
+                transform: translateY(0);
+                rotate: 0;
+            }
+            &--active {
+                background-color: $dark-grey;
+                gap: 0;
+                span {
+                    &:nth-child(2) {
+                        opacity: 0;
+                        height: 0;
+                    }
+                    &:nth-child(1) {
+                        rotate: 45deg;
+                    }
+                    &:nth-child(3) {
+                        rotate: -45deg;
+                    }
+                }
             }
         }
         &__nav {
@@ -213,10 +232,14 @@
             padding: 0 20px;
             position: fixed;
             top: 70px;
-            right: 0;
+            right: -100%;
             height: calc(100vh - 165px);
             background-color: #fff;
-            border-bottom: 1px solid $grey;
+            border-top: 1px solid $grey;
+            transition: all $time ease-in-out;
+            &--active {
+                right: 0;
+            }
         }
         &__list {
             flex-direction: column;
@@ -234,18 +257,24 @@
         }
         &__contact {
             position: fixed;
-            right: 0;
+            right: -100%;
             bottom: 0;
             width: 85%;
             height: 103px;
             padding: 20px 0;
             background-color: #fff;
             border-left: 1px solid $grey;
+            border-top: 1px solid $grey;
+            transition: all $time ease-in-out;
+            &--active {
+                right: 0;
+            }
         }
         &__social {
             position: static;
             width: 100%;
             justify-content: center;
+            gap: 7%;
             a {
                 width: 45px;
                 height: 45px;

@@ -1,32 +1,20 @@
 .main {
     &__slider {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
         color: #fff;
-       
+        box-sizing: border-box;
+        width: calc(100vw - 40px);
         &-counter {
             display: flex;
-            width: 100%;
             align-items: flex-end;
             font-size: 24px;
             font-weight: 700;
             position: absolute;
             bottom: 50px;
-            left: calc((100vw - 1720px)/2);
+            left: calc((100vw - 1760px)/2);
         }
         &-wrapper {
-            width: 100vw;
+            width: calc(100vw);
             background-color: $dark-grey;
-        }
-        &-prev {
-            margin-right: 10px;
-            cursor: pointer;
-        }
-        &-next {
-            margin-left: 10px;
-            cursor: pointer;
         }
         #current {
             font-size: 64px;
@@ -41,23 +29,16 @@
             gap: 50px;
         }
     }
-    &__slide {
-        width: 100%;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        &--container {
-            margin-left: calc((100vw - 1720px)/2);
-        }
-    }
 }
 
 .slide {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding-left: calc((100vw - 1760px) / 2);
+    padding-right: calc((100vw - 1760px) / 2);
     &__left {
         padding-top: 70px;
         width: 34%;
@@ -70,7 +51,7 @@
     &__right {
         padding-top: 70px;
         width: 66%;
-        border-left: 1px solid $grey;
+        border-left: 1px solid $hover-grey;
         height: 100%;
         position: relative;
     }
@@ -100,7 +81,7 @@
         &--4 {
             grid-template-columns: repeat(4, 1fr);
             margin: 30px 0 30px 90px;
-            padding-bottom: 60px;
+            padding-bottom: 30px;
         }
     }
     &__descr {
@@ -147,16 +128,19 @@
         font-weight: 400;
     }
     &__slider {
-        padding-left: 90px;
+        margin-left: 90px;
         padding-right: 120px;
+        border-bottom: 1px solid $hover-grey;
+        margin-bottom: 140px;
     }
     &__item {
-        background-color: $light-grey;
+        background-color: $grey;
         color: $dark-grey;
         padding: 14px 0 14px 14px;
         display: flex;
         align-items: stretch;
         flex-direction: column;
+        margin-bottom: 20px;
         p {
             font-size: 10px;
             display: block;
@@ -179,10 +163,177 @@
     &__image {
         width: 100%;
         height: auto;
-        margin-bottom: 20px;
     }
     &__title {
         font-size: 16px;
         width: 90%;
+        &-card {
+            font-size: 18px;
+        }
+    }
+}
+
+@media(max-width: 1920px) {
+    .main {
+        &__slider {
+            &-counter {
+                font-size: calcVW(24);
+                bottom: calcVW(50);
+                left: 100px;
+            }
+            &-next {
+                margin-left: 10px;
+                cursor: pointer;
+            }
+            #current {
+                font-size: calcVW(64);
+                margin-bottom: calcVW(-15);
+            }
+            &-buttons {
+                bottom: calcVW(50);
+                left: calc(35% + 110px);
+                gap: calcVW(50);
+            }
+        }
+        &__slide {
+            &--container {
+                margin-left: 100px;
+            }
+        }
+    }
+    
+    .slide {
+            padding-left: 80px;
+            padding-right:80px;
+        &__left {
+            padding-top: calcVW(70);
+        
+        }
+        &__title {
+            font-size: calcVW(40);
+            margin-bottom: calcVW(20);
+            &-card {
+                font-size: calcVW(14);
+            }
+        }
+        &__right {
+            padding-top: calcVW(70);
+        }
+        &__subtitle {
+            font-size: calcVW(32);
+            padding-left: 90px;
+            margin-bottom: calcVW(20);
+        }
+        &__form {
+            column-gap: calcVW(50);
+            row-gap: calcVW(30);
+            padding-bottom: calcVW(90);
+            margin: calcVW(30) 0 calcVW(160) 90px;
+            &--2 {
+                grid-template-columns: repeat(2, 1fr);
+                padding-bottom: calcVW(170);
+            }
+            &--3 {
+                padding-bottom: calcVW(30);
+                margin: calcVW(30) 0 0 90px;
+            }
+            &--4 {
+                grid-template-columns: repeat(4, 1fr);
+                margin: calcVW(30) 0 calcVW(30) 90px;
+                padding-bottom: calcVW(30);
+            }
+        }
+        &__form2 {
+            margin: calcVW(30) 0 0 90px;
+            padding-bottom: calcVW(30);
+        }
+        &__wrapper {
+            row-gap: calcVW(30);
+            &:last-child {
+                padding-left: calcVW(80);
+            }
+        }
+        &__link {
+            bottom: calcVW(-110);
+            left: calcVW(80);
+            max-width: calcVW(370);
+            font-size: calcVW(14);
+            &--outside {
+                bottom: calcVW(80);
+                left: calc(50% + 135px);
+            }
+        }
+        h5 {
+            font-size: calcVW(20);
+        }
+        &__slider {
+            margin-left: 90px;
+            padding-right: calcVW(120);
+        }
+        &__item {
+            padding: calcVW(14) 0 calcVW(14) calcVW(14);
+            P {
+                font-size: calcVW(12);
+                width: 80%;
+            }
+            margin-bottom: 20px;
+        }
+        &__wrap {
+            margin-bottom: calcVW(20);
+            span {
+                font-size: calcVW(12);
+            }
+            img {
+                width: calcVW(28);
+                height: calcVW(28);
+            }
+        }
+        &__image {
+            margin-bottom: calcVW(20);
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .main {
+        &__slider {
+            &-counter {
+                left: 50px;
+            }
+            &-buttons {
+                left: calc(35% + 45px);
+            }
+        }
+        &__slide {
+            &--container {
+                margin-left: 50px;
+            }
+        }
+    }
+    
+    .slide {
+        &__subtitle {
+            padding-left: 45px;
+        }
+        &__form {
+            margin: calcVW(30) 0 calcVW(160) 45px;
+            &--3 {
+                margin: calcVW(30) 0 0 45px;
+            }
+            &--4 {
+                margin: calcVW(30) 0 calcVW(30) 45px;
+            }
+        }
+        &__form2 {
+            margin: calcVW(30) 0 0 45px;
+        }
+        &__link {
+            &--outside {
+                left: calc(50% + 75px);
+            }
+        }
+        &__slider {
+            padding-left: 45px;
+        }
     }
 }

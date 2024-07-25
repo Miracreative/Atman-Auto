@@ -30,35 +30,13 @@ window.addEventListener("DOMContentLoaded", () => {
     touchpadSupport: true,
   });
 
-  // let mm = gsap.matchMedia();
-  // mm.add(
-  //   {
-  //     isMobile: "(max-width: 576px)",
-  //     isDesktop: "(min-width: 577px)",
-  //   },
-  //   (context) => {
-  //     let { isMobile, isDesktop } = context.conditions;
-  //     gsap.utils.toArray('.title').forEach(title => {
-  //       gsap.from(title, {
-  //         scrollTrigger: {
-  //           trigger: title,
-  //           start: 'bottom 95%',
-  //           end: 'top center',
-  //           scrub: 1
-  //         },
-  //         scaleX: isDesktop ? 1.25 : 1.0
-  //       })
-  //     })
-    
-  //   })
-
- 
-
-  
-  // if(document.querySelector('#form')) {
-  //   validate('input[name="name"]', 'input[name="phone"]', 'input[name="email"]');
-  //   send('#form', 'input[name="name"]', 'input[name="phone"]', 'input[name="email"]', "/mailer/mail-footer.php");
-
-  // }
+  const hamburger = document.querySelector('.header__hamburger');
+  const navMenu = document.querySelector('.header__nav');
+  const headerContact = document.querySelector('.header__contact');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('header__nav--active');
+    headerContact.classList.toggle('header__contact--active');
+    hamburger.classList.toggle('header__hamburger--active')
+  })
     
 });
