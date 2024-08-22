@@ -1,0 +1,40 @@
+.footer {
+	&__textWrap {
+		margin-left: 70px;
+	}
+	&__title {
+		font-size: 96px;
+		font-weight: 700;
+		& span {
+			color: #E41F26;
+		}		
+	}
+	&__text {
+		font-size: 32px;
+		font-weight: 400;
+	}
+	&__linksList {
+		list-style: none;
+	}
+	&__contacts {
+		display: flex;
+		margin-left: 70px;
+		gap: 20px;
+	}
+	&__contact {
+		font-size: 40px;
+		font-weight: 700;
+		color: white;
+		background-color: #E41F26;
+		border-radius: 20px;
+
+		height: 100px;
+		width: 100%;
+		max-width: 850px;
+
+		display: flex;
+		flex-wrap: wrap;
+		align-content: center;
+		justify-content: center;
+	}
+}
