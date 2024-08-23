@@ -6,6 +6,8 @@
 	.title {
 		font-size: 96px;
 		font-weight: 700;
+		line-height: 0.9;
+		margin-bottom: 20px;
 		& span {
 			color: #E41F26;
 		}		
@@ -21,7 +23,7 @@
 	.contacts {
 		display: flex;
 		gap: 20px;
-		padding: 60px 0 60px 100px;
+		padding: 60px 20px 60px 100px;
 		border-bottom: 1px solid #BCBCBC;
 		border-top: 1px solid #BCBCBC;
 	}
@@ -122,4 +124,44 @@
 	
 	.socialLink:hover svg circle {
 		fill: #5E5E5E;
+	}
+
+
+	@media (max-width:1600px) {
+		.logoWrap {
+			padding: 0 40px;
+		}
+		.columnWrap {
+			margin: 0 40px;
+		}
+	}
+
+
+	@media (max-width:1300px) {
+
+	}
+
+	@media (max-width:1024px) {
+		.title {
+			font-size: 32px;
+		}
+		.text {
+			font-size: 12px;
+		}
+		.contacts {
+			flex-direction: column;
+		}
+		.contactItem {
+			font-size: 16px;
+			font-weight: 500;
+		}
+		.nav {
+			background-color: white;
+		}
+		.topLinks {
+			display: none;
+		}
+		.socialLinks {
+			justify-content: center;
+		}
 	}
