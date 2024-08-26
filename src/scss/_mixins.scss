@@ -1,0 +1,22 @@
+// Mixin for adaptive fonts
+$maxWidth: 1920;
+$minWidthDesctop: 768;
+$minWidthMobile: 375;
+
+@mixin adaptive-font($pcSize, $tabletSize) {
+	$addSize: $pcSize - $tabletSize;
+	$maxWidth: $maxWidth - $minWidthDesctop;
+	font-size: calc(
+		#{$tabletSize + px} + #{$addSize} *
+			((100vw - #{$minWidthDesctop + px}) / #{$maxWidth})
+	);
+}
+
+@mixin adaptive-font-mobile($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - $minWidthMobile;
+	font-size: calc(
+		#{$mobSize + px} + #{$addSize} *
+			((100vw - #{$minWidthMobile + px}) / #{$maxWidth})
+	);
+}

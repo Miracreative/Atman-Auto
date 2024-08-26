@@ -1,11 +1,20 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Header.module.scss';
 
 export default function Header() {
+	const [dropMenuButton, setDropMenuButton] = useState(false);
+
+	const toggleDropMenu = () => {
+		setDropMenuButton((prevState) => !prevState);
+		console.log(dropMenuButton);
+	};
+
 	return (
 		<header className={styles.header}>
-			{/* <div className="container"> */}
 			<nav className={styles.nav}>
 				<div className={styles.logoContainer}>
 					<Link href="/">
@@ -21,7 +30,12 @@ export default function Header() {
 				</div>
 				<div className={styles.links}>
 					<div className={styles.dropdown}>
-						<Link href="/about" className={styles.link}>
+						<button
+							className={`${styles.button} ${
+								dropMenuButton ? styles.buttonActive : ''
+							}`}
+							onClick={toggleDropMenu}
+						>
 							О нас
 							<svg
 								width="11"
@@ -36,8 +50,12 @@ export default function Header() {
 									fill="#353535"
 								/>
 							</svg>
-						</Link>
-						<div className={styles.dropdownContainer}>
+						</button>
+						<div
+							className={`${styles.dropdownContainer} ${
+								dropMenuButton ? styles.dropdownContainerActive : ''
+							}`}
+						>
 							<ul className={styles.dropdownList}>
 								<Link
 									href="/about/quality-policy"
@@ -195,9 +213,10 @@ export default function Header() {
 						Новости
 					</Link>
 				</div>
-				<p>8-800-250-55-26</p>
+				<Link className={styles.number} href="tel:+78002505526">
+					<div>8-800-250-55-26</div>
+				</Link>
 			</nav>
-			{/* </div> */}
 		</header>
 	);
 }
