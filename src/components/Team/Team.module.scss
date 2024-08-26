@@ -1,0 +1,61 @@
+@import '../../scss/_functions.scss';
+
+
+.content {
+	background-color: #E4E5E7;
+	border-radius: 20px;
+	border: 1px solid #BCBCBC;
+}
+.title {
+	font-size: 96px;
+	font-weight: 700;
+	color: #E41F26;
+	margin-bottom: 11vh;
+	margin-top: 13vh;
+	margin-left: 4vw;
+}
+
+.photo {
+	display: flex;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  }
+  
+  .cardItem {
+	flex-basis: calc(25% - 20px); 
+	margin: 10px;
+  }
+
+.textContainer {
+	text-align: center;
+}
+.name {
+	font-size: 32px;
+	font-weight: 700;
+	color: #E41F26;
+}
+.position {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+
+
+  @media (max-width: 1920px) {
+	.title {
+		font-size: calcVW(96);
+	}
+  }
+
+  @media (max-width: 768px) {
+	.cardItem {
+	  flex-basis: calc(50% - 20px); 
+	}
+	.title {
+		font-size: 36px;
+	}
+  }

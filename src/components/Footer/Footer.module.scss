@@ -19,6 +19,9 @@
 	}
 	.linksList {
 		list-style: none;
+		& li:not(:last-child){
+			padding-bottom: 10px;
+		}
 	}
 	.contacts {
 		display: flex;
