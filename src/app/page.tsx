@@ -3,14 +3,27 @@
 
 import Header from './../components/Header/Header';
 import Catalog from './../components/Catalog/Catalog';
+import Decisions from './../components/Decisions/Decisions';
+import ProductionCapabilities from './../components/ProductionСapabilities/ProductionСapabilities';
+import Products from './../components/Products/Products';
+import News from './../components/News/News';
+import Team from './../components/Team/Team';
+import Map from './../components/Map/Map';
 import Footer from './../components/Footer/Footer';
 
 export default function Home() {
 	return (
 		<>
 			<Header></Header>
-			{/* <h1>Home page</h1> */}
-			<Catalog></Catalog>
+			<main>
+				<Catalog></Catalog>
+				<Decisions></Decisions>
+				<ProductionCapabilities></ProductionCapabilities>
+				<Products></Products>
+				<News></News>
+				<Team></Team>
+				<Map></Map>
+			</main>
 			<Footer></Footer>
 		</>
 		// <main className={styles.main}>
