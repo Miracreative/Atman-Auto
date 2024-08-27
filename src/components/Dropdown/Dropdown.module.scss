@@ -1,0 +1,70 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/_functions.scss';
+
+.button {
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: rgb(var(--red-rgb));
+	}
+}
+
+.buttonActive {
+	color: rgb(var(--red-rgb));
+
+	.triangle {
+		transform: rotate(180deg);
+		path {
+			fill: var(--red);
+		}
+	}
+}
+
+.triangle {
+	margin-left: 5px;
+	transition: all 0.3s ease-in-out;
+}
+
+.dropdown {
+	position: relative;
+}
+
+.сontainer {
+	opacity: 0;
+	pointer-events: none;
+	background-color: rgb(var(--light-gray-rgb));
+	position: absolute;
+	left: -20px;
+	z-index: 5;
+	width: max-content;
+}
+
+.сontainerActive {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	margin: 20px 20px 20px 29px;
+	border-left: 1px solid rgb(var(--red-rgb));
+
+	& li:not(:last-child) {
+		margin-bottom: 15px;
+	}
+}
+
+.link {
+	margin-left: 10px;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: rgb(var(--red-rgb));
+	}
+}
+
+@media (max-width: 1920px) {
+}

@@ -9,3 +9,7 @@
 @function calcVW768($px) {
 	@return (calc($px / 768) * 100) + vw;
 }
+
+@function calcVH($px) {
+	@return (calc($px / 1080) * 100) + vh;
+}
