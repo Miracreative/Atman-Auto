@@ -23,7 +23,8 @@ export default function Team() {
 							<div className={styles.name}>Демин Павел</div>
 							<div className={styles.position}>Руководитель отдела оптовых продаж (потребительские товары упакованные для рынка DIY):</div>
 							<div className={styles.whatsApp}>
-								WhatsApp: <Link
+								<span className={styles.desktopSpan}>WhatsApp: </span>
+								<Link
 									href={`https://wa.me/89190885529`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -33,8 +34,9 @@ export default function Team() {
 							</div>
 
 							<div className={styles.mail}>
-								Mail: <Link
-									href={`mailto:p.demin@atman-auto.ru`}
+								<span className={styles.desktopSpan}>Mail: </span>
+								<Link
+									href={`mailto: p.demin@atman-auto.ru`}
 								>
 									p.demin@atman-auto.ru
 								</Link>
@@ -57,7 +59,8 @@ export default function Team() {
 							<div className={styles.position}>Региональный менеджер по продажам (материалы для промышленности - Самарская обл. / Ульяновская обл.):</div>
 
 							<div className={styles.whatsApp}>
-								WhatsApp: <Link
+								<span className={styles.desktopSpan}>WhatsApp: </span>
+								<Link
 									href={`https://wa.me/89109402823`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -67,7 +70,8 @@ export default function Team() {
 							</div>
 
 							<div className={styles.mail}>
-								Mail: <Link
+								<span className={styles.desktopSpan}>Mail: </span>
+								<Link
 									href={`mailto:yurov.a@atman-auto.ru`}
 								>
 									yurov.a@atman-auto.ru
@@ -91,7 +95,8 @@ export default function Team() {
 							<div className={styles.position}>Заместитель директора по коммерческим вопросам (материалы для промышленности):</div>
 
 							<div className={styles.whatsApp}>
-								WhatsApp: <Link
+								<span className={styles.desktopSpan}>WhatsApp: </span>
+								<Link
 									href={`https://wa.me/89109418788`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -101,7 +106,8 @@ export default function Team() {
 							</div>
 
 							<div className={styles.mail}>
-								Mail: <Link
+								<span className={styles.desktopSpan}>Mail: </span>
+								<Link
 									href={`mailto:petrov@atman-auto.ru`}
 								>
 									petrov@atman-auto.ru
@@ -125,7 +131,8 @@ export default function Team() {
 							<div className={styles.position}>Отдел закупок</div>
 
 							<div className={styles.whatsApp}>
-								WhatsApp: <Link
+								<span className={styles.desktopSpan}>WhatsApp: </span>
+								<Link
 									href={`https://wa.me/89107030937`}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -135,7 +142,8 @@ export default function Team() {
 							</div>
 
 							<div className={styles.mail}>
-								Mail: <Link
+								<span className={styles.desktopSpan}>Mail: </span>
+								<Link
 									href={`mailto:ps@atman-auto.ru`}
 								>
 									ps@atman-auto.ru

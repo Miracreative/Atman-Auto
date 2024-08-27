@@ -5,6 +5,7 @@
 	background-color: #E4E5E7;
 	border-radius: 20px;
 	border: 1px solid #BCBCBC;
+	margin: 20px 0;
 }
 .title {
 	font-size: 96px;
@@ -17,30 +18,69 @@
 
 .photo {
 	display: flex;
+	margin-top: 50px;
 }
 
 .cards {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	border-top: 1px solid #BCBCBC;
   }
-  
+// .cardWrap {
+// 	flex-basis: calc(25%);
+// }
   .cardItem {
-	flex-basis: calc(25% - 20px); 
-	margin: 10px;
+	flex-basis: calc(25%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-top: 1px solid #BCBCBC;
+	&:not(:last-child) {
+		border-right: 1px solid #BCBCBC;
+	}
+	&:nth-child(1) {
+		padding-right: 15px; 
+	}
+	&:nth-child(2) {
+		padding-right: 5px;  
+	}
+	&:nth-child(3) {
+		padding-left: 5px; 
+	}
+	&:nth-child(4) {
+		padding-left: 15px;  
+	}
+	
   }
 
 .textContainer {
 	text-align: center;
+	margin: 40px 20px 60px 20px;
 }
 .name {
 	font-size: 32px;
 	font-weight: 700;
 	color: #E41F26;
+	margin-bottom: 20px;
 }
 .position {
 	font-size: 20px;
 	font-weight: 400;
+}
+.cardItem:last-child .position {
+	margin-bottom: 66px;
+}
+
+.whatsApp {
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+.whatsApp a {
+	font-weight: 700;
+}
+.mail a {
+	font-weight: 700;
 }
 
 
@@ -51,11 +91,122 @@
 	}
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1600px) {
 	.cardItem {
-	  flex-basis: calc(50% - 20px); 
+	  flex-basis: calc(50%); 
+	  &:nth-child(odd) {
+		padding-right: 5px;
+	  }
+	  &:nth-child(even) {
+		padding-left: 5px;
+	  }
+	}
+	// .cardWrap {
+	// 	flex-basis: calc(50%); 
+
+	// }
+
+  }
+
+  @media (max-width: 768px) {
+	.photo img {
+		width: 220px;
+		height: auto;
+	}
+	.textContainer {
+		margin: 0 10px 20px 10px;
+		font-size: 10px;
 	}
 	.title {
 		font-size: 36px;
+		margin-top: 6vh;
+		margin-bottom: 5vh;
+	}
+	.name {
+		font-size: 14px;
+	}
+	.position {
+		font-size: 10px;
+	}
+	.desktopSpan {
+		display: none;
+	}
+	.cardItem:last-child .position {
+		margin-bottom: 30px;
+	}
+
+  }
+
+  @media (max-width: 576px) {
+	.textContainer {
+		margin: 0 5px 20px 5px;
+	}
+	.title {
+		margin-bottom: 0;
+		margin-top: 30px;
+	}
+
+	.cardItem {
+		position: relative;
+		margin-top: 70px;
+		border-bottom: 1px solid #BCBCBC;
+		&:nth-last-child(-n+2) {
+			border-bottom: none;
+		}
+	}
+
+	.cards {
+		border-top: none;
+	}
+	.photo img {
+		position: absolute;
+		top: -55px;
+		// right: 50%;
+        transform: translateX(50%);
+
+		width: 110px;
+		height: auto;
+	}
+
+	.cardItem:nth-child(odd) .photo img {
+		right: 52%;
+	}
+	
+	.cardItem:nth-child(even) .photo img {
+		right: 48%;
+	}
+
+	.name {
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	.whatsApp {
+		position: relative;
+	}
+	.whatsApp::before {
+		content: '';
+		display: block;
+		width: 25px;
+		height: 1px;
+		background-color: #BCBCBC;
+		
+		position: absolute;
+		transform: translateX(-50%);
+		left: 50%;
+		top: -5px;
+
+	}
+	.whatsApp::after {
+		content: '';
+		display: block;
+		margin: 0 auto;
+		width: 25px;
+		height: 1px;
+		background-color: #BCBCBC;
+
+		position: absolute;
+		transform: translateX(-50%);
+		left: 50%;
+		bottom: -5px;
 	}
   }
