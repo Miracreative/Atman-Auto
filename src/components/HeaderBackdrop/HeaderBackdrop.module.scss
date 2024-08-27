@@ -1,0 +1,10 @@
+.headerBackdrop {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.headerBackdrop {
+		display: block;
+		height: 70px;
+	}
+}

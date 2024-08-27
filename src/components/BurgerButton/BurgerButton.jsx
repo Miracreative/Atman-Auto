@@ -1,8 +1,8 @@
 import styles from './BurgerButton.module.scss';
 
-const BurgerButton = () => {
+const BurgerButton = ({ toggleMenu }) => {
 	return (
-		<button className={styles.button}>
+		<button className={styles.button} onClick={toggleMenu}>
 			<span></span>
 		</button>
 	);

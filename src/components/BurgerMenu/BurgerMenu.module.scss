@@ -4,6 +4,26 @@
 
 @media (max-width: 768px) {
 	.menu {
+		// display: block;
 		display: flex;
+		height: 100%;
+		width: 100%;
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in-out;
+		background-color: red;
+		// position: absolute;
+		position: fixed;
+		top: 70px;
+		left: 0;
+		z-index: 50;
+		// overflow-x: hidden;
+
+		&.active {
+			transform: translateX(0);
+		}
+	}
+
+	.image {
+		display: none;
 	}
 }
