@@ -3,6 +3,8 @@
 
 .button {
 	border: none;
+	font-size: 20px;
+	font-weight: 500;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 
@@ -59,6 +61,7 @@
 
 .link {
 	margin-left: 10px;
+	font-size: 14px;
 	transition: all 0.3s ease-in-out;
 
 	&:hover {
@@ -67,4 +70,38 @@
 }
 
 @media (max-width: 1920px) {
+	.button {
+		// font-size: 20px;
+		@include adaptive-font(20, 12);
+	}
+
+	.triangle {
+		width: calcVW(11);
+		// height: calcVH(9);
+		margin-left: calcVW(5);
+	}
+
+	.сontainer {
+		left: calcVW(-20);
+	}
+
+	.list {
+		margin: calcVH(20) calcVW(20) calcVH(20) calcVW(29);
+
+		& li:not(:last-child) {
+			// margin-bottom: 15px;
+			margin-bottom: calcVH(15);
+		}
+	}
+
+	.link {
+		margin-left: calcVW(10);
+		@include adaptive-font(14, 10);
+	}
+}
+
+@media (max-width: 1200px) {
+	.triangle {
+		width: 7px;
+	}
 }

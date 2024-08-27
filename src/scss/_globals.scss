@@ -10,7 +10,9 @@
 	/* --background-end-rgb: 255, 255, 255; */
 	--background-rgb: 255, 255, 255;
 
+	--white: #fff;
 	--red: #ff0000;
+	--red-button: #e41f26;
 	--red-dark: #aa2320;
 	--red-rgb: 228, 31, 38;
 	--gray-line-rgb: 188, 188, 188;
@@ -79,6 +81,7 @@ body {
 	height: 100%;
 	color: rgb(var(--foreground-rgb));
 	font-size: 20px;
+	font-weight: 400;
 	line-height: normal;
 	font-style: normal;
 	background-color: rgb(var(--background-rgb));

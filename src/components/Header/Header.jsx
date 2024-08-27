@@ -5,10 +5,15 @@ import Link from 'next/link';
 import styles from './Header.module.scss';
 import { menuItems } from './../../data/menuItems';
 import Dropdown from './../Dropdown/Dropdown';
+import BurgerMenu from './../BurgerMenu/BurgerMenu';
 import { useState, useEffect, useRef } from 'react';
+import logoImage from '/public/logo.svg';
 
 export default function Header() {
 	const [activeDropdown, setActiveDropdown] = useState(null);
+
+	const [menuActive, setMenuActive] = useState(false);
+
 	const dropdownRefs = useRef({}); // Для хранения ссылок на Dropdown компоненты
 
 	const toggleDropdown = (name) => {
@@ -39,11 +44,12 @@ export default function Header() {
 				<div className={styles.logoContainer}>
 					<Link href="/">
 						<Image
-							src="/logo.svg"
+							src={logoImage}
 							alt="Atman Auto logo"
 							className={styles.logo}
-							width={255}
-							height={88}
+							// sizes="(max-width: 256px) 50vw, 256px"
+							// width={255}
+							// height={88}
 							priority
 						/>
 					</Link>
@@ -83,6 +89,7 @@ export default function Header() {
 				<Link className={styles.number} href="tel:+78002505526">
 					8-800-250-55-26
 				</Link>
+				<BurgerMenu></BurgerMenu>
 			</nav>
 		</header>
 	);
