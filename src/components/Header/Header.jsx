@@ -15,23 +15,20 @@ export default function Header() {
 		setActiveDropdown((prev) => (prev === name ? null : name));
 	};
 
-	// Обработчик клика вне Dropdown
 	const handleClickOutside = (event) => {
 		const isClickInside = Object.values(dropdownRefs.current).some(
 			(dropdown) => dropdown && dropdown.contains(event.target),
 		);
 
 		if (!isClickInside) {
-			setActiveDropdown(null); // Закрывает все Dropdown если клик вне
+			setActiveDropdown(null);
 		}
 	};
 
 	useEffect(() => {
-		// Добавляет обработчик события клика
 		document.addEventListener('mousedown', handleClickOutside);
 
 		return () => {
-			// Убирает обработчик при размонтировании компонента
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
 	}, []);
@@ -53,21 +50,21 @@ export default function Header() {
 				</div>
 				<div className={styles.links}>
 					<Dropdown
-						ref={(el) => (dropdownRefs.current['about'] = el)} // Сохраняем ссылку на Dropdown
+						ref={(element) => (dropdownRefs.current['about'] = element)}
 						title={menuItems.about.title}
 						items={menuItems.about.items}
 						isOpen={activeDropdown === 'about'}
 						toggleOpen={() => toggleDropdown('about')}
 					/>
 					<Dropdown
-						ref={(el) => (dropdownRefs.current['applications'] = el)} // Сохраняем ссылку на Dropdown
+						ref={(element) => (dropdownRefs.current['applications'] = element)}
 						title={menuItems.applications.title}
 						items={menuItems.applications.items}
 						isOpen={activeDropdown === 'applications'}
 						toggleOpen={() => toggleDropdown('applications')}
 					/>
 					<Dropdown
-						ref={(el) => (dropdownRefs.current['goods'] = el)} // Сохраняем ссылку на Dropdown
+						ref={(element) => (dropdownRefs.current['goods'] = element)}
 						title={menuItems.goods.title}
 						items={menuItems.goods.items}
 						isOpen={activeDropdown === 'goods'}

@@ -2,6 +2,7 @@ export const menuItems = {
 	about: {
 		title: 'О нас',
 		items: [
+			{ href: '/about', text: 'О нас' },
 			{ href: '/about/quality-policy', text: 'Политика в области качества' },
 			{ href: '/about/corporate-ethics', text: 'Кодекс корпоративной этики' },
 			{
@@ -18,6 +19,10 @@ export const menuItems = {
 	applications: {
 		title: 'Применения',
 		items: [
+			{
+				href: '/applications',
+				text: 'Применения',
+			},
 			{
 				href: '/applications/automobile-industry',
 				text: 'Автомобильная промышленность',
@@ -45,6 +50,10 @@ export const menuItems = {
 	goods: {
 		title: 'Товары',
 		items: [
+			{
+				href: '/goods',
+				text: 'Товары',
+			},
 			{
 				href: '/goods/foamed-double-sided-adhesive-tapes',
 				text: 'Вспененные двусторонние клейкие ленты',
