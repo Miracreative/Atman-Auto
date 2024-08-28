@@ -12,7 +12,7 @@ export default function Team() {
 					<div className={styles.cardItem}>
 						<div className={styles.photo}>
 							<Image
-								src="/team/teamMember1.png"
+								src="/Team/teamMember1.png"
 								alt="team photo"
 								width={350}
 								height={350}
@@ -47,7 +47,7 @@ export default function Team() {
 					<div className={styles.cardItem}>
 						<div className={styles.photo}>
 							<Image
-								src="/team/teamMember2.png"
+								src="/Team/teamMember2.png"
 								alt="team photo"
 								width={350}
 								height={350}
@@ -83,7 +83,7 @@ export default function Team() {
 					<div className={styles.cardItem}>
 						<div className={styles.photo}>
 							<Image
-								src="/team/teamMember3.png"
+								src="/Team/teamMember3.png"
 								alt="team photo"
 								width={350}
 								height={350}
@@ -119,7 +119,7 @@ export default function Team() {
 					<div className={styles.cardItem}>
 						<div className={styles.photo}>
 							<Image
-								src="/team/teamMember4.png"
+								src="/Team/teamMember4.png"
 								alt="team photo"
 								width={350}
 								height={350}
