@@ -31,19 +31,20 @@
 
 .dropdown {
 	position: relative;
+	z-index: 100;
 }
 
-.сontainer {
+.container {
 	opacity: 0;
 	pointer-events: none;
 	background-color: rgb(var(--light-gray-rgb));
 	position: absolute;
 	left: -20px;
-	z-index: 5;
+	z-index: 150;
 	width: max-content;
 }
 
-.сontainerActive {
+.containerActive {
 	opacity: 1;
 	pointer-events: all;
 }
@@ -81,7 +82,7 @@
 		margin-left: calcVW(5);
 	}
 
-	.сontainer {
+	.container {
 		left: calcVW(-20);
 	}
 
@@ -89,7 +90,6 @@
 		margin: calcVH(20) calcVW(20) calcVH(20) calcVW(29);
 
 		& li:not(:last-child) {
-			// margin-bottom: 15px;
 			margin-bottom: calcVH(15);
 		}
 	}

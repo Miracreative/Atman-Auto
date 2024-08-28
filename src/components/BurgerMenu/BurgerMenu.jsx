@@ -5,7 +5,7 @@ import styles from './BurgerMenu.module.scss';
 
 const BurgerMenu = ({
 	isActive,
-	toggleMenu,
+	// toggleMenu,
 	toggleDropdown,
 	activeDropdown,
 	dropdownRefs,
@@ -22,7 +22,7 @@ const BurgerMenu = ({
 			/>{' '}
 			<nav className={styles.nav}>
 				<HeaderNav
-					toggleMenu={toggleMenu}
+					// toggleMenu={toggleMenu}
 					toggleDropdown={toggleDropdown}
 					activeDropdown={activeDropdown}
 					dropdownRefs={dropdownRefs}
