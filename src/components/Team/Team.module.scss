@@ -108,6 +108,13 @@
 
   }
 
+  @media (max-width: 1300px) {
+	.title {
+		margin-top: 6vh;
+		margin-bottom: 5vh;
+	}
+  }
+
   @media (max-width: 768px) {
 	.photo img {
 		width: 220px;
