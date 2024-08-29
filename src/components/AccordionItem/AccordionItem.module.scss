@@ -1,0 +1,36 @@
+// .accordionItem {
+// }
+
+.accordionHeader {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 10px;
+	background-color: transparent;
+	border: 0;
+	font-size: 20px;
+	font-weight: 500;
+	text-align: left;
+	cursor: pointer;
+
+	&.active {
+		color: var(--red-button);
+	}
+}
+
+.accordionCollapse {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.3s;
+
+	&.open {
+		height: auto;
+	}
+}
+
+.accordionBody {
+	padding-bottom: 10px;
+	font-size: 14px;
+	font-weight: 400;
+}

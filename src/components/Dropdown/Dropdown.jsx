@@ -9,8 +9,6 @@ const Dropdown = ({ title, items, isOpen, toggleOpen }) => {
 			<button
 				className={`${styles.button} ${isOpen ? styles.buttonActive : ''}`}
 				onClick={toggleOpen}
-				// popovertarget="dropdown"
-				// popovertargetaction="show"
 			>
 				{title}
 				<svg
@@ -31,8 +29,6 @@ const Dropdown = ({ title, items, isOpen, toggleOpen }) => {
 				className={`${styles.container} ${
 					isOpen ? styles.containerActive : ''
 				}`}
-				// popover="auto"
-				// id="dropdown"
 			>
 				<ul className={styles.list}>
 					{items.map((item, index) => (
