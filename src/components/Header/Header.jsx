@@ -35,6 +35,7 @@ export default function Header() {
 			<BurgerButton toggleMenu={toggleMenu}></BurgerButton>
 			<BurgerMenu
 				isActive={menuActive}
+				setActive={setMenuActive}
 				toggleDropdown={toggleDropdown}
 				activeDropdown={activeDropdown}
 			></BurgerMenu>
