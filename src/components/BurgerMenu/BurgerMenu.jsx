@@ -8,7 +8,7 @@ const BurgerMenu = ({
 	// toggleMenu,
 	toggleDropdown,
 	activeDropdown,
-	dropdownRefs,
+	// dropdownRefs,
 }) => {
 	return (
 		<div className={`${styles.menu} ${isActive ? styles.active : ''}`}>
@@ -25,7 +25,7 @@ const BurgerMenu = ({
 					// toggleMenu={toggleMenu}
 					toggleDropdown={toggleDropdown}
 					activeDropdown={activeDropdown}
-					dropdownRefs={dropdownRefs}
+					// dropdownRefs={dropdownRefs}
 				/>
 			</nav>
 		</div>

@@ -36,12 +36,14 @@
 // @media (max-width: 768px) {
 @media (max-width: 820px) {
 	.nav {
-		display: none;
+		// display: none;
 		// 	padding: 0 10px;
 		// 	justify-content: space-between;
 	}
 
 	.links {
-		display: none;
+		// display: none;
+		border-right: 0;
+		flex-direction: column;
 	}
 }
