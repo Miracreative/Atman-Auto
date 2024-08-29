@@ -20,13 +20,19 @@
 	}
 
 	.image {
-		width: 50%; /* Задаем ширину изображения 30% */
-		height: auto; /* Высота автоматически подстраивается */
+		width: 50%;
+		// height: auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.image {
+		width: 35%;
 	}
 }
 
 @media (max-width: 500px) {
 	.image {
-		width: 22%; /* Также сохраняем 30% для меньших экранов */
+		width: 22%;
 	}
 }
