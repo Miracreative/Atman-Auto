@@ -4,6 +4,8 @@ import Link from 'next/link';
 import AccordionItem from '../AccordionItem/AccordionItem';
 import { menuItems } from '@/data/menuItems';
 
+import socialLinks from '@/config/socialLinks';
+
 import styles from './Accordion.module.scss';
 
 export default function Accordion() {
@@ -37,7 +39,7 @@ export default function Accordion() {
 
 			<ul className={styles.socialLinks}>
 				<li>
-					<Link href="/" className={styles.socialLink}>
+					<Link href={socialLinks.vkontakte} className={styles.socialLink}>
 						<svg
 							width="50"
 							height="50"
@@ -56,7 +58,7 @@ export default function Accordion() {
 					</Link>
 				</li>
 				<li>
-					<Link href="/" className={styles.socialLink}>
+					<Link href={socialLinks.youtube} className={styles.socialLink}>
 						<svg
 							width="50"
 							height="50"
@@ -75,7 +77,7 @@ export default function Accordion() {
 					</Link>
 				</li>
 				<li>
-					<Link href="/" className={styles.socialLink}>
+					<Link href={socialLinks.telegram} className={styles.socialLink}>
 						<svg
 							width="50"
 							height="50"
@@ -94,7 +96,7 @@ export default function Accordion() {
 					</Link>
 				</li>
 				<li>
-					<Link href="/" className={styles.socialLink}>
+					<Link href={socialLinks.dzen} className={styles.socialLink}>
 						<svg
 							width="50"
 							height="50"
@@ -111,13 +113,23 @@ export default function Accordion() {
 					</Link>
 				</li>
 
-				{/* <Link href="/" className={styles.socialLink}>
-							<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<circle cx="25" cy="25" r="25" fill="#E4E5E7" />
-								<path fillRule="evenodd" clipRule="evenodd" d="M22.3214 14H20V35H22.3214C25.9411 35 27.751 35 28.8755 33.8245C30 32.649 30 30.7571 30 26.9733V22.0267C30 18.2429 30 16.351 28.8755 15.1755C27.751 14 25.9411 14 22.3214 14ZM25.7493 17.9288C25.3265 17.64 24.7415 17.64 23.5714 17.64V31.36C24.7415 31.36 25.3265 31.36 25.7493 31.0712C25.9457 30.9371 26.1133 30.7619 26.2416 30.5566C26.5179 30.1146 26.5179 29.5031 26.5179 28.28V20.72C26.5179 19.4969 26.5179 18.8854 26.2416 18.4434C26.1133 18.2381 25.9457 18.0629 25.7493 17.9288Z" fill={'var(--white)'} />
-							</svg>
-
-						</Link> */}
+				{/* <Link href={socialLinks.drive2} className={styles.socialLink}>
+					<svg
+						width="50"
+						height="50"
+						viewBox="0 0 50 50"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<circle cx="25" cy="25" r="25" fill={'var(--red)'} />
+						<path
+							fillRule="evenodd"
+							clipRule="evenodd"
+							d="M22.3214 14H20V35H22.3214C25.9411 35 27.751 35 28.8755 33.8245C30 32.649 30 30.7571 30 26.9733V22.0267C30 18.2429 30 16.351 28.8755 15.1755C27.751 14 25.9411 14 22.3214 14ZM25.7493 17.9288C25.3265 17.64 24.7415 17.64 23.5714 17.64V31.36C24.7415 31.36 25.3265 31.36 25.7493 31.0712C25.9457 30.9371 26.1133 30.7619 26.2416 30.5566C26.5179 30.1146 26.5179 29.5031 26.5179 28.28V20.72C26.5179 19.4969 26.5179 18.8854 26.2416 18.4434C26.1133 18.2381 25.9457 18.0629 25.7493 17.9288Z"
+							fill={'var(--white)'}
+						/>
+					</svg>
+				</Link> */}
 			</ul>
 		</nav>
 	);
