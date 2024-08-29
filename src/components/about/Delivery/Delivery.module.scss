@@ -1,0 +1,193 @@
+@import '../../../scss/functions.scss';
+
+
+.section {
+	padding: 20px 0;
+	border-top: 1px solid #BCBCBC;
+	border-bottom: 1px solid #BCBCBC;
+	color: white;
+}
+
+.wrap {
+	background-color: #353535;
+	border-radius: 20px;
+	border: 1px solid #BCBCBC;
+	padding: 20px;
+	min-width: 300px;
+}
+
+.titleContainer {
+	border-radius: 20px;
+	border: 1px solid #BCBCBC;
+	padding: 80px 0 80px 60px;
+	margin-bottom: 20px;
+}
+
+.title {
+	font-size: 96px;
+	font-weight: 700;
+	line-height: 0.9;
+	margin-bottom: 40px;
+}
+
+.titleText {
+	font-size: 32px;
+	line-height: 1;
+	width: 90%;
+}
+
+.content {
+	display: flex;
+	gap: 20px;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.card {
+	border-radius: 20px;
+	border: 1px solid #BCBCBC;
+	max-width: 910px;
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.cardContent {
+	width: 80%;
+	margin: 60px 0;
+}
+
+.titleCard {
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 1;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.textLastCard {
+	width: 90%;
+}
+
+.logo {
+	margin-bottom: 40px;
+}
+
+.titleCard::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+
+	width: 140px;
+	height: 2px;
+	background-color: #E41F26;
+}
+
+.titleCard:nth-child(2)::after {
+	background-color: #FFAF02;
+}
+
+.titleCard:last-child:after {
+	background-color: #FD671A;
+}
+
+
+
+
+
+
+@media (max-width: 1920px) {
+	.title {
+		font-size: calcVW(96);
+	}
+	.titleText {
+		font-size: calcVW(32);
+	}
+	.titleCard {
+		font-size: calcVW(40);
+	}
+	.textCard {
+		font-size: calcVW(20);
+	}
+	.textLastCard {
+		font-size: calcVW(20);
+	}
+}
+
+@media (max-width: 1200px) {
+	.content {
+		flex-direction: column;
+	}
+	.cardContent {
+		margin: 40px 0;
+	}
+	.card {
+		max-width: none;
+	}
+	.titleCard {
+		font-size: 40px;
+	}
+	.textCard {
+		font-size: 20px;
+	}
+	.textLastCard {
+		margin: 30px 0;
+		font-size: 20px;
+		width: 80%;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.titleCard::after {
+		display: none;
+	}
+	.wrap {
+		padding: 10px;
+	}
+
+	.titleContainer {
+		margin-bottom: 10px;
+		padding: 30px 5px 20px 15px;
+	}
+
+	.title {
+		font-size: 34px;
+		margin-bottom: 10px;
+	}
+	.titleText {
+		font-size: 12px;
+	}
+	.column {
+		gap: 10px;
+	}
+	
+	.card {
+		gap: 10px;
+	}
+
+	.cardContent {
+		margin: 30px 15px;
+	}
+
+	.titleCard {
+		font-size: 20px;
+	}
+
+	.textCard {
+		font-size: 12px;
+	}
+
+	.textLastCard {
+		font-size: 12px;
+	}
+}
