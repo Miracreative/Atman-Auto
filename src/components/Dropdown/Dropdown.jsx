@@ -1,12 +1,11 @@
 'use client';
 
-import { forwardRef } from 'react';
 import Link from 'next/link';
 import styles from './Dropdown.module.scss';
 
-const Dropdown = forwardRef(({ title, items, isOpen, toggleOpen }, ref) => {
+const Dropdown = ({ title, items, isOpen, toggleOpen }) => {
 	return (
-		<div className={styles.dropdown} ref={ref}>
+		<div className={styles.dropdown}>
 			<button
 				className={`${styles.button} ${isOpen ? styles.buttonActive : ''}`}
 				onClick={toggleOpen}
@@ -27,8 +26,8 @@ const Dropdown = forwardRef(({ title, items, isOpen, toggleOpen }, ref) => {
 				</svg>
 			</button>
 			<div
-				className={`${styles.сontainer} ${
-					isOpen ? styles.сontainerActive : ''
+				className={`${styles.container} ${
+					isOpen ? styles.containerActive : ''
 				}`}
 			>
 				<ul className={styles.list}>
@@ -43,6 +42,6 @@ const Dropdown = forwardRef(({ title, items, isOpen, toggleOpen }, ref) => {
 			</div>
 		</div>
 	);
-});
+};
 
 export default Dropdown;

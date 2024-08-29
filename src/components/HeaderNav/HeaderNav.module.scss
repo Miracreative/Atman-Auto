@@ -1,0 +1,44 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/_functions.scss';
+
+.nav {
+	height: 100%;
+	flex-grow: 1;
+}
+
+.links {
+	height: 100%;
+	border-right: 1px solid rgb(var(--gray-line-rgb));
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: rgb(var(--light-gray-rgb));
+}
+
+.link {
+	height: auto;
+	font-size: 20px;
+	font-weight: 500;
+	position: relative;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: var(--red-button);
+	}
+}
+
+@media (max-width: 1920px) {
+	.link {
+		@include adaptive-font(20, 12);
+	}
+}
+
+@media (max-width: 820px) {
+	.nav {
+		display: none;
+	}
+
+	.links {
+		display: none;
+	}
+}

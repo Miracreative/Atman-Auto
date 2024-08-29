@@ -3,6 +3,8 @@
 
 .button {
 	border: none;
+	font-size: 20px;
+	font-weight: 500;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 
@@ -29,19 +31,20 @@
 
 .dropdown {
 	position: relative;
+	z-index: 100;
 }
 
-.сontainer {
+.container {
 	opacity: 0;
 	pointer-events: none;
 	background-color: rgb(var(--light-gray-rgb));
 	position: absolute;
 	left: -20px;
-	z-index: 5;
+	z-index: 150;
 	width: max-content;
 }
 
-.сontainerActive {
+.containerActive {
 	opacity: 1;
 	pointer-events: all;
 }
@@ -59,6 +62,7 @@
 
 .link {
 	margin-left: 10px;
+	font-size: 14px;
 	transition: all 0.3s ease-in-out;
 
 	&:hover {
@@ -67,4 +71,44 @@
 }
 
 @media (max-width: 1920px) {
+	.button {
+		// font-size: 20px;
+		@include adaptive-font(20, 12);
+	}
+
+	.triangle {
+		width: calcVW(11);
+		// height: calcVH(9);
+		margin-left: calcVW(5);
+	}
+
+	.container {
+		left: calcVW(-20);
+	}
+
+	.list {
+		margin: calcVH(20) calcVW(20) calcVH(20) calcVW(29);
+
+		& li:not(:last-child) {
+			margin-bottom: calcVH(15);
+		}
+	}
+
+	.link {
+		margin-left: calcVW(10);
+		@include adaptive-font(14, 10);
+	}
+}
+
+@media (max-width: 1200px) {
+	.triangle {
+		width: 7px;
+	}
+}
+
+@media (max-width: 820px) {
+	.container {
+		position: relative;
+		display: none;
+	}
 }
