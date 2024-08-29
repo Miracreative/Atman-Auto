@@ -11,12 +11,21 @@ export default function Algorithm() {
 					<div className={styles.wrap}>
 						<div className={styles.innerWrap}>
 							<h3 className={styles.title}>
-								Алгоритм<span> работы</span>
+								Алгоритм <br className={styles.br} /> <span> работы</span>
 							</h3>
 							<div className={styles.content}>
 								<div className={styles.row}>
 
-									<div className={styles.card}>
+									<div className={styles.card} id={styles.card1}>
+										<div className={styles.arrow}>
+											<Image
+												className={styles.arrowImg}
+												src="/about/Algorithm/arrow.png"
+												alt="arrow"
+												width={30}
+												height={12}
+											/>
+										</div>
 										<div className={styles.cardInner}>
 											<div className={styles.headerCard}>
 												<div className={styles.number}>01</div>
@@ -27,7 +36,16 @@ export default function Algorithm() {
 										</div>
 									</div>
 
-									<div className={styles.card}>
+									<div className={styles.card} id={styles.card2}>
+										<div className={styles.arrow}>
+											<Image
+												className={styles.arrowImg}
+												src="/about/Algorithm/arrow.png"
+												alt="arrow"
+												width={30}
+												height={12}
+											/>
+										</div>
 										<div className={styles.cardInner}>
 											<div className={styles.headerCard}>
 												<div className={styles.number}>02</div>
@@ -62,7 +80,16 @@ export default function Algorithm() {
 										/>
 									</div>
 
-									<div className={styles.card}>
+									<div className={styles.card} id={styles.card3}>
+										<div className={styles.arrow} id={styles.arrow3}>
+											<Image
+												className={styles.arrowImg}
+												src="/about/Algorithm/arrow.png"
+												alt="arrow"
+												width={30}
+												height={12}
+											/>
+										</div>
 										<div className={styles.cardInner}>
 											<div className={styles.headerCard}>
 												<div className={styles.number}>03</div>
@@ -73,7 +100,16 @@ export default function Algorithm() {
 										</div>
 									</div>
 
-									<div className={styles.card}>
+									<div className={styles.card} id={styles.card4}>
+										<div className={styles.arrow} id={styles.arrow4}>
+											<Image
+												className={styles.arrowImg}
+												src="/about/Algorithm/arrow.png"
+												alt="arrow"
+												width={30}
+												height={12}
+											/>
+										</div>
 										<div className={styles.cardInner}>
 											<div className={styles.headerCard}>
 												<div className={styles.number}>04</div>

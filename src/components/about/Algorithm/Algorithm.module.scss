@@ -1,5 +1,9 @@
 @import '../../../scss/functions.scss';
 
+
+.br {
+	display: none;
+}
 .section {
 	padding: 20px 0;
 	border-top: 1px solid #BCBCBC;
@@ -29,43 +33,37 @@
 	width: 100%;
 	height: 350px;
 
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	right: -60px;
+	width: 100px;
+	height: 100px;
+	border-radius: 20px;
+	background-color: #E41F26;
+	transform: translate(0, -50%);
+	z-index: 3;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #BCBCBC;
+}
+
+.row:nth-child(2) .card .arrow {
+	left: -60px;
+
 }
 
 .cardInner {
 	width: 68%;
 }
-
-.card {
-
-  position: relative;
-	&:nth-child(1):after,
-	&:nth-child(2):after {
-	  content: '';
-	  position: absolute;
-	  width: 100px;
-	  height: 100px;
-	  background-color: red;
-	  top: 50%;
-	  right: -40px;
-	  transform: translateY(-50%);
-	}
-  
-	&:nth-child(3):before,
-	&:nth-child(4):before {
-	  content: '';
-	  position: absolute;
-	  width: 100px;
-	  height: 100px;
-	  background-color: red;
-	  top: 50%;
-	  left: -60px;
-	  transform: translateY(-50%);
-	}
-  }
 
 
 .headerCard {
@@ -88,10 +86,6 @@
 }
 
 
-
-// .imgWrap {
-// 	width: 436px;
-// }
 .img {
 	// height: 350px;
 	width: auto;
@@ -127,11 +121,152 @@
 		height: 270px;
 		// width: auto;
 	}
+
+	.arrow {
+		height: 80px;
+		width: 80px;
+		right: -50px;
+	}
+	.row:nth-child(2) .card .arrow {
+		left: -50px;	
+	}
 }
 
 @media (max-width: 1200px) {
+	.card {
+		height: 220px;
+	}
+	.title {
+		margin: 4vh 0;
+	}
+	.row {
+		padding: 0 10px;
+	}
 	.img {
 		display: none;
 	}
+	.arrow {
+		border: none;
+		height: 70px;
+		width: 70px;
+		right: -35px;
+		// &:nth-child(2) {
+		// 	left: -35px;
+		// }	
+	}
+	.arrowImg {
+		height: 9px;
+		width: 24px;
+	}
+	.row:nth-child(2) .card .arrow {
+		left: -35px;
+		// &:nth-child(1) {
+		// 	left: -35px;
+		// }		
+	}
+	// .card:nth-child(2) .arrow {
+	// 	left: -35px;
+	// }
+	// .row:nth-child(2) .card:nth-child(1) .arrow {
+	// 	right: -35px;
+	// }
+}
+
+@media (max-width: 989px) {
+	.titleCard {
+		font-size: 16px;
+
+	}
+	.textCard {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 768px) {
+	.title {
+		font-size: 36px;
+		margin: 10px 0 30px 0;
+		line-height: 0.9;
+	}
+	.titleCard {
+		font-size: 20px;
+		padding-left: 10px;
+	}
+	.textCard {
+		font-size: 14px;
+	}
+	.card {
+		height: 190px;
+		margin-bottom: 10px;
+	}
+	.row {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		margin-bottom: 0;
+		padding: 0 0 0 25px;
+	}
 	
+	.arrow {
+		border: none;
+		height: 50px;
+		width: 50px;
+		right: -25px;
+		border-radius: 10px;
+	}
+
+	
+	.card:nth-child(even) .arrow {
+		left: -25px;
+	}
+	#arrow3 {
+		right: -25px;
+		left: auto;
+	}
+	#arrow4 {
+		left: -25px;
+		right: auto;
+	}
+
+
+	.arrowImg {
+		height: 6px;
+		width: 15px;
+	}
+	.number {
+		font-size: 48px;
+	}
+
+	#card1,
+	#card3 {
+		margin-left: -25px;
+	}
+	#card2,
+	#card4 {
+		margin-right: -25px;
+	}
+}
+
+
+@media (max-width: 576px) {
+	.br {
+		display: block;
+	}
+	.titleCard {
+		font-size: 16px;
+
+	}
+	.textCard {
+		font-size: 10px;
+	}
+
+	.row {
+		display: flex;
+		flex-direction: column;
+	}
+	
+
+	.number {
+		font-size: 48px;
+	}
 }
