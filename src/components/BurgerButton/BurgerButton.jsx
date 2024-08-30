@@ -18,7 +18,7 @@ import styles from './BurgerButton.module.scss';
 const BurgerButton = ({ isActive, toggleMenu }) => {
 	return (
 		<button
-			className={isActive ? `${styles.button} ${styles.active}` : styles.button}
+			className={`${styles.button} ${isActive ? styles.active : ''}`}
 			onClick={toggleMenu}
 		>
 			<div className={styles.lineWrapper}>
