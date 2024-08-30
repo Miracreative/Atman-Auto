@@ -32,7 +32,10 @@ export default function Header() {
 			<Link className={styles.number} href="tel:+78002505526">
 				8-800-250-55-26
 			</Link>
-			<BurgerButton toggleMenu={toggleMenu}></BurgerButton>
+			<BurgerButton
+				isActive={menuActive}
+				toggleMenu={toggleMenu}
+			></BurgerButton>
 			<BurgerMenu
 				isActive={menuActive}
 				setActive={setMenuActive}
