@@ -1,0 +1,59 @@
+@import '../../scss/functions.scss';
+
+
+.section {
+	border-bottom: 1px solid rgb(var(--gray-line-rgb));
+	border-top: 1px solid rgb(var(--gray-line-rgb));
+	color: white;
+	position: relative;
+}
+
+.triangleImg {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: auto;
+	z-index: -1;
+}
+
+.wrap {
+	border-radius: 20px;
+	margin: 20px 0;
+	background: rgb(var(--foreground-rgb)) 
+	url('../../../public/PageTitle/background-dots.png') center / cover no-repeat;
+	border: 1px solid rgb(var(--gray-line-rgb));
+	z-index: -2;
+	position: relative;
+}
+
+.wrapInner {
+	margin-left: 4vw;
+	margin-top: 60px;
+	position: relative; // абсолют накинуть, как опция
+	// top: 0;
+	z-index: 5;
+}
+
+.breadcrumbs {
+	font-size: 10px;
+}
+
+.title {
+	font-size: 96px;
+	font-weight: 700;
+	line-height: 0.9;
+	margin: 50px 10px 40px 0;
+	& span {
+		color: rgb(var(--red-rgb));
+	}
+}
+
+
+
+
+
+@media (max-width: 1920px) {
+	.title {
+		font-size: calcVW(96);
+	}
+}
