@@ -2,11 +2,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	// height: 100%;
 	height: calc(100% - 70px);
 	overflow-y: auto;
 	flex: 1;
-
 	background-color: var(--white);
 }
 
@@ -15,8 +13,6 @@
 	padding: 50px 10px 0 20px;
 	display: flex;
 	flex-direction: column;
-	// flex: 1;
-	// flex-grow: 1;
 }
 
 .link {
@@ -48,21 +44,3 @@
 		}
 	}
 }
-
-// @media (max-width: 350px) {
-// 	.socialLink {
-// 		svg {
-// 			width: 38px;
-// 			height: 38px;
-// 		}
-// 	}
-// }
-
-// @media (max-width: 320px) {
-// 	.socialLink {
-// 		svg {
-// 			width: 36px;
-// 			height: 36px;
-// 		}
-// 	}
-// }

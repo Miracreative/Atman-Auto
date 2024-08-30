@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 import AccordionItem from '../AccordionItem/AccordionItem';
-import { menuItems } from '@/data/menuItems';
 
+import { menuItems } from '@/data/menuItems';
 import socialLinks from '@/config/socialLinks';
 
 import styles from './Accordion.module.scss';

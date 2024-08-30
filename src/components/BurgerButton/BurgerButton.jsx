@@ -1,18 +1,3 @@
-// import styles from './BurgerButton.module.scss';
-
-// const BurgerButton = ({ isActive, toggleMenu }) => {
-// 	return (
-// 		<button
-// 			className={isActive ? `${styles.button} ${styles.active}` : styles.button}
-// 			onClick={toggleMenu}
-// 		>
-// 			<span></span>
-// 		</button>
-// 	);
-// };
-
-// export default BurgerButton;
-
 import styles from './BurgerButton.module.scss';
 
 const BurgerButton = ({ isActive, toggleMenu }) => {

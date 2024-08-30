@@ -1,9 +1,10 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
+
 import img from '/public/burger-menu/burger-menu-background.png';
 import Accordion from '../Accordion/Accordion';
+
 import styles from './BurgerMenu.module.scss';
-import global from '../../scss/_globals.scss';
-import { useEffect } from 'react';
 
 const BurgerMenu = ({ isActive, setActive }) => {
 	useEffect(() => {
