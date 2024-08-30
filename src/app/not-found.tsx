@@ -15,7 +15,7 @@ export default function NotFound() {
 			<p className={styles.code}>404</p>
 			<h2 className={styles.title}>Страница не найдена</h2>
 			<p className={styles.description}>Не удалось найти запрошенный ресурс</p>
-			<button className={styles.button} onClick={handleButtonClick}>
+			<button className={`${styles.button} button`} onClick={handleButtonClick}>
 				На главную
 			</button>
 		</div>
