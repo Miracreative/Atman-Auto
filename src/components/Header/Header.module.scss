@@ -44,8 +44,10 @@
 		padding: 0 10px;
 		justify-content: space-between;
 		position: fixed;
+		top: 0;
+		left: 0;
 		z-index: 50;
-		height: 70px;
+		height: var(--header-and-backdrop-height);
 		background-color: rgb(var(--light-gray-rgb));
 	}
 

@@ -2,10 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import HeaderNav from '../HeaderNav/HeaderNav';
-import BurgerMenu from './../BurgerMenu/BurgerMenu';
-import BurgerButton from './../BurgerButton/BurgerButton';
+
 import HeaderLogo from '../HeaderLogo/HeaderLogo';
+import HeaderNav from '../HeaderNav/HeaderNav';
+import BurgerButton from './../BurgerButton/BurgerButton';
+import BurgerMenu from './../BurgerMenu/BurgerMenu';
+
+import { contacts } from '../../data/contacts';
+
 import styles from './Header.module.scss';
 
 export default function Header() {
@@ -29,8 +33,8 @@ export default function Header() {
 				toggleDropdown={toggleDropdown}
 				activeDropdown={activeDropdown}
 			/>
-			<Link className={styles.number} href="tel:+78002505526">
-				8-800-250-55-26
+			<Link className={styles.number} href={`tel:${contacts.phone}`}>
+				{contacts.phone}
 			</Link>
 			<BurgerButton
 				isActive={menuActive}

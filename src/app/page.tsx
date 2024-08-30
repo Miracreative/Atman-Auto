@@ -1,7 +1,6 @@
 // import Image from 'next/image';
 // import styles from './page.module.css';
 
-import HeaderBackdrop from './../components/HeaderBackdrop/HeaderBackdrop';
 import Header from './../components/Header/Header';
 import Catalog from './../components/Catalog/Catalog';
 import Decisions from './../components/Decisions/Decisions';
@@ -17,8 +16,6 @@ export default function Home() {
 		<>
 			<Header></Header>
 			<main>
-				{/* HeaderBackdrop - временный компонент */}
-				<HeaderBackdrop></HeaderBackdrop>
 				<Catalog></Catalog>
 				<Decisions></Decisions>
 				<ProductionCapabilities></ProductionCapabilities>
