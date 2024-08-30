@@ -79,6 +79,7 @@
 
 .logo {
 	margin-bottom: 40px;
+	height: auto;
 }
 
 .titleCard::after {
@@ -89,19 +90,20 @@
 
 	width: 140px;
 	height: 2px;
+	// background-color: #E41F26;
+}
+
+#titleAtman::after {
 	background-color: #E41F26;
 }
 
-.titleCard:nth-child(2)::after {
-	background-color: #FFAF02;
-}
-
-.titleCard:last-child:after {
+#titleKCE::after {
 	background-color: #FD671A;
 }
 
-
-
+#titleDL::after {
+	background-color: #FFAF02;
+}
 
 
 
@@ -121,6 +123,7 @@
 	.textLastCard {
 		font-size: calcVW(20);
 	}
+
 }
 
 @media (max-width: 1200px) {
@@ -144,20 +147,19 @@
 		font-size: 20px;
 		width: 80%;
 	}
+
 }
 
 
 @media (max-width: 768px) {
-	.titleCard::after {
-		display: none;
-	}
+
 	.wrap {
 		padding: 10px;
 	}
 
 	.titleContainer {
 		margin-bottom: 10px;
-		padding: 30px 5px 20px 15px;
+		padding: 20px 10px 20px 15px;
 	}
 
 	.title {
@@ -176,11 +178,37 @@
 	}
 
 	.cardContent {
-		margin: 30px 15px;
+		margin: 30px 5px 30px 15px;
+		width: auto;
+	}
+
+	.logo {
+		margin-bottom: 20px;
+	}
+
+	#logoAtman {
+		width: 133px;
+		height: 28px;
+	}
+	
+	#logoKCE {
+		width: 93px;
+		height: 38px;
+	}
+	
+	#logoDL {
+		width: 177px;
+		height: 28px;
 	}
 
 	.titleCard {
 		font-size: 20px;
+		margin-bottom: 25px;
+	}
+
+	.titleCard::after {
+		width: 80px;
+		bottom: -15px;
 	}
 
 	.textCard {
@@ -189,5 +217,7 @@
 
 	.textLastCard {
 		font-size: 12px;
+		margin: 30px 5px 30px 15px;
+		width: auto;
 	}
 }

@@ -24,6 +24,7 @@ export default function Delivery() {
 										<div className={styles.imgWrap}>
 											<Image
 												className={styles.logo}
+												id={styles.logoAtman}
 												src="/about/Delivery/atman-white-logo.png"
 												alt="logo"
 												width={337}
@@ -31,7 +32,7 @@ export default function Delivery() {
 											/>
 										</div>
 
-										<div className={styles.titleCard}>Доставка транспортом <br /> "Атман-АВТО"</div>
+										<div className={styles.titleCard} id={styles.titleAtman}>Доставка транспортом <br /> "Атман-АВТО"</div>
 										<div className={styles.textCard}>Доставка транспортом "Атман-АВТО" осуществляется, при условии* заказа более 30 000 руб. или весом более 30 кг. по г. Москва, Тула, Новомосковск, Рязань, Калуга.</div>
 									</div>
 
@@ -44,6 +45,7 @@ export default function Delivery() {
 										<div className={styles.imgWrap}>
 											<Image
 												className={styles.logo}
+												id={styles.logoKCE}
 												src="/about/Delivery/kce-logo.png"
 												alt="logo"
 												width={175}
@@ -51,7 +53,7 @@ export default function Delivery() {
 											/>
 										</div>
 
-										<div className={styles.titleCard}>Доставка курьером</div>
+										<div className={styles.titleCard} id={styles.titleKCE}>Доставка курьером</div>
 										<div className={styles.textCard}>Этот способ доставки удобен, для небольших партий товара весом до 30 кг. После 100% предоплаты и согласования с вами стоимости доставки, ваш заказ передается в службу курьерской доставки "Курьер сервис". Представитель компании, позвонит вам и согласует удобное для вас время доставки. Оплата за доставку осуществляется курьеру, при получении товара.</div>
 									</div>
 
@@ -64,6 +66,7 @@ export default function Delivery() {
 										<div className={styles.imgWrap}>
 											<Image
 												className={styles.logo}
+												id={styles.logoDL}
 												src="/about/Delivery/delovieLinii-logo.png"
 												alt="logo"
 												width={455}
@@ -71,7 +74,7 @@ export default function Delivery() {
 											/>
 										</div>
 
-										<div className={styles.titleCard}>Доставка транспортной <br />компанией</div>
+										<div className={styles.titleCard} id={styles.titleDL}>Доставка транспортной <br />компанией</div>
 										<div className={styles.textCard}>Доставка осуществляется транспортной компанией "Деловые линии". Стоимость доставки вы можете рассчитать при помощи онлайн калькулятора . При заказе на сумму более 50 000 руб. с НДС, доставка осуществляется бесплатно* (до терминала транспортной компании "Деловые линии" в вашем городе ). Если у вас нет возможности принять груз транспортной компаний "Деловые линии", мы доставим ваш заказ любой другой транспортной компанией.</div>
 									</div>
 
