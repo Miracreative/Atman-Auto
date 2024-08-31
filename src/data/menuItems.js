@@ -73,3 +73,13 @@ export const menuItems = {
 		],
 	},
 };
+
+export const dropdownItems = [
+	{ key: 'about', title: menuItems.about.title, items: menuItems.about.items },
+	{
+		key: 'applications',
+		title: menuItems.applications.title,
+		items: menuItems.applications.items,
+	},
+	{ key: 'goods', title: menuItems.goods.title, items: menuItems.goods.items },
+];
