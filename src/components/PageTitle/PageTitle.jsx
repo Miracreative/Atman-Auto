@@ -12,13 +12,20 @@ export default function PageTitle({ title, text }) {
 					{/* </div> */}
 
 					<div className={styles.wrap}>
-						{/* <Image
-							className={styles.triangleImgMob}
-							src="/PageTitle/mobile-triangles.svg"
+						<Image
+							className={styles.triangleImg}
+							src="/PageTitle/triangles-geo.png"
 							alt="img"
-							width={318}
-							height={275}
-						/> */}
+							width={942}
+							height={498}
+						/>
+						<Image
+							className={styles.triangleImgMob}
+							src="/PageTitle/triangles-mobile.png"
+							alt="img"
+							width={240}
+							height={177}
+						/>
 						<div className={styles.wrapInner}>
 
 							<div className={styles.breadcrumbs}>хлебные крошки == еще больше крошек</div>
