@@ -3,8 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-// import { useClickOutside } from '../../hooks/useClickOutside';
-
 import HeaderLogo from '../HeaderLogo/HeaderLogo';
 import HeaderNav from '../HeaderNav/HeaderNav';
 import BurgerButton from './../BurgerButton/BurgerButton';
@@ -19,12 +17,6 @@ export default function Header() {
 	const [menuActive, setMenuActive] = useState(false);
 	const [isVisible, setIsVisible] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
-
-	// const menuRef = useRef(null);
-
-	// useClickOutside(menuRef, () => {
-	// 	if (activeDropdown) setTimeout(() => setActiveDropdown(false), 50);
-	// });
 
 	const toggleDropdown = (name) => {
 		setActiveDropdown((prevActiveDropdown) =>
@@ -66,7 +58,6 @@ export default function Header() {
 			<HeaderNav
 				toggleDropdown={toggleDropdown}
 				activeDropdown={activeDropdown}
-				// menuRef={menuRef}
 			/>
 			<Link className={styles.number} href={`tel:${contacts.phone}`}>
 				{contacts.phone}

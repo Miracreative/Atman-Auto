@@ -1,7 +1,7 @@
 // Mixin for adaptive fonts
 $maxWidth: 1920;
 $minWidthDesctop: 768;
-$minWidthMobile: 375;
+$minWidthMobile: 320;
 
 @mixin adaptive-font($pcSize, $tabletSize) {
 	$addSize: $pcSize - $tabletSize;
