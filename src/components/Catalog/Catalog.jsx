@@ -33,8 +33,6 @@ export default function Catalog() {
 									className={styles.imageMobile}
 									src={CatalogImageMobile}
 									alt="Процесс применения самоклеющейся ленты"
-									// layout="auto"
-									// objectFit="cover"
 									priority
 								/>
 								<button
@@ -47,8 +45,6 @@ export default function Catalog() {
 									className={styles.bg}
 									src={CatalogBG}
 									alt="Установка для наматывания самоклеющейся ленты"
-									// layout="fill"
-									// objectFit="cover"
 									priority
 								/>
 							</div>
@@ -63,8 +59,6 @@ export default function Catalog() {
 							quality={100}
 							layout="fill"
 							objectFit="cover"
-							// sizes="100vw"
-							// style={{ width: 'auto', objectFit: 'cover' }}
 							priority
 						/>
 					</div>

@@ -17,7 +17,7 @@
 
 .contentContainer {
 	flex: 1;
-	position: relative; /* Убедитесь, что это есть */
+	position: relative;
 	background-image: url(../../../public/catalog/catalog-bg.png);
 	background-repeat: no-repeat;
 	border-top-left-radius: var(--border-radius);
@@ -97,15 +97,9 @@
 
 	.content {
 		background-color: transparent;
-		// background-image: url(../../../public/catalog/catalog-bg.png);
-		// background-size: 20%;
-		// background-size: auto 100%;
-		// background-repeat: no-repeat;
-		// background-position: right top;
 		position: relative;
 		padding: 30px 0 0 0;
 		border-radius: var(--border-radius);
-
 		height: 100%;
 	}
 
@@ -119,8 +113,6 @@
 		padding-left: 15px;
 		padding-right: 40%;
 		margin-bottom: 50px;
-
-		// font-size: 14px;
 	}
 
 	.blur {
@@ -157,47 +149,22 @@
 	.imageContainer {
 		display: none;
 	}
-
-	.button {
-		font-size: 16px;
-	}
 }
 
 @media (max-width: 480px) {
 	.title {
-		// padding-left: 15px;
-		// max-width: 100%;
 		padding-right: 20%;
 	}
 
 	.description {
-		// padding-left: 15px;
 		padding-right: 20%;
-		// margin-bottom: 50px;
-		// font-size: 14px;
 	}
 
 	.bg {
 		width: 20%;
-		// height: 100%;
-		// display: block;
-		// position: absolute;
-		// right: 0;
-		// top: 0;
-		// border-top-right-radius: var(--border-radius);
-		// border-bottom-right-radius: var(--border-radius);
-		// border-left: 1px solid #bcbcbc;
-		// object-fit: cover;
-		// z-index: -1;
 	}
 
 	.button {
-		// box-sizing: border-box;
-		// width: 100%;
-		// margin: 0;
-		// margin-bottom: 10px;
-		// margin-right: 20px;
-
 		width: calc(100% - 20px);
 		margin: 0 10px 10px;
 		box-sizing: border-box;

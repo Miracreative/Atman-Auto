@@ -113,7 +113,7 @@ export default function Accordion() {
 					</Link>
 				</li>
 
-				{/* <Link href={socialLinks.drive2} className={styles.socialLink}>
+				<Link href={socialLinks.drive2} className={styles.socialLink}>
 					<svg
 						width="50"
 						height="50"
@@ -129,7 +129,7 @@ export default function Accordion() {
 							fill={'var(--white)'}
 						/>
 					</svg>
-				</Link> */}
+				</Link>
 			</ul>
 		</nav>
 	);
