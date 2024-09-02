@@ -7,14 +7,18 @@ export default function PageTitle({ title, text }) {
 		<>
 			<section className={styles.section}>
 				<div className="container">
-					<Image
-						className={styles.triangleImg}
-						src="/PageTitle/triangles.svg"
-						alt="img"
-						width={1080}
-						height={412}
-					/>
+					{/* <div className={styles.imgWrap}> */}
+
+					{/* </div> */}
+
 					<div className={styles.wrap}>
+						{/* <Image
+							className={styles.triangleImgMob}
+							src="/PageTitle/mobile-triangles.svg"
+							alt="img"
+							width={318}
+							height={275}
+						/> */}
 						<div className={styles.wrapInner}>
 
 							<div className={styles.breadcrumbs}>хлебные крошки == еще больше крошек</div>

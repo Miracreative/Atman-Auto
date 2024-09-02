@@ -6,32 +6,56 @@
 	border-top: 1px solid rgb(var(--gray-line-rgb));
 	color: white;
 	position: relative;
+	z-index: 1;
+	min-width: 320px;
+	// padding: 20px 0;
 }
 
-.triangleImg {
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: auto;
-	z-index: -1;
-}
+// .triangleImg {
+// 	position: absolute;
+// 	right: 0;
+// 	top: 0;
+// 	object-fit: cover;
+// 	height: 100%;
+// 	width: auto;
+// 	height: auto;
+// 	z-index: -1;
+// 	max-width: 100%;
+// 	max-height: 100%; 
+// 	min-height: 100%; 
+
+// 	// margin-top: 20px;
+// 	// padding-top: -20px;
+// 	// margin-bottom: 20px;
+// 	// padding-bottom: -20px;
+
+// }
 
 .wrap {
+	min-width: 300px;
 	border-radius: 20px;
-	margin: 20px 0;
-	background: rgb(var(--foreground-rgb)) 
-	url('../../../public/PageTitle/background-dots.png') center / cover no-repeat;
-	border: 1px solid rgb(var(--gray-line-rgb));
-	z-index: -2;
-	position: relative;
+	// padding: 20px 0;
+	// background: rgb(var(--foreground-rgb)) 
+	// url('../../../public/PageTitle/background-dots.png') center / cover no-repeat;
+	// border: 1px solid rgb(var(--gray-line-rgb));
+
+	// background: url('../../../public/PageTitle/background-title-group.png') center / cover no-repeat;
+	background: url('../../../public/PageTitle/background-group.png') center no-repeat;
+	object-fit: contain;
+	background-size: 100% 100%;
+	// z-index: -2;
+	// position: relative;
 }
 
 .wrapInner {
-	margin-left: 4vw;
-	margin-top: 60px;
-	position: relative; // абсолют накинуть, как опция
-	// top: 0;
-	z-index: 5;
+	padding-left: 4vw;
+	padding-top: 60px;
+	padding-bottom: 80px;
+
+}
+
+.content {
+	width: 75%;
 }
 
 .breadcrumbs {
@@ -48,6 +72,15 @@
 	}
 }
 
+.text {
+	font-size: 32px;
+
+}
+
+.triangleImgMob {
+	display: none;
+}
+
 
 
 
@@ -55,5 +88,69 @@
 @media (max-width: 1920px) {
 	.title {
 		font-size: calcVW(96);
+	}
+	.text {
+		font-size: calcVW(32);
+	}
+}
+
+
+@media (max-width: 768px) {
+	.title {
+		font-size: 36px;
+	}
+	.text {
+		font-size: 14px;
+	}
+}
+
+
+@media (max-width: 715px) {
+	.content {
+		width: auto;
+	}
+}
+
+@media (max-width: 576px) {
+	.title {
+		font-size: 36px;
+		margin: 0 0 10px 0;
+	}
+	
+	.text {
+		font-size: 20px;
+	}
+	.breadcrumbs {
+		display: none;
+	}
+	.wrap {
+		
+		// margin: 10px 0;
+		// background: rgb(var(--foreground-rgb)) 
+		// url('../../../public/PageTitle/mobile-background-dots.png') center / cover no-repeat;
+		// border: 1px solid rgb(var(--gray-line-rgb));
+
+		background: url('../../../public/PageTitle/mobile-backgroundGroup.png') center no-repeat;
+		object-fit: contain;
+		background-size: 100% 100%;
+		margin-top: 10px;
+		border-radius: 0;
+	}
+	.wrapInner {
+		padding: 40px 15px;
+	}
+	.content {
+		// width: auto;
+		position: relative;
+		z-index: 3;
+	}
+
+	.triangleImgMob {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 10px;
+		height: 55%;
+		width: auto;
 	}
 }
