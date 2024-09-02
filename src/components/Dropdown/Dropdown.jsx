@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import styles from './Dropdown.module.scss';
 
-const Dropdown = ({ title, items, isOpen, toggleOpen }) => {
+const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 	return (
-		<div className={styles.dropdown}>
+		<div className={styles.dropdown} ref={menuRef}>
 			<button
 				className={`${styles.button} ${isOpen ? styles.buttonActive : ''}`}
 				onClick={toggleOpen}

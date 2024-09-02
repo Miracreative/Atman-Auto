@@ -1,9 +1,20 @@
 import styles from './BurgerButton.module.scss';
 
-const BurgerButton = ({ toggleMenu }) => {
+const BurgerButton = ({ isActive, toggleMenu }) => {
 	return (
-		<button className={styles.button} onClick={toggleMenu}>
-			<span></span>
+		<button
+			className={`${styles.button} ${isActive ? styles.active : ''}`}
+			onClick={toggleMenu}
+		>
+			<div className={styles.lineWrapper}>
+				<span className={styles.line}></span>
+			</div>
+			<div className={styles.lineWrapper}>
+				<span className={styles.line}></span>
+			</div>
+			<div className={styles.lineWrapper}>
+				<span className={styles.line}></span>
+			</div>
 		</button>
 	);
 };

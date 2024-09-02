@@ -1,16 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import HeaderNav from '../HeaderNav/HeaderNav';
-import BurgerMenu from './../BurgerMenu/BurgerMenu';
-import BurgerButton from './../BurgerButton/BurgerButton';
+
 import HeaderLogo from '../HeaderLogo/HeaderLogo';
+import HeaderNav from '../HeaderNav/HeaderNav';
+import BurgerButton from './../BurgerButton/BurgerButton';
+import BurgerMenu from './../BurgerMenu/BurgerMenu';
+
+import { contacts } from '../../data/contacts';
+
 import styles from './Header.module.scss';
 
 export default function Header() {
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [menuActive, setMenuActive] = useState(false);
+	const [isVisible, setIsVisible] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
 
 	const toggleDropdown = (name) => {
 		setActiveDropdown((prevActiveDropdown) =>
@@ -22,17 +28,44 @@ export default function Header() {
 		setMenuActive((prevMenuActive) => !prevMenuActive);
 	};
 
+	const handleScroll = () => {
+		const currentScrollY = window.scrollY;
+
+		if (currentScrollY > 200) {
+			if (currentScrollY > lastScrollY) {
+				setIsVisible(false);
+			} else {
+				setIsVisible(true);
+			}
+		} else {
+			setIsVisible(true);
+		}
+
+		setLastScrollY(currentScrollY);
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [lastScrollY]);
+
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} ${!isVisible ? styles.hidden : ''}`}>
 			<HeaderLogo />
 			<HeaderNav
 				toggleDropdown={toggleDropdown}
 				activeDropdown={activeDropdown}
 			/>
-			<Link className={styles.number} href="tel:+78002505526">
-				8-800-250-55-26
+			<Link className={styles.number} href={`tel:${contacts.phone}`}>
+				{contacts.phone}
 			</Link>
-			<BurgerButton toggleMenu={toggleMenu}></BurgerButton>
+			<BurgerButton
+				isActive={menuActive}
+				toggleMenu={toggleMenu}
+			></BurgerButton>
 			<BurgerMenu
 				isActive={menuActive}
 				setActive={setMenuActive}

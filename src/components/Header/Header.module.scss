@@ -5,9 +5,9 @@
 	width: 100%;
 	height: 140px;
 	display: flex;
-	// display: ;
 	align-items: center;
 	border-bottom: 1px solid rgb(var(--gray-line-rgb));
+	transition: transform 0.3s ease-in-out;
 }
 
 .number {
@@ -45,10 +45,15 @@
 		padding: 0 10px;
 		justify-content: space-between;
 		position: fixed;
+		top: 0;
+		left: 0;
 		z-index: 50;
-		height: 70px;
-		// height: calcVH(70);
+		height: var(--header-and-backdrop-height);
 		background-color: rgb(var(--light-gray-rgb));
+	}
+
+	.hidden {
+		transform: translateY(-100%);
 	}
 
 	.number {
