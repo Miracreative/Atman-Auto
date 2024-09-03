@@ -14,17 +14,17 @@ import Footer from './../components/Footer/Footer';
 export default function Home() {
 	return (
 		<>
-			<Header></Header>
-			<main>
-				<Catalog></Catalog>
-				<Decisions></Decisions>
-				<ProductionCapabilities></ProductionCapabilities>
-				<Products></Products>
-				<News></News>
-				<Team></Team>
-				<Map></Map>
-			</main>
-			<Footer></Footer>
+			{/* <Header></Header> */}
+			{/* <main> */}
+			<Catalog></Catalog>
+			<Decisions></Decisions>
+			<ProductionCapabilities></ProductionCapabilities>
+			<Products></Products>
+			<News></News>
+			<Team></Team>
+			<Map></Map>
+			{/* </main> */}
+			{/* <Footer></Footer> */}
 		</>
 		// <main className={styles.main}>
 		// 	<div className={styles.description}>
