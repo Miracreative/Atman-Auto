@@ -1,8 +1,8 @@
-import styles from './PageTitle.module.scss';
+import styles from './PageTitleProduction.module.scss';
 import Image from 'next/image';
 
 
-export default function PageTitle({ title, text }) {
+export default function PageTitleProduction({ title, text }) {
 	return (
 		<>
 			<section className={styles.section}>
