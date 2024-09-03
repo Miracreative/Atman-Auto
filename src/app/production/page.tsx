@@ -1,14 +1,14 @@
-import PageTitle from './../../components/PageTitle/PageTitle.jsx';
+import PageTitleProduction from './../../components/production/PageTitleProduction/PageTitleProduction.jsx';
 
 export default function Production() {
 	return (
 		<>
 
 			<h1>Production page</h1>
-			<PageTitle
+			<PageTitleProduction
 				title={<div>Производственные  <span>возможности</span></div>}
 
-				text='Адаптация клейких лент и самоклеящихся материалов для вашего производства - это наша работа'></PageTitle>
+				text='Адаптация клейких лент и самоклеящихся материалов для вашего производства - это наша работа'></PageTitleProduction>
 
 
 		</>

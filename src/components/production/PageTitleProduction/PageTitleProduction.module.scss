@@ -1,4 +1,4 @@
-@import '../../scss/functions.scss';
+@import '../../../scss/functions.scss';
 
 
 .section {
@@ -20,7 +20,7 @@
 	border-radius: 20px;
 	// padding: 20px 0;
 	background: rgb(var(--foreground-rgb)) 
-	url('../../../public/PageTitle/background-dots.png') center / cover no-repeat;
+	url('../../../../public/PageTitle/background-dots.png') center / cover no-repeat;
 	border: 1px solid rgb(var(--gray-line-rgb));
 
 	// background: url('../../../public/PageTitle/background-title-group.png') center / cover no-repeat;
@@ -141,7 +141,7 @@
 	}
 
 	.title {
-		font-size: 36px;
+		font-size: 24px;
 		margin: 0 0 10px 0;
 	}
 	
@@ -154,7 +154,7 @@
 	.wrap {
 		padding: 0;		
 		background: rgb(var(--foreground-rgb)) 
-		url('../../../public/PageTitle/mobile-background-dots.png') center / cover no-repeat;
+		url('../../../../public/PageTitle/mobile-background-dots.png') center / cover no-repeat;
 		border: 1px solid rgb(var(--gray-line-rgb));
 
 		// background: url('../../../public/PageTitle/mobile-backgroundGroup.png') center no-repeat;
