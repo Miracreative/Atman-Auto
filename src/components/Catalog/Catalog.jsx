@@ -4,7 +4,8 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import CatalogImage from '/public/catalog/catalog-image.png';
 import CatalogImageMobile from '/public/catalog/catalog-image-mobile.png';
-import CatalogBG from '/public/catalog/catalog-bg.png';
+// import CatalogBG from '/public/catalog/catalog-bg.png';
+import CatalogBGMobile from '/public/catalog/catalog-bg-mobile.png';
 
 import styles from './Catalog.module.scss';
 
@@ -33,6 +34,7 @@ export default function Catalog() {
 									className={styles.imageMobile}
 									src={CatalogImageMobile}
 									alt="Процесс применения самоклеющейся ленты"
+									quality={100}
 									priority
 								/>
 								<button
@@ -41,10 +43,21 @@ export default function Catalog() {
 								>
 									Каталог
 								</button>
-								<Image
+								{/* <Image
 									className={styles.bg}
 									src={CatalogBG}
+									alt="Процесс применения самоклеющейся ленты"
+									placeholder="blur"
+									quality={100}
+									layout="fill"
+									objectFit="cover"
+									priority
+								/> */}
+								<Image
+									className={styles.bg}
+									src={CatalogBGMobile}
 									alt="Установка для наматывания самоклеющейся ленты"
+									quality={100}
 									priority
 								/>
 							</div>
