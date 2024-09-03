@@ -5,6 +5,7 @@ import Image from 'next/image';
 import CatalogImage from '/public/catalog/catalog-image.png';
 import CatalogImageMobile from '/public/catalog/catalog-image-mobile.png';
 import CatalogBG from '/public/catalog/catalog-bg.png';
+import CatalogBGMobile from '/public/catalog/catalog-bg-mobile.png';
 
 import styles from './Catalog.module.scss';
 
@@ -43,7 +44,7 @@ export default function Catalog() {
 								</button>
 								<Image
 									className={styles.bg}
-									src={CatalogBG}
+									src={CatalogBGMobile}
 									alt="Установка для наматывания самоклеющейся ленты"
 									priority
 								/>
