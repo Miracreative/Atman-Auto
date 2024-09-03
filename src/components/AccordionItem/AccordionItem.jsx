@@ -5,7 +5,13 @@ import TriangleIcon from '../TriangleIcon/TriangleIcon';
 
 import styles from './AccordionItem.module.scss';
 
-export default function AccordionItem({ onClick, isOpen, title, items }) {
+export default function AccordionItem({
+	onClick,
+	isOpen,
+	title,
+	items,
+	setActive,
+}) {
 	const itemRef = useRef(null);
 
 	return (
@@ -35,7 +41,11 @@ export default function AccordionItem({ onClick, isOpen, title, items }) {
 					<ul className={styles.list}>
 						{items.map((item, index) => (
 							<li key={index}>
-								<Link href={item.href} className={styles.link}>
+								<Link
+									href={item.href}
+									className={styles.link}
+									onClick={() => setActive(false)}
+								>
 									{item.text}
 								</Link>
 							</li>

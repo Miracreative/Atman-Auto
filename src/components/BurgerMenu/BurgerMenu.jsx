@@ -25,7 +25,7 @@ const BurgerMenu = ({ isActive, setActive }) => {
 				style={{ objectFit: 'cover' }}
 				priority
 			/>
-			<Accordion />
+			<Accordion setActive={setActive} />
 		</div>
 	);
 };
