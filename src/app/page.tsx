@@ -1,7 +1,7 @@
 // import Image from 'next/image';
 // import styles from './page.module.css';
 
-import Header from './../components/Header/Header';
+// import Header from './../components/Header/Header';
 import Catalog from './../components/Catalog/Catalog';
 import Decisions from './../components/Decisions/Decisions';
 import ProductionCapabilities from './../components/ProductionСapabilities/ProductionСapabilities';
@@ -9,7 +9,7 @@ import Products from './../components/Products/Products';
 import News from './../components/News/News';
 import Team from './../components/Team/Team';
 import Map from './../components/Map/Map';
-import Footer from './../components/Footer/Footer';
+// import Footer from './../components/Footer/Footer';
 
 export default function Home() {
 	return (
@@ -26,6 +26,7 @@ export default function Home() {
 			{/* </main> */}
 			{/* <Footer></Footer> */}
 		</>
+
 		// <main className={styles.main}>
 		// 	<div className={styles.description}>
 		// 		<p>

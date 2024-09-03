@@ -4,11 +4,11 @@ import Link from 'next/link';
 import AccordionItem from '../AccordionItem/AccordionItem';
 
 import { menuItems } from '@/data/menuItems';
-import socialLinks from '@/config/socialLinks';
+import socialLinks from '@/data/socialLinks';
 
 import styles from './Accordion.module.scss';
 
-export default function Accordion() {
+export default function Accordion({ setActive }) {
 	const [openId, setOpenId] = useState(null);
 
 	return (
@@ -23,23 +23,34 @@ export default function Accordion() {
 							key={id}
 							title={menuItem.title}
 							items={menuItem.items}
+							setActive={setActive}
 						/>
 					);
 				})}
 				<li className={styles.link}>
-					<Link href="/production">Производство</Link>
+					<Link href="/production" onClick={() => setActive(false)}>
+						Производство
+					</Link>
 				</li>
 				<li className={styles.link}>
-					<Link href="/knowledge">База знаний</Link>
+					<Link href="/knowledge" onClick={() => setActive(false)}>
+						База знаний
+					</Link>
 				</li>
 				<li className={styles.link}>
-					<Link href="/news">Новости</Link>
+					<Link href="/news" onClick={() => setActive(false)}>
+						Новости
+					</Link>
 				</li>
 			</ul>
 
 			<ul className={styles.socialLinks}>
 				<li>
-					<Link href={socialLinks.vkontakte} className={styles.socialLink}>
+					<Link
+						href={socialLinks.vkontakte}
+						className={styles.socialLink}
+						target="_blank"
+					>
 						<svg
 							width="50"
 							height="50"
@@ -58,7 +69,11 @@ export default function Accordion() {
 					</Link>
 				</li>
 				<li>
-					<Link href={socialLinks.youtube} className={styles.socialLink}>
+					<Link
+						href={socialLinks.youtube}
+						className={styles.socialLink}
+						target="_blank"
+					>
 						<svg
 							width="50"
 							height="50"
@@ -77,7 +92,11 @@ export default function Accordion() {
 					</Link>
 				</li>
 				<li>
-					<Link href={socialLinks.telegram} className={styles.socialLink}>
+					<Link
+						href={socialLinks.telegram}
+						className={styles.socialLink}
+						target="_blank"
+					>
 						<svg
 							width="50"
 							height="50"
@@ -96,7 +115,11 @@ export default function Accordion() {
 					</Link>
 				</li>
 				<li>
-					<Link href={socialLinks.dzen} className={styles.socialLink}>
+					<Link
+						href={socialLinks.dzen}
+						className={styles.socialLink}
+						target="_blank"
+					>
 						<svg
 							width="50"
 							height="50"
@@ -113,7 +136,11 @@ export default function Accordion() {
 					</Link>
 				</li>
 
-				<Link href={socialLinks.drive2} className={styles.socialLink}>
+				<Link
+					href={socialLinks.drive2}
+					className={styles.socialLink}
+					target="_blank"
+				>
 					<svg
 						width="50"
 						height="50"

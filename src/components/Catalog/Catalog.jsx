@@ -33,7 +33,7 @@ export default function Catalog() {
 								<Image
 									className={styles.imageMobile}
 									src={CatalogImageMobile}
-									alt="Процесс применения самоклеющейся ленты"
+									alt="Процесс применения самоклеящейся ленты"
 									quality={100}
 									priority
 								/>
@@ -46,7 +46,7 @@ export default function Catalog() {
 								{/* <Image
 									className={styles.bg}
 									src={CatalogBG}
-									alt="Процесс применения самоклеющейся ленты"
+									alt="Процесс применения самоклеящейся ленты"
 									placeholder="blur"
 									quality={100}
 									layout="fill"
@@ -56,7 +56,7 @@ export default function Catalog() {
 								<Image
 									className={styles.bg}
 									src={CatalogBGMobile}
-									alt="Установка для наматывания самоклеющейся ленты"
+									alt="Установка для наматывания самоклеящейся ленты"
 									quality={100}
 									priority
 								/>
@@ -67,7 +67,7 @@ export default function Catalog() {
 						<Image
 							className={styles.image}
 							src={CatalogImage}
-							alt="Процесс применения самоклеющейся ленты"
+							alt="Процесс применения самоклеящейся ленты"
 							placeholder="blur"
 							quality={100}
 							layout="fill"

@@ -33,7 +33,11 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 				<ul className={styles.list}>
 					{items.map((item, index) => (
 						<li key={index}>
-							<Link href={item.href} className={styles.link}>
+							<Link
+								href={item.href}
+								className={styles.link}
+								onClick={toggleOpen}
+							>
 								{item.text}
 							</Link>
 						</li>

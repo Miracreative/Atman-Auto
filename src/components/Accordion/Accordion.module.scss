@@ -39,9 +39,18 @@
 .socialLink {
 	user-select: none;
 	-webkit-user-select: none;
+
 	svg {
-		&:hover circle {
-			fill: var(--red-dark);
+		@media (hover: hover) {
+			&:hover circle {
+				fill: var(--red-dark);
+			}
+		}
+
+		@media (hover: none) {
+			&:active circle {
+				fill: var(--red-dark);
+			}
 		}
 	}
 }
