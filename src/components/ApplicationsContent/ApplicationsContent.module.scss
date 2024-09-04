@@ -1,6 +1,9 @@
 @import '../../scss/functions.scss';
 
 
+.section {
+	min-width: 320px;
+}
 
 .wrap {
 	margin: 10vh 4vw;
@@ -195,6 +198,10 @@
 	.img {
 		max-height: 300px;
 		width: auto;
+		opacity: 0;
+		&:last-child {
+			opacity: 1;
+		}
 	}
 
 	.innerContainer {
