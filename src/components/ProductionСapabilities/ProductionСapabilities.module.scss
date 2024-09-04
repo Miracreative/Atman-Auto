@@ -1,0 +1,152 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/_functions.scss';
+
+.section {
+	padding: 120px 100px 100px;
+	border-bottom: 1px solid var(--gray-rgb);
+}
+
+.title {
+	margin-bottom: 100px;
+}
+
+.titleMobile {
+	display: none;
+}
+
+.innerContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.service {
+	height: 250px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 60px;
+	max-width: 850px;
+	min-width: 450px;
+	background-color: var(--gray-line-rgb);
+	border-radius: 20px;
+	transition: background-color 0.3s ease-in-out;
+	cursor: pointer;
+
+	svg {
+		height: 100%;
+		object-fit: cover;
+		// width: 100%;
+	}
+
+	&:hover {
+		background-color: var(--red-button);
+		.serviceTitle {
+			color: var(--white);
+		}
+		svg {
+			path {
+				fill: var(--white);
+				transition: fill 0.4s ease-in-out;
+			}
+		}
+	}
+}
+
+.serviceTitle {
+	font-size: 40px;
+	line-height: 120%;
+	font-weight: 500;
+	color: var(--foreground-rgb);
+
+	max-width: 280px;
+
+	transition: all 0.4s ease-in-out;
+}
+
+.serviceImage {
+	object-fit: cover;
+}
+
+// .services {
+// 	display: flex;
+// }
+
+@media (max-width: 1920px) {
+	.section {
+		padding: calcVH(120) calcVW(100) calcVH(100);
+		// border-bottom: 1px solid var(--gray-rgb);
+	}
+
+	.innerContainer {
+		// display: grid;
+		// grid-template-columns: repeat(2, 1fr);
+		gap: calcVW(20);
+	}
+
+	.service {
+		height: calcVH(250);
+		padding-left: calcVW(60);
+	}
+
+	.serviceTitle {
+		@include adaptive-font(40, 16);
+		max-width: calcVW(280);
+	}
+}
+
+@media (max-width: 1280px) {
+	.section {
+		padding: calcVH(60) calcVW(50) calcVH(50);
+		// border-bottom: 1px solid var(--gray-rgb);
+	}
+}
+
+@media (max-width: 1024px) {
+	.innerContainer {
+		gap: 15;
+	}
+
+	.service {
+		svg {
+			// width: 30px;
+			// height: 30px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: 30px 10px 20px;
+		border-bottom: 1px solid var(--gray-rgb);
+	}
+
+	.innerContainer {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.title {
+		display: none;
+	}
+
+	.titleMobile {
+		display: block;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+
+	.service {
+		padding-left: 15px;
+		height: 88px;
+		max-width: 100%;
+		min-width: 100%;
+	}
+
+	.serviceTitle {
+		font-size: 16px;
+		max-width: 120px;
+	}
+}
+
+@media (max-width: 480px) {
+}
