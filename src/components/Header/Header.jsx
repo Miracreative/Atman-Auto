@@ -8,7 +8,7 @@ import HeaderNav from '../HeaderNav/HeaderNav';
 import BurgerButton from './../BurgerButton/BurgerButton';
 import BurgerMenu from './../BurgerMenu/BurgerMenu';
 
-import { contacts } from '../../data/contacts';
+import contacts from '../../data/contacts';
 
 import styles from './Header.module.scss';
 

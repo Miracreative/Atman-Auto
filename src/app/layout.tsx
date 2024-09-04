@@ -8,6 +8,8 @@ import OpenGraphImage from '/public/images/opengraph-image/opengraph-image.png';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
+import contacts from '@/data/contacts';
+
 import './../scss/style.scss';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
@@ -15,13 +17,13 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 export const metadata: Metadata = {
 	title: 'Atman Auto',
 	description: 'Adhesive solutions',
-	metadataBase: new URL('https://atman-auto.ru'),
+	metadataBase: new URL(contacts.website),
 	icons: [{ rel: 'icon', url: Favicon.src }],
 	openGraph: {
 		title: 'Atman Auto',
 		description:
 			'Клейкие ленты и самоклеящиеся материалы, адаптированные для применения на вашем производстве.',
-		url: 'https://atman-auto.ru',
+		url: contacts.website,
 		siteName: 'Atman Auto',
 		images: [
 			{
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
 
 				width: 1920,
 				height: 1080,
-				// alt: 'Клейкие ленты и самоклеящиеся материалы, адаптированные для применения на вашем производстве.',
+				alt: 'Atman Auto - Adhesive Solutions',
 			},
 		],
 		locale: 'ru_RU',
