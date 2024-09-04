@@ -15,6 +15,8 @@ import styles from './Header.module.scss';
 export default function Header() {
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [menuActive, setMenuActive] = useState(false);
+
+	// Smart Header states
 	const [isVisible, setIsVisible] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 

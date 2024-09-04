@@ -1,11 +1,10 @@
+'use client';
+
 import { useState } from 'react';
 import Link from 'next/link';
-
 import AccordionItem from '../AccordionItem/AccordionItem';
-
 import { menuItems } from '@/data/menuItems';
 import socialLinks from '@/data/socialLinks';
-
 import styles from './Accordion.module.scss';
 
 export default function Accordion({ setActive }) {
