@@ -1,24 +1,23 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
+
+import useScrollVisibility from '@/hooks/useScrollVisibility';
+import contacts from '@/data/contacts';
 
 import HeaderLogo from '../HeaderLogo/HeaderLogo';
 import HeaderNav from '../HeaderNav/HeaderNav';
 import BurgerButton from './../BurgerButton/BurgerButton';
 import BurgerMenu from './../BurgerMenu/BurgerMenu';
 
-import contacts from '../../data/contacts';
-
 import styles from './Header.module.scss';
 
 export default function Header() {
+	const isVisibleHeader = useScrollVisibility();
+
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [menuActive, setMenuActive] = useState(false);
-
-	// Smart Header states
-	const [isVisible, setIsVisible] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
 
 	const toggleDropdown = (name) => {
 		setActiveDropdown((prevActiveDropdown) =>
@@ -30,33 +29,11 @@ export default function Header() {
 		setMenuActive((prevMenuActive) => !prevMenuActive);
 	};
 
-	const handleScroll = () => {
-		const currentScrollY = window.scrollY;
-
-		if (currentScrollY > 200) {
-			if (currentScrollY > lastScrollY) {
-				setIsVisible(false);
-			} else {
-				setIsVisible(true);
-			}
-		} else {
-			setIsVisible(true);
-		}
-
-		setLastScrollY(currentScrollY);
-	};
-
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [lastScrollY]);
-
 	return (
-		<header className={`${styles.header} ${!isVisible ? styles.hidden : ''}`}>
-			<HeaderLogo />
+		<header
+			className={`${styles.header} ${!isVisibleHeader ? styles.hidden : ''}`}
+		>
+			<HeaderLogo setActive={setMenuActive} />
 			<HeaderNav
 				toggleDropdown={toggleDropdown}
 				activeDropdown={activeDropdown}
