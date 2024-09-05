@@ -2,7 +2,7 @@ import styles from './Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { contacts } from '../../data/contacts';
+import contacts from '../../data/contacts';
 import socialLinks from '@/data/socialLinks';
 
 export default function Footer() {
