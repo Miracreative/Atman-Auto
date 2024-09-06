@@ -1,4 +1,4 @@
-import styles from './ArrowButton.module.scss';
+// import styles from './ArrowButton.module.scss';
 
 const ArrowButton = ({
 	className,

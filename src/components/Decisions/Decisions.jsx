@@ -10,8 +10,32 @@ import styles from './Decisions.module.scss';
 export default function Decisions() {
 	const [checked, setChecked] = useState('task-1');
 
+	const [count, setCount] = useState(1);
+
+	const minCount = 1;
+	const maxCount = 5;
+
+	const backButtonOpacity = count > minCount ? 1 : 0.2;
+
+	// const forwardButtonOpacity = count < maxCount ? 1 : 0.2;
+
+	const forwardButtonDisabled = count === maxCount;
+	const backButtonDisabled = count === minCount;
+
 	const handleChecked = (e) => {
 		setChecked(e.target.value);
+	};
+
+	const handleInc = () => {
+		if (count < maxCount) {
+			setCount(count + 1);
+		}
+	};
+
+	const handleDec = () => {
+		if (count > minCount) {
+			setCount(count - 1);
+		}
 	};
 
 	return (
@@ -27,7 +51,8 @@ export default function Decisions() {
 							использования, ответив на несколько вопросов.
 						</p>
 						<div className={styles.counter}>
-							01<span>/05</span>
+							0{count}
+							<span>/05</span>
 						</div>
 					</div>
 					<div className={styles.survey}>
@@ -130,13 +155,64 @@ export default function Decisions() {
 								</li>
 							</ul>
 						</div>
+						{/* <div className={styles.surveyForm1}>
+							<div className={styles.surveyTitle}>
+								Какая задача стоит перед Вами?
+							</div>
+							<ul className={styles.options}>
+								<li className={styles.option}>
+									<input
+										type="radio"
+										name="tasks"
+										id="task-3"
+										value="task-3"
+										checked={checked === 'task-3'}
+										onChange={handleChecked}
+									/>
+									<label htmlFor="task-3">
+										Крепление прокладок и уплотнителей
+									</label>
+								</li>
+								<li className={styles.option}>
+									<input
+										type="radio"
+										name="tasks"
+										id="task-4"
+										value="task-4"
+										checked={checked === 'task-4'}
+										onChange={handleChecked}
+									/>
+									<label htmlFor="task-4">Создание разъемного соединения</label>
+								</li>
+								<li className={styles.option}>
+									<input
+										type="radio"
+										name="tasks"
+										id="task-5"
+										value="task-5"
+										checked={checked === 'task-5'}
+										onChange={handleChecked}
+									/>
+									<label htmlFor="task-5">Герметизация соединения</label>
+								</li>
+							</ul>
+						</div> */}
 						<div className={styles.controls}>
-							<button className={styles.backButton}>
-								<ArrowButton backgroundColor="transparent" opacity={0.2} />
+							<button
+								className={styles.backButton}
+								onClick={handleDec}
+								disabled={backButtonDisabled}
+							>
+								<ArrowButton
+									backgroundColor="transparent"
+									// opacity={backButtonOpacity}
+								/>
 							</button>
-
-							{/* <ArrowButton /> */}
-							<button className={`${styles.forwardButton} button`}>
+							<button
+								className={`${styles.forwardButton} button`}
+								onClick={handleInc}
+								disabled={forwardButtonDisabled}
+							>
 								Продолжить
 							</button>
 							<Link href="/"></Link>
