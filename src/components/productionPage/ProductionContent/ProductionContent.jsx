@@ -7,139 +7,200 @@ export default function ProductionContent() {
 	return (
 		<>
 			<section className={styles.section}>
-				<div className="container">
+				<div className={styles.container}>
 
 					<div className={styles.wrap}>
+						<div className={styles.cardContainer}>
+							<div className={styles.card}>
+								<div className={styles.cardMobileHeader}>
+									<h4 className={styles.titleMobile}>Продольная <span>резка</span></h4>
+									<Image
+										src="/ProductionContent/longitudinal-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIconMobile}
+										width={40}
+										height={40}
+									/>
+								</div>
+								<div className={styles.videoPart}>
+									<Image
+										src="/ProductionContent/longitudinal-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIcon}
+										width={100}
+										height={100}
+									/>
 
-						<div className={styles.card}>
-							<div className={styles.videoPart}>
-								<Image
-									src="/ProductionContent/longitudinal-cutting-icon.png"
-									alt="icon"
-									className={styles.cutIcon}
-									width={100}
-									height={100}
-								/>
+									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+									</svg>
 
-								<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-									<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-								</svg>
+								</div>
 
-							</div>
+								<div className={styles.textPart}>
+									<div className={styles.textContainer}>
+										<h4 className={styles.title}>Продольная <span>резка</span></h4>
 
-							<div className={styles.textPart}>
-								<div className={styles.textContainer}>
-									<h4 className={styles.title}>Продольная <span>резка</span></h4>
-
-									<ul className={styles.textContent}>
-										<li className={styles.paragraph}><div>Резка клейких материалов специализированной ножевой группой с точностью до 0,1 мм, позволяет получить контроль ширины по всей длине рулона материала.</div></li>
-										<li className={styles.paragraph}><div>Материал в рулонах изготовленных способом продольной резки с перемоткой имеет эстетичный внешний вид, что позволяет применять его на видовых поверхностях или изделиях нанесение которых осуществляется конечным потребителем.</div></li>
-										<li className={styles.paragraph}><div>Ровный срез придаёт вашему изделию опрятный внешний вид и уверенность к качестве продукции.</div></li>
-										<li className={styles.paragraph}><div>Нанесение клейких лент порезанных данным способом может осуществляется специальным ручным или автоматическим инструментом.</div></li>
-									</ul>
+										<ul className={styles.textContent}>
+											<li className={styles.paragraph}><div>Резка клейких материалов специализированной ножевой группой с точностью до 0,1 мм, позволяет получить контроль ширины по всей длине рулона материала.</div></li>
+											<li className={styles.paragraph}><div>Материал в рулонах изготовленных способом продольной резки с перемоткой имеет эстетичный внешний вид, что позволяет применять его на видовых поверхностях или изделиях нанесение которых осуществляется конечным потребителем.</div></li>
+											<li className={styles.paragraph}><div>Ровный срез придаёт вашему изделию опрятный внешний вид и уверенность к качестве продукции.</div></li>
+											<li className={styles.paragraph}><div>Нанесение клейких лент порезанных данным способом может осуществляется специальным ручным или автоматическим инструментом.</div></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 
 
-						<div className={styles.card}>
-							<div className={styles.videoPart}>
-								<Image
-									src="/ProductionContent/face-cutting-icon.png"
-									alt="icon"
-									className={styles.cutIcon}
-									width={100}
-									height={100}
-								/>
+						<div className={styles.cardContainer}>
+							<div className={styles.card}>
+								<div className={styles.cardMobileHeader}>
+									<h4 className={styles.titleMobile}>Резка  <span>торцевая</span></h4>
+									<Image
+										src="/ProductionContent/face-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIconMobile}
+										width={40}
+										height={40}
+									/>
+								</div>
 
-								<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-									<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-								</svg>
-							</div>
+								<div className={styles.videoPart}>
+									<Image
+										src="/ProductionContent/face-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIcon}
+										width={100}
+										height={100}
+									/>
 
-							<div className={styles.textPart}>
-								<div className={styles.textContainer}>
-									<h4 className={styles.title}>Резка <span>торцевая</span></h4>
+									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+									</svg>
+								</div>
 
-									<ul className={styles.textContent}>
-										<li className={styles.paragraph}><div>Резка самоклеящихся материалов дисковым ножом с заданной шириной от 4 мм. Точность реза - 100 мкм (0,1 мм).</div></li>
-										<li className={styles.paragraph}><div>В зависимости от типа материала применяются ножи с различным углом заточки и качеством стали.</div></li>
-									</ul>
+								<div className={styles.textPart}>
+									<div className={styles.textContainer}>
+										<h4 className={styles.title}>Резка <span>торцевая</span></h4>
+
+										<ul className={styles.textContent}>
+											<li className={styles.paragraph}><div>Резка самоклеящихся материалов дисковым ножом с заданной шириной от 4 мм. Точность реза - 100 мкм (0,1 мм).</div></li>
+											<li className={styles.paragraph}><div>В зависимости от типа материала применяются ножи с различным углом заточки и качеством стали.</div></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 
 
-						<div className={styles.card}>
-							<div className={styles.videoPart}>
-								<Image
-									src="/ProductionContent/flat-cutting-icon.png"
-									alt="icon"
-									className={styles.cutIcon}
-									width={100}
-									height={100}
-								/>
+						<div className={styles.cardContainer}>
+							<div className={styles.card}>
+								<div className={styles.cardMobileHeader}>
+									<h4 className={styles.titleMobile}>Плоская  <span>высечка</span></h4>
+									<Image
+										src="/ProductionContent/flat-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIconMobile}
+										width={40}
+										height={40}
+									/>
+								</div>
 
-								<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-									<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-								</svg>
-							</div>
+								<div className={styles.videoPart}>
+									<Image
+										src="/ProductionContent/flat-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIcon}
+										width={100}
+										height={100}
+									/>
 
-							<div className={styles.textPart}>
-								<div className={styles.textContainer}>
-									<h4 className={styles.title}>Плоская <span>высечка</span></h4>
+									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+									</svg>
+								</div>
 
-									<ul className={styles.textContent}>
-										<li className={styles.paragraph}><div>Воздействие на материал штанцевыми ножами установленной формы позволяет производить самоклеящиеся детали по форме вашего изделия.</div></li>
-										<li className={styles.paragraph}><div>Детали изготовленной формы могут быть оснащены специальными "язычками " для удобного снятия лайнера при монтаже".</div></li>
-										<li className={styles.paragraph}>
-											<div>Внешний вид поставки таких деталей зависит от геометрии изделия и особенности ваших технологических процессов (способа нанесения, количества станций нанесения и т. д.):
-												<ul>
-													<li className={styles.subparagraph}>одна или несколько деталей на листе;
-													</li>
-													<li className={styles.subparagraph}>вырубленные детали в рулоне;</li>
-												</ul>
-											</div>
-										</li>
-									</ul>
+								<div className={styles.textPart}>
+									<div className={styles.textContainer}>
+										<h4 className={styles.title}>Плоская <span>высечка</span></h4>
+
+										<ul className={styles.textContent}>
+											<li className={styles.paragraph}><div>Воздействие на материал штанцевыми ножами установленной формы позволяет производить самоклеящиеся детали по форме вашего изделия.</div></li>
+											<li className={styles.paragraph}><div>Детали изготовленной формы могут быть оснащены специальными "язычками " для удобного снятия лайнера при монтаже".</div></li>
+											<li className={styles.paragraph}>
+												<div>Внешний вид поставки таких деталей зависит от геометрии изделия и особенности ваших технологических процессов (способа нанесения, количества станций нанесения и т. д.):
+													<ul>
+														<li className={styles.subparagraph}>одна или несколько деталей на листе;
+														</li>
+														<li className={styles.subparagraph}>вырубленные детали в рулоне;</li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 
 
-						<div className={styles.card}>
-							<div className={styles.videoPart}>
-								<Image
-									src="/ProductionContent/rotary-cutting-icon.png"
-									alt="icon"
-									className={styles.cutIcon}
-									width={100}
-									height={100}
-								/>
+						<div className={styles.cardContainer}>
+							<div className={styles.card}>
+								<div className={styles.cardMobileHeader}>
+									<h4 className={styles.titleMobile}>Ротационная  <span>высечка</span></h4>
+									<Image
+										src="/ProductionContent/rotary-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIconMobile}
+										width={40}
+										height={40}
+									/>
+								</div>
 
-								<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-									<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-								</svg>
-							</div>
+								<div className={styles.videoPart}>
+									<Image
+										src="/ProductionContent/rotary-cutting-icon.png"
+										alt="icon"
+										className={styles.cutIcon}
+										width={100}
+										height={100}
+									/>
 
-							<div className={styles.textPart}>
-								<div className={styles.textContainer}>
-									<h4 className={styles.title}>Ротационная <span>высечка</span></h4>
+									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+									</svg>
+								</div>
 
-									<ul className={styles.textContent}>
-										<li className={styles.paragraph}><div>Производство деталей заданной формы, из односторонних или тонких двусторонних клейких лент, методом воздействия на материал антиадгезионными магнитными ножами.</div></li>
-										<li className={styles.paragraph}><div>Детали произведенные данным способом поставляются в рулоне.</div></li>
-									</ul>
+								<div className={styles.textPart}>
+									<div className={styles.textContainer}>
+										<h4 className={styles.title}>Ротационная <span>высечка</span></h4>
+
+										<ul className={styles.textContent}>
+											<li className={styles.paragraph}><div>Производство деталей заданной формы, из односторонних или тонких двусторонних клейких лент, методом воздействия на материал антиадгезионными магнитными ножами.</div></li>
+											<li className={styles.paragraph}><div>Детали произведенные данным способом поставляются в рулоне.</div></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 
 
-						<div className={styles.card}>
+						<div className={styles.cardContainer}>						<div className={styles.card}>
+							<div className={styles.cardMobileHeader}>
+								<h4 className={styles.titleMobile}>Плоттерная  <span>резка</span></h4>
+								<Image
+									src="/ProductionContent/plotter-cutting-icon.png"
+									alt="icon"
+									className={styles.cutIconMobile}
+									width={40}
+									height={40}
+								/>
+							</div>
+
 							<div className={styles.videoPart}>
 								<Image
 									src="/ProductionContent/plotter-cutting-icon.png"
@@ -166,10 +227,21 @@ export default function ProductionContent() {
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div></div>
 
 
-						<div className={styles.card}>
+						<div className={styles.cardContainer}>						<div className={styles.card}>
+							<div className={styles.cardMobileHeader}>
+								<h4 className={styles.titleMobile}>Ламинация </h4>
+								<Image
+									src="/ProductionContent/lamination-icon.png"
+									alt="icon"
+									className={styles.cutIconMobile}
+									width={40}
+									height={40}
+								/>
+							</div>
+
 							<div className={styles.videoPart}>
 								<Image
 									src="/ProductionContent/lamination-icon.png"
@@ -196,7 +268,8 @@ export default function ProductionContent() {
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div></div>
+
 
 
 					</div>
