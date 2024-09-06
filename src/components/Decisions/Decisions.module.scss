@@ -1,11 +1,14 @@
+.section {
+	border-bottom: 1px solid rgb(var(--gray-line-rgb));
+}
+
 .content {
 	// min-height: 550px;
-	margin: 10px 0;
+	margin: 20px 0;
 	display: flex;
 	color: var(--white);
 	background-color: rgb(var(--foreground-rgb));
 	border-radius: 20px;
-	border-bottom: 1px solid rgb(var(--gray-line-rgb));
 	padding: 0 80px 0;
 }
 

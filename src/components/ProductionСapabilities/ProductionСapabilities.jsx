@@ -7,6 +7,7 @@ import styles from './ProductionСapabilities.module.scss';
 export default function ProductionСapabilities() {
 	return (
 		<section className={styles.section}>
+			<span className={styles.line}></span>
 			<div className="container">
 				<h2 className={`${styles.title} title`}>
 					Производственные <span>возможности</span>

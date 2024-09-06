@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useClickOutside } from '../../hooks/useClickOutside';
 import Link from 'next/link';
 import styles from './HeaderNav.module.scss';
-import { dropdownItems } from './../../data/menuItems';
+import { dropdownItems } from '@/data/menuItems';
 import Dropdown from './../Dropdown/Dropdown';
 
 const HeaderNav = ({ toggleDropdown, activeDropdown }) => {
