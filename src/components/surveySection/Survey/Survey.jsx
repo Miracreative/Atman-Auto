@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import ArrowButton from '../../ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
@@ -77,6 +77,13 @@ export default function Survey() {
 		}
 	};
 
+	useEffect(() => {
+		console.log(`${'Сейчас счётчик показывает: ' + count}`);
+
+		if (count === 1) {
+		}
+	}, [count]);
+
 	return (
 		<section className={styles.section}>
 			<div className="container">
@@ -95,7 +102,11 @@ export default function Survey() {
 						</div>
 					</div>
 					<div className={styles.survey}>
-						<div className={styles.surveyForm}>
+						<div
+							className={`${styles.surveyForm} ${
+								count === 1 ? styles.visible : styles.hidden
+							}`}
+						>
 							<h3 className={styles.surveyTitle}>
 								Какая задача стоит перед Вами?
 							</h3>
@@ -117,7 +128,11 @@ export default function Survey() {
 							</ul>
 						</div>
 
-						<div className={styles.surveyFormType}>
+						<div
+							className={`${styles.surveyFormType} ${
+								count === 2 ? styles.visible : styles.hidden
+							}`}
+						>
 							<h3 className={styles.surveyTitle}>
 								Виды склеиваемых поверхностей
 							</h3>
@@ -159,7 +174,11 @@ export default function Survey() {
 							</div>
 						</div>
 
-						<div className={styles.surveyFormConnections}>
+						<div
+							className={`${styles.surveyFormConnections} ${
+								count === 3 ? styles.visible : styles.hidden
+							}`}
+						>
 							<h3 className={styles.surveyTitle}>
 								Условия эксплуатации соединения
 							</h3>
@@ -202,7 +221,11 @@ export default function Survey() {
 							</div>
 						</div>
 
-						<div className={styles.surveyFormConditions}>
+						<div
+							className={`${styles.surveyFormConditions} ${
+								count === 4 ? styles.visible : styles.hidden
+							}`}
+						>
 							<h3 className={styles.surveyTitle}>
 								Состояние соединяемых поверхностей
 							</h3>
@@ -222,6 +245,30 @@ export default function Survey() {
 									</li>
 								))}
 							</ul>
+						</div>
+
+						<div
+							className={`${styles.surveyFormResults} ${
+								count === 5 ? styles.visible : styles.hidden
+							}`}
+						>
+							<h3 className={styles.surveyTitle}>Результаты</h3>
+							{/* <ul className={styles.optionsCondition}>
+								{conditions.map((condition) => (
+									<li key={condition.id} className={styles.optionCondition}>
+										<SurveyItem
+											key={condition.id}
+											id={condition.id}
+											name={condition.name}
+											value={condition.value}
+											text={condition.text}
+											extraText={condition.extraText}
+											checked={checkedCondition === condition.value}
+											onChange={handleCheckedCondition}
+										/>
+									</li>
+								))}
+							</ul> */}
 						</div>
 
 						<div className={styles.controls}>

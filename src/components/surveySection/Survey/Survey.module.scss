@@ -6,6 +6,7 @@
 }
 
 .content {
+	min-height: 552px;
 	margin: 20px 0;
 	display: flex;
 	color: var(--white);
@@ -54,7 +55,7 @@
 .typesContainer {
 	display: flex;
 	flex-wrap: wrap;
-	margin-bottom: 90px;
+	// margin-bottom: 90px;
 
 	ul {
 		width: 50%;
@@ -116,7 +117,7 @@
 	flex-wrap: wrap;
 	row-gap: 30px;
 	column-gap: 50px;
-	margin-bottom: 90px;
+	// margin-bottom: 90px;
 }
 
 .optionTask {
@@ -167,6 +168,14 @@
 	}
 }
 
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
 @media (max-width: 1920px) {
 	.content {
 		margin: calcVH(20) 0;
@@ -200,7 +209,7 @@
 	}
 
 	.typesContainer {
-		margin-bottom: calcVH(90);
+		// margin-bottom: calcVH(90);
 
 		ul {
 			// width: 50%;
