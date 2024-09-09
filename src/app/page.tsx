@@ -1,30 +1,25 @@
-// import Image from 'next/image';
 // import styles from './page.module.css';
 
-// import Header from './../components/Header/Header';
 import Catalog from './../components/Catalog/Catalog';
-import Decisions from './../components/Decisions/Decisions';
+import Survey from '../components/surveySection/Survey/Survey';
+import Decisions from '../components/Decisions/Decisions.jsx';
 import ProductionCapabilities from './../components/ProductionСapabilities/ProductionСapabilities';
 import Products from './../components/Products/Products';
 import News from './../components/News/News';
 import Team from './../components/Team/Team';
 import Map from './../components/Map/Map';
-// import Footer from './../components/Footer/Footer';
 
 export default function Home() {
 	return (
 		<>
-			{/* <Header></Header> */}
-			{/* <main> */}
-			<Catalog></Catalog>
-			<Decisions></Decisions>
+			<Catalog />
+			<Survey />
+			<Decisions />
 			<ProductionCapabilities></ProductionCapabilities>
 			<Products></Products>
 			<News></News>
 			<Team></Team>
 			<Map></Map>
-			{/* </main> */}
-			{/* <Footer></Footer> */}
 		</>
 
 		// <main className={styles.main}>
