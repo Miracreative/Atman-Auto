@@ -6,7 +6,13 @@ import { useState } from 'react';
 import ArrowButton from '../../ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
 
-import { tasks, types1, types2 } from '@/data/surveyOptions';
+import {
+	tasks,
+	types1,
+	types2,
+	connections,
+	temperatures,
+} from '@/data/surveyOptions';
 
 import styles from './Survey.module.scss';
 
@@ -15,6 +21,14 @@ export default function Survey() {
 
 	const [checkedType1, setCheckedType1] = useState(types1[0].value);
 	const [checkedType2, setCheckedType2] = useState(types2[0].value);
+
+	const [checkedConnection, setCheckedConnection] = useState(
+		connections[0].value,
+	);
+
+	const [checkedTemperature, setCheckedTemperature] = useState(
+		temperatures[0].value,
+	);
 
 	const [count, setCount] = useState(1);
 
@@ -34,6 +48,14 @@ export default function Survey() {
 
 	const handleCheckedType2 = (e) => {
 		setCheckedType2(e.target.value);
+	};
+
+	const handleCheckedConnection = (e) => {
+		setCheckedConnection(e.target.value);
+	};
+
+	const handleCheckedTemperature = (e) => {
+		setCheckedTemperature(e.target.value);
 	};
 
 	const handleInc = () => {
@@ -123,6 +145,49 @@ export default function Survey() {
 												extraText={type.extraText}
 												checked={checkedType2 === type.value}
 												onChange={handleCheckedType2}
+											/>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+
+						<div className={styles.surveyFormСonditions}>
+							<h3 className={styles.surveyTitle}>
+								Условия эксплуатации соединения
+							</h3>
+							<div className={styles.conditionsContainer}>
+								<ul className={styles.optionConnections}>
+									{connections.map((connection) => (
+										<li key={connection.id} className={styles.optionConnection}>
+											<SurveyItem
+												key={connection.id}
+												id={connection.id}
+												name={connection.name}
+												value={connection.value}
+												text={connection.text}
+												extraText={connection.extraText}
+												checked={checkedConnection === connection.value}
+												onChange={handleCheckedConnection}
+											/>
+										</li>
+									))}
+								</ul>
+								<ul className={styles.optionTemperatures}>
+									{temperatures.map((temperature) => (
+										<li
+											key={temperature.id}
+											className={styles.optionTemperature}
+										>
+											<SurveyItem
+												key={temperature.id}
+												id={temperature.id}
+												name={temperature.name}
+												value={temperature.value}
+												text={temperature.text}
+												extraText={temperature.extraText}
+												checked={checkedTemperature === temperature.value}
+												onChange={handleCheckedTemperature}
 											/>
 										</li>
 									))}

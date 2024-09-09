@@ -51,27 +51,16 @@
 	justify-content: space-between;
 }
 
-// .surveyForm {
-// }
-
-// .surveyFormType {
-// 	display: flex;
-// }
-
 .typesContainer {
 	display: flex;
 	flex-wrap: wrap;
-	// row-gap: 30px;
-	// column-gap: 10px;
 	margin-bottom: 90px;
-	// background-color: red;
 
 	ul {
 		width: 50%;
 		display: flex;
 		flex-wrap: wrap;
 		row-gap: 30px;
-		// column-gap: 10px;
 
 		&:first-child {
 			border-right: 1px solid rgba(var(--white-opacity-rgba));
@@ -84,6 +73,28 @@
 	}
 }
 
+.conditionsContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.optionConnections {
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	// grid-gap: 50px;
+	row-gap: 30px;
+	// flex-wrap: wrap;
+	border-bottom: 1px solid rgba(var(--white-opacity-rgba));
+	padding-bottom: 30px;
+}
+
+.optionTemperatures {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	// flex-wrap: wrap;
+	padding-top: 30px;
+}
+
 .surveyTitle {
 	margin-bottom: 30px;
 	font-size: 32px;
@@ -93,7 +104,6 @@
 .options {
 	display: flex;
 	flex-wrap: wrap;
-	// justify-content: space-between;
 	row-gap: 30px;
 	column-gap: 50px;
 	margin-bottom: 90px;
@@ -101,14 +111,11 @@
 
 .optionTask {
 	width: 310px;
-	// width: 100%;
-	// flex: auto;
 }
 
 .optionType {
 	display: flex;
 	flex-direction: column;
-	// width: 50%;
 
 	& h4 {
 		font-weight: 400;

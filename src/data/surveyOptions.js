@@ -105,4 +105,73 @@ const types2 = [
 	},
 ];
 
-export { tasks, types1, types2 };
+const connections = [
+	{
+		id: 'connection-1',
+		name: 'connections',
+		value: 'connection-1',
+		text: 'Внутри помещения',
+		extraText: '',
+	},
+	{
+		id: 'connection-2',
+		name: 'connections',
+		value: 'connection-2',
+		text: 'Наличие контакта с водой',
+		extraText: '',
+	},
+	{
+		id: 'connection-3',
+		name: 'connections',
+		value: 'connection-3',
+		text: 'Взаимодействие с хим.реагентами, маслами и автохимией',
+		extraText: '',
+	},
+	{
+		id: 'connection-4',
+		name: 'connections',
+		value: 'connection-4',
+		text: 'Вне помещения',
+		extraText: '',
+	},
+	{
+		id: 'connection-5',
+		name: 'connections',
+		value: 'connection-5',
+		text: 'Наличие вибрации',
+		extraText: '',
+	},
+];
+
+const temperatures = [
+	{
+		id: 'temperature-1',
+		name: 'temperatures',
+		value: 'temperature-1',
+		text: 'от -40 до 70 С',
+		extraText: '',
+	},
+	{
+		id: 'temperature-2',
+		name: 'temperatures',
+		value: 'temperature-2',
+		text: 'от -40 до 90 С',
+		extraText: '',
+	},
+	{
+		id: 'temperature-3',
+		name: 'temperatures',
+		value: 'temperature-3',
+		text: 'от -40 до 120 С',
+		extraText: '',
+	},
+	{
+		id: 'temperature-4',
+		name: 'temperatures',
+		value: 'temperature-4',
+		text: 'от -40 до 150 С',
+		extraText: '',
+	},
+];
+
+export { tasks, types1, types2, connections, temperatures };
