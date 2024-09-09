@@ -19,6 +19,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
+									priority='true'
 								/>
 								<Image
 									src="/ApplicationsContent/avto-hover.png"
@@ -26,6 +27,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
+									priority='true'
 								/>
 							</div>
 							<div className={styles.contentCard}>
