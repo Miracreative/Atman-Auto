@@ -73,12 +73,12 @@
 	}
 }
 
-.conditionsContainer {
+.connectionsContainer {
 	display: flex;
 	flex-direction: column;
 }
 
-.optionConnections {
+.optionsConnection {
 	display: grid;
 	grid-template-columns: 1fr 1fr 2fr;
 	// grid-gap: 50px;
@@ -88,11 +88,21 @@
 	padding-bottom: 30px;
 }
 
-.optionTemperatures {
+.optionsTemperature {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	// flex-wrap: wrap;
 	padding-top: 30px;
+}
+
+.optionsCondition {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 30px;
+}
+
+.optionCondition {
+	width: 50%;
 }
 
 .surveyTitle {
@@ -101,7 +111,7 @@
 	font-weight: 700;
 }
 
-.options {
+.optionsTask {
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: 30px;
@@ -113,7 +123,7 @@
 	width: 310px;
 }
 
-.optionType {
+.optionsType {
 	display: flex;
 	flex-direction: column;
 
@@ -206,7 +216,7 @@
 		@include adaptive-font(32, 20); // 20 - уже на мобилке.
 	}
 
-	.options {
+	.optionsTask {
 		row-gap: calcVH(30);
 		column-gap: calcVW(50);
 		margin-bottom: calcVH(90);

@@ -12,6 +12,7 @@ import {
 	types2,
 	connections,
 	temperatures,
+	conditions,
 } from '@/data/surveyOptions';
 
 import styles from './Survey.module.scss';
@@ -29,6 +30,8 @@ export default function Survey() {
 	const [checkedTemperature, setCheckedTemperature] = useState(
 		temperatures[0].value,
 	);
+
+	const [checkedCondition, setCheckedCondition] = useState(conditions[0].value);
 
 	const [count, setCount] = useState(1);
 
@@ -56,6 +59,10 @@ export default function Survey() {
 
 	const handleCheckedTemperature = (e) => {
 		setCheckedTemperature(e.target.value);
+	};
+
+	const handleCheckedCondition = (e) => {
+		setCheckedCondition(e.target.value);
 	};
 
 	const handleInc = () => {
@@ -92,7 +99,7 @@ export default function Survey() {
 							<h3 className={styles.surveyTitle}>
 								Какая задача стоит перед Вами?
 							</h3>
-							<ul className={styles.options}>
+							<ul className={styles.optionsTask}>
 								{tasks.map((task) => (
 									<li key={task.id} className={styles.optionTask}>
 										<SurveyItem
@@ -115,7 +122,7 @@ export default function Survey() {
 								Виды склеиваемых поверхностей
 							</h3>
 							<div className={styles.typesContainer}>
-								<ul className={styles.optionType}>
+								<ul className={styles.optionsType}>
 									<h4>Поверхность 1</h4>
 									{types1.map((type) => (
 										<li key={type.id} className={styles.optionType}>
@@ -132,7 +139,7 @@ export default function Survey() {
 										</li>
 									))}
 								</ul>
-								<ul className={styles.optionType}>
+								<ul className={styles.optionsType}>
 									<h4>Поверхность 2</h4>
 									{types2.map((type) => (
 										<li key={type.id} className={styles.optionType}>
@@ -152,12 +159,12 @@ export default function Survey() {
 							</div>
 						</div>
 
-						<div className={styles.surveyFormСonditions}>
+						<div className={styles.surveyFormConnections}>
 							<h3 className={styles.surveyTitle}>
 								Условия эксплуатации соединения
 							</h3>
-							<div className={styles.conditionsContainer}>
-								<ul className={styles.optionConnections}>
+							<div className={styles.connectionsContainer}>
+								<ul className={styles.optionsConnection}>
 									{connections.map((connection) => (
 										<li key={connection.id} className={styles.optionConnection}>
 											<SurveyItem
@@ -173,7 +180,7 @@ export default function Survey() {
 										</li>
 									))}
 								</ul>
-								<ul className={styles.optionTemperatures}>
+								<ul className={styles.optionsTemperature}>
 									{temperatures.map((temperature) => (
 										<li
 											key={temperature.id}
@@ -193,6 +200,28 @@ export default function Survey() {
 									))}
 								</ul>
 							</div>
+						</div>
+
+						<div className={styles.surveyFormConditions}>
+							<h3 className={styles.surveyTitle}>
+								Состояние соединяемых поверхностей
+							</h3>
+							<ul className={styles.optionsCondition}>
+								{conditions.map((condition) => (
+									<li key={condition.id} className={styles.optionCondition}>
+										<SurveyItem
+											key={condition.id}
+											id={condition.id}
+											name={condition.name}
+											value={condition.value}
+											text={condition.text}
+											extraText={condition.extraText}
+											checked={checkedCondition === condition.value}
+											onChange={handleCheckedCondition}
+										/>
+									</li>
+								))}
+							</ul>
 						</div>
 
 						<div className={styles.controls}>

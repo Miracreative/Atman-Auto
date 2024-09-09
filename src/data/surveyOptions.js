@@ -174,4 +174,35 @@ const temperatures = [
 	},
 ];
 
-export { tasks, types1, types2, connections, temperatures };
+const conditions = [
+	{
+		id: 'condition-1',
+		name: 'conditions',
+		value: 'condition-1',
+		text: 'Поверхности двух материалов гладкие ',
+		extraText: '',
+	},
+	{
+		id: 'condition-2',
+		name: 'conditions',
+		value: 'condition-2',
+		text: 'Обе поверхности шероховатые',
+		extraText: '',
+	},
+	{
+		id: 'condition-3',
+		name: 'conditions',
+		value: 'condition-3',
+		text: 'Одна из поверхностей шероховатая',
+		extraText: '',
+	},
+	{
+		id: 'condition-4',
+		name: 'conditions',
+		value: 'condition-4',
+		text: 'Поверхности с плохим сопряжением',
+		extraText: '',
+	},
+];
+
+export { tasks, types1, types2, connections, temperatures, conditions };
