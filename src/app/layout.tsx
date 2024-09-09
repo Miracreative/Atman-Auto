@@ -5,7 +5,7 @@ import Favicon from '/public/images/мetadata/favicon.ico';
 import OpenGraphImage from '/public/images/opengraph-image/opengraph-image.png';
 // import TwitterImage from '/public/images/opengraph-image/twitter-image.png';
 
-import Header from '@/components/Header/Header';
+import Header from '@/components/headerSection/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
 import contacts from '@/data/contacts';

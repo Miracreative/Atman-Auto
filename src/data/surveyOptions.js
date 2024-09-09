@@ -86,22 +86,22 @@ const types2 = [
 		id: 'type-2-1',
 		name: 'types-2',
 		value: 'type-2-1',
-		text: 'Неокрашенные металлы, стекло',
-		extraText: '(Материалы с высокой поверхностной энергией)',
+		text: types1[0].text,
+		extraText: types1[0].extraText,
 	},
 	{
 		id: 'type-2-2',
 		name: 'types-2',
 		value: 'type-2-2',
-		text: 'АВС, Акрил, ПЭТ',
-		extraText: '(Материалы с средней поверхностной энергией)',
+		text: types1[1].text,
+		extraText: types1[1].extraText,
 	},
 	{
 		id: 'type-2-3',
 		name: 'types-2',
 		value: 'type-2-3',
-		text: 'Полипропилен, EPDM Порошковое покрытие',
-		extraText: '(Материалы с низкой поверхностной энергией)',
+		text: types1[2].text,
+		extraText: types1[2].extraText,
 	},
 ];
 
@@ -179,7 +179,7 @@ const conditions = [
 		id: 'condition-1',
 		name: 'conditions',
 		value: 'condition-1',
-		text: 'Поверхности двух материалов гладкие ',
+		text: 'Поверхности двух материалов гладкие',
 		extraText: '',
 	},
 	{

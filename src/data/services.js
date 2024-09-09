@@ -37,6 +37,4 @@ const services = {
 	},
 };
 
-// console.log(services.lamination.img.src);
-
 export default services;

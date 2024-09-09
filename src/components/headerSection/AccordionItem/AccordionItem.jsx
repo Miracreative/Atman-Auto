@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
 
-import TriangleIcon from '../TriangleIcon/TriangleIcon';
+import TriangleIcon from '../../TriangleIcon/TriangleIcon';
 
 import styles from './AccordionItem.module.scss';
 

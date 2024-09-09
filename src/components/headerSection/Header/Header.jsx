@@ -6,8 +6,8 @@ import Link from 'next/link';
 import useScrollVisibility from '@/hooks/useScrollVisibility';
 import contacts from '@/data/contacts';
 
-import HeaderLogo from '../HeaderLogo/HeaderLogo';
-import HeaderNav from '../HeaderNav/HeaderNav';
+import HeaderLogo from './../HeaderLogo/HeaderLogo';
+import HeaderNav from './../HeaderNav/HeaderNav';
 import BurgerButton from './../BurgerButton/BurgerButton';
 import BurgerMenu from './../BurgerMenu/BurgerMenu';
 
@@ -41,16 +41,13 @@ export default function Header() {
 			<Link className={styles.number} href={`tel:${contacts.phone}`}>
 				{contacts.phone}
 			</Link>
-			<BurgerButton
-				isActive={menuActive}
-				toggleMenu={toggleMenu}
-			></BurgerButton>
+			<BurgerButton isActive={menuActive} toggleMenu={toggleMenu} />
 			<BurgerMenu
 				isActive={menuActive}
 				setActive={setMenuActive}
 				toggleDropdown={toggleDropdown}
 				activeDropdown={activeDropdown}
-			></BurgerMenu>
+			/>
 		</header>
 	);
 }
