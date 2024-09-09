@@ -1,13 +1,13 @@
 // import styles from './page.module.css';
 
-import Catalog from './../components/Catalog/Catalog';
-import Survey from '../components/surveySection/Survey/Survey';
+import Catalog from '../components/Catalog/Catalog.jsx';
+import Survey from '../components/surveySection/Survey/Survey.jsx';
 import Decisions from '../components/Decisions/Decisions.jsx';
-import ProductionCapabilities from './../components/ProductionСapabilities/ProductionСapabilities';
-import Products from './../components/Products/Products';
-import News from './../components/News/News';
-import Team from './../components/Team/Team';
-import Map from './../components/Map/Map';
+import ProductionCapabilities from '../components/ProductionСapabilities/ProductionСapabilities.jsx';
+import Products from '../components/Products/Products.jsx';
+import News from '../components/News/News.jsx';
+import Team from '../components/Team/Team.jsx';
+import Map from '../components/Map/Map.jsx';
 
 export default function Home() {
 	return (

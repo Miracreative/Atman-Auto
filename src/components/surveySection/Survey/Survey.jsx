@@ -6,10 +6,15 @@ import { useState } from 'react';
 import ArrowButton from '../../ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
 
+import { tasks, types1, types2 } from '@/data/surveyOptions';
+
 import styles from './Survey.module.scss';
 
 export default function Survey() {
-	const [checked, setChecked] = useState('task-1');
+	const [checkedTask, setCheckedTask] = useState(tasks[0].value);
+
+	const [checkedType1, setCheckedType1] = useState(types1[0].value);
+	const [checkedType2, setCheckedType2] = useState(types2[0].value);
 
 	const [count, setCount] = useState(1);
 
@@ -19,8 +24,16 @@ export default function Survey() {
 	const forwardButtonDisabled = count === maxCount;
 	const backButtonDisabled = count === minCount;
 
-	const handleChecked = (e) => {
-		setChecked(e.target.value);
+	const handleCheckedTask = (e) => {
+		setCheckedTask(e.target.value);
+	};
+
+	const handleCheckedType1 = (e) => {
+		setCheckedType1(e.target.value);
+	};
+
+	const handleCheckedType2 = (e) => {
+		setCheckedType2(e.target.value);
 	};
 
 	const handleInc = () => {
@@ -34,65 +47,6 @@ export default function Survey() {
 			setCount(count - 1);
 		}
 	};
-
-	const options = [
-		{
-			id: 'task-1',
-			name: 'tasks',
-			value: 'task-1',
-			text: 'Соединение деталей/материалов',
-			extraText: '',
-		},
-		{
-			id: 'task-2',
-			name: 'tasks',
-			value: 'task-2',
-			text: 'Ламинация материалов',
-			extraText: '',
-		},
-		{
-			id: 'task-3',
-			name: 'tasks',
-			value: 'task-3',
-			text: 'Крепление прокладок и уплотнителей',
-			extraText: '',
-		},
-		{
-			id: 'task-4',
-			name: 'tasks',
-			value: 'task-4',
-			text: 'Создание разъемного соединения',
-			extraText: '',
-		},
-		{
-			id: 'task-5',
-			name: 'tasks',
-			value: 'task-5',
-			text: 'Герметизация соединения',
-			extraText: '',
-		},
-		{
-			id: 'task-6',
-			name: 'tasks',
-			value: 'task-6',
-			text: 'Защита поверхности',
-			extraText: '',
-		},
-		{
-			id: 'task-7',
-			name: 'tasks',
-			value: 'task-7',
-			text: 'Подготовка поверхности для склеивания',
-			extraText: '',
-		},
-		{
-			id: 'task-8',
-			name: 'tasks',
-			value: 'task-8',
-			text: 'Прочее',
-			extraText: '',
-		},
-	];
 
 	return (
 		<section className={styles.section}>
@@ -113,24 +67,69 @@ export default function Survey() {
 					</div>
 					<div className={styles.survey}>
 						<div className={styles.surveyForm}>
-							<div className={styles.surveyTitle}>
+							<h3 className={styles.surveyTitle}>
 								Какая задача стоит перед Вами?
-							</div>
+							</h3>
 							<ul className={styles.options}>
-								{options.map((option) => (
-									<SurveyItem
-										key={option.id}
-										id={option.id}
-										name={option.name}
-										value={option.value}
-										text={option.text}
-										extraText={option.extraText}
-										checked={checked === option.value}
-										onChange={handleChecked}
-									/>
+								{tasks.map((task) => (
+									<li key={task.id} className={styles.optionTask}>
+										<SurveyItem
+											key={task.id}
+											id={task.id}
+											name={task.name}
+											value={task.value}
+											text={task.text}
+											extraText={task.extraText}
+											checked={checkedTask === task.value}
+											onChange={handleCheckedTask}
+										/>
+									</li>
 								))}
 							</ul>
 						</div>
+
+						<div className={styles.surveyFormType}>
+							<h3 className={styles.surveyTitle}>
+								Виды склеиваемых поверхностей
+							</h3>
+							<div className={styles.typesContainer}>
+								<ul className={styles.optionType}>
+									<h4>Поверхность 1</h4>
+									{types1.map((type) => (
+										<li key={type.id} className={styles.optionType}>
+											<SurveyItem
+												key={type.id}
+												id={type.id}
+												name={type.name}
+												value={type.value}
+												text={type.text}
+												extraText={type.extraText}
+												checked={checkedType1 === type.value}
+												onChange={handleCheckedType1}
+											/>
+										</li>
+									))}
+								</ul>
+								<ul className={styles.optionType}>
+									<h4>Поверхность 2</h4>
+									{types2.map((type) => (
+										<li key={type.id} className={styles.optionType}>
+											<SurveyItem
+												key={type.id}
+												id={type.id}
+												name={type.name}
+												value={type.value}
+												text={type.text}
+												extraText={type.extraText}
+												checked={checkedType2 === type.value}
+												onChange={handleCheckedType2}
+											/>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+
 						<div className={styles.controls}>
 							<button
 								className={styles.backButton}

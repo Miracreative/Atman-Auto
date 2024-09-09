@@ -8,9 +8,10 @@ export default function SurveyItem({
 	extraText,
 	checked,
 	onChange,
+	// width = '330px',
 }) {
 	return (
-		<li className={styles.option}>
+		<div className={styles.item}>
 			<input
 				type="radio"
 				name={name}
@@ -24,6 +25,6 @@ export default function SurveyItem({
 				<br />
 				<span>{extraText}</span>
 			</label>
-		</li>
+		</div>
 	);
 }

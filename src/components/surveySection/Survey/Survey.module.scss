@@ -1,3 +1,6 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
 .section {
 	border-bottom: 1px solid rgb(var(--gray-line-rgb));
 }
@@ -12,9 +15,9 @@
 }
 
 .titleContainer {
-	width: 34.5%;
+	width: 575px;
 	border-right: 1px solid rgb(var(--gray-line-rgb));
-	padding: 50px 0 30px;
+	padding: 50px 50px 30px 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -51,8 +54,35 @@
 // .surveyForm {
 // }
 
-// .surveyForm1 {
+// .surveyFormType {
+// 	display: flex;
 // }
+
+.typesContainer {
+	display: flex;
+	flex-wrap: wrap;
+	// row-gap: 30px;
+	// column-gap: 10px;
+	margin-bottom: 90px;
+	// background-color: red;
+
+	ul {
+		width: 50%;
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 30px;
+		// column-gap: 10px;
+
+		&:first-child {
+			border-right: 1px solid rgba(var(--white-opacity-rgba));
+			padding-right: 70px;
+		}
+
+		&:nth-child(2) {
+			padding-left: 70px;
+		}
+	}
+}
 
 .surveyTitle {
 	margin-bottom: 30px;
@@ -63,9 +93,26 @@
 .options {
 	display: flex;
 	flex-wrap: wrap;
+	// justify-content: space-between;
 	row-gap: 30px;
-	column-gap: 10px;
+	column-gap: 50px;
 	margin-bottom: 90px;
+}
+
+.optionTask {
+	width: 310px;
+	// width: 100%;
+	// flex: auto;
+}
+
+.optionType {
+	display: flex;
+	flex-direction: column;
+	// width: 50%;
+
+	& h4 {
+		font-weight: 400;
+	}
 }
 
 .controls {
@@ -100,5 +147,88 @@
 	&:disabled {
 		opacity: 0;
 		scale: 0;
+	}
+}
+
+@media (max-width: 1920px) {
+	.content {
+		margin: calcVH(20) 0;
+		// border-radius: 20px;
+		padding: 0 calcVW(80) 0;
+	}
+
+	.titleContainer {
+		width: calcVW(575);
+	}
+
+	.title {
+		margin-bottom: calcVH(20);
+		@include adaptive-font-mobile(40, 20);
+	}
+
+	// .description {
+	// max-width: 480px;
+	// }
+
+	.counter {
+		@include adaptive-font(64, 32);
+
+		& span {
+			@include adaptive-font(24, 12);
+		}
+	}
+
+	.survey {
+		padding: calcVH(50) 0 calcVH(30) calcVW(90);
+	}
+
+	.typesContainer {
+		margin-bottom: calcVH(90);
+
+		ul {
+			// width: 50%;
+			// display: flex;
+			// flex-wrap: wrap;
+			row-gap: calcVH(30);
+			// column-gap: calcVW(10);
+		}
+	}
+
+	.surveyTitle {
+		margin-bottom: calcVH(30);
+		@include adaptive-font(32, 20); // 20 - уже на мобилке.
+	}
+
+	.options {
+		row-gap: calcVH(30);
+		column-gap: calcVW(50);
+		margin-bottom: calcVH(90);
+	}
+
+	// .optionTask {
+	// width: calcVW(310);
+	// width: 100%;
+	// flex: auto;
+	// }
+
+	.controls {
+		padding-top: calcVH(30);
+	}
+
+	.backButton {
+		margin-right: calcVW(50);
+	}
+
+	.forwardButton {
+		// width: 330px;
+		// width: calcVW(330);
+		// height: 80px;
+		// height: calcVH(80);
+	}
+}
+
+@media (max-width: 768px) {
+	.counter {
+		display: none;
 	}
 }
