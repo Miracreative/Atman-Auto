@@ -52,6 +52,26 @@
 	justify-content: space-between;
 }
 
+.surveyForm {
+	position: relative;
+}
+
+.surveyFormType {
+	position: absolute;
+}
+
+.surveyFormConnection {
+	position: absolute;
+}
+
+.surveyFormConditions {
+	position: absolute;
+}
+
+.surveyFormResults {
+	position: absolute;
+}
+
 .typesContainer {
 	display: flex;
 	flex-wrap: wrap;
@@ -169,11 +189,17 @@
 }
 
 .hidden {
-	display: none;
+	// display: none;
+	opacity: 0;
+	scale: 0.8;
+	transition: all 0.5s ease-in-out;
 }
 
 .visible {
-	display: block;
+	// display: block;
+	opacity: 1;
+	scale: 1;
+	transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: 1920px) {

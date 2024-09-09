@@ -1,7 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import {
+	//  useEffect,
+	useState,
+} from 'react';
 
 import ArrowButton from '../../ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
@@ -77,12 +80,12 @@ export default function Survey() {
 		}
 	};
 
-	useEffect(() => {
-		console.log(`${'Сейчас счётчик показывает: ' + count}`);
+	// useEffect(() => {
+	// 	console.log(`${'Сейчас счётчик показывает: ' + count}`);
 
-		if (count === 1) {
-		}
-	}, [count]);
+	// 	if (count === 1) {
+	// 	}
+	// }, [count]);
 
 	return (
 		<section className={styles.section}>
@@ -175,7 +178,7 @@ export default function Survey() {
 						</div>
 
 						<div
-							className={`${styles.surveyFormConnections} ${
+							className={`${styles.surveyFormConnection} ${
 								count === 3 ? styles.visible : styles.hidden
 							}`}
 						>
