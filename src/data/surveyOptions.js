@@ -117,7 +117,7 @@ const connections = [
 		id: 'connection-2',
 		name: 'connections',
 		value: 'connection-2',
-		text: 'Наличие контакта с водой',
+		text: 'Вне помещения',
 		extraText: '',
 	},
 	{
@@ -131,7 +131,7 @@ const connections = [
 		id: 'connection-4',
 		name: 'connections',
 		value: 'connection-4',
-		text: 'Вне помещения',
+		text: 'Наличие контакта с водой',
 		extraText: '',
 	},
 	{
@@ -186,14 +186,14 @@ const conditions = [
 		id: 'condition-2',
 		name: 'conditions',
 		value: 'condition-2',
-		text: 'Обе поверхности шероховатые',
+		text: 'Одна из поверхностей шероховатая',
 		extraText: '',
 	},
 	{
 		id: 'condition-3',
 		name: 'conditions',
 		value: 'condition-3',
-		text: 'Одна из поверхностей шероховатая',
+		text: 'Обе поверхности шероховатые',
 		extraText: '',
 	},
 	{
