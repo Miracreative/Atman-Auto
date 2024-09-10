@@ -1,10 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {
-	//  useEffect,
-	useState,
-} from 'react';
+import { useState } from 'react';
 
 import ArrowButton from '../../ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
@@ -79,13 +76,6 @@ export default function Survey() {
 			setCount(count - 1);
 		}
 	};
-
-	// useEffect(() => {
-	// 	console.log(`${'Сейчас счётчик показывает: ' + count}`);
-
-	// 	if (count === 1) {
-	// 	}
-	// }, [count]);
 
 	return (
 		<section className={styles.section}>

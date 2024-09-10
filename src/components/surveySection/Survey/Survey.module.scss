@@ -75,7 +75,6 @@
 .typesContainer {
 	display: flex;
 	flex-wrap: wrap;
-	// margin-bottom: 90px;
 
 	ul {
 		width: 50%;
@@ -102,9 +101,7 @@
 .optionsConnection {
 	display: grid;
 	grid-template-columns: 1fr 1fr 2fr;
-	// grid-gap: 50px;
 	row-gap: 30px;
-	// flex-wrap: wrap;
 	border-bottom: 1px solid rgba(var(--white-opacity-rgba));
 	padding-bottom: 30px;
 }
@@ -112,7 +109,6 @@
 .optionsTemperature {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	// flex-wrap: wrap;
 	padding-top: 30px;
 }
 
@@ -137,7 +133,6 @@
 	flex-wrap: wrap;
 	row-gap: 30px;
 	column-gap: 50px;
-	// margin-bottom: 90px;
 }
 
 .optionTask {
@@ -151,6 +146,10 @@
 	& h4 {
 		font-weight: 400;
 	}
+}
+
+.optionConnection {
+	// width: 350px;
 }
 
 .controls {
@@ -189,23 +188,24 @@
 }
 
 .hidden {
-	// display: none;
 	opacity: 0;
-	scale: 0.8;
-	transition: all 0.5s ease-in-out;
+	scale: 0.75;
+	z-index: -1;
+	user-select: none;
+	transition: all 0.3s ease-in-out;
 }
 
 .visible {
-	// display: block;
 	opacity: 1;
 	scale: 1;
-	transition: all 0.5s ease-in-out;
+	z-index: 1;
+	user-select: auto;
+	transition: all 0.8s ease-in-out;
 }
 
 @media (max-width: 1920px) {
 	.content {
 		margin: calcVH(20) 0;
-		// border-radius: 20px;
 		padding: 0 calcVW(80) 0;
 	}
 
@@ -217,10 +217,6 @@
 		margin-bottom: calcVH(20);
 		@include adaptive-font-mobile(40, 20);
 	}
-
-	// .description {
-	// max-width: 480px;
-	// }
 
 	.counter {
 		@include adaptive-font(64, 32);
@@ -235,14 +231,8 @@
 	}
 
 	.typesContainer {
-		// margin-bottom: calcVH(90);
-
 		ul {
-			// width: 50%;
-			// display: flex;
-			// flex-wrap: wrap;
 			row-gap: calcVH(30);
-			// column-gap: calcVW(10);
 		}
 	}
 
@@ -257,12 +247,6 @@
 		margin-bottom: calcVH(90);
 	}
 
-	// .optionTask {
-	// width: calcVW(310);
-	// width: 100%;
-	// flex: auto;
-	// }
-
 	.controls {
 		padding-top: calcVH(30);
 	}
@@ -271,12 +255,12 @@
 		margin-right: calcVW(50);
 	}
 
-	.forwardButton {
-		// width: 330px;
-		// width: calcVW(330);
-		// height: 80px;
-		// height: calcVH(80);
-	}
+	// .forwardButton {
+	// width: 330px;
+	// width: calcVW(330);
+	// height: 80px;
+	// height: calcVH(80);
+	// }
 }
 
 @media (max-width: 768px) {
