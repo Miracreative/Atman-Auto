@@ -460,6 +460,16 @@
 	}
 }
 
+@media (max-width: 1024px) {
+	.content {
+		min-height: 650px;
+	}
+
+	.optionsConnection {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
 @media (max-width: 768px) {
 	.counter {
 		display: none;
