@@ -49,7 +49,7 @@
 
 }
 
-.cardContainer:nth-child(even) {
+.cardContainer:nth-child(odd) {
 	& img {
 		margin-left: auto;
 	}
@@ -61,7 +61,7 @@
 
 
 }
-.cardContainer:nth-child(even) .textPart {
+.cardContainer:nth-child(odd) .textPart {
 	grid-column: 1;
 	grid-row: 1;
 }
@@ -97,7 +97,7 @@
 
 .textPart {
 	background-color: rgba(255, 255, 255, 0.6);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(6px);
 
 	display: flex;
 	flex-direction: column;
@@ -163,22 +163,22 @@
 	}
 }
 
-.cardContainer:nth-child(1) .card {
+.cardContainer:nth-child(2) .card {
 	background: url('../../../../public/ProductionContent/longitudinal-back.png') no-repeat;
 }
-.cardContainer:nth-child(2) .card {
+.cardContainer:nth-child(3) .card {
 	background: url('../../../../public/ProductionContent/face-back.png') no-repeat;
 }
-.cardContainer:nth-child(3) .card {
+.cardContainer:nth-child(4) .card {
 	background: url('../../../../public/ProductionContent/flat-back.png') no-repeat;
 }
-.cardContainer:nth-child(4) .card {
+.cardContainer:nth-child(5) .card {
 	background: url('../../../../public/ProductionContent/rotary-back.png') no-repeat;
 }
-.cardContainer:nth-child(5) .card {
+.cardContainer:nth-child(6) .card {
 	background: url('../../../../public/ProductionContent/plotter-back.png') no-repeat;
 }
-.cardContainer:nth-child(6) .card {
+.cardContainer:nth-child(7) .card {
 	background: url('../../../../public/ProductionContent/lamination-back.png') no-repeat;
 }
 
