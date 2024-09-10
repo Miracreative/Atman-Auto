@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import ArrowButton from '../../ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
+import ProductCard from '../../ProductCard/ProductCard';
 
 import {
 	tasks,
@@ -245,7 +246,28 @@ export default function Survey() {
 								count === 5 ? styles.visible : styles.hidden
 							}`}
 						>
-							<h3 className={styles.surveyTitle}>Результаты</h3>
+							<h3
+								className={`${styles.surveyTitle} ${styles.surveyTitleResults}`}
+							>
+								Результаты
+							</h3>
+							<ul className={styles.resultsList}>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+							</ul>
 							{/* <ul className={styles.optionsCondition}>
 								{conditions.map((condition) => (
 									<li key={condition.id} className={styles.optionCondition}>
