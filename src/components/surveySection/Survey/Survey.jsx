@@ -1,13 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import {
-	//  useEffect,
-	useState,
-} from 'react';
+import { useState } from 'react';
 
 import ArrowButton from '../../ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
+import ProductCard from '../../ProductCard/ProductCard';
 
 import {
 	tasks,
@@ -79,13 +77,6 @@ export default function Survey() {
 			setCount(count - 1);
 		}
 	};
-
-	// useEffect(() => {
-	// 	console.log(`${'Сейчас счётчик показывает: ' + count}`);
-
-	// 	if (count === 1) {
-	// 	}
-	// }, [count]);
 
 	return (
 		<section className={styles.section}>
@@ -255,7 +246,28 @@ export default function Survey() {
 								count === 5 ? styles.visible : styles.hidden
 							}`}
 						>
-							<h3 className={styles.surveyTitle}>Результаты</h3>
+							<h3
+								className={`${styles.surveyTitle} ${styles.surveyTitleResults}`}
+							>
+								Результаты
+							</h3>
+							<ul className={styles.resultsList}>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+								<li>
+									<ProductCard />
+								</li>
+							</ul>
 							{/* <ul className={styles.optionsCondition}>
 								{conditions.map((condition) => (
 									<li key={condition.id} className={styles.optionCondition}>
@@ -274,6 +286,52 @@ export default function Survey() {
 							</ul> */}
 						</div>
 
+						{/* <div className={styles.controls}>
+							<button
+								className={styles.backButton}
+								onClick={handleDec}
+								disabled={backButtonDisabled}
+							>
+								<ArrowButton backgroundColor="transparent" />
+							</button>
+							<button
+								className={`${styles.forwardButton} button`}
+								onClick={handleInc}
+								disabled={forwardButtonDisabled}
+							>
+								Продолжить
+							</button>
+							<div className={styles.links}>
+								<div
+									className={`${styles.linkContainer} ${
+										count === 2 ? styles.visible : styles.hidden
+									}`}
+								>
+									<Link className={styles.link} href="/">
+										Таблица с поверхностной энергией материалов
+									</Link>
+								</div>
+								<div
+									className={`${styles.linkContainer} ${
+										count === 3 ? styles.visible : styles.hidden
+									}`}
+								>
+									<Link className={styles.link} href="/">
+										Влияние среды эксплуатации на соединение
+									</Link>
+								</div>
+								<div
+									className={`${styles.linkContainer} ${
+										count === 4 ? styles.visible : styles.hidden
+									}`}
+								>
+									<Link className={styles.link} href="/">
+										Статья о видах поверхностей размещенной в базе знаний
+									</Link>
+								</div>
+							</div>
+						</div> */}
+
 						<div className={styles.controls}>
 							<button
 								className={styles.backButton}
@@ -289,7 +347,35 @@ export default function Survey() {
 							>
 								Продолжить
 							</button>
-							<Link href="/"></Link>
+							<div className={styles.links}>
+								<div
+									className={`${styles.linkContainer} ${
+										count === 2 ? styles.visible : styles.hidden
+									}`}
+								>
+									<Link className={styles.link} href="/">
+										Таблица с поверхностной энергией материалов
+									</Link>
+								</div>
+								<div
+									className={`${styles.linkContainer} ${
+										count === 3 ? styles.visible : styles.hidden
+									}`}
+								>
+									<Link className={styles.link} href="/">
+										Влияние среды эксплуатации на соединение
+									</Link>
+								</div>
+								<div
+									className={`${styles.linkContainer} ${
+										count === 4 ? styles.visible : styles.hidden
+									}`}
+								>
+									<Link className={styles.link} href="/">
+										Статья о видах поверхностей размещенной в базе знаний
+									</Link>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -50,11 +50,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
-
-.surveyForm {
 	position: relative;
 }
+
+// .surveyForm {
+// }
 
 .surveyFormType {
 	position: absolute;
@@ -70,12 +70,12 @@
 
 .surveyFormResults {
 	position: absolute;
+	width: 93%;
 }
 
 .typesContainer {
 	display: flex;
 	flex-wrap: wrap;
-	// margin-bottom: 90px;
 
 	ul {
 		width: 50%;
@@ -85,11 +85,13 @@
 
 		&:first-child {
 			border-right: 1px solid rgba(var(--white-opacity-rgba));
-			padding-right: 70px;
+			padding-right: 80px;
+			// padding-right: 65px;
 		}
 
 		&:nth-child(2) {
-			padding-left: 70px;
+			padding-left: 80px;
+			// padding-left: 65px;
 		}
 	}
 }
@@ -102,17 +104,31 @@
 .optionsConnection {
 	display: grid;
 	grid-template-columns: 1fr 1fr 2fr;
-	// grid-gap: 50px;
 	row-gap: 30px;
-	// flex-wrap: wrap;
+	// column-gap: 50px;
 	border-bottom: 1px solid rgba(var(--white-opacity-rgba));
 	padding-bottom: 30px;
+
+	& li {
+		&:nth-child(1),
+		&:nth-child(2) {
+			width: 70%;
+		}
+
+		&:nth-child(3) {
+			width: 80%;
+		}
+
+		&:nth-child(4) {
+			width: 80%;
+		}
+	}
 }
 
 .optionsTemperature {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	// flex-wrap: wrap;
+	// column-gap: 50px;
 	padding-top: 30px;
 }
 
@@ -130,14 +146,22 @@
 	margin-bottom: 30px;
 	font-size: 32px;
 	font-weight: 700;
+
+	// &:last-child {
+	// 	margin-bottom: 20px;
+	// }
+}
+
+.surveyTitleResults {
+	margin-bottom: 20px;
 }
 
 .optionsTask {
 	display: flex;
 	flex-wrap: wrap;
-	row-gap: 30px;
-	column-gap: 50px;
-	// margin-bottom: 90px;
+	gap: 30px 50px;
+	// row-gap: 30px;
+	// column-gap: 50px;
 }
 
 .optionTask {
@@ -151,6 +175,17 @@
 	& h4 {
 		font-weight: 400;
 	}
+
+	& li {
+		width: 102%;
+	}
+}
+
+.resultsList {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 20px;
 }
 
 .controls {
@@ -166,7 +201,7 @@
 	background-color: transparent;
 	cursor: pointer;
 	opacity: 1;
-	transition: all 0.3s;
+	transition: opacity 0.3s;
 
 	&:disabled {
 		opacity: 0.2;
@@ -188,24 +223,51 @@
 	}
 }
 
+.links {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 150px;
+	flex: 1;
+	position: relative;
+}
+
+.linkContainer {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	&:last-child {
+		width: 75%;
+	}
+}
+
+.link {
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: underline;
+}
+
 .hidden {
-	// display: none;
 	opacity: 0;
-	scale: 0.8;
-	transition: all 0.5s ease-in-out;
+	transform: scale(0.75);
+	z-index: -1;
+	user-select: none;
+	transition: all 0.3s ease-in-out;
 }
 
 .visible {
-	// display: block;
 	opacity: 1;
-	scale: 1;
-	transition: all 0.5s ease-in-out;
+	transform: scale(1);
+	z-index: 1;
+	user-select: auto;
+	transition: all 0.8s ease-in-out;
 }
 
 @media (max-width: 1920px) {
 	.content {
 		margin: calcVH(20) 0;
-		// border-radius: 20px;
 		padding: 0 calcVW(80) 0;
 	}
 
@@ -217,10 +279,6 @@
 		margin-bottom: calcVH(20);
 		@include adaptive-font-mobile(40, 20);
 	}
-
-	// .description {
-	// max-width: 480px;
-	// }
 
 	.counter {
 		@include adaptive-font(64, 32);
@@ -235,14 +293,8 @@
 	}
 
 	.typesContainer {
-		// margin-bottom: calcVH(90);
-
-		ul {
-			// width: 50%;
-			// display: flex;
-			// flex-wrap: wrap;
+		& ul {
 			row-gap: calcVH(30);
-			// column-gap: calcVW(10);
 		}
 	}
 
@@ -251,17 +303,16 @@
 		@include adaptive-font(32, 20); // 20 - уже на мобилке.
 	}
 
-	.optionsTask {
-		row-gap: calcVH(30);
-		column-gap: calcVW(50);
-		margin-bottom: calcVH(90);
+	.surveyTitleResults {
+		margin-bottom: calcVH(20);
 	}
 
-	// .optionTask {
-	// width: calcVW(310);
-	// width: 100%;
-	// flex: auto;
-	// }
+	.optionsTask {
+		// row-gap: calcVH(30);
+		// column-gap: calcVW(50);
+		gap: calcVW(30) calcVH(50);
+		margin-bottom: calcVH(90);
+	}
 
 	.controls {
 		padding-top: calcVH(30);
@@ -271,12 +322,12 @@
 		margin-right: calcVW(50);
 	}
 
-	.forwardButton {
-		// width: 330px;
-		// width: calcVW(330);
-		// height: 80px;
-		// height: calcVH(80);
-	}
+	// .forwardButton {
+	// width: 330px;
+	// width: calcVW(330);
+	// height: 80px;
+	// height: calcVH(80);
+	// }
 }
 
 @media (max-width: 768px) {
