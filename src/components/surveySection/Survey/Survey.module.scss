@@ -471,7 +471,23 @@
 }
 
 @media (max-width: 768px) {
+	.content {
+		min-height: 900px;
+		flex-direction: column;
+	}
+
+	.titleContainer {
+		width: 100%;
+		border-right: 0;
+		border-bottom: 1px solid rgba(var(--white-opacity-rgba));
+	}
+
 	.counter {
 		display: none;
+	}
+
+	.optionsTask {
+		// grid-row: 30px;
+		gap: calcVH(30) calcVW(50);
 	}
 }
