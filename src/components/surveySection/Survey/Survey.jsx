@@ -1,11 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
-import ArrowButton from '../../ArrowButton/ArrowButton';
+import ArrowButton from '@/components/ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
-import ProductCard from '../../ProductCard/ProductCard';
+import ProductCard from '@/components/ProductCard/ProductCard';
+import TriangleIcon from '@/components/TriangleIcon/TriangleIcon';
 
 import {
 	tasks,
@@ -15,6 +17,7 @@ import {
 	temperatures,
 	conditions,
 } from '@/data/surveyOptions';
+import image from '/public/survey/survey.png';
 
 import styles from './Survey.module.scss';
 
@@ -34,10 +37,10 @@ export default function Survey() {
 
 	const [checkedCondition, setCheckedCondition] = useState(conditions[0].value);
 
-	const [count, setCount] = useState(1);
-
 	const minCount = 1;
 	const maxCount = 5;
+
+	const [count, setCount] = useState(minCount);
 
 	const forwardButtonDisabled = count === maxCount;
 	const backButtonDisabled = count === minCount;
@@ -77,6 +80,18 @@ export default function Survey() {
 			setCount(count - 1);
 		}
 	};
+
+	const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+	const handleOpenMenu = () => {
+		setIsOpenMenu((isOpenMenu) => !isOpenMenu);
+	};
+
+	const handleCloseMenu = () => {
+		setIsOpenMenu(false);
+	};
+
+	const selectedTask = tasks.find((task) => task.value === checkedTask);
 
 	return (
 		<section className={styles.section}>
@@ -120,6 +135,49 @@ export default function Survey() {
 									</li>
 								))}
 							</ul>
+
+							<div className={styles.surveyFormMobile}>
+								<div
+									className={styles.optionsTaskMenu}
+									onClick={handleOpenMenu}
+								>
+									<SurveyItem
+										id={selectedTask.id}
+										value={selectedTask.value}
+										checked={true}
+										onChange={() => {}}
+									/>
+									<p>{selectedTask.text}</p>
+									<div className={styles.arrow}>
+										<TriangleIcon color="var(--white)" isOpen={isOpenMenu} />
+									</div>
+								</div>
+								<Image src={image} alt="Процесс наматывания клейкой ленты" />
+								<ul
+									className={`${styles.optionsTaskMobile} ${
+										isOpenMenu ? styles.visibleMenu : styles.hiddenMenu
+									}`}
+								>
+									{tasks.map((task) => (
+										<li
+											key={task.id}
+											className={styles.optionTaskMobile}
+											onClick={handleOpenMenu}
+										>
+											<SurveyItem
+												key={task.id}
+												id={task.id}
+												name={task.name}
+												value={task.value}
+												text={task.text}
+												extraText={task.extraText}
+												checked={checkedTask === task.value}
+												onChange={handleCheckedTask}
+											/>
+										</li>
+									))}
+								</ul>
+							</div>
 						</div>
 
 						<div
@@ -268,22 +326,6 @@ export default function Survey() {
 									<ProductCard />
 								</li> */}
 							</ul>
-							{/* <ul className={styles.optionsCondition}>
-								{conditions.map((condition) => (
-									<li key={condition.id} className={styles.optionCondition}>
-										<SurveyItem
-											key={condition.id}
-											id={condition.id}
-											name={condition.name}
-											value={condition.value}
-											text={condition.text}
-											extraText={condition.extraText}
-											checked={checkedCondition === condition.value}
-											onChange={handleCheckedCondition}
-										/>
-									</li>
-								))}
-							</ul> */}
 						</div>
 
 						<div className={styles.controls}>
