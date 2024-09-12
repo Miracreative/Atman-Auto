@@ -101,6 +101,17 @@ export default function Survey() {
 	const width = useWindowWidth();
 
 	const selectedTask = tasks.find((task) => task.value === checkedTask);
+	const selectedType1 = types1.find((type) => type.value === checkedType1);
+	const selectedType2 = types2.find((type) => type.value === checkedType2);
+	const selectedConnection = connections.find(
+		(connection) => connection.value === checkedConnection,
+	);
+	const selectedTemperature = temperatures.find(
+		(temperature) => temperature.value === checkedTemperature,
+	);
+	const selectedCondition = conditions.find(
+		(condition) => condition.value === checkedCondition,
+	);
 
 	const [isMobile, setIsMobile] = useState(false);
 
@@ -223,6 +234,7 @@ export default function Survey() {
 							<h3 className={styles.surveyTitle}>
 								Виды склеиваемых поверхностей
 							</h3>
+
 							<div className={styles.typesContainer}>
 								<ul className={styles.optionsType}>
 									<h4>Поверхность 1</h4>
@@ -258,6 +270,53 @@ export default function Survey() {
 										</li>
 									))}
 								</ul>
+							</div>
+
+							<div className={styles.surveyFormMobile}>
+								<div className={styles.optionsTaskMobileContainer}>
+									<div
+										className={styles.optionsTaskMenu}
+										onClick={handleOpenMenu}
+									>
+										<SurveyItem
+											id={selectedType1.id}
+											value={selectedType1.value}
+											checked={true}
+											onChange={() => {}}
+										/>
+										<div>
+											<p>{selectedType1.text}</p>
+											<p>{selectedType1.extraText}</p>
+										</div>
+										<div className={styles.arrow}>
+											<TriangleIcon color="var(--white)" isOpen={isOpenMenu} />
+										</div>
+									</div>
+
+									{isMobile && (
+										<ul
+											className={`${styles.optionsTaskMobile} ${
+												isOpenMenu ? styles.visibleMenu : styles.hiddenMenu
+											}`}
+										>
+											<h4>Поверхность 1</h4>
+											{types1.map((type) => (
+												<li key={type.id} className={styles.optionType}>
+													<SurveyItem
+														key={type.id}
+														id={type.id}
+														name={type.name}
+														value={type.value}
+														text={type.text}
+														extraText={type.extraText}
+														checked={checkedType1 === type.value}
+														onChange={handleCheckedType1}
+													/>
+												</li>
+											))}
+										</ul>
+									)}
+								</div>
 							</div>
 						</div>
 
