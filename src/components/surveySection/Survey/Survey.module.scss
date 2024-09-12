@@ -183,6 +183,10 @@
 	align-items: center;
 }
 
+.buttons {
+	display: flex;
+}
+
 .backButton {
 	border: none;
 	margin-right: 50px;
@@ -511,14 +515,7 @@
 	}
 
 	.titleContainer {
-		// width: 575px;
-		// border-right: 1px solid rgb(var(--gray-line-rgb));
 		padding: 20px 15px;
-		// padding: 20px 0;
-		// margin: 0 15px 0 15px;
-		// text-align: center;
-		// display: flex;
-		// flex-direction: column;
 	}
 
 	.surveyFormMobile {
@@ -528,17 +525,16 @@
 
 		& img {
 			height: 200px;
-			// display: none;
 			object-fit: cover;
 			border-top: 1px solid rgb(var(--light-gray-rgb));
 			border-bottom: 1px solid rgb(var(--light-gray-rgb));
 			margin-bottom: 30px;
-			// padding-left: -15px;
-			// padding-left: 15px;
-			// margin-left: -15px;
-			// padding-right: 30px;
-			// margin-right: -30px;
 		}
+	}
+
+	.optionsTaskMobileContainer {
+		position: relative;
+		margin: 0 15px 30px;
 	}
 
 	.optionsTaskMenu {
@@ -548,28 +544,27 @@
 		border: 1px solid rgba(var(--gray-line-rgb));
 		border-radius: 10px;
 		padding: 5px;
-		margin: 0 15px 30px;
 
 		& p {
 			font-size: 16px;
 			font-weight: 500;
-			// line-height: 120%;
 		}
 	}
 
 	.optionsTaskMobile {
+		width: 100%;
 		border: 1px solid rgba(var(--gray-line-rgb));
 		border-radius: 10px;
 		padding: 5px;
-		margin: 0 15px;
 		display: flex;
 		flex-direction: column;
 		position: absolute;
-		top: 70px;
+		top: 100%;
+		left: 0;
+		margin-top: 5px;
 		row-gap: 5px;
 		background-color: var(--white);
 		color: rgb(var(--foreground-rgb));
-		// gap: 5px;
 	}
 
 	.arrow {
@@ -580,18 +575,42 @@
 		margin-left: auto;
 	}
 
+	.links {
+		height: 50px;
+		width: 100%;
+		margin: 0;
+		position: relative;
+	}
+
+	.linkContainer {
+		bottom: 100%;
+		margin-bottom: 30px;
+		padding-right: 60px;
+		height: 70px;
+		align-items: flex-start;
+	}
+
 	.controls {
 		padding: 0 15px;
 		border: 0;
+		flex-direction: column-reverse;
+	}
+
+	.buttons {
+		width: 100%;
+		height: 60px;
 	}
 
 	.backButton {
-		// z-index: 10;
+		svg {
+			width: 60px;
+			height: 60px;
+		}
 	}
 
 	.forwardButton {
 		width: 100%;
-		// z-index: 10;
+		height: 60px;
 	}
 }
 

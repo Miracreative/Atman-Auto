@@ -8,7 +8,6 @@ export default function SurveyItem({
 	extraText,
 	checked,
 	onChange,
-	// width = '330px',
 }) {
 	return (
 		<div className={styles.item}>

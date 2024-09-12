@@ -2,7 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+import useWindowWidth from '@/hooks/useWindowWidth';
 
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
@@ -84,6 +86,11 @@ export default function Survey() {
 	const [isOpenMenu, setIsOpenMenu] = useState(false);
 
 	const handleOpenMenu = () => {
+		// if (isOpenMenu) {
+		// setIsOpenMenu(false);
+		// handleCloseMenu();
+		// }
+
 		setIsOpenMenu((isOpenMenu) => !isOpenMenu);
 	};
 
@@ -91,7 +98,27 @@ export default function Survey() {
 		setIsOpenMenu(false);
 	};
 
+	const width = useWindowWidth();
+
 	const selectedTask = tasks.find((task) => task.value === checkedTask);
+
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		console.log('useEffect сработал');
+
+		if (width <= 480) {
+			setIsMobile(true);
+			console.log(
+				`Мы в мобильном режиме (текущая ширина ${width}px): ${isMobile}`,
+			);
+		} else {
+			setIsMobile(false);
+			console.log(
+				`Мы в десктопном режиме(текущая ширина ${width}px): ${isMobile}`,
+			);
+		}
+	}, [width]);
 
 	return (
 		<section className={styles.section}>
@@ -119,51 +146,10 @@ export default function Survey() {
 							<h3 className={styles.surveyTitle}>
 								Какая задача стоит перед Вами?
 							</h3>
-							<ul className={styles.optionsTask}>
-								{tasks.map((task) => (
-									<li key={task.id} className={styles.optionTask}>
-										<SurveyItem
-											key={task.id}
-											id={task.id}
-											name={task.name}
-											value={task.value}
-											text={task.text}
-											extraText={task.extraText}
-											checked={checkedTask === task.value}
-											onChange={handleCheckedTask}
-										/>
-									</li>
-								))}
-							</ul>
-
-							<div className={styles.surveyFormMobile}>
-								<div
-									className={styles.optionsTaskMenu}
-									onClick={handleOpenMenu}
-								>
-									<SurveyItem
-										id={selectedTask.id}
-										value={selectedTask.value}
-										checked={true}
-										onChange={() => {}}
-									/>
-									<p>{selectedTask.text}</p>
-									<div className={styles.arrow}>
-										<TriangleIcon color="var(--white)" isOpen={isOpenMenu} />
-									</div>
-								</div>
-								<Image src={image} alt="Процесс наматывания клейкой ленты" />
-								<ul
-									className={`${styles.optionsTaskMobile} ${
-										isOpenMenu ? styles.visibleMenu : styles.hiddenMenu
-									}`}
-								>
+							{!isMobile && (
+								<ul className={styles.optionsTask}>
 									{tasks.map((task) => (
-										<li
-											key={task.id}
-											className={styles.optionTaskMobile}
-											onClick={handleOpenMenu}
-										>
+										<li key={task.id} className={styles.optionTask}>
 											<SurveyItem
 												key={task.id}
 												id={task.id}
@@ -177,6 +163,55 @@ export default function Survey() {
 										</li>
 									))}
 								</ul>
+							)}
+
+							<div className={styles.surveyFormMobile}>
+								<div className={styles.optionsTaskMobileContainer}>
+									<div
+										className={styles.optionsTaskMenu}
+										onClick={handleOpenMenu}
+									>
+										<SurveyItem
+											id={selectedTask.id}
+											value={selectedTask.value}
+											checked={true}
+											onChange={() => {}}
+										/>
+										<p>{selectedTask.text}</p>
+										<div className={styles.arrow}>
+											<TriangleIcon color="var(--white)" isOpen={isOpenMenu} />
+										</div>
+									</div>
+
+									{isMobile && (
+										<ul
+											className={`${styles.optionsTaskMobile} ${
+												isOpenMenu ? styles.visibleMenu : styles.hiddenMenu
+											}`}
+										>
+											{tasks.map((task) => (
+												<li
+													key={task.id}
+													className={styles.optionTaskMobile}
+													onClick={handleCloseMenu}
+												>
+													<SurveyItem
+														key={task.id}
+														id={task.id}
+														name={task.name}
+														value={task.value}
+														text={task.text}
+														extraText={task.extraText}
+														checked={checkedTask === task.value}
+														onChange={handleCheckedTask}
+													/>
+												</li>
+											))}
+										</ul>
+									)}
+								</div>
+
+								<Image src={image} alt="Процесс наматывания клейкой ленты" />
 							</div>
 						</div>
 
@@ -329,20 +364,23 @@ export default function Survey() {
 						</div>
 
 						<div className={styles.controls}>
-							<button
-								className={styles.backButton}
-								onClick={handleDec}
-								disabled={backButtonDisabled}
-							>
-								<ArrowButton backgroundColor="transparent" />
-							</button>
-							<button
-								className={`${styles.forwardButton} button`}
-								onClick={handleInc}
-								disabled={forwardButtonDisabled}
-							>
-								Продолжить
-							</button>
+							<div className={styles.buttons}>
+								<button
+									className={styles.backButton}
+									onClick={handleDec}
+									disabled={backButtonDisabled}
+								>
+									<ArrowButton backgroundColor="transparent" />
+								</button>
+								<button
+									className={`${styles.forwardButton} button`}
+									onClick={handleInc}
+									disabled={forwardButtonDisabled}
+								>
+									Продолжить
+								</button>
+							</div>
+
 							<div className={styles.links}>
 								<div
 									className={`${styles.linkContainer} ${
