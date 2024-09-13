@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 import useWindowWidth from '@/hooks/useWindowWidth';
+import useToggleMenus from '@/hooks/useToggleMenus';
 
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
@@ -24,20 +25,35 @@ import image from '/public/survey/survey.png';
 import styles from './Survey.module.scss';
 
 export default function Survey() {
-	const [checkedTask, setCheckedTask] = useState(tasks[0].value);
+	const [isMobile, setIsMobile] = useState(false);
 
+	const [menuStates, toggleMenu, closeMenu] = useToggleMenus({
+		isOpenMenuTask: false,
+		isOpenMenuType1: false,
+		isOpenMenuType2: false,
+		isOpenMenuConnection: false,
+		isOpenMenuTemperature: false,
+		isOpenMenuCondition: false,
+	});
+
+	const [checkedTask, setCheckedTask] = useState(tasks[0].value);
 	const [checkedType1, setCheckedType1] = useState(types1[0].value);
 	const [checkedType2, setCheckedType2] = useState(types2[0].value);
-
 	const [checkedConnection, setCheckedConnection] = useState(
 		connections[0].value,
 	);
-
 	const [checkedTemperature, setCheckedTemperature] = useState(
 		temperatures[0].value,
 	);
-
 	const [checkedCondition, setCheckedCondition] = useState(conditions[0].value);
+
+	const handleOpenMenu = (menuName) => {
+		toggleMenu(menuName);
+	};
+
+	const handleCloseMenu = (menuName) => {
+		closeMenu(menuName);
+	};
 
 	const minCount = 1;
 	const maxCount = 5;
@@ -83,21 +99,6 @@ export default function Survey() {
 		}
 	};
 
-	const [isOpenMenu, setIsOpenMenu] = useState(false);
-
-	const handleOpenMenu = () => {
-		// if (isOpenMenu) {
-		// setIsOpenMenu(false);
-		// handleCloseMenu();
-		// }
-
-		setIsOpenMenu((isOpenMenu) => !isOpenMenu);
-	};
-
-	const handleCloseMenu = () => {
-		setIsOpenMenu(false);
-	};
-
 	const width = useWindowWidth();
 
 	const selectedTask = tasks.find((task) => task.value === checkedTask);
@@ -113,8 +114,6 @@ export default function Survey() {
 		(condition) => condition.value === checkedCondition,
 	);
 
-	const [isMobile, setIsMobile] = useState(false);
-
 	useEffect(() => {
 		console.log('useEffect сработал');
 
@@ -126,7 +125,7 @@ export default function Survey() {
 		} else {
 			setIsMobile(false);
 			console.log(
-				`Мы в десктопном режиме(текущая ширина ${width}px): ${isMobile}`,
+				`Мы в десктопном режиме (текущая ширина ${width}px): ${isMobile}`,
 			);
 		}
 	}, [width]);
@@ -180,7 +179,7 @@ export default function Survey() {
 								<div className={styles.optionsTaskMobileContainer}>
 									<div
 										className={styles.optionsTaskMenu}
-										onClick={handleOpenMenu}
+										onClick={handleOpenMenuTask}
 									>
 										<SurveyItem
 											id={selectedTask.id}
@@ -190,21 +189,26 @@ export default function Survey() {
 										/>
 										<p>{selectedTask.text}</p>
 										<div className={styles.arrow}>
-											<TriangleIcon color="var(--white)" isOpen={isOpenMenu} />
+											<TriangleIcon
+												color="var(--white)"
+												isOpen={isOpenMenuTask}
+											/>
 										</div>
 									</div>
 
 									{isMobile && (
 										<ul
 											className={`${styles.optionsTaskMobile} ${
-												isOpenMenu ? styles.visibleMenu : styles.hiddenMenu
+												menuStates.isOpenMenuTask
+													? styles.visibleMenu
+													: styles.hiddenMenu
 											}`}
 										>
 											{tasks.map((task) => (
 												<li
 													key={task.id}
 													className={styles.optionTaskMobile}
-													onClick={handleCloseMenu}
+													onClick={handleCloseMenuTask}
 												>
 													<SurveyItem
 														key={task.id}
@@ -274,34 +278,93 @@ export default function Survey() {
 
 							<div className={styles.surveyFormMobile}>
 								<div className={styles.optionsTaskMobileContainer}>
+									<div className={styles.type1ContainerMobile}>
+										<h4>Поверхность 1</h4>
+										<div
+											className={styles.optionsTaskMenu}
+											onClick={handleOpenMenuType1}
+										>
+											<SurveyItem
+												id={selectedType1.id}
+												value={selectedType1.value}
+												checked={true}
+												onChange={() => {}}
+											/>
+											<div>
+												<p>{selectedType1.text}</p>
+												<p>{selectedType1.extraText}</p>
+											</div>
+											<div className={styles.arrow}>
+												<TriangleIcon
+													color="var(--white)"
+													isOpen={isOpenMenuType1}
+												/>
+											</div>
+										</div>
+
+										{isMobile && (
+											<ul
+												className={`${styles.optionsTaskMobile} ${
+													isOpenMenuType1
+														? styles.visibleMenu
+														: styles.hiddenMenu
+												}`}
+											>
+												{types1.map((type) => (
+													<li
+														key={type.id}
+														className={styles.optionType}
+														onClick={handleCloseMenuType1}
+													>
+														<SurveyItem
+															key={type.id}
+															id={type.id}
+															name={type.name}
+															value={type.value}
+															text={type.text}
+															extraText={type.extraText}
+															checked={checkedType1 === type.value}
+															onChange={handleCheckedType1}
+														/>
+													</li>
+												))}
+											</ul>
+										)}
+									</div>
+									<h4>Поверхность 2</h4>
 									<div
 										className={styles.optionsTaskMenu}
-										onClick={handleOpenMenu}
+										onClick={handleOpenMenuType2}
 									>
 										<SurveyItem
-											id={selectedType1.id}
-											value={selectedType1.value}
+											id={selectedType2.id}
+											value={selectedType2.value}
 											checked={true}
 											onChange={() => {}}
 										/>
 										<div>
-											<p>{selectedType1.text}</p>
-											<p>{selectedType1.extraText}</p>
+											<p>{selectedType2.text}</p>
+											<p>{selectedType2.extraText}</p>
 										</div>
 										<div className={styles.arrow}>
-											<TriangleIcon color="var(--white)" isOpen={isOpenMenu} />
+											<TriangleIcon
+												color="var(--white)"
+												isOpen={isOpenMenuType2}
+											/>
 										</div>
 									</div>
-
 									{isMobile && (
 										<ul
 											className={`${styles.optionsTaskMobile} ${
-												isOpenMenu ? styles.visibleMenu : styles.hiddenMenu
+												isOpenMenuType2 ? styles.visibleMenu : styles.hiddenMenu
 											}`}
 										>
-											<h4>Поверхность 1</h4>
-											{types1.map((type) => (
-												<li key={type.id} className={styles.optionType}>
+											{types2.map((type) => (
+												<li
+													key={type.id}
+													className={styles.optionType}
+													onClick={handleCloseMenuType2}
+												>
 													<SurveyItem
 														key={type.id}
 														id={type.id}
@@ -309,8 +372,8 @@ export default function Survey() {
 														value={type.value}
 														text={type.text}
 														extraText={type.extraText}
-														checked={checkedType1 === type.value}
-														onChange={handleCheckedType1}
+														checked={checkedType2 === type.value}
+														onChange={handleCheckedType2}
 													/>
 												</li>
 											))}
