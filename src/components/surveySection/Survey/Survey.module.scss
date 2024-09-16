@@ -58,6 +58,7 @@
 }
 
 .surveyFormConnection {
+	width: 100%;
 	position: absolute;
 }
 
@@ -261,6 +262,27 @@
 	}
 }
 
+.image {
+	height: 280px;
+	object-fit: cover;
+	border-top: 1px solid rgb(var(--light-gray-rgb));
+	border-bottom: 1px solid rgb(var(--light-gray-rgb));
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+.line {
+	width: calc(100% - 30px);
+	height: 1px;
+	// align-items: center;
+
+	background-color: rgb(var(--gray-line-rgb));
+	margin: 0 15px 20px;
+	// margin: 0 15px;
+	// box-sizing: border-box;
+	// padding: 0 15px;
+}
+
 .hidden {
 	opacity: 0;
 	transform: scale(0.75);
@@ -293,9 +315,9 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.surveyFormMobile {
-	display: none;
-}
+// .surveyFormMobile {
+// 	display: none;
+// }
 
 @media (max-width: 1920px) {
 	.content {
@@ -516,24 +538,19 @@
 		padding: 20px 15px;
 	}
 
-	.surveyFormMobile {
+	.surveyFormTypesMobile {
 		display: flex;
 		flex-direction: column;
 		position: relative;
+		// margin: 0 15px 30px;
+		& h4 {
+			margin: 0 0 5px 15px;
+		}
 	}
 
-	.image {
-		height: 200px;
-		object-fit: cover;
-		border-top: 1px solid rgb(var(--light-gray-rgb));
-		border-bottom: 1px solid rgb(var(--light-gray-rgb));
-		margin-bottom: 30px;
-	}
-
-	.optionsTaskMobileContainer {
-		position: relative;
-		margin: 0 15px 30px;
-	}
+	// .optionsTaskMobileContainer {
+	// 	position: relative;
+	// }
 
 	.optionsTaskMenu {
 		display: flex;
@@ -582,6 +599,7 @@
 		width: 100%;
 		margin: 0;
 		position: relative;
+		z-index: 0;
 	}
 
 	.linkContainer {
@@ -621,5 +639,13 @@
 		& p {
 			font-size: 10px;
 		}
+	}
+
+	.image {
+		height: 200px;
+		// object-fit: cover;
+		// border-top: 1px solid rgb(var(--light-gray-rgb));
+		// border-bottom: 1px solid rgb(var(--light-gray-rgb));
+		// margin-bottom: 30px;
 	}
 }

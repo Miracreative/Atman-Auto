@@ -11,7 +11,7 @@ import SurveyItem from '../SurveyItem/SurveyItem';
 import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
 import ProductCard from '@/components/ProductCard/ProductCard';
-import TriangleIcon from '@/components/TriangleIcon/TriangleIcon';
+// import TriangleIcon from '@/components/TriangleIcon/TriangleIcon';
 
 import {
 	tasks,
@@ -68,24 +68,24 @@ export default function Survey() {
 		setCheckedTask(value);
 	};
 
-	const handleCheckedType1 = (e) => {
-		setCheckedType1(e.target.value);
+	const handleCheckedType1 = (value) => {
+		setCheckedType1(value);
 	};
 
-	const handleCheckedType2 = (e) => {
-		setCheckedType2(e.target.value);
+	const handleCheckedType2 = (value) => {
+		setCheckedType2(value);
 	};
 
-	const handleCheckedConnection = (e) => {
-		setCheckedConnection(e.target.value);
+	const handleCheckedConnection = (value) => {
+		setCheckedConnection(value);
 	};
 
-	const handleCheckedTemperature = (e) => {
-		setCheckedTemperature(e.target.value);
+	const handleCheckedTemperature = (value) => {
+		setCheckedTemperature(value);
 	};
 
-	const handleCheckedCondition = (e) => {
-		setCheckedCondition(e.target.value);
+	const handleCheckedCondition = (value) => {
+		setCheckedCondition(value);
 	};
 
 	const handleInc = () => {
@@ -149,6 +149,7 @@ export default function Survey() {
 						</div>
 					</div>
 					<div className={styles.survey}>
+						{/* Экран 1 Какая задача стоит перед Вами? */}
 						<div
 							className={`${styles.surveyForm} ${
 								count === 1 ? styles.visible : styles.hidden
@@ -169,7 +170,7 @@ export default function Survey() {
 												text={task.text}
 												extraText={task.extraText}
 												checked={checkedTask === task.value}
-												onChange={handleCheckedTask}
+												onChange={() => handleCheckedTask(task.value)}
 											/>
 										</li>
 									))}
@@ -181,10 +182,10 @@ export default function Survey() {
 									<SurveyFormMobile
 										selectedItem={selectedTask}
 										isOpen={menuStates.isOpenMenuTask}
-										toggleMenu={() => toggleMenu('isOpenMenuTask')}
+										toggleMenu={() => handleOpenMenu('isOpenMenuTask')}
 										items={tasks}
 										handleSelect={handleCheckedTask}
-										handleCloseMenu={handleCloseMenu}
+										handleCloseMenu={() => handleCloseMenu('isOpenMenuTask')}
 									/>
 									<Image
 										className={styles.image}
@@ -194,7 +195,9 @@ export default function Survey() {
 								</>
 							)}
 						</div>
+						{/* Экран 1 Какая задача стоит перед Вами? */}
 
+						{/* Экран 2 Виды склеиваемых поверхностей */}
 						<div
 							className={`${styles.surveyFormType} ${
 								count === 2 ? styles.visible : styles.hidden
@@ -204,152 +207,81 @@ export default function Survey() {
 								Виды склеиваемых поверхностей
 							</h3>
 
-							<div className={styles.typesContainer}>
-								<ul className={styles.optionsType}>
-									<h4>Поверхность 1</h4>
-									{types1.map((type) => (
-										<li key={type.id} className={styles.optionType}>
-											<SurveyItem
-												key={type.id}
-												id={type.id}
-												name={type.name}
-												value={type.value}
-												text={type.text}
-												extraText={type.extraText}
-												checked={checkedType1 === type.value}
-												onChange={handleCheckedType1}
-											/>
-										</li>
-									))}
-								</ul>
-								<ul className={styles.optionsType}>
-									<h4>Поверхность 2</h4>
-									{types2.map((type) => (
-										<li key={type.id} className={styles.optionType}>
-											<SurveyItem
-												key={type.id}
-												id={type.id}
-												name={type.name}
-												value={type.value}
-												text={type.text}
-												extraText={type.extraText}
-												checked={checkedType2 === type.value}
-												onChange={handleCheckedType2}
-											/>
-										</li>
-									))}
-								</ul>
-							</div>
-
-							<div className={styles.surveyFormMobile}>
-								<div className={styles.optionsTaskMobileContainer}>
-									<div className={styles.type1ContainerMobile}>
+							{!isMobile && (
+								<div className={styles.typesContainer}>
+									<ul className={styles.optionsType}>
 										<h4>Поверхность 1</h4>
-										<div
-											className={styles.optionsTaskMenu}
-											onClick={() => handleOpenMenu('isOpenMenuType1')}
-										>
-											<SurveyItem
-												id={selectedType1.id}
-												value={selectedType1.value}
-												checked={true}
-												onChange={() => {}}
-											/>
-											<div>
-												<p>{selectedType1.text}</p>
-												<p>{selectedType1.extraText}</p>
-											</div>
-											<div className={styles.arrow}>
-												<TriangleIcon
-													color="var(--white)"
-													isOpen={menuStates.isOpenMenuType1}
-												/>
-											</div>
-										</div>
-
-										{isMobile && (
-											<ul
-												className={`${styles.optionsTaskMobile} ${
-													menuStates.isOpenMenuType1
-														? styles.visibleMenu
-														: styles.hiddenMenu
-												}`}
-											>
-												{types1.map((type) => (
-													<li
-														key={type.id}
-														className={styles.optionType}
-														onClick={() => handleCloseMenu('isOpenMenuType1')}
-													>
-														<SurveyItem
-															key={type.id}
-															id={type.id}
-															name={type.name}
-															value={type.value}
-															text={type.text}
-															extraText={type.extraText}
-															checked={checkedType1 === type.value}
-															onChange={handleCheckedType1}
-														/>
-													</li>
-												))}
-											</ul>
-										)}
-									</div>
-									<h4>Поверхность 2</h4>
-									<div
-										className={styles.optionsTaskMenu}
-										onClick={() => handleOpenMenu('isOpenMenuType2')}
-									>
-										<SurveyItem
-											id={selectedType2.id}
-											value={selectedType2.value}
-											checked={true}
-											onChange={() => {}}
-										/>
-										<div>
-											<p>{selectedType2.text}</p>
-											<p>{selectedType2.extraText}</p>
-										</div>
-										<div className={styles.arrow}>
-											<TriangleIcon
-												color="var(--white)"
-												isOpen={menuStates.isOpenMenuType2}
-											/>
-										</div>
-									</div>
-									{isMobile && (
-										<ul
-											className={`${styles.optionsTaskMobile} ${
-												menuStates.isOpenMenuType2
-													? styles.visibleMenu
-													: styles.hiddenMenu
-											}`}
-										>
-											{types2.map((type) => (
-												<li
+										{types1.map((type) => (
+											<li key={type.id} className={styles.optionType}>
+												<SurveyItem
 													key={type.id}
-													className={styles.optionType}
-													onClick={() => handleCloseMenu('isOpenMenuType2')}
-												>
-													<SurveyItem
-														key={type.id}
-														id={type.id}
-														name={type.name}
-														value={type.value}
-														text={type.text}
-														extraText={type.extraText}
-														checked={checkedType2 === type.value}
-														onChange={handleCheckedType2}
-													/>
-												</li>
-											))}
-										</ul>
-									)}
+													id={type.id}
+													name={type.name}
+													value={type.value}
+													text={type.text}
+													extraText={type.extraText}
+													checked={checkedType1 === type.value}
+													onChange={() => handleCheckedType1(type.value)}
+												/>
+											</li>
+										))}
+									</ul>
+									<ul className={styles.optionsType}>
+										<h4>Поверхность 2</h4>
+										{types2.map((type) => (
+											<li key={type.id} className={styles.optionType}>
+												<SurveyItem
+													key={type.id}
+													id={type.id}
+													name={type.name}
+													value={type.value}
+													text={type.text}
+													extraText={type.extraText}
+													checked={checkedType2 === type.value}
+													onChange={() => handleCheckedType2(type.value)}
+												/>
+											</li>
+										))}
+									</ul>
 								</div>
+							)}
+
+							<div className={styles.surveyFormTypesMobile}>
+								{/* <div className={styles.optionsTaskMobileContainer}> */}
+								{isMobile && (
+									<>
+										<h4>Поверхность 1</h4>
+										<SurveyFormMobile
+											selectedItem={selectedType1}
+											isOpen={menuStates.isOpenMenuType1}
+											toggleMenu={() => handleOpenMenu('isOpenMenuType1')}
+											items={types1}
+											handleSelect={handleCheckedType1}
+											// handleCloseMenu={handleCloseMenu}
+											handleCloseMenu={() => handleCloseMenu('isOpenMenuType1')}
+										/>
+									</>
+								)}
+								{isMobile && (
+									<>
+										<h4>Поверхность 2</h4>
+										<SurveyFormMobile
+											selectedItem={selectedType2}
+											isOpen={menuStates.isOpenMenuType2}
+											toggleMenu={() => handleOpenMenu('isOpenMenuType2')}
+											items={types2}
+											handleSelect={handleCheckedType2}
+											// handleCloseMenu={handleCloseMenu}
+											handleCloseMenu={() => handleCloseMenu('isOpenMenuType2')}
+										/>
+									</>
+								)}
+								{/* </div> */}
 							</div>
 						</div>
+						{/* Экран 2 Виды склеиваемых поверхностей */}
 
+						{/* Экран 3 Условия эксплуатации соединения */}
 						<div
 							className={`${styles.surveyFormConnection} ${
 								count === 3 ? styles.visible : styles.hidden
@@ -358,45 +290,79 @@ export default function Survey() {
 							<h3 className={styles.surveyTitle}>
 								Условия эксплуатации соединения
 							</h3>
-							<div className={styles.connectionsContainer}>
-								<ul className={styles.optionsConnection}>
-									{connections.map((connection) => (
-										<li key={connection.id} className={styles.optionConnection}>
-											<SurveyItem
-												key={connection.id}
-												id={connection.id}
-												name={connection.name}
-												value={connection.value}
-												text={connection.text}
-												extraText={connection.extraText}
-												checked={checkedConnection === connection.value}
-												onChange={handleCheckedConnection}
-											/>
-										</li>
-									))}
-								</ul>
-								<ul className={styles.optionsTemperature}>
-									{temperatures.map((temperature) => (
-										<li
-											key={temperature.id}
-											className={styles.optionTemperature}
-										>
-											<SurveyItem
-												key={temperature.id}
-												id={temperature.id}
-												name={temperature.name}
-												value={temperature.value}
-												text={temperature.text}
-												extraText={temperature.extraText}
-												checked={checkedTemperature === temperature.value}
-												onChange={handleCheckedTemperature}
-											/>
-										</li>
-									))}
-								</ul>
-							</div>
+							{!isMobile && (
+								<div className={styles.connectionsContainer}>
+									<>
+										<ul className={styles.optionsConnection}>
+											{connections.map((connection) => (
+												<li
+													key={connection.id}
+													className={styles.optionConnection}
+												>
+													<SurveyItem
+														key={connection.id}
+														id={connection.id}
+														name={connection.name}
+														value={connection.value}
+														text={connection.text}
+														extraText={connection.extraText}
+														checked={checkedConnection === connection.value}
+														onChange={handleCheckedConnection}
+													/>
+												</li>
+											))}
+										</ul>
+										<ul className={styles.optionsTemperature}>
+											{temperatures.map((temperature) => (
+												<li
+													key={temperature.id}
+													className={styles.optionTemperature}
+												>
+													<SurveyItem
+														key={temperature.id}
+														id={temperature.id}
+														name={temperature.name}
+														value={temperature.value}
+														text={temperature.text}
+														extraText={temperature.extraText}
+														checked={checkedTemperature === temperature.value}
+														onChange={handleCheckedTemperature}
+													/>
+												</li>
+											))}
+										</ul>
+									</>
+								</div>
+							)}
+							{isMobile && (
+								<>
+									<SurveyFormMobile
+										selectedItem={selectedConnection}
+										isOpen={menuStates.isOpenMenuConnection}
+										toggleMenu={() => handleOpenMenu('isOpenMenuConnection')}
+										items={connections}
+										handleSelect={handleCheckedConnection}
+										handleCloseMenu={() =>
+											handleCloseMenu('isOpenMenuConnection')
+										}
+									/>
+									<div className={styles.line}></div>
+									<SurveyFormMobile
+										selectedItem={selectedTemperature}
+										isOpen={menuStates.isOpenMenuTemperature}
+										toggleMenu={() => handleOpenMenu('isOpenMenuTemperature')}
+										items={temperatures}
+										handleSelect={handleCheckedTemperature}
+										handleCloseMenu={() =>
+											handleCloseMenu('isOpenMenuTemperature')
+										}
+									/>
+								</>
+							)}
 						</div>
+						{/* Экран 3 Условия эксплуатации соединения */}
 
+						{/* Экран 4 Состояние соединяемых поверхностей */}
 						<div
 							className={`${styles.surveyFormConditions} ${
 								count === 4 ? styles.visible : styles.hidden
@@ -405,24 +371,38 @@ export default function Survey() {
 							<h3 className={styles.surveyTitle}>
 								Состояние соединяемых поверхностей
 							</h3>
-							<ul className={styles.optionsCondition}>
-								{conditions.map((condition) => (
-									<li key={condition.id} className={styles.optionCondition}>
-										<SurveyItem
-											key={condition.id}
-											id={condition.id}
-											name={condition.name}
-											value={condition.value}
-											text={condition.text}
-											extraText={condition.extraText}
-											checked={checkedCondition === condition.value}
-											onChange={handleCheckedCondition}
-										/>
-									</li>
-								))}
-							</ul>
+							{!isMobile && (
+								<ul className={styles.optionsCondition}>
+									{conditions.map((condition) => (
+										<li key={condition.id} className={styles.optionCondition}>
+											<SurveyItem
+												key={condition.id}
+												id={condition.id}
+												name={condition.name}
+												value={condition.value}
+												text={condition.text}
+												extraText={condition.extraText}
+												checked={checkedCondition === condition.value}
+												onChange={handleCheckedCondition}
+											/>
+										</li>
+									))}
+								</ul>
+							)}
+							{isMobile && (
+								<SurveyFormMobile
+									selectedItem={selectedCondition}
+									isOpen={menuStates.isOpenMenuCondition}
+									toggleMenu={() => handleOpenMenu('isOpenMenuCondition')}
+									items={conditions}
+									handleSelect={handleCheckedCondition}
+									handleCloseMenu={() => handleCloseMenu('isOpenMenuCondition')}
+								/>
+							)}
 						</div>
+						{/* Экран 4 Состояние соединяемых поверхностей */}
 
+						{/* Экран 5 Результаты */}
 						<div
 							className={`${styles.surveyFormResults} ${
 								count === 5 ? styles.visible : styles.hidden
@@ -451,6 +431,7 @@ export default function Survey() {
 								</li> */}
 							</ul>
 						</div>
+						{/* Экран 5 Результаты */}
 
 						<div className={styles.controls}>
 							<div className={styles.buttons}>

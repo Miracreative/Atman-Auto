@@ -15,13 +15,18 @@ const SurveyFormMobile = ({
 		<div className={styles.formMobile}>
 			<div className={styles.optionsMobileContainer}>
 				<div className={styles.optionsMenuMobile} onClick={toggleMenu}>
-					<SurveyItem
-						id={selectedItem.id}
-						value={selectedItem.value}
-						checked={true}
-						onChange={() => {}}
-					/>
-					<p>{selectedItem.text}</p>
+					<div className={styles.optionsSelected}>
+						<SurveyItem
+							id={selectedItem.id}
+							value={selectedItem.value}
+							checked={true}
+							onChange={() => {}}
+						/>
+						<div className={styles.texts}>
+							<p>{selectedItem.text}</p>
+							<p>{selectedItem.extraText}</p>
+						</div>
+					</div>
 					<div className={styles.arrow}>
 						<TriangleIcon color="var(--white)" isOpen={isOpen} />
 					</div>
@@ -36,9 +41,7 @@ const SurveyFormMobile = ({
 						<li
 							key={item.id}
 							// className={styles.optionMobile}
-							onClick={() => {
-								handleCloseMenu('isOpenMenuTask');
-							}}
+							onClick={handleCloseMenu}
 						>
 							<SurveyItem
 								key={item.id}
