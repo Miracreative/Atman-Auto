@@ -1,6 +1,6 @@
 .item {
 	// width: 330px;
-	height: 45px;
+	min-height: 45px;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -22,7 +22,7 @@
 	}
 
 	& label {
-		height: 45px;
+		// height: 45px;
 		padding-left: 55px;
 		display: flex;
 		flex-direction: column;
@@ -149,10 +149,10 @@
 
 @media (max-width: 375px) {
 	.item {
-		height: 30px;
+		min-height: 30px;
 
 		& label {
-			height: 30px;
+			// height: 30px;
 			padding-left: 40px;
 			font-size: 10px;
 
