@@ -179,7 +179,7 @@ export default function Survey() {
 								<div className={styles.optionsTaskMobileContainer}>
 									<div
 										className={styles.optionsTaskMenu}
-										onClick={handleOpenMenuTask}
+										onClick={() => handleOpenMenu('isOpenMenuTask')}
 									>
 										<SurveyItem
 											id={selectedTask.id}
@@ -191,24 +191,24 @@ export default function Survey() {
 										<div className={styles.arrow}>
 											<TriangleIcon
 												color="var(--white)"
-												isOpen={isOpenMenuTask}
+												isOpen={menuStates.isOpenMenuTask}
 											/>
 										</div>
 									</div>
 
 									{isMobile && (
 										<ul
-											className={`${styles.optionsTaskMobile} ${
+											className={
 												menuStates.isOpenMenuTask
 													? styles.visibleMenu
 													: styles.hiddenMenu
-											}`}
+											}
 										>
 											{tasks.map((task) => (
 												<li
 													key={task.id}
 													className={styles.optionTaskMobile}
-													onClick={handleCloseMenuTask}
+													onClick={() => handleCloseMenu('isOpenMenuTask')}
 												>
 													<SurveyItem
 														key={task.id}
@@ -282,7 +282,7 @@ export default function Survey() {
 										<h4>Поверхность 1</h4>
 										<div
 											className={styles.optionsTaskMenu}
-											onClick={handleOpenMenuType1}
+											onClick={() => handleOpenMenu('isOpenMenuType1')}
 										>
 											<SurveyItem
 												id={selectedType1.id}
@@ -297,7 +297,7 @@ export default function Survey() {
 											<div className={styles.arrow}>
 												<TriangleIcon
 													color="var(--white)"
-													isOpen={isOpenMenuType1}
+													isOpen={menuStates.isOpenMenuType1}
 												/>
 											</div>
 										</div>
@@ -305,7 +305,7 @@ export default function Survey() {
 										{isMobile && (
 											<ul
 												className={`${styles.optionsTaskMobile} ${
-													isOpenMenuType1
+													menuStates.isOpenMenuType1
 														? styles.visibleMenu
 														: styles.hiddenMenu
 												}`}
@@ -314,7 +314,7 @@ export default function Survey() {
 													<li
 														key={type.id}
 														className={styles.optionType}
-														onClick={handleCloseMenuType1}
+														onClick={() => handleCloseMenu('isOpenMenuType1')}
 													>
 														<SurveyItem
 															key={type.id}
@@ -334,7 +334,7 @@ export default function Survey() {
 									<h4>Поверхность 2</h4>
 									<div
 										className={styles.optionsTaskMenu}
-										onClick={handleOpenMenuType2}
+										onClick={() => handleOpenMenu('isOpenMenuType2')}
 									>
 										<SurveyItem
 											id={selectedType2.id}
@@ -349,21 +349,23 @@ export default function Survey() {
 										<div className={styles.arrow}>
 											<TriangleIcon
 												color="var(--white)"
-												isOpen={isOpenMenuType2}
+												isOpen={menuStates.isOpenMenuType2}
 											/>
 										</div>
 									</div>
 									{isMobile && (
 										<ul
 											className={`${styles.optionsTaskMobile} ${
-												isOpenMenuType2 ? styles.visibleMenu : styles.hiddenMenu
+												menuStates.isOpenMenuType2
+													? styles.visibleMenu
+													: styles.hiddenMenu
 											}`}
 										>
 											{types2.map((type) => (
 												<li
 													key={type.id}
 													className={styles.optionType}
-													onClick={handleCloseMenuType2}
+													onClick={() => handleCloseMenu('isOpenMenuType2')}
 												>
 													<SurveyItem
 														key={type.id}
