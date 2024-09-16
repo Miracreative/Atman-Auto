@@ -1,0 +1,168 @@
+@import '@/scss/functions.scss';
+
+
+.section {
+
+	padding: 11vh 0 6vh 0;
+	background-color: rgb(var(--gray-background-img-rgb));
+	min-width: 320px;
+}
+
+.wrap {
+	margin: 0 4vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+.card {
+	// width: 400px;
+	// height: 400px;
+	background-color: white;
+	border-color: rgb(var(--gray-line-rgb));
+
+	border-radius: 20px;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+// .card:nth-child(-n+2) {
+// 	// background-color: rgb(var(--foreground-rgb));
+// 	// color: white;
+// 	grid-column: 1 / 3;
+// }
+
+.card:nth-child(1) {
+	// background-color: rgb(var(--foreground-rgb));
+	// color: white;
+	grid-column: 1 / 3;
+}
+
+.card:nth-child(2) {
+	// background-color: rgb(var(--foreground-rgb));
+	// color: white;
+	grid-column: 3 / 5;
+}
+
+.cardInner {
+	margin: 40px 20px 40px 40px;
+}
+
+.title {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 15px;
+}
+
+
+.paginationContainer {
+	margin-top: 60px;
+}
+
+.pageNumber {
+	background-color: rgb(var(--gray-background-img-rgb));
+	cursor: pointer;
+	margin: 0 25px;
+	font-size: 24px;
+	font-weight: 500;
+	border: none;
+	line-height: 0.9;
+	color: rgb(var(--gray-line-rgb));
+}
+
+.active {
+	font-weight: 700;
+	color: rgb(var(--foreground-rgb));
+}
+
+.inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	margin: 0 25px;
+
+	background-color: var(--red-button);
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		background-color: var(--red-dark);
+	}
+
+
+	&:disabled {
+		border: 1px solid rgb(var(--gray-line-rgb));
+		background-color: transparent;
+		cursor: auto;
+		svg path {
+			fill: rgb(var(--gray-line-rgb));
+		}
+	}
+}
+
+.buttonWrap:first-child {	
+		transform: rotate(180deg)	
+}
+
+
+@media (max-width: 1920px) {
+	.title {
+		font-size: calcVW(32);
+	}
+
+	.text {
+		font-size: calcVW(20);
+	}
+}
+
+@media (max-width: 1200px) {
+	.title {
+		font-size: 20px;
+		margin-bottom: 7px;
+	}
+
+	.text {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: 20px 0 40px 0;
+	}
+
+	.wrap {
+		margin: 0;
+	}
+
+	.title {
+		font-size: 20px;
+		margin-bottom: 7px;
+	}
+
+	.text {
+		font-size: 12px;
+	}
+
+	.card {
+		grid-column: 1 / -1;
+	}
+
+	.pageNumber {
+		margin: 0 10px;
+	}
+
+	.button {
+		margin: 0 8px;
+	}
+}
