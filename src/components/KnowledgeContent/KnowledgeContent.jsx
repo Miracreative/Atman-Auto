@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 export default function KnowledgeContent() {
 
 	const [posts, SetPosts] = useState(knowledgeBase);
-	const [postPerPage, SetPostPerPage] = useState(3);
+	const [postPerPage, SetPostPerPage] = useState(10);
 	const [currentPage, SetCurrentPage] = useState(1);
 
 	const [pageItem, SetPageItem] = useState({
@@ -70,19 +70,19 @@ export default function KnowledgeContent() {
 
 
 		else if (currentPage > 3 && currentPage < numOfButtons.length - 2) {
-			// from 5 to 8 -> (10 - 2)
+
 			const sliced1 = numOfButtons.slice(currentPage - 3, currentPage)
-			// sliced1 (5-2, 5) -> [4,5] 
+
 			const sliced2 = numOfButtons.slice(currentPage, currentPage + 1)
-			// sliced1 (5, 5+1) -> [6]
+
 			tempNumberOfButtons = ([...sliced1, ...sliced2, dotsRight, numOfButtons.length])
-			// [1, '...', 4, 5, 6, '...', 10]
+
 		}
 
 		else if (currentPage > numOfButtons.length - 3) {
-			// > 7
+
 			const sliced = numOfButtons.slice(numOfButtons.length - 4)
-			// slice(10-4) 
+
 			tempNumberOfButtons = ([1, dotsLeft, ...sliced])
 		}
 
@@ -105,25 +105,7 @@ export default function KnowledgeContent() {
 	}, [currentPage]);
 
 
-	// const [page, setPage] = useState(1);
-	// // let page = searchParams['page'] ?? '1';
-	// const per_page = searchParams['per_page'] ?? '3';
 
-	// const start = (Number(page) - 1) * Number(per_page);
-	// const end = start + Number(per_page);
-
-	// const paginatedPage = knowledgeBase.slice(start, end);
-
-
-
-
-	// const totalPages = Math.ceil(knowledgeBase.length / Number(per_page));
-	// const hasNextPage = page < totalPages;
-	// const hasPrevPage = page > 1;
-
-	// console.log(paginatedPage);
-	// console.log(page);
-	// console.log(totalPages);
 
 	return (
 		<>
@@ -131,14 +113,6 @@ export default function KnowledgeContent() {
 				<div className='container'>
 					<div className={styles.wrap}>
 
-						{/* {paginatedPage && paginatedPage.map((item, index) => (
-							<div key={index} className={styles.card}>
-								<div className={styles.cardInner}>
-									<div className={styles.title}>{item.title}</div>
-									<div className={styles.text}>{item.description}</div>
-								</div>
-							</div>
-						))} */}
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item, index) => {
 								return (
@@ -175,7 +149,6 @@ export default function KnowledgeContent() {
 							{
 								arrOfCurrButtons.map((data, index) => {
 									return (
-										// <li key={index} className={`dt-item ${currentPage === data ? 'active' : ''}`}><a className="dt-link" onClick={() => SetCurrentPage(data)}>{data}</a></li>
 										<li key={index} className={`${styles.pageNumber} ${currentPage === data ? styles.active : ''}`}><a className={styles.pageLink} onClick={() => SetCurrentPage(data)}>{data}</a></li>
 									)
 								})
