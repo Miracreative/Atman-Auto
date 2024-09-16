@@ -7,8 +7,9 @@ import { useState, useEffect } from 'react';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import useToggleMenus from '@/hooks/useToggleMenus';
 
-import ArrowButton from '@/components/ArrowButton/ArrowButton';
 import SurveyItem from '../SurveyItem/SurveyItem';
+import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
+import ArrowButton from '@/components/ArrowButton/ArrowButton';
 import ProductCard from '@/components/ProductCard/ProductCard';
 import TriangleIcon from '@/components/TriangleIcon/TriangleIcon';
 
@@ -63,8 +64,8 @@ export default function Survey() {
 	const forwardButtonDisabled = count === maxCount;
 	const backButtonDisabled = count === minCount;
 
-	const handleCheckedTask = (e) => {
-		setCheckedTask(e.target.value);
+	const handleCheckedTask = (value) => {
+		setCheckedTask(value);
 	};
 
 	const handleCheckedType1 = (e) => {
@@ -175,59 +176,23 @@ export default function Survey() {
 								</ul>
 							)}
 
-							<div className={styles.surveyFormMobile}>
-								<div className={styles.optionsTaskMobileContainer}>
-									<div
-										className={styles.optionsTaskMenu}
-										onClick={() => handleOpenMenu('isOpenMenuTask')}
-									>
-										<SurveyItem
-											id={selectedTask.id}
-											value={selectedTask.value}
-											checked={true}
-											onChange={() => {}}
-										/>
-										<p>{selectedTask.text}</p>
-										<div className={styles.arrow}>
-											<TriangleIcon
-												color="var(--white)"
-												isOpen={menuStates.isOpenMenuTask}
-											/>
-										</div>
-									</div>
-
-									{isMobile && (
-										<ul
-											className={
-												menuStates.isOpenMenuTask
-													? styles.visibleMenu
-													: styles.hiddenMenu
-											}
-										>
-											{tasks.map((task) => (
-												<li
-													key={task.id}
-													className={styles.optionTaskMobile}
-													onClick={() => handleCloseMenu('isOpenMenuTask')}
-												>
-													<SurveyItem
-														key={task.id}
-														id={task.id}
-														name={task.name}
-														value={task.value}
-														text={task.text}
-														extraText={task.extraText}
-														checked={checkedTask === task.value}
-														onChange={handleCheckedTask}
-													/>
-												</li>
-											))}
-										</ul>
-									)}
-								</div>
-
-								<Image src={image} alt="Процесс наматывания клейкой ленты" />
-							</div>
+							{isMobile && (
+								<>
+									<SurveyFormMobile
+										selectedItem={selectedTask}
+										isOpen={menuStates.isOpenMenuTask}
+										toggleMenu={() => toggleMenu('isOpenMenuTask')}
+										items={tasks}
+										handleSelect={handleCheckedTask}
+										handleCloseMenu={handleCloseMenu}
+									/>
+									<Image
+										className={styles.image}
+										src={image}
+										alt="Процесс наматывания клейкой ленты"
+									/>
+								</>
+							)}
 						</div>
 
 						<div

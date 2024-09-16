@@ -9,11 +9,12 @@ const SurveyFormMobile = ({
 	toggleMenu,
 	items,
 	handleSelect,
+	handleCloseMenu,
 }) => {
 	return (
-		<div className={styles.surveyFormMobile}>
-			<div className={styles.optionsTaskMobileContainer}>
-				<div className={styles.optionsTaskMenu} onClick={toggleMenu}>
+		<div className={styles.formMobile}>
+			<div className={styles.optionsMobileContainer}>
+				<div className={styles.optionsMenuMobile} onClick={toggleMenu}>
 					<SurveyItem
 						id={selectedItem.id}
 						value={selectedItem.value}
@@ -27,15 +28,17 @@ const SurveyFormMobile = ({
 				</div>
 
 				<ul
-					className={`${styles.optionsTaskMobile} ${
+					className={`${styles.optionsMobile} ${
 						isOpen ? styles.visibleMenu : styles.hiddenMenu
 					}`}
 				>
 					{items.map((item) => (
 						<li
 							key={item.id}
-							className={styles.optionTaskMobile}
-							onClick={() => handleSelect(item.value)}
+							// className={styles.optionMobile}
+							onClick={() => {
+								handleCloseMenu('isOpenMenuTask');
+							}}
 						>
 							<SurveyItem
 								key={item.id}

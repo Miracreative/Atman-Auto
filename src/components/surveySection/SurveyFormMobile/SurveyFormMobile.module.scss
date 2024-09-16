@@ -1,0 +1,75 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.hiddenMenu {
+	opacity: 0;
+	z-index: -1;
+	user-select: none;
+	pointer-events: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.visibleMenu {
+	opacity: 1;
+	z-index: 1;
+	user-select: auto;
+	pointer-events: auto;
+	transition: all 0.3s ease-in-out;
+}
+
+.formMobile {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.optionsMobileContainer {
+	position: relative;
+	margin: 0 15px 30px;
+}
+
+.optionsMenuMobile {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid rgba(var(--gray-line-rgb));
+	border-radius: 10px;
+	padding: 5px;
+
+	&:first-child {
+		font-size: 16px;
+		font-weight: 500;
+	}
+}
+
+.optionsMobile {
+	width: 100%;
+	border: 1px solid rgba(var(--gray-line-rgb));
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top: 5px;
+	row-gap: 5px;
+	background-color: var(--white);
+	color: rgb(var(--foreground-rgb));
+}
+
+.arrow {
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+	padding-right: 15px;
+	margin-left: auto;
+}
+
+@media (max-width: 375px) {
+	.optionsMenuMobile {
+		& p {
+			font-size: 10px;
+		}
+	}
+}
