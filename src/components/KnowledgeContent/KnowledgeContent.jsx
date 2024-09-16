@@ -154,16 +154,20 @@ export default function KnowledgeContent() {
 
 					</div>
 
+
+
+
+
 					<div className={styles.paginationContainer}>
 						<ul className={styles.inner}>
-							<li className={`${styles.dtItem} ${currentPage === 1 ? styles.disabled : ''}`}>
-								<a className={styles.button} onClick={prevPageClick}>
+							<li className={styles.buttonWrap}>
+								<button className={styles.button} onClick={prevPageClick} disabled={currentPage === 1}>
 
 									<svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M20 2.99989L15 0.113164L15 5.88667L20 2.99989ZM2.83321e-06 3.5L15.5 3.49991L15.5 2.49991L-2.83321e-06 2.5L2.83321e-06 3.5Z" fill="white" />
 									</svg>
 
-								</a>
+								</button>
 							</li>
 
 
@@ -179,14 +183,14 @@ export default function KnowledgeContent() {
 
 
 
-							<li className={`${styles.dtItem} ${currentPage === numOfButtons.length ? styles.disabled : ''}`}>
+							<li className={styles.buttonWrap}>
 
-								<a className={styles.button} onClick={nextPageClick}>
+								<button className={styles.button} onClick={nextPageClick} disabled={currentPage === numOfButtons.length}>
 									<svg width="20" height="6" viewBox="0 0 20 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M20 2.99989L15 0.113164L15 5.88667L20 2.99989ZM2.83321e-06 3.5L15.5 3.49991L15.5 2.49991L-2.83321e-06 2.5L2.83321e-06 3.5Z" fill="white" />
 									</svg>
 
-								</a>
+								</button>
 							</li>
 						</ul>
 					</div>

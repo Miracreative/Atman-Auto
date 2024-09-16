@@ -42,10 +42,6 @@
 }
 
 
-
-
-
-
 .paginationContainer {
 	margin-top: 60px;
 }
@@ -69,6 +65,7 @@
 .inner {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .button {
@@ -88,9 +85,7 @@
 	&:hover {
 		background-color: var(--red-dark);
 	}
-	&:first-child {
-		transform: rotate(180deg)
-	}
+
 
 	&:disabled {
 		border: 1px solid rgb(var(--gray-line-rgb));
@@ -102,6 +97,9 @@
 	}
 }
 
+.buttonWrap:first-child {	
+		transform: rotate(180deg)	
+}
 
 
 @media (max-width: 1920px) {
@@ -130,6 +128,10 @@
 		padding: 20px 0 40px 0;
 	}
 
+	.wrap {
+		margin: 0;
+	}
+
 	.title {
 		font-size: 20px;
 		margin-bottom: 7px;
@@ -141,5 +143,13 @@
 
 	.card {
 		grid-column: 1 / -1;
+	}
+
+	.pageNumber {
+		margin: 0 10px;
+	}
+
+	.button {
+		margin: 0 8px;
 	}
 }
