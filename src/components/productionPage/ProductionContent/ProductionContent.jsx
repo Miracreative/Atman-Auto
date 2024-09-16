@@ -1,18 +1,44 @@
+'use client';
+
 import styles from './ProductionContent.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { useState, useEffect } from 'react';
 
 import PopupVideo from '../PopupVideo/PopupVideo.jsx';
 
 
 export default function ProductionContent() {
+
+	const [popupActive, setPopupActive] = useState(false);
+	const [videoSrc, setVideoSrc] = useState('');
+
+	// const handleButtonClick = (src) => {
+	// 	setPopupActive(true);
+	// 	setVideoSrc(src);
+	// };
+
+
+	// useEffect(() => {
+	// 	if (popupActive) {
+	// 		// обновите источник видео здесь
+	// 		console.log('Источник видео обновлен:', videoSrc);
+	// 	}
+	// }, [popupActive, videoSrc]);
+
+	const handleButtonClick = (src) => {
+		setPopupActive(true);
+		setVideoSrc(src);
+	};
 	return (
 		<>
 			<section className={styles.section}>
 				<div className={styles.container}>
 
 					<div className={styles.wrap}>
-						<PopupVideo></PopupVideo>
+						{/* <PopupVideo active={popupActive} setActive={setPopupActive} /> */}
+						<PopupVideo active={popupActive} setActive={setPopupActive} videoSrc={videoSrc}></PopupVideo>
 						{/* <div id='video-popover' popover="true">
 							<span>Hi Bob</span>
 						</div> */}
@@ -37,12 +63,12 @@ export default function ProductionContent() {
 										width={100}
 										height={100}
 									/>
-									{/* <button popoverTarget="video-popover"> */}
-									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-									</svg>
-									{/* </button> */}
+									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video3.mp4')}>
+										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+											<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+										</svg>
+									</button>
 
 
 								</div>
@@ -85,10 +111,13 @@ export default function ProductionContent() {
 										height={100}
 									/>
 
-									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-									</svg>
+									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video5.mp4')}>
+										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+											<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+										</svg>
+									</button>
+
 								</div>
 
 								<div className={styles.textPart}>
@@ -126,11 +155,13 @@ export default function ProductionContent() {
 										width={100}
 										height={100}
 									/>
+									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video5.mp4')}>
+										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+											<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+										</svg>
+									</button>
 
-									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-									</svg>
 								</div>
 
 								<div className={styles.textPart}>
@@ -178,10 +209,13 @@ export default function ProductionContent() {
 										height={100}
 									/>
 
-									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-									</svg>
+									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video3.mp4')}>
+										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+											<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+										</svg>
+									</button>
+
 								</div>
 
 								<div className={styles.textPart}>
@@ -219,10 +253,14 @@ export default function ProductionContent() {
 									height={100}
 								/>
 
-								<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-									<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-								</svg>
+								<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video3.mp4')}>
+									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+									</svg>
+								</button>
+
+
 							</div>
 
 							<div className={styles.textPart}>
@@ -260,10 +298,13 @@ export default function ProductionContent() {
 									height={100}
 								/>
 
-								<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
-									<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
-								</svg>
+								<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video5.mp4')}>
+									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.5" x="-0.000244141" width="100" height="100" rx="20" fill="white" />
+										<path d="M65.4998 45.6699C68.8331 47.5944 68.8331 52.4056 65.4998 54.3301L45.9998 65.5885C42.6664 67.513 38.4998 65.1073 38.4998 61.2583L38.4998 38.7417C38.4998 34.8927 42.6664 32.487 45.9998 34.4115L65.4998 45.6699Z" fill="white" />
+									</svg>
+								</button>
+
 							</div>
 
 							<div className={styles.textPart}>

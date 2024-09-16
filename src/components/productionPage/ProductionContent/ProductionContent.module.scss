@@ -71,6 +71,23 @@
 	position: relative;
 }
 
+.playBtn {
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	cursor: pointer;
+	// transition: all 0.3s ease-in-out;
+	transform-origin: center;
+	background-color: transparent;
+	border: none;
+	// &:hover {
+	// 	transform: translate(-50%, -50%) scale(1.1) ;
+	// }
+}
+
 .videoPart svg {
 	position: absolute;
 	top: 50%;
@@ -126,7 +143,7 @@
 	padding: 20px 0;
 	display: flex;
 
-	border-bottom: 1px solid rgb(var(--gray-line-rgb));
+	border-bottom: 1px solid rgba(53, 53, 53, 0.5);
 	&:last-child {
 		border-bottom: none;
 	}
