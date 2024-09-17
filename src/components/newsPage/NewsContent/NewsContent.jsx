@@ -1,14 +1,14 @@
 'use client';
 
-import styles from './KnowledgeContent.module.scss';
-import knowledgeBase from '@/data/knowledgeBase.js';
+import styles from './NewsContent.module.scss';
+import newsData from '@/data/newsData.js';
 import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 
-export default function KnowledgeContent() {
+export default function NewsContent() {
 
-	const [posts, SetPosts] = useState(knowledgeBase);
+	const [posts, SetPosts] = useState(newsData);
 	const [postPerPage, SetPostPerPage] = useState(10);
 	const [currentPage, SetCurrentPage] = useState(1);
 
@@ -116,12 +116,16 @@ export default function KnowledgeContent() {
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item, index) => {
 								return (
-									<div key={index} className={styles.card}>
+									<Link href='/news' key={index} className={styles.card}>
+										<div className={styles.images}>
+											<img className={styles.imgItem} src={item.photo} alt={item.photo} />
+										</div>
+
 										<div className={styles.cardInner}>
 											<div className={styles.title}>{item.title}</div>
 											<div className={styles.text}>{item.description}</div>
 										</div>
-									</div>
+									</Link>
 								)
 							})
 						}
