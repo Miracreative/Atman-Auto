@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { useClickOutside } from '../../../hooks/useClickOutside';
 
@@ -25,6 +26,10 @@ const HeaderNav = ({ toggleDropdown, activeDropdown }) => {
 		});
 	});
 
+	const pathname = usePathname();
+
+	console.log('dropdownItems', dropdownItems);
+
 	return (
 		<nav className={styles.nav}>
 			<div className={styles.links}>
@@ -33,18 +38,34 @@ const HeaderNav = ({ toggleDropdown, activeDropdown }) => {
 						key={item.key}
 						title={item.title}
 						items={item.items}
+						link={item.items[0].href}
 						isOpen={activeDropdown === item.key}
 						toggleOpen={() => toggleDropdown(item.key)}
 						menuRef={refs.current[item.key]}
 					/>
 				))}
-				<Link href="/production" className={styles.link}>
+				<Link
+					href="/production"
+					className={`${styles.link} ${
+						pathname === '/production' ? styles.linkActive : ''
+					}`}
+				>
 					Производство
 				</Link>
-				<Link href="/knowledge" className={styles.link}>
+				<Link
+					href="/knowledge"
+					className={`${styles.link} ${
+						pathname === '/knowledge' ? styles.linkActive : ''
+					}`}
+				>
 					База знаний
 				</Link>
-				<Link href="/news" className={styles.link}>
+				<Link
+					href="/news"
+					className={`${styles.link} ${
+						pathname === '/news' ? styles.linkActive : ''
+					}`}
+				>
 					Новости
 				</Link>
 			</div>

@@ -116,18 +116,18 @@ export default function Survey() {
 	);
 
 	useEffect(() => {
-		console.log('useEffect сработал');
+		// console.log('useEffect сработал');
 
 		if (width <= 480) {
 			setIsMobile(true);
-			console.log(
-				`Мы в мобильном режиме (текущая ширина ${width}px): ${isMobile}`,
-			);
+			// console.log(
+			// 	`Мы в мобильном режиме (текущая ширина ${width}px): ${isMobile}`,
+			// );
 		} else {
 			setIsMobile(false);
-			console.log(
-				`Мы в десктопном режиме (текущая ширина ${width}px): ${isMobile}`,
-			);
+			// console.log(
+			// 	`Мы в десктопном режиме (текущая ширина ${width}px): ${isMobile}`,
+			// );
 		}
 	}, [width]);
 

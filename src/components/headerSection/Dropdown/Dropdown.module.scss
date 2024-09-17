@@ -70,6 +70,22 @@
 	}
 }
 
+.buttonLinkActive {
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 32px;
+		height: 2px;
+		background-color: rgb(var(--red-rgb));
+	}
+}
+
+.linkActive {
+	color: var(--red-button);
+}
+
 @media (max-width: 1920px) {
 	.button {
 		// font-size: 20px;

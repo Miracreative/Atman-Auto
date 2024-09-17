@@ -27,6 +27,25 @@
 	}
 }
 
+// linkButtonActive {
+// 	color: var(--red-button);
+// }
+
+.linkActive {
+	color: var(--red-button);
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 32px;
+		height: 2px;
+		background-color: var(--red-button);
+	}
+	// border-bottom: 2px solid var(--red-button);
+	// width: 32px;
+}
+
 @media (max-width: 1920px) {
 	.link {
 		@include adaptive-font(20, 12);

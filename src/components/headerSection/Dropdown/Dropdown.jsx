@@ -1,13 +1,23 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import styles from './Dropdown.module.scss';
 
-const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
+const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef, link }) => {
+	const pathname = usePathname();
+
+	const isActiveLink = items.some((item) => pathname === item.href);
+
 	return (
 		<div className={styles.dropdown} ref={menuRef}>
 			<button
-				className={`${styles.button} ${isOpen ? styles.buttonActive : ''}`}
+				className={`${styles.button} ${isOpen ? styles.buttonActive : ''} 
+					${isActiveLink ? styles.buttonLinkActive : ''} ${
+					isActiveLink ? styles.linkActive : ''
+				}
+				`}
 				onClick={toggleOpen}
 			>
 				{title}
@@ -35,7 +45,9 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 						<li key={index}>
 							<Link
 								href={item.href}
-								className={styles.link}
+								className={`${styles.link} ${
+									pathname === item.href ? styles.linkActive : ''
+								}`}
 								onClick={toggleOpen}
 							>
 								{item.text}
