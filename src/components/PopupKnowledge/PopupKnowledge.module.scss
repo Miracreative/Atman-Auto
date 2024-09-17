@@ -1,0 +1,108 @@
+@import '@/scss/functions.scss';
+
+
+.layout {
+	position: fixed;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.9);
+	width: 100vw;
+	height: 100vh;
+	z-index: 200;
+	// pointer-events: none;
+	// opacity: 0;
+}
+
+.popup {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255, 255, 255, 0.9);
+	width: 100vw;
+	height: 100vh;
+	padding: 100px;
+	border: 1px solid rgb(var(--foreground-rgb));
+}
+
+.popupInner {
+	margin: 4vh 2vw 6vh 4vw;
+}
+
+.btnContainer {
+	text-align: right;
+}
+
+.closeBtn {
+	border: none;
+	// background-color: rgba(255, 255, 255, 0.9);
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+
+	& svg circle {
+		transition: all .3s ease-in-out;
+		&:hover {
+			fill: rgb(var(--red-dark));
+		}
+		
+	}
+
+}
+
+.closeBtn svg circle {
+	transition: all .3s ease-in-out;
+}
+
+.closeBtn:hover svg circle {
+	fill: rgb(var(--red-dark));
+}
+
+
+
+.title {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 4vh;
+}
+
+.content {
+	margin-bottom: 23vh;
+}
+
+.download {
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	transition: all .3s ease-in-out;
+	&:hover {
+		color: red;
+
+	}
+	& circle {
+		transition: all .3s ease-in-out;
+	}
+}
+
+.download:hover .downloadImg circle {
+	fill: red;
+}
+
+// .download circle {
+// 	transition: all .3s ease-in-out;
+// 	&:hover {
+// 		fill: red;
+// 	}
+// }
+
+
+
+.descriptionDownload {
+	margin-left: 30px;
+	font-weight: 700;
+}
+
+.fileName {
+	font-size: 32px;
+}

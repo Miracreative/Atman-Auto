@@ -2,11 +2,14 @@
 
 import styles from './KnowledgeContent.module.scss';
 import knowledgeBase from '@/data/knowledgeBase.js';
+import PopupKnowledge from '../PopupKnowledge/PopupKnowledge.jsx';
 import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 
 export default function KnowledgeContent() {
+	const [popupActive, setPopupActive] = useState(false);
+
 
 	const [posts, SetPosts] = useState(knowledgeBase);
 	const [postPerPage, SetPostPerPage] = useState(10);
@@ -110,6 +113,7 @@ export default function KnowledgeContent() {
 	return (
 		<>
 			<section className={styles.section}>
+				<PopupKnowledge></PopupKnowledge>
 				<div className='container'>
 					<div className={styles.wrap}>
 

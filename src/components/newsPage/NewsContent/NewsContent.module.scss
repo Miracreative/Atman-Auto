@@ -21,7 +21,10 @@
 	background-color: white;
 	border-color: rgb(var(--gray-line-rgb));
 
-	border-radius: 20px;}
+	border-radius: 20px;
+	overflow: hidden;
+}
+
 
 // .card:nth-child(-n+2) {
 // 	// background-color: rgb(var(--foreground-rgb));
@@ -171,6 +174,7 @@
 
 	.card {
 		grid-column: 1 / -1;
+		border-radius: 10px;
 	}
 
 	.pageNumber {
