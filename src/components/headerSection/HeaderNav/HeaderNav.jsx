@@ -10,7 +10,7 @@ import Dropdown from './../Dropdown/Dropdown';
 
 import styles from './HeaderNav.module.scss';
 
-const HeaderNav = ({ toggleDropdown, activeDropdown }) => {
+const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 	const refs = useRef(
 		dropdownItems.reduce((acc, item) => {
 			acc[item.key] = useRef(null);
@@ -38,7 +38,7 @@ const HeaderNav = ({ toggleDropdown, activeDropdown }) => {
 						key={item.key}
 						title={item.title}
 						items={item.items}
-						link={item.items[0].href}
+						isActiveLink={isActiveLink(item.items)}
 						isOpen={activeDropdown === item.key}
 						toggleOpen={() => toggleDropdown(item.key)}
 						menuRef={refs.current[item.key]}

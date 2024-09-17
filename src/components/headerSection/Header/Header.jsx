@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import useScrollVisibility from '@/hooks/useScrollVisibility';
 import contacts from '@/data/contacts';
@@ -16,6 +17,8 @@ import styles from './Header.module.scss';
 export default function Header() {
 	const isVisibleHeader = useScrollVisibility();
 
+	const pathname = usePathname();
+
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [menuActive, setMenuActive] = useState(false);
 
@@ -29,6 +32,10 @@ export default function Header() {
 		setMenuActive((prevMenuActive) => !prevMenuActive);
 	};
 
+	const isActiveLink = (items) => {
+		return items.some((item) => pathname === item.href);
+	};
+
 	return (
 		<header
 			className={`${styles.header} ${!isVisibleHeader ? styles.hidden : ''}`}
@@ -37,6 +44,7 @@ export default function Header() {
 			<HeaderNav
 				toggleDropdown={toggleDropdown}
 				activeDropdown={activeDropdown}
+				isActiveLink={isActiveLink}
 			/>
 			<Link className={styles.number} href={`tel:${contacts.phone}`}>
 				{contacts.phone}

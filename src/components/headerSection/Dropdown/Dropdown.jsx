@@ -14,10 +14,10 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef, link }) => {
 		<div className={styles.dropdown} ref={menuRef}>
 			<button
 				className={`${styles.button} ${isOpen ? styles.buttonActive : ''} 
-					${isActiveLink ? styles.buttonLinkActive : ''} ${
+								${isActiveLink ? styles.buttonLinkActive : ''} ${
 					isActiveLink ? styles.linkActive : ''
 				}
-				`}
+						`}
 				onClick={toggleOpen}
 			>
 				{title}
