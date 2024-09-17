@@ -1,13 +1,13 @@
 import styles from './SurveyItem.module.scss';
 
 export default function SurveyItem({
-	id,
 	name,
+	id,
 	value,
-	text,
-	extraText,
 	checked,
 	onChange,
+	text,
+	extraText,
 }) {
 	return (
 		<div className={styles.item}>

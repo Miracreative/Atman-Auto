@@ -11,6 +11,10 @@ const SurveyFormMobile = ({
 	handleSelect,
 	handleCloseMenu,
 }) => {
+	// if (!selectedItem) {
+	// 	return null; // или можно вернуть какой-то компонент-заглушку
+	// }
+
 	return (
 		<div className={styles.formMobile}>
 			<div className={styles.optionsMobileContainer}>

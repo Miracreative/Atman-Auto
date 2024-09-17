@@ -11,7 +11,6 @@ import SurveyItem from '../SurveyItem/SurveyItem';
 import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
 import ProductCard from '@/components/ProductCard/ProductCard';
-// import TriangleIcon from '@/components/TriangleIcon/TriangleIcon';
 
 import {
 	tasks,
@@ -290,50 +289,45 @@ export default function Survey() {
 							<h3 className={styles.surveyTitle}>
 								Условия эксплуатации соединения
 							</h3>
-							{!isMobile && (
-								<div className={styles.connectionsContainer}>
-									<>
-										<ul className={styles.optionsConnection}>
-											{connections.map((connection) => (
-												<li
-													key={connection.id}
-													className={styles.optionConnection}
-												>
-													<SurveyItem
-														key={connection.id}
-														id={connection.id}
-														name={connection.name}
-														value={connection.value}
-														text={connection.text}
-														extraText={connection.extraText}
-														checked={checkedConnection === connection.value}
-														onChange={handleCheckedConnection}
-													/>
-												</li>
-											))}
-										</ul>
-										<ul className={styles.optionsTemperature}>
-											{temperatures.map((temperature) => (
-												<li
-													key={temperature.id}
-													className={styles.optionTemperature}
-												>
-													<SurveyItem
-														key={temperature.id}
-														id={temperature.id}
-														name={temperature.name}
-														value={temperature.value}
-														text={temperature.text}
-														extraText={temperature.extraText}
-														checked={checkedTemperature === temperature.value}
-														onChange={handleCheckedTemperature}
-													/>
-												</li>
-											))}
-										</ul>
-									</>
-								</div>
-							)}
+							{/* {!isMobile && ( */}
+							<div className={styles.connectionsContainer}>
+								<ul className={styles.optionsConnection}>
+									{connections.map((connection) => (
+										<li key={connection.id} className={styles.optionConnection}>
+											<SurveyItem
+												key={connection.id}
+												id={connection.id}
+												name={connection.name}
+												value={connection.value}
+												text={connection.text}
+												extraText={connection.extraText}
+												checked={checkedConnection === connection.value}
+												onChange={handleCheckedConnection}
+											/>
+										</li>
+									))}
+								</ul>
+								<ul className={styles.optionsTemperature}>
+									{temperatures.map((temperature) => (
+										<li
+											key={temperature.id}
+											className={styles.optionTemperature}
+										>
+											<SurveyItem
+												key={temperature.id}
+												id={temperature.id}
+												name={temperature.name}
+												value={temperature.value}
+												text={temperature.text}
+												extraText={temperature.extraText}
+												checked={checkedTemperature === temperature.value}
+												onChange={handleCheckedTemperature}
+											/>
+										</li>
+									))}
+								</ul>
+							</div>
+							{/* )} */}
 							{isMobile && (
 								<>
 									<SurveyFormMobile
@@ -383,12 +377,13 @@ export default function Survey() {
 												text={condition.text}
 												extraText={condition.extraText}
 												checked={checkedCondition === condition.value}
-												onChange={handleCheckedCondition}
+												onChange={() => handleCheckedCondition(condition.value)}
 											/>
 										</li>
 									))}
 								</ul>
 							)}
+
 							{isMobile && (
 								<SurveyFormMobile
 									selectedItem={selectedCondition}
