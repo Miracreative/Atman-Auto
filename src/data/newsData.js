@@ -2,32 +2,32 @@ const newsData = [
 	{
 		"title": "News 1: Breaking News",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
-		"photo": "/"
+		"photo": "/placeholder.png"
 	},
 	{
 		"title": "News 2: Latest Update",
 		"description": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-		"photo": "/"
+		"photo": "/placeholder.png"
 	},
 	{
 		"title": "News 3: Top Story",
 		"description": "Sed posuere consectetur est at lobortis. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-		"photo": "/"
+		"photo": "/placeholder.png"
 	},
 	{
 		"title": "News 4: Trending Now",
 		"description": "Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
-		"photo": "/"
+		"photo": "/placeholder.png"
 	},
 	{
 		"title": "News 5: Hot Topic",
 		"description": "Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-		"photo": "/"
+		"photo": "/placeholder.png"
 	},
 	{
 		"title": "News 6: Breaking News",
 		"description": "Sed posuere consectetur est at lobortis. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-		"photo": "/"
+		"photo": "/placeholder.png"
 	},
 	{
 		"title": "News 7: Latest Update",
