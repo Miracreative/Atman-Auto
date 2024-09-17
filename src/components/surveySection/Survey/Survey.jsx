@@ -20,6 +20,7 @@ import {
 	temperatures,
 	conditions,
 } from '@/data/surveyOptions';
+import products from '@/data/products';
 import image from '/public/survey/survey.png';
 
 import styles from './Survey.module.scss';
@@ -246,7 +247,6 @@ export default function Survey() {
 							)}
 
 							<div className={styles.surveyFormTypesMobile}>
-								{/* <div className={styles.optionsTaskMobileContainer}> */}
 								{isMobile && (
 									<>
 										<h4>Поверхность 1</h4>
@@ -273,7 +273,6 @@ export default function Survey() {
 										/>
 									</>
 								)}
-								{/* </div> */}
 							</div>
 						</div>
 						{/* Экран 2 Виды склеиваемых поверхностей */}
@@ -291,10 +290,7 @@ export default function Survey() {
 								<div className={styles.connectionsContainer}>
 									<ul className={styles.optionsConnection}>
 										{connections.map((connection) => (
-											<li
-												key={connection.id}
-												// className={styles.optionConnection}
-											>
+											<li key={connection.id}>
 												<SurveyItem
 													key={connection.id}
 													id={connection.id}
@@ -312,10 +308,7 @@ export default function Survey() {
 									</ul>
 									<ul className={styles.optionsTemperature}>
 										{temperatures.map((temperature) => (
-											<li
-												key={temperature.id}
-												// className={styles.optionTemperature}
-											>
+											<li key={temperature.id}>
 												<SurveyItem
 													key={temperature.id}
 													id={temperature.id}
@@ -414,9 +407,17 @@ export default function Survey() {
 								Результаты
 							</h3>
 							<ul className={styles.resultsList}>
-								<li>
-									<ProductCard />
-								</li>
+								{products.map((product) => (
+									<li key={product.id}>
+										<ProductCard
+											id={product.id}
+											title={product.title}
+											subtitle={product.subtitle}
+											description={product.description}
+											imageUrl={product.image}
+										/>
+									</li>
+								))}
 								{/* <li>
 									<ProductCard />
 								</li>
