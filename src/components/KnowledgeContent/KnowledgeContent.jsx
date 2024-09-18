@@ -2,11 +2,14 @@
 
 import styles from './KnowledgeContent.module.scss';
 import knowledgeBase from '@/data/knowledgeBase.js';
+import PopupKnowledge from '../PopupKnowledge/PopupKnowledge.jsx';
 import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 
 export default function KnowledgeContent() {
+	const [popupActive, setPopupActive] = useState(false);
+
 
 	const [posts, SetPosts] = useState(knowledgeBase);
 	const [postPerPage, SetPostPerPage] = useState(10);
@@ -105,18 +108,27 @@ export default function KnowledgeContent() {
 	}, [currentPage]);
 
 
+	const [cardId, setCardId] = useState(null);
+
+	const handleCardClick = (cardId) => {
+		setPopupActive(true);
+		setCardId(cardId);
+		console.log(cardId);
+
+	};
 
 
 	return (
 		<>
 			<section className={styles.section}>
+				<PopupKnowledge popupActive={popupActive} setPopupActive={setPopupActive} cardId={cardId}></PopupKnowledge>
 				<div className='container'>
 					<div className={styles.wrap}>
 
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item, index) => {
 								return (
-									<div key={index} className={styles.card}>
+									<div key={index} className={styles.card} onClick={() => handleCardClick(item.id)}>
 										<div className={styles.cardInner}>
 											<div className={styles.title}>{item.title}</div>
 											<div className={styles.text}>{item.description}</div>
