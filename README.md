@@ -1,4 +1,4 @@
-## Atman-Auto ![Логотип компании Atman-Auto](https://github.com/Miracreative/Atman-Auto/blob/Yoda/public/logo.svg)
+## Atman-Auto   ![Логотип компании Atman-Auto](https://github.com/Miracreative/Atman-Auto/blob/Yoda/public/logo.svg)
 
 Для запуска проекта вам нужно:
 
