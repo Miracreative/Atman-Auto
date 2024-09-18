@@ -1,39 +1,65 @@
 .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: center;
+	// align-items: center;
+	width: 100%;
 	height: 100vh;
+	// height: 100%;
 	background-color: #e4e5e7;
+	// position: relative;
 }
 
-.code {
-	font-size: 200px;
+.background {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	width: 100%;
+	height: 100%;
+	// z-index: 0;
+	background-image: url('../../public/not-found/404.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	// justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.logo {
+	margin-top: 90px;
+	margin-bottom: 130px;
+}
+
+.image {
+	// z-index: 1;
+	margin-bottom: 50px;
 }
 
 .title {
-	font-size: 96px;
+	margin-bottom: 50px;
+	font-size: 40px;
+	font-weight: 400;
+	max-width: 600px;
 	text-align: center;
+	// z-index: 1;
+	color: var(--white);
 }
 
-.description {
-	font-size: 36px;
-	margin-bottom: 100px;
-	text-align: center;
+.button {
+	z-index: 1;
+	color: rgb(var(--foreground-rgb));
+	background-color: var(--white);
 }
 
 @media (max-width: 1440px) {
-	.code {
-		font-size: 160px;
-	}
-
 	.title {
 		font-size: 80px;
-	}
-
-	.description {
-		font-size: 30px;
-		margin-bottom: 80px;
 	}
 
 	.button {
@@ -44,17 +70,8 @@
 }
 
 @media (max-width: 1366px) {
-	.code {
-		font-size: 150px;
-	}
-
 	.title {
 		font-size: 76px;
-	}
-
-	.description {
-		font-size: 28px;
-		margin-bottom: 70px;
 	}
 
 	.button {
@@ -65,17 +82,8 @@
 }
 
 @media (max-width: 1280px) {
-	.code {
-		font-size: 140px;
-	}
-
 	.title {
 		font-size: 68px;
-	}
-
-	.description {
-		font-size: 26px;
-		margin-bottom: 60px;
 	}
 
 	.button {
@@ -90,17 +98,8 @@
 		padding: 0 20px;
 	}
 
-	.code {
-		font-size: 150px;
-	}
-
 	.title {
 		font-size: 72px;
-	}
-
-	.description {
-		font-size: 28px;
-		margin-bottom: 80px;
 	}
 
 	.button {
@@ -111,17 +110,8 @@
 }
 
 @media (max-width: 820px) {
-	.code {
-		font-size: 120px;
-	}
-
 	.title {
 		font-size: 60px;
-	}
-
-	.description {
-		font-size: 24px;
-		margin-bottom: 60px;
 	}
 
 	.button {
@@ -132,17 +122,8 @@
 }
 
 @media (max-width: 768px) {
-	.code {
-		font-size: 120px;
-	}
-
 	.title {
 		font-size: 60px;
-	}
-
-	.description {
-		font-size: 24px;
-		margin-bottom: 60px;
 	}
 
 	.button {
@@ -153,17 +134,8 @@
 }
 
 @media (max-width: 480px) {
-	.code {
-		font-size: 100px;
-	}
-
 	.title {
 		font-size: 48px;
-	}
-
-	.description {
-		font-size: 20px;
-		margin-bottom: 40px;
 	}
 
 	.button {
@@ -173,17 +145,8 @@
 }
 
 @media (max-width: 375px) {
-	.code {
-		font-size: 90px;
-	}
-
 	.title {
 		font-size: 40px;
-	}
-
-	.description {
-		font-size: 18px;
-		margin-bottom: 30px;
 	}
 
 	.button {
