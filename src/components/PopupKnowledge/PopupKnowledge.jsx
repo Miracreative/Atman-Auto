@@ -1,39 +1,66 @@
 'use client';
 
+
+import knowledgeBase from '@/data/knowledgeBase.js';
 import styles from './PopupKnowledge.module.scss';
-import newsData from '@/data/newsData.js';
 import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
 
-export default function PopupKnowledge() {
+export default function PopupKnowledge({ popupActive, setPopupActive, cardId }) {
+	// const [isActive, setActive] = useState(false);
 
+	const [knowledge, setKnowledge] = useState({});
 
+	useEffect(() => {
+		const knowledgeData = knowledgeBase.find((item) => item.id === cardId);
+		setKnowledge(knowledgeData);
+		// console.log(knowledge);
+
+	}, [cardId]);
+
+	console.log(knowledge);
+	// console.log(knowledge.title); не может прочитать
 
 	return (
 		<>
-			<div className={styles.layout}>
+			<div className={`${popupActive ? styles.layout + ' ' + styles.active : styles.layout}`}>
 				<div className={styles.popup}>
 					<div className={styles.popupInner}>
 
-						<div className={styles.btnContainer}>
+						<div className={styles.topSide}>
+							<div className={styles.btnContainer}>
 
-							<button type='button' className={styles.closeBtn}>
+								<div className={styles.closeBtn} onClick={() => setPopupActive(false)}>
 
-								<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="40" cy="40" r="40" fill="#E41F26" />
-									<path d="M49.0793 49.37C47.7512 50.6981 45.5979 50.6981 44.2698 49.37L31.8546 36.9548C30.5265 35.6267 30.5265 33.4735 31.8546 32.1454C33.1827 30.8173 35.336 30.8173 36.6641 32.1454L49.0792 44.5605C50.4073 45.8886 50.4074 48.0419 49.0793 49.37ZM36.1608 49.6123C34.9048 50.8683 32.8683 50.8683 31.6123 49.6123C30.3563 48.3563 30.3563 46.3198 31.6123 45.0638L44.8104 31.8657C46.0664 30.6097 48.1028 30.6097 49.3589 31.8657C50.6149 33.1218 50.6149 35.1582 49.3589 36.4142L36.1608 49.6123Z" fill="white" />
-								</svg>
+									<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="40" cy="40" r="40" fill="#E41F26" />
+										<path d="M49.0793 49.37C47.7512 50.6981 45.5979 50.6981 44.2698 49.37L31.8546 36.9548C30.5265 35.6267 30.5265 33.4735 31.8546 32.1454C33.1827 30.8173 35.336 30.8173 36.6641 32.1454L49.0792 44.5605C50.4073 45.8886 50.4074 48.0419 49.0793 49.37ZM36.1608 49.6123C34.9048 50.8683 32.8683 50.8683 31.6123 49.6123C30.3563 48.3563 30.3563 46.3198 31.6123 45.0638L44.8104 31.8657C46.0664 30.6097 48.1028 30.6097 49.3589 31.8657C50.6149 33.1218 50.6149 35.1582 49.3589 36.4142L36.1608 49.6123Z" fill="white" />
+									</svg>
 
-							</button>
+								</div>
+							</div>
+
+
+							<div className={styles.content}>
+								<div className={styles.title}>
+									{knowledge && knowledge.title}
+								</div>
+
+								<div className={styles.text}>
+									{knowledge && knowledge.description}
+								</div>
+							</div>
 						</div>
 
 
-						<div className={styles.content}>
-							<div className={styles.title}>Название новости</div>
 
-							<div className={styles.text}>Ежедневные экстремальные условия эксплуатации автомобиля (вибрация, дорожные реагенты, перепады температур и т.д.) и требования к безопасности водителя и пассажиров, заставляют. Ежедневные экстремальные условия эксплуатации автомобиля (вибрация, дорожные реагенты, перепады температур и т.д.) и требования к безопасности водителя и пассажиров, заставляют. Ежедневные экстремальные условия эксплуатации автомобиля (вибрация, дорожные реагенты, перепады температур и т.д.) и требования к безопасности водителя и пассажиров, заставляют. Ежедневные экстремальные условия эксплуатации автомобиля (вибрация, дорожные реагенты, перепады температур и т.д.) и требования к безопасности водителя и пассажиров, заставляют. Ежедневные экстремальные условия эксплуатации автомобиля (вибрация, дорожные реагенты, перепады температур и т.д.) и требования к безопасности водителя и пассажиров, заставляют. Ежедневные экстремальные условия эксплуатации автомобиля (вибрация, дорожные реагенты, перепады температур и т.д.) и требования к безопасности водителя и пассажиров, заставляют.</div>
-						</div>
+
+
+
+
+
+
 
 						<Link href='/knowledge' className={styles.download}>
 
@@ -45,7 +72,9 @@ export default function PopupKnowledge() {
 
 							</div>
 							<div className={styles.descriptionDownload}>
-								<div className={styles.fileName}>Название файла</div>
+								<div className={styles.fileName}>
+									{knowledge && knowledge.documentName}
+								</div>
 								<div className={styles.paragraph}>Скачать</div>
 							</div>
 

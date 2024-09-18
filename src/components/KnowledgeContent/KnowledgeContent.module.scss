@@ -19,9 +19,13 @@
 	// width: 400px;
 	// height: 400px;
 	background-color: white;
-	border-color: rgb(var(--gray-line-rgb));
-
+	cursor: pointer;
+	border: 1px solid rgb(var(--gray-line-rgb));
+	transition: all .3s ease-in-out;
 	border-radius: 20px;
+	&:hover {
+		background-color: rgb(var(--gray-background-img-rgb));
+	}
 }
 
 .card:nth-child(-n+2) {

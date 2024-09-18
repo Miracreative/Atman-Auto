@@ -108,19 +108,27 @@ export default function KnowledgeContent() {
 	}, [currentPage]);
 
 
+	const [cardId, setCardId] = useState(null);
+
+	const handleCardClick = (cardId) => {
+		setPopupActive(true);
+		setCardId(cardId);
+		console.log(cardId);
+
+	};
 
 
 	return (
 		<>
 			<section className={styles.section}>
-				<PopupKnowledge></PopupKnowledge>
+				<PopupKnowledge popupActive={popupActive} setPopupActive={setPopupActive} cardId={cardId}></PopupKnowledge>
 				<div className='container'>
 					<div className={styles.wrap}>
 
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item, index) => {
 								return (
-									<div key={index} className={styles.card}>
+									<div key={index} className={styles.card} onClick={() => handleCardClick(item.id)}>
 										<div className={styles.cardInner}>
 											<div className={styles.title}>{item.title}</div>
 											<div className={styles.text}>{item.description}</div>
