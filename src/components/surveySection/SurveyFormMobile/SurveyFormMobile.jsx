@@ -1,4 +1,4 @@
-import TriangleIcon from '../../TriangleIcon/TriangleIcon';
+import { TriangleIcon } from '../../TriangleIcon/TriangleIcon';
 import SurveyItem from '../SurveyItem/SurveyItem';
 
 import styles from './SurveyFormMobile.module.scss';

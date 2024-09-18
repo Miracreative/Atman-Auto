@@ -53,8 +53,9 @@ export default function Header() {
 			<BurgerMenu
 				isActive={menuActive}
 				setActive={setMenuActive}
-				toggleDropdown={toggleDropdown}
-				activeDropdown={activeDropdown}
+				// toggleDropdown={toggleDropdown}
+				// activeDropdown={activeDropdown}
+				isActiveLink={isActiveLink}
 			/>
 		</header>
 	);

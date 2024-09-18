@@ -27,6 +27,10 @@
 	}
 }
 
+.linkActive {
+	color: var(--red-button);
+}
+
 .socialLinks {
 	display: flex;
 	justify-content: space-between;

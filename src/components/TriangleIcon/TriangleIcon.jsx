@@ -1,6 +1,8 @@
 import styles from './TriangleIcon.module.scss';
 
-export default function TriangleIcon({ color = '#353535', isOpen }) {
+const DEFAULT_COLOR = '#353535';
+
+function TriangleIcon({ color = DEFAULT_COLOR, isOpen }) {
 	return (
 		<svg
 			className={`${styles.triangle} ${isOpen ? styles.active : ''}`}
@@ -17,3 +19,5 @@ export default function TriangleIcon({ color = '#353535', isOpen }) {
 		</svg>
 	);
 }
+
+export { DEFAULT_COLOR, TriangleIcon };

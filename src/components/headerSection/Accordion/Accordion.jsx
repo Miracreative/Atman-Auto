@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 import AccordionItem from '../AccordionItem/AccordionItem';
 
@@ -10,8 +11,20 @@ import socialLinks from '@/data/socialLinks';
 
 import styles from './Accordion.module.scss';
 
-export default function Accordion({ setActive }) {
+export default function Accordion({ setActive, isActiveLink, isActive }) {
 	const [openId, setOpenId] = useState(null);
+
+	const pathname = usePathname();
+
+	useEffect(() => {
+		if (!isActive) {
+			// document.body.classList.add('no-scroll');
+			setOpenId(null);
+		} else {
+			// document.body.classList.remove('no-scroll');
+			// setActive(false)
+		}
+	}, [isActive]);
 
 	return (
 		<nav className={styles.nav}>
@@ -26,20 +39,33 @@ export default function Accordion({ setActive }) {
 							title={menuItem.title}
 							items={menuItem.items}
 							setActive={setActive}
+							isActiveLink={isActiveLink(menuItem.items)}
 						/>
 					);
 				})}
-				<li className={styles.link}>
+				<li
+					className={`${styles.link} ${
+						pathname === '/production' ? styles.linkActive : ''
+					}`}
+				>
 					<Link href="/production" onClick={() => setActive(false)}>
 						Производство
 					</Link>
 				</li>
-				<li className={styles.link}>
+				<li
+					className={`${styles.link} ${
+						pathname === '/knowledge' ? styles.linkActive : ''
+					}`}
+				>
 					<Link href="/knowledge" onClick={() => setActive(false)}>
 						База знаний
 					</Link>
 				</li>
-				<li className={styles.link}>
+				<li
+					className={`${styles.link} ${
+						pathname === '/news' ? styles.linkActive : ''
+					}`}
+				>
 					<Link href="/news" onClick={() => setActive(false)}>
 						Новости
 					</Link>

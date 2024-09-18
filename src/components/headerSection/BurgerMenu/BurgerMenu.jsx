@@ -6,12 +6,14 @@ import Accordion from '../Accordion/Accordion';
 
 import styles from './BurgerMenu.module.scss';
 
-const BurgerMenu = ({ isActive, setActive }) => {
+const BurgerMenu = ({ isActive, setActive, isActiveLink }) => {
+
 	useEffect(() => {
 		if (isActive) {
 			document.body.classList.add('no-scroll');
 		} else {
 			document.body.classList.remove('no-scroll');
+			// setActive(false)
 		}
 	}, [isActive]);
 
@@ -25,7 +27,7 @@ const BurgerMenu = ({ isActive, setActive }) => {
 				style={{ objectFit: 'cover' }}
 				priority
 			/>
-			<Accordion setActive={setActive} />
+			<Accordion setActive={setActive} isActive={isActive} isActiveLink={isActiveLink} />
 		</div>
 	);
 };
