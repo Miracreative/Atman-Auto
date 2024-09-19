@@ -28,7 +28,7 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 
 	const pathname = usePathname();
 
-	console.log('dropdownItems', dropdownItems);
+	// console.log('dropdownItems', dropdownItems);
 
 	return (
 		<nav className={styles.nav}>

@@ -1,0 +1,41 @@
+.section {
+	// margin: 100px;
+	padding: 100px;
+	background-color: rgb(var(--gray-background-img-rgb));
+}
+
+.filterPanel {
+	width: 415px;
+	min-height: 800px;
+	padding: 50px;
+	background-color: var(--white);
+	border-radius: 50px;
+}
+
+.filters {
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.buttonApply,
+.buttonReset {
+	width: 314px;
+	height: 60px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.buttonApply {
+}
+
+.buttonReset {
+	background-color: transparent;
+	color: var(--gray-background-img-rgb);
+	border: 1px solid red;
+	// outline: 1px solid var(--gray-background-img-rgb);
+}

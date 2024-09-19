@@ -1,16 +1,30 @@
 import PageTitle from './../../components/PageTitle/PageTitle.jsx';
 
+import filters from '@/data/filters.js';
+
+import styles from './Goods.module.scss';
+
 export default function Goods() {
 	return (
 		<>
-
-			<h1>Goods page</h1>
 			<PageTitle
 				title="Товары"
+				text="Клейкие ленты и самоклеящиеся материалы"
+			/>
+			<section className={styles.section}>
+				<div className={styles.filterPanel}>
+					<div className={styles.filters}></div>
+					<div className={styles.buttons}>
+						<button className={`${styles.buttonApply} button`}>
+							Применить
+						</button>
 
-				text='Клейкие ленты и самоклеящиеся материалы'></PageTitle>
-
-
+						<button className={`${styles.buttonReset} button`}>
+						Сбросить</button>
+					</div>
+				</div>
+				<div className={styles.cards}></div>
+			</section>
 		</>
 	);
 }
