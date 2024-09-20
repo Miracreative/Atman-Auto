@@ -1,13 +1,13 @@
-import styles from './GoodsList.module.scss';
-
-import products from '../../../data/products';
+import products from '@/data/products';
 import GoodsCard from '../GoodsCard/GoodsCard';
+
+import styles from './GoodsList.module.scss';
 
 const GoodsList = () => {
 	return (
 		<ul className={styles.cards}>
 			{products.map((product) => (
-				<li key={product.id}>
+				<li сlassName={styles.cardContainer} key={product.id}>
 					<GoodsCard
 						id={product.id}
 						title={product.title}

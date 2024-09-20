@@ -1,3 +1,6 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
 .item {
 	// width: 330px;
 	min-height: 45px;
@@ -73,14 +76,31 @@
 	}
 }
 
-// @media (max-width: 1440px) {
-// 	.item {
-// width: 140px;
-// height: 45px;
-// 	}
-// }
+@media (max-width: 1920px) {
+	.item {
+		& label {
+			// height: 45px;
+			// padding-left: 55px;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: center;
+			// position: relative;
 
-// @media (max-width: 1920px) {
+			// font-size: 16px;
+			@include adaptive-font(16, 12);
+
+			// font-weight: 500;
+			// line-height: 120%;
+			// cursor: pointer;
+
+			& span {
+				font-size: 14px;
+				// font-weight: 300;
+			}
+		}
+	}
+}
+
 // 	.option {
 // width: 330px;
 // height: 45px;
@@ -113,10 +133,16 @@
 // 			}
 // 		}
 // 	}
+
+// @media (max-width: 1440px) {
+// 	.item {
+// width: 140px;
+// height: 45px;
+// 	}
 // }
 
 @media (max-width: 1024px) {
-	.option {
+	.item {
 		height: 35px;
 
 		& label {

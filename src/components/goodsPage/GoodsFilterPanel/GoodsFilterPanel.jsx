@@ -4,22 +4,28 @@ import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
 import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = () => {
-	const [selectedFilters, setSelectedFilters] = useState([]);
+	const firstFilterId = filters[0].id;
+
+	const [selectedFilters, setSelectedFilters] = useState([firstFilterId]);
 
 	const handleChange = (id) => {
 		setSelectedFilters((prevSelectedFilters) => {
-			if (prevSelectedFilters.includes(id)) {
-				// Если элемент уже выбран, убираем его из списка
-				return prevSelectedFilters.filter((filterId) => filterId !== id);
+			if (id === firstFilterId) {
+				return prevSelectedFilters.includes(id) ? [] : [id];
 			} else {
-				// Добавляем новый выбранный элемент
-				return [...prevSelectedFilters, id];
+				if (prevSelectedFilters.includes(firstFilterId)) {
+					return [id];
+				} else {
+					return prevSelectedFilters.includes(id)
+						? prevSelectedFilters.filter((filterId) => filterId !== id)
+						: [...prevSelectedFilters, id];
+				}
 			}
 		});
 	};
 
 	const handleReset = () => {
-		setSelectedFilters([]);
+		setSelectedFilters([firstFilterId]);
 	};
 
 	return (
@@ -34,6 +40,10 @@ const GoodsFilterPanel = () => {
 							text={item.text}
 							checked={selectedFilters.includes(item.id)}
 							onChange={() => handleChange(item.id)}
+							disabled={
+								item.id !== firstFilterId &&
+								selectedFilters.includes(firstFilterId)
+							}
 						/>
 					</li>
 				))}
