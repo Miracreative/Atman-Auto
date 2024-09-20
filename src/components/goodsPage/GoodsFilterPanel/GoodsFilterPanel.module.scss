@@ -1,3 +1,6 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
 .filterPanel {
 	width: 415px;
 	min-height: 800px;
@@ -44,5 +47,23 @@
 	&:hover {
 		background-color: rgb(var(--foreground-rgb));
 		color: var(--white);
+	}
+}
+
+@media (max-width: 1920px) {
+	.filterPanel {
+		// width: 415px;
+		// min-height: 800px;
+
+		// Это свойство под вопросом
+		// padding: calcVH(50) calcVW(50) calcVH(50) calcVW(50);
+	}
+
+	.filters {
+		// padding-bottom: calcVH(50);
+	}
+
+	.buttons {
+		// margin-top: calcVH(50);
 	}
 }

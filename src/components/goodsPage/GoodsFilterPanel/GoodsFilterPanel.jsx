@@ -1,14 +1,27 @@
-import filters from '@/data/filters.js';
-
-import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
-
-import styles from './GoodsFilterPanel.module.scss';
 import { useState } from 'react';
+import filters from '@/data/filters.js';
+import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
+import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = () => {
-	const [isSelected, setIsSelected] = useState(false);
+	const [selectedFilters, setSelectedFilters] = useState([]);
 
-	// const [isCleared, setIsCleared] = useState(false);
+	// Обработчик изменения состояния чекбокса
+	const handleChange = (id) => {
+		setSelectedFilters((prevSelectedFilters) => {
+			if (prevSelectedFilters.includes(id)) {
+				// Если элемент уже выбран, убираем его из списка
+				return prevSelectedFilters.filter((filterId) => filterId !== id);
+			} else {
+				// Добавляем новый выбранный элемент
+				return [...prevSelectedFilters, id];
+			}
+		});
+	};
+
+	const handleReset = () => {
+		setSelectedFilters([]);
+	};
 
 	return (
 		<div className={styles.filterPanel}>
@@ -20,15 +33,20 @@ const GoodsFilterPanel = () => {
 							id={item.id}
 							value={item.value}
 							text={item.text}
-							// checked={isSelected}
-							// onChange={() => setIsSelected(!isSelected)}
+							checked={selectedFilters.includes(item.id)}
+							onChange={() => handleChange(item.id)}
 						/>
 					</li>
 				))}
 			</ul>
 			<div className={styles.buttons}>
 				<button className={`${styles.buttonApply} button`}>Применить</button>
-				<button className={`${styles.buttonReset} button`}>Сбросить</button>
+				<button
+					className={`${styles.buttonReset} button`}
+					onClick={handleReset}
+				>
+					Сбросить
+				</button>
 			</div>
 		</div>
 	);
