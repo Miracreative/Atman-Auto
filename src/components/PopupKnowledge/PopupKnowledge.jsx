@@ -8,18 +8,16 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function PopupKnowledge({ popupActive, setPopupActive, cardId }) {
-	// const [isActive, setActive] = useState(false);
 
 	const [knowledge, setKnowledge] = useState({});
 
 	useEffect(() => {
 		const knowledgeData = knowledgeBase.find((item) => item.id === cardId);
 		setKnowledge(knowledgeData);
-		// console.log(knowledge);
 
 	}, [cardId]);
 
-	console.log(knowledge);
+	// console.log(knowledge);
 	// console.log(knowledge.title); не может прочитать
 
 	return (

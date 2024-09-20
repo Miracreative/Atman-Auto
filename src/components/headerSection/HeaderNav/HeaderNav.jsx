@@ -28,7 +28,7 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 
 	const pathname = usePathname();
 
-	console.log('dropdownItems', dropdownItems);
+	// console.log('dropdownItems', dropdownItems);
 
 	return (
 		<nav className={styles.nav}>
@@ -46,25 +46,22 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 				))}
 				<Link
 					href="/production"
-					className={`${styles.link} ${
-						pathname === '/production' ? styles.linkActive : ''
-					}`}
+					className={`${styles.link} ${pathname === '/production' ? styles.linkActive : ''
+						}`}
 				>
 					Производство
 				</Link>
 				<Link
 					href="/knowledge"
-					className={`${styles.link} ${
-						pathname === '/knowledge' ? styles.linkActive : ''
-					}`}
+					className={`${styles.link} ${pathname === '/knowledge' ? styles.linkActive : ''
+						}`}
 				>
 					База знаний
 				</Link>
 				<Link
 					href="/news"
-					className={`${styles.link} ${
-						pathname === '/news' ? styles.linkActive : ''
-					}`}
+					className={`${styles.link} ${pathname === '/news' ? styles.linkActive : ''
+						}`}
 				>
 					Новости
 				</Link>
