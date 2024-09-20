@@ -415,6 +415,8 @@ export default function Survey() {
 											subtitle={product.subtitle}
 											description={product.description}
 											imageUrl={product.image}
+											width="200px"
+											height="250px"
 										/>
 									</li>
 								))}

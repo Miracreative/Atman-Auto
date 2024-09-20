@@ -6,7 +6,6 @@ import styles from './GoodsFilterPanel.module.scss';
 const GoodsFilterPanel = () => {
 	const [selectedFilters, setSelectedFilters] = useState([]);
 
-	// Обработчик изменения состояния чекбокса
 	const handleChange = (id) => {
 		setSelectedFilters((prevSelectedFilters) => {
 			if (prevSelectedFilters.includes(id)) {

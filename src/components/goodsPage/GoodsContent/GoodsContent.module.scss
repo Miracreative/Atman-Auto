@@ -1,6 +1,8 @@
 .section {
 	padding: 100px;
 	background-color: rgb(var(--gray-background-img-rgb));
+	display: flex;
+	gap: 20px;
 }
 
 // @media (max-width: 768px) {
