@@ -1,0 +1,75 @@
+.section {
+	min-height: 600px;
+	display: flex;
+	justify-content: space-between;
+	// flex: 1 1;
+	padding: 50px 100px 100px;
+}
+
+.loadingContainer {
+	min-height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.titleContainer {
+	width: 765px;
+}
+
+.breadCrumbs {
+	margin-bottom: 60px;
+	display: flex;
+	font-size: 10px;
+	font-weight: 300;
+
+	& p {
+		font-weight: 600;
+	}
+}
+
+.article {
+	margin-bottom: 40px;
+	font-size: 16px;
+	font-weight: 600;
+
+	& span {
+		color: var(--red-button);
+	}
+}
+
+.nameContainer {
+	margin-bottom: 20px;
+	display: flex;
+	font-size: 64px;
+	font-weight: 700;
+
+	& h1 {
+		font-size: 64px;
+	}
+}
+
+// .brand,
+// .name {
+// }
+
+.title {
+	color: var(--red-button);
+}
+
+.type {
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.description {
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.warning {
+	font-size: 16px;
+	font-weight: 700;
+}

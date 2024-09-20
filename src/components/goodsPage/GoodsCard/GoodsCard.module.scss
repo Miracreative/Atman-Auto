@@ -1,0 +1,83 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.card {
+	position: relative;
+	// width: 100%;
+	// max-width: 405px;
+	// height: auto;
+	height: 520px;
+	// aspect-ratio: 405 / 520; // Задаем соотношение сторон ширины к высоте
+	display: flex;
+	background-color: var(--white);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 40px 40px 30px;
+	overflow: hidden;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: transform 0.3s ease-in-out;
+
+	backface-visibility: hidden;
+
+	&:hover {
+		transform: translateX(-8px) translateY(-8px);
+	}
+}
+
+.backgroundImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	// right: 0;
+	// bottom: 0;
+	// width: 50%;
+	// height: 50%;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	will-change: transform;
+}
+
+.title {
+	margin-bottom: 8px;
+	font-size: 24px;
+	font-weight: 700;
+	color: rgb(var(--foreground-rgb));
+}
+
+.subtitle {
+	width: 75%;
+	font-size: 20px;
+	font-weight: 500;
+	color: rgb(var(--foreground-rgb));
+}
+
+@media (max-width: 1920px) {
+	.card {
+		// width: calcVW(405);
+		// height: calcVH(520);
+		padding: calcVH(40) calcVW(40) calcVH(30);
+	}
+
+	.title {
+		@include adaptive-font(24, 14);
+	}
+
+	.subtitle {
+		// width: 75%;
+		// font-size: 20px;
+		@include adaptive-font(20, 12);
+	}
+}
+
+// @media (max-width: 1440px) {
+// 	.card {
+// 		width: 350px;
+// 		height: 480px;
+// 	}
+// }
