@@ -32,6 +32,11 @@
 	background-color: rgb(var(--foreground-rgb));
 	color: white;
 	grid-column: 1 / -1;
+
+	&:hover {
+		color: rgb(var(--foreground-rgb));
+		background-color: rgb(var(--gray-background-img-rgb));
+	}
 }
 
 .cardInner {

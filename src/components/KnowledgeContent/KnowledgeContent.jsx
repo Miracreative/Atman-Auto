@@ -113,7 +113,7 @@ export default function KnowledgeContent() {
 	const handleCardClick = (cardId) => {
 		setPopupActive(true);
 		setCardId(cardId);
-		console.log(cardId);
+		// console.log(cardId);
 
 	};
 

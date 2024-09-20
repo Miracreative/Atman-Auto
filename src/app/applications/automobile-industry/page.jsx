@@ -1,3 +1,9 @@
+import Advantages from '@/components/applicationsPages/Advantages/Advantages';
+
+
+
 export default function AutomobileIndustry() {
-	return <div>Automobile Industry</div>;
+	return <>
+		<Advantages></Advantages>
+	</>;
 }
