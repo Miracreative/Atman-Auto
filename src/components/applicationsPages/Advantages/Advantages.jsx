@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import styles from './Advantages.module.scss';
 import applicationData from '@/data/aplicationData';
@@ -7,14 +7,16 @@ import Link from 'next/link';
 
 
 
-export default function Advantages() {
-	const { automobileIndustry } = applicationData;
-	const section = automobileIndustry.sections[0];
+export default function Advantages({ applicationIndustry, currentIndex }) {
+	// const { applicationIndustry } = applicationData;
+	const section = applicationIndustry.sections[currentIndex];
+
+
 
 	return (
 		<>
 			<section className={styles.section}>
-				<div className='container'>
+				<div className={styles.container}>
 					<div className={styles.wrap}>
 
 
