@@ -1,0 +1,29 @@
+.title {
+	margin-bottom: 40px;
+}
+
+.list {
+	& :not(:last-child) {
+		border-bottom: 1px solid rgba(var(--foreground-rgb-0_5-rgba));
+		// border-bottom: 1px solid red;
+	}
+}
+
+.item {
+	height: 42px;
+	display: flex;
+	align-items: center;
+}
+
+.itemText {
+	font-size: 18px;
+	font-weight: 500;
+
+	& span {
+		font-weight: 700;
+	}
+}
+
+.redDot {
+	margin: 0 20px 0;
+}

@@ -2,8 +2,9 @@
 	min-height: 600px;
 	display: flex;
 	justify-content: space-between;
-	// flex: 1 1;
-	padding: 50px 100px 100px;
+	padding: 0 100px 0;
+
+	border-bottom: 1px solid rgb(var(--gray-line-rgb));
 }
 
 .loadingContainer {
@@ -15,6 +16,7 @@
 
 .titleContainer {
 	width: 765px;
+	padding: 50px 0 100px;
 }
 
 .breadCrumbs {
@@ -49,18 +51,29 @@
 	}
 }
 
-// .brand,
-// .name {
-// }
+.brand {
+	margin-right: 15px;
+}
 
 .title {
 	color: var(--red-button);
 }
 
-.type {
+.typeContainer {
 	margin-bottom: 20px;
+	display: flex;
+}
+
+.type {
+	margin-right: 5px;
 	font-size: 24px;
 	font-weight: 400;
+}
+
+.size {
+	margin-right: 15px;
+	font-size: 24px;
+	font-weight: 700;
 }
 
 .description {
