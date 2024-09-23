@@ -1,3 +1,6 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
 .section {
 	min-height: 600px;
 	display: flex;
@@ -5,13 +8,6 @@
 	padding: 0 100px 0;
 
 	border-bottom: 1px solid rgb(var(--gray-line-rgb));
-}
-
-.loadingContainer {
-	min-height: 600px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .titleContainer {
@@ -43,6 +39,7 @@
 .nameContainer {
 	margin-bottom: 20px;
 	display: flex;
+	flex-wrap: wrap;
 	font-size: 64px;
 	font-weight: 700;
 
@@ -62,16 +59,16 @@
 .typeContainer {
 	margin-bottom: 20px;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .type {
-	margin-right: 5px;
+	margin-right: 8px;
 	font-size: 24px;
 	font-weight: 400;
 }
 
 .size {
-	margin-right: 15px;
 	font-size: 24px;
 	font-weight: 700;
 }
@@ -85,4 +82,94 @@
 .warning {
 	font-size: 16px;
 	font-weight: 700;
+}
+
+@media (max-width: 1920px) {
+	.section {
+		// min-height: 600px;
+		padding: 0 calcVW(100) 0;
+	}
+
+	.titleContainer {
+		width: calcVW(800);
+		padding: calcVH(50) 0 calcVH(100);
+	}
+
+	.breadCrumbs {
+		margin-bottom: calcVH(60);
+		// font-size: 10px;
+	}
+
+	.article {
+		margin-bottom: calcVH(40);
+		// font-size: 16px;
+	}
+
+	.nameContainer {
+		margin-bottom: calcVH(20);
+		@include adaptive-font(64, 32);
+
+		& h1 {
+			@include adaptive-font(64, 32);
+		}
+	}
+
+	.type {
+		// margin-right: 5px;
+		@include adaptive-font(24, 16);
+	}
+
+	.size {
+		@include adaptive-font(24, 16);
+	}
+
+	.description {
+		// margin-bottom: 20px;
+		@include adaptive-font(16, 12);
+	}
+
+	.warning {
+		@include adaptive-font(16, 12);
+	}
+}
+
+@media (max-width: 1440px) {
+	.section {
+		min-height: 540px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.section {
+		// min-height: 100%;
+		padding: 0;
+		flex-direction: column;
+	}
+
+	.breadCrumbs {
+		display: none;
+	}
+
+	.titleContainer {
+		width: 100%;
+		padding: 40px 40px 50px;
+	}
+
+	.description {
+		font-size: 14px;
+	}
+
+	.warning {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 768px) {
+	.article {
+		font-size: 14px;
+	}
+
+	.titleContainer {
+		padding: 40px 30px 40px;
+	}
 }

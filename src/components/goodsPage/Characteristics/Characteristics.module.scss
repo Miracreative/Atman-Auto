@@ -1,15 +1,22 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
 .title {
 	margin-bottom: 40px;
+	font-size: 48px;
+	font-weight: 700;
 }
 
 .list {
-	& :not(:last-child) {
-		border-bottom: 1px solid rgba(var(--white-opacity-0_5-rgba));
+	& li {
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(var(--white-opacity-0_5-rgba));
+		}
 	}
 }
 
 .item {
-	height: 42px;
+	min-height: 42px;
 	display: flex;
 	align-items: center;
 }
@@ -48,5 +55,46 @@
 
 	&:hover {
 		background-color: var(--red-dark);
+	}
+}
+
+@media (max-width: 1920px) {
+	.title {
+		margin-bottom: calcVH(40);
+		@include adaptive-font(48, 24);
+	}
+
+	.itemText {
+		@include adaptive-font(18, 14);
+	}
+
+	.redDot {
+		margin: 0 calcVW(20) 0;
+	}
+
+	.downloadContainer {
+		margin-top: calcVH(40);
+	}
+}
+
+// @media (max-width: 1280px) {
+// 	.item {
+// 		height: 38px;
+// 	}
+// }
+
+@media (max-width: 1280px) {
+	.download {
+		width: 220px;
+		height: 60px;
+		font-size: 14px;
+		border-radius: 15px;
+		padding: 15px 10px 15px 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.itemText {
+		font-size: 14px;
 	}
 }

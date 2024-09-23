@@ -1,3 +1,5 @@
+@import '../../../scss/_functions.scss';
+
 .slider {
 	width: 720px;
 	display: flex;
@@ -5,4 +7,20 @@
 	justify-content: center;
 	border-left: 1px solid rgb(var(--gray-line-rgb));
 	border-right: 1px solid rgb(var(--gray-line-rgb));
+}
+
+@media (max-width: 1920px) {
+	.slider {
+		width: calcVW(720);
+	}
+}
+
+@media (max-width: 1024px) {
+	.slider {
+		width: 100%;
+		min-height: 250px;
+		border-top: 1px solid rgb(var(--gray-line-rgb));
+		border-left: none;
+		border-right: none;
+	}
 }

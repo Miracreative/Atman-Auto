@@ -1,3 +1,5 @@
+@import '../../../scss/_functions.scss';
+
 .section {
 	padding: 20px 0 20px;
 }
@@ -21,4 +23,42 @@
 	border-top-right-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
 	padding: 80px 80px 60px;
+}
+
+@media (max-width: 1920px) {
+	.characteristics {
+		padding: calcVH(80) calcVW(155) calcVH(60) calcVW(80);
+	}
+
+	.advantages {
+		padding: calcVH(80) calcVW(80) calcVH(60);
+	}
+}
+
+@media (max-width: 1280px) {
+	.section {
+		padding: 15px 0 15px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.section {
+		padding: 15px 0 15px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.characteristics {
+		padding: 60px 40px 30px;
+	}
+
+	.advantages {
+		padding: 60px 40px 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: 10px 0 10px;
+	}
 }
