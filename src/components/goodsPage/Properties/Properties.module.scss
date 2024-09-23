@@ -10,15 +10,15 @@
 	flex: 1;
 	background-color: rgb(var(--foreground-rgb));
 	color: var(--white);
-	border-top-left-radius: 20px;
-	border-bottom-left-radius: 20px;
+	border-top-left-radius: var(--border-radius);
+	border-bottom-left-radius: var(--border-radius);
 	padding: 80px 155px 60px 80px;
 }
 
 .advantages {
 	flex: 1;
 	background-color: rgb(var(--gray-background-img-rgb));
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
+	border-top-right-radius: var(--border-radius);
+	border-bottom-right-radius: var(--border-radius);
 	padding: 80px 80px 60px;
 }

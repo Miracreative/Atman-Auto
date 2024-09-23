@@ -3,16 +3,16 @@ import Advantages from '../Advantages/Advantages.jsx';
 
 import styles from './Properties.module.scss';
 
-const Properties = () => {
+const Properties = ({ products }) => {
 	return (
 		<section className={styles.section}>
 			<div className="container">
 				<div className={styles.wrapper}>
 					<div className={styles.characteristics}>
-						<Characteristics />
+						<Characteristics products={products} />
 					</div>
 					<div className={styles.advantages}>
-						<Advantages />
+						<Advantages products={products} />
 					</div>
 				</div>
 			</div>

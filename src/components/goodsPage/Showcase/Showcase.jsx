@@ -10,51 +10,7 @@ import URL from '@/constants/url.js';
 
 import styles from './Showcase.module.scss';
 
-const Showcase = () => {
-	// Для хранения данных о товарах
-	const [products, setProducts] = useState([]);
-
-	const [loading, setLoading] = useState(true);
-	// const [loading, setLoading] = useState(false);
-
-	const [error, setError] = useState(null);
-
-	useEffect(() => {
-		const fetchProducts = async () => {
-			try {
-				// setLoading(true);
-				const response = await axios.get(URL);
-				setProducts(response.data); // Сохранение данных в состояние
-			} catch (err) {
-				setError(err.message); // Обработка ошибок
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchProducts();
-	}, []);
-
-	// Сообщение о загрузке
-	if (loading) {
-		return (
-			<section className={styles.loadingContainer}>
-				<h2>Загрузка информации, подождите...</h2>
-			</section>
-		);
-	}
-
-	// Сообщение об ошибке
-	if (error) {
-		return (
-			<section className={styles.loadingContainer}>
-				<p2>Ошибка: {error}</p2>;
-			</section>
-		);
-	}
-
-	// console.log(products);
-
+const Showcase = ({ products }) => {
 	return (
 		<section className={styles.section}>
 			<div className={styles.titleContainer}>
