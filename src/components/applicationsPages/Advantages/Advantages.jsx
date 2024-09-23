@@ -14,7 +14,7 @@ export default function Advantages() {
 	return (
 		<>
 			<section className={styles.section}>
-				<div className='container'>
+				<div className={styles.container}>
 					<div className={styles.wrap}>
 
 
