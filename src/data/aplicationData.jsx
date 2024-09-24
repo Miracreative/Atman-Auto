@@ -5,6 +5,7 @@ const applicationData = {
 		"title": <div> Автомобильная <br /><span>промышленность</span> </div>,
 		"description": "Ежедневные экстремальные условия эксплуатации автомобиля и требования к безопасности водителя и пассажиров, заставляют автопроизводителей использовать высококачественные материалы и клеевые решения. которые обладают превосходной адгезией к автомобильным лакокрасочным покрытиям, а также к широкому спектру полимеров, используемых для приклеивания экстерьера автомобилей.",
 		"image": "/aplicationPages/auto.png",
+		"imageMobile": "/aplicationPages/mobile/auto-mobile.png",
 		"sections": [
 			{
 				"section": "Молдинги двери",
@@ -375,9 +376,10 @@ const applicationData = {
 
 
 	"householdAppliances": {
-		"title": <div>Производство <span>бытовой техники</span></div>,
+		"title": <div>Производство <br /><span>бытовой техники</span></div>,
 		"description": "Мы предлагаем продукцию для различных отраслей промышленности.Наши клейкие ленты и технические пены могут предложить индивидуальные решения практически для любого типа отрасли.",
-		"image": "/",
+		"image": "/aplicationPages/household.png",
+		"imageMobile": "/aplicationPages/mobile/household-mobile.png",
 		"sections": [
 			{
 				"section": "Вклейка стекол и экранов в корпус",
@@ -628,9 +630,10 @@ const applicationData = {
 
 
 	"furnitureIndustry": {
-		"title": <div>Мебельная <span>промышленность</span></div>,
+		"title": <div>Мебельная <br /><span>промышленность</span></div>,
 		"description": "Мы предлагаем продукцию для различных отраслей промышленности.Наши клейкие ленты и технические пены могут предложить индивидуальные решения практически для любого типа отрасли.",
-		"image": "/",
+		"image": "/aplicationPages/furniture.png",
+		"imageMobile": "/aplicationPages/mobile/furniture-mobile.png",
 		"sections": [
 			{
 				"section": "Монтаж направляющих шкафов купе",
@@ -889,9 +892,11 @@ const applicationData = {
 
 
 	"electronics": {
-		"title": <div>Производство <span>электроники</span></div>,
+		"title": <div>Производство <br /><span>электроники</span></div>,
 		"description": "Еженевные экстремальные условия эксплуатации автомобиля и требования к безопасности водителя и пассажиров, заставляют автопроизводителей использовать высококачественные материалы и клеевые решения. которые обладают превосходной адгезией к автомобильным лакокрасочным покрытиям, а также к широкому спектру полимеров, используемых для приклеивания экстерьера автомобилей.",
-		"image": "/",
+		"image": "/aplicationPages/electronics.png",
+		"imageMobile": "/aplicationPages/mobile/electronics-mobile.png",
+
 		"sections": [
 			{
 				"section": "Фиксация элементов электрооборудования",
@@ -1232,9 +1237,11 @@ const applicationData = {
 
 
 	"construction": {
-		"title": <div>Строительство <span> и ремонт</span></div>,
+		"title": <div>Строительство <br /><span> и ремонт</span></div>,
 		"description": "Мы предлагаем продукцию для различных отраслей промышленности.Наши клейкие ленты и технические пены могут предложить индивидуальные решения практически для любого типа отрасли.",
-		"image": "/",
+		"image": "/aplicationPages/construction.png",
+		"imageMobile": "/aplicationPages/mobile/construction-mobile.png",
+
 		"sections": [
 			{
 				"section": "Крепление информационных табличек",
@@ -1495,8 +1502,10 @@ const applicationData = {
 
 	"transport": {
 		"title": "Транспорт",
-		"description": "",
-		"image": "/",
+		"description": "Мы предлагаем продукцию для различных отраслей промышленности.Наши клейкие ленты и технические пены могут предложить индивидуальные решения практически для любого типа отрасли.",
+		"image": "/aplicationPages/transport.png",
+		"imageMobile": "/aplicationPages/mobile/transport-mobile.png",
+
 		"sections": [
 			{
 				"section": "Монтаж ребер жескости",
@@ -1718,7 +1727,9 @@ const applicationData = {
 	"ros": {
 		"title": <div>Витрины и торговые автоматы</div>,
 		"description": "Мы предлагаем продукцию для различных отраслей промышленности.Наши клейкие ленты и технические пены могут предложить индивидуальные решения практически для любого типа отрасли.",
-		"image": "/",
+		"image": "/aplicationPages/ros.png",
+		"imageMobile": "/aplicationPages/mobile/ros-mobile.png",
+
 		"sections": [
 			{
 				"section": "Вклейка стекла к раме витрины",
@@ -1983,7 +1994,7 @@ const applicationData = {
 }
 
 
-	
+
 
 export default applicationData;
 
