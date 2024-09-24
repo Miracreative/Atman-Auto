@@ -7,6 +7,8 @@ import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
 import styles from './Showcase.module.scss';
 
 const Showcase = ({ products }) => {
+	const product = products[2];
+
 	const breadcrumbs = [
 		{ title: 'Главная', href: '/' },
 		{
@@ -14,11 +16,9 @@ const Showcase = ({ products }) => {
 			href: '/goods',
 		},
 		{
-			title: `${products[2].brand} ${products[2].name}`,
+			title: `${product.brand} ${product.name}`,
 		},
 	];
-
-	const product = products[2];
 
 	return (
 		<section className={styles.section}>
