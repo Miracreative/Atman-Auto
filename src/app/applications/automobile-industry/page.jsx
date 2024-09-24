@@ -16,9 +16,8 @@ export default function AutomobileIndustry() {
 
 	const handleNavClick = (index) => {
 		setCurrentIndex(index);
-		console.log(index);
-
 	};
+
 	return <>
 		<TitleNavigation
 			applicationIndustry={automobileIndustry}
