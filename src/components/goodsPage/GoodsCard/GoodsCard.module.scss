@@ -3,11 +3,8 @@
 
 .card {
 	position: relative;
-	// width: 100%;
-	// max-width: 405px;
-	// height: auto;
 	height: 520px;
-	// aspect-ratio: 405 / 520; // Задаем соотношение сторон ширины к высоте
+	width: 415px;
 	display: flex;
 	background-color: var(--white);
 	background-repeat: no-repeat;
@@ -30,10 +27,6 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	// right: 0;
-	// bottom: 0;
-	// width: 50%;
-	// height: 50%;
 }
 
 .content {
@@ -59,8 +52,6 @@
 
 @media (max-width: 1920px) {
 	.card {
-		// width: calcVW(405);
-		// height: calcVH(520);
 		padding: calcVH(40) calcVW(40) calcVH(30);
 	}
 
@@ -69,8 +60,6 @@
 	}
 
 	.subtitle {
-		// width: 75%;
-		// font-size: 20px;
 		@include adaptive-font(20, 12);
 	}
 }
