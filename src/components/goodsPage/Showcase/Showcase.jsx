@@ -2,20 +2,34 @@
 
 import GoodsSlider from '../GoodsSlider/GoodsSlider.jsx';
 
+import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
+
 import styles from './Showcase.module.scss';
 
 const Showcase = ({ products }) => {
+	const breadcrumbs = [
+		{ title: 'Главная', href: '/' },
+		{
+			title: 'Товары',
+			href: '/goods',
+		},
+		{
+			title: products[2].name,
+		},
+	];
+
 	const product = products[2];
 
 	return (
 		<section className={styles.section}>
 			<div className={styles.titleContainer}>
 				<div className={styles.breadCrumbs}>
-					Главная = Товары =
+					{/* Главная = Товары =
 					<p>
 						{product.brand}
 						{product.name}
-					</p>
+					</p> */}
+					<Breadcrumbs items={breadcrumbs} />
 				</div>
 				<p className={styles.article}>
 					Артикул: <span>{product.article}</span>
