@@ -14,7 +14,7 @@ const Showcase = ({ products }) => {
 			href: '/goods',
 		},
 		{
-			title: products[2].name,
+			title: `${products[2].brand} ${products[2].name}`,
 		},
 	];
 

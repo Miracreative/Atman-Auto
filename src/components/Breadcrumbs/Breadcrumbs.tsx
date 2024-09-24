@@ -14,7 +14,7 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
 		<nav className={styles.container}>
 			{items.map((item, key) => (
 				<React.Fragment key={key}>
-					<BreadcrumbItem {...item} />
+					<BreadcrumbItem {...item} isLast={key === items.length - 1} />
 					{key < items.length - 1 && ( // Проверяем, не последний ли это элемент
 						<div className={styles.arrowIconContainer}>
 							<ArrowIcon />

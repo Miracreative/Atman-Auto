@@ -1,7 +1,10 @@
 import Link, { LinkProps } from 'next/link';
 
+import styles from './BreadcrumbItem.module.scss';
+
 export type BreadcrumbItemProps = Omit<LinkProps, 'href'> & {
 	href?: LinkProps['href'];
+	isLast?: boolean;
 	title: string;
 };
 
@@ -11,6 +14,7 @@ export type BreadcrumbsProps = {
 export const BreadcrumbItem = ({
 	title,
 	href,
+	isLast,
 	...props
 }: BreadcrumbItemProps) => {
 	return href ? (
@@ -18,6 +22,6 @@ export const BreadcrumbItem = ({
 			{title}
 		</Link>
 	) : (
-		<span>{title}</span>
+		<span className={isLast ? styles.last : ''}>{title}</span>
 	);
 };
