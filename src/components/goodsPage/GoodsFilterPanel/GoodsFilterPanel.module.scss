@@ -109,11 +109,11 @@
 
 @media (max-width: 1024px) {
 	.filters {
-		padding-bottom: calcVH(40);
+		padding-bottom: calcVH(25);
 	}
 
 	.buttons {
-		margin-top: calcVH(40);
+		margin-top: calcVH(25);
 	}
 }
 
@@ -126,5 +126,9 @@
 		// border-radius: 10px;
 		// font-size: 14px;
 		// font-weight: 500;
+	}
+
+	.filterPanel {
+		padding: 25px;
 	}
 }
