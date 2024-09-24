@@ -22,6 +22,7 @@
 }
 
 .itemText {
+	margin: 10px 0;
 	font-size: 18px;
 	font-weight: 500;
 
@@ -52,5 +53,24 @@
 @media (max-width: 768px) {
 	.itemText {
 		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+
+	.item {
+		min-height: 47px;
+	}
+
+	.itemText {
+		margin: 15px 0;
+	}
+
+	.redDot {
+		margin: 0 10px 0 0;
 	}
 }

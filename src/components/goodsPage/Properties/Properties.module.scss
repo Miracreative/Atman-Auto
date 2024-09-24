@@ -4,21 +4,33 @@
 	padding: 20px 0 20px;
 }
 
+.container {
+	padding: 0 20px;
+}
+
 .wrapper {
 	display: flex;
 }
 
-.characteristics {
+.characteristicsContainer {
 	flex: 1;
+}
+
+.characteristics {
+	height: 100%;
 	background-color: rgb(var(--foreground-rgb));
 	color: var(--white);
 	border-top-left-radius: var(--border-radius);
 	border-bottom-left-radius: var(--border-radius);
-	padding: 80px 155px 60px 80px;
+	padding: 80px 150px 60px 80px;
+}
+
+.advantagesContainer {
+	flex: 1;
 }
 
 .advantages {
-	flex: 1;
+	height: 100%;
 	background-color: rgb(var(--gray-background-img-rgb));
 	border-top-right-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
@@ -41,12 +53,6 @@
 	}
 }
 
-@media (max-width: 1280px) {
-	.section {
-		padding: 15px 0 15px;
-	}
-}
-
 @media (max-width: 1024px) {
 	.characteristics {
 		padding: 60px 40px 30px;
@@ -60,5 +66,40 @@
 @media (max-width: 768px) {
 	.section {
 		padding: 10px 0 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	// .section {
+	// 	padding: 5px 0 5px;
+	// }
+
+	.container {
+		padding: 0;
+	}
+
+	.wrapper {
+		flex-direction: column;
+	}
+
+	.characteristicsContainer {
+		width: 100%;
+		border-bottom: 1px solid rgb(var(--gray-line-rgb));
+	}
+
+	.characteristics {
+		padding: 30px 10px 10px;
+		border-radius: 10px;
+		margin: 0 10px 20px;
+	}
+
+	.advantagesContainer {
+		width: 100%;
+	}
+
+	.advantages {
+		padding: 30px 10px 10px;
+		margin: 20px 10px 0;
+		border-radius: 10px;
 	}
 }

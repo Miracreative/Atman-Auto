@@ -53,8 +53,20 @@
 	background-color: var(--red-button);
 	transition: background-color 0.3s ease-in-out;
 
-	&:hover {
-		background-color: var(--red-dark);
+	// &:hover {
+	// 	background-color: var(--red-dark);
+	// }
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--red-dark);
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background-color: var(--red-dark);
+		}
 	}
 }
 
@@ -96,5 +108,43 @@
 @media (max-width: 768px) {
 	.itemText {
 		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+
+	.downloadContainer {
+		// align-items: center;
+		justify-content: center;
+	}
+
+	.download {
+		// width: 100%;
+
+		border-radius: 10px;
+		padding: 15px 8px 15px 20px;
+		justify-content: space-between;
+
+		& p {
+			max-width: 140px;
+		}
+	}
+
+	.item {
+		min-height: 47px;
+	}
+
+	.redDot {
+		margin: 0 10px 0 0;
+	}
+}
+
+@media (max-width: 375px) {
+	.download {
+		width: 100%;
 	}
 }

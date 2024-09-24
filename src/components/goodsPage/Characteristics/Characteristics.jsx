@@ -70,7 +70,7 @@ const Characteristics = ({ products }) => {
 			</ul>
 			<div className={`${styles.downloadContainer}`}>
 				<Link href={product.pdfUrl} target="_blank" className={styles.download}>
-					Скачать характеристики
+					<p>Скачать характеристики</p>
 					<svg
 						width="48"
 						height="48"

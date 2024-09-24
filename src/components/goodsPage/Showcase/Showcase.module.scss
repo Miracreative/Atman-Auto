@@ -107,10 +107,10 @@
 
 	.nameContainer {
 		margin-bottom: calcVH(20);
-		@include adaptive-font(64, 32);
+		@include adaptive-font(64, 36);
 
 		& h1 {
-			@include adaptive-font(64, 32);
+			@include adaptive-font(64, 36);
 		}
 	}
 
@@ -150,9 +150,17 @@
 		display: none;
 	}
 
+	.article {
+		margin-bottom: 30px;
+	}
+
 	.titleContainer {
 		width: 100%;
 		padding: 40px 40px 50px;
+	}
+
+	.brand {
+		margin-right: 12px;
 	}
 
 	.description {
@@ -171,5 +179,48 @@
 
 	.titleContainer {
 		padding: 40px 30px 40px;
+	}
+
+	.nameContainer {
+		margin-bottom: 15px;
+		// @include adaptive-font(64, 36);
+		font-size: 36px;
+
+		& h1 {
+			// @include adaptive-font(64, 36);
+			font-size: 36px;
+		}
+	}
+
+	.type {
+		font-size: 14px;
+	}
+
+	.brand {
+		margin-right: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.titleContainer {
+		padding: 40px 20px 30px;
+	}
+
+	.article {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 375px) {
+	.titleContainer {
+		padding: 40px 10px 20px;
+	}
+
+	.description {
+		font-size: 10px;
+	}
+
+	.warning {
+		font-size: 10px;
 	}
 }
