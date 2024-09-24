@@ -1,0 +1,76 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.title {
+	margin-bottom: 40px;
+	font-size: 48px;
+	font-weight: 700;
+}
+
+.list {
+	& li {
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(var(--foreground-rgb-0_5-rgba));
+		}
+	}
+}
+
+.item {
+	min-height: 42px;
+	display: flex;
+	align-items: center;
+}
+
+.itemText {
+	margin: 10px 0;
+	font-size: 18px;
+	font-weight: 500;
+
+	& span {
+		font-weight: 700;
+	}
+}
+
+.redDot {
+	margin: 0 20px 0;
+}
+
+@media (max-width: 1920px) {
+	.title {
+		margin-bottom: calcVH(40);
+		@include adaptive-font(48, 24);
+	}
+
+	.itemText {
+		@include adaptive-font(18, 14);
+	}
+
+	.redDot {
+		margin: 0 calcVW(20) 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.itemText {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+
+	.item {
+		min-height: 47px;
+	}
+
+	.itemText {
+		margin: 15px 0;
+	}
+
+	.redDot {
+		margin: 0 10px 0 0;
+	}
+}

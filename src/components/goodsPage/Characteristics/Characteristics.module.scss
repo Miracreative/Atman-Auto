@@ -1,0 +1,150 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.title {
+	margin-bottom: 40px;
+	font-size: 48px;
+	font-weight: 700;
+}
+
+.list {
+	& li {
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(var(--white-opacity-0_5-rgba));
+		}
+	}
+}
+
+.item {
+	min-height: 42px;
+	display: flex;
+	align-items: center;
+}
+
+.itemText {
+	font-size: 18px;
+	font-weight: 500;
+
+	& span {
+		font-weight: 700;
+	}
+}
+
+.redDot {
+	margin: 0 20px 0;
+}
+
+.downloadContainer {
+	margin-top: 40px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.download {
+	width: 280px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 15px;
+	padding: 20px 15px 20px 20px;
+	cursor: pointer;
+	background-color: var(--red-button);
+	transition: background-color 0.3s ease-in-out;
+
+	// &:hover {
+	// 	background-color: var(--red-dark);
+	// }
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--red-dark);
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background-color: var(--red-dark);
+		}
+	}
+}
+
+@media (max-width: 1920px) {
+	.title {
+		margin-bottom: calcVH(40);
+		@include adaptive-font(48, 24);
+	}
+
+	.itemText {
+		@include adaptive-font(18, 14);
+	}
+
+	.redDot {
+		margin: 0 calcVW(20) 0;
+	}
+
+	.downloadContainer {
+		margin-top: calcVH(40);
+	}
+}
+
+// @media (max-width: 1280px) {
+// 	.item {
+// 		height: 38px;
+// 	}
+// }
+
+@media (max-width: 1280px) {
+	.download {
+		width: 220px;
+		height: 60px;
+		font-size: 14px;
+		border-radius: 15px;
+		padding: 15px 10px 15px 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.itemText {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+
+	.downloadContainer {
+		// align-items: center;
+		justify-content: center;
+	}
+
+	.download {
+		// width: 100%;
+
+		border-radius: 10px;
+		padding: 15px 8px 15px 20px;
+		justify-content: space-between;
+
+		& p {
+			max-width: 140px;
+		}
+	}
+
+	.item {
+		min-height: 47px;
+	}
+
+	.redDot {
+		margin: 0 10px 0 0;
+	}
+}
+
+@media (max-width: 375px) {
+	.download {
+		width: 100%;
+	}
+}

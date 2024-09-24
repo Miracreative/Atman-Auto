@@ -1,6 +1,26 @@
+@import '../../../scss/_functions.scss';
+
 .slider {
+	width: 720px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	// flex: 1;
+	border-left: 1px solid rgb(var(--gray-line-rgb));
+	border-right: 1px solid rgb(var(--gray-line-rgb));
+}
+
+@media (max-width: 1920px) {
+	.slider {
+		width: calcVW(720);
+	}
+}
+
+@media (max-width: 1024px) {
+	.slider {
+		width: 100%;
+		min-height: 350px;
+		border-top: 1px solid rgb(var(--gray-line-rgb));
+		border-left: none;
+		border-right: none;
+	}
 }

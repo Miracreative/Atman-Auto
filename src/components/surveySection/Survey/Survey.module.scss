@@ -82,7 +82,7 @@
 		row-gap: 30px;
 
 		&:first-child {
-			border-right: 1px solid rgba(var(--white-opacity-rgba));
+			border-right: 1px solid rgba(var(--white-opacity-0_2-rgba));
 			padding-right: 80px;
 		}
 
@@ -101,7 +101,7 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 2fr;
 	row-gap: 30px;
-	border-bottom: 1px solid rgba(var(--white-opacity-rgba));
+	border-bottom: 1px solid rgba(var(--white-opacity-0_2-rgba));
 	padding-bottom: 30px;
 
 	& li {
@@ -181,7 +181,7 @@
 }
 
 .controls {
-	border-top: 1px solid rgba(var(--white-opacity-rgba));
+	border-top: 1px solid rgba(var(--white-opacity-0_2-rgba));
 	padding-top: 30px;
 	display: flex;
 	align-items: center;
