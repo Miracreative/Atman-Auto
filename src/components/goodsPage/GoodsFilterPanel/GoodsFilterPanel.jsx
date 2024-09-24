@@ -3,7 +3,7 @@ import filters from '@/data/filters.js';
 import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
 import styles from './GoodsFilterPanel.module.scss';
 
-const GoodsFilterPanel = ({ isOpenFilter }) => {
+const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 	const firstFilterId = filters[0].id;
 
 	const [selectedFilters, setSelectedFilters] = useState([firstFilterId]);
@@ -26,6 +26,10 @@ const GoodsFilterPanel = ({ isOpenFilter }) => {
 
 	const handleReset = () => {
 		setSelectedFilters([firstFilterId]);
+	};
+
+	const handleApply = () => {
+		setIsOpenFilter(false);
 	};
 
 	return (
@@ -53,7 +57,12 @@ const GoodsFilterPanel = ({ isOpenFilter }) => {
 				))}
 			</ul>
 			<div className={styles.buttons}>
-				<button className={`${styles.buttonApply} button`}>Применить</button>
+				<button
+					className={`${styles.buttonApply} button`}
+					onClick={handleApply}
+				>
+					Применить
+				</button>
 				<button
 					className={`${styles.buttonReset} button`}
 					onClick={handleReset}

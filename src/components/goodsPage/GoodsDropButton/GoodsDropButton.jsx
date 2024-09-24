@@ -1,15 +1,8 @@
-import { useState } from 'react';
-
-import {
-	TriangleIcon,
-	// DEFAULT_COLOR,
-} from '@/components/TriangleIcon/TriangleIcon';
+import { TriangleIcon } from '@/components/TriangleIcon/TriangleIcon';
 
 import styles from './GoodsDropButton.module.scss';
 
 const GoodsDropButton = ({ isOpenFilter, setIsOpenFilter }) => {
-	// const [isOpen, setIsOpen] = useState(false);
-
 	const handleOpen = () => setIsOpenFilter(!isOpenFilter);
 
 	return (

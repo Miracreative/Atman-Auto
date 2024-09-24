@@ -34,7 +34,10 @@ const GoodsFilter = () => {
 						isOpenFilter={isOpenFilter}
 						setIsOpenFilter={setIsOpenFilter}
 					/>
-					<GoodsFilterPanel isOpenFilter={isOpenFilter} />
+					<GoodsFilterPanel
+						isOpenFilter={isOpenFilter}
+						setIsOpenFilter={setIsOpenFilter}
+					/>
 				</div>
 			)}
 		</>
