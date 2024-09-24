@@ -7,10 +7,12 @@ import useWindowWidth from '@/hooks/useWindowWidth';
 import GoodsDropButton from '../GoodsDropButton/GoodsDropButton.jsx';
 import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
 
-// import styles from './GoodsFilter.module.scss';
+import styles from './GoodsFilter.module.scss';
 
 const GoodsFilter = () => {
 	const [isMobile, setIsMobile] = useState(false);
+
+	const [isOpenFilter, setIsOpenFilter] = useState(false);
 
 	const width = useWindowWidth();
 
@@ -25,11 +27,15 @@ const GoodsFilter = () => {
 	return (
 		<>
 			{!isMobile && <GoodsFilterPanel />}
+
 			{isMobile && (
-				<>
-					<GoodsDropButton />
-					<GoodsFilterPanel />
-				</>
+				<div className={styles.filterContainer}>
+					<GoodsDropButton
+						isOpenFilter={isOpenFilter}
+						setIsOpenFilter={setIsOpenFilter}
+					/>
+					<GoodsFilterPanel isOpenFilter={isOpenFilter} />
+				</div>
 			)}
 		</>
 	);

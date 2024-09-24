@@ -55,6 +55,22 @@
 	}
 }
 
+.hiddenMenu {
+	opacity: 0;
+	z-index: -1;
+	user-select: none;
+	pointer-events: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.visibleMenu {
+	opacity: 1;
+	z-index: 1;
+	user-select: auto;
+	pointer-events: auto;
+	transition: all 0.3s ease-in-out;
+}
+
 @media (max-width: 1920px) {
 	// .filterPanel {
 	// width: 415px;
@@ -124,6 +140,11 @@
 @media (max-width: 480px) {
 	.filterPanel {
 		width: 100%;
+		padding: 80px 15px 15px;
+		border: 1px solid rgb(var(--gray-line-rgb));
+		border-radius: 10px;
+		position: absolute;
+		z-index: 1;
 	}
 
 	.buttons {
@@ -133,6 +154,10 @@
 }
 
 @media (max-width: 375px) {
+	.filterPanel {
+		padding: 80px 10px 10px;
+	}
+
 	.buttonApply,
 	.buttonReset {
 		width: 100%;
