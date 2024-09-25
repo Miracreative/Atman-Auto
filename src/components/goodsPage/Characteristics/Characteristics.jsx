@@ -4,9 +4,7 @@ import RedDot from '@/components/RedDot/RedDot';
 
 import styles from './Characteristics.module.scss';
 
-const Characteristics = ({ products }) => {
-	const product = products[2];
-
+const Characteristics = ({ product }) => {
 	return (
 		<div>
 			<h2 className={styles.title}>Характеристики</h2>
@@ -69,7 +67,11 @@ const Characteristics = ({ products }) => {
 				</li>
 			</ul>
 			<div className={`${styles.downloadContainer}`}>
-				<Link href={product.pdfUrl} target="_blank" className={styles.download}>
+				<Link
+					href={product.pdfUrl || '#'}
+					target={product.pdfUrl ? '_blank' : undefined}
+					className={styles.download}
+				>
 					<p>Скачать характеристики</p>
 					<svg
 						width="48"

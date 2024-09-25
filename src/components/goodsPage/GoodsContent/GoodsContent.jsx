@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
-import GoodsList from '../GoodsList/GoodsList.jsx';
 
 import axios from 'axios';
 
 import URL from '@/constants/url.js';
+
+import GoodsList from '../GoodsList/GoodsList.jsx';
+import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
 
 import styles from './GoodsContent.module.scss';
 
@@ -14,8 +15,6 @@ const GoodsContent = () => {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-
-	// console.log(products.id);
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -31,14 +30,6 @@ const GoodsContent = () => {
 
 		fetchProducts();
 	}, []);
-
-	// if (loading) {
-	// 	return (
-	// 		<div className={styles.loading}>
-	// 			<h2>Загрузка информации, подождите...</h2>;
-	// 		</div>
-	// 	);
-	// }
 
 	if (error) {
 		return <p>Ошибка: {error}</p>;

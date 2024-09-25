@@ -120,6 +120,13 @@
 	.card {
 		height: calcVH(380);
 	}
+	.title {
+		font-size: 10px;
+	}
+
+	.subtitle {
+		font-size: 8px;
+	}
 }
 
 @media (max-width: 320px) {
