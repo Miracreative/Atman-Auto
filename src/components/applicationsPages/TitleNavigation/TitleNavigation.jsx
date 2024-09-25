@@ -87,7 +87,7 @@ export default function TitleNavigation({ applicationIndustry, currentIndex, onN
 							<div className={styles.navMobileContainer}>
 
 								<button
-									onClick={handleMobileNavClick} className={styles.btnNavMobile}>
+									className={styles.btnNavMobile} onClick={handleMobileNavClick} >
 									{applicationIndustry.sections[currentIndex].section}
 
 									<svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,13 +101,17 @@ export default function TitleNavigation({ applicationIndustry, currentIndex, onN
 
 									{applicationIndustry.sections.map((variation, index) => (
 										<li
-											onClick={() => onNavClick(index)}
+											onClick={() => {
+												handleMobileNavClick();
+												onNavClick(index)
+											}}
 											key={index}
 											className={`${styles.mobileWrapBtn} ${currentIndex === index ? styles.checked : ''}`}>
 
 
 											<a
-												className={`${styles.navMobileBtn} ${isMobileNavActive ? styles.activeMobileList : ''}`}
+												// className={`${styles.navMobileBtn} ${isMobileNavActive ? styles.activeMobileList : ''}`}
+												className={styles.navMobileBtn}
 											>
 												{variation.section}
 											</a>
