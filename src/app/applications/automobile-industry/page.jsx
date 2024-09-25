@@ -2,6 +2,8 @@
 
 import Advantages from '@/components/applicationsPages/Advantages/Advantages.jsx';
 import TitleNavigation from '@/components/applicationsPages/TitleNavigation/TitleNavigation.jsx';
+import Recommendations from '@/components/applicationsPages/Recommendations/Recommendations.jsx';
+
 import applicationData from '@/data/aplicationData';
 
 import { useState } from 'react';
@@ -28,5 +30,6 @@ export default function AutomobileIndustry() {
 			currentIndex={currentIndex}>
 
 		</Advantages>
+		<Recommendations></Recommendations>
 	</>;
 }
