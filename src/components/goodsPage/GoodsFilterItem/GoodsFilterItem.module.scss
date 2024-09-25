@@ -49,8 +49,8 @@
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 5;
-			width: 45px;
-			height: 45px;
+			width: 40px;
+			height: 40px;
 			border-radius: 10px;
 			border: 1px solid rgb(var(--gray-line-rgb));
 			// background-color: rgb(var(--foreground-rgb));
@@ -62,7 +62,7 @@
 			content: '';
 			display: block;
 			position: absolute;
-			left: 12px;
+			left: 10px;
 			top: 50%;
 			transform: translateY(-50%) scale(0);
 			z-index: 10;
@@ -79,92 +79,22 @@
 @media (max-width: 1920px) {
 	.item {
 		& label {
-			// height: 45px;
-			// padding-left: 55px;
-			// display: flex;
-			// flex-direction: column;
-			// justify-content: center;
-			// position: relative;
-
-			// font-size: 16px;
 			@include adaptive-font(16, 12);
-
-			// font-weight: 500;
-			// line-height: 120%;
-			// cursor: pointer;
 
 			& span {
 				font-size: 14px;
-				// font-weight: 300;
 			}
 		}
 	}
 }
 
-// 	.option {
-// width: 330px;
-// height: 45px;
-
-// & label {
-// 	height: 45px;
-// 	padding-left: 55px;
-// 	display: flex;
-// 	flex-direction: column;
-// align-items: center;
-// 			justify-content: center;
-// 			position: relative;
-// 			font-size: 16px;
-
-// 			& span {
-// 				font-size: 14px;
-// 			}
-
-// 			&::before {
-// 				width: 45px;
-// 				height: 45px;
-// 				border-radius: 10px;
-// 			}
-
-// 			&::after {
-// 				left: 12px;
-// 				width: 20px;
-// 				height: 20px;
-// 				background-size: 20px 20px;
-// 			}
-// 		}
-// 	}
-
-// @media (max-width: 1440px) {
-// 	.item {
-// width: 140px;
-// height: 45px;
-// 	}
-// }
-
 @media (max-width: 1024px) {
 	.item {
-		height: 35px;
-
 		& label {
-			height: 35px;
-			padding-left: 45px;
 			font-size: 14px;
 
 			& span {
 				font-size: 12px;
-			}
-
-			&::before {
-				width: 35px;
-				height: 35px;
-				border-radius: 8px;
-			}
-
-			&::after {
-				left: 10px;
-				width: 15px;
-				height: 15px;
-				background-size: 15px 15px;
 			}
 		}
 	}
@@ -175,29 +105,29 @@
 
 @media (max-width: 375px) {
 	.item {
-		min-height: 40px;
+		// 		min-height: 40px;
 
-		& label {
-			// height: 30px;
-			padding-left: 60px;
-			font-size: 14px;
+		// 		& label {
+		// 			// height: 30px;
+		// 			padding-left: 60px;
+		// 			font-size: 14px;
 
-			& span {
-				font-size: 8px;
-			}
+		// 			& span {
+		// 				font-size: 8px;
+		// 			}
 
-			&::before {
-				width: 40px;
-				height: 40px;
-				border-radius: 10px;
-			}
+		// 			&::before {
+		// 				width: 40px;
+		// 				height: 40px;
+		// 				border-radius: 10px;
+		// 			}
 
-			&::after {
-				left: 10px;
-				width: 20px;
-				height: 20px;
-				background-size: 20px 20px;
-			}
-		}
+		// 			&::after {
+		// 				left: 10px;
+		// 				width: 20px;
+		// 				height: 20px;
+		// 				background-size: 20px 20px;
+		// 			}
+		// 		}
 	}
 }
