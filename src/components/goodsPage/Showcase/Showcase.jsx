@@ -6,8 +6,10 @@ import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
 
 import styles from './Showcase.module.scss';
 
-const Showcase = ({ products }) => {
-	const product = products[2];
+const Showcase = ({ product }) => {
+	// const product = products[2];
+
+	// console.log('products в Showcase', products);
 
 	const breadcrumbs = [
 		{ title: 'Главная', href: '/' },
@@ -49,7 +51,7 @@ const Showcase = ({ products }) => {
 					изготавливаются под заказ
 				</p>
 			</div>
-			<GoodsSlider products={products} />
+			<GoodsSlider product={product} />
 		</section>
 	);
 };

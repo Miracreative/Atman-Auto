@@ -5,8 +5,8 @@ import RedDot from '@/components/RedDot/RedDot.jsx';
 
 import styles from './Advantages.module.scss';
 
-const Advantages = ({ products }) => {
-	const product = products[2]; // Предположим, что мы работаем с третьим продуктом
+const Advantages = ({ product }) => {
+	// const product = products[2]; // Предположим, что мы работаем с третьим продуктом
 
 	return (
 		<div className={styles.container}>
