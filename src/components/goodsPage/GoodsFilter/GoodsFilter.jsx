@@ -26,17 +26,6 @@ const GoodsFilter = () => {
 		}
 	}, [width]);
 
-	// useEffect(() => {
-	// 	// setIsOpenFilter(true);
-	// 	if (isMobile === true) {
-	// 		setIsOpenFilter(false);
-	// 	}
-	// }, []);
-
-	console.log('isMobile', isMobile);
-	console.log('width', width);
-	console.log('isOpenFilter', isOpenFilter);
-
 	return (
 		<>
 			{!isMobile && (

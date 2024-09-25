@@ -52,7 +52,6 @@
 @media (max-width: 1920px) {
 	.card {
 		height: calcVH(450);
-
 		padding: calcVH(40) calcVW(40) calcVH(30);
 	}
 
@@ -73,7 +72,7 @@
 
 @media (max-width: 1440px) {
 	.card {
-		// height: calcVH(400);
+		padding: calcVH(30) calcVW(30) calcVH(30);
 	}
 }
 
@@ -85,21 +84,15 @@
 
 @media (max-width: 1280px) {
 	.card {
-		// height: calcVH(270);
-	}
-}
-
-@media (max-width: 1150px) {
-	.card {
-		// height: calcVH(240);
+		border-radius: 15px;
 	}
 }
 
 @media (max-width: 1024px) {
 	.card {
 		padding: 22px 20px 20px;
-		// height: calcVH(600);
 		max-height: 350px;
+		padding: 20px;
 
 		&:hover {
 			transform: none;
@@ -118,6 +111,8 @@
 	.card {
 		height: calcVH(420);
 		max-height: 270px;
+		padding: 10px;
+		border-radius: 10px;
 	}
 }
 
