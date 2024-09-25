@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import styles from './GoodsCard.module.scss';
+import Link from 'next/link';
 
-const GoodsCard = ({ title, subtitle, imageUrl }) => {
+const GoodsCard = ({ id, title, subtitle, imageUrl }) => {
 	return (
-		<div className={styles.card}>
+		// <div className={styles.card}>
+		<Link href={`/goods/${id}`} className={styles.card}>
 			<Image
 				src={imageUrl}
 				alt={title}
@@ -17,7 +19,8 @@ const GoodsCard = ({ title, subtitle, imageUrl }) => {
 				<h1 className={styles.title}>{title}</h1>
 				<p className={styles.subtitle}>{subtitle}</p>
 			</div>
-		</div>
+		</Link>
+		// </div>
 	);
 };
 

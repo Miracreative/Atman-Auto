@@ -3,7 +3,6 @@
 
 .filterPanel {
 	width: 415px;
-	// min-height: 800px;
 	height: max-content;
 	padding: 50px;
 	background-color: var(--white);
@@ -29,9 +28,6 @@
 	}
 }
 
-// .filter {
-// }
-
 .buttons {
 	margin-top: 50px;
 	display: flex;
@@ -42,25 +38,46 @@
 .buttonApply,
 .buttonReset {
 	width: 314px;
-	// width: 100%;
 	height: 60px;
 	border-radius: 10px;
 	font-size: 20px;
 	font-weight: 500;
 }
 
-// .buttonApply {
-// }
-
 .buttonReset {
 	border: 1px solid rgb(var(--foreground-rgb));
 	color: var(--gray-background-img-rgb);
 	background-color: transparent;
 
-	&:hover {
-		background-color: rgb(var(--foreground-rgb));
-		color: var(--white);
+	@media (hover: hover) {
+		&:hover {
+			background-color: rgb(var(--foreground-rgb));
+			color: var(--white);
+		}
 	}
+
+	@media (hover: none) {
+		&:active {
+			background-color: rgb(var(--foreground-rgb));
+			color: var(--white);
+		}
+	}
+}
+
+.hiddenMenu {
+	opacity: 0;
+	z-index: -1;
+	user-select: none;
+	pointer-events: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.visibleMenu {
+	opacity: 1;
+	z-index: 1;
+	user-select: auto;
+	pointer-events: auto;
+	transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 1920px) {
@@ -99,21 +116,17 @@
 	.buttonApply,
 	.buttonReset {
 		width: 280px;
-		// width: 100%;
-		// height: 60px;
-		// border-radius: 10px;
 		font-size: 16px;
-		// font-weight: 500;
 	}
 }
 
 @media (max-width: 1024px) {
 	.filters {
-		padding-bottom: calcVH(40);
+		padding-bottom: calcVH(25);
 	}
 
 	.buttons {
-		margin-top: calcVH(40);
+		margin-top: calcVH(25);
 	}
 }
 
@@ -126,5 +139,41 @@
 		// border-radius: 10px;
 		// font-size: 14px;
 		// font-weight: 500;
+	}
+
+	.filterPanel {
+		padding: 25px;
+	}
+}
+
+@media (max-width: 480px) {
+	.filterPanel {
+		width: 100%;
+		padding: 80px 15px 15px;
+		border: 1px solid rgb(var(--gray-line-rgb));
+		border-radius: 10px;
+		position: absolute;
+		z-index: 1;
+	}
+
+	.filters {
+		padding-bottom: 20px;
+	}
+
+	.buttons {
+		// justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 375px) {
+	.filterPanel {
+		padding: 80px 10px 10px;
+	}
+
+	.buttonApply,
+	.buttonReset {
+		width: 100%;
 	}
 }
