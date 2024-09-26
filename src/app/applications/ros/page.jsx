@@ -27,7 +27,11 @@ export default function Ros() {
 			currentIndex={currentIndex}
 			onNavClick={handleNavClick}></TitleNavigation>
 
-		<SliderAplications></SliderAplications>
+		<SliderAplications
+			applicationIndustry={ros}
+			currentIndex={currentIndex}>
+
+		</SliderAplications>
 
 		<Advantages
 			applicationIndustry={ros}

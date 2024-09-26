@@ -28,7 +28,11 @@ export default function ManufactureOfHouseholdAppliances() {
 			currentIndex={currentIndex}
 			onNavClick={handleNavClick}></TitleNavigation>
 
-		<SliderAplications></SliderAplications>
+		<SliderAplications
+			applicationIndustry={householdAppliances}
+			currentIndex={currentIndex}>
+
+		</SliderAplications>
 		<Advantages
 			applicationIndustry={householdAppliances}
 			currentIndex={currentIndex}>

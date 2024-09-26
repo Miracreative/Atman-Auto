@@ -27,7 +27,11 @@ export default function ElectronicsManufacturing() {
 			currentIndex={currentIndex}
 			onNavClick={handleNavClick}></TitleNavigation>
 
-		<SliderAplications></SliderAplications>
+		<SliderAplications
+			applicationIndustry={electronics}
+			currentIndex={currentIndex}>
+
+		</SliderAplications>
 
 		<Advantages
 			applicationIndustry={electronics}
