@@ -15,12 +15,10 @@ export default function Recommendations() {
 			<section className={styles.section}>
 				<div className='container'>
 					<div className={styles.wrap}>
-						<div className={styles.innerWrap}>
 
-							<h2 className={styles.title}>
-								Продукты рекомендуемые <br /> <span>к применению:</span>
-							</h2>
-						</div>
+						<h2 className={styles.title}>
+							Продукты рекомендуемые <br /> <span>к применению:</span>
+						</h2>
 
 
 						<div className={styles.content}>

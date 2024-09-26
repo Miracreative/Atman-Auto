@@ -13,11 +13,10 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Молдинги, декоративные накладки и прочие элементы экстерьера тадиционно крепятся 2 способами, с использованием допополнительного механического крепежа и без. В любом случае правильно подобранная двусторонняя клейкая лента обеспечит безопасноть, долговесность и эстетический внешний вид автомобиля.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/kot1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/kot2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/kot3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/kot4.jpg" },
 					],
 				},
 				"approach": {
@@ -47,7 +46,7 @@ const applicationData = {
 			{
 				"section": "Защита от истирания ЛКП",
 				"slider": {
-					"titleSlider": <div> Защита от<span>истирания ЛКП</span> </div>,
+					"titleSlider": <div> Защита от<span> истирания ЛКП</span> </div>,
 					"description": "Вырубленные детали из ПВХ или PU Пленок в виде квадратов или кругов защищают от истирания ЛКП в местах соприкосновения с упорами и уплотнителями исключая появления очагов корозии.",
 					"images": [
 						{ "src": "/path/to/image1.jpg" },
