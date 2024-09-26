@@ -28,7 +28,11 @@ export default function Transport() {
 			currentIndex={currentIndex}
 			onNavClick={handleNavClick}></TitleNavigation>
 
-		<SliderAplications></SliderAplications>
+		<SliderAplications
+			applicationIndustry={transport}
+			currentIndex={currentIndex}>
+
+		</SliderAplications>
 
 		<Advantages
 			applicationIndustry={transport}

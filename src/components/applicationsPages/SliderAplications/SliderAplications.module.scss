@@ -24,6 +24,10 @@
 	margin-bottom: 4vw;
 }
 
+.swiperContainer {
+	position: relative;
+}
+
 
 .swiper {
 	width: 100%;
@@ -52,6 +56,15 @@
 	height: 29vw;
 	max-height: 560px;
 	object-fit: cover;
+}
+
+.prevBtn {
+	position: absolute;
+	top: 50%;
+	
+	left: -25px;
+	transform: translate(-50%);
+	background-color: red;
 }
 
 

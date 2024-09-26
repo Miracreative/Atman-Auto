@@ -27,7 +27,11 @@ export default function ConstructionAndRenovation() {
 			currentIndex={currentIndex}
 			onNavClick={handleNavClick}></TitleNavigation>
 
-		<SliderAplications></SliderAplications>
+		<SliderAplications
+			applicationIndustry={construction}
+			currentIndex={currentIndex}>
+
+		</SliderAplications>
 
 		<Advantages
 			applicationIndustry={construction}

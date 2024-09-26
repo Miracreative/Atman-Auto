@@ -27,7 +27,11 @@ export default function FurnitureIndustry() {
 			currentIndex={currentIndex}
 			onNavClick={handleNavClick}></TitleNavigation>
 
-		<SliderAplications></SliderAplications>
+		<SliderAplications
+			applicationIndustry={furnitureIndustry}
+			currentIndex={currentIndex}>
+
+		</SliderAplications>
 
 		<Advantages
 			applicationIndustry={furnitureIndustry}

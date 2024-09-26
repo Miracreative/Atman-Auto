@@ -2,32 +2,44 @@
 
 import styles from './SliderAplications.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Scrollbar, A11y } from 'swiper/modules';
 import { useSwiper } from 'swiper/react';
 
 
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { useRef, useState, useEffect, useCallback } from 'react';
+
+
 
 
 
 export default function SliderAplications({ applicationIndustry, currentIndex }) {
-	const swiperRef = useRef(null);
 
-	const swiper = useSwiper(swiperRef);
+	const [swiperInstance, setSwiperInstance] = useState(null);
+
+	const onSwiper = (swiper) => {
+		setSwiperInstance(swiper);
+	};
 
 	const goToPrevSlide = () => {
-		if (swiper) {
-			swiper.slidePrev();
+		if (swiperInstance) {
+			swiperInstance.slidePrev();
+			console.log('prev');
 		}
 	};
 
 	const goToNextSlide = () => {
-		if (swiper) {
-			swiper.slideNext();
+		if (swiperInstance) {
+			swiperInstance.slideNext();
+			console.log('next');
 		}
 	};
+
+
+
+
+
+
 
 	return (
 		<>
@@ -40,9 +52,14 @@ export default function SliderAplications({ applicationIndustry, currentIndex })
 						<div className={styles.description}> {applicationIndustry.sections[currentIndex].slider.description} </div>
 
 
+
+						{/* <div className={styles.swiperContainer}> */}
+
 						<Swiper
-							ref={swiperRef}
-							onSwiper={(swiper) => (swiperRef.current = swiper)}
+							// ref={swiperRef}
+							// onSwiper={(swiper) => (swiperRef.current = swiper)}
+
+							onSwiper={onSwiper}
 							navigation={{
 								prevEl: '.prev',
 								nextEl: '.next',
@@ -71,12 +88,15 @@ export default function SliderAplications({ applicationIndustry, currentIndex })
 						{/* <SwiperNavButtouns /> */}
 
 
-						<button className="prev" onClick={goToPrevSlide}>
+						<button className={styles.prevBtn} onClick={goToPrevSlide}>
 							Назад
 						</button>
-						<button className="next" onClick={goToNextSlide}>
+						<button className={styles.nextBtn} onClick={goToNextSlide}>
 							Вперёд
 						</button>
+
+						{/* </div> */}
+
 
 
 

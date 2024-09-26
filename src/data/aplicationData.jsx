@@ -13,10 +13,10 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Молдинги, декоративные накладки и прочие элементы экстерьера тадиционно крепятся 2 способами, с использованием допополнительного механического крепежа и без. В любом случае правильно подобранная двусторонняя клейкая лента обеспечит безопасноть, долговесность и эстетический внешний вид автомобиля.",
 					"images": [
-						{ "src": "/aplicationPages/aplicationImages/kot1.jpg" },
-						{ "src": "/aplicationPages/aplicationImages/kot2.jpg" },
-						{ "src": "/aplicationPages/aplicationImages/kot3.jpg" },
-						{ "src": "/aplicationPages/aplicationImages/kot4.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
 					],
 				},
 				"approach": {
@@ -49,11 +49,11 @@ const applicationData = {
 					"titleSlider": <div> Защита от<span> истирания ЛКП</span> </div>,
 					"description": "Вырубленные детали из ПВХ или PU Пленок в виде квадратов или кругов защищают от истирания ЛКП в местах соприкосновения с упорами и уплотнителями исключая появления очагов корозии.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/kot1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/kot2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/kot3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/kot4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -88,11 +88,11 @@ const applicationData = {
 					"titleSlider": <div> Дополнительные <span>уплотнители</span> </div>,
 					"description": "Крепление уплотнителей на двустороннюю акриловую вспененную ленту повышает его эфективность в сохранении тепла и защиты от дождя, пыли, и грязи при закрытой двери, крышке богажника и в подкапотном пространстве. Вязко упругий адгезив хорошо справляется с вибрацией , температурными расширениями разнородных материалов и не создает очагов корозии.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -128,11 +128,11 @@ const applicationData = {
 					"titleSlider": <div> Эмблемы и <span> надписи </span> </div>,
 					"description": "Эмблемы / надписи являются фирменным знаком автопроизводителя. Они придают особую ценность вашему автомобилю, грузовику, фургону, кемперу, автобусу или междугороднему автобусу. Двусторонняя акриловая клейкая лента не только удерживает знаки отличия на кузове и защищает ЛКП от корозии, но и обеспечивает легкий демонтаж и монтаж при ремонтных работах.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -168,11 +168,11 @@ const applicationData = {
 					"titleSlider": <div> Зеркало <span> заднего вида</span> </div>,
 					"description": "Соединение заркала заднего вида с оборгевательным элементов и корпусом, при помощи двусторонней клейкой ленты, обеспечивает необходимую пеплопередачу и безопасноть участников движдения при ДТП.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -206,11 +206,11 @@ const applicationData = {
 					"titleSlider": <div> Герметизация <span>системы кондиционирования</span> </div>,
 					"description": "Самоклеящийся EPDM герметизирует систему вентиляцию и кондиционирования в местах соединений элементов воздуховода.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -244,11 +244,11 @@ const applicationData = {
 					"titleSlider": <div> Расширительные <span>арки колес</span> </div>,
 					"description": "Способность защитного лайнера двусторонней клейкой ленты удеживаться на поверхности клейкого слоя при нанесении по радиусу, дает возможность производителям расширительнйх арок колес и прочих производителей элементов экстрерьера, наносить ленту на своем производстве и поставлять изделия готовые к монтажу на автомобильный конвеер, это сокращает время монтажа детали на кузов автомобиля.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -284,11 +284,11 @@ const applicationData = {
 					"titleSlider": <div> Защита<span> ЛКП автомобиля</span> </div>,
 					"description": "Применение специальных пленок для декорирования стоек двери, устраняют необходимость в их окраске, упрощает процесс маскированияи обеспечивают одинаковый внешний вид от машины к машине. Вырезанные детали из пленки удобно хранить и наносить на поверхность исользуя соотвествующий инструмент.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -324,11 +324,11 @@ const applicationData = {
 					"titleSlider": <div> Защита <span>ЛКП автомобиля</span> </div>,
 					"description": "Нанесенные, заранее вырубленные детали из полиуретовой пленки на ЛКП в местах частого контакта с гравием и песком, сохранит внешний вид автомбиля.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -386,11 +386,11 @@ const applicationData = {
 					"titleSlider": <div> Вклейка стекол и экранов <span>в корпус</span> </div>,
 					"description": "Вырубленная деталь из двусторонней клейкой ленты по контуру экрана или смотрового окна упростит сборку и придасть эстетический внешний вид устройства. Клейкая лента обеспечит герметичность и надежность соединения.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -423,11 +423,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Современная систему упарвления приборов способна эксплуатироваться в различных условиях. Склейка элементов пленочной клавиатуры на двустороннюю клейкую ленту делает ее водонепроницаемой гибкой и легкой.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -462,11 +462,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Наличие у уплотнителя, прокладки, клейкого слоя, позволяет соверщить его монтаж в необходимых местах, где требуется снижение шума, вибрации, защиты от протирания и попадания влаги. Не важно из какого материала сделан уплотнитель, прокладка( EPDM, EVO, войлок, вторичный полиуретан ид.т.) двусторонняя клейкая лента удержит его обеспечить защиту.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -502,11 +502,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Не важно из чего сделана видовая панель духового шрафа, стекло или металл, двусторонняя клейкая лента надежно зафиксирует и прослужит долгие годы.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -542,11 +542,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Фирменные знаки производителей оборудования и приборов несут особенную ценность. Для их крепления хорошо подходят двусторонние клейкие ленты, которые подбитаются с учетом особенностей склеиваемых материалов.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -580,11 +580,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Клейкая лента в сочетании с полиуретановым клеем герметиком обеспечит надежное соединения скеклянной панели бытовой вытяжки к корпусу. Двусторонняя клейкая лента создает одинаковую толщину клеевого соединения, и удерживает стеклянную панель до активации клея.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -640,11 +640,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Монтаж направляющей к основанию на двустороннюю клейкую ленту делает работу чище и быстрей. Вам не потребуется дополнительный инструмент и электричество. В случае необходимости демонтажа остаки скотча могут быть удалены не повреждая поверхности.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -677,11 +677,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Быстарая, чистая сборка и долговременная эксплуатация - результат применения двусторонней клейкой ленты.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -716,11 +716,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Использование светодиодных лент на клейкой основе при организации подсветки сокращает и упрощает ее монтаж. Блок питания можно закрепить на универсальную самоклеящуюся застежку 3M™ Dual Lock™ SJ3550",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -756,11 +756,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Комбинированное применения клея с двусторонней клейкой лентой, ускорит монтаж зеркал. Клейкая лента задасть равномерную толщину соединения и удержит заркало пока клей высыхает. Амальгама зеркала при контакте с клейкой лентой не повреждается.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -796,11 +796,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Металические и пластиковые элементы дизайна легко могут быть закреплены на двустороннюю клейку ленту. Двусторонняя клейкая лента компенсирует перепады высот поверхности, ускорит и облегчит монтаж.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -834,11 +834,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Ускоряем скорость сборки стола за счет применения клейкой ленты при монтаже столешницы. Готовй стол можно перемещать сразу после сборки.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -905,11 +905,11 @@ const applicationData = {
 					"description": "3M™VHB™F9473PC - это адгезив 100МР толщиной 250мкм (микрон) с бумажным лайнером. В клеепереносящей ленте 3M™ VHB™F9473PC используется высокоэффективный клей 3M™100MP, имеющий прекрасные долговечные клеящие свойства и обеспечивающий более высокую прочность соединения, чем традиционные чувствительные к давлению клеящие системы. Используется для промышленного крепления и изготовления металлических изделий. Отлично подходит для крепления декоративной металлической окантовки. Жесткий акриловый адгезив ленты F9473PC обладает очень высокой прочностью на сдвиг. Прочность значительно возрастает со временем. 3M™ VHB™ F9473PC предназначена полностью или частично заменить жидкие адгезивы. Использование клеёв и герметиков при производстве электрооборудования показало, что они имеют значительные недостатки. Плохой внешний вид изделия после склеивания деталей, нетехнологичность процесса, отсутствие моментальной транспортной прочности (подвижность клеевой массы), плохая удаляемость при неудачном монтаже и т.д. Дополнительная фиксация крупногабаритных элементов на печатной плате или внутри корпуса устройства. 3M™VHB™F9473PC позволяет полностью или частично заменить клея и герметики в функциях фиксации деталей, а возможность изготовления из неё готовых деталей высокой точности (конвертинг), позволяет автоматизировать производственный процесс, ускорить производственный цикл и повысить точность сборки.",
 
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -942,11 +942,11 @@ const applicationData = {
 					"titleSlider": <div> Крепление периферийных устройств к корпусу компьютера, <span>крепление съемных панелей, крепление шлейфов в корпусах приборов</span> </div>,
 					"description": "3M™VHB™F9473PC - это адгезив 100МР толщиной 250мкм (микрон) с бумажным лайнером. В клеепереносящей ленте 3M™ VHB™F9473PC используется высокоэффективный клей 3M™100MP, имеющий прекрасные долговечные клеящие свойства и обеспечивающий более высокую прочность соединения, чем традиционные чувствительные к давлению клеящие системы. Используется для промышленного крепления и изготовления металлических изделий. Отлично подходит для крепления декоративной металлической окантовки. Жесткий акриловый адгезив ленты F9473PC обладает очень высокой прочностью на сдвиг. Прочность значительно возрастает со временем. 3M™ VHB™ F9473PC предназначена полностью или частично заменить жидкие адгезивы. Использованиеклеёв и герметиков при производстве электрооборудования показало, что они имеют значительные недостатки. Плохой внешний вид изделия после склеивания деталей, нетехнологичность процесса, отсутствие моментальной транспортной прочности (подвижность клеевой массы), плохая удаляемость при неудачном монтаже и т.д.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -981,11 +981,11 @@ const applicationData = {
 					"titleSlider": <div> Крепление радиаторов к транзисторам и микросхемам <span>для обеспечения теплоотвода</span> </div>,
 					"description": "",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1021,11 +1021,11 @@ const applicationData = {
 					"titleSlider": <div> Усиление жёсткости гибких шлейфов<span> и обеспечение теплоотвода</span> </div>,
 					"description": "",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1061,11 +1061,11 @@ const applicationData = {
 					"titleSlider": <div> Монтаж (Touch screen) экранов <span> электронных устройств</span> </div>,
 					"description": "",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1099,11 +1099,11 @@ const applicationData = {
 					"titleSlider": <div> Защита участков печатных плат при удалении <span>излишков припоя струей горячего воздуха</span> </div>,
 					"description": "",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1137,11 +1137,11 @@ const applicationData = {
 					"titleSlider": <div> Монтаж светодиодных лент <span> к корпусам приборов</span> </div>,
 					"description": "",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1177,11 +1177,11 @@ const applicationData = {
 					"titleSlider": <div> Молдинги <span>двери</span> </div>,
 					"description": "Молдинги, декоративные накладки и прочие элементы экстерьера тадиционно крепятся 2 способами, с использованием допополнительного механического крепежа и без. В любом случае правильно подобранная двусторонняя клейкая лента обеспечит безопасноть, долговесность и эстетический внешний вид автомобиля.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1248,11 +1248,11 @@ const applicationData = {
 					"titleSlider": <div> Крепление  <span>информационных табличек</span> </div>,
 					"description": "Крепление информационных табличек и указателей на заранее вырубленные детали из двусторонней клейкой ленты ускорит процесс монтажа , и обеспечит эстетический внешний вид на светопрозрачных конструкциях.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1285,11 +1285,11 @@ const applicationData = {
 					"titleSlider": <div> Креплени<span> элементов дизайна</span> </div>,
 					"description": "Металические и пластиковые элементы дизайна легко могут быть закреплены на двустороннюю клейку ленту. Двусторонняя клейкая лента компенсирует перепады высот поверхности, ускорит и облегчит монтаж. Саморезы гвозди и клей не испортят внешний вид.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1324,11 +1324,11 @@ const applicationData = {
 					"titleSlider": <div> Монтаж<span> стеновых панелей</span> </div>,
 					"description": "Комбинированное применения клея с двусторонней клейкой лентой, ускорит монтаж стеновых панелей. Клейкая лента задасть равномерную толщину соединения и удержит панель пока клей высыхает.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1364,11 +1364,11 @@ const applicationData = {
 					"titleSlider": <div> Монтаж шпрос и<span> декоративных элементов при производстве окон</span> </div>,
 					"description": "Монтнаж шпрос и декоративных элементов на двустороннюю клейку ленту позволяет ускорить операцию сборки и получить эстетический вид соединения. Клейкая лента распределяет нагрузку по всей длинне соединения, что повышает жескость стеклокакета большого размера.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1404,11 +1404,11 @@ const applicationData = {
 					"titleSlider": <div> Монтаж<span> систем хранения</span> </div>,
 					"description": "Создейте удобное пространство без сверления поверхности. Закрепите элнменты хранения на внутреннюю часть двери или полотенцедержатель на стену на двустороннюю клейкую ленту.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1442,11 +1442,11 @@ const applicationData = {
 					"titleSlider": <div> Фиксация<span> напольных покрытий</span> </div>,
 					"description": "Двусторонняя клейкая лента позволит закрепить напольное покрытия и демонтировать в случае необходимости без повреждения поверхностей.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1512,11 +1512,11 @@ const applicationData = {
 					"titleSlider": <div> Монтаж  <span>ребер жескости</span> </div>,
 					"description": "Крепление ребер жескости с помощью двусторонней клейкой ленты ускоряет процесс сборки кузова/фургона, не создает очагов корозии и напрядения, Позволяет использовать более тонкий металл.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1549,11 +1549,11 @@ const applicationData = {
 					"titleSlider": <div> Гермитизация <span>сварных швов</span> </div>,
 					"description": "Герметизация швов крыши и вертикальных поверхностей кузова/фургона, осуществляется за счет нанесения эластичной ленты с акриловым клеем вдоль соединенния . Такой способ позволяет обеспечить гермитизацию разнородных материалов с разным температурным расширением, проконтролировать качество монтажа ленты и осуществить окраску кузова не внося изменений в процесс окрашивания.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1588,11 +1588,11 @@ const applicationData = {
 					"titleSlider": <div> Крепление скатов <span>крыши автобуса/фургона</span> </div>,
 					"description": "Технология крепления ската крыши авобуса, фургона на двусторонюю клейкую ленту,или комбинацию клейкая лента + клей герметик, позволяет снизить вибрацию, сократить количество очагов корозии и улучшить внешний вид.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1628,11 +1628,11 @@ const applicationData = {
 					"titleSlider": <div> Сборка двери <span>автобуса/ тролллейбуса</span> </div>,
 					"description": "В отличие от механического способа крепления, соединение на двустороннюю клейкую ленту обеспечивает герметичное соединение по всему контуру двери, исключает деформацию панели, придавая эстетический внешний вид.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1668,11 +1668,11 @@ const applicationData = {
 					"titleSlider": <div> Гермитизация соединения <span>петли задней двери</span> </div>,
 					"description": "Использование в качестве прокладки между петлей и кузовом транспортного средства, двустороннюю клейку ленту, обеспечить герметизацию соединения и отсуствие очагов коррозии.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1736,11 +1736,11 @@ const applicationData = {
 					"titleSlider": <div> Вклейка стекла<span> к раме витрины</span> </div>,
 					"description": "Двусторонняя клейкая лента нанесенная по периметру стекла надежно удержит его в раме, снизит вибрацию, распределит нагрузку в случае вандальных действий/",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1773,11 +1773,11 @@ const applicationData = {
 					"titleSlider": <div> Монтаж<span> ценникодержателей</span> </div>,
 					"description": "Двусторонняя клейкая лента удерживает ценникодержатель даже в холодильном ларе.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1812,11 +1812,11 @@ const applicationData = {
 					"titleSlider": <div> Фиксация декоративных<span> накладок витрин</span> </div>,
 					"description": "Декоративные накладки можно закрепить на двустороннюю клейкую ленту или сделать их съемными используя универсальную самоклеящуюся застежку 3M™ Dual Lock™ SJ3550",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1852,11 +1852,11 @@ const applicationData = {
 					"titleSlider": <div> Ребра жескости в<span> вендинговых автоматах</span> </div>,
 					"description": "Укрепление контсрукции без сверления и сварки. Вклеенные ребра жесткости на двустороннюю клейкую ленту сократят время сборки и выделят ваше изделие среди конкурентов.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1892,11 +1892,11 @@ const applicationData = {
 					"titleSlider": <div> Вклейка сенсорного<span> экрана в раму</span> </div>,
 					"description": "Двустороння клейкая лента обеспечит герметизацию соединения сенсорной панели с корпусом вендингового аппарата.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
@@ -1931,11 +1931,11 @@ const applicationData = {
 					"titleSlider": <div> Приклейка рекламных<span> модулей и логотипов</span> </div>,
 					"description": "Крепление рекламной конструкции на ветрине или вендинговом автомате без сверления при помощи двусторонней клейкой ленты. Выстро. чисто. надежно.",
 					"images": [
-						{ "src": "/path/to/image1.jpg" },
-						{ "src": "/path/to/image2.png" },
-						{ "src": "/path/to/image3.webp" },
-						{ "src": "/path/to/image4.jpg" },
-						{ "src": "/path/to/image5.png" }
+						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+
 					],
 				},
 				"approach": {
