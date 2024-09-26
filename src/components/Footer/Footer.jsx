@@ -5,7 +5,7 @@ import Link from 'next/link';
 import contacts from '../../data/contacts';
 import socialLinks from '@/data/socialLinks';
 
-import FormButton from '../FormButton/FormButton';
+import FormButton from '../formSection/FormButton/FormButton';
 
 export default function Footer() {
 	return (
