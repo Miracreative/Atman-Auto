@@ -1,35 +1,11 @@
 @import '../../../scss/_functions.scss';
 
 .cards {
-	// display: flex;
-
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	// flex-wrap: wrap;
-	// justify-content: space-evenly;
 	row-gap: 40px;
 	column-gap: 15px;
-
-	// & li {
-	// flex-grow: 1;
-
-	// &:last-child {
-	// margin-right: auto;
-	// justify-content: inherit;
-	// }
-	// }
 }
-
-// .cardContainer {
-// width: calc((100% / 3) - 10px);
-// }
-
-// @media (max-width: 1920px) {
-// .cards {
-// 	row-gap: calcVW(40);
-// 	column-gap: calcVW(20);
-// }
-// }
 
 @media (max-width: 1440px) {
 	.cards {

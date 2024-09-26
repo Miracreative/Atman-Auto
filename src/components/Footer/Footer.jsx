@@ -5,6 +5,8 @@ import Link from 'next/link';
 import contacts from '../../data/contacts';
 import socialLinks from '@/data/socialLinks';
 
+import FormButton from '../FormButton/FormButton';
+
 export default function Footer() {
 	return (
 		<footer className={styles.footer}>
@@ -20,12 +22,7 @@ export default function Footer() {
 						</div>
 					</div>
 					<div className={styles.contacts}>
-						<Link
-							className={styles.contactLink}
-							href={`mailto:${contacts.email}`}
-						>
-							<div className={styles.contactItem}>{contacts.email}</div>
-						</Link>
+						<FormButton />
 						<Link className={styles.contactLink} href={`tel:${contacts.phone}`}>
 							<div className={styles.contactItem}>{contacts.phone}</div>
 						</Link>
