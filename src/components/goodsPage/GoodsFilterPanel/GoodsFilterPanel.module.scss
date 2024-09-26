@@ -81,14 +81,6 @@
 }
 
 @media (max-width: 1920px) {
-	// .filterPanel {
-	// width: 415px;
-	// min-height: 800px;
-
-	// Это свойство под вопросом
-	// padding: calcVH(50) calcVW(50) calcVH(50) calcVW(50);
-	// }
-
 	.filters {
 		padding-bottom: calcVH(50);
 	}
@@ -134,11 +126,6 @@
 	.buttonApply,
 	.buttonReset {
 		width: 240px;
-		// width: 100%;
-		// height: 60px;
-		// border-radius: 10px;
-		// font-size: 14px;
-		// font-weight: 500;
 	}
 
 	.filterPanel {
@@ -161,7 +148,6 @@
 	}
 
 	.buttons {
-		// justify-content: center;
 		align-items: center;
 		margin-top: 20px;
 	}
