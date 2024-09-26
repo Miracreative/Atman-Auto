@@ -15,23 +15,22 @@ export default function Recommendations() {
 			<section className={styles.section}>
 				<div className='container'>
 					<div className={styles.wrap}>
-						<div className={styles.innerWrap}>
 
-							<h2 className={styles.title}>
-								Продукты рекомендуемые <br /> <span>к применению:</span>
-							</h2>
-						</div>
+						<h2 className={styles.title}>
+							Продукты рекомендуемые <br /> <span>к применению:</span>
+						</h2>
 
 
 						<div className={styles.content}>
 							{recomendationsData.map((item, index) => (
 								<div className={styles.item} key={item.id}>
+									<Link className={styles.mobileLink} href='/'></Link>
 
 									<div className={styles.nameItem}> {item.name} </div>
 									<div className={styles.description}> {item.description} </div>
 
 									<div className={styles.linkWrap}>
-										<Link href='/'> Подробнее </Link>
+										<Link className={styles.link} href='/'> Подробнее </Link>
 									</div>
 								</div>
 							))}

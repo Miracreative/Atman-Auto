@@ -1,8 +1,10 @@
 'use client';
 
-import Advantages from '@/components/applicationsPages/Advantages/Advantages.jsx';
 import TitleNavigation from '@/components/applicationsPages/TitleNavigation/TitleNavigation.jsx';
+import SliderAplications from '@/components/applicationsPages/SliderAplications/SliderAplications.jsx';
+import Advantages from '@/components/applicationsPages/Advantages/Advantages.jsx';
 import Recommendations from '@/components/applicationsPages/Recommendations/Recommendations.jsx';
+
 
 import applicationData from '@/data/aplicationData';
 
@@ -25,6 +27,9 @@ export default function Transport() {
 			applicationIndustry={transport}
 			currentIndex={currentIndex}
 			onNavClick={handleNavClick}></TitleNavigation>
+
+		<SliderAplications></SliderAplications>
+
 		<Advantages
 			applicationIndustry={transport}
 			currentIndex={currentIndex}>

@@ -1,0 +1,70 @@
+@import '@/scss/_functions.scss';
+
+.section {
+	margin: 20px 0;
+
+}
+
+.wrap {
+	border: 1px solid rgb(var(--gray-line-rgb));
+	padding: 6vw 4vw 4vw 4vw ;
+	border-radius: 20px;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 64px;
+	margin-bottom: 2vw;
+	& span {
+		color: var(--red-button);
+	}
+}
+
+.description {
+	margin-bottom: 4vw;
+}
+
+
+.swiper {
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+}
+
+.swiperWrapper {
+	display: flex;
+
+}
+
+.swiperSlide {
+
+	height: 29vw;
+	max-height: 560px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiperSlide img {
+	display: block;
+	border-radius: 20px;
+	width: 100%;
+	height: 29vw;
+	max-height: 560px;
+	object-fit: cover;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1920px) {
+
+
+	.title {
+		font-size: calcVW(64);
+	}
+}
