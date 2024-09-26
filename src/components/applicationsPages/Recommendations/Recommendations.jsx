@@ -26,12 +26,13 @@ export default function Recommendations() {
 						<div className={styles.content}>
 							{recomendationsData.map((item, index) => (
 								<div className={styles.item} key={item.id}>
+									<Link className={styles.mobileLink} href='/'></Link>
 
 									<div className={styles.nameItem}> {item.name} </div>
 									<div className={styles.description}> {item.description} </div>
 
 									<div className={styles.linkWrap}>
-										<Link href='/'> Подробнее </Link>
+										<Link className={styles.link} href='/'> Подробнее </Link>
 									</div>
 								</div>
 							))}
