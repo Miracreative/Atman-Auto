@@ -1,3 +1,6 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
 .container {
 	position: fixed;
 	top: 0;
@@ -25,28 +28,17 @@
 // }
 
 .form {
+	border-radius: 40px;
+	padding: 90px 220px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	position: relative;
-
 	width: calc(100% - 80px - 80px);
 	height: calc(100% - 100px - 100px);
-
-	padding: 90px 220px;
-
 	box-sizing: border-box;
-
-	border-radius: 40px;
-
 	background-color: var(--white);
-
-	// opacity: 0;
-	// transform: scale(0.75);
-	// z-index: -1;
-	// user-select: none;
-	// transition: all 1.6s ease-in-out;
 }
 
 .title {
@@ -79,10 +71,28 @@
 	position: absolute;
 	top: 40px;
 	right: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	cursor: pointer;
 	transition: 0.3s all ease-in-out;
 	color: var(--white);
 	background-color: rgb(var(--foreground-rgb));
+
+	& span {
+		position: absolute;
+		width: 25px;
+		height: 1px;
+		background-color: var(--white);
+	}
+
+	& span:first-child {
+		transform: rotate(45deg);
+	}
+
+	& span:last-child {
+		transform: rotate(-45deg);
+	}
 
 	@media (hover: hover) {
 		&:hover {
@@ -104,17 +114,86 @@
 	justify-content: space-between;
 }
 
-.submitButton {
-}
+// .submitButton {
+// }
+
+// .checkbox {
+// 	display: flex;
+// 	flex: 1;
+
+// 	& label {
+// 		width: 450px;
+// 		// display: flex;
+// 	}
+// }
 
 .checkbox {
+	min-height: 45px;
+	padding-left: 50px;
 	display: flex;
 	flex: 1;
-	padding-left: 50px;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+
+	& input {
+		position: absolute;
+		opacity: 0;
+
+		&:checked + label::before {
+			background-color: var(--red-button);
+			border: none;
+		}
+
+		&:checked + label::after {
+			opacity: 1;
+			transform: translateY(-50%) scale(1);
+		}
+	}
 
 	& label {
-		width: 450px;
-		// display: flex;
+		width: 430px;
+		padding-left: 55px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 120%;
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 5;
+			width: 40px;
+			height: 40px;
+			border-radius: 10px;
+			border: 1px solid rgb(var(--gray-line-rgb));
+			background-color: transparent;
+			transition: background-color 0.3s, border 0.3s;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			transform: translateY(-50%) scale(0);
+			z-index: 10;
+			width: 20px;
+			height: 20px;
+			background: url('../../../../public/check.svg') no-repeat center;
+			background-size: 20px 20px;
+			opacity: 0;
+			transition: opacity 0.3s, transform 0.3s;
+		}
 	}
 }
 
@@ -170,3 +249,35 @@
 // 	user-select: auto;
 // 	transition: all 1.6s ease-in-out;
 // }
+
+@media (max-width: 1920px) {
+	.form {
+		// border-radius: 40px;
+		padding: calcVH(90) calcVW(220);
+		width: calc(100% - calcVW(80) - calcVW(80));
+		height: calc(100% - calcVH(100) - calcVH(100));
+	}
+
+	.title {
+		margin-bottom: calcVH(50);
+		@include adaptive-font(64, 32);
+	}
+
+	.inputs {
+		margin-bottom: calcVH(50);
+	}
+
+	.checkbox {
+		& label {
+			@include adaptive-font(16, 12);
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.checkbox {
+		& label {
+			font-size: 14px;
+		}
+	}
+}

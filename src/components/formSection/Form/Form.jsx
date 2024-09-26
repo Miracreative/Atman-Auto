@@ -23,7 +23,8 @@ const Form = ({ isOpen, onClose }) => {
 				onClick={(e) => e.stopPropagation()}
 			>
 				<button type="button" className={styles.buttonClose} onClick={onClose}>
-					X
+					<span></span>
+					<span></span>
 				</button>
 				<h2 className={styles.title}>
 					Напишите <span>нам</span>
