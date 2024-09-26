@@ -2,13 +2,13 @@
 
 import styles from './SliderAplications.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Scrollbar, A11y } from 'swiper/modules';
 import { useSwiper } from 'swiper/react';
 
 
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { useRef } from 'react';
+
 
 
 
