@@ -91,7 +91,7 @@ const applicationData = {
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
 						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
 						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
-						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+						// { "src": "/aplicationPages/aplicationImages/waha4.jpg" },
 
 					],
 				},
@@ -130,8 +130,8 @@ const applicationData = {
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
 						{ "src": "/aplicationPages/aplicationImages/waha2.jpg" },
-						{ "src": "/aplicationPages/aplicationImages/waha3.jpg" },
-						{ "src": "/aplicationPages/aplicationImages/waha4.jpg" },
+						// { "src": "/aplicationPages/aplicationImages/waha3.jpg" },
+						// { "src": "/aplicationPages/aplicationImages/waha4.jpg" },
 
 					],
 				},
@@ -420,7 +420,7 @@ const applicationData = {
 			{
 				"section": "Производство мембранных клавиатур",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Производство<span> мембранных клавиатур</span> </div>,
 					"description": "Современная систему упарвления приборов способна эксплуатироваться в различных условиях. Склейка элементов пленочной клавиатуры на двустороннюю клейкую ленту делает ее водонепроницаемой гибкой и легкой.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -459,7 +459,7 @@ const applicationData = {
 			{
 				"section": "Защита от вибрации шума истирания",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Защита от вибрации<span> шума истирания</span> </div>,
 					"description": "Наличие у уплотнителя, прокладки, клейкого слоя, позволяет соверщить его монтаж в необходимых местах, где требуется снижение шума, вибрации, защиты от протирания и попадания влаги. Не важно из какого материала сделан уплотнитель, прокладка( EPDM, EVO, войлок, вторичный полиуретан ид.т.) двусторонняя клейкая лента удержит его обеспечить защиту.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -499,7 +499,7 @@ const applicationData = {
 			{
 				"section": "Сборка панели духового шкафа",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Сборка панели<span> духового шкафа</span> </div>,
 					"description": "Не важно из чего сделана видовая панель духового шрафа, стекло или металл, двусторонняя клейкая лента надежно зафиксирует и прослужит долгие годы.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -539,7 +539,7 @@ const applicationData = {
 			{
 				"section": "Эмблемы и логотипы",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Эмблемы и<span> логотипы</span> </div>,
 					"description": "Фирменные знаки производителей оборудования и приборов несут особенную ценность. Для их крепления хорошо подходят двусторонние клейкие ленты, которые подбитаются с учетом особенностей склеиваемых материалов.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -577,7 +577,7 @@ const applicationData = {
 			{
 				"section": "Фиксация декоративной панели бытовой вытяжки",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Фиксация декоративной панели<span> бытовой вытяжки</span> </div>,
 					"description": "Клейкая лента в сочетании с полиуретановым клеем герметиком обеспечит надежное соединения скеклянной панели бытовой вытяжки к корпусу. Двусторонняя клейкая лента создает одинаковую толщину клеевого соединения, и удерживает стеклянную панель до активации клея.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -637,7 +637,7 @@ const applicationData = {
 			{
 				"section": "Монтаж направляющих шкафов купе",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Монтаж направляющих<span> шкафов купе </span> </div>,
 					"description": "Монтаж направляющей к основанию на двустороннюю клейкую ленту делает работу чище и быстрей. Вам не потребуется дополнительный инструмент и электричество. В случае необходимости демонтажа остаки скотча могут быть удалены не повреждая поверхности.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -674,7 +674,7 @@ const applicationData = {
 			{
 				"section": "Монтаж пластиковых фасадов мебели",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Монтаж пластиковых<span> фасадов мебели </span> </div>,
 					"description": "Быстарая, чистая сборка и долговременная эксплуатация - результат применения двусторонней клейкой ленты.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -713,7 +713,7 @@ const applicationData = {
 			{
 				"section": "Монтаж подсветки",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Монтаж<span> подсветки </span> </div>,
 					"description": "Использование светодиодных лент на клейкой основе при организации подсветки сокращает и упрощает ее монтаж. Блок питания можно закрепить на универсальную самоклеящуюся застежку 3M™ Dual Lock™ SJ3550",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -753,7 +753,7 @@ const applicationData = {
 			{
 				"section": "Монтаж зеркал",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Монтаж<span> зеркал </span> </div>,
 					"description": "Комбинированное применения клея с двусторонней клейкой лентой, ускорит монтаж зеркал. Клейкая лента задасть равномерную толщину соединения и удержит заркало пока клей высыхает. Амальгама зеркала при контакте с клейкой лентой не повреждается.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -793,7 +793,7 @@ const applicationData = {
 			{
 				"section": "Креплени элементов дизайна мебели",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Креплени элементов<span> дизайна мебели </span> </div>,
 					"description": "Металические и пластиковые элементы дизайна легко могут быть закреплены на двустороннюю клейку ленту. Двусторонняя клейкая лента компенсирует перепады высот поверхности, ускорит и облегчит монтаж.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
@@ -831,7 +831,7 @@ const applicationData = {
 			{
 				"section": "Монтаж стеклянных столешниц",
 				"slider": {
-					"titleSlider": <div> Молдинги <span>двери</span> </div>,
+					"titleSlider": <div> Монтаж стеклянных<span> столешниц </span> </div>,
 					"description": "Ускоряем скорость сборки стола за счет применения клейкой ленты при монтаже столешницы. Готовй стол можно перемещать сразу после сборки.",
 					"images": [
 						{ "src": "/aplicationPages/aplicationImages/waha1.jpg" },
