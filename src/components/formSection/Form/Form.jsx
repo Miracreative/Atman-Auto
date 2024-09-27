@@ -18,6 +18,7 @@ const Form = ({ isOpen, onClose }) => {
 	const {
 		register,
 		handleSubmit,
+		reset,
 		// watch,
 		formState: { errors },
 	} = useForm({
@@ -38,12 +39,19 @@ const Form = ({ isOpen, onClose }) => {
 		setIsChecked(!isChecked);
 	};
 
+	const handleCloseForm = () => {
+		onClose(false);
+		setTimeout(() => {
+			reset();
+		}, 300);
+	};
+
 	return (
 		<div
 			className={`${
 				isOpen ? `${styles.visible} ${styles.container}` : styles.container
 			}`}
-			onClick={() => onClose(false)}
+			onClick={handleCloseForm}
 		>
 			<form
 				className={styles.form}
@@ -51,7 +59,11 @@ const Form = ({ isOpen, onClose }) => {
 				onSubmit={handleSubmit((data) => console.log(data))}
 				noValidate
 			>
-				<button type="button" className={styles.buttonClose} onClick={onClose}>
+				<button
+					type="button"
+					className={styles.buttonClose}
+					onClick={handleCloseForm}
+				>
 					<span></span>
 					<span></span>
 				</button>
