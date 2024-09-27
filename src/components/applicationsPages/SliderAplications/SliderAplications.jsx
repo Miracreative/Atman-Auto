@@ -7,7 +7,7 @@ import { useSwiper } from 'swiper/react';
 
 
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 
 
@@ -16,6 +16,27 @@ import { useRef, useState, useEffect, useCallback } from 'react';
 export default function SliderAplications({ applicationIndustry, currentIndex }) {
 
 	const [swiperInstance, setSwiperInstance] = useState(null);
+	const [canGoPrev, setCanGoPrev] = useState(false);
+	const [canGoNext, setCanGoNext] = useState(true);
+
+
+	useEffect(() => {
+		if (swiperInstance) {
+			swiperInstance.slideTo(0);
+		}
+		setCanGoNext(applicationIndustry.sections[currentIndex].slider.images.length > 3);
+	}, [applicationIndustry, currentIndex]);
+
+	const onSlideChange = () => {
+
+		const swiper = swiperInstance;
+		const isBeginning = swiper.isBeginning;
+		const isEnd = swiper.isEnd;
+
+		setCanGoPrev(!isBeginning);
+		setCanGoNext(!isEnd);
+
+	};
 
 	const onSwiper = (swiper) => {
 		setSwiperInstance(swiper);
@@ -24,20 +45,16 @@ export default function SliderAplications({ applicationIndustry, currentIndex })
 	const goToPrevSlide = () => {
 		if (swiperInstance) {
 			swiperInstance.slidePrev();
-			console.log('prev');
+
 		}
 	};
 
 	const goToNextSlide = () => {
 		if (swiperInstance) {
 			swiperInstance.slideNext();
-			console.log('next');
+
 		}
 	};
-
-
-
-
 
 
 
@@ -53,49 +70,72 @@ export default function SliderAplications({ applicationIndustry, currentIndex })
 
 
 
-						{/* <div className={styles.swiperContainer}> */}
+						<div className={styles.swiperContainer}>
 
-						<Swiper
-							// ref={swiperRef}
-							// onSwiper={(swiper) => (swiperRef.current = swiper)}
+							<Swiper
+								// ref={swiperRef}
+								// onSwiper={(swiper) => (swiperRef.current = swiper)}
+								breakpoints={{
+									0: {
+										slidesPerView: 1.5,
 
-							onSwiper={onSwiper}
-							navigation={{
-								prevEl: '.prev',
-								nextEl: '.next',
-							}}
-							wrapperClass={styles.swiperWrapper}
-							className={styles.swiper}
-							modules={[Navigation, Scrollbar, A11y]}
-							spaceBetween={20}
-							slidesPerView={3}
-							// scrollbar={{ draggable: true }}
-							// onSwiper={(swiper) => console.log(swiper)}
-							onSlideChange={() => console.log('slide change')}
-						>
+									},
+									576: {
+										slidesPerView: 2.5,
+									},
+									768: {
+										slidesPerView: 3,
+									},
+								}}
+								onSwiper={onSwiper}
+								navigation={{
+									prevEl: '.prev',
+									nextEl: '.next',
+								}}
+								wrapperClass={styles.swiperWrapper}
+								className={styles.swiper}
+								modules={[Navigation, Scrollbar, A11y]}
+								spaceBetween={20}
+								slidesPerView={3}
+								// scrollbar={{ draggable: true }}
+								// onSwiper={(swiper) => console.log(swiper)}
+								onSlideChange={() => onSlideChange()}
+							>
 
-							{applicationIndustry.sections[currentIndex].slider.images.map((item, index) => (
-								<SwiperSlide key={index} className={styles.swiperSlide}>
-									<img src={item.src} alt={item.title} />
+								{applicationIndustry.sections[currentIndex].slider.images.map((item, index) => (
+									<SwiperSlide key={index} className={styles.swiperSlide}>
+										<img src={item.src} alt={item.title} />
 
-								</SwiperSlide>
-							))}
-
-
+									</SwiperSlide>
+								))}
 
 
-						</Swiper>
-						{/* <SwiperNavButtouns /> */}
 
 
-						<button className={styles.prevBtn} onClick={goToPrevSlide}>
-							Назад
-						</button>
-						<button className={styles.nextBtn} onClick={goToNextSlide}>
-							Вперёд
-						</button>
+							</Swiper>
+							{/* <SwiperNavButtouns /> */}
 
-						{/* </div> */}
+
+							<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
+
+								<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								</svg>
+
+
+							</button>
+
+
+							<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
+
+								<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								</svg>
+
+
+							</button>
+
+						</div>
 
 
 
