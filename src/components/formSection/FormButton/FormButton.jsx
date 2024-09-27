@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react';
 
-import contacts from '@/data/contacts';
-
 import Form from '../Form/Form.jsx';
 
 import styles from './FormButton.module.scss';
@@ -30,20 +28,11 @@ const FormButton = () => {
 	return (
 		<>
 			<button className={styles.button} onClick={handleOpenForm}>
-				<div className={styles.buttonText}>{contacts.email}</div>
+				<div className={styles.buttonText}>Оставить заявку</div>
 			</button>
-			{/* {isOpenForm && <Form onClose={handleCloseForm} />}
-			 */}
 			<Form isOpen={isOpenForm} onClose={handleCloseForm} />
 		</>
 	);
 };
 
 export default FormButton;
-
-// className={`${
-// 	isOpen
-// 		? `${styles.active} ${styles.accordionHeader}`
-// 		: styles.accordionHeader
-// } ${isActiveLink ? styles.buttonLinkActive : ''}`}
-// onClick={() => onClick()}

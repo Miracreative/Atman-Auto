@@ -1,13 +1,21 @@
 'use client';
 
+import { useState } from 'react';
+import Image from 'next/image.js';
+
 import FormInput from '../FormInput/FormInput.jsx';
 
 import attachmentIcon from '../../../../public/attachment-icon.svg';
 
 import styles from './Form.module.scss';
-import Image from 'next/image.js';
 
 const Form = ({ isOpen, onClose }) => {
+	const [isChecked, setIsChecked] = useState(false);
+
+	const handleCheckboxChange = () => {
+		setIsChecked(!isChecked);
+	};
+
 	return (
 		<div
 			className={`${
@@ -15,13 +23,7 @@ const Form = ({ isOpen, onClose }) => {
 			}`}
 			onClick={() => onClose(false)}
 		>
-			<form
-				// className={`${
-				// 	isOpen ? `${styles.visibleForm} ${styles.form}` : styles.container
-				// }`}
-				className={styles.form}
-				onClick={(e) => e.stopPropagation()}
-			>
+			<form className={styles.form} onClick={(e) => e.stopPropagation()}>
 				<button type="button" className={styles.buttonClose} onClick={onClose}>
 					<span></span>
 					<span></span>
@@ -37,17 +39,20 @@ const Form = ({ isOpen, onClose }) => {
 					<FormInput type="text" text="Комментарий" />
 				</div>
 				<div className={styles.buttons}>
-					<button className={`${styles.submitButton} button`} type="submit">
+					<button
+						className={`${styles.submitButton} button`}
+						type="submit"
+						disabled={!isChecked}
+					>
 						Отправить
 					</button>
 
 					<div className={styles.checkbox}>
 						<input
 							type="checkbox"
-							// name={name}
 							id="form-checkbox"
-							// checked={checked}
-							// onChange={onChange}
+							checked={isChecked}
+							onChange={handleCheckboxChange}
 						/>
 						<label htmlFor="form-checkbox">
 							Согласие субъекта персональных данных на обработку его
