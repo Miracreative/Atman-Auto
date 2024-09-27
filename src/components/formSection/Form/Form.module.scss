@@ -236,40 +236,6 @@
 	transition: all 0.3s ease-in-out;
 }
 
-//
-.inputContainer {
-	& label {
-		// display: inline-block;
-		// max-width: 35%;
-		max-width: max-content;
-		display: block;
-
-		margin-left: 40px;
-		margin-bottom: 10px;
-		font-weight: 500;
-	}
-}
-
-.input {
-	width: 100%;
-	padding: 30px 30px;
-	border-radius: 20px;
-	border: 1px solid rgb(var(--gray-line-rgb));
-	font-size: 20px;
-	font-weight: 400;
-	background-color: rgb(var(--gray-background-img-rgb));
-}
-
-.error {
-	height: 12px;
-	margin-top: 5px;
-	margin-left: 40px;
-	font-size: 10px;
-	font-weight: 600;
-	color: var(--red-button);
-}
-//
-
 @media (max-width: 1920px) {
 	.form {
 		padding: calcVH(90) calcVW(220);
@@ -279,7 +245,7 @@
 
 	.title {
 		margin-bottom: calcVH(50);
-		@include adaptive-font(64, 32);
+		@include adaptive-font(64, 46);
 	}
 
 	.inputs {
@@ -291,6 +257,16 @@
 			@include adaptive-font(16, 12);
 		}
 	}
+
+	.link {
+		@include adaptive-font(16, 12);
+	}
+}
+
+@media (max-width: 1440px) {
+	.inputs {
+		gap: 20px 30px;
+	}
 }
 
 @media (max-width: 1024px) {
@@ -298,5 +274,94 @@
 		& label {
 			font-size: 14px;
 		}
+	}
+}
+
+@media (max-width: 768px) {
+	// .form {
+	// 	padding: 90px 10px;
+	// 	width: calc(100% - 20px - 20px);
+	// 	height: calc(100% - 20px - 20px);
+	// }
+
+	.title {
+		font-size: 40px;
+	}
+
+	.link {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		min-height: 100%;
+	}
+
+	.form {
+		width: calc(100% - 10px - 10px);
+		height: calc(100% - 10px - 10px);
+		padding: 85px 15px 15px;
+		border-radius: 10px;
+		justify-content: flex-start;
+		overflow-y: auto;
+	}
+
+	.inputs {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 18px;
+
+		& > :nth-child(5) {
+			grid-column: span 1;
+		}
+	}
+
+	.title {
+		font-size: 36px;
+		// width: 50px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.buttons {
+		flex-direction: column;
+		justify-content: inherit;
+	}
+
+	.buttonClose {
+		width: 50px;
+		height: 50px;
+		border-radius: 25px;
+		top: 15px;
+		right: 15px;
+	}
+
+	.submitButton {
+		width: 100%;
+	}
+
+	.link {
+		width: 100%;
+		font-size: 10px;
+	}
+
+	.checkbox {
+		padding: 0;
+	}
+
+	.attachment {
+		width: 100%;
+		height: 60px;
+		padding-left: 17px;
+		// border-radius: 30px;
+		font-size: 14px;
+		justify-content: inherit;
+	}
+
+	.attachmentIcon {
+		margin-right: 40px;
+		width: 32px;
+		height: 32px;
 	}
 }
