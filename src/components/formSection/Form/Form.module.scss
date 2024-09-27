@@ -49,7 +49,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: auto auto 1fr;
-	gap: 40px;
+	gap: 23px 40px;
 
 	& > :nth-child(5) {
 		grid-column: span 2;
@@ -145,7 +145,7 @@
 
 	& label {
 		width: 430px;
-		padding-left: 55px;
+		padding-left: 65px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -163,8 +163,8 @@
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 5;
-			width: 40px;
-			height: 40px;
+			width: 45px;
+			height: 45px;
 			border-radius: 10px;
 			border: 1px solid rgb(var(--gray-line-rgb));
 			background-color: transparent;
@@ -175,14 +175,14 @@
 			content: '';
 			display: block;
 			position: absolute;
-			left: 10px;
+			left: 12px;
 			top: 50%;
 			transform: translateY(-50%) scale(0);
 			z-index: 10;
-			width: 20px;
-			height: 20px;
+			width: 22px;
+			height: 22px;
 			background: url('../../../../public/check.svg') no-repeat center;
-			background-size: 20px 20px;
+			background-size: 22px 22px;
 			opacity: 0;
 			transition: opacity 0.3s, transform 0.3s;
 		}
@@ -231,6 +231,40 @@
 	user-select: auto;
 	transition: all 0.3s ease-in-out;
 }
+
+//
+.inputContainer {
+	& label {
+		// display: inline-block;
+		// max-width: 35%;
+		max-width: max-content;
+		display: block;
+
+		margin-left: 40px;
+		margin-bottom: 10px;
+		font-weight: 500;
+	}
+}
+
+.input {
+	width: 100%;
+	padding: 30px 30px;
+	border-radius: 20px;
+	border: 1px solid rgb(var(--gray-line-rgb));
+	font-size: 20px;
+	font-weight: 400;
+	background-color: rgb(var(--gray-background-img-rgb));
+}
+
+.error {
+	height: 12px;
+	margin-top: 5px;
+	margin-left: 40px;
+	font-size: 10px;
+	font-weight: 600;
+	color: var(--red-button);
+}
+//
 
 @media (max-width: 1920px) {
 	.form {
