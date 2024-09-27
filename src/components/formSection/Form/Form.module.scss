@@ -144,7 +144,7 @@
 	}
 
 	& label {
-		width: 430px;
+		// width: 430px;
 		padding-left: 65px;
 		display: flex;
 		flex-direction: column;
@@ -187,6 +187,10 @@
 			transition: opacity 0.3s, transform 0.3s;
 		}
 	}
+}
+
+.link {
+	width: 460px;
 }
 
 .attachment {

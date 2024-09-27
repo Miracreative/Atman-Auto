@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import Image from 'next/image.js';
+import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 
-// import FormInput from '../FormInput/FormInput.jsx';
+import FormInput from '../FormInput/FormInput.jsx';
 
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
@@ -57,14 +58,82 @@ const Form = ({ isOpen, onClose }) => {
 				<h2 className={styles.title}>
 					Напишите <span>нам</span>
 				</h2>
-				{/* <div className={styles.inputs}>
-					<FormInput type="text" text="Имя" />
-					<FormInput type="text" text="Фамилия" />
-					<FormInput type="phone" text="Номер телефона" />
-					<FormInput type="email" text="Почта" />
-					<FormInput type="text" text="Комментарий" />
-				</div> */}
 				<div className={styles.inputs}>
+					<FormInput
+						id="firstName"
+						label="Имя"
+						type="text"
+						placeholder="Имя"
+						register={register}
+						validations={{
+							required: 'Обязательное поле',
+							minLength: {
+								value: 2,
+								message: 'Минимальное количество символов: 2',
+							},
+						}}
+						errors={errors}
+					/>
+
+					<FormInput
+						id="lastName"
+						label="Фамилия"
+						type="text"
+						placeholder="Фамилия"
+						register={register}
+						validations={{
+							required: 'Обязательное поле',
+							minLength: {
+								value: 2,
+								message: 'Минимальное количество символов: 2',
+							},
+						}}
+						errors={errors}
+					/>
+
+					<FormInput
+						id="phoneNumber"
+						label="Номер телефона"
+						type="text"
+						placeholder="Номер телефона"
+						register={register}
+						validations={{
+							required: 'Обязательное поле',
+							pattern: {
+								value: PHONE_REGEXP,
+								message: 'Некорректный номер телефона',
+							},
+						}}
+						errors={errors}
+					/>
+
+					<FormInput
+						id="email"
+						label="Почта"
+						type="email"
+						placeholder="Почта"
+						register={register}
+						validations={{
+							required: 'Обязательное поле',
+							pattern: {
+								value: EMAIL_REGEXP,
+								message: 'Введите корректный адрес электронной почты',
+							},
+						}}
+						errors={errors}
+					/>
+
+					<FormInput
+						id="comment"
+						label="Комментарий"
+						type="text"
+						placeholder="Комментарий"
+						register={register}
+						validations={{ required: false }}
+						errors={errors}
+					/>
+				</div>
+				{/* <div className={styles.inputs}>
 					<div className={styles.inputContainer}>
 						<label htmlFor="firstName">Имя</label>
 						<input
@@ -155,7 +224,7 @@ const Form = ({ isOpen, onClose }) => {
 							placeholder="Комментарий"
 						/>
 					</div>
-				</div>
+				</div> */}
 
 				<div className={styles.buttons}>
 					<button
@@ -173,10 +242,15 @@ const Form = ({ isOpen, onClose }) => {
 							checked={isChecked}
 							onChange={handleCheckboxChange}
 						/>
-						<label htmlFor="form-checkbox">
+						<label htmlFor="form-checkbox"></label>
+						<Link
+							className={styles.link}
+							href="/about/personal-data-processing-policy"
+							onClick={onClose}
+						>
 							Согласие субъекта персональных данных на обработку его
 							персональных данных
-						</label>
+						</Link>
 					</div>
 
 					<button className={styles.attachment}>

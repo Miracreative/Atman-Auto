@@ -1,10 +1,31 @@
 import styles from './FormInput.module.scss';
 
-const FormInput = ({ type, text }) => {
+const FormInput = ({
+	id,
+	label,
+	type,
+	placeholder,
+	register,
+	validations,
+	errors,
+}) => {
+	const inputClass = errors[id]
+		? `${styles.input} ${styles.errorInput}`
+		: styles.input;
+
 	return (
 		<div className={styles.inputContainer}>
-			<p>{text}</p>
-			<input className={styles.input} type={type} placeholder={text} />
+			<label htmlFor={id}>{label}</label>
+			<input
+				id={id}
+				{...register(id, validations)}
+				className={inputClass}
+				type={type}
+				placeholder={placeholder}
+			/>
+			<p className={styles.error}>
+				{errors[id]?.message ? errors[id].message : ''}
+			</p>
 		</div>
 	);
 };

@@ -1,19 +1,40 @@
 .inputContainer {
-	font-size: 20px;
-	font-weight: 500;
+	& label {
+		// display: inline-block;
+		// max-width: 35%;
+		max-width: max-content;
+		display: block;
 
-	& p {
 		margin-left: 40px;
 		margin-bottom: 10px;
-		font-weight: 400;
+		font-weight: 500;
 	}
 }
 
 .input {
 	width: 100%;
-	// padding: 38px 40px;
-	padding: 30px 30px;
+	padding: 28px 30px;
 	border-radius: 20px;
 	border: 1px solid rgb(var(--gray-line-rgb));
+	font-size: 20px;
+	font-weight: 400;
 	background-color: rgb(var(--gray-background-img-rgb));
+	transition: border-color 0.3s;
+
+	&:focus {
+		border-color: rgb(var(--foreground-rgb));
+	}
+}
+
+.errorInput {
+	border-color: var(--red-button);
+}
+
+.error {
+	height: 12px;
+	margin-top: 5px;
+	margin-left: 40px;
+	font-size: 10px;
+	font-weight: 600;
+	color: var(--red-button);
 }
