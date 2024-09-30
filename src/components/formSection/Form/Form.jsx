@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 
-import FormInput from '../FormInput/FormInput.jsx';
-
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
 import attachmentIcon from '../../../../public/attachment-icon.svg';
+
+import FormInput from '../FormInput/FormInput.jsx';
 
 import styles from './Form.module.scss';
 
@@ -31,7 +31,7 @@ const Form = ({ isOpen, onClose }) => {
 		},
 	});
 
-	console.log(errors);
+	// console.log(errors);
 
 	const [isChecked, setIsChecked] = useState(false);
 
@@ -67,9 +67,11 @@ const Form = ({ isOpen, onClose }) => {
 					<span></span>
 					<span></span>
 				</button>
+
 				<h2 className={styles.title}>
 					Напишите <span>нам</span>
 				</h2>
+
 				<div className={styles.inputs}>
 					<FormInput
 						id="firstName"
@@ -129,7 +131,7 @@ const Form = ({ isOpen, onClose }) => {
 							required: 'Обязательное поле',
 							pattern: {
 								value: EMAIL_REGEXP,
-								message: 'Введите корректный адрес электронной почты',
+								message: 'Некорректный адрес электронной почты',
 							},
 						}}
 						errors={errors}
@@ -138,105 +140,13 @@ const Form = ({ isOpen, onClose }) => {
 					<FormInput
 						id="comment"
 						label="Комментарий"
-						type="text"
+						type="textarea"
 						placeholder="Комментарий"
 						register={register}
 						validations={{ required: false }}
 						errors={errors}
 					/>
 				</div>
-				{/* <div className={styles.inputs}>
-					<div className={styles.inputContainer}>
-						<label htmlFor="firstName">Имя</label>
-						<input
-							id="firstName"
-							{...register('firstName', {
-								required: 'Обязательное поле',
-								minLength: {
-									value: 2,
-									message: 'Минимальное количество символов: 2',
-								},
-							})}
-							className={styles.input}
-							type="text"
-							placeholder="Имя"
-						/>
-						<p className={styles.error}>
-							{errors.firstName?.message ? errors.firstName.message : ''}
-						</p>
-					</div>
-
-					<div className={styles.inputContainer}>
-						<label htmlFor="lastName">Фамилия</label>
-						<input
-							id="lastName"
-							{...register('lastName', {
-								required: 'Обязательное поле',
-								minLength: {
-									value: 2,
-									message: 'Минимальное количество символов: 2',
-								},
-							})}
-							className={styles.input}
-							type="text"
-							placeholder="Фамилия"
-						/>
-						<p className={styles.error}>
-							{errors.lastName?.message ? errors.lastName.message : ''}
-						</p>
-					</div>
-
-					<div className={styles.inputContainer}>
-						<label htmlFor="phoneNumber">Номер телефона</label>
-						<input
-							id="phoneNumber"
-							{...register('phoneNumber', {
-								required: 'Обязательное поле',
-								pattern: {
-									value: PHONE_REGEXP,
-									message: 'Некорректный номер телефона',
-								},
-							})}
-							className={styles.input}
-							type="phone"
-							placeholder="Номер телефона"
-						/>
-						<p className={styles.error}>
-							{errors.phoneNumber?.message ? errors.phoneNumber.message : ''}
-						</p>
-					</div>
-
-					<div className={styles.inputContainer}>
-						<label htmlFor="email">Почта</label>
-						<input
-							id="email"
-							{...register('email', {
-								required: 'Обязательное поле',
-								pattern: {
-									value: EMAIL_REGEXP,
-									message: 'Введите корректный адрес электронной почты',
-								},
-							})}
-							className={styles.input}
-							type="email"
-							placeholder="Почта"
-						/>
-						<p className={styles.error}>
-							{errors.email?.message ? errors.email.message : ''}
-						</p>
-					</div>
-
-					<div className={styles.inputContainer}>
-						<label htmlFor="comment">Комментарий</label>
-						<input
-							id="comment"
-							{...register('comment', { required: false })}
-							className={styles.input}
-							type="text"
-							placeholder="Комментарий"
-						/>
-					</div>
-				</div> */}
 
 				<div className={styles.buttons}>
 					<button

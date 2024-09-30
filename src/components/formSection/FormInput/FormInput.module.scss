@@ -1,13 +1,16 @@
 .inputContainer {
 	& label {
-		// display: inline-block;
-		// max-width: 35%;
 		max-width: max-content;
 		display: block;
-
-		margin-left: 40px;
+		margin-left: 30px;
 		margin-bottom: 10px;
 		font-weight: 500;
+	}
+
+	&:last-child {
+		& p {
+			display: none;
+		}
 	}
 }
 
