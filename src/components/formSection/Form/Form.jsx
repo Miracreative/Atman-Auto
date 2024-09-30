@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image.js';
 import Link from 'next/link';
 
@@ -33,6 +33,8 @@ const Form = ({ isOpen, onClose }) => {
 
 	// console.log(errors);
 
+	const filePickerRef = useRef(null);
+
 	const [isChecked, setIsChecked] = useState(false);
 
 	const handleCheckboxChange = () => {
@@ -44,6 +46,10 @@ const Form = ({ isOpen, onClose }) => {
 		setTimeout(() => {
 			reset();
 		}, 300);
+	};
+
+	const handlePickFile = () => {
+		filePickerRef.current.click();
 	};
 
 	return (
@@ -175,7 +181,7 @@ const Form = ({ isOpen, onClose }) => {
 						</Link>
 					</div>
 
-					<button className={styles.attachment}>
+					<button className={styles.attachment} onClick={handlePickFile}>
 						<Image
 							className={styles.attachmentIcon}
 							src={attachmentIcon}
@@ -183,6 +189,12 @@ const Form = ({ isOpen, onClose }) => {
 						/>
 						<p>Прикрепить документ</p>
 					</button>
+					<input
+						className={styles.filePickerHidden}
+						type="file"
+						accept="image/*,.png,.jpg,.jpeg,.gif,.web"
+						ref={filePickerRef}
+					/>
 				</div>
 			</form>
 		</div>

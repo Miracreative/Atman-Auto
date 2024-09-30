@@ -65,7 +65,8 @@
 .buttonClose {
 	width: 80px;
 	height: 80px;
-	border-radius: 40px;
+	// border-radius: 40px;
+	border-radius: 50%;
 	position: absolute;
 	top: 40px;
 	right: 40px;
@@ -129,7 +130,8 @@
 	min-height: 45px;
 	padding-left: 50px;
 	display: flex;
-	flex: 1;
+	// flex: 1;
+	flex-grow: 1;
 	align-items: center;
 	justify-content: flex-start;
 	position: relative;
@@ -195,7 +197,7 @@
 }
 
 .link {
-	width: 460px;
+	max-width: 460px;
 
 	@media (hover: hover) {
 		&:hover {
@@ -211,7 +213,7 @@
 }
 
 .attachment {
-	width: 235px;
+	width: 245px;
 	height: 100%;
 	border-radius: 50px;
 	padding: 0 0 0 30px;
@@ -253,6 +255,17 @@
 	transition: all 0.3s ease-in-out;
 }
 
+.filePickerHidden {
+	opacity: 0;
+	// visibility: hidden;
+	height: 0;
+	width: 0;
+	line-height: 0;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
 @media (max-width: 1920px) {
 	.form {
 		padding: calcVH(90) calcVW(220);
@@ -278,11 +291,41 @@
 	.link {
 		@include adaptive-font(16, 12);
 	}
+
+	.attachment {
+		& p {
+			@include adaptive-font(16, 14);
+		}
+	}
 }
 
 @media (max-width: 1440px) {
 	.inputs {
 		gap: 20px 30px;
+
+		& > :nth-child(5) {
+			textarea {
+				font-size: 18px;
+				height: 70px;
+			}
+		}
+	}
+
+	.buttonClose {
+		width: 70px;
+		height: 70px;
+		top: 35px;
+		right: 35px;
+
+		& span {
+			width: 20px;
+		}
+	}
+}
+
+@media (max-width: 1280px) {
+	.inputs {
+		gap: 15px 25px;
 	}
 }
 
@@ -291,6 +334,17 @@
 		& label {
 			font-size: 14px;
 		}
+	}
+
+	.buttonClose {
+		width: 60px;
+		height: 60px;
+		top: 30px;
+		right: 30px;
+
+		// & span {
+		// 	width: 17px;
+		// }
 	}
 }
 
@@ -301,6 +355,12 @@
 
 	.link {
 		font-size: 12px;
+	}
+
+	.attachment {
+		& p {
+			font-size: 14px;
+		}
 	}
 }
 
