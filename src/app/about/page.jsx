@@ -27,7 +27,7 @@ export default function About() {
 			<Team></Team>
 			{/* <Map></Map> */}
 			{/* <Requisites></Requisites> */}
-			{/* </main > */}
+
 		</>
 	);
 }

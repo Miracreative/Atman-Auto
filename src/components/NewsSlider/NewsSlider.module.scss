@@ -1,0 +1,174 @@
+@import '@/scss/_functions.scss';
+
+
+
+.section {
+	margin: 20px 0;
+
+}
+
+.wrap {
+	border: 1px solid rgb(var(--gray-line-rgb));
+	padding: 6vw 4vw 4vw 4vw ;
+	border-radius: 20px;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 64px;
+	margin-bottom: 5vw;
+}
+
+
+.swiperContainer {
+	position: relative;
+}
+
+
+.swiper {
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+}
+
+.swiperWrapper {
+	display: flex;
+
+}
+
+.swiperSlide {
+
+	height: 29vw;
+	max-height: 560px;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+
+	// background-color: rgb(var(--gray-background-img-rgb));
+	// border-radius: 20px;
+}
+
+.swiperSlide img {
+	display: block;
+	border-radius: 20px;
+	width: 100%;
+	height: 100%;
+	max-height: 560px;
+	object-fit: cover;
+}
+
+.prevBtn,
+.nextBtn {
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border-radius: 20px;
+	top: 50%;	
+
+	transform: translate(0, -50%);
+	transition: all .3s ease-in-out;
+	background-color: var(--red-button);
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--red-dark);
+	}
+
+	&:disabled {
+		cursor: auto;
+		background-color: white;
+		border: 1px solid rgb(var(--foreground-rgb));
+
+		& svg path {
+			fill: rgb(var(--foreground-rgb));
+		}
+	}
+}
+
+
+
+.prevBtn {
+	left: -50px;
+	transform: translate(0, -50%) rotate(180deg);
+}
+
+.nextBtn {
+	right: -50px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1920px) {
+
+
+	.title {
+		font-size: calcVW(64);
+	}
+}
+
+
+
+@media (max-width: 1400px) {
+	.prevBtn,
+	.nextBtn {
+		width: 80px;
+		height: 80px;
+	}
+
+	.prevBtn {
+		left: -40px;
+	}
+	
+	.nextBtn {
+		right: -40px;
+	}
+
+	.description {
+		font-size: 15px;
+	}
+}
+
+
+@media (max-width: 1024px) {
+	.prevBtn,
+	.nextBtn {
+		width: 60px;
+		height: 60px;
+	}
+
+	.prevBtn {
+		left: -30px;
+	}
+	
+	.nextBtn {
+		right: -30px;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.description {
+		font-size: 12px;
+	}
+
+	.prevBtn,
+	.nextBtn {
+		display: none;
+	}
+
+
+}
+
+@media (max-width: 576px) {
+	.swiperSlide img {
+		border-radius: 15px;
+	}
+}

@@ -7,8 +7,6 @@ import { Navigation, Scrollbar, A11y } from 'swiper/modules';
 
 
 
-import { useState } from 'react';
-
 const partners = [
 	{ logo: '/about/Partners-slider/partner-logo1.png', title: 'Atman-Auto', description: 'We strive to create a sustainable future through innovation in the field of renewable energy' },
 	{ logo: '/about/Partners-slider/partner-logo2.png', title: 'Atman-Auto', description: 'We strive to create a sustainable future through innovation in the field of renewable energy' },
