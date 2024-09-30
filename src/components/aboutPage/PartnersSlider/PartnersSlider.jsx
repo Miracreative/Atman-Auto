@@ -47,9 +47,12 @@ export default function PartnersSlider() {
 
 									},
 									576: {
-										slidesPerView: 3.3,
+										slidesPerView: 2.5,
 									},
 									768: {
+										slidesPerView: 3.3,
+									},
+									1024: {
 										slidesPerView: 4.2,
 									},
 								}}
