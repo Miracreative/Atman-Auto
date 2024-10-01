@@ -3,11 +3,11 @@
 import styles from './SliderAplications.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y } from 'swiper/modules';
-import { useSwiper } from 'swiper/react';
 
 
 
-import { useRef, useState, useEffect } from 'react';
+
+import { useState, useEffect } from 'react';
 
 
 
@@ -73,8 +73,7 @@ export default function SliderAplications({ applicationIndustry, currentIndex })
 						<div className={styles.swiperContainer}>
 
 							<Swiper
-								// ref={swiperRef}
-								// onSwiper={(swiper) => (swiperRef.current = swiper)}
+
 								breakpoints={{
 									0: {
 										slidesPerView: 1.5,
@@ -97,8 +96,6 @@ export default function SliderAplications({ applicationIndustry, currentIndex })
 								modules={[Navigation, Scrollbar, A11y]}
 								spaceBetween={20}
 								slidesPerView={3}
-								// scrollbar={{ draggable: true }}
-								// onSwiper={(swiper) => console.log(swiper)}
 								onSlideChange={() => onSlideChange()}
 							>
 

@@ -5,7 +5,7 @@ import Survey from '../components/surveySection/Survey/Survey.jsx';
 import Decisions from '../components/Decisions/Decisions.jsx';
 import ProductionCapabilities from '../components/ProductionСapabilities/ProductionСapabilities.jsx';
 import Products from '../components/Products/Products.jsx';
-import News from '../components/News/News.jsx';
+import NewsSlider from '../components/NewsSlider/NewsSlider.jsx';
 import Team from '../components/Team/Team.jsx';
 import Map from '../components/Map/Map.jsx';
 
@@ -17,7 +17,7 @@ export default function Home() {
 			<Decisions />
 			<ProductionCapabilities></ProductionCapabilities>
 			<Products></Products>
-			<News></News>
+			<NewsSlider></NewsSlider>
 			<Team></Team>
 			<Map></Map>
 		</>
