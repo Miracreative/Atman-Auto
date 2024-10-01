@@ -22,10 +22,10 @@ export default function Footer() {
 						</div>
 					</div>
 					<div className={styles.contacts}>
-						<FormButton />
 						<Link className={styles.contactLink} href={`tel:${contacts.phone}`}>
 							<div className={styles.contactItem}>{contacts.phone}</div>
 						</Link>
+						<FormButton />
 					</div>
 
 					<nav className={styles.nav}>
