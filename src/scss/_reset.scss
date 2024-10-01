@@ -36,8 +36,13 @@ dd {
 	margin: 0;
 }
 
-input {
+input,
+textarea {
 	outline: none;
+}
+
+textarea {
+	resize: none;
 }
 
 ul,

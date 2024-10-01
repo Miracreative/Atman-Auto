@@ -37,6 +37,8 @@ const Form = ({ isOpen, onClose }) => {
 
 	const [isChecked, setIsChecked] = useState(false);
 
+	const [selectedFile, setSelectedFile] = useState(null);
+
 	const handleCheckboxChange = () => {
 		setIsChecked(!isChecked);
 	};
@@ -48,8 +50,46 @@ const Form = ({ isOpen, onClose }) => {
 		}, 300);
 	};
 
+	const handleFileUpload = (event) => {
+		setSelectedFile(event.target.files[0]);
+	};
+
 	const handlePickFile = () => {
 		filePickerRef.current.click();
+	};
+
+	const onSubmit = async (data) => {
+		const formData = new FormData();
+
+		// Добавляем все данные из формы
+		formData.append('firstName', data.firstName);
+		formData.append('lastName', data.lastName);
+		formData.append('phoneNumber', data.phoneNumber);
+		formData.append('email', data.email);
+		formData.append('comment', data.comment);
+
+		// Добавляем файл, если он выбран
+		if (selectedFile) {
+			formData.append('file', selectedFile);
+		}
+
+		// Пример отправки данных на сервер
+		try {
+			const response = await fetch('/api/submit', {
+				method: 'POST',
+				body: formData,
+			});
+
+			if (response.ok) {
+				// Успешная отправка
+				console.log('Форма успешно отправлена');
+			} else {
+				// Обработка ошибки
+				console.error('Ошибка при отправке формы');
+			}
+		} catch (error) {
+			console.error('Ошибка сети:', error);
+		}
 	};
 
 	return (
@@ -62,7 +102,7 @@ const Form = ({ isOpen, onClose }) => {
 			<form
 				className={styles.form}
 				onClick={(e) => e.stopPropagation()}
-				onSubmit={handleSubmit((data) => console.log(data))}
+				onSubmit={handleSubmit(onSubmit)}
 				noValidate
 			>
 				<button
@@ -155,13 +195,15 @@ const Form = ({ isOpen, onClose }) => {
 				</div>
 
 				<div className={styles.buttons}>
-					<button
-						className={`${styles.submitButton} button`}
-						type="submit"
-						disabled={!isChecked}
-					>
-						Отправить
-					</button>
+					<div className={styles.submitButtonContainer}>
+						<button
+							className={`button ${styles.submitButton}`}
+							type="submit"
+							disabled={!isChecked}
+						>
+							Отправить
+						</button>
+					</div>
 
 					<div className={styles.checkbox}>
 						<input
@@ -181,19 +223,22 @@ const Form = ({ isOpen, onClose }) => {
 						</Link>
 					</div>
 
-					<button className={styles.attachment} onClick={handlePickFile}>
-						<Image
-							className={styles.attachmentIcon}
-							src={attachmentIcon}
-							alt="Прикрепить документ"
-						/>
-						<p>Прикрепить документ</p>
-					</button>
+					<div className={styles.attachmentContainer}>
+						<button className={styles.attachment} onClick={handlePickFile}>
+							<Image
+								className={styles.attachmentIcon}
+								src={attachmentIcon}
+								alt="Прикрепить документ"
+							/>
+							<p>Прикрепить документ</p>
+						</button>
+					</div>
 					<input
 						className={styles.filePickerHidden}
 						type="file"
-						accept="image/*,.png,.jpg,.jpeg,.gif,.web"
+						// accept="image/*,.png,.jpg,.jpeg,.gif,.web"
 						ref={filePickerRef}
+						onChange={handleFileUpload}
 					/>
 				</div>
 			</form>

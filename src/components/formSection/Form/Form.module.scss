@@ -12,7 +12,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	opacity: 0;
 	z-index: -1;
 	user-select: none;
@@ -57,7 +56,6 @@
 		textarea {
 			font-size: 20px;
 			height: 82px;
-			// background-color: violet;
 		}
 	}
 }
@@ -65,7 +63,6 @@
 .buttonClose {
 	width: 80px;
 	height: 80px;
-	// border-radius: 40px;
 	border-radius: 50%;
 	position: absolute;
 	top: 40px;
@@ -113,6 +110,9 @@
 	justify-content: space-between;
 }
 
+// .submitButtonContainer {
+// }
+
 .submitButton {
 	transition: all 0.3s ease-in-out;
 
@@ -130,11 +130,17 @@
 	min-height: 45px;
 	padding-left: 50px;
 	display: flex;
-	// flex: 1;
 	flex-grow: 1;
 	align-items: center;
 	justify-content: flex-start;
 	position: relative;
+
+	& a {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		word-wrap: break-word;
+	}
 
 	& input {
 		position: absolute;
@@ -197,7 +203,7 @@
 }
 
 .link {
-	max-width: 460px;
+	max-width: 370px;
 
 	@media (hover: hover) {
 		&:hover {
@@ -212,9 +218,15 @@
 	}
 }
 
+.attachmentContainer {
+	height: 100px;
+}
+
 .attachment {
+	// width: 100%;
 	width: 245px;
 	height: 100%;
+	// height: 100px;
 	border-radius: 50px;
 	padding: 0 0 0 30px;
 	color: var(--white);
@@ -257,7 +269,6 @@
 
 .filePickerHidden {
 	opacity: 0;
-	// visibility: hidden;
 	height: 0;
 	width: 0;
 	line-height: 0;
@@ -283,6 +294,8 @@
 	}
 
 	.checkbox {
+		padding-left: calcVW(50);
+
 		& label {
 			@include adaptive-font(16, 12);
 		}
@@ -292,14 +305,20 @@
 		@include adaptive-font(16, 12);
 	}
 
-	.attachment {
-		& p {
-			@include adaptive-font(16, 14);
-		}
-	}
+	// .attachment {
+	// 	& p {
+	// 		@include adaptive-font(16, 14);
+	// 	}
+	// }
 }
 
 @media (max-width: 1440px) {
+	.form {
+		padding: calcVH(90) calcVW(160);
+		// width: calc(100% - calcVW(60) - calcVW(60));
+		// height: calc(100% - calcVH(80) - calcVH(80));
+	}
+
 	.inputs {
 		gap: 20px 30px;
 
@@ -310,6 +329,10 @@
 			}
 		}
 	}
+
+	// .checkbox {
+	// 	padding-left: 40px;
+	// }
 
 	.buttonClose {
 		width: 70px;
@@ -324,8 +347,29 @@
 }
 
 @media (max-width: 1280px) {
+	.form {
+		border-radius: 30px;
+	}
+
 	.inputs {
 		gap: 15px 25px;
+
+		& > :nth-child(5) {
+			textarea {
+				font-size: 16px;
+				height: 61px;
+			}
+		}
+	}
+
+	.attachment {
+		width: 220px;
+	}
+
+	.attachmentIcon {
+		width: 28px;
+		height: 28px;
+		margin: 0 15px 0 0;
 	}
 }
 
@@ -341,10 +385,99 @@
 		height: 60px;
 		top: 30px;
 		right: 30px;
+	}
 
-		// & span {
-		// 	width: 17px;
-		// }
+	.attachmentContainer {
+		height: 60px;
+	}
+
+	.attachment {
+		padding: 0 0 0 15px;
+	}
+}
+
+@media (max-width: 1024px) and (min-height: 1024px) {
+	.buttons {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+
+		& > :nth-child(1) {
+			grid-column: 1;
+			grid-row: 2;
+			margin-right: 15px;
+		}
+
+		& > :nth-child(2) {
+			grid-column: 1 / -1;
+			width: 100%;
+			padding-left: 0;
+			margin-bottom: 30px;
+		}
+
+		& > :nth-child(3) {
+			grid-column: 2;
+			grid-row: 2;
+			margin-left: 15px;
+		}
+	}
+
+	.link {
+		max-width: 270px;
+	}
+
+	.attachmentContainer {
+		height: 100%;
+	}
+
+	.attachment {
+		height: 60px;
+		width: 100%;
+		justify-content: flex-start;
+
+		& p {
+			margin-left: 20px;
+			width: 40%;
+		}
+	}
+}
+
+@media (max-width: 1024px) and (max-height: 700px) {
+	.title {
+		font-size: 42px;
+		margin-bottom: 20px;
+	}
+
+	.inputs {
+		gap: 7px 20px;
+
+		& > :nth-child(5) {
+			textarea {
+				font-size: 14px;
+				height: 50px;
+			}
+		}
+	}
+
+	.buttonClose {
+		right: 20px;
+		top: 20px;
+	}
+
+	.link {
+		font-size: 10px;
+	}
+
+	.checkbox {
+		padding-left: 18px;
+	}
+
+	.attachment {
+		width: 180px;
+
+		& p {
+			font-size: 14px;
+		}
 	}
 }
 
@@ -388,9 +521,7 @@
 			grid-column: span 1;
 
 			textarea {
-				// font-size: 20px;
 				height: 100px;
-				// background-color: violet;
 			}
 		}
 	}
@@ -407,7 +538,10 @@
 
 		& > :nth-child(1) {
 			order: 3;
-			width: 100%;
+
+			& button {
+				width: 100%;
+			}
 		}
 
 		& > :nth-child(2) {
@@ -429,9 +563,14 @@
 		right: 15px;
 	}
 
-	.submitButton {
+	.submitButtonContainer {
 		width: 100%;
 	}
+
+	// .submitButton {
+	// 	width: 100%;
+	// 	font-size: 16px;
+	// }
 
 	.link {
 		width: 100%;
@@ -440,6 +579,10 @@
 
 	.checkbox {
 		padding: 0;
+	}
+
+	.attachmentContainer {
+		width: 100%;
 	}
 
 	.attachment {
@@ -454,5 +597,13 @@
 		margin-right: 40px;
 		width: 32px;
 		height: 32px;
+	}
+}
+
+@media (max-width: 375px) {
+	.attachment {
+		& p {
+			width: 40%;
+		}
 	}
 }
