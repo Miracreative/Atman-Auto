@@ -20,13 +20,13 @@ export default function About() {
 				}
 				text="Мы думаем наперед и поддерживаем вас с помощью наших экспертов, которые лично консультируют и гарантируют высокое качество продукции."
 			></PageTitle>
-			{/* <Algorithm></Algorithm> */}
-			{/* <Values></Values> */}
+			<Algorithm></Algorithm>
+			<Values></Values>
 			<Delivery></Delivery>
 			<PartnersSlider></PartnersSlider>
 			<Team></Team>
-			{/* <Map></Map> */}
-			{/* <Requisites></Requisites> */}
+			<Map></Map>
+			<Requisites></Requisites>
 
 		</>
 	);
