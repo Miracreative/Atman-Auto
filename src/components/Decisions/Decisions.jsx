@@ -1,12 +1,14 @@
 'use client';
 
 import styles from './Decisions.module.scss';
+import Link from 'next/link';
+import Image from 'next/image';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
-import newsData from '@/data/newsData';
-import Link from 'next/link';
 import { Controller } from 'swiper/modules';
 
+import decisionsSliderData from '@/data/decisionsSliderData.jsx';
 
 
 
@@ -14,11 +16,9 @@ import { useState } from 'react';
 
 
 
-
-
 export default function Decisions() {
 
-	const newsDate = newsData;
+	const decisionsData = decisionsSliderData;
 
 	// const [swiperInstance, setSwiperInstance] = useState(null);
 	const [canGoPrev, setCanGoPrev] = useState(false);
@@ -66,17 +66,52 @@ export default function Decisions() {
 
 					<div className={styles.verticalLine}></div>
 					<div className='container'>
+
+						<div className={styles.topWrapper}>
+
+							<div className={styles.headerContainer}>
+
+								<Link className={styles.headerLink} href="/applications/automobile-industry">
+
+									<Image
+										src="/ApplicationsContent/avto.png"
+										alt="img"
+										className={styles.img}
+										width={1040}
+										height={600}
+									// priority='true'
+									/>
+
+									<Image
+										src="/ApplicationsContent/avto-hover.png"
+										alt="img"
+										className={styles.img}
+										width={1040}
+										height={600}
+									// priority='true'
+									/>
+
+								</Link>
+
+								<div className={styles.titleWrap}>
+									<h2 className={styles.title}> <span>Решения </span><br /> по отраслям </h2>
+
+									<Link className={styles.link} href='/applications'>
+										<div className={styles.linkText}  >
+											Все решения
+										</div>
+									</Link>
+								</div>
+							</div>
+
+							<div className={styles.titleCard}>Автомобильная промышленность</div>
+
+						</div>
+
 						<div className={styles.wrap}>
 
-							<div className={styles.header}>
-								<h2 className={styles.title}> Новости </h2>
 
-								<Link className={styles.link} href='/news'>
-									<div className={styles.linkText}  >
-										Все новости
-									</div>
-								</Link>
-							</div>
+
 
 
 
@@ -95,11 +130,15 @@ export default function Decisions() {
 											spaceBetween: 10,
 										},
 										576: {
-											slidesPerView: 1.5,
+											slidesPerView: 2.2,
 											spaceBetween: 10,
 										},
 										768: {
-											slidesPerView: 2.1,
+											slidesPerView: 2.5,
+											spaceBetween: 10,
+										},
+										1024: {
+											slidesPerView: 4.2,
 										},
 									}}
 									onSwiper={setFirstSwiper}
@@ -110,15 +149,34 @@ export default function Decisions() {
 
 
 									spaceBetween={20}
-									slidesPerView={2.1}
+									slidesPerView={4.2}
 									onSlideChange={(swiper) => onSlideChange(swiper)}
 								>
 
-									{newsDate.map((item, index) => (
+									{decisionsData.map((item, index) => (
 										<SwiperSlide key={item.id} className={styles.swiperSlideOne}>
-											<div className={styles.imgWrap}>
-												<img src={item.src} alt={item.title} />
-											</div>
+											<Link className={styles.imgWrap} href={item.href}>
+
+												<Image
+													src={item.image}
+													alt="img"
+													className={styles.img}
+													width={415}
+													height={490}
+													priority='true'
+												/>
+
+
+												<Image
+													src={item.imageHover}
+													alt="img"
+													className={styles.img}
+													width={415}
+													height={490}
+													priority='true'
+												/>
+
+											</Link>
 
 
 											{/* <div className={styles.titleCard}> {item.title} </div>
@@ -132,7 +190,7 @@ export default function Decisions() {
 
 
 								</Swiper>
-								{/* <SwiperNavButtouns /> */}
+
 
 
 								<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
@@ -176,33 +234,60 @@ export default function Decisions() {
 										spaceBetween: 10,
 									},
 									576: {
-										slidesPerView: 1.5,
+										slidesPerView: 2.2,
 										spaceBetween: 10,
 									},
 									768: {
-										slidesPerView: 2.1,
+										slidesPerView: 2.5,
+										spaceBetween: 10,
+									},
+									1024: {
+										slidesPerView: 4.2,
 									},
 								}}
 
 								spaceBetween={20}
-								slidesPerView={2.1}
+								slidesPerView={4.2}
 							>
-								{newsDate.map((item, index) => (
+								{decisionsData.map((item, index) => (
 									<SwiperSlide key={item.id} className={styles.swiperSlideTwo}>
 										<div className={styles.titleCard}>{item.title}</div>
-										<div className={styles.description}>{item.description}</div>
 									</SwiperSlide>
 								))}
 							</Swiper>
 
-							<Link className={styles.linkMobile} href='/news'>
-								<div className={styles.linkTextMobile}  >
-									Все новости
-								</div>
-							</Link>
+
+
+
 
 
 						</div>
+
+
+						<div className={styles.mobileContent}>
+							{decisionsData.map((item) => (
+								<Link key={item.id} className={styles.mobileSlide} href={item.href}>
+
+
+									<div className={styles.imgMobileWrap} >
+
+										<Image
+											src={item.imageHover}
+											alt="img"
+											className={styles.imgMobile}
+											width={145}
+											height={170}
+											priority='true'
+										/>
+
+
+									</div>
+									<div className={styles.titleMobile}>{item.title}</div>
+								</Link>
+							))}
+						</div>
+
+
 					</div>
 
 				</div>
