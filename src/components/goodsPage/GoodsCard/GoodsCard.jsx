@@ -5,7 +5,7 @@ import URL from '@/constants/url.js';
 
 import styles from './GoodsCard.module.scss';
 
-const GoodsCard = ({ id, title, subtitle, imageUrl }) => {
+const GoodsCard = ({ id, brand, title, subtitle, imageUrl }) => {
 	return (
 		<Link href={`/goods/${id}`} className={styles.card}>
 			<Image
@@ -18,7 +18,9 @@ const GoodsCard = ({ id, title, subtitle, imageUrl }) => {
 			/>
 
 			<div className={styles.content}>
-				<h1 className={styles.title}>{title}</h1>
+				<h1 className={styles.title}>
+					{brand} {title}
+				</h1>
 				<p className={styles.subtitle}>{subtitle}</p>
 			</div>
 		</Link>

@@ -9,6 +9,7 @@ const GoodsList = ({ products }) => {
 				<li className={styles.cardContainer} key={product.id}>
 					<GoodsCard
 						id={product.id}
+						brand={product.brand}
 						title={product.name}
 						subtitle={product.type}
 						imageUrl={product.imageURL}
