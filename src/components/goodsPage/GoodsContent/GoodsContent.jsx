@@ -26,21 +26,22 @@ const GoodsContent = () => {
 	// console.log(mainParameter);
 
 	const fetchProducts = async (filter) => {
+		setLoading(true); // Установите состояние загрузки в true перед запросом
 		try {
-			// const response = await axios.get(URL, { params: { filter } });
-			const response = await axios.get(URL);
+			const params = filter ? { filter: filter.join(',') } : {}; // Если фильтр пуст, отправляем пустые параметры
+
+			const response = await axios.get(URL, { params });
 			setProducts(response.data);
+			console.log('Полученные продукты:', response.data); // Для отладки
 		} catch (err) {
 			setError(err.message);
 		} finally {
 			setLoading(false);
-			// console.log(data);
 		}
 	};
 
 	useEffect(() => {
 		fetchProducts();
-		// fetchProducts(filterMainParam);
 	}, []);
 
 	if (error) {

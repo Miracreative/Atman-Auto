@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 
 import filters from '@/data/filters.js';
@@ -18,7 +20,6 @@ const GoodsFilterPanel = ({
 	const [selectedFilters, setSelectedFilters] = useState([firstFilterId]);
 
 	const handleCheckboxChange = (index) => {
-		// setFilter(!filter);
 		setFilter((prevFilter) => {
 			return prevFilter.map((item, filterIndex) => {
 				if (filterIndex === index - 1) {
@@ -55,11 +56,8 @@ const GoodsFilterPanel = ({
 	};
 
 	const handleApply = () => {
-		// setIsOpenFilter(false);
-		fetchProducts();
-		handleChange(firstFilterId);
-		// handleCheckboxChange(1);
-		console.log('потом вернуть');
+		fetchProducts(filter); // Передаем текущее состояние фильтра
+		console.log('Фильтры применены:', filter);
 	};
 
 	return (
