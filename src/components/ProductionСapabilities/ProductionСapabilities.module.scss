@@ -151,6 +151,12 @@
 	}
 }
 
+@media (max-width: 576px) {
+	.line {
+		display: none;
+	}
+}
+
 @media (max-width: 480px) {
 	.innerContainer {
 		grid-template-columns: repeat(1, 1fr);
