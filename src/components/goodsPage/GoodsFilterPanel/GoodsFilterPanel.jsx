@@ -1,9 +1,18 @@
 import { useState } from 'react';
+
 import filters from '@/data/filters.js';
+
 import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
+
 import styles from './GoodsFilterPanel.module.scss';
 
-const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
+const GoodsFilterPanel = ({
+	isOpenFilter,
+	setIsOpenFilter,
+	filter,
+	setFilter,
+	fetchProducts,
+}) => {
 	const firstFilterId = filters[0].id;
 
 	const [selectedFilters, setSelectedFilters] = useState([firstFilterId]);
@@ -29,7 +38,8 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 	};
 
 	const handleApply = () => {
-		setIsOpenFilter(false);
+		// setIsOpenFilter(false);
+		console.log('потом вернуть');
 	};
 
 	return (

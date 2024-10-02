@@ -16,24 +16,38 @@ const GoodsContent = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	useEffect(() => {
-		const fetchProducts = async () => {
-			try {
-				const response = await axios.get(URL);
-				setProducts(response.data);
-			} catch (err) {
-				setError(err.message);
-			} finally {
-				setLoading(false);
-			}
-		};
+	const [filterMainParam, setFilterMainParam] = useState([
+		0, 0, 0, 0, 0, 0, 0, 0,
+	]);
 
+	console.log(filterMainParam);
+
+	// const mainParameter = products.length > 0 ? products[0].mainParameter : null;
+	// console.log(mainParameter);
+
+	const fetchProducts = async (filter) => {
+		try {
+			// const response = await axios.get(URL, { params: { filter } });
+			const response = await axios.get(URL);
+			setProducts(response.data);
+		} catch (err) {
+			setError(err.message);
+		} finally {
+			setLoading(false);
+			// console.log(data);
+		}
+	};
+
+	useEffect(() => {
 		fetchProducts();
+		// fetchProducts(filterMainParam);
 	}, []);
 
 	if (error) {
 		return <p>Ошибка: {error}</p>;
 	}
+
+	console.log(products);
 
 	return loading ? (
 		<div className={styles.loading}>
@@ -41,7 +55,11 @@ const GoodsContent = () => {
 		</div>
 	) : (
 		<section className={styles.section}>
-			<GoodsFilter />
+			<GoodsFilter
+				filter={filterMainParam}
+				setFilter={setFilterMainParam}
+				fetchProducts={fetchProducts}
+			/>
 			<GoodsList products={products} />
 		</section>
 	);

@@ -1,13 +1,10 @@
 'use client';
 
-// import Advantage from '../Advantage/Advantage.jsx';
 import RedDot from '@/components/RedDot/RedDot.jsx';
 
 import styles from './Advantages.module.scss';
 
 const Advantages = ({ product }) => {
-	// const product = products[2]; // Предположим, что мы работаем с третьим продуктом
-
 	return (
 		<div className={styles.container}>
 			<h2 className={styles.title}>Преимущества</h2>

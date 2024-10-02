@@ -9,7 +9,7 @@ import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
 
 import styles from './GoodsFilter.module.scss';
 
-const GoodsFilter = () => {
+const GoodsFilter = ({ filter, setFilter, fetchProducts }) => {
 	const [isMobile, setIsMobile] = useState(false);
 
 	const [isOpenFilter, setIsOpenFilter] = useState(true);
@@ -32,6 +32,9 @@ const GoodsFilter = () => {
 				<GoodsFilterPanel
 					isOpenFilter={isOpenFilter}
 					setIsOpenFilter={setIsOpenFilter}
+					filter={filter}
+					setFilter={setFilter}
+					fetchProducts={fetchProducts}
 				/>
 			)}
 
@@ -44,6 +47,9 @@ const GoodsFilter = () => {
 					<GoodsFilterPanel
 						isOpenFilter={isOpenFilter}
 						setIsOpenFilter={setIsOpenFilter}
+						filter={filter}
+						setFilter={setFilter}
+						fetchProducts={fetchProducts}
 					/>
 				</div>
 			)}

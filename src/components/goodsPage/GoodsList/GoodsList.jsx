@@ -12,7 +12,7 @@ const GoodsList = ({ products }) => {
 						brand={product.brand}
 						title={product.name}
 						subtitle={product.type}
-						imageUrl={product.imageURL}
+						imageURL={product.imageURL[0]}
 					/>
 				</li>
 			))}

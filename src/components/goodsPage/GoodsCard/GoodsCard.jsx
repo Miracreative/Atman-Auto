@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import URL from '@/constants/url.js';
+// import URL from '@/constants/url.js';
 
 import styles from './GoodsCard.module.scss';
 
-const GoodsCard = ({ id, brand, title, subtitle, imageUrl }) => {
+const GoodsCard = ({ id, brand, title, subtitle, imageURL }) => {
 	return (
 		<Link href={`/goods/${id}`} className={styles.card}>
 			<Image
-				src={imageUrl}
+				src={imageURL}
 				alt={title}
 				layout="fill"
 				objectFit="cover"
