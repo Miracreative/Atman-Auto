@@ -17,6 +17,18 @@ const GoodsFilterPanel = ({
 
 	const [selectedFilters, setSelectedFilters] = useState([firstFilterId]);
 
+	const handleCheckboxChange = (index) => {
+		// setFilter(!filter);
+		setFilter((prevFilter) => {
+			return prevFilter.map((item, filterIndex) => {
+				if (filterIndex === index - 1) {
+					return item === 0 ? 1 : 0;
+				}
+				return item;
+			});
+		});
+	};
+
 	const handleChange = (id) => {
 		setSelectedFilters((prevSelectedFilters) => {
 			if (id === firstFilterId) {
@@ -31,6 +43,11 @@ const GoodsFilterPanel = ({
 				}
 			}
 		});
+
+		// const newFilterParams = [...filter];
+		// console.log('newFilterParams', newFilterParams);
+
+		// handleCheckboxChange();
 	};
 
 	const handleReset = () => {
@@ -39,6 +56,9 @@ const GoodsFilterPanel = ({
 
 	const handleApply = () => {
 		// setIsOpenFilter(false);
+		fetchProducts();
+		handleChange(firstFilterId);
+		// handleCheckboxChange(1);
 		console.log('потом вернуть');
 	};
 
@@ -49,15 +69,17 @@ const GoodsFilterPanel = ({
 			}`}
 		>
 			<ul className={styles.filters}>
-				{filters.map((item) => (
+				{filters.map((item, index) => (
 					<li className={styles.filter} key={item.id}>
 						<GoodsFilterItem
 							name={item.name}
 							id={item.id}
 							value={item.value}
 							text={item.text}
-							checked={selectedFilters.includes(item.id)}
-							onChange={() => handleChange(item.id)}
+							// checked={selectedFilters.includes(item.id)}
+							// onChange={() => handleChange(item.id)}
+							checked={filter[index - 1] === 1} // Используем состояние для проверки
+							onChange={() => handleCheckboxChange(index)} // Передаем индекс чекбокса
 							disabled={
 								item.id !== firstFilterId &&
 								selectedFilters.includes(firstFilterId)
