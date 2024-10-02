@@ -52,7 +52,8 @@ const GoodsFilterPanel = ({
 	};
 
 	const handleReset = () => {
-		setSelectedFilters([firstFilterId]);
+		// setSelectedFilters([firstFilterId]);
+		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
 	};
 
 	const handleApply = () => {
