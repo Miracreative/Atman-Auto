@@ -1,0 +1,7 @@
+.text {
+	margin-bottom: 40px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
