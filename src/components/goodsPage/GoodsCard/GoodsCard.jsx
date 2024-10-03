@@ -1,24 +1,33 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import URL from '@/constants/url.js';
+// import URL from '@/constants/url.js';
+
+import image from '/public/test-image.png';
 
 import styles from './GoodsCard.module.scss';
 
-const GoodsCard = ({ id, title, subtitle, imageUrl }) => {
+const GoodsCard = ({ id, brand, title, subtitle, imageurl }) => {
+	// const GoodsCard = ({ id, brand, title, subtitle, imageURL }) => {
 	return (
 		<Link href={`/goods/${id}`} className={styles.card}>
-			<Image
-				src={imageUrl}
-				alt={title}
-				layout="fill"
-				objectFit="cover"
-				className={styles.backgroundImage}
-				// priority
-			/>
-
 			<div className={styles.content}>
-				<h1 className={styles.title}>{title}</h1>
+				<h1 className={styles.title}>
+					{brand} {title}
+				</h1>
+				<div className={styles.backgroundContainer}>
+					<Image
+						// src={imageurl}
+						// src={imageURL}
+						src={image}
+						alt={title}
+						// width="100%"
+						layout="fill"
+						objectFit="cover"
+						// className={styles.backgroundImage}
+						// priority
+					/>
+				</div>
 				<p className={styles.subtitle}>{subtitle}</p>
 			</div>
 		</Link>

@@ -164,7 +164,7 @@ a {
 	.button {
 		width: 350px;
 		height: 80px;
-		border-radius: 15px;
+		// border-radius: 15px;
 		font-size: 20px;
 	}
 }
@@ -177,12 +177,11 @@ a {
 	.button {
 		width: 300px;
 		height: 60px;
-		border-radius: 10px;
 	}
 }
 
-@media (max-width: 1024px) {
-}
+// @media (max-width: 1024px) {
+// }
 
 @media (max-width: 820px) {
 	body {
@@ -201,5 +200,6 @@ a {
 
 	.button {
 		font-size: 16px;
+		border-radius: 10px;
 	}
 }

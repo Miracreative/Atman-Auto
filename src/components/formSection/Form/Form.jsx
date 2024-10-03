@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
 import attachmentIcon from '../../../../public/attachment-icon.svg';
+import checkIcon from '../../../../public/big-check.svg';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
@@ -71,6 +72,7 @@ const Form = ({ isOpen, onClose }) => {
 		// Добавляем файл, если он выбран
 		if (selectedFile) {
 			formData.append('file', selectedFile);
+			console.log(selectedFile);
 		}
 
 		// Пример отправки данных на сервер
@@ -79,12 +81,9 @@ const Form = ({ isOpen, onClose }) => {
 				method: 'POST',
 				body: formData,
 			});
-
 			if (response.ok) {
-				// Успешная отправка
 				console.log('Форма успешно отправлена');
 			} else {
-				// Обработка ошибки
 				console.error('Ошибка при отправке формы');
 			}
 		} catch (error) {
@@ -223,16 +222,35 @@ const Form = ({ isOpen, onClose }) => {
 						</Link>
 					</div>
 
-					<div className={styles.attachmentContainer}>
-						<button className={styles.attachment} onClick={handlePickFile}>
-							<Image
-								className={styles.attachmentIcon}
-								src={attachmentIcon}
-								alt="Прикрепить документ"
-							/>
-							<p>Прикрепить документ</p>
-						</button>
-					</div>
+					{!selectedFile && (
+						<div className={styles.attachmentContainer}>
+							<button className={styles.attachment} onClick={handlePickFile}>
+								<Image
+									className={styles.attachmentIcon}
+									src={attachmentIcon}
+									alt="Прикрепить документ"
+								/>
+								<p>Прикрепить документ</p>
+							</button>
+						</div>
+					)}
+
+					{selectedFile && (
+						<div className={styles.attachmentContainer}>
+							<button
+								className={`${styles.attachment} ${styles.attachmentSuccessfully}`}
+								onClick={handlePickFile}
+							>
+								<Image
+									className={styles.attachmentIcon}
+									src={checkIcon}
+									alt="Документ прикреплен"
+								/>
+								<p>Документ прикреплен</p>
+							</button>
+						</div>
+					)}
+
 					<input
 						className={styles.filePickerHidden}
 						type="file"
