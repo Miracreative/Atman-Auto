@@ -1,6 +1,7 @@
 @import '../../../scss/_functions.scss';
 
 .cards {
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	row-gap: 40px;

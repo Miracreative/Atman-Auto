@@ -22,17 +22,15 @@ const GoodsContent = () => {
 
 	console.log(filterMainParam);
 
-	// const mainParameter = products.length > 0 ? products[0].mainParameter : null;
-	// console.log(mainParameter);
-
 	const fetchProducts = async (filter) => {
-		setLoading(true); // Установите состояние загрузки в true перед запросом
+		setLoading(true);
 		try {
 			const params = filter ? { filter: filter.join(',') } : {}; // Если фильтр пуст, отправляем пустые параметры
 
 			const response = await axios.get(URL, { params });
+
 			setProducts(response.data);
-			console.log('Полученные продукты:', response.data); // Для отладки
+			console.log('Полученные продукты:', response.data);
 		} catch (err) {
 			setError(err.message);
 		} finally {
@@ -48,7 +46,11 @@ const GoodsContent = () => {
 		return <p>Ошибка: {error}</p>;
 	}
 
-	console.log(products);
+	// console.log('Тестируемое поле:', products[0].imageurl);
+
+	// console.log('Товары с бекенда: ', products);
+
+	// console.log(`URL: ${URL}, Params: ${params}`);
 
 	return loading ? (
 		<div className={styles.loading}>

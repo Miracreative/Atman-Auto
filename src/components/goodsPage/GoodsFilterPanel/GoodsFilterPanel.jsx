@@ -15,49 +15,62 @@ const GoodsFilterPanel = ({
 	setFilter,
 	fetchProducts,
 }) => {
-	const firstFilterId = filters[0].id;
+	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]); // Инициализация с первым фильтром
 
-	const [selectedFilters, setSelectedFilters] = useState([firstFilterId]);
+	// console.log(selectedFilters);
 
 	const handleCheckboxChange = (index) => {
+		// setSelectedFilters({prevFilter})
 		setFilter((prevFilter) => {
-			return prevFilter.map((item, filterIndex) => {
-				if (filterIndex === index - 1) {
-					return item === 0 ? 1 : 0;
-				}
-				return item;
-			});
+			const newFilter = [...prevFilter];
+			const currentIndex = index - 1; // Индекс чекбокса в массиве (пропускаем первый)
+			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1; // Переключаем состояние
+			return newFilter;
 		});
 	};
 
 	const handleChange = (id) => {
-		setSelectedFilters((prevSelectedFilters) => {
-			if (id === firstFilterId) {
-				return prevSelectedFilters.includes(id) ? [] : [id];
+		const firstFilterId = filters[0].id; // Получаем идентификатор первого фильтра в момент вызова
+
+		if (id === firstFilterId) {
+			// Если выбран первый фильтр, обнуляем все остальные
+			setFilter([0, 0, 0, 0, 0, 0, 0, 0]); // Обнуляем фильтры
+			setSelectedFilters([firstFilterId]); // Сохраняем только первый фильтр в выбранных
+		} else {
+			setSelectedFilters((prevSelectedFilters) => {
+				return prevSelectedFilters.includes(id)
+					? prevSelectedFilters.filter((filterId) => filterId !== id) // Удаляем фильтр
+					: [...prevSelectedFilters, id]; // Добавляем фильтр
+			});
+
+			// Отключаем первый фильтр, если он был активирован
+			if (selectedFilters.includes(firstFilterId)) {
+				setFilter((prevFilter) => {
+					const newFilter = [...prevFilter];
+					newFilter.fill(0); // Заполняем массив нулями
+					console.log('newFilter', newFilter);
+
+					// Включаем текущий чекбокс (1)
+					newFilter[filters.findIndex((filter) => filter.id === id)] = 1;
+					return newFilter;
+				});
 			} else {
-				if (prevSelectedFilters.includes(firstFilterId)) {
-					return [id];
-				} else {
-					return prevSelectedFilters.includes(id)
-						? prevSelectedFilters.filter((filterId) => filterId !== id)
-						: [...prevSelectedFilters, id];
-				}
+				setFilter((prevFilter) => {
+					const newFilter = [...prevFilter];
+					newFilter[filters.findIndex((filter) => filter.id === id)] = 1; // Включаем текущий чекбокс
+					return newFilter;
+				});
 			}
-		});
-
-		// const newFilterParams = [...filter];
-		// console.log('newFilterParams', newFilterParams);
-
-		// handleCheckboxChange();
+		}
 	};
 
 	const handleReset = () => {
-		// setSelectedFilters([firstFilterId]);
 		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
+		setSelectedFilters([filters[0].id]); // Сброс к первому фильтру
 	};
 
 	const handleApply = () => {
-		fetchProducts(filter); // Передаем текущее состояние фильтра
+		fetchProducts(filter);
 		console.log('Фильтры применены:', filter);
 	};
 
@@ -68,21 +81,28 @@ const GoodsFilterPanel = ({
 			}`}
 		>
 			<ul className={styles.filters}>
-				{filters.map((item, index) => (
+				{/* Отрисовка первого фильтра отдельно */}
+				<li className={styles.filter}>
+					<GoodsFilterItem
+						name={filters[0].name}
+						id={filters[0].id}
+						value={filters[0].value}
+						text={filters[0].text}
+						// checked={selectedFilters.includes(filters[0].id)}
+						checked={selectedFilters}
+						onChange={() => handleChange(filters[0].id)}
+					/>
+				</li>
+				{/* Отрисовка остальных фильтров, пропуская первый */}
+				{filters.slice(1).map((item, index) => (
 					<li className={styles.filter} key={item.id}>
 						<GoodsFilterItem
 							name={item.name}
 							id={item.id}
 							value={item.value}
 							text={item.text}
-							// checked={selectedFilters.includes(item.id)}
-							// onChange={() => handleChange(item.id)}
-							checked={filter[index - 1] === 1} // Используем состояние для проверки
-							onChange={() => handleCheckboxChange(index)} // Передаем индекс чекбокса
-							disabled={
-								item.id !== firstFilterId &&
-								selectedFilters.includes(firstFilterId)
-							}
+							checked={filter[index] === 1}
+							onChange={() => handleCheckboxChange(index + 1)} // Индекс + 1, так как мы пропускаем первый
 						/>
 					</li>
 				))}
