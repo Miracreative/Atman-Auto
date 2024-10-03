@@ -1,13 +1,15 @@
+@import '../../scss/functions.scss';
+
+
 @import '@/scss/_functions.scss';
 
-.mobileContent {
+.linkMobile {
 	display: none;
 }
 
 .section {
 	position: relative;
 	min-width: 320px;
-	border-bottom: 1px solid rgb(var(--foreground-rgb));
 	border-top: 1px solid rgb(var(--foreground-rgb));
 }
 
@@ -27,24 +29,18 @@
     z-index: 1;
 }
 
-.topWrapper {
-	padding: 4vw 0 0 4vw ;
-}
+
 
 .wrap {
-	padding: 0 4vw 4vw 4vw ;
+	padding: 4vw ;
 	// background-color: rgb(var(--foreground-rgb));
 }
 
-.headerContainer {
-	display: flex;
-	justify-content: space-between;
-}
+
 
 .titleWrap {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 
 	position: relative;
     z-index: 2;
@@ -62,14 +58,7 @@
 	}
 }
 
-.headerLink {
-	background-color: rgb(var(--gray-background-img-rgb));
-	max-width: 1040px;
-	& .img {
-		width: 54vw;
-		height: auto;
-	}
-}
+
 
 .link {
 
@@ -105,7 +94,7 @@
 }
 
 
-.swiperSlideOne {
+.swiperSlide {
 	width: 100%;
 	display: flex;
 	// overflow: hidden;
@@ -118,15 +107,7 @@
 
 }
 
-.swiperBottom {
-	width: 100%;
-	display: flex;
-	// overflow: hidden;
 
-	color: rgb(var(--foreground-rgb));
-	position: relative;
-	z-index: 2;
-}
 
 .swiperWrapper {
 	display: flex;
@@ -134,11 +115,11 @@
 
 }
 
-.swiperSlideOne {
+.swiperSlide {
 
 	// height: 29vw;
-	max-height: 490px;
-	min-height: 200px;
+	max-height: 600px;
+	min-height: 284px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -149,71 +130,30 @@
 	// border-radius: 20px;
 }
 
-.swiperSlideOne img {
+.swiperSlide img {
 	
 	display: block;
 	width: 100%;
 	height: 100%;
-	max-height: 490px;
+	max-height: 600px;
 	object-fit: cover;
 }
 
 
-.imgWrap,
-.headerLink {
+.imgWrap {
 
 	background-color: rgb(var(--gray-background-img-rgb));
 	height: 100%; 
+	height: 32vw;
+	width: auto;
 	position: relative;
 	overflow: hidden;
 
 	border-radius: 20px;
-	&:hover {
-		img {
-			opacity: 0;
-			&:last-child {
-				opacity: 1;
-			}
-		}
-	} 
-  }
 
-.imgWrap {
-	height: 25vw;
-	width: auto;
-}
-
-  
-  .img {
-	position: relative;
-	object-fit: cover; 
-	width: 100%; 
-	height: 100%;
-	transition: all .3s ease-in-out;
-	z-index: 2; 
-
-	border-radius: 20px;
-	&:last-child {
-		opacity: 0;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 1;
-	}
-	// height: auto;
   }
 
 
-
-
-.titleCard {
-	font-weight: 500;
-	font-size: 24px;
-	margin-top: 20px;
-	color: rgb(var(--foreground-rgb));
-
-}
 
 .prevBtn,
 .nextBtn {
@@ -267,9 +207,7 @@
 		font-size: calcVW(96);
 	}
 
-	.titleCard {
-		font-size: calcVW(24);
-	}
+
 
 	.link {
 		width: calcVW(400);
@@ -332,16 +270,9 @@
 @media (max-width: 768px) {
 
 	.title {
-		font-size: 30px;
+		font-size: 36px;
 	}
 
-	.titleCard {
-		font-size: 20px;
-	}
-
-	.description {
-		font-size: 12px;
-	}
 
 	.prevBtn,
 	.nextBtn {
@@ -355,86 +286,47 @@
 
 @media (max-width: 576px) {
 
-	.headerContainer {
-		flex-direction: column-reverse;
-	}
-
-	.topWrapper {
-		padding: 0;
-		margin-bottom: 30px;
-	}
-
-	.wrap {
+	.verticalLine { 
 		display: none;
-	}
-
-	.headerLink {
-		& .img {
-			width: 100%;
-			height: auto;
-		}
-	}
-
-	.titleCard {
-		font-size: 12px;
 	}
 
 	.link {
 		display: none;
 	}
 
-	.verticalLine {
-		display: none;
+	.wrap {
+		padding: 10px 0;
 	}
 
-	// .imgMobileWrap img {
-	// 	border-radius: 10px;
-	// }
 
+	.linkMobile {
+		margin-top: 30px;
 
-	.imgMobileWrap {
-		height: auto;
+		overflow: hidden;
+
+		min-width: 300px;
 		width: 100%;
+		height: 60px;
 		border-radius: 10px;
-		background-color: white;
-		color: rgb(var(--foreground-rgb));
+		background-color: rgb(var(--foreground-rgb));
+		color: white;
 	
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		// margin-top: 30px;
+		transition: all .3s ease-in-out;
+	
+		&:hover {
+			background-color: var(--red-button);
+		}
 	}
 	
-
-	.mobileContent {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 10px;
-		row-gap: 30px;
-	}
-
-
-	.imgMobileWrap {
-		background-color: rgb(var(--gray-background-img-rgb));
-		border-radius: 10px;
-
-		aspect-ratio: 145/172;
-
-	}
-
-	.imgMobile {
-		object-fit: cover; 
-		width: 100%; 
-		// height: auto;
-	
-		border-radius: 10px;
-
-	}
-
-	.titleMobile {
-		margin-top: 10px;
-		font-size: 12px;
+	.linkTextMobile {
+		font-size: 16px;
 		font-weight: 500;
-		color: rgb(var(--foreground-rgb));
+	}
+
+	.swiperContainer {
+		margin-top: 0;
 	}
 }
