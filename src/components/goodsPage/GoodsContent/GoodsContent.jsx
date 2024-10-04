@@ -46,12 +46,6 @@ const GoodsContent = () => {
 		return <p>Ошибка: {error}</p>;
 	}
 
-	// console.log('Тестируемое поле:', products[0].imageurl);
-
-	// console.log('Товары с бекенда: ', products);
-
-	// console.log(`URL: ${URL}, Params: ${params}`);
-
 	return loading ? (
 		<div className={styles.loading}>
 			<h2>Загрузка информации, подождите...</h2>;
