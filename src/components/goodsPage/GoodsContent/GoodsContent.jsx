@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-import URL from '@/constants/url.js';
+import { URL } from '@/constants/url.js';
 
 import GoodsList from '../GoodsList/GoodsList.jsx';
 import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';

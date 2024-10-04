@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-import URL from '@/constants/url.js';
+import { URL } from '@/constants/url.js';
 
 import type { ProductPageProps, ProductsData } from '@/types/product';
 
