@@ -4,7 +4,7 @@ import QualitySection from '@/components/qualityPage/QualitySection/QualitySecti
 export default function CorporateEthics() {
 	return (
 		<section>
-			<PageTitle title="Политика в области качества" />
+			<PageTitle title="Кодекс корпоративной этики" />
 			<QualitySection />
 		</section>
 	);
