@@ -2,11 +2,13 @@ import styles from './QualityNav.module.scss';
 
 const QualityNav = () => {
 	return (
-		<div>
+		<div className={styles.qualityNav}>
 			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
+				<li>Политика в области качества</li>
+				<li>Кодекс корпоративной этики</li>
+				<li>Политика в области охраны труда</li>
+				<li>Ведомости СОУТ</li>
+				<li>Политика обработка персональных данных</li>
 			</ul>
 		</div>
 	);
