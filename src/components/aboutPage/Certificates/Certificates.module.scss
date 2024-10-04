@@ -59,6 +59,8 @@
 	height: 24vw;
 	max-height: 384px;
 	min-height: 284px;
+
+	filter: grayscale(100%);
 }
 
 .slideInner {
@@ -76,8 +78,10 @@
 
 .cert {
 	object-fit: contain;
-	max-width: 384px;
+
+	// max-width: 384px;
 	min-width: 284px;
+	height: 100%;
 }
 
 .titleCard {
@@ -147,6 +151,10 @@
 
 
 @media (max-width: 576px) {
+
+	.verticalLine {
+		display: none;
+	}
 
 	.section {
 		padding: 0;
