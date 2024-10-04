@@ -14,8 +14,8 @@ const certificates = [
 	{ cert: '/about/Certificates/cert4.png', type: 'book' },
 	{ cert: '/about/Certificates/cert5.png', type: 'book' },
 	{ cert: '/about/Certificates/cert6.png', type: 'album' },
-	{ cert: '/about/Certificates/cert5.png', type: 'book' },
-	{ cert: '/about/Certificates/cert6.png', type: 'album' },
+	// { cert: '/about/Certificates/cert5.png', type: 'book' },
+	// { cert: '/about/Certificates/cert6.png', type: 'album' },
 ];
 
 
@@ -51,7 +51,7 @@ export default function Certificates() {
 							// 		slidesPerView: 2.5,
 							// 	},
 							// 	768: {
-							// 		slidesPerView: 4.3,
+							// 		slidesPerView: 4.5,
 							// 	},
 							// 	1024: {
 							// 		slidesPerView: 'auto',
