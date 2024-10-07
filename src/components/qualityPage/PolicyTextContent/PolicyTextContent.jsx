@@ -1,8 +1,8 @@
-import styles from './QualityContent.module.scss';
+import styles from './PolicyTextContent.module.scss';
 
-const QualityContent = () => {
+const PolicyTextContent = () => {
 	return (
-		<div className={styles.qualityContent}>
+		<div className={styles.policyContent}>
 			{/* Пункт 1. */}
 			<div className={styles.contentBlock}>
 				<h2 className={styles.title}>1. Общие положения.</h2>
@@ -705,4 +705,4 @@ const QualityContent = () => {
 	);
 };
 
-export default QualityContent;
+export default PolicyTextContent;
