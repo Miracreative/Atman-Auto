@@ -80,8 +80,8 @@
 	& li {
 		margin-bottom: 40px;
 
-		&:last-child {
-			margin-bottom: 0;
+		&::marker {
+			font-size: 14px;
 		}
 	}
 }
@@ -118,11 +118,38 @@
 			bottom: -40px;
 		}
 	}
+
+	.list {
+		& li {
+			// margin-bottom: 40px;
+
+			&::marker {
+				font-size: 12px;
+			}
+		}
+	}
 }
 
 @media (max-width: 1024px) {
+	.title {
+		margin-bottom: 20px;
+	}
+
+	.text {
+		margin-bottom: 30px;
+	}
+
 	.qualityContent {
 		padding: 50px 0 50px 30px;
+	}
+
+	.list {
+		padding-left: 25px;
+		margin-bottom: 30px;
+
+		& li {
+			margin-bottom: 30px;
+		}
 	}
 }
 
@@ -141,6 +168,12 @@
 
 	.list {
 		font-size: 16px;
+
+		& li {
+			&::marker {
+				font-size: 8px;
+			}
+		}
 	}
 
 	.contentBlock {
@@ -184,15 +217,22 @@
 
 @media (max-width: 375px) {
 	.title {
+		margin-bottom: 10px;
 		font-size: 16px;
 	}
 
 	.text {
+		margin-bottom: 20px;
 		font-size: 12px;
 	}
 
 	.list {
 		font-size: 12px;
+		margin-bottom: 20px;
+
+		& li {
+			margin-bottom: 20px;
+		}
 	}
 
 	.contentBlock {
