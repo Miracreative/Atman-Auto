@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { menuItems as links } from '@/data/menuItems';
 
-import PolicyFilterItem from '@/components/qualityPage/PolicyFilter/PolicyFilterItem';
+import PolicyFilterItem from '@/components/qualityPage/PolicyFilterItem/PolicyFilterItem';
 
 import styles from './QualityNav.module.scss';
 
@@ -12,10 +12,10 @@ const QualityNav = () => {
 	const pathname = usePathname();
 	const router = useRouter();
 
-	console.log(pathname);
+	// console.log(pathname);
 
-	console.log(links.about.items[1].href);
-	console.log(links.about.items[1].text);
+	// console.log(links.about.items[1].href);
+	// console.log(links.about.items[1].text);
 
 	return (
 		<nav className={styles.qualityNav}>

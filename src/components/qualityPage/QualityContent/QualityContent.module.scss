@@ -1,3 +1,6 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
 .qualityContent {
 	position: relative;
 	padding: 100px 0 100px 60px;
@@ -58,6 +61,11 @@
 		font-weight: 700;
 	}
 
+	& a {
+		text-decoration: underline;
+		white-space: nowrap;
+	}
+
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -74,6 +82,116 @@
 
 		&:last-child {
 			margin-bottom: 0;
+		}
+	}
+}
+
+@media (max-width: 1920px) {
+	.title {
+		@include adaptive-font(32, 20);
+	}
+
+	.text {
+		@include adaptive-font(24, 16);
+	}
+
+	.list {
+		@include adaptive-font(24, 16);
+	}
+}
+
+@media (max-width: 1440px) {
+	.qualityContent {
+		padding: 80px 0 80px 50px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.qualityContent {
+		padding: 60px 0 60px 40px;
+	}
+
+	.contentBlock {
+		margin: 80px 0;
+
+		&::before {
+			bottom: -40px;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.qualityContent {
+		padding: 50px 0 50px 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.qualityContent {
+		padding: 40px 0 40px 30px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.text {
+		font-size: 16px;
+	}
+
+	.list {
+		font-size: 16px;
+	}
+
+	.contentBlock {
+		margin: 70px 0;
+
+		&::before {
+			bottom: -35px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 18px;
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.list {
+		font-size: 14px;
+	}
+
+	.contentBlock {
+		margin: 60px 0;
+
+		&::before {
+			bottom: -30px;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.title {
+		font-size: 16px;
+	}
+
+	.text {
+		font-size: 12px;
+	}
+
+	.list {
+		font-size: 12px;
+	}
+
+	.contentBlock {
+		margin: 50px 0;
+
+		&::before {
+			bottom: -25px;
 		}
 	}
 }

@@ -8,10 +8,12 @@ import styles from './PolicyFilterItem.module.scss';
 const PolicyFilterItem = ({ link, checked, onChange, text }) => {
 	return (
 		<Link href={link} className={styles.item} onClick={onChange}>
-			{' '}
-			<div className={`${styles.checkbox} ${checked ? styles.checked : ''}`}>
-				<Image src={image} alt="Active page" />
+			<div>
+				<div className={`${styles.checkbox} ${checked ? styles.checked : ''}`}>
+					<Image src={image} alt="Active page" />
+				</div>
 			</div>
+
 			<span className={styles.label}>{text}</span>
 		</Link>
 	);

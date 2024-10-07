@@ -1,0 +1,64 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.item {
+	min-height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	cursor: pointer;
+
+	& .label {
+		padding-left: 15px;
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	& span {
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			& .checkbox {
+				border-color: var(--red-button);
+			}
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			& .checkbox {
+				border-color: var(--red-button);
+			}
+		}
+	}
+}
+
+.checkbox {
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	border: 1px solid rgb(var(--gray-line-rgb));
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s, border 0.3s;
+	position: relative;
+
+	&.checked {
+		background-color: var(--red-button);
+		border: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.item {
+		& .label {
+			font-size: 14px;
+		}
+	}
+}
