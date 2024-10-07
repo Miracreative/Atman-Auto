@@ -1,0 +1,13 @@
+.dropButtonContainer {
+	position: relative;
+	padding: 0 10px;
+}
+
+@media (max-width: 480px) {
+	.navContainer {
+		width: calc(100% - 20px);
+		position: absolute;
+		top: 0;
+		left: 10px;
+	}
+}

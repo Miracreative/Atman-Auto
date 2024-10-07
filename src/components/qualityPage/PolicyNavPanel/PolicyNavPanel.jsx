@@ -1,17 +1,27 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+// import {  } from 'react';
 
+import { useClickOutside } from '@/hooks/useClickOutside';
+import useWindowWidth from '@/hooks/useWindowWidth';
 import MOBILE_WIDTH from '@/constants/width.js';
 
-import useWindowWidth from '@/hooks/useWindowWidth';
-
 import QualityNav from '@/components/qualityPage/QualityNav/QualityNav';
-import PolicyDropButton from '@/components/qualityPage/PolicyDropButton/PolicyDropButton';
+import PolicyDropMenu from '@/components/qualityPage/PolicyDropMenu/PolicyDropMenu';
 
 import styles from './PolicyNavPanel.module.scss';
 
 const PolicyNavPanel = () => {
+	const modalRef = useRef();
+
+	const handleOutsideClick = () => {
+		setIsOpenNav(false);
+		console.log('Click outside, isOpenNav:', isOpenNav);
+	};
+
+	useClickOutside(modalRef, handleOutsideClick);
+
 	const [isMobile, setIsMobile] = useState(false);
 
 	const [isOpenNav, setIsOpenNav] = useState(true);
@@ -28,9 +38,6 @@ const PolicyNavPanel = () => {
 		}
 	}, [width]);
 
-	// console.log('width', width);
-	// console.log('isMobile', isMobile);
-
 	return (
 		<div className={styles.container}>
 			{!isMobile && (
@@ -40,17 +47,11 @@ const PolicyNavPanel = () => {
 			)}
 
 			{isMobile && (
-				<>
-					<div className={styles.dropButtonContainer}>
-						<PolicyDropButton
-							isOpenNav={isOpenNav}
-							setIsOpenNav={setIsOpenNav}
-						/>
-					</div>
-					<div className={styles.navContainer}>
-						<QualityNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
-					</div>
-				</>
+				<PolicyDropMenu
+					isOpenNav={isOpenNav}
+					setIsOpenNav={setIsOpenNav}
+					ref={modalRef}
+				/>
 			)}
 		</div>
 	);
