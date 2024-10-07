@@ -28,7 +28,6 @@ export default function NewsContent({ news }) {
 
 
 	const numOfPages = Math.ceil(posts.length / postPerPage);
-	// console.log(numOfPages);
 
 	const numOfButtons = [];
 	for (let i = 1; i <= numOfPages; i++) {
@@ -117,7 +116,7 @@ export default function NewsContent({ news }) {
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item, index) => {
 								return (
-									<Link href={`${URL_NEWS}/${item.id}`} key={index} className={styles.card}>
+									<Link href={`${process.env.DOMAIN}/news/${item.id}`} key={index} className={styles.card}>
 										<div className={styles.images}>
 											<img className={styles.imgItem} src={item.imagessrc} alt={item.photo} />
 										</div>
@@ -178,18 +177,3 @@ export default function NewsContent({ news }) {
 		</>
 	)
 }
-
-
-// useEffect(() => {
-// 	// Fetch data from backend API or load from a file
-// 	const fetchData = async () => {
-// 	  try {
-// 		const response = await fetch('/api/knowledge-base'); // Replace with your API endpoint
-// 		const data = await response.json();
-// 		setKnowledgeData(data);
-// 	  } catch (error) {
-// 		console.error(error);
-// 	  }
-// 	};
-// 	fetchData();
-//   }, []);

@@ -10,7 +10,7 @@ import { Controller } from 'swiper/modules';
 
 
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 
 

@@ -12,6 +12,10 @@ const nextConfig = {
 		],
 		//	formats: ['image/avif', 'image/webp'],
 	},
+	env: {
+		HOST: process.env.HOST,
+		DOMAIN: process.env.DOMAIN,
+	},
 	//	swcMinify: true,
 };
 

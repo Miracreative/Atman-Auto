@@ -19,14 +19,14 @@ const NewsWrapContent = () => {
 	const fetchNews = async () => {
 		setLoading(true);
 		try {
-			const response = await axios.get(URL_NEWS);
+			// const response = await axios.get(URL_NEWS);
+			const response = await axios.get(`${process.env.HOST}/api/news`);
 			setNews(response.data);
 		} catch (err) {
 			setError(err.message);
 		} finally {
 			setLoading(false);
 		}
-		console.log(news);
 
 	};
 
@@ -34,9 +34,9 @@ const NewsWrapContent = () => {
 		fetchNews();
 	}, []);
 
-	useEffect(() => {
-		console.log(news); // Теперь news будет содержать данные из API
-	}, [news]);
+	// useEffect(() => {
+	// 	console.log(news); // Теперь news будет содержать данные из API
+	// }, [news]);
 
 	if (error) {
 		return <p>Ошибка: {error}</p>;
