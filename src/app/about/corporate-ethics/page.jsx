@@ -1,11 +1,11 @@
 import PageTitle from '@/components/PageTitle/PageTitle';
-import QualitySection from '@/components/qualityPage/QualitySection/QualitySection';
+import PolicySection from '@/components/policyPages/PolicySection/PolicySection';
 
 export default function CorporateEthics() {
 	return (
 		<section>
 			<PageTitle title="Кодекс корпоративной этики" />
-			<QualitySection />
+			<PolicySection children={<PolicyTextContent />} />
 		</section>
 	);
 }

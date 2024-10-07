@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 
-import QualityNav from '@/components/qualityPage/QualityNav/QualityNav';
-import PolicyDropButton from '@/components/qualityPage/PolicyDropButton/PolicyDropButton';
+// import QualityNav from '@/components/policyPages/';
+import PolicyNav from '@/components/policyPages/PolicyNav/PolicyNav';
+import PolicyDropButton from '@/components/policyPages/PolicyDropButton/PolicyDropButton';
 
 import styles from './PolicyDropMenu.module.scss';
 
@@ -12,7 +13,7 @@ const PolicyDropMenu = forwardRef(({ isOpenNav, setIsOpenNav }, ref) => {
 				<PolicyDropButton isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
 			</div>
 			<div className={styles.navContainer}>
-				<QualityNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
+				<PolicyNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
 			</div>
 		</div>
 	);

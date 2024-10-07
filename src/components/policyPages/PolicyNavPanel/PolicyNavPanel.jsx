@@ -7,8 +7,8 @@ import { useClickOutside } from '@/hooks/useClickOutside';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import MOBILE_WIDTH from '@/constants/width.js';
 
-import QualityNav from '@/components/qualityPage/QualityNav/QualityNav';
-import PolicyDropMenu from '@/components/qualityPage/PolicyDropMenu/PolicyDropMenu';
+import PolicyNav from '@/components/policyPages/PolicyNav/PolicyNav';
+import PolicyDropMenu from '@/components/policyPages/PolicyDropMenu/PolicyDropMenu';
 
 import styles from './PolicyNavPanel.module.scss';
 
@@ -42,7 +42,7 @@ const PolicyNavPanel = () => {
 		<div className={styles.container}>
 			{!isMobile && (
 				<div className={styles.navContainer}>
-					<QualityNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
+					<PolicyNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
 				</div>
 			)}
 

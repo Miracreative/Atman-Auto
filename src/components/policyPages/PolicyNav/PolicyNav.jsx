@@ -4,10 +4,10 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { menuItems as links } from '@/data/menuItems';
 
-import PolicyFilterItem from '@/components/qualityPage/PolicyFilterItem/PolicyFilterItem';
-import styles from './QualityNav.module.scss';
+import PolicyFilterItem from '@/components/policyPages/PolicyFilterItem/PolicyFilterItem';
+import styles from './PolicyNav.module.scss';
 
-const QualityNav = ({ isOpenNav, setIsOpenNav }) => {
+const PolicyNav = ({ isOpenNav, setIsOpenNav }) => {
 	const pathname = usePathname();
 	const router = useRouter();
 
@@ -15,7 +15,7 @@ const QualityNav = ({ isOpenNav, setIsOpenNav }) => {
 
 	return (
 		<nav
-			className={`${styles.qualityNav} ${
+			className={`${styles.policyNav} ${
 				isOpenNav ? styles.visibleMenu : styles.hiddenMenu
 			}`}
 		>
@@ -37,4 +37,4 @@ const QualityNav = ({ isOpenNav, setIsOpenNav }) => {
 	);
 };
 
-export default QualityNav;
+export default PolicyNav;
