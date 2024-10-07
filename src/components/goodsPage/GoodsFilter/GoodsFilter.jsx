@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 import useWindowWidth from '@/hooks/useWindowWidth';
 
+import MOBILE_WIDTH from '@/constants/width.js';
+
 import GoodsDropButton from '../GoodsDropButton/GoodsDropButton.jsx';
 import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
 
@@ -17,7 +19,7 @@ const GoodsFilter = ({ filter, setFilter, fetchProducts }) => {
 	const width = useWindowWidth();
 
 	useEffect(() => {
-		if (width <= 480) {
+		if (width <= MOBILE_WIDTH) {
 			setIsMobile(true);
 			setIsOpenFilter(false);
 		} else {

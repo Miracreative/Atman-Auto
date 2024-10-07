@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import useToggleMenus from '@/hooks/useToggleMenus';
 
+import MOBILE_WIDTH from '@/constants/width.js';
+
 import SurveyItem from '../SurveyItem/SurveyItem';
 import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
@@ -118,7 +120,7 @@ export default function Survey() {
 	useEffect(() => {
 		// console.log('useEffect сработал');
 
-		if (width <= 480) {
+		if (width <= MOBILE_WIDTH) {
 			setIsMobile(true);
 			// console.log(
 			// 	`Мы в мобильном режиме (текущая ширина ${width}px): ${isMobile}`,

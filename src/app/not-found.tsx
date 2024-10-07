@@ -10,6 +10,8 @@ import backgroundImageMobile from '/public/not-found/404-background-logo-mobile.
 import image from '/public/not-found/404-image.png';
 import logoImage from '/public/white-logo.svg';
 
+import MOBILE_WIDTH from '@/constants/width.js';
+
 import useWindowWidth from '@/hooks/useWindowWidth';
 
 import styles from '@/scss/not-found.module.scss';
@@ -28,7 +30,7 @@ export default function NotFound() {
 	useEffect(() => {
 		// console.log('useEffect сработал');
 
-		if (width <= 480) {
+		if (width <= MOBILE_WIDTH) {
 			setIsMobile(true);
 			// console.log(
 			// 	`Мы в мобильном режиме (текущая ширина ${width}px): ${isMobile}`,
