@@ -10,7 +10,8 @@ const PolicyFilterItem = ({ link, checked, onChange, text }) => {
 		<Link href={link} className={styles.item} onClick={onChange}>
 			<div>
 				<div className={`${styles.checkbox} ${checked ? styles.checked : ''}`}>
-					<Image src={image} alt="Active page" />
+					{checked && <Image src={image} alt="Active page" />}
+					{/* <Image src={image} alt="Active page" /> */}
 				</div>
 			</div>
 

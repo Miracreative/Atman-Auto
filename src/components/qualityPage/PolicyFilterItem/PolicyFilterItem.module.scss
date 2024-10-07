@@ -10,7 +10,7 @@
 	cursor: pointer;
 
 	& .label {
-		padding-left: 15px;
+		padding-left: 20px;
 		font-size: 16px;
 		font-weight: 500;
 	}
@@ -59,6 +59,7 @@
 	.item {
 		& .label {
 			font-size: 14px;
+			font-weight: 400;
 		}
 	}
 }

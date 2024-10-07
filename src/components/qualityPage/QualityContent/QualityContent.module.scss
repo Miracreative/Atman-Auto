@@ -153,6 +153,14 @@
 }
 
 @media (max-width: 480px) {
+	.qualityContent {
+		padding: 30px 10px;
+
+		&::before {
+			display: none;
+		}
+	}
+
 	.title {
 		font-size: 18px;
 	}
