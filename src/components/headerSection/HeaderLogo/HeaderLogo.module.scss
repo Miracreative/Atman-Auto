@@ -3,16 +3,21 @@
 .contaier {
 	height: 100%;
 	border-right: 1px solid rgb(var(--gray-line-rgb));
-	// padding: 0 120px 0 100px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	background-color: rgb(var(--light-gray-rgb));
-	// box-sizing: border-box;
 }
 
 .logo {
 	width: 255px;
 	height: 88px;
+}
+
+@media (min-width: 1920px) {
+	.contaier {
+		min-width: 470px;
+	}
 }
 
 @media (max-width: 1920px) {
@@ -38,7 +43,6 @@
 	}
 }
 
-// @media (max-width: 768px) {
 @media (max-width: 820px) {
 	.contaier {
 		border-right: none;
