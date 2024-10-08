@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import type { FC } from 'react';
 import type { SoutData } from '@/types/sout.ts';
@@ -8,7 +9,13 @@ import zipIcon from '/public/icons/file-type/zip-icon.svg';
 
 import styles from './SoutItem.module.scss';
 
-const SoutItem: FC<SoutData> = ({ id, name, fileType, fileSize }: SoutData) => {
+const SoutItem: FC<SoutData> = ({
+	id,
+	name,
+	fileType,
+	fileSize,
+	url,
+}: SoutData) => {
 	let icon;
 
 	switch (fileType) {
@@ -20,17 +27,13 @@ const SoutItem: FC<SoutData> = ({ id, name, fileType, fileSize }: SoutData) => {
 			break;
 		default:
 			// возможно, какой-то дефолтный случай
-			icon = <div>Unknown file type</div>;
+			icon = <p>Тип файла неопознан</p>;
 	}
 
 	return (
+		// <Link href={`/sout/${id}`} className={styles.container}>
 		<div className={styles.container}>
-			<div className={styles.iconContainer}>
-				{/* {fileType === 'pdf' && <Image src={pdfIcon} alt="PDF file icon" />}
-				{fileType === 'zip' && <Image src={zipIcon} alt="ZIP file icon" />} */}
-
-				{icon}
-			</div>
+			<div className={styles.iconContainer}>{icon}</div>
 			<div className={styles.content}>
 				<h3>{name}</h3>
 				<div className={styles.info}>
@@ -39,6 +42,7 @@ const SoutItem: FC<SoutData> = ({ id, name, fileType, fileSize }: SoutData) => {
 				</div>
 			</div>
 		</div>
+		// </Link>
 	);
 };
 

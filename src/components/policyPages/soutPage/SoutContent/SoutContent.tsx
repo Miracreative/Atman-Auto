@@ -20,6 +20,7 @@ const SoutContent = () => {
 							name={item.name}
 							fileType={item.fileType}
 							fileSize={item.fileSize}
+							url={item.url}
 						/>
 					</li>
 				))}
