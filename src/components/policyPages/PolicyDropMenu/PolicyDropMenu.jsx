@@ -13,7 +13,7 @@ const PolicyDropMenu = forwardRef(({ isOpenNav, setIsOpenNav }, ref) => {
 				<PolicyDropButton isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
 			</div>
 			<div className={styles.navContainer}>
-				<PolicyNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
+				<PolicyNav isOpenNav={isOpenNav} />
 			</div>
 		</div>
 	);

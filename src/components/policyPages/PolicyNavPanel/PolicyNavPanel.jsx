@@ -17,7 +17,7 @@ const PolicyNavPanel = () => {
 
 	const handleOutsideClick = () => {
 		setIsOpenNav(false);
-		console.log('Click outside, isOpenNav:', isOpenNav);
+		// console.log('Click outside, isOpenNav:', isOpenNav);
 	};
 
 	useClickOutside(modalRef, handleOutsideClick);
@@ -42,7 +42,7 @@ const PolicyNavPanel = () => {
 		<div className={styles.container}>
 			{!isMobile && (
 				<div className={styles.navContainer}>
-					<PolicyNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
+					<PolicyNav isOpenNav={isOpenNav} />
 				</div>
 			)}
 

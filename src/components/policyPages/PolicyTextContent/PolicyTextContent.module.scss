@@ -4,17 +4,6 @@
 .policyContent {
 	position: relative;
 	padding: 100px 0 100px 60px;
-
-	&::before {
-		content: '';
-		position: absolute;
-		width: 1px;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		height: 100%;
-		background-color: rgb(var(--gray-line-rgb));
-	}
 }
 
 .title {

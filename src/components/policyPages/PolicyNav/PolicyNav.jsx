@@ -7,11 +7,11 @@ import { menuItems as links } from '@/data/menuItems';
 import PolicyFilterItem from '@/components/policyPages/PolicyFilterItem/PolicyFilterItem';
 import styles from './PolicyNav.module.scss';
 
-const PolicyNav = ({ isOpenNav, setIsOpenNav }) => {
+const PolicyNav = ({ isOpenNav }) => {
 	const pathname = usePathname();
 	const router = useRouter();
 
-	console.log('isOpenNav', isOpenNav);
+	// console.log('isOpenNav', isOpenNav);
 
 	return (
 		<nav

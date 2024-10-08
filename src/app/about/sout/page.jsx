@@ -1,6 +1,7 @@
 import PageTitle from '@/components/PageTitle/PageTitle';
 // import SoutSection from '@/components/policyPages/soutPage/SoutSection/SoutSection';
 import PolicySection from '@/components/policyPages/PolicySection/PolicySection';
+import SoutContent from '@/components/policyPages/soutPage/SoutContent/SoutContent.tsx';
 
 export default function Sout() {
 	return (
@@ -9,7 +10,9 @@ export default function Sout() {
 			{/* <QualitySection /> */}
 			{/* <SoutSection />
 			 */}
-			<PolicySection />
+			<PolicySection>
+				<SoutContent />
+			</PolicySection>
 		</section>
 	);
 }

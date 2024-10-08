@@ -1,0 +1,25 @@
+.section {
+	padding: 100px 0 100px 60px;
+
+	& h2 {
+		margin-bottom: 45px;
+		// color: var(--red-button);
+		font-size: 40px;
+		font-weight: 700;
+	}
+}
+
+.list {
+	// display: flex;
+
+	& li {
+		margin-bottom: 50px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	// background-color: red;
+	// flex-direction: column;
+	// gap: 20px;
+}

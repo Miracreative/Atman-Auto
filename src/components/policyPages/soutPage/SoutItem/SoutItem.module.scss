@@ -1,0 +1,52 @@
+.container {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.iconContainer {
+	margin-right: 40px;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		svg {
+			width: 10px;
+			// rect {
+			// 	fill: blue;
+			// }
+
+			// path {
+			// 	fill: #298846; // Исходный цвет
+
+			// 	&:hover {
+			// 		fill: #ff5733; // Цвет при наведении
+			// 	}
+			// }
+		}
+	}
+}
+
+.content {
+	& h3 {
+		margin-bottom: 10px;
+		font-size: 32px;
+		font-weight: 700;
+	}
+
+	& p {
+		font-size: 24px;
+		font-weight: 400;
+	}
+}
+
+.info {
+	display: flex;
+
+	& p {
+		font-size: 24px;
+		font-weight: 400;
+		&:first-child {
+			text-transform: uppercase;
+		}
+	}
+}

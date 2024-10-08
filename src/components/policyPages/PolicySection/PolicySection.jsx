@@ -1,8 +1,8 @@
 import PolicyNavPanel from '../PolicyNavPanel/PolicyNavPanel';
-import PolicyTextContent from '@/components/policyPages/PolicyTextContent/PolicyTextContent';
+// import PolicyTextContent from '@/components/policyPages/PolicyTextContent/PolicyTextContent';
 
 import styles from './PolicySection.module.scss';
-import { Children } from 'react';
+// import { Children } from 'react';
 
 const PolicySection = ({ children }) => {
 	return (
