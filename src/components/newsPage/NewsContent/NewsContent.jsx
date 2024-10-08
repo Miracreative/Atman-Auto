@@ -116,7 +116,7 @@ export default function NewsContent({ news }) {
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item, index) => {
 								return (
-									<Link href={`${process.env.DOMAIN}/news/${item.id}`} key={index} className={styles.card}>
+									<Link href={`${process.env.DOMAIN}/news/${item.id}`} key={item.id} className={styles.card}>
 										<div className={styles.images}>
 											<img className={styles.imgItem} src={item.imagessrc} alt={item.photo} />
 										</div>
