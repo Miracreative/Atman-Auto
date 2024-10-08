@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-// import {  } from 'react';
 
 import { useClickOutside } from '@/hooks/useClickOutside';
 import useWindowWidth from '@/hooks/useWindowWidth';
+
 import MOBILE_WIDTH from '@/constants/width.js';
 
 import PolicyNav from '@/components/policyPages/PolicyNav/PolicyNav';

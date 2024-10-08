@@ -9,7 +9,7 @@ export const menuItems = {
 				href: '/about/safety-and-health-policy',
 				text: 'Политика в области охраны труда',
 			},
-			{ href: '/about/sout', text: 'Ведомости СОУТ' },
+			{ href: '/about/sout', text: 'Ведомости по СОУТ' },
 			{
 				href: '/about/personal-data-processing-policy',
 				text: 'Политика обработки персональных данных',

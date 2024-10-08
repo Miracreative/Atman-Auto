@@ -1,3 +1,6 @@
+@import '@/scss/_functions';
+@import '@/scss/_mixins';
+
 .container {
 	display: flex;
 	align-items: center;
@@ -6,24 +9,7 @@
 
 .iconContainer {
 	margin-right: 40px;
-	transition: all 0.3s ease-in-out;
-
-	&:hover {
-		svg {
-			width: 10px;
-			// rect {
-			// 	fill: blue;
-			// }
-
-			// path {
-			// 	fill: #298846; // Исходный цвет
-
-			// 	&:hover {
-			// 		fill: #ff5733; // Цвет при наведении
-			// 	}
-			// }
-		}
-	}
+	// transition: all 0.3s ease-in-out;
 }
 
 .content {
@@ -31,11 +17,6 @@
 		margin-bottom: 10px;
 		font-size: 32px;
 		font-weight: 700;
-	}
-
-	& p {
-		font-size: 24px;
-		font-weight: 400;
 	}
 }
 
@@ -45,8 +26,92 @@
 	& p {
 		font-size: 24px;
 		font-weight: 400;
+
 		&:first-child {
 			text-transform: uppercase;
+		}
+	}
+}
+
+@media (max-width: 1920px) {
+	.content {
+		& h3 {
+			@include adaptive-font(32, 24);
+		}
+	}
+
+	.iconContainer {
+		margin-right: 30px;
+	}
+
+	.info {
+		& p {
+			@include adaptive-font(24, 20);
+		}
+	}
+}
+
+@media (max-width: 1280px) {
+	.iconContainer {
+		& img {
+			width: 90px;
+			height: auto;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.iconContainer {
+		& img {
+			width: 85px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.content {
+		& h3 {
+			font-size: 24px;
+		}
+	}
+
+	.iconContainer {
+		& img {
+			width: 80px;
+		}
+	}
+
+	.info {
+		& p {
+			font-size: 20px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.content {
+		& h3 {
+			font-size: 20px;
+		}
+	}
+
+	.iconContainer {
+		& img {
+			width: 75px;
+		}
+	}
+
+	.info {
+		& p {
+			font-size: 16px;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.iconContainer {
+		& img {
+			width: 70px;
 		}
 	}
 }

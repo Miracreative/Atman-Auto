@@ -1,6 +1,5 @@
 import { forwardRef } from 'react';
 
-// import QualityNav from '@/components/policyPages/';
 import PolicyNav from '@/components/policyPages/PolicyNav/PolicyNav';
 import PolicyDropButton from '@/components/policyPages/PolicyDropButton/PolicyDropButton';
 

@@ -31,7 +31,7 @@ const SoutItem: FC<SoutData> = ({
 	}
 
 	return (
-		// <Link href={`/sout/${id}`} className={styles.container}>
+		// <Link href={url} className={styles.container}>
 		<div className={styles.container}>
 			<div className={styles.iconContainer}>{icon}</div>
 			<div className={styles.content}>
