@@ -73,7 +73,7 @@ const GoodsFilterPanel = ({
 	const handleApply = () => {
 		// fetchAllProducts(filter);
 		onFilterChange();
-		console.log('Фильтры применены:', filter);
+		// console.log('Фильтры применены:', filter);
 	};
 
 	return (

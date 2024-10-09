@@ -1,9 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import { fetchAllProducts, fetchFilteredProducts } from '@/api/goodsService';
+
 import GoodsList from '../GoodsList/GoodsList.jsx';
 import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
+
 import styles from './GoodsContent.module.scss';
 
 const GoodsContent = () => {
