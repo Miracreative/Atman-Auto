@@ -3,12 +3,13 @@
 import styles from './NewsContent.module.scss';
 import newsData from '@/data/newsData.js';
 import Link from 'next/link';
+import { URL_NEWS } from '@/constants/url.js';
 
 import { useState, useEffect } from 'react';
 
-export default function NewsContent() {
+export default function NewsContent({ news }) {
 
-	const [posts, SetPosts] = useState(newsData);
+	const [posts, SetPosts] = useState(news);
 	const [postPerPage, SetPostPerPage] = useState(10);
 	const [currentPage, SetCurrentPage] = useState(1);
 
@@ -27,7 +28,6 @@ export default function NewsContent() {
 
 
 	const numOfPages = Math.ceil(posts.length / postPerPage);
-	// console.log(numOfPages);
 
 	const numOfButtons = [];
 	for (let i = 1; i <= numOfPages; i++) {
@@ -116,14 +116,14 @@ export default function NewsContent() {
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item, index) => {
 								return (
-									<Link href='/news' key={index} className={styles.card}>
+									<Link href={`${process.env.DOMAIN}/news/${item.id}`} key={item.id} className={styles.card}>
 										<div className={styles.images}>
-											<img className={styles.imgItem} src={item.photo} alt={item.photo} />
+											<img className={styles.imgItem} src={item.imagessrc} alt={item.photo} />
 										</div>
 
 										<div className={styles.cardInner}>
 											<div className={styles.title}>{item.title}</div>
-											<div className={styles.text}>{item.description}</div>
+											<div className={styles.text}>{item.descr}</div>
 										</div>
 									</Link>
 								)
@@ -177,18 +177,3 @@ export default function NewsContent() {
 		</>
 	)
 }
-
-
-// useEffect(() => {
-// 	// Fetch data from backend API or load from a file
-// 	const fetchData = async () => {
-// 	  try {
-// 		const response = await fetch('/api/knowledge-base'); // Replace with your API endpoint
-// 		const data = await response.json();
-// 		setKnowledgeData(data);
-// 	  } catch (error) {
-// 		console.error(error);
-// 	  }
-// 	};
-// 	fetchData();
-//   }, []);

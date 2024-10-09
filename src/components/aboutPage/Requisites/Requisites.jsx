@@ -1,6 +1,7 @@
 import styles from './Requisites.module.scss';
 // import Image from 'next/image';
 import Link from 'next/link';
+import CompanyInfo from '@/data/CompanyInfo.js';
 
 export default function Requisites() {
 	return (
@@ -36,49 +37,49 @@ export default function Requisites() {
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Наименование предприятия полное:</div>
-									<div className={styles.text}>Общество с ограниченной ответственностью «Атман-АВТО»</div>
+									<div className={styles.text}>{CompanyInfo.fullName}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Фактический адрес:</div>
-									<div className={styles.text}>301650, Тульская обл., г. Новомосковск, ул. Маяковского, д. 25, оф.201</div>
+									<div className={styles.text}>{CompanyInfo.actualAddress}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Наименование предприятия краткое:</div>
-									<div className={styles.text}>ООО «Атман-АВТО»</div>
+									<div className={styles.text}>{CompanyInfo.shortName}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Почтовый адрес:</div>
-									<div className={styles.text}>301650, Тульская обл., г. Новомосковск, ул. Маяковского, д. 25, оф.201</div>
+									<div className={styles.text}>{CompanyInfo.postalAddress}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Юридический адрес:</div>
-									<div className={styles.text}>301650, Тульская обл., г. Новомосковск, ул. Маяковского, д. 25, оф.201</div>
+									<div className={styles.text}>{CompanyInfo.legalAddress}</div>
 								</div>
 
 
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Директор:</div>
-									<div className={styles.text}>Акимкин Максим Александрович </div>
+									<div className={styles.text}>{CompanyInfo.director}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Телефон:</div>
-									<div className={styles.text}>8-800-250-55-26</div>
+									<div className={styles.text}>{CompanyInfo.phone}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>E-mail:</div>
-									<div className={styles.text}>info@atman-auto.ru</div>
+									<div className={styles.text}>{CompanyInfo.email}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Веб-сайт:</div>
-									<div className={styles.text}>www.atman-auto.ru</div>
+									<div className={styles.text}>{CompanyInfo.website}</div>
 								</div>
 
 
@@ -87,30 +88,30 @@ export default function Requisites() {
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>ИНН:</div>
-									<div className={styles.text}>711 650 6832</div>
+									<div className={styles.text}>{CompanyInfo.INN}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>КПП:</div>
-									<div className={styles.text}>711 601 001</div>
+									<div className={styles.text}>{CompanyInfo.KPP}</div>
 								</div>
 
 
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>ОКПО:</div>
-									<div className={styles.text}>699 672 30</div>
+									<div className={styles.text}>{CompanyInfo.OKPO}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>ОГРН:</div>
-									<div className={styles.text}>111 715 401 6022</div>
+									<div className={styles.text}>{CompanyInfo.OGRN}</div>
 								</div>
 
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>ОКВЭД:</div>
-									<div className={styles.text}>29.32</div>
+									<div className={styles.text}>{CompanyInfo.OKVED}</div>
 								</div>
 
 
@@ -118,22 +119,22 @@ export default function Requisites() {
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Наименование банка:</div>
-									<div className={styles.text}>ФИЛИАЛ "ЦЕНТРАЛЬНЫЙ" БАНКА ВТБ (ПАО) в г. Москва</div>
+									<div className={styles.text}>{CompanyInfo.bankName}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Расчетный счет:</div>
-									<div className={styles.text}>40702810204250000296</div>
+									<div className={styles.text}>{CompanyInfo.accountNumber}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>Корреспондентский счет:</div>
-									<div className={styles.text}>30101810145250000411</div>
+									<div className={styles.text}>{CompanyInfo.correspondentAccount}</div>
 								</div>
 
 								<div className={styles.infoBlock}>
 									<div className={styles.subTitle}>БИК:</div>
-									<div className={styles.text}>044525411</div>
+									<div className={styles.text}>{CompanyInfo.BIC}</div>
 								</div>
 
 							</div>
