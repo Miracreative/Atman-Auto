@@ -5,10 +5,10 @@ import applicationData from '@/data/aplicationData';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
 
 
-
-export default function TitleNavigation({ applicationIndustry, currentIndex, onNavClick }) {
+export default function TitleNavigation({ applicationIndustry, currentIndex, onNavClick, breadcrumbs }) {
 
 
 	// const { namePage } = applicationData;
@@ -49,7 +49,9 @@ export default function TitleNavigation({ applicationIndustry, currentIndex, onN
 
 							<div className={styles.innerContent}>
 
-								<div className={styles.breadCrumbs}>хлебные крошки == еще больше крошек</div>
+								<div className={styles.breadCrumbs}>
+									<Breadcrumbs items={breadcrumbs} />
+								</div>
 
 								<div className={styles.titlePage}>
 									{applicationIndustry.title}

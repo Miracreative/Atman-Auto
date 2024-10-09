@@ -10,6 +10,16 @@ import Requisites from '../../components/aboutPage/Requisites/Requisites.jsx';
 
 
 export default function About() {
+
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'О нас',
+		},
+	];
+
 	return (
 		<>
 
@@ -20,6 +30,7 @@ export default function About() {
 					</div>
 				}
 				text="Мы думаем наперед и поддерживаем вас с помощью наших экспертов, которые лично консультируют и гарантируют высокое качество продукции."
+				breadcrumbs={breadcrumbs}
 			></PageTitle>
 			<Algorithm></Algorithm>
 			<Values></Values>

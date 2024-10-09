@@ -12,6 +12,19 @@ import { useParams } from 'next/router';
 import styles from './NewsPage.module.scss';
 
 const NewsPage = () => {
+
+	// const breadcrumbs = [
+	// 	{ title: 'Главная', href: '/' },
+	// 	{
+	// 		title: 'Новости',
+	// 		href: '/news',
+	// 	},
+	// 	{
+	// 		// title: `${product.brand} ${product.name}`,
+	// 		title: 'Новость',
+	// 	},
+	// ];
+
 	const [news, setNews] = useState([]);
 	const [error, setError] = useState(null);
 	// const [loading, setLoading] = useState(true);
@@ -58,7 +71,7 @@ const NewsPage = () => {
 
 	return (
 		<>
-			<NewsTitle ></NewsTitle>
+			<NewsTitle></NewsTitle>
 
 			<NewsSliderAndContent></NewsSliderAndContent>
 		</>

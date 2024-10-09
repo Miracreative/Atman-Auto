@@ -15,6 +15,19 @@ import { useState } from 'react';
 
 export default function AutomobileIndustry() {
 
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'Применения',
+			href: '/applications',
+		},
+		{
+			title: 'Автомобильная промышленность',
+		}
+	];
+
 	const { automobileIndustry } = applicationData;
 	const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,7 +39,8 @@ export default function AutomobileIndustry() {
 		<TitleNavigation
 			applicationIndustry={automobileIndustry}
 			currentIndex={currentIndex}
-			onNavClick={handleNavClick}>
+			onNavClick={handleNavClick}
+			breadcrumbs={breadcrumbs}>
 
 		</TitleNavigation>
 

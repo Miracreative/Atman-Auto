@@ -14,6 +14,19 @@ import { useState } from 'react';
 
 export default function Ros() {
 
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'Применения',
+			href: '/applications',
+		},
+		{
+			title: 'Витрины и торговые автоматы',
+		},
+	];
+
 	const { ros } = applicationData;
 	const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -25,7 +38,11 @@ export default function Ros() {
 		<TitleNavigation
 			applicationIndustry={ros}
 			currentIndex={currentIndex}
-			onNavClick={handleNavClick}></TitleNavigation>
+			onNavClick={handleNavClick}
+			breadcrumbs={breadcrumbs}
+		>
+
+		</TitleNavigation>
 
 		<SliderAplications
 			applicationIndustry={ros}
