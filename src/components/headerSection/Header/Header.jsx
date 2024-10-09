@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import useScrollVisibility from '@/hooks/useScrollVisibility';
+
 import contacts from '@/data/contacts';
 
 import HeaderLogo from './../HeaderLogo/HeaderLogo';

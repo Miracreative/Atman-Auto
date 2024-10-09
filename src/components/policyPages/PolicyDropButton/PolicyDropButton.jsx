@@ -15,10 +15,10 @@ const PolicyDropButton = ({ isOpenNav, setIsOpenNav }) => {
 		const items = menuItems.about.items;
 		const foundItem = items.find((item) => item.href === pathname);
 
-		return foundItem ? foundItem.text : 'Тема не определена';
+		return foundItem ? foundItem.text : 'Раздел не определен';
 	};
 
-	console.log('pathname:', pathname);
+	// console.log('pathname:', pathname);
 
 	return (
 		<div className={styles.button} onClick={handleOpen}>

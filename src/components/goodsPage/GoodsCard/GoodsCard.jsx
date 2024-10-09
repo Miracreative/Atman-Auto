@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-// import URL from '@/constants/url.js';
-
 import image from '/public/test-image.png';
 
 import styles from './GoodsCard.module.scss';

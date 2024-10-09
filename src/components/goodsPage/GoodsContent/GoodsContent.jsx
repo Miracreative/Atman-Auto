@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-import { URL } from '@/constants/url.js';
+import { ALL_GOODS_URL } from '@/constants/url.js';
 
 import GoodsList from '../GoodsList/GoodsList.jsx';
 import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
@@ -27,7 +27,7 @@ const GoodsContent = () => {
 		try {
 			const params = filter ? { filter: filter.join(',') } : {}; // Если фильтр пуст, отправляем пустые параметры
 
-			const response = await axios.get(URL, { params });
+			const response = await axios.get(ALL_GOODS_URL, { params });
 
 			setProducts(response.data);
 			console.log('Полученные продукты:', response.data);

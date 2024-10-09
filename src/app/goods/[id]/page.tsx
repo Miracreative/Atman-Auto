@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-import { URL } from '@/constants/url.js';
+import { ALL_GOODS_URL } from '@/constants/url.js';
 
 import type { ProductPageProps, ProductsData } from '@/types/product';
 
@@ -21,7 +21,7 @@ const ProductPage = ({ params: { id } }: ProductPageProps) => {
 	useEffect(() => {
 		const fetchProducts = async () => {
 			try {
-				const response = await axios.get<ProductsData[]>(URL);
+				const response = await axios.get<ProductsData[]>(ALL_GOODS_URL);
 				setProducts(response.data);
 			} catch (err) {
 				setError(err instanceof Error ? err.message : 'Неизвестная ошибка');
