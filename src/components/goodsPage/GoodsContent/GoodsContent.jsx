@@ -1,36 +1,39 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
-import axios from 'axios';
-
-import { ALL_GOODS_URL } from '@/constants/url.js';
-
+import { fetchAllProducts, fetchFilteredProducts } from '@/api/goodsService';
 import GoodsList from '../GoodsList/GoodsList.jsx';
 import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
-
 import styles from './GoodsContent.module.scss';
 
 const GoodsContent = () => {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-
 	const [filterMainParam, setFilterMainParam] = useState([
 		0, 0, 0, 0, 0, 0, 0, 0,
 	]);
 
-	console.log(filterMainParam);
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				setLoading(true);
+				const allProducts = await fetchAllProducts();
+				setProducts(allProducts);
+			} catch (err) {
+				setError(err.message);
+			} finally {
+				setLoading(false);
+			}
+		};
+		fetchProducts();
+	}, []);
 
-	const fetchProducts = async (filter) => {
-		setLoading(true);
+	const handleFilterChange = async () => {
 		try {
-			const params = filter ? { filter: filter.join(',') } : {}; // Если фильтр пуст, отправляем пустые параметры
-
-			const response = await axios.get(ALL_GOODS_URL, { params });
-
-			setProducts(response.data);
-			console.log('Полученные продукты:', response.data);
+			setLoading(true);
+			const filteredProducts = await fetchFilteredProducts(filterMainParam);
+			setProducts(filteredProducts);
 		} catch (err) {
 			setError(err.message);
 		} finally {
@@ -38,24 +41,20 @@ const GoodsContent = () => {
 		}
 	};
 
-	useEffect(() => {
-		fetchProducts();
-	}, []);
-
 	if (error) {
 		return <p>Ошибка: {error}</p>;
 	}
 
 	return loading ? (
 		<div className={styles.loading}>
-			<h2>Загрузка информации, подождите...</h2>;
+			<h2>Загрузка информации, подождите...</h2>
 		</div>
 	) : (
 		<section className={styles.section}>
 			<GoodsFilter
 				filter={filterMainParam}
 				setFilter={setFilterMainParam}
-				fetchProducts={fetchProducts}
+				onFilterChange={handleFilterChange}
 			/>
 			<GoodsList products={products} />
 		</section>
