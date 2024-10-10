@@ -14,6 +14,19 @@ import { useState } from 'react';
 
 export default function ConstructionAndRenovation() {
 
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'Применения',
+			href: '/applications',
+		},
+		{
+			title: 'Строительство и ремонт',
+		}
+	];
+
 	const { construction } = applicationData;
 	const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -25,7 +38,11 @@ export default function ConstructionAndRenovation() {
 		<TitleNavigation
 			applicationIndustry={construction}
 			currentIndex={currentIndex}
-			onNavClick={handleNavClick}></TitleNavigation>
+			onNavClick={handleNavClick}
+			breadcrumbs={breadcrumbs}
+		>
+
+		</TitleNavigation>
 
 		<SliderAplications
 			applicationIndustry={construction}

@@ -1,8 +1,9 @@
 import styles from './PageTitleProduction.module.scss';
 import Image from 'next/image';
+import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
 
 
-export default function PageTitleProduction({ title, text }) {
+export default function PageTitleProduction({ title, text, breadcrumbs }) {
 	return (
 		<>
 			<section className={styles.section}>
@@ -28,7 +29,9 @@ export default function PageTitleProduction({ title, text }) {
 						/>
 						<div className={styles.wrapInner}>
 
-							<div className={styles.breadcrumbs}>хлебные крошки == еще больше крошек</div>
+							<div className={styles.breadcrumbs}>
+								<Breadcrumbs items={breadcrumbs} />
+							</div>
 
 							<div className={styles.content}>
 								<h1 className={styles.title}>{title}</h1>

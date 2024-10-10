@@ -14,6 +14,19 @@ import { useState } from 'react';
 
 export default function ElectronicsManufacturing() {
 
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'Применения',
+			href: '/applications',
+		},
+		{
+			title: 'Производство электроники',
+		},
+	];
+
 	const { electronics } = applicationData;
 	const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -25,7 +38,11 @@ export default function ElectronicsManufacturing() {
 		<TitleNavigation
 			applicationIndustry={electronics}
 			currentIndex={currentIndex}
-			onNavClick={handleNavClick}></TitleNavigation>
+			onNavClick={handleNavClick}
+			breadcrumbs={breadcrumbs}
+		>
+
+		</TitleNavigation>
 
 		<SliderAplications
 			applicationIndustry={electronics}

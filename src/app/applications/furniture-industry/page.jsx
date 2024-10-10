@@ -14,6 +14,19 @@ import { useState } from 'react';
 
 export default function FurnitureIndustry() {
 
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'Применения',
+			href: '/applications',
+		},
+		{
+			title: 'Мебельная промышленность',
+		},
+	];
+
 	const { furnitureIndustry } = applicationData;
 	const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -25,7 +38,11 @@ export default function FurnitureIndustry() {
 		<TitleNavigation
 			applicationIndustry={furnitureIndustry}
 			currentIndex={currentIndex}
-			onNavClick={handleNavClick}></TitleNavigation>
+			onNavClick={handleNavClick}
+			breadcrumbs={breadcrumbs}
+		>
+
+		</TitleNavigation>
 
 		<SliderAplications
 			applicationIndustry={furnitureIndustry}

@@ -15,6 +15,19 @@ import { useState } from 'react';
 
 export default function ManufactureOfHouseholdAppliances() {
 
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'Применения',
+			href: '/applications',
+		},
+		{
+			title: 'Производство бытовой техники',
+		},
+	];
+
 	const { householdAppliances } = applicationData;
 	const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,7 +39,11 @@ export default function ManufactureOfHouseholdAppliances() {
 		<TitleNavigation
 			applicationIndustry={householdAppliances}
 			currentIndex={currentIndex}
-			onNavClick={handleNavClick}></TitleNavigation>
+			onNavClick={handleNavClick}
+			breadcrumbs={breadcrumbs}
+		>
+
+		</TitleNavigation>
 
 		<SliderAplications
 			applicationIndustry={householdAppliances}

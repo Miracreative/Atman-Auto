@@ -1,9 +1,22 @@
 import styles from './NewsTitle.module.scss';
+import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
 
 
 
 export default function NewsTitle({ singleNews }) {
-	console.log(singleNews);
+	console.log('НОВОСТЬ ' + singleNews);
+
+	const breadcrumbs = [
+		{ title: 'Главная', href: '/' },
+		{
+			title: 'Новости',
+			href: '/news',
+		},
+		{
+			// title: `${singleNews.title}`,
+			title: 'Новость',
+		},
+	];
 
 	return (
 		<>
@@ -15,7 +28,9 @@ export default function NewsTitle({ singleNews }) {
 
 						<div className={styles.wrapInner}>
 
-							<div className={styles.breadcrumbs}>хлебные крошки == еще больше крошек</div>
+							<div className={styles.breadcrumbs}>
+								<Breadcrumbs items={breadcrumbs} />
+							</div>
 
 							<div className={styles.content}>
 								<h1 className={styles.title}> {singleNews} </h1>

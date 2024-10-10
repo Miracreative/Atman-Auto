@@ -1,6 +1,16 @@
 import PageTitle from './../../../components/PageTitle/PageTitle.jsx';
 
 export default function PersonalDataProcessingPolicy() {
+
+	const breadcrumbs = [
+		{
+			title: 'Главная', href: '/'
+		},
+		{
+			title: 'Политика обработки персональных данных',
+		},
+	];
+
 	return (
 		<>
 
@@ -8,7 +18,9 @@ export default function PersonalDataProcessingPolicy() {
 			<PageTitle
 				title='Политика обработки персональных данных'
 
-				text=''></PageTitle>
+				text=''
+				breadcrumbs={breadcrumbs}
+			></PageTitle>
 
 
 		</>
