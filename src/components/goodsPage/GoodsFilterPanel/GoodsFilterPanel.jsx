@@ -13,11 +13,12 @@ const GoodsFilterPanel = ({
 	setIsOpenFilter,
 	filter,
 	setFilter,
-	fetchProducts,
+	fetchAllGoods,
+	onFilterChange,
 }) => {
 	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]); // Инициализация с первым фильтром
 
-	// console.log(selectedFilters);
+	console.log('Фильтр', filter);
 
 	const handleCheckboxChange = (index) => {
 		// setSelectedFilters({prevFilter})
@@ -70,8 +71,7 @@ const GoodsFilterPanel = ({
 	};
 
 	const handleApply = () => {
-		fetchProducts(filter);
-		console.log('Фильтры применены:', filter);
+		onFilterChange();
 	};
 
 	return (

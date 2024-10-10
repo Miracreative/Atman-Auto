@@ -3,6 +3,7 @@ export const EMAIL_REGEXP = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 export const PHONE_REGEXP =
 	/^(?:\+7|7|8)?[\s-]?(\(?\d{3}\)?)[\s-]?(\d{3})[-\s]?(\d{2})[-\s]?(\d{2})$|^(?:\+7|7|8)?[\s-]?(\d{3})(\d{7})$|^8\s*(\d{3})\s*(\d{3})[-\s]?(\d{2})[-\s]?(\d{2})$/;
 
+// // Массив тестовых телефонных номеров
 // const testNumbers = [
 // 	'+7 912 345-67-89',
 // 	'8 (495) 123-45-67',
@@ -16,6 +17,7 @@ export const PHONE_REGEXP =
 // 	console.log(`${number} is valid: ${PHONE_REGEXP.test(number)}`);
 // });
 
+// // Массив тестовых адресов почты
 // const testEmail = [
 // 	'example@mail.ru',
 // 	'user@example.com',
@@ -42,7 +44,7 @@ export const PHONE_REGEXP =
 // 	'worker@yahoo.com',
 // ];
 
-// Функция валидации для проверки почты
+// // Функция валидации для проверки почты
 // testEmail.forEach((email) => {
 // 	console.log(`${email} is valid: ${EMAIL_REGEXP.test(email)}`);
 // });

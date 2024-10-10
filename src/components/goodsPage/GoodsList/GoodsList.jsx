@@ -3,9 +3,9 @@ import GoodsCard from '../GoodsCard/GoodsCard';
 import styles from './GoodsList.module.scss';
 
 const GoodsList = ({ products }) => {
-	// console.log(products.imageurl);
-	// console.log(products.type);
-	// console.log('Тестируемое поле:', products[0].imageurl);
+	if (!Array.isArray(products)) {
+		return <p className={styles.noData}>По вашему запросу ничего не найдено</p>;
+	}
 
 	return (
 		<ul className={styles.cards}>
@@ -16,7 +16,6 @@ const GoodsList = ({ products }) => {
 						brand={product.brand}
 						title={product.name}
 						subtitle={product.type}
-						// imageURL={product.imageURL[0]}
 						imageurl={'file://nanalit/' + `${product.imageurl}`}
 					/>
 				</li>
