@@ -21,7 +21,6 @@ export const fetchFilteredMainParamGoods = async (filterMainParam) => {
 		`${FILTERED_MAIN_PARAM_GOODS_URL}/${filterMainParam}`,
 	);
 
-	console.log(response);
 	console.log('Получение отфильтрованных продуктов в Товарах:', response.data);
 
 	return response.data;
@@ -33,7 +32,6 @@ export const fetchFilteredAllParamGoods = async (filterAllParam) => {
 		`${FILTERED_ALL_PARAM_GOODS_URL}/${filterAllParam}`,
 	);
 
-	console.log(response);
 	console.log('Получение отфильтрованных продуктов в Опросе:', response.data);
 
 	return response.data;

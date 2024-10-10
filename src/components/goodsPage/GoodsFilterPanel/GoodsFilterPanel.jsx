@@ -2,44 +2,40 @@ import { useState } from 'react';
 
 import filters from '@/data/filters.js';
 
-// import { fetchAllGoods } from '@/api/goodsService.js';
-
 import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
 
 import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = ({
 	isOpenFilter,
-	setIsOpenFilter,
+	// setIsOpenFilter,
 	filter,
 	setFilter,
 	onFilterChange,
 	onFetchProducts,
 }) => {
-	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]); // Инициализация с первым фильтром
+	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]);
 
 	console.log('Фильтр', filter);
 
 	const handleCheckboxChange = (index) => {
 		setFilter((prevFilter) => {
 			const newFilter = [...prevFilter];
-			const currentIndex = index - 1; // Индекс чекбокса в массиве (пропускаем первый)
-			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1; // Переключаем состояние
+			const currentIndex = index - 1;
+			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
 			return newFilter;
 		});
-		// Снимаем выбор с первого чекбокса
 		setSelectedFilters([]);
 	};
 
 	const handleChange = (id) => {
-		// Устанавливаем выбранным только первый чекбокс
 		setSelectedFilters([id]);
-		// Не изменяем массив filter
+		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
 	};
 
 	const handleReset = () => {
 		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-		setSelectedFilters([filters[0].id]); // Сброс к первому фильтру
+		setSelectedFilters([filters[0].id]);
 	};
 
 	const handleApply = () => {
@@ -49,7 +45,6 @@ const GoodsFilterPanel = ({
 			onFetchProducts()
 				.then((data) => {
 					console.log('Данные от fetchAllGoods:', data);
-					// обновите состояние для рендера товаров
 				})
 				.catch((error) => console.error('Ошибка запроса:', error));
 			console.log('Выполняем fetchAllGoods');
@@ -57,10 +52,6 @@ const GoodsFilterPanel = ({
 			onFilterChange();
 			console.log('Выполняем onFilterChange');
 		}
-	};
-
-	const handleFilteredApply = () => {
-		onFilterChange();
 	};
 
 	return (
@@ -91,7 +82,7 @@ const GoodsFilterPanel = ({
 							value={item.value}
 							text={item.text}
 							checked={filter[index] === 1}
-							onChange={() => handleCheckboxChange(index + 1)} // Индекс + 1, так как мы пропускаем первый
+							onChange={() => handleCheckboxChange(index + 1)}
 						/>
 					</li>
 				))}
