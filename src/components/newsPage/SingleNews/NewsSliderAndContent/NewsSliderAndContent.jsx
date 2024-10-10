@@ -13,13 +13,27 @@ import decisionsSliderData from '@/data/decisionsSliderData.jsx';
 
 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
-export default function NewsSliderAndContent() {
+export default function NewsSliderAndContent({ imagessrc, content }) {
 
 	const decisionsData = decisionsSliderData;
+
+	const [imgData, setImgData] = useState([imagessrc]);
+
+	useEffect(() => {
+		setImgData(imagessrc);
+
+	}, [imgData]);
+
+
+
+	console.log(Array.isArray(imagessrc));
+
+	console.log(imagessrc);
+
 
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);
@@ -75,23 +89,23 @@ export default function NewsSliderAndContent() {
 									className={styles.swiper}
 									modules={[Navigation, A11y, Controller]}
 
-									breakpoints={{
-										0: {
-											slidesPerView: 1.5,
-											spaceBetween: 10,
-										},
-										576: {
-											slidesPerView: 2.2,
-											spaceBetween: 10,
-										},
-										768: {
-											slidesPerView: 2.5,
-											spaceBetween: 10,
-										},
-										1024: {
-											slidesPerView: 4.2,
-										},
-									}}
+									// breakpoints={{
+									// 	0: {
+									// 		slidesPerView: 1.5,
+									// 		spaceBetween: 10,
+									// 	},
+									// 	576: {
+									// 		slidesPerView: 2.2,
+									// 		spaceBetween: 10,
+									// 	},
+									// 	768: {
+									// 		slidesPerView: 2.5,
+									// 		spaceBetween: 10,
+									// 	},
+									// 	1024: {
+									// 		slidesPerView: 3,
+									// 	},
+									// }}
 									onSwiper={setSwiper}
 									navigation={{
 										prevEl: '.prev',
@@ -100,21 +114,25 @@ export default function NewsSliderAndContent() {
 
 
 									spaceBetween={20}
-									slidesPerView={4.2}
+									// slidesPerView={3}
 									onSlideChange={(swiper) => onSlideChange(swiper)}
 								>
 
-									{decisionsData.map((item, index) => (
-										<SwiperSlide key={item.id} className={styles.swiperSlide}>
-											<Link className={styles.imgWrap} href={item.href}>
+									{
+										imgData?.map((srcImg, index) => (
+											<SwiperSlide key={index} className={styles.swiperSlide}>
+												<div className={styles.imgWrap} >
+													<Image src={srcImg}
+														width={300}
+														height={300}
+														alt="img"
+													/>
 
+												</div>
 
-
-
-											</Link>
-
-										</SwiperSlide>
-									))}
+											</SwiperSlide>
+										))
+									}
 
 
 								</Swiper>
@@ -145,7 +163,7 @@ export default function NewsSliderAndContent() {
 
 
 							<div className={styles.textWrap}>
-								test
+								{content}
 							</div>
 
 

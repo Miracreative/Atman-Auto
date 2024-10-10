@@ -7,29 +7,28 @@ import NewsSliderAndContent from '@/components/newsPage/SingleNews/NewsSliderAnd
 import { URL_NEWS } from '@/constants/url.js';
 
 import { useRouter } from 'next/router';
-import { useParams } from 'next/router';
+// import { useParams } from 'next/router';
+import { useParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation';
 
-import styles from './NewsPage.module.scss';
 
 const NewsPage = () => {
 
-	// const breadcrumbs = [
-	// 	{ title: 'Главная', href: '/' },
-	// 	{
-	// 		title: 'Новости',
-	// 		href: '/news',
-	// 	},
-	// 	{
-	// 		// title: `${product.brand} ${product.name}`,
-	// 		title: 'Новость',
-	// 	},
-	// ];
 
 	const [news, setNews] = useState([]);
 	const [error, setError] = useState(null);
 	// const [loading, setLoading] = useState(true);
-	// const params = useParams();
-	// const id = params.id;
+	// const router = useRouter();
+	// const { id } = router.query;
+
+
+	const params = useParams();
+	const id = params.id;
+
+	// const searchParams = useSearchParams();
+	// const id = searchParams.get('id');
+
+
 
 	useEffect(() => {
 		const fetchNews = async () => {
@@ -43,25 +42,23 @@ const NewsPage = () => {
 
 		fetchNews();
 	}, []);
-	console.log(news);
+
 
 
 	if (error) {
 		return <p>Ошибка: {error}</p>;
 	}
 
-	// const singleNews = news.find((item) => {
-	// 	console.log(typeof item.id);
-	// 	return item.id.toString() === id;
-	// });
+	const singleNews = news.find((item) => {
+		return item.id.toString() === id;
+	});
+	// const titleProp = singleNews.title;
 
-	// if (singleNews === undefined) {
-	// 	console.log('Элемент не найден');
-	// } else {
-	// 	console.log(singleNews);
-	// }
-	// console.log(typeof id);
-	// console.log(id);
+
+	const title = singleNews?.title;
+	const descr = singleNews?.descr;
+	const content = singleNews?.content;
+	const imagessrc = singleNews?.imagessrc;
 
 
 
@@ -71,9 +68,10 @@ const NewsPage = () => {
 
 	return (
 		<>
-			<NewsTitle></NewsTitle>
+			{/* <NewsTitle title={singleNews.title} descr={singleNews.descr}></NewsTitle> */}
+			<NewsTitle title={title} descr={descr}  ></NewsTitle>
 
-			<NewsSliderAndContent></NewsSliderAndContent>
+			<NewsSliderAndContent imagessrc={imagessrc} content={content}></NewsSliderAndContent>
 		</>
 	);
 };

@@ -3,8 +3,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
 
 
 
-export default function NewsTitle({ singleNews }) {
-	console.log('НОВОСТЬ ' + singleNews);
+export default function NewsTitle({ title, descr }) {
 
 	const breadcrumbs = [
 		{ title: 'Главная', href: '/' },
@@ -13,8 +12,7 @@ export default function NewsTitle({ singleNews }) {
 			href: '/news',
 		},
 		{
-			// title: `${singleNews.title}`,
-			title: 'Новость',
+			title: title,
 		},
 	];
 
@@ -33,8 +31,8 @@ export default function NewsTitle({ singleNews }) {
 							</div>
 
 							<div className={styles.content}>
-								<h1 className={styles.title}> {singleNews} </h1>
-								<div className={styles.text}>2</div>
+								<h1 className={styles.title}> {title} </h1>
+								<div className={styles.text}> {descr} </div>
 							</div>
 
 						</div>
