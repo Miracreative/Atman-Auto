@@ -1,8 +1,8 @@
-'use client';
-
 import { useState } from 'react';
 
 import filters from '@/data/filters.js';
+
+// import { fetchAllGoods } from '@/api/goodsService.js';
 
 import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
 
@@ -13,56 +13,28 @@ const GoodsFilterPanel = ({
 	setIsOpenFilter,
 	filter,
 	setFilter,
-	fetchAllGoods,
 	onFilterChange,
+	onFetchProducts,
 }) => {
 	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]); // Инициализация с первым фильтром
 
 	console.log('Фильтр', filter);
 
 	const handleCheckboxChange = (index) => {
-		// setSelectedFilters({prevFilter})
 		setFilter((prevFilter) => {
 			const newFilter = [...prevFilter];
 			const currentIndex = index - 1; // Индекс чекбокса в массиве (пропускаем первый)
 			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1; // Переключаем состояние
 			return newFilter;
 		});
+		// Снимаем выбор с первого чекбокса
+		setSelectedFilters([]);
 	};
 
 	const handleChange = (id) => {
-		const firstFilterId = filters[0].id; // Получаем идентификатор первого фильтра в момент вызова
-
-		if (id === firstFilterId) {
-			// Если выбран первый фильтр, обнуляем все остальные
-			setFilter([0, 0, 0, 0, 0, 0, 0, 0]); // Обнуляем фильтры
-			setSelectedFilters([firstFilterId]); // Сохраняем только первый фильтр в выбранных
-		} else {
-			setSelectedFilters((prevSelectedFilters) => {
-				return prevSelectedFilters.includes(id)
-					? prevSelectedFilters.filter((filterId) => filterId !== id) // Удаляем фильтр
-					: [...prevSelectedFilters, id]; // Добавляем фильтр
-			});
-
-			// Отключаем первый фильтр, если он был активирован
-			if (selectedFilters.includes(firstFilterId)) {
-				setFilter((prevFilter) => {
-					const newFilter = [...prevFilter];
-					newFilter.fill(0); // Заполняем массив нулями
-					console.log('newFilter', newFilter);
-
-					// Включаем текущий чекбокс (1)
-					newFilter[filters.findIndex((filter) => filter.id === id)] = 1;
-					return newFilter;
-				});
-			} else {
-				setFilter((prevFilter) => {
-					const newFilter = [...prevFilter];
-					newFilter[filters.findIndex((filter) => filter.id === id)] = 1; // Включаем текущий чекбокс
-					return newFilter;
-				});
-			}
-		}
+		// Устанавливаем выбранным только первый чекбокс
+		setSelectedFilters([id]);
+		// Не изменяем массив filter
 	};
 
 	const handleReset = () => {
@@ -71,6 +43,23 @@ const GoodsFilterPanel = ({
 	};
 
 	const handleApply = () => {
+		console.log('Фильтр применен', filter);
+
+		if (selectedFilters.includes(filters[0].id)) {
+			onFetchProducts()
+				.then((data) => {
+					console.log('Данные от fetchAllGoods:', data);
+					// обновите состояние для рендера товаров
+				})
+				.catch((error) => console.error('Ошибка запроса:', error));
+			console.log('Выполняем fetchAllGoods');
+		} else {
+			onFilterChange();
+			console.log('Выполняем onFilterChange');
+		}
+	};
+
+	const handleFilteredApply = () => {
 		onFilterChange();
 	};
 
@@ -88,11 +77,11 @@ const GoodsFilterPanel = ({
 						id={filters[0].id}
 						value={filters[0].value}
 						text={filters[0].text}
-						// checked={selectedFilters.includes(filters[0].id)}
-						checked={selectedFilters}
+						checked={selectedFilters.includes(filters[0].id)}
 						onChange={() => handleChange(filters[0].id)}
 					/>
 				</li>
+
 				{/* Отрисовка остальных фильтров, пропуская первый */}
 				{filters.slice(1).map((item, index) => (
 					<li className={styles.filter} key={item.id}>
@@ -112,13 +101,15 @@ const GoodsFilterPanel = ({
 					className={`${styles.buttonApply} button`}
 					onClick={handleApply}
 				>
-					Применить
+					{/* Применить */}
+					Бахнуть пивка
 				</button>
 				<button
 					className={`${styles.buttonReset} button`}
 					onClick={handleReset}
 				>
-					Сбросить
+					{/* Сбросить */}
+					Зайти в танки
 				</button>
 			</div>
 		</div>
