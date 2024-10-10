@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
-import { fetchAllProducts, fetchFilteredProducts } from '@/api/goodsService';
+import { fetchAllGoods, fetchFilteredGoods } from '@/api/goodsService';
 
 import GoodsList from '../GoodsList/GoodsList.jsx';
 import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
 
 import styles from './GoodsContent.module.scss';
+// import { log } from 'console';
 
 const GoodsContent = () => {
 	const [products, setProducts] = useState([]);
@@ -21,8 +22,8 @@ const GoodsContent = () => {
 		const fetchProducts = async () => {
 			try {
 				setLoading(true);
-				const allProducts = await fetchAllProducts();
-				setProducts(allProducts);
+				const allProducts = await fetchAllGoods();
+				setProducts(allProducts || []); // Убедитесь, что это массив
 			} catch (err) {
 				setError(err.message);
 			} finally {
@@ -35,10 +36,14 @@ const GoodsContent = () => {
 	const handleFilterChange = async () => {
 		try {
 			setLoading(true);
-			const filteredProducts = await fetchFilteredProducts(filterMainParam);
-			setProducts(filteredProducts);
+			console.log('ПроверОчка', filterMainParam);
+
+			const filteredProducts = await fetchFilteredGoods(filterMainParam);
+			setProducts(filteredProducts || []); // Убедитесь, что это массив
 		} catch (err) {
-			setError(err.message);
+			setError(
+				err.message || 'Произошла ошибка при запросе отфильтрованных товаров',
+			);
 		} finally {
 			setLoading(false);
 		}
@@ -59,7 +64,12 @@ const GoodsContent = () => {
 				setFilter={setFilterMainParam}
 				onFilterChange={handleFilterChange}
 			/>
-			<GoodsList products={products} />
+
+			{products.length === 0 ? (
+				<p>Ничего не найдено</p>
+			) : (
+				<GoodsList products={products} />
+			)}
 		</section>
 	);
 };
