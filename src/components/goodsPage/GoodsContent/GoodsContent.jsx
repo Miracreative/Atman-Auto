@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { fetchAllGoods, fetchFilteredMainParamGoods } from '@/api/goodsService';
 
-import { LOADING_INFO_TEXT, LOADING_GOODS_ERROR } from '@/utils/informMessages';
+import { LOADING_INFO, LOADING_DATA_ERROR } from '@/utils/informMessages';
 
 import GoodsList from '../GoodsList/GoodsList.jsx';
 import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
@@ -43,21 +43,13 @@ const GoodsContent = () => {
 			);
 			setProducts(filteredProducts || []);
 		} catch (err) {
-			setError(err.message || { LOADING_GOODS_ERROR });
+			setError(err.message || { LOADING_DATA_ERROR });
 		} finally {
 			setLoading(false);
 		}
 	};
 
-	if (error) {
-		return <p>Ошибка: {error}</p>;
-	}
-
-	return loading ? (
-		<div className={styles.loading}>
-			<h2>{LOADING_INFO_TEXT}</h2>
-		</div>
-	) : (
+	return (
 		<section className={styles.section}>
 			<GoodsFilter
 				filter={filterMainParam}
@@ -66,9 +58,20 @@ const GoodsContent = () => {
 				onFetchProducts={handleFetchProducts}
 			/>
 
-			{products.length === 0 ? (
-				<p>{LOADING_GOODS_ERROR}</p>
-			) : (
+			<div className={styles.messageContainer}>
+				{loading && <p className={styles.message}>{LOADING_INFO}</p>}
+				{error && !loading && (
+					<p className={styles.message}>{LOADING_DATA_ERROR}</p>
+				)}
+				{!loading &&
+					!error &&
+					Array.isArray(products) &&
+					products.length === 0 && (
+						<p className={styles.message}>{NOT_FOUND_INFO}</p>
+					)}
+			</div>
+
+			{!loading && !error && products.length > 0 && (
 				<GoodsList products={products} />
 			)}
 		</section>

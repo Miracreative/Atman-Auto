@@ -1,4 +1,4 @@
-import { REQUEST_ERROR } from '@/utils/informMessages';
+// import { NOT_FOUND_INFO } from '@/utils/informMessages';
 
 import GoodsCard from '../GoodsCard/GoodsCard';
 
@@ -6,7 +6,7 @@ import styles from './GoodsList.module.scss';
 
 const GoodsList = ({ products }) => {
 	if (!Array.isArray(products)) {
-		return <p className={styles.noData}>{REQUEST_ERROR}</p>;
+		return null;
 	}
 
 	return (
@@ -18,7 +18,6 @@ const GoodsList = ({ products }) => {
 						brand={product.brand}
 						title={product.name}
 						subtitle={product.type}
-						// imageurl={'file://nanalit/' + `${product.imageurl}`}
 						imageurl={'file://nanalit/' + product.imageurl}
 					/>
 				</li>

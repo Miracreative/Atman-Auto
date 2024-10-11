@@ -88,15 +88,15 @@ const GoodsFilterPanel = ({
 			localStorage.setItem('filterFlag', 'true');
 			onFetchProducts()
 				.then((data) => {
-					console.log('Данные от fetchAllGoods:', data);
+					// console.log('Данные от fetchAllGoods:', data);
 				})
 				.catch((error) => console.error('Ошибка запроса:', error));
-			console.log('Выполняем fetchAllGoods');
+			// console.log('Выполняем fetchAllGoods');
 		} else {
 			onFilterChange();
 			localStorage.setItem('filterFlag', 'false');
-			console.log('selectedFilters', filter);
-			console.log('Выполняем onFilterChange');
+			// console.log('selectedFilters', filter);
+			// console.log('Выполняем onFilterChange');
 		}
 	};
 
