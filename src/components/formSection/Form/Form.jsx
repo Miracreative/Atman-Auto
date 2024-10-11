@@ -8,6 +8,15 @@ import { useForm } from 'react-hook-form';
 
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
+import {
+	MIN_LENGTH_FIELD,
+	REQUIRED_FIELD,
+	FORM_SUBMISSION_ERROR,
+	INCORRECT_EMAIL,
+	INCORRECT_PHONE,
+	FORM_SUCHESSED,
+} from '@/utils/informMessages.js';
+
 import attachmentIcon from '../../../../public/attachment-icon.svg';
 import checkIcon from '../../../../public/big-check.svg';
 
@@ -82,9 +91,9 @@ const Form = ({ isOpen, onClose }) => {
 				body: formData,
 			});
 			if (response.ok) {
-				console.log('Форма успешно отправлена');
+				console.log(FORM_SUCHESSED);
 			} else {
-				console.error('Ошибка при отправке формы');
+				console.error(FORM_SUBMISSION_ERROR);
 			}
 		} catch (error) {
 			console.error('Ошибка сети:', error);
@@ -125,10 +134,10 @@ const Form = ({ isOpen, onClose }) => {
 						placeholder="Имя"
 						register={register}
 						validations={{
-							required: 'Обязательное поле',
+							required: REQUIRED_FIELD,
 							minLength: {
 								value: 2,
-								message: 'Минимальное количество символов: 2',
+								message: MIN_LENGTH_FIELD,
 							},
 						}}
 						errors={errors}
@@ -141,10 +150,10 @@ const Form = ({ isOpen, onClose }) => {
 						placeholder="Фамилия"
 						register={register}
 						validations={{
-							required: 'Обязательное поле',
+							required: REQUIRED_FIELD,
 							minLength: {
 								value: 2,
-								message: 'Минимальное количество символов: 2',
+								message: MIN_LENGTH_FIELD,
 							},
 						}}
 						errors={errors}
@@ -157,10 +166,10 @@ const Form = ({ isOpen, onClose }) => {
 						placeholder="Номер телефона"
 						register={register}
 						validations={{
-							required: 'Обязательное поле',
+							required: REQUIRED_FIELD,
 							pattern: {
 								value: PHONE_REGEXP,
-								message: 'Некорректный номер телефона',
+								message: INCORRECT_PHONE,
 							},
 						}}
 						errors={errors}
@@ -173,10 +182,10 @@ const Form = ({ isOpen, onClose }) => {
 						placeholder="Почта"
 						register={register}
 						validations={{
-							required: 'Обязательное поле',
+							required: REQUIRED_FIELD,
 							pattern: {
 								value: EMAIL_REGEXP,
-								message: 'Некорректный адрес электронной почты',
+								message: INCORRECT_EMAIL,
 							},
 						}}
 						errors={errors}
