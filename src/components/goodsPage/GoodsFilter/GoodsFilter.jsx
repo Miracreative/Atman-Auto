@@ -11,7 +11,12 @@ import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
 
 import styles from './GoodsFilter.module.scss';
 
-const GoodsFilter = ({ filter, setFilter, fetchAllGoods, onFilterChange }) => {
+const GoodsFilter = ({
+	filter,
+	setFilter,
+	onFilterChange,
+	onFetchProducts,
+}) => {
 	const [isMobile, setIsMobile] = useState(false);
 
 	const [isOpenFilter, setIsOpenFilter] = useState(true);
@@ -33,11 +38,11 @@ const GoodsFilter = ({ filter, setFilter, fetchAllGoods, onFilterChange }) => {
 			{!isMobile && (
 				<GoodsFilterPanel
 					isOpenFilter={isOpenFilter}
-					setIsOpenFilter={setIsOpenFilter}
+					// setIsOpenFilter={setIsOpenFilter}
 					filter={filter}
 					setFilter={setFilter}
-					fetchAllGoods={fetchAllGoods}
 					onFilterChange={onFilterChange}
+					onFetchProducts={onFetchProducts}
 				/>
 			)}
 
@@ -49,11 +54,11 @@ const GoodsFilter = ({ filter, setFilter, fetchAllGoods, onFilterChange }) => {
 					/>
 					<GoodsFilterPanel
 						isOpenFilter={isOpenFilter}
-						setIsOpenFilter={setIsOpenFilter}
+						// setIsOpenFilter={setIsOpenFilter}
 						filter={filter}
 						setFilter={setFilter}
-						fetchAllGoods={fetchAllGoods}
 						onFilterChange={onFilterChange}
+						onFetchProducts={onFetchProducts}
 					/>
 				</div>
 			)}

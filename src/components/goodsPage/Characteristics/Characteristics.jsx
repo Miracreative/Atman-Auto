@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-import RedDot from '@/components/RedDot/RedDot';
+// import RedDot from '@/components/RedDot/RedDot';
+import CharacteristicItem from '../CharacteristicItem/CharacteristicItem';
 
 import styles from './Characteristics.module.scss';
 
@@ -8,64 +9,27 @@ const Characteristics = ({ product }) => {
 	return (
 		<div>
 			<h2 className={styles.title}>Характеристики</h2>
+
 			<ul className={styles.list}>
-				<li className={styles.item}>
-					<div className={styles.redDot}>
-						<RedDot />
-					</div>
-					<p className={styles.itemText}>
-						Бренд: <span>{product.brand}</span>
-					</p>
-				</li>
-				<li className={styles.item}>
-					<div className={styles.redDot}>
-						<RedDot />
-					</div>
-					<p className={styles.itemText}>
-						Толщина: <span>{product.thickness}</span>
-					</p>
-				</li>
-				<li className={styles.item}>
-					<div className={styles.redDot}>
-						<RedDot />
-					</div>
-					<p className={styles.itemText}>
-						Тип основы: <span>{product.base}</span>
-					</p>
-				</li>
-				<li className={styles.item}>
-					<div className={styles.redDot}>
-						<RedDot />
-					</div>
-					<p className={styles.itemText}>
-						Тип клея: <span>{product.typeGlue}</span>
-					</p>
-				</li>
-				<li className={styles.item}>
-					<div className={styles.redDot}>
-						<RedDot />
-					</div>
-					<p className={styles.itemText}>
-						Цвет: <span>{product.color}</span>
-					</p>
-				</li>
-				<li className={styles.item}>
-					<div className={styles.redDot}>
-						<RedDot />
-					</div>
-					<p className={styles.itemText}>
-						Тип лайнера: <span>{product.linerType}</span>
-					</p>
-				</li>
-				<li className={styles.item}>
-					<div className={styles.redDot}>
-						<RedDot />
-					</div>
-					<p className={styles.itemText}>
-						Термостойкость: <span>{product.heatResistance}</span>
-					</p>
-				</li>
+				<CharacteristicItem label="Бренд" value={product.brand} />
+				<CharacteristicItem label="Тип" value={product.type} />
+				<CharacteristicItem label="Размер" value={product.size} />
+				<CharacteristicItem label="Материал" value={product.material} />
+				<CharacteristicItem label="Материал основы" value={product.baseType} />
+				<CharacteristicItem label="Толщина" value={product.thickness} />
+				<CharacteristicItem label="Объем" value={product.volume} />
+				<CharacteristicItem label="Плотность" value={product.dencity} />
+				<CharacteristicItem label="Тип основы" value={product.base} />
+				<CharacteristicItem label="Тип клея" value={product.typeGlue} />
+				<CharacteristicItem label="Цвет" value={product.color} />
+				<CharacteristicItem label="Тип лайнера" value={product.linerType} />
+				<CharacteristicItem
+					label="Термостойкость"
+					value={product.heatResistance}
+				/>
+				<CharacteristicItem label="Количество" value={product.pcs} />
 			</ul>
+
 			<div className={`${styles.downloadContainer}`}>
 				<Link
 					href={product.pdfUrl || '#'}

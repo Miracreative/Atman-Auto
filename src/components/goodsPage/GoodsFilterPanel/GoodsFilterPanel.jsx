@@ -1,77 +1,86 @@
-'use client';
-
-import { useState } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
 import filters from '@/data/filters.js';
-
 import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
-
 import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = ({
 	isOpenFilter,
-	setIsOpenFilter,
 	filter,
 	setFilter,
-	fetchAllGoods,
 	onFilterChange,
+	onFetchProducts,
 }) => {
-	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]); // Инициализация с первым фильтром
+	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]);
+	const [flag, setFlag] = useState(true);
+	const ref = useRef(null);
 
-	console.log('Фильтр', filter);
+	// Чтение флага из localStorage
+	useEffect(() => {
+		const storedFlag = localStorage.getItem('filterFlag');
+		const initialFlag = storedFlag !== null ? JSON.parse(storedFlag) : true;
+		if (!filter) {
+			setFilter([0, 0, 0, 0, 0, 0, 0, 0]); // или другая логика для начального состояния
+		}
+		setSelectedFilters([filters[0].id]);
+		setFlag(initialFlag);
+	}, []);
+
+	// Сохранение флага в localStorage
+	useEffect(() => {
+		localStorage.setItem('filterFlag', JSON.stringify(flag));
+	}, [flag]);
 
 	const handleCheckboxChange = (index) => {
-		// setSelectedFilters({prevFilter})
 		setFilter((prevFilter) => {
 			const newFilter = [...prevFilter];
-			const currentIndex = index - 1; // Индекс чекбокса в массиве (пропускаем первый)
-			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1; // Переключаем состояние
+			const currentIndex = index - 1;
+			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
 			return newFilter;
 		});
+		setFlag(false);
+		setSelectedFilters([]);
 	};
 
 	const handleChange = (id) => {
-		const firstFilterId = filters[0].id; // Получаем идентификатор первого фильтра в момент вызова
-
-		if (id === firstFilterId) {
-			// Если выбран первый фильтр, обнуляем все остальные
-			setFilter([0, 0, 0, 0, 0, 0, 0, 0]); // Обнуляем фильтры
-			setSelectedFilters([firstFilterId]); // Сохраняем только первый фильтр в выбранных
-		} else {
-			setSelectedFilters((prevSelectedFilters) => {
-				return prevSelectedFilters.includes(id)
-					? prevSelectedFilters.filter((filterId) => filterId !== id) // Удаляем фильтр
-					: [...prevSelectedFilters, id]; // Добавляем фильтр
-			});
-
-			// Отключаем первый фильтр, если он был активирован
-			if (selectedFilters.includes(firstFilterId)) {
-				setFilter((prevFilter) => {
-					const newFilter = [...prevFilter];
-					newFilter.fill(0); // Заполняем массив нулями
-					console.log('newFilter', newFilter);
-
-					// Включаем текущий чекбокс (1)
-					newFilter[filters.findIndex((filter) => filter.id === id)] = 1;
-					return newFilter;
-				});
-			} else {
-				setFilter((prevFilter) => {
-					const newFilter = [...prevFilter];
-					newFilter[filters.findIndex((filter) => filter.id === id)] = 1; // Включаем текущий чекбокс
-					return newFilter;
-				});
+		setSelectedFilters((prevSelected) =>
+			prevSelected.includes(id)
+				? prevSelected.filter((item) => item !== id)
+				: [...prevSelected, id],
+		);
+		setFilter((prevFilter) => {
+			// Удалите сброс filter, если он не нужен
+			const currentIndex =
+				filters.findIndex((filterItem) => filterItem.id === id) - 1;
+			if (currentIndex >= 0) {
+				const newFilter = [...prevFilter];
+				newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
+				return newFilter;
 			}
-		}
+			return prevFilter;
+		});
+		setFlag(true);
 	};
 
 	const handleReset = () => {
 		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-		setSelectedFilters([filters[0].id]); // Сброс к первому фильтру
+		setSelectedFilters([filters[0].id]);
 	};
 
 	const handleApply = () => {
-		onFilterChange();
+		console.log('Фильтр применен', filter);
+		if (selectedFilters.includes(filters[0].id)) {
+			onFetchProducts()
+				.then((data) => {
+					console.log('Данные от fetchAllGoods:', data);
+				})
+				.catch((error) => console.error('Ошибка запроса:', error));
+			console.log('Выполняем fetchAllGoods');
+		} else {
+			onFilterChange();
+			console.log('selectedFilters', filter);
+			console.log('Выполняем onFilterChange');
+		}
+		// Оставьте setFlag(false) только в случае, если вам действительно нужно сбросить флаг
 	};
 
 	return (
@@ -81,19 +90,17 @@ const GoodsFilterPanel = ({
 			}`}
 		>
 			<ul className={styles.filters}>
-				{/* Отрисовка первого фильтра отдельно */}
 				<li className={styles.filter}>
 					<GoodsFilterItem
 						name={filters[0].name}
 						id={filters[0].id}
 						value={filters[0].value}
 						text={filters[0].text}
-						// checked={selectedFilters.includes(filters[0].id)}
-						checked={selectedFilters}
+						checked={selectedFilters.includes(filters[0].id)}
 						onChange={() => handleChange(filters[0].id)}
+						ref={ref}
 					/>
 				</li>
-				{/* Отрисовка остальных фильтров, пропуская первый */}
 				{filters.slice(1).map((item, index) => (
 					<li className={styles.filter} key={item.id}>
 						<GoodsFilterItem
@@ -102,7 +109,7 @@ const GoodsFilterPanel = ({
 							value={item.value}
 							text={item.text}
 							checked={filter[index] === 1}
-							onChange={() => handleCheckboxChange(index + 1)} // Индекс + 1, так как мы пропускаем первый
+							onChange={() => handleCheckboxChange(index + 1)}
 						/>
 					</li>
 				))}
@@ -112,13 +119,13 @@ const GoodsFilterPanel = ({
 					className={`${styles.buttonApply} button`}
 					onClick={handleApply}
 				>
-					Применить
+					Бахнуть пивка
 				</button>
 				<button
 					className={`${styles.buttonReset} button`}
 					onClick={handleReset}
 				>
-					Сбросить
+					Зайти в танки
 				</button>
 			</div>
 		</div>
