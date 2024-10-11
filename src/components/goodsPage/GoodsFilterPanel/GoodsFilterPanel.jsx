@@ -1,22 +1,34 @@
-import { useState } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
 import filters from '@/data/filters.js';
-
 import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
-
 import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = ({
 	isOpenFilter,
-	// setIsOpenFilter,
 	filter,
 	setFilter,
 	onFilterChange,
 	onFetchProducts,
 }) => {
 	const [selectedFilters, setSelectedFilters] = useState([filters[0].id]);
+	const [flag, setFlag] = useState(true);
+	const ref = useRef(null);
 
-	console.log('Фильтр', filter);
+	// Чтение флага из localStorage
+	useEffect(() => {
+		const storedFlag = localStorage.getItem('filterFlag');
+		const initialFlag = storedFlag !== null ? JSON.parse(storedFlag) : true;
+		if (!filter) {
+			setFilter([0, 0, 0, 0, 0, 0, 0, 0]); // или другая логика для начального состояния
+		}
+		setSelectedFilters([filters[0].id]);
+		setFlag(initialFlag);
+	}, []);
+
+	// Сохранение флага в localStorage
+	useEffect(() => {
+		localStorage.setItem('filterFlag', JSON.stringify(flag));
+	}, [flag]);
 
 	const handleCheckboxChange = (index) => {
 		setFilter((prevFilter) => {
@@ -25,12 +37,28 @@ const GoodsFilterPanel = ({
 			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
 			return newFilter;
 		});
+		setFlag(false);
 		setSelectedFilters([]);
 	};
 
 	const handleChange = (id) => {
-		setSelectedFilters([id]);
-		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
+		setSelectedFilters((prevSelected) =>
+			prevSelected.includes(id)
+				? prevSelected.filter((item) => item !== id)
+				: [...prevSelected, id],
+		);
+		setFilter((prevFilter) => {
+			// Удалите сброс filter, если он не нужен
+			const currentIndex =
+				filters.findIndex((filterItem) => filterItem.id === id) - 1;
+			if (currentIndex >= 0) {
+				const newFilter = [...prevFilter];
+				newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
+				return newFilter;
+			}
+			return prevFilter;
+		});
+		setFlag(true);
 	};
 
 	const handleReset = () => {
@@ -40,7 +68,6 @@ const GoodsFilterPanel = ({
 
 	const handleApply = () => {
 		console.log('Фильтр применен', filter);
-
 		if (selectedFilters.includes(filters[0].id)) {
 			onFetchProducts()
 				.then((data) => {
@@ -50,8 +77,10 @@ const GoodsFilterPanel = ({
 			console.log('Выполняем fetchAllGoods');
 		} else {
 			onFilterChange();
+			console.log('selectedFilters', filter);
 			console.log('Выполняем onFilterChange');
 		}
+		// Оставьте setFlag(false) только в случае, если вам действительно нужно сбросить флаг
 	};
 
 	return (
@@ -61,7 +90,6 @@ const GoodsFilterPanel = ({
 			}`}
 		>
 			<ul className={styles.filters}>
-				{/* Отрисовка первого фильтра отдельно */}
 				<li className={styles.filter}>
 					<GoodsFilterItem
 						name={filters[0].name}
@@ -70,10 +98,9 @@ const GoodsFilterPanel = ({
 						text={filters[0].text}
 						checked={selectedFilters.includes(filters[0].id)}
 						onChange={() => handleChange(filters[0].id)}
+						ref={ref}
 					/>
 				</li>
-
-				{/* Отрисовка остальных фильтров, пропуская первый */}
 				{filters.slice(1).map((item, index) => (
 					<li className={styles.filter} key={item.id}>
 						<GoodsFilterItem
@@ -92,14 +119,12 @@ const GoodsFilterPanel = ({
 					className={`${styles.buttonApply} button`}
 					onClick={handleApply}
 				>
-					{/* Применить */}
 					Бахнуть пивка
 				</button>
 				<button
 					className={`${styles.buttonReset} button`}
 					onClick={handleReset}
 				>
-					{/* Сбросить */}
 					Зайти в танки
 				</button>
 			</div>
@@ -108,131 +133,3 @@ const GoodsFilterPanel = ({
 };
 
 export default GoodsFilterPanel;
-
-//* Старый код *//
-
-// import React, { useState, useCallback, useEffect } from 'react';
-
-// import filters from '@/data/filters.js';
-
-// import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
-
-// import styles from './GoodsFilterPanel.module.scss';
-
-// const GoodsFilterPanel = React.memo(
-// 	({
-// 		isOpenFilter,
-// 		// setIsOpenFilter,
-// 		filter,
-// 		setFilter,
-// 		onFilterChange,
-// 		onFetchProducts,
-// 	}) => {
-// 		const [flag, setFlag] = useState(true);
-
-// 		const [selectedFilters, setSelectedFilters] = useState([filters[0].id]);
-
-// 		// console.log('Фильтр', filter);
-
-// 		const handleCheckboxChange = useCallback((index) => {
-// 			setFilter((prevFilter) => {
-// 				const newFilter = [...prevFilter];
-// 				const currentIndex = index - 1;
-// 				newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
-// 				return newFilter;
-// 			});
-// 			setSelectedFilters([]);
-// 			setFlag(false);
-// 			console.log('Флаг', flag);
-// 		}, []);
-
-// 		const handleChange = useCallback((id) => {
-// 			setSelectedFilters([id]);
-// 			setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-// 			setFlag(true);
-// 		}, []);
-
-// 		const handleReset = useCallback(() => {
-// 			setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-// 			setSelectedFilters([filters[0].id]);
-// 		}, []);
-
-// 		const handleApply = useCallback(() => {
-// 			// console.log('Фильтр применен', filter);
-// 			if (selectedFilters.includes(filters[0].id)) {
-// 				onFetchProducts();
-// 				// .then((data) => {
-// 				// console.log('Данные от fetchAllGoods:', data);
-// 				// })
-// 				// .catch((error) => console.error('Ошибка запроса:', error));
-// 				// console.log('Выполняем fetchAllGoods');
-// 			} else {
-// 				onFilterChange();
-// 				// console.log('Выполняем onFilterChange');
-// 			}
-// 		}, [filter, selectedFilters, onFetchProducts, onFilterChange]);
-
-// 		useEffect(() => {
-// 			if (flag) {
-// 				// setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-// 				// setSelectedFilters([filters[0].id]);
-// 				setFlag(false);
-// 				console.log('Флаг в useEffect', flag);
-// 			}
-// 		}, [flag]);
-
-// 		return (
-// 			<div
-// 				className={`${styles.filterPanel} ${
-// 					isOpenFilter ? styles.visibleMenu : styles.hiddenMenu
-// 				}`}
-// 			>
-// 				<ul className={styles.filters}>
-// 					{/* Отрисовка первого фильтра отдельно */}
-// 					<li className={styles.filter}>
-// 						<GoodsFilterItem
-// 							name={filters[0].name}
-// 							id={filters[0].id}
-// 							value={filters[0].value}
-// 							text={filters[0].text}
-// 							checked={selectedFilters.includes(filters[0].id)}
-// 							onChange={() => handleChange(filters[0].id)}
-// 						/>
-// 					</li>
-
-// 					{/* Отрисовка остальных фильтров, пропуская первый */}
-// 					{filters.slice(1).map((item, index) => (
-// 						<li className={styles.filter} key={item.id}>
-// 							<GoodsFilterItem
-// 								name={item.name}
-// 								id={item.id}
-// 								value={item.value}
-// 								text={item.text}
-// 								checked={filter[index] === 1}
-// 								onChange={() => handleCheckboxChange(index + 1)}
-// 							/>
-// 						</li>
-// 					))}
-// 				</ul>
-// 				<div className={styles.buttons}>
-// 					<button
-// 						className={`${styles.buttonApply} button`}
-// 						onClick={handleApply}
-// 					>
-// 						{/* Применить */}
-// 						Бахнуть пивка
-// 					</button>
-// 					<button
-// 						className={`${styles.buttonReset} button`}
-// 						onClick={handleReset}
-// 					>
-// 						{/* Сбросить */}
-// 						Зайти в танки
-// 					</button>
-// 				</div>
-// 			</div>
-// 		);
-// 	},
-// );
-
-// export default GoodsFilterPanel;

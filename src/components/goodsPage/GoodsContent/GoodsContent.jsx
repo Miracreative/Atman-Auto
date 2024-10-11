@@ -35,7 +35,7 @@ const GoodsContent = () => {
 		handleFetchProducts();
 	}, []);
 
-	const handleFilterChange = async () => {
+	const handleFilterChange = async (e) => {
 		try {
 			setLoading(true);
 			const filteredProducts = await fetchFilteredMainParamGoods(
