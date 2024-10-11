@@ -10,63 +10,81 @@ const GoodsFilterPanel = ({
 	onFilterChange,
 	onFetchProducts,
 }) => {
-	const [isFirstFilterSelected, setIsFirstFilterSelected] = useState(false);
-	const [otherSelectedFilters, setOtherSelectedFilters] = useState([]);
+	const [selectedFilters, setSelectedFilters] = useState([]);
+	const [flag, setFlag] = useState(true);
+	const ref = useRef(null);
+	const storedFlag = localStorage.getItem('filterFlag');
 
-	const handleFirstCheckboxChange = (id) => {
-		const newValue = !isFirstFilterSelected;
-		setIsFirstFilterSelected(newValue);
-		localStorage.setItem('filterFlag', newValue ? 'true' : 'false');
-
-		if (newValue) {
-			setOtherSelectedFilters([]);
-			setFilter([1, 0, 0, 0, 0, 0, 0, 0]);
-		} else {
-			setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-		}
-	};
-
-	const handleOtherCheckboxChange = (id) => {
-		let updatedFilters = [...otherSelectedFilters];
-		if (updatedFilters.includes(id)) {
-			updatedFilters = updatedFilters.filter((item) => item !== id);
-		} else {
-			updatedFilters.push(id);
-		}
-		setOtherSelectedFilters(updatedFilters);
-		localStorage.setItem('filterFlag', 'false');
-
-		const newFilterState = filters
-			.slice(1)
-			.map((filterItem) => (updatedFilters.includes(filterItem.id) ? 1 : 0));
-		setFilter(newFilterState);
-		setIsFirstFilterSelected(false);
-	};
-
+	// Чтение флага из localStorage
 	useEffect(() => {
-		const storedFlag = localStorage.getItem('filterFlag');
-		if (storedFlag === 'true') {
-			setIsFirstFilterSelected(true);
-			setOtherSelectedFilters([]);
-			setFilter([1, 0, 0, 0, 0, 0, 0, 0]);
-		} else if (storedFlag === 'false') {
-			setIsFirstFilterSelected(false);
-			setOtherSelectedFilters([]);
-			setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
+		if (storedFlag == '' || storedFlag == null || storedFlag == 'true') {
+			localStorage.setItem('filterFlag', 'true');
+			setSelectedFilters([filters[0].id]);
+		} else {
+			localStorage.setItem('filterFlag', 'false');
 		}
-		// Если необходимо инициализировать другие фильтры из localStorage, добавьте соответствующую логику
+		if (!filter) {
+			setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
+			localStorage.setItem('filterFlag', 'true');
+		}
+
+		setFlag(false);
 	}, []);
 
-	const handleReset = () => {
-		setIsFirstFilterSelected(true);
-		setOtherSelectedFilters([]);
-		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
+	// Сохранение флага в localStorage
+	useEffect(() => {
+		if (localStorage.getItem('filterFlag') == 'false') {
+			setSelectedFilters([]);
+		} else {
+			setSelectedFilters([filters[0].id]);
+		}
+	}, [storedFlag, flag]);
+
+	const handleCheckboxChange = (index) => {
+		localStorage.setItem('filterFlag', 'false');
+
+		setFilter((prevFilter) => {
+			const newFilter = [...prevFilter];
+			const currentIndex = index - 1;
+			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
+			return newFilter;
+		});
+		setFlag(false);
+		setSelectedFilters([]);
+	};
+
+	const handleChange = (id) => {
 		localStorage.setItem('filterFlag', 'true');
+		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
+
+		setSelectedFilters((prevSelected) =>
+			prevSelected.includes(id)
+				? prevSelected.filter((item) => item !== id)
+				: [...prevSelected, id],
+		);
+
+		setFilter((prevFilter) => {
+			const currentIndex =
+				filters.findIndex((filterItem) => filterItem.id === id) - 1;
+			if (currentIndex >= 0) {
+				const newFilter = [...prevFilter];
+				newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1;
+				return newFilter;
+			}
+			return prevFilter;
+		});
+		setFlag(true);
+	};
+
+	const handleReset = () => {
+		localStorage.setItem('filterFlag', 'true');
+		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
+		setSelectedFilters([filters[0].id]);
 	};
 
 	const handleApply = () => {
 		console.log('Фильтр применен', filter);
-		if (isFirstFilterSelected) {
+		if (selectedFilters.includes(filters[0].id)) {
 			localStorage.setItem('filterFlag', 'true');
 			onFetchProducts()
 				.then((data) => {
@@ -95,19 +113,20 @@ const GoodsFilterPanel = ({
 						id={filters[0].id}
 						value={filters[0].value}
 						text={filters[0].text}
-						checked={isFirstFilterSelected}
-						onChange={() => handleFirstCheckboxChange(filters[0].id)}
+						checked={selectedFilters.includes(filters[0].id)}
+						onChange={() => handleChange(filters[0].id)}
+						ref={ref}
 					/>
 				</li>
-				{filters.slice(1).map((item) => (
+				{filters.slice(1).map((item, index) => (
 					<li className={styles.filter} key={item.id}>
 						<GoodsFilterItem
 							name={item.name}
 							id={item.id}
 							value={item.value}
 							text={item.text}
-							checked={otherSelectedFilters.includes(item.id)}
-							onChange={() => handleOtherCheckboxChange(item.id)}
+							checked={filter[index] === 1}
+							onChange={() => handleCheckboxChange(index + 1)}
 						/>
 					</li>
 				))}
@@ -118,12 +137,14 @@ const GoodsFilterPanel = ({
 					onClick={handleApply}
 				>
 					Применить
+					{/* Бахнуть пивка */}
 				</button>
 				<button
 					className={`${styles.buttonReset} button`}
 					onClick={handleReset}
 				>
 					Сбросить
+					{/* Зайти в танки */}
 				</button>
 			</div>
 		</div>
