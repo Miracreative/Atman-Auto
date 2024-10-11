@@ -1,0 +1,47 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.item {
+	min-height: 42px;
+	display: flex;
+	align-items: center;
+}
+
+.itemText {
+	font-size: 18px;
+	font-weight: 500;
+
+	& span {
+		font-weight: 700;
+	}
+}
+
+.redDot {
+	margin: 0 20px 0;
+}
+
+@media (max-width: 1920px) {
+	.itemText {
+		@include adaptive-font(18, 14);
+	}
+
+	.redDot {
+		margin: 0 calcVW(20) 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.itemText {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.item {
+		min-height: 47px;
+	}
+
+	.redDot {
+		margin: 0 10px 0 0;
+	}
+}
