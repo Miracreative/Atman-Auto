@@ -49,6 +49,8 @@ const Form = ({ isOpen, onClose }) => {
 
 	const [selectedFile, setSelectedFile] = useState(null);
 
+	const minLengthField = 2;
+
 	const handleCheckboxChange = () => {
 		setIsChecked(!isChecked);
 	};
@@ -136,7 +138,7 @@ const Form = ({ isOpen, onClose }) => {
 						validations={{
 							required: REQUIRED_FIELD,
 							minLength: {
-								value: 2,
+								value: minLengthField,
 								message: MIN_LENGTH_FIELD,
 							},
 						}}
@@ -152,7 +154,7 @@ const Form = ({ isOpen, onClose }) => {
 						validations={{
 							required: REQUIRED_FIELD,
 							minLength: {
-								value: 2,
+								value: minLengthField,
 								message: MIN_LENGTH_FIELD,
 							},
 						}}
