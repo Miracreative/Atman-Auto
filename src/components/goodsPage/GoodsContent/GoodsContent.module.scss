@@ -16,10 +16,6 @@
 	font-size: 32px;
 }
 
-// .message {
-// 	font-size: 32px;
-// }
-
 @media (max-width: 1920px) {
 	.messageContainer {
 		@include adaptive-font(32, 20);

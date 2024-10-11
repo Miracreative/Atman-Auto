@@ -11,6 +11,7 @@ const FORM_SUCHESSED = 'Форма успешно отправлена!';
 
 // Общие
 const LOADING_DATA_ERROR = 'Произошла ошибка при загрузке данных';
+const UNKNOWN_ERROR = 'Произошла неизвестная ошибка';
 
 // Почтовые
 const MIN_LENGTH_FIELD = 'Минимальное количество символов: 2';
@@ -29,4 +30,5 @@ export {
 	FORM_SUBMISSION_ERROR,
 	INCORRECT_EMAIL,
 	INCORRECT_PHONE,
+	UNKNOWN_ERROR,
 };

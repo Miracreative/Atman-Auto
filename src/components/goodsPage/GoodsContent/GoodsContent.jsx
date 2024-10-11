@@ -59,16 +59,12 @@ const GoodsContent = () => {
 			/>
 
 			<div className={styles.messageContainer}>
-				{loading && <p className={styles.message}>{LOADING_INFO}</p>}
-				{error && !loading && (
-					<p className={styles.message}>{LOADING_DATA_ERROR}</p>
-				)}
+				{loading && <p>{LOADING_INFO}</p>}
+				{error && !loading && <p>{LOADING_DATA_ERROR}</p>}
 				{!loading &&
 					!error &&
 					Array.isArray(products) &&
-					products.length === 0 && (
-						<p className={styles.message}>{NOT_FOUND_INFO}</p>
-					)}
+					products.length === 0 && <p>{NOT_FOUND_INFO}</p>}
 			</div>
 
 			{!loading && !error && products.length > 0 && (
