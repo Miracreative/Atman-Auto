@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
 import { Controller } from 'swiper/modules';
-import GoodsCard from '@/components/goodsPage/GoodsCard/GoodsCard';
 
 import decisionsSliderData from '@/data/decisionsSliderData.jsx';
 
@@ -19,16 +18,25 @@ import { useState, useEffect } from 'react';
 
 export default function NewsSliderAndContent({ imagessrc, content }) {
 
-	const decisionsData = decisionsSliderData;
 
-	const [imgData, setImgData] = useState([imagessrc]);
+
+	const [imgData, setImgData] = useState(() => imagessrc);
+	const [isImgDataReady, setIsImgDataReady] = useState(false);
 
 	useEffect(() => {
 		setImgData(imagessrc);
+		setIsImgDataReady(true);
+	}, []);
 
-	}, [imgData]);
-
-
+	const imgDataPromise = new Promise((resolve) => {
+		if (isImgDataReady) {
+			resolve();
+		} else {
+			const timeoutId = setTimeout(() => {
+				resolve();
+			}, 100); // adjust the timeout value as needed
+		}
+	});
 
 	console.log(Array.isArray(imagessrc));
 
@@ -69,112 +77,115 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 	};
 
 
+	if (!imgData || !Array.isArray(imgData)) {
+		return <div>Loading...</div>; // or return a loading indicator
+	}
+
+	imgDataPromise.then(() => {
+		return (
+			<>
+				<section className={styles.section}>
+					<div className={styles.sectionInner}>
+
+						<div className='container'>
+
+							<div className={styles.wrap}>
+
+
+								<div className={styles.swiperContainer}>
+
+									<Swiper
+										wrapperClass={styles.swiperWrapper}
+										className={styles.swiper}
+										modules={[Navigation, A11y, Controller]}
+
+										// breakpoints={{
+										// 	0: {
+										// 		slidesPerView: 1.5,
+										// 		spaceBetween: 10,
+										// 	},
+										// 	576: {
+										// 		slidesPerView: 2.2,
+										// 		spaceBetween: 10,
+										// 	},
+										// 	768: {
+										// 		slidesPerView: 2.5,
+										// 		spaceBetween: 10,
+										// 	},
+										// 	1024: {
+										// 		slidesPerView: 3,
+										// 	},
+										// }}
+										onSwiper={setSwiper}
+										navigation={{
+											prevEl: '.prev',
+											nextEl: '.next',
+										}}
+
+
+										spaceBetween={20}
+										// slidesPerView={3}
+										onSlideChange={(swiper) => onSlideChange(swiper)}
+									>
+
+										{
+											imgData?.map((srcImg, index) => (
+												<SwiperSlide key={index} className={styles.swiperSlide}>
+													<div className={styles.imgWrap} >
+														<Image src={srcImg}
+															width={300}
+															height={300}
+															alt="img"
+														/>
+
+													</div>
+
+												</SwiperSlide>
+											))
+										}
+
+
+									</Swiper>
 
 
 
-	return (
-		<>
-			<section className={styles.section}>
-				<div className={styles.sectionInner}>
+									<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
 
-					<div className='container'>
-
-						<div className={styles.wrap}>
+										<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+										</svg>
 
 
-							<div className={styles.swiperContainer}>
-
-								<Swiper
-									wrapperClass={styles.swiperWrapper}
-									className={styles.swiper}
-									modules={[Navigation, A11y, Controller]}
-
-									// breakpoints={{
-									// 	0: {
-									// 		slidesPerView: 1.5,
-									// 		spaceBetween: 10,
-									// 	},
-									// 	576: {
-									// 		slidesPerView: 2.2,
-									// 		spaceBetween: 10,
-									// 	},
-									// 	768: {
-									// 		slidesPerView: 2.5,
-									// 		spaceBetween: 10,
-									// 	},
-									// 	1024: {
-									// 		slidesPerView: 3,
-									// 	},
-									// }}
-									onSwiper={setSwiper}
-									navigation={{
-										prevEl: '.prev',
-										nextEl: '.next',
-									}}
+									</button>
 
 
-									spaceBetween={20}
-									// slidesPerView={3}
-									onSlideChange={(swiper) => onSlideChange(swiper)}
-								>
+									<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
 
-									{
-										imgData?.map((srcImg, index) => (
-											<SwiperSlide key={index} className={styles.swiperSlide}>
-												<div className={styles.imgWrap} >
-													<Image src={srcImg}
-														width={300}
-														height={300}
-														alt="img"
-													/>
-
-												</div>
-
-											</SwiperSlide>
-										))
-									}
+										<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+										</svg>
 
 
-								</Swiper>
+									</button>
+
+								</div>
 
 
 
-								<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
-
-									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
-									</svg>
+								<div className={styles.textWrap}>
+									{content}
+								</div>
 
 
-								</button>
-
-
-								<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
-
-									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
-									</svg>
-
-
-								</button>
-
-							</div>
-
-
-
-							<div className={styles.textWrap}>
-								{content}
 							</div>
 
 
 						</div>
 
-
 					</div>
 
-				</div>
-
-			</section>
-		</>
-	);
+				</section>
+			</>
+		);
+	})
 }

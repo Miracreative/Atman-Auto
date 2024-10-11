@@ -3,15 +3,47 @@
 import styles from './KnowledgeContent.module.scss';
 import knowledgeBase from '@/data/knowledgeBase.js';
 import PopupKnowledge from '../PopupKnowledge/PopupKnowledge.jsx';
-import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function KnowledgeContent() {
+
+	const [posts, SetPosts] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
 	const [popupActive, setPopupActive] = useState(false);
 
+	const fetchNews = async () => {
+		setLoading(true);
+		try {
+			// const response = await axios.get(URL_NEWS);
+			const response = await axios.get(`${process.env.HOST}/api/base`);
+			SetPosts(response.data);
+		} catch (err) {
+			setError(err.message);
+		}
+		finally {
+			setLoading(false);
+		}
 
-	const [posts, SetPosts] = useState(knowledgeBase);
+	};
+
+	// useEffect(() => {
+	// 	fetchNews();
+	// }, []);
+
+
+	console.log(posts);
+
+
+
+
+
+
+
+
+	// const [posts, SetPosts] = useState(knowledgeBase);
 	const [postPerPage, SetPostPerPage] = useState(10);
 	const [currentPage, SetCurrentPage] = useState(1);
 
@@ -105,7 +137,7 @@ export default function KnowledgeContent() {
 		const value = currentPage * postPerPage;
 
 		onPageChangeEvent(value - postPerPage, value)
-	}, [currentPage]);
+	}, [currentPage, posts]);
 
 
 	const [cardId, setCardId] = useState(null);
@@ -113,9 +145,27 @@ export default function KnowledgeContent() {
 	const handleCardClick = (cardId) => {
 		setPopupActive(true);
 		setCardId(cardId);
-		// console.log(cardId);
+		console.log(cardId);
 
 	};
+
+
+
+	useEffect(() => {
+		fetchNews();
+	}, []);
+
+	// useEffect(() => {
+	// 	return <p>Loading...</p>;
+	// }, [loading]);
+	// if (loading) {
+	// 	return <p>Loading...</p>;
+	// }
+
+
+	if (error) {
+		return <p>Ошибка: {error}</p>;
+	}
 
 
 	return (
@@ -131,7 +181,7 @@ export default function KnowledgeContent() {
 									<div key={index} className={styles.card} onClick={() => handleCardClick(item.id)}>
 										<div className={styles.cardInner}>
 											<div className={styles.title}>{item.title}</div>
-											<div className={styles.text}>{item.description}</div>
+											<div className={styles.text}>{item.content}</div>
 										</div>
 									</div>
 								)
@@ -186,17 +236,3 @@ export default function KnowledgeContent() {
 	)
 }
 
-
-// useEffect(() => {
-// 	// Fetch data from backend API or load from a file
-// 	const fetchData = async () => {
-// 	  try {
-// 		const response = await fetch('/api/knowledge-base'); // Replace with your API endpoint
-// 		const data = await response.json();
-// 		setKnowledgeData(data);
-// 	  } catch (error) {
-// 		console.error(error);
-// 	  }
-// 	};
-// 	fetchData();
-//   }, []);

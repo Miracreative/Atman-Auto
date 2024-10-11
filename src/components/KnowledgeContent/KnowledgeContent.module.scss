@@ -17,12 +17,14 @@
 
 .card {
 	// width: 400px;
-	// height: 400px;
+	max-height: 210px;
 	background-color: white;
 	cursor: pointer;
 	border: 1px solid rgb(var(--gray-line-rgb));
 	transition: all .3s ease-in-out;
 	border-radius: 20px;
+
+	overflow: hidden;
 	&:hover {
 		background-color: rgb(var(--gray-background-img-rgb));
 	}
@@ -41,6 +43,8 @@
 
 .cardInner {
 	margin: 40px 20px 40px 40px;
+	height: 75%;
+	overflow: hidden;
 }
 
 .title {
@@ -48,6 +52,11 @@
 	font-weight: 700;
 	line-height: 1.2;
 	margin-bottom: 15px;
+}
+
+.text {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 
