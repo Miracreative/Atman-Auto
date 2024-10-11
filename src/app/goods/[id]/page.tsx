@@ -11,7 +11,7 @@ import type { ProductPageProps, ProductsData } from '@/types/product';
 import Showcase from '@/components/goodsPage/Showcase/Showcase.jsx';
 import Properties from '@/components/goodsPage/Properties/Properties.jsx';
 
-import styles from './ProductPage.module.scss';
+// import styles from './ProductPage.module.scss';
 
 const ProductPage = ({ params: { id } }: ProductPageProps) => {
 	const [products, setProducts] = useState<ProductsData[]>([]);

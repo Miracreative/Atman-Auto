@@ -12,7 +12,13 @@ const Characteristics = ({ product }) => {
 
 			<ul className={styles.list}>
 				<CharacteristicItem label="Бренд" value={product.brand} />
+				<CharacteristicItem label="Тип" value={product.type} />
+				<CharacteristicItem label="Размер" value={product.size} />
+				<CharacteristicItem label="Материал" value={product.material} />
+				<CharacteristicItem label="Материал основы" value={product.baseType} />
 				<CharacteristicItem label="Толщина" value={product.thickness} />
+				<CharacteristicItem label="Объем" value={product.volume} />
+				<CharacteristicItem label="Плотность" value={product.dencity} />
 				<CharacteristicItem label="Тип основы" value={product.base} />
 				<CharacteristicItem label="Тип клея" value={product.typeGlue} />
 				<CharacteristicItem label="Цвет" value={product.color} />
@@ -21,6 +27,7 @@ const Characteristics = ({ product }) => {
 					label="Термостойкость"
 					value={product.heatResistance}
 				/>
+				<CharacteristicItem label="Количество" value={product.pcs} />
 			</ul>
 
 			<div className={`${styles.downloadContainer}`}>
