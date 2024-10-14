@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"racio-merge": "git checkout Yoda && git pull && git merge racio && git checkout racio && git merge Yoda"
 	},
 	"dependencies": {
 		"axios": "^1.7.7",
