@@ -62,14 +62,25 @@ const GoodsContent = () => {
 				onFetchProducts={handleFetchProducts}
 			/>
 
-			<div className={styles.messageContainer}>
+			{products.length === 0 && (
+				<div className={styles.messageContainer}>
+					{loading && <p>{LOADING_INFO}</p>}
+					{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
+					{!loading &&
+						!error &&
+						Array.isArray(products) &&
+						products.length === 0 && <p>{NOT_FOUND_INFO}</p>}
+				</div>
+			)}
+
+			{/* <div className={styles.messageContainer}>
 				{loading && <p>{LOADING_INFO}</p>}
 				{error && !loading && <p>{LOADING_DATA_ERROR}</p>}
 				{!loading &&
 					!error &&
 					Array.isArray(products) &&
 					products.length === 0 && <p>{NOT_FOUND_INFO}</p>}
-			</div>
+			</div> */}
 
 			{!loading && !error && products.length > 0 && (
 				<GoodsList products={products} />

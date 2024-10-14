@@ -92,7 +92,7 @@ const GoodsFilterPanel = ({
 	};
 
 	const handleApply = () => {
-		console.log('Фильтр применен', filter);
+		// console.log('Фильтр применен', filter);
 		if (selectedFilters.includes(filters[0].id)) {
 			setFilterFlag('true');
 			onFetchProducts()
