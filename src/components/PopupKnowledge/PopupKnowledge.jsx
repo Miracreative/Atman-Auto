@@ -6,16 +6,28 @@ import styles from './PopupKnowledge.module.scss';
 import Link from 'next/link';
 
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function PopupKnowledge({ popupActive, setPopupActive, cardId }) {
 
 	const [knowledge, setKnowledge] = useState({});
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		const knowledgeData = knowledgeBase.find((item) => item.id === cardId);
-		setKnowledge(knowledgeData);
-
+		if (cardId !== null && cardId !== undefined) {
+			fetchKnowledge(cardId);
+		}
 	}, [cardId]);
+
+	const fetchKnowledge = async (id) => {
+		try {
+			const response = await axios.get(`${process.env.HOST}/api/base/${id}`);
+			setKnowledge(response.data);
+		} catch (err) {
+			setError(err.message);
+		}
+	};
+
 
 	// console.log(knowledge);
 	// console.log(knowledge.title); не может прочитать
@@ -46,7 +58,7 @@ export default function PopupKnowledge({ popupActive, setPopupActive, cardId }) 
 								</div>
 
 								<div className={styles.text}>
-									{knowledge && knowledge.description}
+									{knowledge && knowledge.content}
 								</div>
 							</div>
 						</div>
@@ -60,7 +72,7 @@ export default function PopupKnowledge({ popupActive, setPopupActive, cardId }) 
 
 
 
-						<Link href='/knowledge' className={styles.download}>
+						<Link href={knowledge.file || '/knowledge'} className={styles.download} target="_blank" rel="noopener noreferrer">
 
 							<div className={styles.downloadImg}>
 								<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +83,7 @@ export default function PopupKnowledge({ popupActive, setPopupActive, cardId }) 
 							</div>
 							<div className={styles.descriptionDownload}>
 								<div className={styles.fileName}>
-									{knowledge && knowledge.documentName}
+									{knowledge && knowledge.file_name}
 								</div>
 								<div className={styles.paragraph}>Скачать</div>
 							</div>
