@@ -60,6 +60,8 @@ const GoodsContent = () => {
 				setFilter={setFilterMainParam}
 				onFilterChange={handleFilterChange}
 				onFetchProducts={handleFetchProducts}
+				loading={loading}
+				setLoading={setLoading}
 			/>
 
 			{products.length === 0 && (

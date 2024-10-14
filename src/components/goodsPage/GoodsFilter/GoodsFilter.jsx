@@ -6,6 +6,8 @@ import useWindowWidth from '@/hooks/useWindowWidth';
 
 import MOBILE_WIDTH from '@/constants/width.js';
 
+import { LOADING_INFO } from '@/utils/informMessages.js';
+
 import GoodsDropButton from '../GoodsDropButton/GoodsDropButton.jsx';
 import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
 
@@ -16,9 +18,11 @@ const GoodsFilter = ({
 	setFilter,
 	onFilterChange,
 	onFetchProducts,
+	loading,
+	setLoading,
 }) => {
-	// const [isMobile, setIsMobile] = useState(false);
-	const [isMobile, setIsMobile] = useState(true);
+	const [isMobile, setIsMobile] = useState(false);
+	// const [isMobile, setIsMobile] = useState(true);
 
 	const [isOpenFilter, setIsOpenFilter] = useState(true);
 
@@ -36,7 +40,7 @@ const GoodsFilter = ({
 
 	return (
 		<>
-			{!isMobile && (
+			{!isMobile && !loading && (
 				<GoodsFilterPanel
 					isOpenFilter={isOpenFilter}
 					// setIsOpenFilter={setIsOpenFilter}
@@ -46,6 +50,8 @@ const GoodsFilter = ({
 					onFetchProducts={onFetchProducts}
 				/>
 			)}
+
+			{/* {isMobile && loading && <p className={styles.info}>{LOADING_INFO}</p>} */}
 
 			{isMobile && (
 				<div className={styles.filterContainer}>
