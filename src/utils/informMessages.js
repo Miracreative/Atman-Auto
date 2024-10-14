@@ -5,7 +5,7 @@ const NOT_FOUND_INFO = 'По вашему запросу ничего не на�
 
 //* Сообщения об успехе *//
 
-const FORM_SUCHESSED = 'Форма успешно отправлена!';
+const FORM_SUCCESSED = 'Форма успешно отправлена!';
 
 //* Сообщения об ошибке *//
 
@@ -22,7 +22,7 @@ const FORM_SUBMISSION_ERROR = 'Ошибка при отправке формы';
 
 export {
 	LOADING_INFO,
-	FORM_SUCHESSED,
+	FORM_SUCCESSED,
 	LOADING_DATA_ERROR,
 	NOT_FOUND_INFO,
 	MIN_LENGTH_FIELD,

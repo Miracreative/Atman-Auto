@@ -14,7 +14,7 @@ import {
 	FORM_SUBMISSION_ERROR,
 	INCORRECT_EMAIL,
 	INCORRECT_PHONE,
-	FORM_SUCHESSED,
+	FORM_SUCCESSED,
 } from '@/utils/informMessages.js';
 
 import attachmentIcon from '../../../../public/attachment-icon.svg';
@@ -93,7 +93,7 @@ const Form = ({ isOpen, onClose }) => {
 				body: formData,
 			});
 			if (response.ok) {
-				console.log(FORM_SUCHESSED);
+				console.log(FORM_SUCCESSED);
 			} else {
 				console.error(FORM_SUBMISSION_ERROR);
 			}

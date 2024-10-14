@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react';
 
 import { fetchAllGoods, fetchFilteredMainParamGoods } from '@/api/goodsService';
 
-import { LOADING_INFO, LOADING_DATA_ERROR } from '@/utils/informMessages';
+import {
+	LOADING_INFO,
+	LOADING_DATA_ERROR,
+	NOT_FOUND_INFO,
+} from '@/utils/informMessages';
 
 import GoodsList from '../GoodsList/GoodsList.jsx';
 import GoodsFilter from '../GoodsFilter/GoodsFilter.jsx';
