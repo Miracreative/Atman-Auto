@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+
 import filters from '@/data/filters.js';
+
+import { getFilterFlag, setFilterFlag } from '@/utils/localStorage.js';
+
 import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
+
 import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = ({
@@ -13,19 +18,21 @@ const GoodsFilterPanel = ({
 	const [selectedFilters, setSelectedFilters] = useState([]);
 	const [flag, setFlag] = useState(true);
 	const ref = useRef(null);
-	const storedFlag = localStorage.getItem('filterFlag');
+	// const storedFlag = localStorage.getItem('filterFlag');
 
 	// Чтение флага из localStorage
 	useEffect(() => {
+		const storedFlag = getFilterFlag();
+
 		if (storedFlag == '' || storedFlag == null || storedFlag == 'true') {
-			localStorage.setItem('filterFlag', 'true');
+			setFilterFlag('true');
 			setSelectedFilters([filters[0].id]);
 		} else {
-			localStorage.setItem('filterFlag', 'false');
+			setFilterFlag('false');
 		}
 		if (!filter) {
 			setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-			localStorage.setItem('filterFlag', 'true');
+			setFilterFlag('true');
 		}
 
 		setFlag(false);
@@ -33,15 +40,17 @@ const GoodsFilterPanel = ({
 
 	// Сохранение флага в localStorage
 	useEffect(() => {
-		if (localStorage.getItem('filterFlag') == 'false') {
+		if (getFilterFlag() == 'false') {
 			setSelectedFilters([]);
 		} else {
 			setSelectedFilters([filters[0].id]);
 		}
-	}, [storedFlag, flag]);
+	}, [flag]);
+	// В условиях был storedFlag const storedFlag = localStorage.getItem('filterFlag');
+	// Если что-то будет с фильтром - можно заново прописать storedFlag или getFilterFlag
 
 	const handleCheckboxChange = (index) => {
-		localStorage.setItem('filterFlag', 'false');
+		setFilterFlag('false');
 
 		setFilter((prevFilter) => {
 			const newFilter = [...prevFilter];
@@ -54,7 +63,7 @@ const GoodsFilterPanel = ({
 	};
 
 	const handleChange = (id) => {
-		localStorage.setItem('filterFlag', 'true');
+		setFilterFlag('true');
 		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
 
 		setSelectedFilters((prevSelected) =>
@@ -77,15 +86,15 @@ const GoodsFilterPanel = ({
 	};
 
 	const handleReset = () => {
-		localStorage.setItem('filterFlag', 'true');
+		setFilterFlag('true');
 		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
 		setSelectedFilters([filters[0].id]);
 	};
 
 	const handleApply = () => {
-		console.log('Фильтр применен', filter);
+		// console.log('Фильтр применен', filter);
 		if (selectedFilters.includes(filters[0].id)) {
-			localStorage.setItem('filterFlag', 'true');
+			setFilterFlag('true');
 			onFetchProducts()
 				.then((data) => {
 					// console.log('Данные от fetchAllGoods:', data);
@@ -94,9 +103,7 @@ const GoodsFilterPanel = ({
 			// console.log('Выполняем fetchAllGoods');
 		} else {
 			onFilterChange();
-			localStorage.setItem('filterFlag', 'false');
-			// console.log('selectedFilters', filter);
-			// console.log('Выполняем onFilterChange');
+			setFilterFlag('false');
 		}
 	};
 
@@ -137,14 +144,12 @@ const GoodsFilterPanel = ({
 					onClick={handleApply}
 				>
 					Применить
-					{/* Бахнуть пивка */}
 				</button>
 				<button
 					className={`${styles.buttonReset} button`}
 					onClick={handleReset}
 				>
 					Сбросить
-					{/* Зайти в танки */}
 				</button>
 			</div>
 		</div>
