@@ -2,6 +2,7 @@
 @import '@/scss/_mixins';
 
 .section {
+	min-height: 50vh;
 	padding: 100px;
 	background-color: rgb(var(--gray-background-img-rgb));
 	display: flex;

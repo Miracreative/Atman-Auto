@@ -10,6 +10,7 @@ import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = ({
 	isOpenFilter,
+	setIsOpenFilter,
 	filter,
 	setFilter,
 	onFilterChange,
@@ -101,9 +102,11 @@ const GoodsFilterPanel = ({
 				})
 				.catch((error) => console.error('Ошибка запроса:', error));
 			// console.log('Выполняем fetchAllGoods');
+			setIsOpenFilter(false);
 		} else {
 			onFilterChange();
 			setFilterFlag('false');
+			setIsOpenFilter(false);
 		}
 	};
 

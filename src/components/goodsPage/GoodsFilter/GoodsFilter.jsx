@@ -43,7 +43,7 @@ const GoodsFilter = ({
 			{!isMobile && !loading && (
 				<GoodsFilterPanel
 					isOpenFilter={isOpenFilter}
-					// setIsOpenFilter={setIsOpenFilter}
+					setIsOpenFilter={setIsOpenFilter}
 					filter={filter}
 					setFilter={setFilter}
 					onFilterChange={onFilterChange}
@@ -61,7 +61,7 @@ const GoodsFilter = ({
 					/>
 					<GoodsFilterPanel
 						isOpenFilter={isOpenFilter}
-						// setIsOpenFilter={setIsOpenFilter}
+						setIsOpenFilter={setIsOpenFilter}
 						filter={filter}
 						setFilter={setFilter}
 						onFilterChange={onFilterChange}
