@@ -6,19 +6,40 @@ import { Navigation, Scrollbar, A11y } from 'swiper/modules';
 import newsData from '@/data/newsData';
 import Link from 'next/link';
 import { Controller } from 'swiper/modules';
+import axios from 'axios';
 
-
-
-
-import { useState } from 'react';
-
-
+import { useState, useEffect } from 'react';
 
 
 
 export default function NewsSlider() {
 
 	const newsDate = newsData;
+
+	const [lastNews, setLastNews] = useState([]);
+	const [error, setError] = useState(null);
+
+
+
+	const fetchLastNews = async () => {
+		try {
+			const response = await axios.get(`${process.env.HOST}/api/news-last`);
+			// const response = await axios.get(`https://9de2-212-12-25-176.ngrok-free.app/api/news-last`);
+			console.log('API call completed successfully:', response.data);
+			console.log(response.data);
+
+			setLastNews(response.data);
+		} catch (err) {
+			setError(err.message);
+		}
+	};
+
+	useEffect(() => {
+		fetchLastNews();
+	}, []);
+
+	console.log(lastNews);
+
 
 	// const [swiperInstance, setSwiperInstance] = useState(null);
 	const [canGoPrev, setCanGoPrev] = useState(false);
@@ -114,11 +135,11 @@ export default function NewsSlider() {
 									onSlideChange={(swiper) => onSlideChange(swiper)}
 								>
 
-									{newsDate.map((item, index) => (
+									{lastNews.map((item, index) => (
 										<SwiperSlide key={item.id} className={styles.swiperSlideOne}>
-											<div className={styles.imgWrap}>
-												<img src={item.src} alt={item.title} />
-											</div>
+											<Link className={styles.imgWrap} href={`/news/${item.id}`}>
+												<img src={item.imagessrc} alt={item.title} />
+											</Link>
 
 
 											{/* <div className={styles.titleCard}> {item.title} </div>
@@ -187,10 +208,13 @@ export default function NewsSlider() {
 								spaceBetween={20}
 								slidesPerView={2.1}
 							>
-								{newsDate.map((item, index) => (
+								{lastNews.map((item, index) => (
 									<SwiperSlide key={item.id} className={styles.swiperSlideTwo}>
-										<div className={styles.titleCard}>{item.title}</div>
-										<div className={styles.description}>{item.description}</div>
+										<Link className={styles.imgWrap} href={`/news/${item.id}`}>
+											<div className={styles.titleCard}>{item.title}</div>
+											<div className={styles.description}>{item.descr}</div>
+										</Link>
+
 									</SwiperSlide>
 								))}
 							</Swiper>

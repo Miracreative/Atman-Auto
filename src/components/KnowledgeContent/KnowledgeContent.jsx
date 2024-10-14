@@ -29,9 +29,9 @@ export default function KnowledgeContent() {
 
 	};
 
-	// useEffect(() => {
-	// 	fetchNews();
-	// }, []);
+	useEffect(() => {
+		fetchNews();
+	}, []);
 
 
 	console.log(posts);
@@ -151,9 +151,9 @@ export default function KnowledgeContent() {
 
 
 
-	useEffect(() => {
-		fetchNews();
-	}, []);
+	// useEffect(() => {
+	// 	fetchNews();
+	// }, []);
 
 	// useEffect(() => {
 	// 	return <p>Loading...</p>;
