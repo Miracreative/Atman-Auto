@@ -17,7 +17,8 @@ const GoodsFilter = ({
 	onFilterChange,
 	onFetchProducts,
 }) => {
-	const [isMobile, setIsMobile] = useState(false);
+	// const [isMobile, setIsMobile] = useState(false);
+	const [isMobile, setIsMobile] = useState(true);
 
 	const [isOpenFilter, setIsOpenFilter] = useState(true);
 

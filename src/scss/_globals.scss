@@ -90,12 +90,9 @@ body {
 	line-height: normal;
 	font-style: normal;
 	background-color: rgb(var(--background-rgb));
+	overflow-x: hidden;
 
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-main {
-	overflow: hidden;
 }
 
 a {

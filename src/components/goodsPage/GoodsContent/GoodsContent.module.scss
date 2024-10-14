@@ -58,12 +58,14 @@
 
 @media (max-width: 480px) {
 	.section {
+		// min-height: 700px;
 		padding: 20px 10px 30px;
 		flex-direction: column;
 	}
 
 	.messageContainer {
-		min-height: 100px;
+		// min-height: 700px;
+		min-height: 300px;
 		font-size: 16px;
 	}
 }
