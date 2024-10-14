@@ -4,24 +4,45 @@ import styles from './Certificates.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y } from 'swiper/modules';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 
-const certificates = [
-	{ cert: '/about/Certificates/cert1.png', type: 'book' },
-	{ cert: '/about/Certificates/cert2.png', type: 'book' },
-	{ cert: '/about/Certificates/cert3.png', type: 'book' },
-	{ cert: '/about/Certificates/cert4.png', type: 'book' },
-	{ cert: '/about/Certificates/cert5.png', type: 'book' },
-	{ cert: '/about/Certificates/cert6.png', type: 'album' },
-	// { cert: '/about/Certificates/cert5.png', type: 'book' },
-	// { cert: '/about/Certificates/cert6.png', type: 'album' },
-];
+// const certificates = [
+// 	{ cert: '/about/Certificates/cert1.png', type: 'book' },
+// 	{ cert: '/about/Certificates/cert2.png', type: 'book' },
+// 	{ cert: '/about/Certificates/cert3.png', type: 'book' },
+// 	{ cert: '/about/Certificates/cert4.png', type: 'book' },
+// 	{ cert: '/about/Certificates/cert5.png', type: 'book' },
+// 	{ cert: '/about/Certificates/cert6.png', type: 'album' },
+// 	{ cert: '/about/Certificates/cert5.png', type: 'book' },
+// 	{ cert: '/about/Certificates/cert6.png', type: 'album' },
+// ];
 
 
 
 export default function Certificates() {
 
+
+	const [certificatesData, setCertificatesData] = useState([]);
+	const [error, setError] = useState(null);
+
+	const fetchCertificates = async () => {
+		try {
+			const response = await axios.get(`${process.env.HOST}/api/sertificate`);
+			setCertificatesData(response.data);
+		} catch (err) {
+			setError(err.message);
+		}
+	};
+
+	console.log(certificatesData);
+
+
+	useEffect(() => {
+		fetchCertificates();
+	}, []);
 
 	return (
 		<>
@@ -44,8 +65,7 @@ export default function Certificates() {
 
 							// breakpoints={{
 							// 	0: {
-							// 		slidesPerView: 1.5,
-
+							// 		slidesPerView: 1.5
 							// 	},
 							// 	576: {
 							// 		slidesPerView: 2.5,
@@ -61,7 +81,7 @@ export default function Certificates() {
 
 
 
-								{certificates.map((item, index) => (
+								{certificatesData.map((item, index) => (
 									<SwiperSlide key={index} className={styles.swiperSlide} style={{ width: item.type === 'album' ? 525 : 270 }}>
 
 										<Image

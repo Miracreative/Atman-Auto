@@ -3,7 +3,7 @@
 import styles from './NewsSlider.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y } from 'swiper/modules';
-import newsData from '@/data/newsData';
+// import newsData from '@/data/newsData';
 import Link from 'next/link';
 import { Controller } from 'swiper/modules';
 import axios from 'axios';
@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 
 export default function NewsSlider() {
 
-	const newsDate = newsData;
+	// const newsDate = newsData;
 
 	const [lastNews, setLastNews] = useState([]);
 	const [error, setError] = useState(null);
@@ -24,10 +24,6 @@ export default function NewsSlider() {
 	const fetchLastNews = async () => {
 		try {
 			const response = await axios.get(`${process.env.HOST}/api/news-last`);
-			// const response = await axios.get(`https://9de2-212-12-25-176.ngrok-free.app/api/news-last`);
-			console.log('API call completed successfully:', response.data);
-			console.log(response.data);
-
 			setLastNews(response.data);
 		} catch (err) {
 			setError(err.message);
@@ -41,7 +37,6 @@ export default function NewsSlider() {
 	console.log(lastNews);
 
 
-	// const [swiperInstance, setSwiperInstance] = useState(null);
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);
 
@@ -142,10 +137,6 @@ export default function NewsSlider() {
 											</Link>
 
 
-											{/* <div className={styles.titleCard}> {item.title} </div>
-
-										<div className={styles.description}> {item.description} </div> */}
-
 										</SwiperSlide>
 									))}
 
@@ -153,7 +144,6 @@ export default function NewsSlider() {
 
 
 								</Swiper>
-								{/* <SwiperNavButtouns /> */}
 
 
 								<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
