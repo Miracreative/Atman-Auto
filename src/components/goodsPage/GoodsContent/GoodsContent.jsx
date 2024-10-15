@@ -18,6 +18,8 @@ import styles from './GoodsContent.module.scss';
 const GoodsContent = () => {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [isMobile, setIsMobile] = useState(false);
+
 	const [error, setError] = useState(null);
 	const [filterMainParam, setFilterMainParam] = useState([
 		0, 0, 0, 0, 0, 0, 0, 0,
@@ -29,7 +31,7 @@ const GoodsContent = () => {
 			const allProducts = await fetchAllGoods();
 			setProducts(allProducts || []);
 		} catch (err) {
-			setError(err.message);
+			setError(err.message || LOADING_DATA_ERROR);
 		} finally {
 			setLoading(false);
 		}
@@ -39,7 +41,7 @@ const GoodsContent = () => {
 		handleFetchProducts();
 	}, []);
 
-	const handleFilterChange = async (e) => {
+	const handleFilterChange = async () => {
 		try {
 			setLoading(true);
 			const filteredProducts = await fetchFilteredMainParamGoods(
@@ -47,7 +49,7 @@ const GoodsContent = () => {
 			);
 			setProducts(filteredProducts || []);
 		} catch (err) {
-			setError(err.message || { LOADING_DATA_ERROR });
+			setError(err.message || LOADING_DATA_ERROR);
 		} finally {
 			setLoading(false);
 		}
@@ -61,28 +63,30 @@ const GoodsContent = () => {
 				onFilterChange={handleFilterChange}
 				onFetchProducts={handleFetchProducts}
 				loading={loading}
-				setLoading={setLoading}
+				isMobile={isMobile}
+				setIsMobile={setIsMobile}
+				error={error}
 			/>
 
-			{products.length === 0 && (
+			{!isMobile && (
 				<div className={styles.messageContainer}>
 					{loading && <p>{LOADING_INFO}</p>}
 					{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
-					{!loading &&
-						!error &&
-						Array.isArray(products) &&
-						products.length === 0 && <p>{NOT_FOUND_INFO}</p>}
+					{!loading && !error && products.length === 0 && (
+						<p>{NOT_FOUND_INFO}</p>
+					)}
 				</div>
 			)}
 
-			{/* <div className={styles.messageContainer}>
-				{loading && <p>{LOADING_INFO}</p>}
-				{error && !loading && <p>{LOADING_DATA_ERROR}</p>}
-				{!loading &&
-					!error &&
-					Array.isArray(products) &&
-					products.length === 0 && <p>{NOT_FOUND_INFO}</p>}
-			</div> */}
+			{isMobile && products.length === 0 && (
+				<div className={styles.messageContainer}>
+					{loading && <p>{LOADING_INFO}</p>}
+					{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
+					{!loading && !error && products.length === 0 && (
+						<p>{NOT_FOUND_INFO}</p>
+					)}
+				</div>
+			)}
 
 			{!loading && !error && products.length > 0 && (
 				<GoodsList products={products} />

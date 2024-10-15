@@ -15,8 +15,10 @@ const GoodsFilterPanel = ({
 	setFilter,
 	onFilterChange,
 	onFetchProducts,
+	isMobile,
+	loading,
 }) => {
-	const [selectedFilters, setSelectedFilters] = useState([]);
+	const [firstFilter, setFirstFilter] = useState([]);
 	const [flag, setFlag] = useState(true);
 	const ref = useRef(null);
 	// const storedFlag = localStorage.getItem('filterFlag');
@@ -27,7 +29,7 @@ const GoodsFilterPanel = ({
 
 		if (storedFlag == '' || storedFlag == null || storedFlag == 'true') {
 			setFilterFlag('true');
-			setSelectedFilters([filters[0].id]);
+			setFirstFilter([filters[0].id]);
 		} else {
 			setFilterFlag('false');
 		}
@@ -42,9 +44,9 @@ const GoodsFilterPanel = ({
 	// Сохранение флага в localStorage
 	useEffect(() => {
 		if (getFilterFlag() == 'false') {
-			setSelectedFilters([]);
+			setFirstFilter([]);
 		} else {
-			setSelectedFilters([filters[0].id]);
+			setFirstFilter([filters[0].id]);
 		}
 	}, [flag]);
 	// В условиях был storedFlag const storedFlag = localStorage.getItem('filterFlag');
@@ -60,14 +62,14 @@ const GoodsFilterPanel = ({
 			return newFilter;
 		});
 		setFlag(false);
-		setSelectedFilters([]);
+		setFirstFilter([]);
 	};
 
 	const handleChange = (id) => {
 		setFilterFlag('true');
 		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
 
-		setSelectedFilters((prevSelected) =>
+		setFirstFilter((prevSelected) =>
 			prevSelected.includes(id)
 				? prevSelected.filter((item) => item !== id)
 				: [...prevSelected, id],
@@ -89,26 +91,30 @@ const GoodsFilterPanel = ({
 	const handleReset = () => {
 		setFilterFlag('true');
 		setFilter([0, 0, 0, 0, 0, 0, 0, 0]);
-		setSelectedFilters([filters[0].id]);
+		setFirstFilter([filters[0].id]);
 	};
 
 	const handleApply = () => {
-		// console.log('Фильтр применен', filter);
-		if (selectedFilters.includes(filters[0].id)) {
-			setFilterFlag('true');
-			onFetchProducts()
-				.then((data) => {
-					// console.log('Данные от fetchAllGoods:', data);
-				})
-				.catch((error) => console.error('Ошибка запроса:', error));
-			// console.log('Выполняем fetchAllGoods');
+		if (isMobile) {
 			setIsOpenFilter(false);
+		}
+
+		// Логика применения фильтров
+		if (firstFilter.includes(filters[0].id)) {
+			setFilterFlag('true');
+			onFetchProducts();
 		} else {
 			onFilterChange();
 			setFilterFlag('false');
-			setIsOpenFilter(false);
 		}
 	};
+
+	// console.log('isMobile', isMobile);
+	// console.log('loading', loading);
+
+	// if (isMobile && loading) {
+	// 	return null;
+	// }
 
 	return (
 		<div
@@ -123,11 +129,12 @@ const GoodsFilterPanel = ({
 						id={filters[0].id}
 						value={filters[0].value}
 						text={filters[0].text}
-						checked={selectedFilters.includes(filters[0].id)}
+						checked={firstFilter.includes(filters[0].id)}
 						onChange={() => handleChange(filters[0].id)}
 						ref={ref}
 					/>
 				</li>
+
 				{filters.slice(1).map((item, index) => (
 					<li className={styles.filter} key={item.id}>
 						<GoodsFilterItem

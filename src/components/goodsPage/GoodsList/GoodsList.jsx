@@ -1,5 +1,3 @@
-// import { NOT_FOUND_INFO } from '@/utils/informMessages';
-
 import GoodsCard from '../GoodsCard/GoodsCard';
 
 import styles from './GoodsList.module.scss';

@@ -6,10 +6,15 @@ import useWindowWidth from '@/hooks/useWindowWidth';
 
 import MOBILE_WIDTH from '@/constants/width.js';
 
-import { LOADING_INFO } from '@/utils/informMessages.js';
+import {
+	LOADING_INFO,
+	LOADING_DATA_ERROR,
+	NOT_FOUND_INFO,
+} from '@/utils/informMessages.js';
 
 import GoodsDropButton from '../GoodsDropButton/GoodsDropButton.jsx';
 import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
+import GoodsMobFilterPanel from '../GoodsMobFilterPanel/GoodsMobFilterPanel.jsx';
 
 import styles from './GoodsFilter.module.scss';
 
@@ -19,28 +24,47 @@ const GoodsFilter = ({
 	onFilterChange,
 	onFetchProducts,
 	loading,
-	setLoading,
+
+	isMobile,
+	setIsMobile,
+	// error,
 }) => {
-	const [isMobile, setIsMobile] = useState(false);
-	// const [isMobile, setIsMobile] = useState(true);
-
-	const [isOpenFilter, setIsOpenFilter] = useState(true);
-
 	const width = useWindowWidth();
-
+	const [isOpenFilter, setIsOpenFilter] = useState(false);
 	useEffect(() => {
+		console.log(width);
 		if (width <= MOBILE_WIDTH) {
 			setIsMobile(true);
-			setIsOpenFilter(false);
+			// setIsOpenFilter(false);
 		} else {
 			setIsMobile(false);
-			setIsOpenFilter(true);
+			// setIsOpenFilter(true);
 		}
 	}, [width]);
 
+	useEffect(() => {
+		if (isMobile) {
+			setIsOpenFilter(false);
+			console.log('закрыты фильтры');
+		} else {
+			setIsOpenFilter(true);
+			console.log('открыты фильтры');
+		}
+	}, [isMobile]);
+
+	// console.log('isMobile', isMobile);
+	// console.log('loading', loading);
+
 	return (
 		<>
-			{!isMobile && !loading && (
+			<div className={styles.filterContainer}>
+				{isMobile && (
+					<GoodsDropButton
+						isOpenFilter={isOpenFilter}
+						setIsOpenFilter={setIsOpenFilter}
+					/>
+				)}
+
 				<GoodsFilterPanel
 					isOpenFilter={isOpenFilter}
 					setIsOpenFilter={setIsOpenFilter}
@@ -48,27 +72,49 @@ const GoodsFilter = ({
 					setFilter={setFilter}
 					onFilterChange={onFilterChange}
 					onFetchProducts={onFetchProducts}
+					isMobile={isMobile}
+					loading={loading}
 				/>
-			)}
+			</div>
+			{/* {!isMobile && !loading && (
+				<GoodsFilterPanel
+					isOpenFilter={isOpenFilter}
+					setIsOpenFilter={setIsOpenFilter}
+					filter={filter}
+					setFilter={setFilter}
+					onFilterChange={onFilterChange}
+					onFetchProducts={onFetchProducts}
+					isMobile={isMobile}
+				/>
+			)} */}
 
-			{/* {isMobile && loading && <p className={styles.info}>{LOADING_INFO}</p>} */}
+			{/* {!isMobile && loading && (
+				<GoodsFilterPanel
+					isOpenFilter={isOpenFilter}
+					setIsOpenFilter={setIsOpenFilter}
+					filter={filter}
+					setFilter={setFilter}
+					onFilterChange={onFilterChange}
+					onFetchProducts={onFetchProducts}
+					isMobile={isMobile}
+				/>
+			)} */}
 
-			{isMobile && (
+			{/* {isMobile && loading && <p>{LOADING_INFO}</p>} */}
+
+			{/* {isMobile && !loading && (
 				<div className={styles.filterContainer}>
-					<GoodsDropButton
-						isOpenFilter={isOpenFilter}
-						setIsOpenFilter={setIsOpenFilter}
-					/>
-					<GoodsFilterPanel
+					<GoodsMobFilterPanel
 						isOpenFilter={isOpenFilter}
 						setIsOpenFilter={setIsOpenFilter}
 						filter={filter}
 						setFilter={setFilter}
 						onFilterChange={onFilterChange}
 						onFetchProducts={onFetchProducts}
+						isMobile={isMobile}
 					/>
 				</div>
-			)}
+			)} */}
 		</>
 	);
 };
