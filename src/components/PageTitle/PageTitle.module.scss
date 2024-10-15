@@ -110,13 +110,15 @@
 }
 
 @media (max-width: 768px) {
+
+	.wrap {
+		border-radius: 10px;
+	}
+
 	.title {
-		// font-size: 36px;
 		margin: 15px 10px 10px 0;
 	}
-	// .text {
-	// 	font-size: 14px;
-	// }
+
 	.wrapInner {
 		padding-top: 15px;
 		padding-bottom: 20px;
@@ -172,7 +174,5 @@
 		position: absolute;
 		bottom: 0;
 		right: 10px;
-		// height: 55%;
-		// width: auto;
 	}
 }

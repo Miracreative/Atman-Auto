@@ -9,7 +9,7 @@
 	right: 23vw;
     width: 1px;
     background-color: rgb(var(--gray-line-rgb));
-    z-index: 1;
+    z-index: 0;
 }
 
 .section {
@@ -61,6 +61,7 @@
 	min-height: 284px;
 
 	filter: grayscale(100%);
+	background: #E4E5E7;
 }
 
 .slideInner {

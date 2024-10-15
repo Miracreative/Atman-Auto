@@ -18,29 +18,20 @@ import { useState, useEffect } from 'react';
 
 export default function NewsSliderAndContent({ imagessrc, content }) {
 
+	console.log(imagessrc);
+	console.log(content);
 
 
-	const [imgData, setImgData] = useState(() => imagessrc);
+	const [imgData, setImgData] = useState([]);
 	const [isImgDataReady, setIsImgDataReady] = useState(false);
 
 	useEffect(() => {
 		setImgData(imagessrc);
 		setIsImgDataReady(true);
+		setCanGoNext(imagessrc.length > 1);
 	}, []);
 
-	const imgDataPromise = new Promise((resolve) => {
-		if (isImgDataReady) {
-			resolve();
-		} else {
-			const timeoutId = setTimeout(() => {
-				resolve();
-			}, 100); // adjust the timeout value as needed
-		}
-	});
 
-	console.log(Array.isArray(imagessrc));
-
-	console.log(imagessrc);
 
 
 	const [canGoPrev, setCanGoPrev] = useState(false);
@@ -65,127 +56,111 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 	const goToPrevSlide = () => {
 		if (swiper) {
 			swiper.slidePrev();
-
 		}
 	};
 
 	const goToNextSlide = () => {
 		if (swiper) {
 			swiper.slideNext();
-
 		}
 	};
 
 
-	if (!imgData || !Array.isArray(imgData)) {
-		return <div>Loading...</div>; // or return a loading indicator
-	}
 
-	imgDataPromise.then(() => {
-		return (
-			<>
-				<section className={styles.section}>
-					<div className={styles.sectionInner}>
+	return (
+		<>
+			<section className={styles.section}>
+				<div className={styles.sectionInner}>
 
-						<div className='container'>
+					<div className='container'>
 
-							<div className={styles.wrap}>
+						<div className={styles.wrap}>
 
 
-								<div className={styles.swiperContainer}>
+							<div className={styles.swiperContainer}>
 
-									<Swiper
-										wrapperClass={styles.swiperWrapper}
-										className={styles.swiper}
-										modules={[Navigation, A11y, Controller]}
+								<Swiper
+									wrapperClass={styles.swiperWrapper}
+									className={styles.swiper}
+									modules={[Navigation, A11y, Controller]}
 
-										// breakpoints={{
-										// 	0: {
-										// 		slidesPerView: 1.5,
-										// 		spaceBetween: 10,
-										// 	},
-										// 	576: {
-										// 		slidesPerView: 2.2,
-										// 		spaceBetween: 10,
-										// 	},
-										// 	768: {
-										// 		slidesPerView: 2.5,
-										// 		spaceBetween: 10,
-										// 	},
-										// 	1024: {
-										// 		slidesPerView: 3,
-										// 	},
-										// }}
-										onSwiper={setSwiper}
-										navigation={{
-											prevEl: '.prev',
-											nextEl: '.next',
-										}}
+									breakpoints={{
+										0: {
+											slidesPerView: 1.5,
+											spaceBetween: 10,
+										},
+										1024: {
+											slidesPerView: 1.5,
+										},
+									}}
+									onSwiper={setSwiper}
+									navigation={{
+										prevEl: '.prev',
+										nextEl: '.next',
+									}}
 
 
-										spaceBetween={20}
-										// slidesPerView={3}
-										onSlideChange={(swiper) => onSlideChange(swiper)}
-									>
+									spaceBetween={20}
+									slidesPerView={3}
+									onSlideChange={(swiper) => onSlideChange(swiper)}
+								>
 
-										{
-											imgData?.map((srcImg, index) => (
-												<SwiperSlide key={index} className={styles.swiperSlide}>
-													<div className={styles.imgWrap} >
-														<Image src={srcImg}
-															width={300}
-															height={300}
-															alt="img"
-														/>
+									{
+										imgData.map((srcImg, index) => (
+											<SwiperSlide key={index} className={styles.swiperSlide}>
+												<div className={styles.imgWrap} >
+													<img src={srcImg}
+														width={300}
+														height={300}
+														alt="img"
+													/>
 
-													</div>
+												</div>
 
-												</SwiperSlide>
-											))
-										}
+											</SwiperSlide>
+										))
+									}
 
-
-									</Swiper>
+								</Swiper>
 
 
 
-									<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
+								<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
 
-										<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
-										</svg>
-
-
-									</button>
+									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+									</svg>
 
 
-									<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
-
-										<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
-										</svg>
+								</button>
 
 
-									</button>
+								<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
 
-								</div>
-
-
-
-								<div className={styles.textWrap}>
-									{content}
-								</div>
+									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+									</svg>
 
 
+								</button>
+
+							</div>
+
+
+
+							<div className={styles.textWrap}>
+								{content}
 							</div>
 
 
 						</div>
 
+
 					</div>
 
-				</section>
-			</>
-		);
-	})
+				</div>
+
+			</section>
+		</>
+	);
 }

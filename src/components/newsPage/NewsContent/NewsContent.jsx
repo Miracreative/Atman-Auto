@@ -118,7 +118,10 @@ export default function NewsContent({ news }) {
 								return (
 									<Link href={`${process.env.DOMAIN}/news/${item.id}`} params={item.id} key={item.id} className={styles.card}>
 										<div className={styles.images}>
-											<img className={styles.imgItem} src={item.imagessrc} alt={item.photo} />
+											<img
+												className={styles.imgItem}
+												src={item.imagessrc}
+												alt={item.photo} />
 										</div>
 
 										<div className={styles.cardInner}>
