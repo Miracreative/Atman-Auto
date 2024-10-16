@@ -1,4 +1,8 @@
 export const menuItems = {
+	home: {
+		title: 'Главная',
+		items: [{ href: '/', text: 'Главная' }],
+	},
 	about: {
 		title: 'О нас',
 		items: [

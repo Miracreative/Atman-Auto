@@ -2,29 +2,21 @@
 
 .section {
 	position: relative;
-	// min-width: 320px;
 	width: 820px;
-	// border-top: 1px solid rgb(var(--foreground-rgb));
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 .sectionInner {
-	// padding: 20px 0;
-	// padding: 0 48px;
 	padding: 0 50px;
-	// color: white;
 }
 
 .wrap {
-	// padding: 4vw;
-	// background-color: rgb(var(--foreground-rgb));
 	overflow: hidden;
 }
 
 .swiperContainer {
 	position: relative;
 	z-index: 2;
-	// margin-top: 50px;
 	border-left: 1px solid rgb(var(--gray-line-rgb));
 	border-right: 1px solid rgb(var(--gray-line-rgb));
 }
@@ -33,7 +25,6 @@
 	width: 100%;
 	display: flex;
 
-	// background-color: rgb(var(--gray-background-img-rgb));
 	background-color: rgb(223, 223, 206);
 }
 
@@ -47,17 +38,11 @@
 }
 
 .swiperSlide {
-	// height: 29vw;
 	max-height: 600px;
-	min-height: 284px;
+	min-height: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	// border-radius: 20px;
-	// overflow: hidden;
-
-	// background-color: rgb(var(--gray-background-img-rgb));
-	// border-radius: 20px;
 }
 
 .swiperSlide img {
@@ -69,16 +54,10 @@
 }
 
 .imgWrap {
-	// background-color: rgb(var(--gray-background-img-rgb));
-	// height: 587px;
-	// height: 32vw;
 	// height: 100%;
 	min-height: 600px;
 	width: auto;
 	position: relative;
-	// overflow: hidden;
-
-	// border-radius: 20px;
 }
 
 .prevBtn,
@@ -100,7 +79,6 @@
 
 	&:disabled {
 		cursor: auto;
-		// background-color: transparent;
 		background-color: var(--white);
 		border: 1px solid rgb(var(--foreground-rgb));
 
@@ -118,7 +96,6 @@
 
 .nextBtn {
 	right: 0;
-	// right: 0;
 	z-index: 2;
 }
 
@@ -164,7 +141,6 @@
 @media (max-width: 768px) {
 	.section {
 		width: inherit;
-		// overflow: hidden;
 	}
 
 	.swiperSlide {

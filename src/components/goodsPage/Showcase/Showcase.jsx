@@ -42,7 +42,9 @@ const Showcase = ({ product }) => {
 					изготавливаются под заказ
 				</p>
 			</div>
-			<GoodsSlider product={product} />
+			<div className={styles.sliderContainer}>
+				<GoodsSlider product={product} />
+			</div>
 		</section>
 	);
 };
