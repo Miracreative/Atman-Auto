@@ -2,6 +2,7 @@ import PageTitle from './../../components/PageTitle/PageTitle.jsx';
 import Algorithm from '../../components/aboutPage/Algorithm/Algorithm.jsx';
 import Values from '../../components/aboutPage/Values/Values.jsx';
 import Certificates from '../../components/aboutPage/Certificates/Certificates.jsx';
+import Afoam from '@/components/aboutPage/Afoam/Afoam.jsx'
 import Delivery from '../../components/aboutPage/Delivery/Delivery.jsx';
 import PartnersSlider from '@/components/aboutPage/PartnersSlider/PartnersSlider.jsx';
 import Team from './../../components/Team/Team.jsx';
@@ -35,6 +36,7 @@ export default function About() {
 			<Algorithm></Algorithm>
 			<Values></Values>
 			<Certificates></Certificates>
+			<Afoam></Afoam>
 			<Delivery></Delivery>
 			<PartnersSlider></PartnersSlider>
 			<Team></Team>
