@@ -6,12 +6,6 @@ import useWindowWidth from '@/hooks/useWindowWidth';
 
 import MOBILE_WIDTH from '@/constants/width.js';
 
-import {
-	LOADING_INFO,
-	LOADING_DATA_ERROR,
-	NOT_FOUND_INFO,
-} from '@/utils/informMessages.js';
-
 import GoodsDropButton from '../GoodsDropButton/GoodsDropButton.jsx';
 import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
 
@@ -28,24 +22,23 @@ const GoodsFilter = ({
 }) => {
 	const width = useWindowWidth();
 	const [isOpenFilter, setIsOpenFilter] = useState(false);
+
 	useEffect(() => {
-		console.log(width);
+		// console.log(width);
 		if (width <= MOBILE_WIDTH) {
 			setIsMobile(true);
-			// setIsOpenFilter(false);
 		} else {
 			setIsMobile(false);
-			// setIsOpenFilter(true);
 		}
 	}, [width]);
 
 	useEffect(() => {
 		if (isMobile) {
 			setIsOpenFilter(false);
-			console.log('закрыты фильтры');
+			// console.log('закрыты фильтры');
 		} else {
 			setIsOpenFilter(true);
-			console.log('открыты фильтры');
+			// console.log('открыты фильтры');
 		}
 	}, [isMobile]);
 
