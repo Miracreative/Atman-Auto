@@ -2,7 +2,9 @@
 @import '../../../scss/_mixins.scss';
 
 .section {
+	max-width: 1920px;
 	min-height: 600px;
+	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	padding: 0 50px 0 100px;
