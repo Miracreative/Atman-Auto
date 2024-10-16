@@ -20,11 +20,11 @@
 
 .characteristics {
 	height: 100%;
-	background-color: rgb(var(--foreground-rgb));
-	color: var(--white);
 	border-top-left-radius: var(--border-radius);
 	border-bottom-left-radius: var(--border-radius);
 	padding: 80px 150px 60px 80px;
+	background-color: rgb(var(--foreground-rgb));
+	color: var(--white);
 }
 
 .advantagesContainer {
@@ -33,10 +33,10 @@
 
 .advantages {
 	height: 100%;
-	background-color: rgb(var(--gray-background-img-rgb));
 	border-top-right-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
 	padding: 80px 80px 60px;
+	background-color: rgb(var(--gray-background-img-rgb));
 }
 
 @media (max-width: 1920px) {
@@ -72,10 +72,6 @@
 }
 
 @media (max-width: 480px) {
-	// .section {
-	// 	padding: 5px 0 5px;
-	// }
-
 	.container {
 		padding: 0;
 	}

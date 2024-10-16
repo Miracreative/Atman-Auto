@@ -14,7 +14,6 @@ import {
 
 import GoodsDropButton from '../GoodsDropButton/GoodsDropButton.jsx';
 import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
-import GoodsMobFilterPanel from '../GoodsMobFilterPanel/GoodsMobFilterPanel.jsx';
 
 import styles from './GoodsFilter.module.scss';
 
@@ -24,10 +23,8 @@ const GoodsFilter = ({
 	onFilterChange,
 	onFetchProducts,
 	loading,
-
 	isMobile,
 	setIsMobile,
-	// error,
 }) => {
 	const width = useWindowWidth();
 	const [isOpenFilter, setIsOpenFilter] = useState(false);
@@ -51,9 +48,6 @@ const GoodsFilter = ({
 			console.log('открыты фильтры');
 		}
 	}, [isMobile]);
-
-	// console.log('isMobile', isMobile);
-	// console.log('loading', loading);
 
 	return (
 		<>

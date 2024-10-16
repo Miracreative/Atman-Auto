@@ -25,6 +25,9 @@ const GoodsContent = () => {
 		0, 0, 0, 0, 0, 0, 0, 0,
 	]);
 
+	const shouldDisplayMessage =
+		!isMobile && (loading || error || products.length === 0);
+
 	const handleFetchProducts = async () => {
 		try {
 			setLoading(true);
@@ -68,7 +71,7 @@ const GoodsContent = () => {
 				error={error}
 			/>
 
-			{!isMobile && (
+			{shouldDisplayMessage && (
 				<div className={styles.messageContainer}>
 					{loading && <p>{LOADING_INFO}</p>}
 					{!loading && error && <p>{LOADING_DATA_ERROR}</p>}

@@ -19,7 +19,6 @@
 
 .sliderContainer {
 	min-height: 400px;
-	// max-height: 600px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -213,11 +212,6 @@
 }
 
 @media (max-width: 768px) {
-	// 	.section {
-	// min-height: 500px;
-	// flex-direction: column;
-	// }
-
 	.article {
 		font-size: 14px;
 	}
