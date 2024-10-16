@@ -24,7 +24,6 @@ const GoodsFilter = ({
 	const [isOpenFilter, setIsOpenFilter] = useState(false);
 
 	useEffect(() => {
-		// console.log(width);
 		if (width <= MOBILE_WIDTH) {
 			setIsMobile(true);
 		} else {
@@ -35,10 +34,8 @@ const GoodsFilter = ({
 	useEffect(() => {
 		if (isMobile) {
 			setIsOpenFilter(false);
-			// console.log('закрыты фильтры');
 		} else {
 			setIsOpenFilter(true);
-			// console.log('открыты фильтры');
 		}
 	}, [isMobile]);
 
@@ -63,45 +60,6 @@ const GoodsFilter = ({
 					loading={loading}
 				/>
 			</div>
-			{/* {!isMobile && !loading && (
-				<GoodsFilterPanel
-					isOpenFilter={isOpenFilter}
-					setIsOpenFilter={setIsOpenFilter}
-					filter={filter}
-					setFilter={setFilter}
-					onFilterChange={onFilterChange}
-					onFetchProducts={onFetchProducts}
-					isMobile={isMobile}
-				/>
-			)} */}
-
-			{/* {!isMobile && loading && (
-				<GoodsFilterPanel
-					isOpenFilter={isOpenFilter}
-					setIsOpenFilter={setIsOpenFilter}
-					filter={filter}
-					setFilter={setFilter}
-					onFilterChange={onFilterChange}
-					onFetchProducts={onFetchProducts}
-					isMobile={isMobile}
-				/>
-			)} */}
-
-			{/* {isMobile && loading && <p>{LOADING_INFO}</p>} */}
-
-			{/* {isMobile && !loading && (
-				<div className={styles.filterContainer}>
-					<GoodsMobFilterPanel
-						isOpenFilter={isOpenFilter}
-						setIsOpenFilter={setIsOpenFilter}
-						filter={filter}
-						setFilter={setFilter}
-						onFilterChange={onFilterChange}
-						onFetchProducts={onFetchProducts}
-						isMobile={isMobile}
-					/>
-				</div>
-			)} */}
 		</>
 	);
 };

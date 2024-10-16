@@ -1,16 +1,9 @@
-import Link, { LinkProps } from 'next/link';
+import Link from 'next/link';
+
+import type { BreadcrumbItemProps } from '@/types/breadcrumbs.ts';
 
 import styles from './BreadcrumbItem.module.scss';
 
-export type BreadcrumbItemProps = Omit<LinkProps, 'href'> & {
-	href?: LinkProps['href'];
-	isLast?: boolean;
-	title: string;
-};
-
-export type BreadcrumbsProps = {
-	items: BreadcrumbItemProps[];
-};
 export const BreadcrumbItem = ({
 	title,
 	href,

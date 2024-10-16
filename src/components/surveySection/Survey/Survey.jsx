@@ -9,11 +9,6 @@ import useToggleMenus from '@/hooks/useToggleMenus';
 
 import MOBILE_WIDTH from '@/constants/width.js';
 
-import SurveyItem from '../SurveyItem/SurveyItem';
-import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
-import ArrowButton from '@/components/ArrowButton/ArrowButton';
-import ProductCard from '@/components/ProductCard/ProductCard';
-
 import {
 	tasks,
 	types1,
@@ -23,6 +18,12 @@ import {
 	conditions,
 } from '@/data/surveyOptions';
 import products from '@/data/products';
+
+import SurveyItem from '../SurveyItem/SurveyItem';
+import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
+import ArrowButton from '@/components/ArrowButton/ArrowButton';
+import ProductCard from '@/components/ProductCard/ProductCard';
+
 import image from '/public/survey/survey.png';
 
 import styles from './Survey.module.scss';
@@ -50,13 +51,7 @@ export default function Survey() {
 	);
 	const [checkedCondition, setCheckedCondition] = useState(conditions[0].value);
 
-	const handleOpenMenu = (menuName) => {
-		toggleMenu(menuName);
-	};
-
-	const handleCloseMenu = (menuName) => {
-		closeMenu(menuName);
-	};
+	const width = useWindowWidth();
 
 	const minCount = 1;
 	const maxCount = 5;
@@ -65,6 +60,14 @@ export default function Survey() {
 
 	const forwardButtonDisabled = count === maxCount;
 	const backButtonDisabled = count === minCount;
+
+	const handleOpenMenu = (menuName) => {
+		toggleMenu(menuName);
+	};
+
+	const handleCloseMenu = (menuName) => {
+		closeMenu(menuName);
+	};
 
 	const handleCheckedTask = (value) => {
 		setCheckedTask(value);
@@ -101,8 +104,6 @@ export default function Survey() {
 			setCount(count - 1);
 		}
 	};
-
-	const width = useWindowWidth();
 
 	const selectedTask = tasks.find((task) => task.value === checkedTask);
 	const selectedType1 = types1.find((type) => type.value === checkedType1);
@@ -150,6 +151,7 @@ export default function Survey() {
 							<span>/05</span>
 						</div>
 					</div>
+
 					<div className={styles.survey}>
 						{/* Экран 1 Какая задача стоит перед Вами? */}
 						<div

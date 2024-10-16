@@ -2,10 +2,9 @@ import React from 'react';
 
 import ArrowIcon from '../ArrowIcon/ArrowIcon';
 
-import {
-	BreadcrumbItem,
-	BreadcrumbsProps,
-} from '../BreadcrumbItem/BreadcrumbItem';
+import { BreadcrumbItem } from '../BreadcrumbItem/BreadcrumbItem';
+
+import type { BreadcrumbsProps } from '@/types/breadcrumbs.ts';
 
 import styles from './Breadcrumbs.module.scss';
 
