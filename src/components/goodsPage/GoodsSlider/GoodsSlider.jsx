@@ -57,8 +57,11 @@ export default function GoodsSlider() {
 								slidesPerView: 1.5,
 								// spaceBetween: 10,
 							},
-							431: {
-								slidesPerView: 2,
+							// 767: {
+							// 	slidesPerView: 2,
+							// },
+							767: {
+								slidesPerView: 2.5,
 							},
 							1025: {
 								slidesPerView: 1,
