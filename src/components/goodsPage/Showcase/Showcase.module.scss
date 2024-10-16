@@ -17,8 +17,33 @@
 
 .sliderContainer {
 	min-height: 400px;
+	// max-height: 600px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50px;
+		width: 1px;
+		background-color: rgb(var(--gray-line-rgb));
+		z-index: 1;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 50px;
+		width: 1px;
+		background-color: rgb(var(--gray-line-rgb));
+		z-index: 1;
+	}
 }
 
 .breadCrumbs {
