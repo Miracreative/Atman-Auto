@@ -55,9 +55,12 @@ export default function GoodsSlider() {
 						breakpoints={{
 							0: {
 								slidesPerView: 1.5,
-								spaceBetween: 10,
+								// spaceBetween: 10,
 							},
-							1280: {
+							431: {
+								slidesPerView: 2,
+							},
+							1025: {
 								slidesPerView: 1,
 							},
 						}}
@@ -66,7 +69,7 @@ export default function GoodsSlider() {
 							prevEl: '.prev',
 							nextEl: '.next',
 						}}
-						spaceBetween={50}
+						// spaceBetween={50}
 						slidesPerView={4.2}
 						onSlideChange={(swiper) => onSlideChange(swiper)}
 					>

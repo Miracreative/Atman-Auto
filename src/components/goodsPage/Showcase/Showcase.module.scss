@@ -184,6 +184,13 @@
 		padding: 40px 40px 50px;
 	}
 
+	.sliderContainer {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
 	.brand {
 		margin-right: 12px;
 	}
@@ -198,6 +205,11 @@
 }
 
 @media (max-width: 768px) {
+	// 	.section {
+	// min-height: 500px;
+	// flex-direction: column;
+	// }
+
 	.article {
 		font-size: 14px;
 	}
@@ -225,8 +237,16 @@
 }
 
 @media (max-width: 480px) {
+	.section {
+		min-height: auto;
+	}
+
 	.titleContainer {
 		padding: 40px 20px 30px;
+	}
+
+	.sliderContainer {
+		min-height: 200px;
 	}
 
 	.article {
@@ -237,6 +257,11 @@
 @media (max-width: 375px) {
 	.titleContainer {
 		padding: 40px 10px 20px;
+	}
+
+	.sliderContainer {
+		min-height: 140px;
+		height: 140px;
 	}
 
 	.description {
