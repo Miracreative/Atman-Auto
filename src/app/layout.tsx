@@ -63,9 +63,10 @@ export default function RootLayout({
 			<html lang="ru">
 				<body className={montserrat.className}>
 					{/* <body className={inter.className}> */}
-					<Header />
+					{children}
+					{/* <Header />
 					<main>{children}</main>
-					<Footer />
+					<Footer /> */}
 				</body>
 			</html>
 		</StoreProvider>

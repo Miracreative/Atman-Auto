@@ -1,5 +1,8 @@
 // import styles from './page.module.css';
 
+import Header from '@/components/headerSection/Header/Header';
+import Footer from '@/components/Footer/Footer';
+
 import Catalog from '../components/Catalog/Catalog.jsx';
 import Survey from '../components/surveySection/Survey/Survey.jsx';
 import Decisions from '../components/Decisions/Decisions.jsx';
@@ -14,19 +17,23 @@ import { Counter } from '@/components/Counter/Counter';
 export default function Home() {
 	return (
 		<>
-			<Catalog />
+			<Header />
+			<main>
+				<Catalog />
 
-			{/* Убрать перед продом */}
-			<Counter></Counter>
-			{/* Убрать перед продом */}
+				{/* Убрать перед продом */}
+				<Counter></Counter>
+				{/* Убрать перед продом */}
 
-			<Survey />
-			<Decisions />
-			<ProductionCapabilities></ProductionCapabilities>
-			<ProductsSlider></ProductsSlider>
-			<NewsSlider></NewsSlider>
-			<Team></Team>
-			<Map></Map>
+				<Survey />
+				<Decisions />
+				<ProductionCapabilities></ProductionCapabilities>
+				<ProductsSlider></ProductsSlider>
+				<NewsSlider></NewsSlider>
+				<Team></Team>
+				<Map></Map>
+			</main>
+			<Footer />
 		</>
 	);
 }
