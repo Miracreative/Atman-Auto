@@ -60,20 +60,39 @@ export const menuItems = {
 			},
 			{
 				href: '/goods/foamed-double-sided-adhesive-tapes',
+				// href: '/goods',
 				text: 'Вспененные двусторонние клейкие ленты',
 			},
 			{
-				href: '/goods/thin-double-sided-adhesive-tapes',
+				// href: '/goods/thin-double-sided-adhesive-tapes',
+				href: '/goods',
 				text: 'Тонкие двусторонние клейкие ленты',
 			},
 			{
-				href: '/goods/single-sided-adhesive-tapes',
+				// href: '/goods/single-sided-adhesive-tapes',
+				href: '/goods',
 				text: 'Односторонние клейкие ленты',
 			},
-			{ href: '/goods/primers-and-cleaners', text: 'Праймеры и очистители' },
-			{ href: '/goods/tapes', text: 'Пленки' },
-			{ href: '/goods/tools', text: 'Инструменты' },
-			{ href: '/goods/rubbers', text: 'Резины' },
+			{
+				// href: '/goods/primers-and-cleaners',
+				href: '/goods',
+				text: 'Праймеры и очистители',
+			},
+			{
+				// href: '/goods/tapes',
+				href: '/goods',
+				text: 'Пленки',
+			},
+			{
+				// href: '/goods/tools',
+				href: '/goods',
+				text: 'Инструменты',
+			},
+			{
+				// href: '/goods/rubbers',
+				href: '/goods',
+				text: 'Резины',
+			},
 		],
 	},
 };

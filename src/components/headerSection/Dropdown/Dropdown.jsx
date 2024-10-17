@@ -1,14 +1,46 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+
+import { fetchFilteredMainParamGoods } from '@/api/goodsService.js';
 
 import { TriangleIcon, DEFAULT_COLOR } from './../../TriangleIcon/TriangleIcon';
 
 import styles from './Dropdown.module.scss';
+// import { log } from 'console';
 
-const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
+const Dropdown = ({
+	title,
+	items,
+	isOpen,
+	toggleOpen,
+	menuRef,
+	setFilterMainParam,
+}) => {
 	const pathname = usePathname();
+
+	const router = useRouter();
+
+	const handleLinkClick = async (item) => {
+		if (item.href === '/goods') {
+			const filterIndex = items.findIndex((link) => link.text === item.text);
+			const filterMainParam = Array(8).fill(0);
+			filterMainParam[filterIndex] = 1; // Устанавливаем нужную цифру в массив
+
+			// Перенаправляем пользователя на /goods
+			router.push('/goods');
+
+			// Выполняем запрос
+			await fetchFilteredMainParamGoods(filterMainParam);
+			console.log('Запрос в handleLinkClick');
+		}
+		//  else {
+		// 	router.push(item.href);
+		// }
+
+		toggleOpen(); // Закрываем dropdown
+	};
 
 	const isActiveLink = items.some((item) => pathname === item.href);
 
@@ -40,7 +72,8 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 								className={`${styles.link} ${
 									pathname === item.href ? styles.linkActive : ''
 								}`}
-								onClick={toggleOpen}
+								// onClick={toggleOpen}
+								onClick={() => handleLinkClick(item)}
 							>
 								{item.text}
 							</Link>
