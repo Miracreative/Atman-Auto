@@ -38,7 +38,7 @@
 }
 
 .content {
-	width: 85%;
+	width: 46%;
 	position: relative;
 	z-index: 3;
 }
@@ -129,11 +129,11 @@
 }
 
 
-@media (max-width: 715px) {
-	.content {
-		width: auto;
-	}
-}
+// @media (max-width: 715px) {
+// 	.content {
+// 		width: auto;
+// 	}
+// }
 
 @media (max-width: 600px) {
 	.triangleImg {
