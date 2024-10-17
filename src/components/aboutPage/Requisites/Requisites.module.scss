@@ -315,6 +315,11 @@
 
 
 	@media (max-width: 768px) {
+
+		.wrap {
+			border-radius: 10px;
+		}
+
 		.innerWrap {
 			margin: 30px 0 10px 0;
 		}

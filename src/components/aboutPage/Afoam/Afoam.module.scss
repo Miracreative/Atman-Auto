@@ -1,0 +1,64 @@
+@import '@/scss/functions.scss';
+
+
+.section {
+	padding: 20px 0;
+	color: white;
+}
+
+.wrap {
+	border-radius: 20px;
+	background: url('/about/Afoam/back-afoam.png') no-repeat center;
+	padding: 4vw;
+}
+
+.afoamTitle {
+	margin-bottom: 2vw;
+}
+
+.imgAfoam {
+	height: 11vw;
+}
+
+.title {
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 64px;
+	line-height: 1.2;
+}
+
+.subtitle {
+	font-size: 32px;
+}
+
+.bottomSide {
+	display: flex;
+	margin-top: 3.8vw;
+}
+
+.linkWrap {
+	width: 25%;
+}
+
+.afoamLink {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	max-width: 400px;
+	width: 100%;
+	background-color: var(--red-button);
+	cursor: pointer;
+	transition: 0.3s all ease-in-out;
+	border-radius: 20px;
+	&:hover {
+		background-color: var(--red-dark);
+	}
+}
+
+.law {
+	display: flex;
+	align-items: center;
+	margin-left: 4vw;
+	font-weight: 500;
+}

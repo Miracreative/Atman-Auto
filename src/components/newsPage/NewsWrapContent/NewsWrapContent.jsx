@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-import { URL_NEWS } from '@/constants/url.js';
+// import { URL_NEWS } from '@/constants/url.js';
 
 import NewsContent from '../NewsContent/NewsContent.jsx';
 
@@ -34,9 +34,6 @@ const NewsWrapContent = () => {
 		fetchNews();
 	}, []);
 
-	// useEffect(() => {
-	// 	console.log(news); // Теперь news будет содержать данные из API
-	// }, [news]);
 
 	if (error) {
 		return <p>Ошибка: {error}</p>;
