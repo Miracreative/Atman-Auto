@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+
+// import { Inter, Montserrat } from 'next/font/google';
+// import localFont from 'next/font/local';
+import montserrat from '../fonts/montserrat.js';
 
 import Favicon from '/public/images/мetadata/favicon.ico';
 import OpenGraphImage from '/public/images/opengraph-image/opengraph-image.png';
@@ -12,7 +15,9 @@ import contacts from '@/data/contacts';
 
 import './../scss/style.scss';
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+// const montserrat = Montserrat({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
+// const montserrat = localFont({ src: '../fonts/montserrat.js' });
 
 export const metadata: Metadata = {
 	title: 'Atman Auto',
@@ -54,6 +59,7 @@ export default function RootLayout({
 	return (
 		<html lang="ru">
 			<body className={montserrat.className}>
+				{/* <body className={inter.className}> */}
 				<Header />
 				<main>{children}</main>
 				<Footer />
