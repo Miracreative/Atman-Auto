@@ -19,7 +19,6 @@ const GoodsContent = () => {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [isMobile, setIsMobile] = useState(false);
-
 	const [error, setError] = useState(null);
 	const [filterMainParam, setFilterMainParam] = useState([
 		0, 0, 0, 0, 0, 0, 0, 0,
@@ -29,8 +28,9 @@ const GoodsContent = () => {
 		!isMobile && (loading || error || products.length === 0);
 
 	const handleFetchProducts = async () => {
+		setLoading(true);
+		setError(null);
 		try {
-			setLoading(true);
 			const allProducts = await fetchAllGoods();
 			setProducts(allProducts || []);
 		} catch (err) {
@@ -45,8 +45,9 @@ const GoodsContent = () => {
 	}, []);
 
 	const handleFilterChange = async () => {
+		setLoading(true);
+		setError(null);
 		try {
-			setLoading(true);
 			const filteredProducts = await fetchFilteredMainParamGoods(
 				filterMainParam,
 			);

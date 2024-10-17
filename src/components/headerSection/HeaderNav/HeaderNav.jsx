@@ -1,8 +1,8 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { useClickOutside } from '../../../hooks/useClickOutside';
+import { useClickOutside } from '@/hooks/useClickOutside.js';
 
 import { dropdownItems } from '@/data/menuItems';
 
@@ -11,6 +11,11 @@ import Dropdown from './../Dropdown/Dropdown';
 import styles from './HeaderNav.module.scss';
 
 const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
+	// const [filterMainParam, setFilterMainParam] = useState([
+	// 	0, 0, 0, 0, 0, 0, 0, 0,
+	// ]);
+	// const [loading, setLoading] = useState(true);
+
 	const refs = useRef(
 		dropdownItems.reduce((acc, item) => {
 			acc[item.key] = useRef(null);
@@ -42,26 +47,30 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 						isOpen={activeDropdown === item.key}
 						toggleOpen={() => toggleDropdown(item.key)}
 						menuRef={refs.current[item.key]}
+						// setFilterMainParam={setFilterMainParam}
 					/>
 				))}
 				<Link
 					href="/production"
-					className={`${styles.link} ${pathname === '/production' ? styles.linkActive : ''
-						}`}
+					className={`${styles.link} ${
+						pathname === '/production' ? styles.linkActive : ''
+					}`}
 				>
 					Производство
 				</Link>
 				<Link
 					href="/knowledge"
-					className={`${styles.link} ${pathname === '/knowledge' ? styles.linkActive : ''
-						}`}
+					className={`${styles.link} ${
+						pathname === '/knowledge' ? styles.linkActive : ''
+					}`}
 				>
 					База знаний
 				</Link>
 				<Link
 					href="/news"
-					className={`${styles.link} ${pathname === '/news' ? styles.linkActive : ''
-						}`}
+					className={`${styles.link} ${
+						pathname === '/news' ? styles.linkActive : ''
+					}`}
 				>
 					Новости
 				</Link>
