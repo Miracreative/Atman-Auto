@@ -6,7 +6,7 @@ import {
 	FILTERED_ALL_PARAM_GOODS_URL,
 } from '../constants/url.js';
 
-// Функция для получения всех продуктов //
+//* Функция для получения всех продуктов *//
 export const fetchAllGoods = async () => {
 	const response = await axios.get(ALL_GOODS_URL);
 
@@ -15,7 +15,7 @@ export const fetchAllGoods = async () => {
 	return response.data;
 };
 
-// Функция для получения отфильтрованных продуктов в Товарах //
+//* Функция для получения отфильтрованных продуктов в Товарах (фильтрация по главным параметрам) *//
 export const fetchFilteredMainParamGoods = async (filterMainParam) => {
 	const response = await axios.get(
 		`${FILTERED_MAIN_PARAM_GOODS_URL}/${filterMainParam}`,
@@ -26,7 +26,7 @@ export const fetchFilteredMainParamGoods = async (filterMainParam) => {
 	return response.data;
 };
 
-// Функция для получения отфильтрованных продуктов в Опросе //
+//* Функция для получения отфильтрованных продуктов в Опросе (фильтрация по всем параметрам) *//
 export const fetchFilteredAllParamGoods = async (filterAllParam) => {
 	const response = await axios.get(
 		`${FILTERED_ALL_PARAM_GOODS_URL}/${filterAllParam}`,
