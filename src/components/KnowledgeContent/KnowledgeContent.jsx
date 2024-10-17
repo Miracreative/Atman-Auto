@@ -44,7 +44,7 @@ export default function KnowledgeContent() {
 
 
 	// const [posts, SetPosts] = useState(knowledgeBase);
-	const [postPerPage, SetPostPerPage] = useState(10);
+	const postPerPage = 10;
 	const [currentPage, SetCurrentPage] = useState(1);
 
 	const [pageItem, SetPageItem] = useState({

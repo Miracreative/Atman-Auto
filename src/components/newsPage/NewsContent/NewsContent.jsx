@@ -1,22 +1,22 @@
 'use client';
 
 import styles from './NewsContent.module.scss';
-import newsData from '@/data/newsData.js';
+// import newsData from '@/data/newsData.js';
 import Link from 'next/link';
-import { URL_NEWS } from '@/constants/url.js';
+
 
 import { useState, useEffect } from 'react';
 
 export default function NewsContent({ news }) {
 
 	const [posts, SetPosts] = useState(news);
-	const [postPerPage, SetPostPerPage] = useState(10);
 	const [currentPage, SetCurrentPage] = useState(1);
-
+	const postPerPage = 10;
 	const [pageItem, SetPageItem] = useState({
 		start: 0,
 		end: postPerPage,
 	})
+
 
 	const onPageChangeEvent = (start, end) => {
 		SetPageItem({
@@ -134,6 +134,8 @@ export default function NewsContent({ news }) {
 						}
 
 					</div>
+
+
 
 
 

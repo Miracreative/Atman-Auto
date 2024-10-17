@@ -7,8 +7,22 @@
 .section {
 	position: relative;
 	min-width: 320px;
+	max-width: 1920px;
+	margin: 0 auto;
 	border-bottom: 1px solid rgb(var(--foreground-rgb));
-	border-top: 1px solid rgb(var(--foreground-rgb));
+	// border-top: 1px solid rgb(var(--foreground-rgb));
+
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+		bottom: 48%;
+		right: 0;
+		height: 1px;
+		width: 38%;
+		background-color: rgb(var(--gray-line-rgb));
+		z-index: 1;
+	}
 }
 
 .sectionInner {
