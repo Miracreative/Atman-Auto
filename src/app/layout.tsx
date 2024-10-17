@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { StoreProvider } from '../store/StoreProvider';
+
 // import { Inter, Montserrat } from 'next/font/google';
 // import localFont from 'next/font/local';
 import montserrat from '../fonts/montserrat.js';
@@ -57,13 +59,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru">
-			<body className={montserrat.className}>
-				{/* <body className={inter.className}> */}
-				<Header />
-				<main>{children}</main>
-				<Footer />
-			</body>
-		</html>
+		<StoreProvider>
+			<html lang="ru">
+				<body className={montserrat.className}>
+					{/* <body className={inter.className}> */}
+					<Header />
+					<main>{children}</main>
+					<Footer />
+				</body>
+			</html>
+		</StoreProvider>
 	);
 }
