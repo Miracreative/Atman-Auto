@@ -1,17 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
 	getAllGoods,
 	getFilteredMainParamGoods,
-	setFilterMainParam,
-	setIsMobile,
 } from '../../../store/goods/goodsSlice';
-
-import { fetchAllGoods, fetchFilteredMainParamGoods } from '@/api/goodsService';
 
 import {
 	LOADING_INFO,
@@ -31,71 +27,20 @@ const GoodsContent = () => {
 		(state) => state.goods,
 	);
 
-	// const [products, setProducts] = useState([]);
-	// const [loading, setLoading] = useState(true);
-	// const [isMobile, setIsMobile] = useState(false);
-	// const [error, setError] = useState(null);
-	// const [filterMainParam, setFilterMainParam] = useState([
-	// 	0, 0, 0, 0, 0, 0, 0, 0,
-	// ]);
-
 	const shouldDisplayMessage =
 		!isMobile && (loading || error || products.length === 0);
 
-	// const handleFetchProducts = async () => {
-	// 	setLoading(true);
-	// 	setError(null);
-	// 	try {
-	// 		const allProducts = await fetchAllGoods();
-	// 		setProducts(allProducts || []);
-	// 	} catch (err) {
-	// 		setError(err.message || LOADING_DATA_ERROR);
-	// 	} finally {
-	// 		setLoading(false);
-	// 	}
-	// };
-
 	useEffect(() => {
 		dispatch(getAllGoods());
-		// console.log('filterMainParam', filterMainParam);
 	}, [dispatch]);
 
 	const handleFilterChange = () => {
 		dispatch(getFilteredMainParamGoods(filterMainParam));
 	};
 
-	// const handleFilterChangeLocal = (newFilter) => {
-	// 	dispatch(setFilterMainParam(newFilter));
-	// 	handleFilterChange();
-	// };
-
-	// const handleFilterChange = async () => {
-	// 	setLoading(true);
-	// 	setError(null);
-	// 	try {
-	// 		const filteredProducts = await fetchFilteredMainParamGoods(
-	// 			filterMainParam,
-	// 		);
-	// 		setProducts(filteredProducts || []);
-	// 	} catch (err) {
-	// 		setError(err.message || LOADING_DATA_ERROR);
-	// 	} finally {
-	// 		setLoading(false);
-	// 	}
-	// };
-
 	return (
 		<section className={styles.section}>
-			<GoodsFilter
-			// filter={filterMainParam}
-			// setFilter={handleFilterChangeLocal}
-			// onFilterChange={handleFilterChange}
-			// onFetchProducts={handleFetchProducts}
-			// isMobile={isMobile}
-			// setIsMobile={setIsMobile}
-			// loading={loading}
-			// error={error}
-			/>
+			<GoodsFilter />
 
 			{shouldDisplayMessage && (
 				<div className={styles.messageContainer}>
