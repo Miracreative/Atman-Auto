@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 
 export default function Team() {
-	return <div className={styles.wrapTeam}>
+	return <section className={styles.wrapTeam}>
 		<div className='container'>
 			<div className={styles.content}>
 				<div className={styles.title}>Команда</div>
@@ -155,6 +155,6 @@ export default function Team() {
 				</div>
 			</div>
 		</div>
-	</div>;
+	</section>;
 
 }

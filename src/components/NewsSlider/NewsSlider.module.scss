@@ -8,6 +8,9 @@
 	position: relative;
 	border-bottom: 1px solid rgb(var(--foreground-rgb));
 	border-top: 1px solid rgb(var(--foreground-rgb));
+	min-width: 320px;
+	max-width: 1920px;
+	margin: 0 auto;
 }
 
 .sectionInner {
@@ -84,7 +87,6 @@
 	width: 100%;
 	display: flex;
 	// overflow: hidden;
-
 }
 
 .swiperBottom {
@@ -92,7 +94,6 @@
 	width: 100%;
 	display: flex;
 	// overflow: hidden;
-
 	position: relative;
 	z-index: 2;
 }
@@ -103,7 +104,6 @@
 }
 
 .swiperSlideOne {
-
 	// height: 29vw;
 	max-height: 300px;
 	min-height: 200px;
@@ -112,9 +112,6 @@
 	justify-content: center;
 
 	overflow: hidden;
-
-	// background-color: rgb(var(--gray-background-img-rgb));
-	// border-radius: 20px;
 }
 
 .swiperSlideOne img {

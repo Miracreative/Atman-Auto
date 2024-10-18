@@ -63,7 +63,6 @@ export default function Decisions() {
 		<>
 			<section className={styles.section}>
 				<div className={styles.sectionInner}>
-
 					<div className={styles.verticalLine}></div>
 					<div className='container'>
 

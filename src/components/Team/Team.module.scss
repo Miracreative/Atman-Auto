@@ -1,6 +1,8 @@
 @import '../../scss/_functions.scss';
 
-
+.wrapTeam {
+	min-width: 320px;
+}
 .content {
 	background-color: #E4E5E7;
 	border-radius: 20px;
@@ -12,8 +14,8 @@
 	font-size: 96px;
 	font-weight: 700;
 	color: #E41F26;
-	margin-bottom: 11vh;
-	margin-top: 13vh;
+	margin-bottom: 5vw;
+	margin-top: 6vw;
 	margin-left: 4vw;
 }
 

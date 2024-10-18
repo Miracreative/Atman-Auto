@@ -7,7 +7,9 @@
 .section {
 	position: relative;
 	min-width: 320px;
-	border-top: 1px solid rgb(var(--foreground-rgb));
+	max-width: 1920px;
+	margin: 0 auto;
+	// border-top: 1px solid rgb(var(--foreground-rgb));
 }
 
 .sectionInner {
@@ -30,7 +32,6 @@
 
 .wrap {
 	padding: 4vw ;
-	// background-color: rgb(var(--foreground-rgb));
 }
 
 

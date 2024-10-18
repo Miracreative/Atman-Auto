@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 
 export default function Map() {
-	return <div className={styles.wrap}>
+	return <section className={styles.wrap}>
 		<Image
-			src="/map.svg"
+			src="/map2х.jpg"
 			alt="map"
 			className={styles.mapImg}
-			width={1920}
-			height={1102}
+			width={1880}
+			height={1062}
 		/>
 
-	</div>;
+	</section>;
 }
