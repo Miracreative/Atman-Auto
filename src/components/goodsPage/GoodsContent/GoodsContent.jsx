@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 	getAllGoods,
 	getFilteredMainParamGoods,
-} from '../../../store/goods/goodsSlice';
+} from '../../../store/goods/goodsSlice.js';
 
 import {
 	LOADING_INFO,
