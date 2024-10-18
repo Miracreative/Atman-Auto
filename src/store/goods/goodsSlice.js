@@ -4,13 +4,13 @@ import {
 	fetchAllGoods,
 	fetchFilteredMainParamGoods,
 	fetchFilteredAllParamGoods,
-} from '../api/goodsService.js';
+} from '@/api/goodsService.js';
 
 import {
 	ALL_GOODS_URL,
 	FILTERED_MAIN_PARAM_GOODS_URL,
 	FILTERED_ALL_PARAM_GOODS_URL,
-} from '../constants/url.js';
+} from '@/constants/url.js';
 
 export const getAllGoods = createAsyncThunk(ALL_GOODS_URL, async () => {
 	const response = await fetchAllGoods();
@@ -37,7 +37,8 @@ const goodsSlice = createSlice({
 	name: 'goods',
 	initialState: {
 		products: [],
-		loading: false,
+		// loading: false,
+		loading: true,
 		error: null,
 		filterMainParam: [0, 0, 0, 0, 0, 0, 0, 0],
 		isMobile: false,
