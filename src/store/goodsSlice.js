@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {
 	fetchAllGoods,
 	fetchFilteredMainParamGoods,
+	fetchFilteredAllParamGoods,
 } from '../api/goodsService.js';
 
 import {
@@ -11,12 +12,12 @@ import {
 	FILTERED_ALL_PARAM_GOODS_URL,
 } from '../constants/url.js';
 
-export const fetchGoods = createAsyncThunk(ALL_GOODS_URL, async () => {
+export const getAllGoods = createAsyncThunk(ALL_GOODS_URL, async () => {
 	const response = await fetchAllGoods();
 	return response || [];
 });
 
-export const fetchFilteredGoods = createAsyncThunk(
+export const getFilteredMainParamGoods = createAsyncThunk(
 	FILTERED_MAIN_PARAM_GOODS_URL,
 	async (filterMainParam) => {
 		const response = await fetchFilteredMainParamGoods(filterMainParam);
@@ -24,7 +25,7 @@ export const fetchFilteredGoods = createAsyncThunk(
 	},
 );
 
-export const fetchFilteredAllParamGoods = createAsyncThunk(
+export const getFilteredAllParamGoods = createAsyncThunk(
 	FILTERED_ALL_PARAM_GOODS_URL,
 	async (filterAllParam) => {
 		const response = await fetchFilteredAllParamGoods(filterAllParam);
@@ -51,39 +52,39 @@ const goodsSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder
-			.addCase(fetchGoods.pending, (state) => {
+			.addCase(getAllGoods.pending, (state) => {
 				state.loading = true;
 				state.error = null;
 			})
-			.addCase(fetchGoods.fulfilled, (state, action) => {
+			.addCase(getAllGoods.fulfilled, (state, action) => {
 				state.loading = false;
 				state.products = action.payload;
 			})
-			.addCase(fetchGoods.rejected, (state, action) => {
+			.addCase(getAllGoods.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.error.message;
 			})
-			.addCase(fetchFilteredGoods.pending, (state) => {
+			.addCase(getFilteredMainParamGoods.pending, (state) => {
 				state.loading = true;
 				state.error = null;
 			})
-			.addCase(fetchFilteredGoods.fulfilled, (state, action) => {
+			.addCase(getFilteredMainParamGoods.fulfilled, (state, action) => {
 				state.loading = false;
 				state.products = action.payload;
 			})
-			.addCase(fetchFilteredGoods.rejected, (state, action) => {
+			.addCase(getFilteredMainParamGoods.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.error.message;
 			})
-			.addCase(fetchFilteredAllParamGoods.pending, (state) => {
+			.addCase(getFilteredAllParamGoods.pending, (state) => {
 				state.loading = true;
 				state.error = null;
 			})
-			.addCase(fetchFilteredAllParamGoods.fulfilled, (state, action) => {
+			.addCase(getFilteredAllParamGoods.fulfilled, (state, action) => {
 				state.loading = false;
 				state.products = action.payload;
 			})
-			.addCase(fetchFilteredAllParamGoods.rejected, (state, action) => {
+			.addCase(getFilteredAllParamGoods.rejected, (state, action) => {
 				state.loading = false;
 				state.error = action.error.message;
 			});
