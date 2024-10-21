@@ -6,7 +6,6 @@ import NewsTitle from '@/components/newsPage/SingleNews/NewsTitle/NewsTitle.jsx'
 import NewsSliderAndContent from '@/components/newsPage/SingleNews/NewsSliderAndContent/NewsSliderAndContent.jsx';
 // import { URL_NEWS } from '@/constants/url.js';
 
-import { useRouter } from 'next/router';
 import { useParams } from 'next/navigation'
 
 
