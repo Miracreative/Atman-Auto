@@ -29,20 +29,24 @@ export default function Accordion({ setActive, isActiveLink, isActive }) {
 	return (
 		<nav className={styles.nav}>
 			<ul className={styles.accordion}>
-				{Object.keys(menuItems).map((key, id) => {
-					const menuItem = menuItems[key];
-					return (
-						<AccordionItem
-							onClick={() => (id === openId ? setOpenId(null) : setOpenId(id))}
-							isOpen={id === openId}
-							key={id}
-							title={menuItem.title}
-							items={menuItem.items}
-							setActive={setActive}
-							isActiveLink={isActiveLink(menuItem.items)}
-						/>
-					);
-				})}
+				{Object.keys(menuItems)
+					.slice(1)
+					.map((key, id) => {
+						const menuItem = menuItems[key];
+						return (
+							<AccordionItem
+								onClick={() =>
+									id === openId ? setOpenId(null) : setOpenId(id)
+								}
+								isOpen={id === openId}
+								key={id}
+								title={menuItem.title}
+								items={menuItem.items}
+								setActive={setActive}
+								isActiveLink={isActiveLink(menuItem.items)}
+							/>
+						);
+					})}
 				<li
 					className={`${styles.link} ${
 						pathname === '/production' ? styles.linkActive : ''

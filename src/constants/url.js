@@ -16,3 +16,6 @@ export const FILTERED_MAIN_PARAM_GOODS_URL = `${BASE_URL}/goods-main`;
 export const URL_NEWS = 'http://192.168.0.153:5000/api/news';
 
 export const DONAIN = 'http://localhost:3000/';
+
+//* URL СОУТ *//
+export const SOUT_URL = `${BASE_URL}/sout`;
