@@ -1,7 +1,7 @@
 import Image from 'next/image';
-// import Link from 'next/link';
-
+import Link from 'next/link';
 import type { FC } from 'react';
+
 import type { SoutData } from '@/types/sout.ts';
 
 import pdfIcon from '/public/icons/file-type/pdf-icon.svg';
@@ -18,13 +18,17 @@ const SoutItem: FC<SoutData> = ({
 	url,
 }: SoutData) => {
 	let icon;
+	let isDownloadable = false;
+	let target = '_self';
 
 	switch (filetype) {
 		case '.pdf':
 			icon = <Image src={pdfIcon} alt="PDF file icon" />;
+			target = '_blank';
 			break;
 		case '.zip':
 			icon = <Image src={zipIcon} alt="ZIP file icon" />;
+			isDownloadable = true;
 			break;
 		default:
 			// возможно, какой-то дефолтный случай
@@ -40,18 +44,24 @@ const SoutItem: FC<SoutData> = ({
 	const filetypeWithoutDot = filetype.slice(1);
 
 	return (
-		// <Link href={url} className={styles.container}>
-		<div className={styles.container}>
-			<div className={styles.iconContainer}>{icon}</div>
-			<div className={styles.content}>
-				<h3>{name}</h3>
-				<div className={styles.info}>
-					<p>{filetypeWithoutDot},&nbsp;</p>
-					<p>{filesizeInKB} Kb</p>
+		<Link
+			href={url}
+			className={styles.container}
+			target={target}
+			rel="noopener noreferrer"
+			download={isDownloadable ? true : undefined}
+		>
+			<div className={styles.container}>
+				<div className={styles.iconContainer}>{icon}</div>
+				<div className={styles.content}>
+					<h3>{name}</h3>
+					<div className={styles.info}>
+						<p>{filetypeWithoutDot},&nbsp;</p>
+						<p>{filesizeInKB} Kb</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		// </Link>
+		</Link>
 	);
 };
 
