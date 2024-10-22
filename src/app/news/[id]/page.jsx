@@ -40,7 +40,7 @@ const NewsPage = () => {
 		return <p>Загрузка...</p>;
 	}
 
-	console.log(news);
+	// console.log(news);
 
 
 	if (error) {
@@ -57,7 +57,7 @@ const NewsPage = () => {
 	const content = news.content;
 	const imagessrc = news.imagessrc;
 
-	console.log(typeof imagessrc);
+	// console.log(typeof imagessrc);
 
 
 

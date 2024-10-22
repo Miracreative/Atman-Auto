@@ -20,6 +20,7 @@
 
 .imgAfoam {
 	height: 11vw;
+	width: auto;
 }
 
 .title {
@@ -82,6 +83,10 @@
 
 @media (max-width: 768px) {
 
+	.wrap {
+		border-radius: 10px;
+	}
+
 	.imgAfoam {
 		width: 100%;
 		height: auto;
@@ -96,6 +101,7 @@
 		font-size: 16px;
 		border-radius: 10px;
 		margin-top: 20px;
+		margin-bottom: 20px;
 		width: 100%;
 	}
 

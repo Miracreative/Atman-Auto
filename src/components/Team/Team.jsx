@@ -94,15 +94,10 @@ export default function Team() {
 	}, []);
 	// console.log(team);
 
-	const pagination = {
-		clickable: true,
-		renderBullet: function (index, className) {
-			return '<span class="' + className + '">' + (index + 1) + '</span>';
-		},
-	};
 
 
-	return <section className={styles.wrapTeam}>
+
+	return <section className={styles.section}>
 		<div className='container'>
 			<div className={styles.content}>
 				<div className={styles.title}>Команда</div>
@@ -113,7 +108,6 @@ export default function Team() {
 					wrapperClass={styles.swiperWrapper}
 					className={styles.swiper}
 					modules={[Navigation, Scrollbar, A11y, Pagination]}
-					// pagination={pagination}
 					breakpoints={{
 						0: {
 							slidesPerView: 2,
@@ -133,14 +127,7 @@ export default function Team() {
 						},
 					}}
 					onSwiper={setSwiper}
-					Pagination={pagination}
-					// pagination={{
-					// 	clickable: true,
-					// 	renderBullet: (index, className) => {
-					// 		return `<span class="${className}">${index + 1}</span>`;
-					// 	},
-					// }}
-
+					pagination={true}
 
 					// spaceBetween={10}
 					slidesPerView={4}
@@ -189,7 +176,7 @@ export default function Team() {
 					))}
 
 
-					<div className="swiper-pagination"></div>
+					{/* <div className="swiper-pagination"></div> */}
 
 				</Swiper>
 
