@@ -3,12 +3,19 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
+import { useSelector, useDispatch } from 'react-redux';
+
+import {
+	getAllGoods,
+	getFilteredMainParamGoods,
+	setFilterMainParam,
+} from '@/store/goods/goodsSlice.js';
+
 import { fetchFilteredMainParamGoods } from '@/api/goodsService.js';
 
 import { TriangleIcon, DEFAULT_COLOR } from './../../TriangleIcon/TriangleIcon';
 
 import styles from './Dropdown.module.scss';
-// import { log } from 'console';
 
 const Dropdown = ({
 	title,
@@ -16,13 +23,17 @@ const Dropdown = ({
 	isOpen,
 	toggleOpen,
 	menuRef,
-	setFilterMainParam,
+	// setFilterMainParam,
 }) => {
 	const pathname = usePathname();
 
 	const router = useRouter();
 
-	const handleLinkClick = async (item) => {
+	const { filterMainParam } = useSelector((state) => state.goods);
+
+	const dispatch = useDispatch();
+
+	const handleLinkClick = (item) => {
 		if (item.href === '/goods') {
 			const filterIndex = items.findIndex((link) => link.text === item.text);
 			const filterMainParam = Array(8).fill(0);
@@ -32,7 +43,17 @@ const Dropdown = ({
 			router.push('/goods');
 
 			// Выполняем запрос
-			await fetchFilteredMainParamGoods(filterMainParam);
+			// await fetchFilteredMainParamGoods(filterMainParam);
+			dispatch(setFilterMainParam(filterMainParam));
+
+			// dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
+
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			// TODO: Придётся прокинуть состояние первого фильтра в store :(
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 			console.log('Запрос в handleLinkClick');
 		}
 		//  else {

@@ -28,7 +28,8 @@
 		".next/types/**/*.ts",
 		"src/app/about/page.jsx",
 		"src/app/about/quality-policy/page.jsx",
-		"src/app/applications/page.jsx"
+		"src/app/applications/page.jsx",
+		"src/components/policyPages/soutPage/SoutContent/SoutContent.tsx"
 	],
 	"exclude": ["node_modules"]
 }

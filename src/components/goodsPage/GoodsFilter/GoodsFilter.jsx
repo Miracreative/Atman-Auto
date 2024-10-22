@@ -4,12 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import {
-	getAllGoods,
-	getFilteredMainParamGoods,
-	setFilterMainParam,
-	setIsMobile,
-} from '../../../store/goods/goodsSlice';
+import { setIsMobile } from '@/store/goods/goodsSlice';
 
 import useWindowWidth from '@/hooks/useWindowWidth';
 
@@ -20,38 +15,15 @@ import GoodsFilterPanel from '../GoodsFilterPanel/GoodsFilterPanel.jsx';
 
 import styles from './GoodsFilter.module.scss';
 
-const GoodsFilter = (
-	{
-		// setFilter,
-		// filter,
-		// onFilterChange,
-		// onFetchProducts,
-		// loading,
-		// isMobile,
-		// setIsMobile,
-	},
-) => {
+const GoodsFilter = ({}) => {
 	const width = useWindowWidth();
 	const [isOpenFilter, setIsOpenFilter] = useState(false);
 
 	const dispatch = useDispatch();
 
-	const { products, loading, error, filterMainParam, isMobile } = useSelector(
-		(state) => state.goods,
-	);
-
-	// useEffect(() => {
-	// 	if (width <= MOBILE_WIDTH) {
-	// 		setIsMobile(true);
-	// 	} else {
-	// 		setIsMobile(false);
-	// 	}
-	// }, [width]);
-
-	// console.log('isMobile', isMobile);
+	const { isMobile } = useSelector((state) => state.goods);
 
 	useEffect(() => {
-		// if (isMobile) {
 		if (width <= MOBILE_WIDTH) {
 			dispatch(setIsMobile(true));
 			setIsOpenFilter(false);
@@ -59,7 +31,6 @@ const GoodsFilter = (
 			dispatch(setIsMobile(false));
 			setIsOpenFilter(true);
 		}
-		// }, [isMobile]);
 	}, [isMobile]);
 
 	return (
@@ -75,12 +46,6 @@ const GoodsFilter = (
 				<GoodsFilterPanel
 					isOpenFilter={isOpenFilter}
 					setIsOpenFilter={setIsOpenFilter}
-					// filter={filter}
-					// setFilter={setFilter}
-					// onFilterChange={onFilterChange}
-					// onFetchProducts={onFetchProducts}
-					// isMobile={isMobile}
-					// loading={loading}
 				/>
 			</div>
 		</>

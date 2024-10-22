@@ -5,14 +5,14 @@ import PolicyDropButton from '@/components/policyPages/PolicyDropButton/PolicyDr
 
 import styles from './PolicyDropMenu.module.scss';
 
-const PolicyDropMenu = forwardRef(({ isOpenNav, setIsOpenNav }, ref) => {
+const PolicyDropMenu = forwardRef((props, ref) => {
 	return (
 		<div className={styles.container} ref={ref}>
 			<div className={styles.dropButtonContainer}>
-				<PolicyDropButton isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
+				<PolicyDropButton />
 			</div>
 			<div className={styles.navContainer}>
-				<PolicyNav isOpenNav={isOpenNav} />
+				<PolicyNav />
 			</div>
 		</div>
 	);
