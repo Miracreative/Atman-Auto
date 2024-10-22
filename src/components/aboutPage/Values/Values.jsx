@@ -27,6 +27,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
+										// style={{ height: 'auto' }}
 										/>
 									</div>
 

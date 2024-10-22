@@ -6,7 +6,6 @@ import NewsTitle from '@/components/newsPage/SingleNews/NewsTitle/NewsTitle.jsx'
 import NewsSliderAndContent from '@/components/newsPage/SingleNews/NewsSliderAndContent/NewsSliderAndContent.jsx';
 // import { URL_NEWS } from '@/constants/url.js';
 
-import { useRouter } from 'next/router';
 import { useParams } from 'next/navigation'
 
 
@@ -41,7 +40,7 @@ const NewsPage = () => {
 		return <p>Загрузка...</p>;
 	}
 
-	console.log(news);
+	// console.log(news);
 
 
 	if (error) {
@@ -58,7 +57,7 @@ const NewsPage = () => {
 	const content = news.content;
 	const imagessrc = news.imagessrc;
 
-	console.log(typeof imagessrc);
+	// console.log(typeof imagessrc);
 
 
 

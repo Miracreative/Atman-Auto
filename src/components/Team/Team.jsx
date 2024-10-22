@@ -1,158 +1,188 @@
+'use client';
+
 import styles from './Team.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Scrollbar, A11y, Pagination } from 'swiper/modules';
+import axios from 'axios';
 
+import { useState, useEffect } from 'react';
+
+const data = [
+	{
+		"name": "Павел Демин",
+		"descr": "Руководитель отдела оптовых продаж (потребительские товары упакованные для рынка DIY):",
+		"tel": "8-999-999-99-99",
+		"email": "p.demin@atman-auto.ru",
+		"id": "1",
+		"src": "/team/team1.jpg",
+	},
+	{
+		"name": "Петров Роман",
+		"descr": "",
+		"tel": "8-999-999-99-99",
+		"email": "email 2",
+		"id": "2",
+		"src": "/team/team2.jpg",
+
+	},
+	{
+		"name": "Акимкин Максим",
+		"descr": "Директор",
+		"tel": "8-999-999-99-99",
+		"email": "email 3",
+		"id": "3",
+		"src": "/team/team3.jpg",
+
+	},
+	{
+		"name": "Елена Аббасова",
+		"descr": "менеджер по закупкам",
+		"tel": "8-999-999-99-99",
+		"email": "email 4",
+		"id": "4",
+		"src": "/team/team4.jpg",
+
+	},
+	{
+		"name": "Ирина Грушина",
+		"descr": "Менеджер СМК",
+		"tel": "8-999-999-99-99",
+		"email": "email 5",
+		"id": "5",
+		"src": "/team/team5.jpg",
+
+	},
+	{
+		"name": "Зайкина Светлана",
+		"descr": "менеджер по работе с клиентами.",
+		"tel": "8-999-999-99-99",
+		"email": "email 6",
+		"id": "6",
+		"src": "/team/team6.jpg",
+
+	},
+	{
+		"name": "Сергей Сатаров",
+		"descr": "Коммерческий директор",
+		"tel": "8-999-999-99-99",
+		"email": "email 7",
+		"id": "7",
+		"src": "/team/team7.jpg",
+
+	}
+]
 
 export default function Team() {
-	return <section className={styles.wrapTeam}>
+
+	const [team, setTeam] = useState([]);
+	const [error, setError] = useState(null);
+	const [swiper, setSwiper] = useState(null);
+
+	const fetchLastNews = async () => {
+		try {
+			const response = await axios.get('https://66e9883087e417609449d7dd.mockapi.io/api/knowledge/team');
+			setTeam(response.data);
+		} catch (err) {
+			setError(err.message);
+		}
+	};
+
+	useEffect(() => {
+		fetchLastNews();
+	}, []);
+	// console.log(team);
+
+
+
+
+	return <section className={styles.section}>
 		<div className='container'>
 			<div className={styles.content}>
 				<div className={styles.title}>Команда</div>
-				<div className={styles.cards}>
-					<div className={styles.cardItem}>
-						<div className={styles.photo}>
-							<Image
-								src="/Team/teamMember1.png"
-								alt="team photo"
-								width={350}
-								height={350}
-							/>
-						</div>
 
-						<div className={styles.textContainer}>
-							<div className={styles.name}>Демин Павел</div>
-							<div className={styles.position}>Руководитель отдела оптовых продаж (потребительские товары упакованные для рынка DIY):</div>
-							<div className={styles.whatsApp}>
-								<span className={styles.desktopSpan}>WhatsApp: </span>
-								<Link
-									href={`https://wa.me/89190885529`}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									8-919-088-55-29
-								</Link>
+
+
+				<Swiper
+					wrapperClass={styles.swiperWrapper}
+					className={styles.swiper}
+					modules={[Navigation, Scrollbar, A11y, Pagination]}
+					breakpoints={{
+						0: {
+							slidesPerView: 2,
+						},
+						576: {
+							slidesPerView: 2,
+
+						},
+						768: {
+							slidesPerView: 3,
+						},
+						1350: {
+							slidesPerView: 4,
+						},
+						1600: {
+							slidesPerView: 4,
+						},
+					}}
+					onSwiper={setSwiper}
+					pagination={true}
+
+					// spaceBetween={10}
+					slidesPerView={4}
+				>
+
+					{data.map((item) => (
+						<SwiperSlide key={item.id} className={styles.swiperSlide}>
+
+							<div className={styles.cardItem}>
+								<div className={styles.photo}>
+									<Image
+										className={styles.photoItem}
+										src={item.src}
+										alt="team photo"
+										width={350}
+										height={350}
+									/>
+								</div>
+
+								<div className={styles.textContainer}>
+									<div className={styles.name}> {item.name} </div>
+									<div className={styles.position}> {item.descr} </div>
+									<div className={styles.whatsApp}>
+										<span className={styles.desktopSpan}>WhatsApp: </span>
+										<Link
+											href={`https://wa.me/${item.tel}`}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{item.tel}
+										</Link>
+									</div>
+
+									<div className={styles.mail}>
+										<span className={styles.desktopSpan}>Mail: </span>
+										<Link
+											href={`mailto: ${item.email}`}
+										>
+											{item.email}
+										</Link>
+									</div>
+								</div>
 							</div>
 
-							<div className={styles.mail}>
-								<span className={styles.desktopSpan}>Mail: </span>
-								<Link
-									href={`mailto: p.demin@atman-auto.ru`}
-								>
-									p.demin@atman-auto.ru
-								</Link>
-							</div>
-						</div>
-					</div>
+						</SwiperSlide>
+					))}
 
-					<div className={styles.cardItem}>
-						<div className={styles.photo}>
-							<Image
-								src="/Team/teamMember2.png"
-								alt="team photo"
-								width={350}
-								height={350}
-							/>
-						</div>
 
-						<div className={styles.textContainer}>
-							<div className={styles.name}>Юров Артём</div>
-							<div className={styles.position}>Региональный менеджер по продажам (материалы для промышленности - Самарская обл. / Ульяновская обл.):</div>
+					{/* <div className="swiper-pagination"></div> */}
 
-							<div className={styles.whatsApp}>
-								<span className={styles.desktopSpan}>WhatsApp: </span>
-								<Link
-									href={`https://wa.me/89109402823`}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									8-910-940-28-23
-								</Link>
-							</div>
+				</Swiper>
 
-							<div className={styles.mail}>
-								<span className={styles.desktopSpan}>Mail: </span>
-								<Link
-									href={`mailto:yurov.a@atman-auto.ru`}
-								>
-									yurov.a@atman-auto.ru
-								</Link>
-							</div>
-						</div>
-					</div>
 
-					<div className={styles.cardItem}>
-						<div className={styles.photo}>
-							<Image
-								src="/Team/teamMember3.png"
-								alt="team photo"
-								width={350}
-								height={350}
-							/>
-						</div>
 
-						<div className={styles.textContainer}>
-							<div className={styles.name}>Роман Петров</div>
-							<div className={styles.position}>Заместитель директора по коммерческим вопросам (материалы для промышленности):</div>
 
-							<div className={styles.whatsApp}>
-								<span className={styles.desktopSpan}>WhatsApp: </span>
-								<Link
-									href={`https://wa.me/89109418788`}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									8-910-941-87-88
-								</Link>
-							</div>
-
-							<div className={styles.mail}>
-								<span className={styles.desktopSpan}>Mail: </span>
-								<Link
-									href={`mailto:petrov@atman-auto.ru`}
-								>
-									petrov@atman-auto.ru
-								</Link>
-							</div>
-						</div>
-					</div>
-
-					<div className={styles.cardItem}>
-						<div className={styles.photo}>
-							<Image
-								src="/Team/teamMember4.png"
-								alt="team photo"
-								width={350}
-								height={350}
-							/>
-						</div>
-
-						<div className={styles.textContainer}>
-							<div className={styles.name}>Аббасова Елена</div>
-							<div className={styles.position}>Отдел закупок</div>
-
-							<div className={styles.whatsApp}>
-								<span className={styles.desktopSpan}>WhatsApp: </span>
-								<Link
-									href={`https://wa.me/89107030937`}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									8-910-703-09-37
-								</Link>
-							</div>
-
-							<div className={styles.mail}>
-								<span className={styles.desktopSpan}>Mail: </span>
-								<Link
-									href={`mailto:ps@atman-auto.ru`}
-								>
-									ps@atman-auto.ru
-								</Link>
-							</div>
-						</div>
-					</div>
-
-				</div>
 			</div>
 		</div>
 	</section>;
