@@ -1,3 +1,5 @@
+import { menuItems } from './menuItems';
+
 const filters = [
 	{
 		id: 'filter-1',
@@ -9,49 +11,49 @@ const filters = [
 		id: 'filter-2',
 		name: 'filters',
 		value: 'filter-2',
-		text: 'Акриловые двусторонние клейкие ленты',
+		text: menuItems.goods.items[1].text,
 	},
 	{
 		id: 'filter-3',
 		name: 'filters',
 		value: 'filter-3',
-		text: 'Двусторониие ленты на вспененной основе',
+		text: menuItems.goods.items[2].text,
 	},
 	{
 		id: 'filter-4',
 		name: 'filters',
 		value: 'filter-4',
-		text: 'Тонкие двусторонние клейкие ленты',
+		text: menuItems.goods.items[3].text,
 	},
 	{
 		id: 'filter-5',
 		name: 'filters',
 		value: 'filter-5',
-		text: 'Односторонние клейкие ленты',
+		text: menuItems.goods.items[4].text,
 	},
 	{
 		id: 'filter-6',
 		name: 'filters',
 		value: 'filter-6',
-		text: 'Праймеры и очистители',
+		text: menuItems.goods.items[5].text,
 	},
 	{
 		id: 'filter-7',
 		name: 'filters',
 		value: 'filter-7',
-		text: 'Пленки',
+		text: menuItems.goods.items[6].text,
 	},
 	{
 		id: 'filter-8',
 		name: 'filters',
 		value: 'filter-8',
-		text: 'Инструменты',
+		text: menuItems.goods.items[7].text,
 	},
 	{
 		id: 'filter-9',
 		name: 'filters',
 		value: 'filter-9',
-		text: 'Резины',
+		text: menuItems.goods.items[8].text,
 	},
 ];
 

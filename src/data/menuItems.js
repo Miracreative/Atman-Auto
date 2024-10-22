@@ -59,8 +59,12 @@ export const menuItems = {
 				text: 'Товары',
 			},
 			{
-				href: '/goods/foamed-double-sided-adhesive-tapes',
-				// href: '/goods',
+				href: '/goods',
+				text: 'Акриловые двусторонние клейкие ленты',
+			},
+			{
+				// href: '/goods/foamed-double-sided-adhesive-tapes',
+				href: '/goods',
 				text: 'Вспененные двусторонние клейкие ленты',
 			},
 			{
