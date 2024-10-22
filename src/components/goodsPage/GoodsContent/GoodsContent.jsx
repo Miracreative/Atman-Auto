@@ -6,8 +6,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
 	getAllGoods,
-	getFilteredMainParamGoods,
-} from '../../../store/goods/goodsSlice.js';
+	// getFilteredMainParamGoods,
+} from '@/store/goods/goodsSlice.js';
 
 import {
 	LOADING_INFO,
@@ -23,7 +23,7 @@ import styles from './GoodsContent.module.scss';
 const GoodsContent = () => {
 	const dispatch = useDispatch();
 
-	const { products, loading, error, filterMainParam, isMobile } = useSelector(
+	const { products, loading, error, isMobile } = useSelector(
 		(state) => state.goods,
 	);
 
@@ -34,9 +34,9 @@ const GoodsContent = () => {
 		dispatch(getAllGoods());
 	}, [dispatch]);
 
-	const handleFilterChange = () => {
-		dispatch(getFilteredMainParamGoods(filterMainParam));
-	};
+	// const handleFilterChange = () => {
+	// 	dispatch(getFilteredMainParamGoods(filterMainParam));
+	// };
 
 	return (
 		<section className={styles.section}>

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setIsMobile } from '../../../store/goods/goodsSlice';
+import { setIsMobile } from '@/store/goods/goodsSlice';
 
 import useWindowWidth from '@/hooks/useWindowWidth';
 

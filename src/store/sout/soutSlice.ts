@@ -14,13 +14,17 @@ export const getAllSout = createAsyncThunk<SoutData[], void>(
 const soutSlice = createSlice({
 	name: 'sout',
 	initialState: {
-		sout: [] as SoutData[], // Здесь мы указываем, что sout — это массив объектов типа SoutData
+		sout: [] as SoutData[],
 		loading: true,
-		error: null as string | null, // Здесь error может быть строкой или null
+		error: null as string | null,
+		isMobile: false,
 	},
 	reducers: {
 		setSout: (state, action: PayloadAction<SoutData[]>) => {
 			state.sout = action.payload;
+		},
+		setIsMobile: (state, action) => {
+			state.isMobile = action.payload;
 		},
 	},
 	extraReducers: (builder) => {
@@ -38,10 +42,10 @@ const soutSlice = createSlice({
 			)
 			.addCase(getAllSout.rejected, (state, action) => {
 				state.loading = false;
-				state.error = action.error.message || null; // Защита от потенциально неопределённого свойства message
+				state.error = action.error.message || null;
 			});
 	},
 });
 
-// export const { setSout } = soutSlice.actions;
+export const { setSout, setIsMobile } = soutSlice.actions;
 export default soutSlice.reducer;

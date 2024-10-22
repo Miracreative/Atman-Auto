@@ -61,14 +61,11 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 			const newFilter = [...prevFilter];
 			const currentIndex = index - 1;
 			newFilter[currentIndex] = newFilter[currentIndex] === 1 ? 0 : 1; // переключение значения
-			console.log('АУУУУУУУУУФ', newFilter);
-
-			console.log('index', index);
 
 			return newFilter;
 		};
 
-		console.log('filterMainParam', filterMainParam);
+		// console.log('filterMainParam', filterMainParam);
 		const checkboxFilter = getHandleCheckboxFilter(filterMainParam);
 
 		dispatch(setFilterMainParam(checkboxFilter));

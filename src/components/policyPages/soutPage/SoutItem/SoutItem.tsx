@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 import type { FC } from 'react';
 import type { SoutData } from '@/types/sout.ts';
 
 import pdfIcon from '/public/icons/file-type/pdf-icon.svg';
 import zipIcon from '/public/icons/file-type/zip-icon.svg';
-import defaultIcon from '/public/triangle-logo.png';
+// import defaultIcon from '/public/triangle-logo.png';
 
 import styles from './SoutItem.module.scss';
 
@@ -37,6 +37,8 @@ const SoutItem: FC<SoutData> = ({
 
 	const filesizeInKB = (filesizeNumber / 1024).toFixed(2);
 
+	const filetypeWithoutDot = filetype.slice(1);
+
 	return (
 		// <Link href={url} className={styles.container}>
 		<div className={styles.container}>
@@ -44,7 +46,7 @@ const SoutItem: FC<SoutData> = ({
 			<div className={styles.content}>
 				<h3>{name}</h3>
 				<div className={styles.info}>
-					<p>{filetype},&nbsp;</p>
+					<p>{filetypeWithoutDot},&nbsp;</p>
 					<p>{filesizeInKB} Kb</p>
 				</div>
 			</div>

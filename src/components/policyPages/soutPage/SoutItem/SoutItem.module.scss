@@ -9,15 +9,12 @@
 
 .iconContainer {
 	margin-right: 40px;
-	// transition: all 0.3s ease-in-out;
 }
 
 .defaultIcon {
-	// @include adaptive-font(32, 24);
 	width: 100px;
 	height: 100px;
 	border-radius: 15px;
-	// background-color: rgb(var(--gray-background-img-rgb));
 	background-image: url('../../../../../public/triangle-logo.png');
 	background-position: center;
 	background-repeat: no-repeat;

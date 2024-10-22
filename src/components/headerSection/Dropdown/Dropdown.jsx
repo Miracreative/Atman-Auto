@@ -9,7 +9,7 @@ import {
 	getAllGoods,
 	getFilteredMainParamGoods,
 	setFilterMainParam,
-} from '../../../store/goods/goodsSlice.js';
+} from '@/store/goods/goodsSlice.js';
 
 import { fetchFilteredMainParamGoods } from '@/api/goodsService.js';
 

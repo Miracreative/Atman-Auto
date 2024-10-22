@@ -2,14 +2,18 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import { menuItems as links } from '@/data/menuItems';
+import { useSelector } from 'react-redux';
 
 import PolicyFilterItem from '@/components/policyPages/PolicyFilterItem/PolicyFilterItem';
 import styles from './PolicyNav.module.scss';
 
-const PolicyNav = ({ isOpenNav }) => {
+const PolicyNav = () => {
 	const pathname = usePathname();
 	const router = useRouter();
+
+	const { links, isOpenNav } = useSelector((state) => state.policyNav);
+
+	console.log('links', links);
 
 	// console.log('isOpenNav', isOpenNav);
 
