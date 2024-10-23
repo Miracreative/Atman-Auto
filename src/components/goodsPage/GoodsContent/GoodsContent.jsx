@@ -1,13 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 
-import {
-	getAllGoods,
-	// getFilteredMainParamGoods,
-} from '@/store/goods/goodsSlice';
+import { getAllGoods } from '@/store/goods/goodsSlice';
 
 import {
 	LOADING_INFO,
@@ -33,10 +29,6 @@ const GoodsContent = () => {
 	useEffect(() => {
 		dispatch(getAllGoods());
 	}, [dispatch]);
-
-	// const handleFilterChange = () => {
-	// 	dispatch(getFilteredMainParamGoods(filterMainParam));
-	// };
 
 	return (
 		<section className={styles.section}>

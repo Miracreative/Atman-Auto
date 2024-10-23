@@ -12,8 +12,6 @@ import {
 	getFilteredMainParamGoods,
 } from '@/store/goods/goodsSlice';
 
-// import { fetchFilteredMainParamGoods } from '@/api/goodsService.js';
-
 import filters from '@/data/filters.js';
 
 import { menuItems } from '@/data/menuItems';
@@ -24,13 +22,7 @@ import styles from './Dropdown.module.scss';
 
 const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 	const pathname = usePathname();
-
 	const router = useRouter();
-
-	// const { filterMainParam, firstFilter, flag } = useSelector(
-	// 	(state) => state.goods,
-	// );
-
 	const dispatch = useDispatch();
 
 	const goodsLink = menuItems.goods.items[0].href;
@@ -38,11 +30,9 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 	const handleLinkClick = (item) => {
 		toggleOpen();
 
-		// console.log('menuItems', menuItems.goods.items[0].href);
-
 		if (item.href === goodsLink) {
 			const filterIndex = items.findIndex((link) => link.text === item.text);
-			console.log('filterIndex', filterIndex);
+			// console.log('filterIndex', filterIndex);
 
 			const filterMainParam = Array(8).fill(0); // Заполняем массив нулями
 
@@ -51,11 +41,9 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 				dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
 				dispatch(getAllGoods());
 			} else {
-				filterMainParam[filterIndex - 1] = 1; // Устанавливаем нужную цифру в массив
+				filterMainParam[filterIndex - 1] = 1; // Устанавливаем нужную цифру в массив, начиная со второго элемента
 
 				router.push(goodsLink); // Перенаправляем пользователя на /goods
-
-				// console.log('filterMainParam', filterMainParam);
 
 				// Выполняем запрос
 				dispatch(setFilterMainParam(filterMainParam));
@@ -63,7 +51,7 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 				dispatch(getFilteredMainParamGoods(filterMainParam));
 			}
 
-			console.log('Запрос в handleLinkClick');
+			// console.log('Запрос в handleLinkClick');
 		}
 	};
 

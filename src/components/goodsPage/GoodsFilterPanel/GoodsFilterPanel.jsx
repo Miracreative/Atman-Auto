@@ -19,10 +19,7 @@ import GoodsFilterItem from '../GoodsFilterItem/GoodsFilterItem.jsx';
 import styles from './GoodsFilterPanel.module.scss';
 
 const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
-	// const [firstFilter, setFirstFilter] = useState([]);
-	// const [flag, setFlag] = useState(true);
 	const ref = useRef(null);
-
 	const dispatch = useDispatch();
 
 	const { filterMainParam, isMobile, firstFilter, flag } = useSelector(
@@ -35,27 +32,24 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 
 		if (storedFlag == '' || storedFlag == null || storedFlag == 'true') {
 			setFilterFlag('true');
-			// setFirstFilter([filters[0].id]);
 			dispatch(setFirstFilter([filters[0].id]));
 		} else {
 			setFilterFlag('false');
 		}
+
 		if (!filterMainParam) {
 			dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
 			setFilterFlag('true');
 		}
 
-		// setFlag(false);
 		dispatch(setFlag(false));
 	}, []);
 
 	// Сохранение флага в localStorage
 	useEffect(() => {
 		if (getFilterFlag() == 'false') {
-			// setFirstFilter([]);
 			dispatch(setFirstFilter([]));
 		} else {
-			// setFirstFilter([filters[0].id]);
 			dispatch(setFirstFilter([filters[0].id]));
 		}
 	}, [flag]);
@@ -73,14 +67,10 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 			return newFilter;
 		};
 
-		// console.log('filterMainParam', filterMainParam);
 		const checkboxFilter = getHandleCheckboxFilter(filterMainParam);
 
 		dispatch(setFilterMainParam(checkboxFilter));
-
-		// setFlag(false);
 		dispatch(setFlag(false));
-		// setFirstFilter([]);
 		dispatch(setFirstFilter([]));
 	};
 
@@ -101,10 +91,7 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 		const newFilter = getHandleFilter(filterMainParam);
 
 		dispatch(setFilterMainParam(newFilter));
-
 		dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
-
-		// setFlag(true);
 		dispatch(setFlag(true));
 	};
 
@@ -125,7 +112,6 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 	const handleReset = () => {
 		setFilterFlag('true');
 		dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
-		// setFirstFilter([filters[0].id]);
 		dispatch(setFirstFilter([filters[0].id]));
 	};
 

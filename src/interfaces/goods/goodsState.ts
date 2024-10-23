@@ -5,6 +5,7 @@ export interface GoodsState {
 	loading: boolean;
 	error: string | null;
 	filterMainParam: number[];
+	filterAllParam: number[];
 	firstFilter: [];
 	isMobile: boolean;
 	flag: boolean;

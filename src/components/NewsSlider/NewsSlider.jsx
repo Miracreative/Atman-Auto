@@ -10,16 +10,11 @@ import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 
-
-
 export default function NewsSlider() {
-
 	// const newsDate = newsData;
 
 	const [lastNews, setLastNews] = useState([]);
 	const [error, setError] = useState(null);
-
-
 
 	const fetchLastNews = async () => {
 		try {
@@ -34,18 +29,13 @@ export default function NewsSlider() {
 		fetchLastNews();
 	}, []);
 
-	console.log(lastNews);
-
+	// console.log(lastNews);
 
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);
 
-
 	const [firstSwiper, setFirstSwiper] = useState(null);
 	const [secondSwiper, setSecondSwiper] = useState(null);
-
-
-
 
 	const onSlideChange = (swiper) => {
 		const isBeginning = swiper.isBeginning;
@@ -55,55 +45,38 @@ export default function NewsSlider() {
 		setCanGoNext(!isEnd);
 	};
 
-
-
 	const goToPrevSlide = () => {
 		if (firstSwiper) {
 			firstSwiper.slidePrev();
-
 		}
 	};
 
 	const goToNextSlide = () => {
 		if (firstSwiper) {
 			firstSwiper.slideNext();
-
 		}
 	};
-
-
-
-
 
 	return (
 		<>
 			<section className={styles.section}>
 				<div className={styles.sectionInner}>
-
 					<div className={styles.verticalLine}></div>
-					<div className='container'>
+					<div className="container">
 						<div className={styles.wrap}>
-
 							<div className={styles.header}>
 								<h2 className={styles.title}> Новости </h2>
 
-								<Link className={styles.link} href='/news'>
-									<div className={styles.linkText}  >
-										Все новости
-									</div>
+								<Link className={styles.link} href="/news">
+									<div className={styles.linkText}>Все новости</div>
 								</Link>
 							</div>
 
-
-
-
 							<div className={styles.swiperContainer}>
-
 								<Swiper
 									wrapperClass={styles.swiperWrapper}
 									className={styles.swiper}
 									modules={[Navigation, Scrollbar, A11y, Controller]}
-
 									controller={{ control: secondSwiper }}
 									breakpoints={{
 										0: {
@@ -123,54 +96,63 @@ export default function NewsSlider() {
 										prevEl: '.prev',
 										nextEl: '.next',
 									}}
-
-
 									spaceBetween={20}
 									slidesPerView={2.1}
 									onSlideChange={(swiper) => onSlideChange(swiper)}
 								>
-
 									{lastNews.map((item, index) => (
-										<SwiperSlide key={item.id} className={styles.swiperSlideOne}>
-											<Link className={styles.imgWrap} href={`/news/${item.id}`}>
+										<SwiperSlide
+											key={item.id}
+											className={styles.swiperSlideOne}
+										>
+											<Link
+												className={styles.imgWrap}
+												href={`/news/${item.id}`}
+											>
 												<img src={item.imagessrc} alt={item.title} />
 											</Link>
-
-
 										</SwiperSlide>
 									))}
-
-
-
-
 								</Swiper>
 
-
-								<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
-
-									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								<button
+									className={styles.prevBtn}
+									onClick={goToPrevSlide}
+									disabled={!canGoPrev}
+								>
+									<svg
+										width="30"
+										height="12"
+										viewBox="0 0 30 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z"
+											fill="white"
+										/>
 									</svg>
-
-
 								</button>
 
-
-								<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
-
-									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								<button
+									className={styles.nextBtn}
+									onClick={goToNextSlide}
+									disabled={!canGoNext}
+								>
+									<svg
+										width="30"
+										height="12"
+										viewBox="0 0 30 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z"
+											fill="white"
+										/>
 									</svg>
-
-
 								</button>
-
 							</div>
-
-
-
-
-
 
 							<Swiper
 								wrapperClass={styles.swiperWrapper}
@@ -178,8 +160,6 @@ export default function NewsSlider() {
 								modules={[Navigation, Scrollbar, A11y, Controller]}
 								onSwiper={setSecondSwiper}
 								onSlideChange={(swiper) => onSlideChange(swiper)}
-
-
 								controller={{ control: firstSwiper }}
 								breakpoints={{
 									0: {
@@ -194,7 +174,6 @@ export default function NewsSlider() {
 										slidesPerView: 2.1,
 									},
 								}}
-
 								spaceBetween={20}
 								slidesPerView={2.1}
 							>
@@ -204,23 +183,16 @@ export default function NewsSlider() {
 											<div className={styles.titleCard}>{item.title}</div>
 											<div className={styles.description}>{item.descr}</div>
 										</Link>
-
 									</SwiperSlide>
 								))}
 							</Swiper>
 
-							<Link className={styles.linkMobile} href='/news'>
-								<div className={styles.linkTextMobile}  >
-									Все новости
-								</div>
+							<Link className={styles.linkMobile} href="/news">
+								<div className={styles.linkTextMobile}>Все новости</div>
 							</Link>
-
-
 						</div>
 					</div>
-
 				</div>
-
 			</section>
 		</>
 	);

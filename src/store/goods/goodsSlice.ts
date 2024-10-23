@@ -40,6 +40,9 @@ const initialState: GoodsState = {
 	loading: true,
 	error: null,
 	filterMainParam: [0, 0, 0, 0, 0, 0, 0, 0],
+	filterAllParam: [
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	],
 	firstFilter: [],
 	isMobile: false,
 	flag: true,
@@ -51,6 +54,9 @@ const goodsSlice = createSlice({
 	reducers: {
 		setFilterMainParam: (state, action) => {
 			state.filterMainParam = action.payload;
+		},
+		setFilterAllParam: (state, action) => {
+			state.filterAllParam = action.payload;
 		},
 		setFirstFilter: (state, action) => {
 			state.firstFilter = action.payload;
@@ -103,6 +109,11 @@ const goodsSlice = createSlice({
 	},
 });
 
-export const { setFilterMainParam, setFirstFilter, setIsMobile, setFlag } =
-	goodsSlice.actions;
+export const {
+	setFilterMainParam,
+	setFilterAllParam,
+	setFirstFilter,
+	setIsMobile,
+	setFlag,
+} = goodsSlice.actions;
 export default goodsSlice.reducer;
