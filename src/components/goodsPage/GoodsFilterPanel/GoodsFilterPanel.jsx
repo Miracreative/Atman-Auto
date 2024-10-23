@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 	getAllGoods,
 	getFilteredMainParamGoods,
-	setFilterMainParam,
+	setFilterMainParamGoods,
 	setFirstFilter,
 	setFlag,
 } from '@/store/goods/goodsSlice';
@@ -38,7 +38,7 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 		}
 
 		if (!filterMainParam) {
-			dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
+			dispatch(setFilterMainParamGoods([0, 0, 0, 0, 0, 0, 0, 0]));
 			setFilterFlag('true');
 		}
 
@@ -69,7 +69,7 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 
 		const checkboxFilter = getHandleCheckboxFilter(filterMainParam);
 
-		dispatch(setFilterMainParam(checkboxFilter));
+		dispatch(setFilterMainParamGoods(checkboxFilter));
 		dispatch(setFlag(false));
 		dispatch(setFirstFilter([]));
 	};
@@ -90,8 +90,8 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 
 		const newFilter = getHandleFilter(filterMainParam);
 
-		dispatch(setFilterMainParam(newFilter));
-		dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
+		dispatch(setFilterMainParamGoods(newFilter));
+		dispatch(setFilterMainParamGoods([0, 0, 0, 0, 0, 0, 0, 0]));
 		dispatch(setFlag(true));
 	};
 
@@ -111,7 +111,7 @@ const GoodsFilterPanel = ({ isOpenFilter, setIsOpenFilter }) => {
 
 	const handleReset = () => {
 		setFilterFlag('true');
-		dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
+		dispatch(setFilterMainParamGoods([0, 0, 0, 0, 0, 0, 0, 0]));
 		dispatch(setFirstFilter([filters[0].id]));
 	};
 

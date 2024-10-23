@@ -1,16 +1,24 @@
 import Image from 'next/image';
 import styles from './ProductCard.module.scss';
 
-const ProductCard = ({ title, subtitle, imageUrl }) => {
+import image from '/public/test-image.png';
+
+const ProductCard = ({ title, subtitle, imageurl }) => {
 	return (
 		<div className={styles.card}>
 			<Image
-				src={imageUrl}
+				src={image}
 				alt={title}
 				layout="fill"
 				objectFit="cover"
 				className={styles.backgroundImage}
 				// priority
+
+				// id={product.id}
+				// brand={product.brand}
+				// title={product.name}
+				// subtitle={product.type}
+				// imageurl={'file://nanalit/' + product.imageurl}
 			/>
 
 			<div className={styles.content}>
