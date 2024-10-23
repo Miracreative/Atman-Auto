@@ -3,64 +3,56 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import {
+	setFilterMainParam,
+	setFirstFilter,
 	getAllGoods,
 	getFilteredMainParamGoods,
-	setFilterMainParam,
-} from '@/store/goods/goodsSlice.js';
+} from '@/store/goods/goodsSlice';
 
-import { fetchFilteredMainParamGoods } from '@/api/goodsService.js';
+import filters from '@/data/filters.js';
+
+import { menuItems } from '@/data/menuItems';
 
 import { TriangleIcon, DEFAULT_COLOR } from './../../TriangleIcon/TriangleIcon';
 
 import styles from './Dropdown.module.scss';
 
-const Dropdown = ({
-	title,
-	items,
-	isOpen,
-	toggleOpen,
-	menuRef,
-	// setFilterMainParam,
-}) => {
+const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 	const pathname = usePathname();
-
 	const router = useRouter();
-
-	const { filterMainParam } = useSelector((state) => state.goods);
-
 	const dispatch = useDispatch();
 
+	const goodsLink = menuItems.goods.items[0].href;
+
 	const handleLinkClick = (item) => {
-		if (item.href === '/goods') {
+		toggleOpen();
+
+		if (item.href === goodsLink) {
 			const filterIndex = items.findIndex((link) => link.text === item.text);
-			const filterMainParam = Array(8).fill(0);
-			filterMainParam[filterIndex] = 1; // Устанавливаем нужную цифру в массив
+			// console.log('filterIndex', filterIndex);
 
-			// Перенаправляем пользователя на /goods
-			router.push('/goods');
+			const filterMainParam = Array(8).fill(0); // Заполняем массив нулями
 
-			// Выполняем запрос
-			// await fetchFilteredMainParamGoods(filterMainParam);
-			dispatch(setFilterMainParam(filterMainParam));
+			if (filterIndex === 0) {
+				dispatch(setFirstFilter([filters[0].id]));
+				dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
+				dispatch(getAllGoods());
+			} else {
+				filterMainParam[filterIndex - 1] = 1; // Устанавливаем нужную цифру в массив, начиная со второго элемента
 
-			// dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
+				router.push(goodsLink); // Перенаправляем пользователя на /goods
 
-			////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			// TODO: Придётся прокинуть состояние первого фильтра в store :(
-			////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				// Выполняем запрос
+				dispatch(setFilterMainParam(filterMainParam));
+				dispatch(setFirstFilter([]));
+				dispatch(getFilteredMainParamGoods(filterMainParam));
+			}
 
-			console.log('Запрос в handleLinkClick');
+			// console.log('Запрос в handleLinkClick');
 		}
-		//  else {
-		// 	router.push(item.href);
-		// }
-
-		toggleOpen(); // Закрываем dropdown
 	};
 
 	const isActiveLink = items.some((item) => pathname === item.href);
@@ -93,7 +85,6 @@ const Dropdown = ({
 								className={`${styles.link} ${
 									pathname === item.href ? styles.linkActive : ''
 								}`}
-								// onClick={toggleOpen}
 								onClick={() => handleLinkClick(item)}
 							>
 								{item.text}

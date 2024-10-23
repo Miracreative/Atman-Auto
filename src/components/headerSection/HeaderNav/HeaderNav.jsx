@@ -11,11 +11,6 @@ import Dropdown from './../Dropdown/Dropdown';
 import styles from './HeaderNav.module.scss';
 
 const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
-	// const [filterMainParam, setFilterMainParam] = useState([
-	// 	0, 0, 0, 0, 0, 0, 0, 0,
-	// ]);
-	// const [loading, setLoading] = useState(true);
-
 	const refs = useRef(
 		dropdownItems.reduce((acc, item) => {
 			acc[item.key] = useRef(null);
@@ -32,8 +27,6 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 	});
 
 	const pathname = usePathname();
-
-	// console.log('dropdownItems', dropdownItems);
 
 	return (
 		<nav className={styles.nav}>
