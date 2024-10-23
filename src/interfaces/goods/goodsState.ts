@@ -1,6 +1,6 @@
 import type { ProductsData } from '@/types/product';
 
-export interface GoodsState {
+export interface IGoodsState {
 	products: ProductsData[];
 	loading: boolean;
 	error: string | null;

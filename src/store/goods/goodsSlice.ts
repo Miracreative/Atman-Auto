@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { GoodsState } from '@/interfaces/goods/goodsState';
+import { IGoodsState } from '@/interfaces/goods/goodsState';
 
 import {
 	fetchAllGoods,
@@ -35,7 +35,7 @@ export const getFilteredAllParamGoods = createAsyncThunk(
 	},
 );
 
-const initialState: GoodsState = {
+const initialState: IGoodsState = {
 	products: [],
 	loading: true,
 	error: null,
