@@ -34,7 +34,7 @@ export default function NewsSlider() {
 		fetchLastNews();
 	}, []);
 
-	console.log(lastNews);
+	// console.log(lastNews);
 
 
 	const [canGoPrev, setCanGoPrev] = useState(false);

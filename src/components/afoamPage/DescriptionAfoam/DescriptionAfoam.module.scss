@@ -1,0 +1,61 @@
+@import '@/scss/_functions.scss';
+
+
+.section {
+	padding-top: 20px;
+	min-width: 320px;
+}
+
+.wrap {
+	border: 1px solid rgb(var(--gray-line-rgb));
+	border-radius: 20px;
+}
+
+.innerWrap {
+	margin: 6vw 4vw;
+}
+
+.title {
+	font-size: 64px;
+	font-weight: 700;
+	margin-bottom: 40px;
+}
+
+
+
+@media (max-width: 1920px) {
+
+	.title {
+		font-size: calcVW(64);
+	}
+
+	// .descr {
+	// 	font-size: calcVW(20);
+	// }
+}
+
+
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 768px) {
+
+	.wrap {
+		border-radius: 10px;
+	}
+
+	.innerWrap {
+		margin: 20px 15px;
+
+	}
+
+	.title {
+		font-size: 20px;
+		margin-bottom: 8px;
+	}
+
+	.descr {
+		font-size: 12px;
+	}
+}

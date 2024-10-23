@@ -169,11 +169,11 @@
 
 //   }
 
-  @media (max-width: 1300px) {
-	.title {
-		margin-top: 6vh;
-		margin-bottom: 5vh;
-	}
+  @media (max-width: 1500px) {
+	// .title {
+	// 	margin-top: 11vw;
+	// 	margin-bottom: 10vw;
+	// }
 
 	.photoItem {
 		width: 250px;
@@ -182,10 +182,18 @@
 	}
   }
 
-  @media (max-width: 768px) {
+
+  @media (max-width: 900px) {
 	.photoItem {
 		width: 220px;
 		height: 220px;
+	}
+  }
+
+  @media (max-width: 768px) {
+	.photoItem {
+		width: 200px;
+		height: 200px;
 	}
 	.textContainer {
 		margin: 0 10px 30px 10px;
@@ -193,8 +201,8 @@
 	}
 	.title {
 		font-size: 36px;
-		margin-top: 6vh;
-		margin-bottom: 5vh;
+		// margin-top: 6vh;
+		// margin-bottom: 5vh;
 	}
 	.name {
 		font-size: 14px;

@@ -1,6 +1,11 @@
+'use client'
+
 // import PageTitle from './../../components/PageTitle/PageTitle.jsx';
-import Recommendations from '@/components/applicationsPages/Recommendations/Recommendations.jsx';
+import RecommendationsAfoam from '@/components/afoamPage/RecommendationsAfoam/RecommendationsAfoam.jsx';
 import AfoamSlider from '@/components/afoamPage/AfoamSlider/AfoamSlider.jsx';
+import DescriptionAfoam from '@/components/afoamPage/DescriptionAfoam/DescriptionAfoam.jsx';
+import AdvantagesAfoam from '@/components/afoamPage/AdvantagesAfoam/AdvantagesAfoam.jsx';
+
 
 export default function Afoam() {
 
@@ -15,9 +20,17 @@ export default function Afoam() {
 
 	return (
 		<>
-			hi BOB
-			{/* <AfoamSlider></AfoamSlider> */}
-			<Recommendations></Recommendations>
+			<AfoamSlider></AfoamSlider>
+			<DescriptionAfoam></DescriptionAfoam>
+
+			{/* <AdvantagesAfoam></AdvantagesAfoam> */}
+			<RecommendationsAfoam></RecommendationsAfoam>
+
+			{/* <AdvantagesAfoam></AdvantagesAfoam> */}
+			<RecommendationsAfoam></RecommendationsAfoam>
+
+			{/* <AdvantagesAfoam></AdvantagesAfoam> */}
+			<RecommendationsAfoam></RecommendationsAfoam>
 
 
 		</>
