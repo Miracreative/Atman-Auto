@@ -250,7 +250,10 @@ export default function Survey() {
 	const handleApply = () => {
 		handleInc();
 
-		dispatch(getFilteredAllParamGoods(filterAllParam));
+		if (count === 4) {
+			dispatch(getFilteredAllParamGoods(filterAllParam));
+			console.log('Запрос на сервер');
+		}
 		// dispatch(
 		// 	getFilteredAllParamGoods([
 		// 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -569,7 +572,7 @@ export default function Survey() {
 						</div>
 						{/* Экран 5 Результаты */}
 
-						{/* Элементы управления */}
+						{/* Элементы управления и навигации */}
 						<div className={styles.controls}>
 							<div className={styles.buttons}>
 								<button
@@ -619,7 +622,7 @@ export default function Survey() {
 								</div>
 							</div>
 						</div>
-						{/* Элементы управления */}
+						{/* Элементы управления и навигации */}
 					</div>
 				</div>
 			</div>
