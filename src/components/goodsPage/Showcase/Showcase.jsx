@@ -21,7 +21,7 @@ const Showcase = ({ product }) => {
 	return (
 		<section className={styles.section}>
 			<div className={styles.titleContainer}>
-				<div className={styles.breadCrumbs}>
+				<div className={styles.breadcrumbs}>
 					<Breadcrumbs items={breadcrumbs} />
 				</div>
 				<p className={styles.article}>
@@ -37,12 +37,12 @@ const Showcase = ({ product }) => {
 				</div>
 
 				<p className={styles.description}>{product.description}</p>
-				<p className={styles.description}>
+				{/* <p className={styles.description}>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro magni
 					totam natus modi assumenda quas, ullam reiciendis doloribus autem
 					sequi quisquam, quam maxime dolor praesentium qui quidem quia
 					perspiciatis tempore? Temporibus sunt suscipit dolor quae dolorum,
-				</p>
+				</p> */}
 				<p className={styles.warning}>
 					Рулоны не стандартной ширины и детали простой и сложной формы
 					изготавливаются под заказ

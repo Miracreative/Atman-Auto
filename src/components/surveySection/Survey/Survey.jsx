@@ -27,16 +27,17 @@ import {
 	conditions,
 } from '@/data/surveyOptions';
 
-import {
-	LOADING_DATA_ERROR,
-	LOADING_INFO,
-	NOT_FOUND_INFO,
-} from '@/utils/informMessages';
+// import {
+// 	LOADING_DATA_ERROR,
+// 	LOADING_INFO,
+// 	NOT_FOUND_INFO,
+// } from '@/utils/informMessages';
 
 import SurveyItem from '../SurveyItem/SurveyItem';
 import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
+import SurveySlider from '../SurveySlider/SurveySlider';
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
-import ProductCard from '@/components/ProductCard/ProductCard';
+// import ProductCard from '@/components/ProductCard/ProductCard';
 
 import image from '/public/survey/survey.png';
 
@@ -229,8 +230,6 @@ export default function Survey() {
 	);
 
 	useEffect(() => {
-		// console.log('useEffect сработал');
-
 		if (width <= MOBILE_WIDTH) {
 			dispatch(setIsMobile(true));
 			// console.log(
@@ -243,9 +242,6 @@ export default function Survey() {
 			// );
 		}
 	}, [isMobile]);
-
-	const shouldDisplayMessage =
-		!isMobile && (loading || error || products.length === 0);
 
 	const handleApply = () => {
 		handleInc();
@@ -541,9 +537,9 @@ export default function Survey() {
 								Результаты
 							</h3>
 
-							{!loading && !error && products.length > 0 && (
+							<SurveySlider products={products} />
+							{/* {!loading && !error && products.length > 0 && (
 								<ul className={styles.resultsList}>
-									{/* {products.map((product) => ( */}
 									{products.slice(0, 5).map((product) => (
 										<li key={product.id}>
 											<ProductCard
@@ -558,9 +554,9 @@ export default function Survey() {
 										</li>
 									))}
 								</ul>
-							)}
+							)} */}
 
-							{shouldDisplayMessage && (
+							{/* {shouldDisplayMessage && (
 								<div className={styles.messageContainer}>
 									{loading && <p>{LOADING_INFO}</p>}
 									{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
@@ -568,7 +564,7 @@ export default function Survey() {
 										<p>{NOT_FOUND_INFO}</p>
 									)}
 								</div>
-							)}
+							)} */}
 						</div>
 						{/* Экран 5 Результаты */}
 
