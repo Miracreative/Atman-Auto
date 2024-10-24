@@ -50,8 +50,6 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 				dispatch(setFirstFilter([]));
 				dispatch(getFilteredMainParamGoods(filterMainParam));
 			}
-
-			// console.log('Запрос в handleLinkClick');
 		}
 	};
 

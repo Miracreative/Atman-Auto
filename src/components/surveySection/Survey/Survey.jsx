@@ -8,8 +8,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
 	setIsMobile,
-	// getFilteredAllParamGoods,
 	setFilterAllParamGoods,
+	getFilteredAllParamGoods,
 	getAllGoods,
 } from '@/store/goods/goodsSlice';
 
@@ -26,7 +26,12 @@ import {
 	temperatures,
 	conditions,
 } from '@/data/surveyOptions';
-// import products from '@/data/products';
+
+import {
+	LOADING_DATA_ERROR,
+	LOADING_INFO,
+	NOT_FOUND_INFO,
+} from '@/utils/informMessages';
 
 import SurveyItem from '../SurveyItem/SurveyItem';
 import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
@@ -238,6 +243,21 @@ export default function Survey() {
 			// );
 		}
 	}, [isMobile]);
+
+	const shouldDisplayMessage =
+		!isMobile && (loading || error || products.length === 0);
+
+	const handleApply = () => {
+		handleInc();
+
+		dispatch(getFilteredAllParamGoods(filterAllParam));
+		// dispatch(
+		// 	getFilteredAllParamGoods([
+		// 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		// 	]),
+		// );
+		// console.log('products', products);
+	};
 
 	return (
 		<section className={styles.section}>
@@ -517,22 +537,35 @@ export default function Survey() {
 							>
 								Результаты
 							</h3>
-							<ul className={styles.resultsList}>
-								{/* {products.map((product) => ( */}
-								{products.slice(0, 5).map((product) => (
-									<li key={product.id}>
-										<ProductCard
-											id={product.id}
-											brand={product.brand}
-											title={product.name}
-											subtitle={product.type}
-											imageurl={'file://nanalit/' + product.imageurl}
-											width="200px"
-											height="250px"
-										/>
-									</li>
-								))}
-							</ul>
+
+							{!loading && !error && products.length > 0 && (
+								<ul className={styles.resultsList}>
+									{/* {products.map((product) => ( */}
+									{products.slice(0, 5).map((product) => (
+										<li key={product.id}>
+											<ProductCard
+												id={product.id}
+												brand={product.brand}
+												title={product.name}
+												subtitle={product.type}
+												imageurl={'file://nanalit/' + product.imageurl}
+												width="200px"
+												height="250px"
+											/>
+										</li>
+									))}
+								</ul>
+							)}
+
+							{shouldDisplayMessage && (
+								<div className={styles.messageContainer}>
+									{loading && <p>{LOADING_INFO}</p>}
+									{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
+									{!loading && !error && products.length === 0 && (
+										<p>{NOT_FOUND_INFO}</p>
+									)}
+								</div>
+							)}
 						</div>
 						{/* Экран 5 Результаты */}
 
@@ -548,7 +581,8 @@ export default function Survey() {
 								</button>
 								<button
 									className={`${styles.forwardButton} button`}
-									onClick={handleInc}
+									// onClick={handleInc}
+									onClick={handleApply}
 									disabled={forwardButtonDisabled}
 								>
 									Продолжить
