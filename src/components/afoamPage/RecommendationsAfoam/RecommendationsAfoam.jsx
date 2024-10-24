@@ -1,14 +1,13 @@
 // 'use client';
 
 import styles from './RecommendationsAfoam.module.scss';
-import recomendationsData from '@/data/recomendationsData.js';
 // import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 
 
-export default function RecommendationsAfoam() {
-
+export default function RecommendationsAfoam({ recommended }) {
+	const data = recommended;
 
 	return (
 		<>
@@ -17,22 +16,19 @@ export default function RecommendationsAfoam() {
 					<div className={styles.wrap}>
 
 
-
 						<div className={styles.content}>
-							{recomendationsData.map((item) => (
+							{data.map((item) => (
 								<div className={styles.item} key={item.id}>
 
 									<div className={styles.nameItem}> {item.name} </div>
 									<div className={styles.description}> {item.description} </div>
 
 									<div className={styles.linkWrap}>
-										<Link className={styles.link} href='/'> Подробнее </Link>
+										<Link className={styles.link} href={`/goods/${item.id}`}> Подробнее </Link>
 									</div>
 								</div>
 							))}
 						</div>
-
-
 
 
 					</div>
