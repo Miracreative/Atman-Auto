@@ -50,7 +50,7 @@ export default function Survey() {
 		(state) => state.goods,
 	);
 
-	console.log('filterAllParam', filterAllParam);
+	// console.log('filterAllParam', filterAllParam);
 
 	useEffect(() => {
 		dispatch(getAllGoods());
@@ -250,12 +250,6 @@ export default function Survey() {
 			dispatch(getFilteredAllParamGoods(filterAllParam));
 			console.log('Запрос на сервер');
 		}
-		// dispatch(
-		// 	getFilteredAllParamGoods([
-		// 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		// 	]),
-		// );
-		// console.log('products', products);
 	};
 
 	return (
@@ -536,35 +530,7 @@ export default function Survey() {
 							>
 								Результаты
 							</h3>
-
 							<SurveySlider products={products} />
-							{/* {!loading && !error && products.length > 0 && (
-								<ul className={styles.resultsList}>
-									{products.slice(0, 5).map((product) => (
-										<li key={product.id}>
-											<ProductCard
-												id={product.id}
-												brand={product.brand}
-												title={product.name}
-												subtitle={product.type}
-												imageurl={'file://nanalit/' + product.imageurl}
-												width="200px"
-												height="250px"
-											/>
-										</li>
-									))}
-								</ul>
-							)} */}
-
-							{/* {shouldDisplayMessage && (
-								<div className={styles.messageContainer}>
-									{loading && <p>{LOADING_INFO}</p>}
-									{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
-									{!loading && !error && products.length === 0 && (
-										<p>{NOT_FOUND_INFO}</p>
-									)}
-								</div>
-							)} */}
 						</div>
 						{/* Экран 5 Результаты */}
 
@@ -594,7 +560,7 @@ export default function Survey() {
 										count === 2 ? styles.visible : styles.hidden
 									}`}
 								>
-									<Link className={styles.link} href="/">
+									<Link className={styles.link} href="/knowledge">
 										Таблица с поверхностной энергией материалов
 									</Link>
 								</div>
@@ -603,7 +569,7 @@ export default function Survey() {
 										count === 3 ? styles.visible : styles.hidden
 									}`}
 								>
-									<Link className={styles.link} href="/">
+									<Link className={styles.link} href="/knowledge">
 										Влияние среды эксплуатации на соединение
 									</Link>
 								</div>
@@ -612,7 +578,7 @@ export default function Survey() {
 										count === 4 ? styles.visible : styles.hidden
 									}`}
 								>
-									<Link className={styles.link} href="/">
+									<Link className={styles.link} href="/knowledge">
 										Статья о видах поверхностей размещенной в базе знаний
 									</Link>
 								</div>

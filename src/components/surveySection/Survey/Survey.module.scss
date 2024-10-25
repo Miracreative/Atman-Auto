@@ -296,6 +296,7 @@
 	transform: scale(0.75);
 	z-index: -1;
 	user-select: none;
+	pointer-events: none;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -304,6 +305,7 @@
 	transform: scale(1);
 	z-index: 1;
 	user-select: auto;
+	pointer-events: auto;
 	transition: all 0.8s ease-in-out;
 }
 
@@ -370,9 +372,9 @@
 		@include adaptive-font(32, 20);
 	}
 
-	.surveyTitleResults {
-		margin-bottom: calcVH(20);
-	}
+	// .surveyTitleResults {
+	// 	margin-bottom: calcVH(20);
+	// }
 
 	.optionsTask {
 		gap: calcVW(30) calcVH(50);
