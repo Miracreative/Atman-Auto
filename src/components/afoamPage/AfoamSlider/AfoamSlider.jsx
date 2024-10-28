@@ -1,9 +1,14 @@
-import styles from './AfoamSlider.module.scss';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y, Pagination } from 'swiper/modules';
+import styles from './AfoamSlider.module.scss';
 
 export default function AfoamSlider() {
+
+	const pagination = {
+		clickable: true,
+
+	};
 	return (
 		<>
 			<section className={styles.section}>
@@ -14,6 +19,7 @@ export default function AfoamSlider() {
 						<Swiper
 							wrapperClass={styles.swiperWrapper}
 							className={styles.swiper}
+							pagination={pagination}
 							modules={[Navigation, Scrollbar, A11y, Pagination]}
 							slidesPerView={1}
 							spaceBetween={20}
@@ -30,6 +36,7 @@ export default function AfoamSlider() {
 											height={96}
 											alt='Afoam'
 										/>
+
 									</div>
 
 									<div className={styles.subTitle}>

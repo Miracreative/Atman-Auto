@@ -5,6 +5,40 @@
 	display: none;
 }
 
+
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: red;
+    width: 100%;
+    height: 100px;
+}
+
+.bullet {
+	position: absolute;
+    left: 50px;
+    background: yellow;
+    width: 10px;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+	display: block;
+	position: absolute;
+    width: 10px;
+	bottom: 0;
+	left: 50%;
+    height: 10px;
+    background: red; /* Цвет для проверки */
+    margin: 0 5px; /* Отступы между буллетами */
+}
+
+
+
+
 .section {
 	min-width: 320px;
 	padding: 20px 0;
@@ -15,7 +49,9 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
+	position: relative;
 	overflow: hidden;
+
 }
 
 .swiperWrapper {
