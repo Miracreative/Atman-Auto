@@ -1,14 +1,19 @@
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y, Pagination } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/pagination";
 import styles from './AfoamSlider.module.scss';
+
 
 export default function AfoamSlider() {
 
-	const pagination = {
-		clickable: true,
+	// const pagination = {
+	// 	clickable: true,
 
-	};
+	// };
+
+
 	return (
 		<>
 			<section className={styles.section}>
@@ -19,10 +24,22 @@ export default function AfoamSlider() {
 						<Swiper
 							wrapperClass={styles.swiperWrapper}
 							className={styles.swiper}
-							pagination={pagination}
+
 							modules={[Navigation, Scrollbar, A11y, Pagination]}
 							slidesPerView={1}
 							spaceBetween={20}
+							pagination={{
+								dynamicBullets: true,
+								clickable: true,
+								bulletClass: styles.bullet,
+								bulletActiveClass: styles.bulletActive,
+							}}
+						// style={{
+						// 	'--swiper-pagination-display': 'flex',
+						// 	'--swiper-pagination-justify-content': 'center',
+						// 	'--swiper-pagination-align-items': 'center',
+						// 	'--swiper-pagination-margin-top': '10px',
+						// }}
 						>
 
 							<SwiperSlide className={styles.swiperSlideOne} >

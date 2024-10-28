@@ -37,21 +37,17 @@
 
 .swiperWrapper {
 	display: flex;
-
 }
 
 .swiperSlide {
-
-	height: 29vw;
-	max-height: 560px;
-	min-height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+	height: 29vw;
+	max-height: 560px;
+	min-height: 200px;
 
-	// background-color: rgb(var(--gray-background-img-rgb));
-	// border-radius: 20px;
 }
 
 .swiperSlide img {
@@ -104,14 +100,7 @@
 
 
 
-
-
-
-
-
 @media (max-width: 1920px) {
-
-
 	.title {
 		font-size: calcVW(64);
 	}

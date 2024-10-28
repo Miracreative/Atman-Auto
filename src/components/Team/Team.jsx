@@ -92,7 +92,6 @@ export default function Team() {
 	useEffect(() => {
 		fetchLastNews();
 	}, []);
-	// console.log(team);
 
 
 
@@ -127,10 +126,16 @@ export default function Team() {
 						},
 					}}
 					onSwiper={setSwiper}
-					pagination={true}
+					pagination={{
+						dynamicBullets: true,
+						clickable: true,
+						bulletClass: styles.bullet,
+						bulletActiveClass: styles.bulletActive,
+					}}
 
 					// spaceBetween={10}
 					slidesPerView={4}
+
 				>
 
 					{data.map((item) => (
