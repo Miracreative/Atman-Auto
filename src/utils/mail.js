@@ -12,7 +12,7 @@ const smtpTransport = mailer.createTransport(
 		tls: { rejectUnauthorized: false },
 	},
 	{
-		from: 'Atman Auto test <radicall004@yandex.ru>', // от кого
+		from: 'Atman Auto, Запрос на обратную связь <radicall004@yandex.ru>', // от кого
 	},
 );
 

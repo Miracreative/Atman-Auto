@@ -10,16 +10,22 @@ import sendEmail from './../../utils/mail.js';
 export default async function handler(req, res) {
 	const message = {
 		to: 'radicall004@yandex.ru', // куда
-		subject: `Письмо с сайта Атамана Автомобильного от ${req.body.firstName}`,
+		subject: `Письмо с сайта Atman Auto от ${req.body.firstName}`,
 		text: `
-			Имя: ${req.body.firstName},
-			Фамилия: ${req.body.lastName},
-			Телефон: ${req.body.phoneNumber},
+      Имя: ${req.body.firstName},
+      Фамилия: ${req.body.lastName},
+      Телефон: ${req.body.phoneNumber},
       E-mail: ${req.body.email},
-      Сообщение: ${req.body.comment}
+      Сообщение:
+      
+      ${req.body.comment}
+
+
+
+      Письмо сформировано системой автоматически, на него не нужно отвечать.
         `,
 	};
 	sendEmail(message);
 	console.log(message);
-	res.send(`Спасибо за заявку, ${req.body.name}! Мы вам перезвоним...`);
+	res.send(`Спасибо за заявку, ${req.body.firstName}! Мы вам перезвоним...`);
 }
