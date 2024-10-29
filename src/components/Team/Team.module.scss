@@ -1,14 +1,20 @@
-@import '../../scss/_functions.scss';
+@import '@/scss/_functions.scss';
 
 .section {
 	min-width: 320px;
 	overflow-x: hidden;
 }
+
+.contentWrap {
+	position: relative;
+	margin: 20px 0 80px 0;
+}
+
 .content {
 	background-color: #E4E5E7;
 	border-radius: 20px;
 	border: 1px solid #BCBCBC;
-	margin: 20px 0;
+
 	min-width: 300px;
 	overflow: hidden;
 }
@@ -21,29 +27,57 @@
 	margin-left: 4vw;
 }
 
+.swiperWrapper {
+	display: flex;
+	position: static;
+}
+
 .swiper {
 	display: flex;
-	position: relative;
+	position: static;
 	overflow: hidden;
 }
 
+
+
+
+
+.section .swiper .paginationWrap {
+	width: auto;
+	bottom: -50px ;
+	display: flex;
+
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	// justify-content: center;
+	align-items: center;
+}
+
+
 .bullet {
-    background: yellow; 
-	display: inline-block;
+    background: rgb(var(--foreground-rgb)); 
+	opacity: 50%;
+	display: block;
 	border-radius: 50%;
-	margin-right: 10px;
-    width: 10px; 
-    height: 10px; 
+	margin-right: 15px;
+    min-width: 15px; 
+    height: 15px; 
     transition: all 0.3s ease-in-out; 
+	cursor: pointer;
 }
 
 .bulletActive {
-    background-color: red;
-	// transform: scale(1.5);
+	min-width: 20px;
+	height: 20px;
+	opacity: 100%;
 }
+
+
 
 .swiperSlide {
 	width: auto;
+	height: auto;
 }
 
 .photo {
@@ -58,9 +92,6 @@
 	// object-position: 10% 20%;
 }
 
-.swiperWrapper {
-	display: flex;
-}
 
 .cards {
 	display: flex;
@@ -206,6 +237,22 @@
   }
 
   @media (max-width: 768px) {
+
+	.content {
+		border-radius: 10px;
+	}
+
+	.bullet {
+		min-width: 10px; 
+		height: 10px;
+		margin-right: 10px;
+	}
+	
+	.bulletActive {
+		min-width: 14px;
+		height: 14px;
+	}
+
 	.photoItem {
 		width: 200px;
 		height: 200px;
@@ -234,7 +281,10 @@
 
   }
 
+
+
   @media (max-width: 576px) {
+
 	.textContainer {
 		margin: 0 5px 30px 5px;
 	}

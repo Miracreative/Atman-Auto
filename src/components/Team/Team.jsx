@@ -1,5 +1,7 @@
 'use client';
 
+import "swiper/css";
+import "swiper/css/pagination";
 import styles from './Team.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -98,97 +100,104 @@ export default function Team() {
 
 	return <section className={styles.section}>
 		<div className='container'>
-			<div className={styles.content}>
-				<div className={styles.title}>Команда</div>
+			<div className={styles.contentWrap}>
+
+				<div className={styles.content}>
+					<div className={styles.title}>Команда</div>
 
 
 
-				<Swiper
-					wrapperClass={styles.swiperWrapper}
-					className={styles.swiper}
-					modules={[Navigation, Scrollbar, A11y, Pagination]}
-					breakpoints={{
-						0: {
-							slidesPerView: 2,
-						},
-						576: {
-							slidesPerView: 2,
+					<Swiper
+						wrapperClass={styles.swiperWrapper}
+						className={styles.swiper}
+						modules={[Navigation, Scrollbar, A11y, Pagination]}
+						breakpoints={{
+							0: {
+								slidesPerView: 2,
+							},
+							576: {
+								slidesPerView: 2,
 
-						},
-						768: {
-							slidesPerView: 3,
-						},
-						1350: {
-							slidesPerView: 4,
-						},
-						1600: {
-							slidesPerView: 4,
-						},
-					}}
-					onSwiper={setSwiper}
-					pagination={{
-						dynamicBullets: true,
-						clickable: true,
-						bulletClass: styles.bullet,
-						bulletActiveClass: styles.bulletActive,
-					}}
+							},
+							768: {
+								slidesPerView: 3,
+							},
+							1350: {
+								slidesPerView: 4,
+							},
+							1600: {
+								slidesPerView: 4,
+							},
+						}}
+						onSwiper={setSwiper}
+						pagination={{
+							dynamicBullets: true,
+							clickable: true,
+							bulletClass: styles.bullet,
+							bulletActiveClass: styles.bulletActive,
+							horizontalClass: styles.paginationWrap,
+						}}
 
-					// spaceBetween={10}
-					slidesPerView={4}
+						// spaceBetween={10}
+						slidesPerView={4}
 
-				>
+					>
 
-					{data.map((item) => (
-						<SwiperSlide key={item.id} className={styles.swiperSlide}>
+						{data.map((item) => (
+							<SwiperSlide key={item.id} className={styles.swiperSlide}>
 
-							<div className={styles.cardItem}>
-								<div className={styles.photo}>
-									<Image
-										className={styles.photoItem}
-										src={item.src}
-										alt="team photo"
-										width={350}
-										height={350}
-									/>
-								</div>
-
-								<div className={styles.textContainer}>
-									<div className={styles.name}> {item.name} </div>
-									<div className={styles.position}> {item.descr} </div>
-									<div className={styles.whatsApp}>
-										<span className={styles.desktopSpan}>WhatsApp: </span>
-										<Link
-											href={`https://wa.me/${item.tel}`}
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											{item.tel}
-										</Link>
+								<div className={styles.cardItem}>
+									<div className={styles.photo}>
+										<Image
+											className={styles.photoItem}
+											src={item.src}
+											alt="team photo"
+											width={350}
+											height={350}
+										/>
 									</div>
 
-									<div className={styles.mail}>
-										<span className={styles.desktopSpan}>Mail: </span>
-										<Link
-											href={`mailto: ${item.email}`}
-										>
-											{item.email}
-										</Link>
+									<div className={styles.textContainer}>
+										<div className={styles.name}> {item.name} </div>
+										<div className={styles.position}> {item.descr} </div>
+										<div className={styles.whatsApp}>
+											<span className={styles.desktopSpan}>WhatsApp: </span>
+											<Link
+												href={`https://wa.me/${item.tel}`}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{item.tel}
+											</Link>
+										</div>
+
+										<div className={styles.mail}>
+											<span className={styles.desktopSpan}>Mail: </span>
+											<Link
+												href={`mailto: ${item.email}`}
+											>
+												{item.email}
+											</Link>
+										</div>
 									</div>
 								</div>
-							</div>
 
-						</SwiperSlide>
-					))}
-
-
-					{/* <div className="swiper-pagination"></div> */}
-
-				</Swiper>
+							</SwiperSlide>
+						))}
 
 
+						{/* <div className="swiper-pagination"></div> */}
+
+					</Swiper>
+
+
+
+
+				</div>
 
 
 			</div>
+
 		</div>
 	</section>;
 

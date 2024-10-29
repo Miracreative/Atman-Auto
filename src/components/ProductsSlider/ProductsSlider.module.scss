@@ -160,7 +160,8 @@
 	height: 100px;
 	width: 100px;
 	border-radius: 20px;
-	top: 50%;	
+	top: 50%;
+	z-index: 2;	
 
 	transform: translate(0, -50%);
 	transition: all .3s ease-in-out;

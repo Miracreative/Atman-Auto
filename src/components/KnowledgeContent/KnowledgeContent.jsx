@@ -34,16 +34,9 @@ export default function KnowledgeContent() {
 	}, []);
 
 
-	console.log(posts);
 
 
 
-
-
-
-
-
-	// const [posts, SetPosts] = useState(knowledgeBase);
 	const postPerPage = 10;
 	const [currentPage, SetCurrentPage] = useState(1);
 
@@ -145,7 +138,7 @@ export default function KnowledgeContent() {
 	const handleCardClick = (cardId) => {
 		setPopupActive(true);
 		setCardId(cardId);
-		console.log(cardId);
+		// console.log(cardId);
 
 	};
 
