@@ -57,6 +57,9 @@ export default function NewsSlider() {
 		}
 	};
 
+	console.log(lastNews);
+
+
 	return (
 		<>
 			<section className={styles.section}>
@@ -109,7 +112,7 @@ export default function NewsSlider() {
 												className={styles.imgWrap}
 												href={`/news/${item.id}`}
 											>
-												<img src={item.imagessrc} alt={item.title} />
+												<img src={`${process.env.HOST}/${item.imagessrc[0]}`} alt={item.title} />
 											</Link>
 										</SwiperSlide>
 									))}
@@ -177,7 +180,7 @@ export default function NewsSlider() {
 								spaceBetween={20}
 								slidesPerView={2.1}
 							>
-								{lastNews.map((item, index) => (
+								{lastNews.map((item) => (
 									<SwiperSlide key={item.id} className={styles.swiperSlideTwo}>
 										<Link className={styles.imgWrap} href={`/news/${item.id}`}>
 											<div className={styles.titleCard}>{item.title}</div>

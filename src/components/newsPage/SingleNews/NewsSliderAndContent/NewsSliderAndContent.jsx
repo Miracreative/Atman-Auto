@@ -18,8 +18,6 @@ import { useState, useEffect } from 'react';
 
 export default function NewsSliderAndContent({ imagessrc, content }) {
 
-	console.log(imagessrc);
-	console.log(content);
 
 
 	const [imgData, setImgData] = useState([]);
@@ -30,6 +28,7 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 		setIsImgDataReady(true);
 		setCanGoNext(imagessrc.length > 1);
 	}, []);
+
 
 
 
@@ -109,7 +108,8 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 										imgData.map((srcImg, index) => (
 											<SwiperSlide key={index} className={styles.swiperSlide}>
 												<div className={styles.imgWrap} >
-													<img src={srcImg}
+													<img
+														src={`${process.env.HOST}/${srcImg}`}
 														width={300}
 														height={300}
 														alt="img"
