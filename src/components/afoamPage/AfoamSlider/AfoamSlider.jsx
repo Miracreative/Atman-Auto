@@ -33,13 +33,9 @@ export default function AfoamSlider() {
 								clickable: true,
 								bulletClass: styles.bullet,
 								bulletActiveClass: styles.bulletActive,
+								horizontalClass: styles.paginationWrap,
 							}}
-						// style={{
-						// 	'--swiper-pagination-display': 'flex',
-						// 	'--swiper-pagination-justify-content': 'center',
-						// 	'--swiper-pagination-align-items': 'center',
-						// 	'--swiper-pagination-margin-top': '10px',
-						// }}
+
 						>
 
 							<SwiperSlide className={styles.swiperSlideOne} >

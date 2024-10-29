@@ -152,7 +152,7 @@ export default function Decisions() {
 									onSlideChange={(swiper) => onSlideChange(swiper)}
 								>
 
-									{decisionsData.map((item, index) => (
+									{decisionsData.map((item) => (
 										<SwiperSlide key={item.id} className={styles.swiperSlideOne}>
 											<Link className={styles.imgWrap} href={item.href}>
 
@@ -177,10 +177,6 @@ export default function Decisions() {
 
 											</Link>
 
-
-											{/* <div className={styles.titleCard}> {item.title} </div>
-
-										<div className={styles.description}> {item.description} </div> */}
 
 										</SwiperSlide>
 									))}
@@ -248,7 +244,7 @@ export default function Decisions() {
 								spaceBetween={20}
 								slidesPerView={4.2}
 							>
-								{decisionsData.map((item, index) => (
+								{decisionsData.map((item) => (
 									<SwiperSlide key={item.id} className={styles.swiperSlideTwo}>
 										<div className={styles.titleCard}>{item.title}</div>
 									</SwiperSlide>
