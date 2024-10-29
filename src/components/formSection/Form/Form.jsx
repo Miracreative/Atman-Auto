@@ -6,6 +6,8 @@ import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 
+import axios from 'axios';
+
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
 import {
@@ -70,36 +72,46 @@ const Form = ({ isOpen, onClose }) => {
 		filePickerRef.current.click();
 	};
 
-	const onSubmit = async (data) => {
-		const formData = new FormData();
+	const sendForm = async (data) => {
+		console.log('data', data);
 
-		// Добавляем все данные из формы
-		formData.append('firstName', data.firstName);
-		formData.append('lastName', data.lastName);
-		formData.append('phoneNumber', data.phoneNumber);
-		formData.append('email', data.email);
-		formData.append('comment', data.comment);
-
-		// Добавляем файл, если он выбран
-		if (selectedFile) {
-			formData.append('file', selectedFile);
-			console.log(selectedFile);
-		}
-
-		// Пример отправки данных на сервер
 		try {
-			const response = await fetch('/api/submit', {
-				method: 'POST',
-				body: formData,
-			});
-			if (response.ok) {
-				console.log(FORM_SUCCESSED);
-			} else {
-				console.error(FORM_SUBMISSION_ERROR);
-			}
+			// Отправляем данные, переданные из onSubmit
+			const response = await axios.post(
+				'/api/formSubmit',
+				{
+					firstName: data.firstName,
+					lastName: data.lastName,
+					phoneNumber: data.phoneNumber,
+					email: data.email,
+					comment: data.comment,
+				},
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				},
+			);
+
+			console.log('Форма успешно отправлена: ', response.data);
+
+			// Сброс значений полей формы
+			// reset({
+			// 	firstName: '',
+			// 	lastName: '',
+			// 	phoneNumber: '',
+			// 	email: '',
+			// 	comment: '',
+			// });
+
+			// reset();
 		} catch (error) {
-			console.error('Ошибка сети:', error);
+			console.log('Ошибка при отправке формы: ', error);
 		}
+	};
+
+	const onSubmit = (data) => {
+		sendForm(data);
 	};
 
 	return (
@@ -209,6 +221,8 @@ const Form = ({ isOpen, onClose }) => {
 						<button
 							className={`button ${styles.submitButton}`}
 							type="submit"
+							// type="button"
+							// onClick={sendForm}
 							disabled={!isChecked}
 						>
 							Отправить

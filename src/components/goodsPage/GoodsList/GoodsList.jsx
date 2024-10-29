@@ -9,8 +9,6 @@ const GoodsList = ({ products }) => {
 		return null;
 	}
 
-	console.log('GoodsList products', products);
-
 	return (
 		<ul className={styles.cards}>
 			{products.map((product) => (
@@ -20,7 +18,6 @@ const GoodsList = ({ products }) => {
 						brand={product.brand}
 						title={product.name}
 						subtitle={product.type}
-						// imageurl={'file://nanalit/' + product.imageurl}
 						imageurl={`${HOST}/${product.imageurl}`}
 					/>
 				</li>
