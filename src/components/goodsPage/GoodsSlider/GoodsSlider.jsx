@@ -80,7 +80,8 @@ export default function GoodsSlider({ product }) {
 								{/* <img src={item.image} alt={item.title} /> */}
 								<img
 									// src={item.goodsindustrialimages}
-									src={`${HOST}/${product.goodspersonalimages}`}
+									// src={`${HOST}/${product.goodspersonalimages}`}
+									src={`${HOST}/${image}`}
 									alt={`${product.brand} ${product.name}`}
 								/>
 							</SwiperSlide>
@@ -89,6 +90,7 @@ export default function GoodsSlider({ product }) {
 				</div>
 			</div>
 
+			{/* Кнопки управления слайдером */}
 			{product.goodspersonalimages.length >= 2 ? (
 				<>
 					<button
