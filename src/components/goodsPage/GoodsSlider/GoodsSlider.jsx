@@ -8,13 +8,23 @@ import { Controller } from 'swiper/modules';
 
 import products from '@/data/products';
 
+import { HOST } from '@/constants/url';
+
 import styles from './GoodsSlider.module.scss';
 
-export default function GoodsSlider() {
+export default function GoodsSlider({ product }) {
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);
 
 	const [swiper, setSwiper] = useState(null);
+
+	console.log('product', product);
+
+	console.log('products goodspersonalimages', product.goodspersonalimages);
+
+	console.log('название', `${product.brand} ${product.name}`);
+
+	console.log('Картинки с сервера', `${HOST}/${product.goodspersonalimages}`);
 
 	const onSlideChange = (swiper) => {
 		const isBeginning = swiper.isBeginning;
@@ -63,10 +73,16 @@ export default function GoodsSlider() {
 						// slidesPerView={4.2}
 						onSlideChange={(swiper) => onSlideChange(swiper)}
 					>
-						{products.map((item) => (
+						{/* {products.map((item) => ( */}
+						{product.goodsindustrialimages.map((item) => (
 							// {decisionsData.map((item, index) => (
 							<SwiperSlide key={item.id} className={styles.swiperSlide}>
-								<img src={item.image} alt={item.title} />
+								{/* <img src={item.image} alt={item.title} /> */}
+								<img
+									// src={item.goodsindustrialimages}
+									src={`${HOST}/${item.goodspersonalimages}`}
+									alt={`${item.brand} ${item.name}`}
+								/>
 							</SwiperSlide>
 						))}
 					</Swiper>
