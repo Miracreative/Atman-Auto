@@ -148,6 +148,7 @@
 	transition: all .3s ease-in-out;
 	background-color: var(--red-button);
 	cursor: pointer;
+	z-index: 2;
 
 	&:hover {
 		background-color: var(--red-dark);
