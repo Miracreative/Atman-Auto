@@ -1,8 +1,14 @@
 // const URL = 'https://66daaa43f47a05d55be57df5.mockapi.io/atman/products';
 
+//* HOST *//
+
+export const HOST = process.env.HOST;
+
 //* Базовый URL *//
+
 // const BASE_URL = 'http://192.168.0.153:5000/api';
-const BASE_URL = `${process.env.HOST}/api`;
+const BASE_URL = 'http://83.147.246.205:5000/api';
+// const BASE_URL = `${process.env.HOST}/api`;
 
 // URL* товаров/продукции *//
 export const ALL_GOODS_URL = `${BASE_URL}/goods`;

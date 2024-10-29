@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -40,7 +40,6 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 						isOpen={activeDropdown === item.key}
 						toggleOpen={() => toggleDropdown(item.key)}
 						menuRef={refs.current[item.key]}
-						// setFilterMainParam={setFilterMainParam}
 					/>
 				))}
 				<Link

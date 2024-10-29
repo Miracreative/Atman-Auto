@@ -2,7 +2,16 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import {
+	setIsMobile,
+	setFilterAllParamGoods,
+	getFilteredAllParamGoods,
+	getAllGoods,
+} from '@/store/goods/goodsSlice';
 
 import useWindowWidth from '@/hooks/useWindowWidth';
 import useToggleMenus from '@/hooks/useToggleMenus';
@@ -17,19 +26,35 @@ import {
 	temperatures,
 	conditions,
 } from '@/data/surveyOptions';
-import products from '@/data/products';
+
+// import {
+// 	LOADING_DATA_ERROR,
+// 	LOADING_INFO,
+// 	NOT_FOUND_INFO,
+// } from '@/utils/informMessages';
 
 import SurveyItem from '../SurveyItem/SurveyItem';
 import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
+import SurveySlider from '../SurveySlider/SurveySlider';
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
-import ProductCard from '@/components/ProductCard/ProductCard';
+// import ProductCard from '@/components/ProductCard/ProductCard';
 
 import image from '/public/survey/survey.png';
 
 import styles from './Survey.module.scss';
 
 export default function Survey() {
-	const [isMobile, setIsMobile] = useState(false);
+	const dispatch = useDispatch();
+
+	const { isMobile, products, loading, error, filterAllParam } = useSelector(
+		(state) => state.goods,
+	);
+
+	// console.log('filterAllParam', filterAllParam);
+
+	useEffect(() => {
+		dispatch(getAllGoods());
+	}, []);
 
 	const [menuStates, toggleMenu, closeMenu] = useToggleMenus({
 		isOpenMenuTask: false,
@@ -70,11 +95,37 @@ export default function Survey() {
 	};
 
 	const handleCheckedTask = (value) => {
+		const updatedFilterAllParam = [...filterAllParam];
+		// Обнуляем все значения для задач, например, если они размещаются в первых N позициях
+		const taskPosition = 0;
+
+		updatedFilterAllParam.fill(0, taskPosition, tasks.length); // Обнуляем все значения в диапазоне, соответствующем задачам
 		setCheckedTask(value);
+
+		// Устанавливаем новое значение
+		const taskIndex = tasks.findIndex((task) => task.value === value);
+		if (taskIndex !== -1) {
+			updatedFilterAllParam[taskIndex] = 1; // Устанавливаем 1 для выбранной задачи
+		}
+
+		console.log('Задача', updatedFilterAllParam);
+		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
 	const handleCheckedType1 = (value) => {
+		const updatedFilterAllParam = [...filterAllParam];
+		const typePosition = 8;
+
+		updatedFilterAllParam.fill(0, typePosition, typePosition + types1.length);
 		setCheckedType1(value);
+
+		const typeIndex = types1.findIndex((type) => type.value === value);
+		if (typeIndex !== -1) {
+			updatedFilterAllParam[typePosition + typeIndex] = 1;
+		}
+
+		console.log('Первый вид склеиваемых поверхностей', updatedFilterAllParam);
+		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
 	const handleCheckedType2 = (value) => {
@@ -82,15 +133,75 @@ export default function Survey() {
 	};
 
 	const handleCheckedConnection = (value) => {
+		const updatedFilterAllParam = [...filterAllParam];
+		const connectionPosition = 11;
+
+		updatedFilterAllParam.fill(
+			0,
+			connectionPosition,
+			connectionPosition + connections.length,
+		);
 		setCheckedConnection(value);
+
+		const connectionIndex = connections.findIndex(
+			(connection) => connection.value === value,
+		);
+		if (connectionIndex !== -1) {
+			updatedFilterAllParam[connectionPosition + connectionIndex] = 1;
+		}
+
+		console.log(
+			'Условия эксплуатации соединения, соединение',
+			updatedFilterAllParam,
+		);
+		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
 	const handleCheckedTemperature = (value) => {
+		const updatedFilterAllParam = [...filterAllParam];
+		const temperaturePosition = 16;
+
+		updatedFilterAllParam.fill(
+			0,
+			temperaturePosition,
+			temperaturePosition + temperatures.length,
+		);
 		setCheckedTemperature(value);
+
+		const temperatureIndex = temperatures.findIndex(
+			(temperature) => temperature.value === value,
+		);
+		if (temperatureIndex !== -1) {
+			updatedFilterAllParam[temperaturePosition + temperatureIndex] = 1;
+		}
+
+		console.log(
+			'Условия эксплуатации соединения, температура',
+			updatedFilterAllParam,
+		);
+		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
 	const handleCheckedCondition = (value) => {
+		const updatedFilterAllParam = [...filterAllParam];
+		const conditionPosition = 20;
+
+		updatedFilterAllParam.fill(
+			0,
+			conditionPosition,
+			conditionPosition + conditions.length,
+		);
 		setCheckedCondition(value);
+
+		const conditionIndex = conditions.findIndex(
+			(condition) => condition.value === value,
+		);
+		if (conditionIndex !== -1) {
+			updatedFilterAllParam[conditionPosition + conditionIndex] = 1;
+		}
+
+		console.log('Состояние соединяемых поверхностей', updatedFilterAllParam);
+		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
 	const handleInc = () => {
@@ -119,20 +230,27 @@ export default function Survey() {
 	);
 
 	useEffect(() => {
-		// console.log('useEffect сработал');
-
 		if (width <= MOBILE_WIDTH) {
-			setIsMobile(true);
+			dispatch(setIsMobile(true));
 			// console.log(
 			// 	`Мы в мобильном режиме (текущая ширина ${width}px): ${isMobile}`,
 			// );
 		} else {
-			setIsMobile(false);
+			dispatch(setIsMobile(false));
 			// console.log(
 			// 	`Мы в десктопном режиме (текущая ширина ${width}px): ${isMobile}`,
 			// );
 		}
-	}, [width]);
+	}, [isMobile]);
+
+	const handleApply = () => {
+		handleInc();
+
+		if (count === 4) {
+			dispatch(getFilteredAllParamGoods(filterAllParam));
+			console.log('Запрос на сервер');
+		}
+	};
 
 	return (
 		<section className={styles.section}>
@@ -264,6 +382,7 @@ export default function Survey() {
 										/>
 									</>
 								)}
+
 								{isMobile && (
 									<>
 										<h4>Поверхность 2</h4>
@@ -330,6 +449,7 @@ export default function Survey() {
 									</ul>
 								</div>
 							)}
+
 							{isMobile && (
 								<>
 									<SurveyFormMobile
@@ -410,36 +530,11 @@ export default function Survey() {
 							>
 								Результаты
 							</h3>
-							<ul className={styles.resultsList}>
-								{products.map((product) => (
-									<li key={product.id}>
-										<ProductCard
-											id={product.id}
-											title={product.title}
-											subtitle={product.subtitle}
-											description={product.description}
-											imageUrl={product.image}
-											width="200px"
-											height="250px"
-										/>
-									</li>
-								))}
-								{/* <li>
-									<ProductCard />
-								</li>
-								<li>
-									<ProductCard />
-								</li>
-								<li>
-									<ProductCard />
-								</li>
-								<li>
-									<ProductCard />
-								</li> */}
-							</ul>
+							<SurveySlider products={products} />
 						</div>
 						{/* Экран 5 Результаты */}
 
+						{/* Элементы управления и навигации */}
 						<div className={styles.controls}>
 							<div className={styles.buttons}>
 								<button
@@ -451,7 +546,8 @@ export default function Survey() {
 								</button>
 								<button
 									className={`${styles.forwardButton} button`}
-									onClick={handleInc}
+									// onClick={handleInc}
+									onClick={handleApply}
 									disabled={forwardButtonDisabled}
 								>
 									Продолжить
@@ -464,7 +560,7 @@ export default function Survey() {
 										count === 2 ? styles.visible : styles.hidden
 									}`}
 								>
-									<Link className={styles.link} href="/">
+									<Link className={styles.link} href="/knowledge">
 										Таблица с поверхностной энергией материалов
 									</Link>
 								</div>
@@ -473,7 +569,7 @@ export default function Survey() {
 										count === 3 ? styles.visible : styles.hidden
 									}`}
 								>
-									<Link className={styles.link} href="/">
+									<Link className={styles.link} href="/knowledge">
 										Влияние среды эксплуатации на соединение
 									</Link>
 								</div>
@@ -482,12 +578,13 @@ export default function Survey() {
 										count === 4 ? styles.visible : styles.hidden
 									}`}
 								>
-									<Link className={styles.link} href="/">
+									<Link className={styles.link} href="/knowledge">
 										Статья о видах поверхностей размещенной в базе знаний
 									</Link>
 								</div>
 							</div>
 						</div>
+						{/* Элементы управления и навигации */}
 					</div>
 				</div>
 			</div>

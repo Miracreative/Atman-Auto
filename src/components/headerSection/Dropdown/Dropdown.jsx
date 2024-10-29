@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 
 import {
-	setFilterMainParam,
+	setFilterMainParamGoods,
 	setFirstFilter,
 	getAllGoods,
 	getFilteredMainParamGoods,
@@ -38,7 +38,7 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 
 			if (filterIndex === 0) {
 				dispatch(setFirstFilter([filters[0].id]));
-				dispatch(setFilterMainParam([0, 0, 0, 0, 0, 0, 0, 0]));
+				dispatch(setFilterMainParamGoods([0, 0, 0, 0, 0, 0, 0, 0]));
 				dispatch(getAllGoods());
 			} else {
 				filterMainParam[filterIndex - 1] = 1; // Устанавливаем нужную цифру в массив, начиная со второго элемента
@@ -46,12 +46,10 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 				router.push(goodsLink); // Перенаправляем пользователя на /goods
 
 				// Выполняем запрос
-				dispatch(setFilterMainParam(filterMainParam));
+				dispatch(setFilterMainParamGoods(filterMainParam));
 				dispatch(setFirstFilter([]));
 				dispatch(getFilteredMainParamGoods(filterMainParam));
 			}
-
-			// console.log('Запрос в handleLinkClick');
 		}
 	};
 
