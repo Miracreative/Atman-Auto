@@ -6,8 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
 import { Controller } from 'swiper/modules';
 
-import products from '@/data/products';
-
 import { HOST } from '@/constants/url';
 
 import styles from './GoodsSlider.module.scss';
@@ -80,8 +78,8 @@ export default function GoodsSlider({ product }) {
 								{/* <img src={item.image} alt={item.title} /> */}
 								<img
 									// src={item.goodsindustrialimages}
-									src={`${HOST}/${item.goodspersonalimages}`}
-									alt={`${item.brand} ${item.name}`}
+									src={`${HOST}/${product.goodspersonalimages}`}
+									alt={`${product.brand} ${product.name}`}
 								/>
 							</SwiperSlide>
 						))}
