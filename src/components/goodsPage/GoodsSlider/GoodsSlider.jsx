@@ -24,7 +24,7 @@ export default function GoodsSlider({ product }) {
 
 	// console.log('Картинки с сервера', `${HOST}/${product.goodspersonalimages}`);
 
-	console.log('Кнопки', product.goodspersonalimages.length);
+	// console.log('Кнопки', product.goodspersonalimages.length);
 
 	const onSlideChange = (swiper) => {
 		const isBeginning = swiper.isBeginning;
