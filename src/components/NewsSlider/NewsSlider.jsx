@@ -11,7 +11,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 export default function NewsSlider() {
-	// const newsDate = newsData;
+
 
 	const [lastNews, setLastNews] = useState([]);
 	const [error, setError] = useState(null);
@@ -29,7 +29,7 @@ export default function NewsSlider() {
 		fetchLastNews();
 	}, []);
 
-	// console.log(lastNews);
+
 
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);

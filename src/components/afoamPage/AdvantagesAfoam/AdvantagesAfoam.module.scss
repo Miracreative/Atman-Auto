@@ -1,9 +1,12 @@
 @import '@/scss/_functions.scss';
 
-
+.br {
+	display: none;
+}
 
 .section {
 	margin: 10px 0;
+	min-width: 320px;
 }
 
 .container {
@@ -13,48 +16,26 @@
 }
 
 .wrap {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
 	border-radius: 20px;
 	border: 1px solid rgb(var(--gray-line-rgb));
 	overflow: hidden;
-}
-
-.advantages {
-	background-color: rgb(var(--gray-background-img-rgb));	
+		background-color: rgb(var(--gray-background-img-rgb));
 }
 
 
-
-.disadvantages {
-	background-color: rgb(var(--red-rgb));
-	color: white;
-	height: 100%;
+.innerAdvantages {
+	margin: 4vw;
 }
 
-.innerAdvantages,
-.innerAlternative,
-.innerDisadvantages {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 6vh 0;
-}
-
-.content {
-	width: 80%;
-}
 
 .title {
 	font-weight: 700;
 	font-size: 48px;
 	line-height: 0.9;
-	margin-bottom: 5vh;
+	margin-bottom: 2.6vw;
 }
 
-.advantagesPoint,
-.alternativePoint,
-.disadvantagesPoint {
+.advantagesPoint {
 	display: flex;
 	margin: 10px 0;
 	font-size: 18px;
@@ -78,19 +59,34 @@
 	background-color: white;
 }
 
-.advantagesListItem,
-.alternativeListItem {
+.advantagesListItem:not(:first-child) {
 	border-top: 1px solid rgba(53, 53, 53, 0.5);
 }
 
-.disadvantagesListItem {
-	border-top: 1px solid rgba(255, 255, 255, 0.5);
-}
+
+
+// .advantagesListItem:not(:first-child)::before {
+// 	content: '';
+// 	display: block;
+// 	position: absolute;
+// 	left: 0;
+// 	top: -5px;
+// 	height: 1px;
+// 	width: 200px;
+// 	background: rgba(53, 53, 53, 0.5);
+// }
+
+
 
 .column {
 	display: flex;
 	flex-direction: column;
 }
+
+
+	
+
+
 
 
 
@@ -100,17 +96,13 @@
 		font-size: calcVW(48);
 	}
 
-	.advantagesPoint,
-	.alternativePoint,
-	.disadvantagesPoint {
+	.advantagesPoint {
 		font-size: calcVW(18);
 	}
 }
 
 @media (max-width:1500px) {
-	.advantagesPoint,
-	.alternativePoint,
-	.disadvantagesPoint {
+	.advantagesPoint {
 		font-size: 14px;
 	}
 }
@@ -124,39 +116,35 @@
 
 
 @media (max-width:768px) {
+
 	.wrap {
-		grid-template-columns: 1fr;
-		border-radius: 0;
+		border-radius: 10px;
 	}
 
-	.container {
-		padding: 0;
+	.br {
+		display: block;
 	}
+	
 
-	.content {
-		width: 95%;
-	}
+	// .container {
+	// 	padding: 0;
+	// }
+
 
 	.title {
 		font-size: 24px;
-		margin-bottom: 10px;
+		margin-bottom: 25px;
 	}
 
-	.advantagesListItem:first-child,
-	.alternativeListItem:first-child,
-	.disadvantagesListItem:first-child {
+	.advantagesListItem:first-child {
 		border-top: none;
 	}
 
-	.innerAdvantages,
-	.innerAlternative,
-	.innerDisadvantages {
-		margin: 30px 0;
+	.innerAdvantages {
+		margin: 20px 15px;
 	}
 
-	.advantagesPoint,
-	.alternativePoint,
-	.disadvantagesPoint {
+	.advantagesPoint {
 		&::before {
 			margin-right: 10px;
 		}
