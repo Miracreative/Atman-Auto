@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-// import image from '/public/test-image.png';
-
 import styles from './GoodsCard.module.scss';
 
 const GoodsCard = ({ id, brand, title, subtitle, imageurl }) => {
@@ -15,7 +13,6 @@ const GoodsCard = ({ id, brand, title, subtitle, imageurl }) => {
 				<div className={styles.backgroundContainer}>
 					<Image
 						src={imageurl}
-						// src={image}
 						alt={title}
 						layout="fill"
 						objectFit="cover"

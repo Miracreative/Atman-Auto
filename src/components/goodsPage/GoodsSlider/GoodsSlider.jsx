@@ -73,14 +73,9 @@ export default function GoodsSlider({ product }) {
 						// slidesPerView={4.2}
 						onSlideChange={(swiper) => onSlideChange(swiper)}
 					>
-						{/* {products.map((item) => ( */}
 						{product.goodsindustrialimages.map((image) => (
-							// {decisionsData.map((item, index) => (
 							<SwiperSlide key={image} className={styles.swiperSlide}>
-								{/* <img src={item.image} alt={item.title} /> */}
 								<img
-									// src={item.goodsindustrialimages}
-									// src={`${HOST}/${product.goodspersonalimages}`}
 									src={`${HOST}/${image}`}
 									alt={`${product.brand} ${product.name}`}
 								/>
