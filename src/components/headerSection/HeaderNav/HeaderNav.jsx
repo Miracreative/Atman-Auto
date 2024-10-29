@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -11,11 +11,6 @@ import Dropdown from './../Dropdown/Dropdown';
 import styles from './HeaderNav.module.scss';
 
 const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
-	// const [filterMainParam, setFilterMainParam] = useState([
-	// 	0, 0, 0, 0, 0, 0, 0, 0,
-	// ]);
-	// const [loading, setLoading] = useState(true);
-
 	const refs = useRef(
 		dropdownItems.reduce((acc, item) => {
 			acc[item.key] = useRef(null);
@@ -33,8 +28,6 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 
 	const pathname = usePathname();
 
-	// console.log('dropdownItems', dropdownItems);
-
 	return (
 		<nav className={styles.nav}>
 			<div className={styles.links}>
@@ -47,7 +40,6 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 						isOpen={activeDropdown === item.key}
 						toggleOpen={() => toggleDropdown(item.key)}
 						menuRef={refs.current[item.key]}
-						// setFilterMainParam={setFilterMainParam}
 					/>
 				))}
 				<Link

@@ -25,11 +25,12 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		".next/types/**/*.ts",
-		"src/app/about/page.jsx",
-		"src/app/about/quality-policy/page.jsx",
-		"src/app/applications/page.jsx",
-		"src/components/policyPages/soutPage/SoutContent/SoutContent.tsx"
+		".next/types/**/*.ts"
+		// "src/app/about/page.jsx",
+		// "src/app/about/quality-policy/page.jsx",
+		// "src/app/applications/page.jsx",
+		// "src/components/policyPages/soutPage/SoutContent/SoutContent.tsx",
+		// "src/components/goodsPage/Characteristics/Characteristics.jsx"
 	],
 	"exclude": ["node_modules"]
 }

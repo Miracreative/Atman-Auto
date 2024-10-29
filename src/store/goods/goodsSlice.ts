@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+import { IGoodsState } from '@/interfaces/goods/goodsState';
+
 import {
 	fetchAllGoods,
 	fetchFilteredMainParamGoods,
@@ -33,22 +35,37 @@ export const getFilteredAllParamGoods = createAsyncThunk(
 	},
 );
 
+const initialState: IGoodsState = {
+	products: [],
+	loading: true,
+	error: null,
+	filterMainParam: [0, 0, 0, 0, 0, 0, 0, 0],
+	filterAllParam: [
+		1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,
+	],
+	firstFilter: [],
+	isMobile: false,
+	flag: true,
+};
+
 const goodsSlice = createSlice({
 	name: 'goods',
-	initialState: {
-		products: [],
-		// loading: false,
-		loading: true,
-		error: null,
-		filterMainParam: [0, 0, 0, 0, 0, 0, 0, 0],
-		isMobile: false,
-	},
+	initialState,
 	reducers: {
-		setFilterMainParam: (state, action) => {
+		setFilterMainParamGoods: (state, action) => {
 			state.filterMainParam = action.payload;
+		},
+		setFilterAllParamGoods: (state, action) => {
+			state.filterAllParam = action.payload;
+		},
+		setFirstFilter: (state, action) => {
+			state.firstFilter = action.payload;
 		},
 		setIsMobile: (state, action) => {
 			state.isMobile = action.payload;
+		},
+		setFlag: (state, action) => {
+			state.flag = action.payload;
 		},
 	},
 	extraReducers: (builder) => {
@@ -63,7 +80,7 @@ const goodsSlice = createSlice({
 			})
 			.addCase(getAllGoods.rejected, (state, action) => {
 				state.loading = false;
-				state.error = action.error.message;
+				state.error = action.error.message || null;
 			})
 			.addCase(getFilteredMainParamGoods.pending, (state) => {
 				state.loading = true;
@@ -75,7 +92,7 @@ const goodsSlice = createSlice({
 			})
 			.addCase(getFilteredMainParamGoods.rejected, (state, action) => {
 				state.loading = false;
-				state.error = action.error.message;
+				state.error = action.error.message || null;
 			})
 			.addCase(getFilteredAllParamGoods.pending, (state) => {
 				state.loading = true;
@@ -87,10 +104,16 @@ const goodsSlice = createSlice({
 			})
 			.addCase(getFilteredAllParamGoods.rejected, (state, action) => {
 				state.loading = false;
-				state.error = action.error.message;
+				state.error = action.error.message || null;
 			});
 	},
 });
 
-export const { setFilterMainParam, setIsMobile } = goodsSlice.actions;
+export const {
+	setFilterMainParamGoods,
+	setFilterAllParamGoods,
+	setFirstFilter,
+	setIsMobile,
+	setFlag,
+} = goodsSlice.actions;
 export default goodsSlice.reducer;

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-// import RedDot from '@/components/RedDot/RedDot';
+import { HOST } from '@/constants/url';
+
 import CharacteristicItem from '../CharacteristicItem/CharacteristicItem';
 
 import styles from './Characteristics.module.scss';
@@ -32,8 +33,8 @@ const Characteristics = ({ product }) => {
 
 			<div className={`${styles.downloadContainer}`}>
 				<Link
-					href={product.pdfUrl || '#'}
-					target={product.pdfUrl ? '_blank' : undefined}
+					href={`${HOST}/${product.pdfurl}`}
+					target={`${HOST}/${product.pdfurl}` ? '_blank' : undefined}
 					className={styles.download}
 				>
 					<p>Скачать характеристики</p>

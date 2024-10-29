@@ -11,7 +11,7 @@ import Team from '@/components/Team/Team.jsx';
 import Map from '@/components/Map/Map.jsx';
 import Footer from '@/components/Footer/Footer.jsx';
 
-import { Counter } from '@/components/Counter/Counter';
+// import { Counter } from '@/components/Counter/Counter';
 
 export default function Home() {
 	return (
@@ -21,7 +21,7 @@ export default function Home() {
 				<Catalog />
 
 				{/* Убрать перед продом */}
-				<Counter></Counter>
+				{/* <Counter></Counter> */}
 				{/* Убрать перед продом */}
 
 				<Survey />

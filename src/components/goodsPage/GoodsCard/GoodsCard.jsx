@@ -14,6 +14,7 @@ const GoodsCard = ({ id, brand, title, subtitle, imageurl }) => {
 				</h1>
 				<div className={styles.backgroundContainer}>
 					<Image
+						// src={imageurl}
 						src={image}
 						alt={title}
 						layout="fill"

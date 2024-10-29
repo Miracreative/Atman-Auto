@@ -4,6 +4,8 @@ import type { FC } from 'react';
 
 import type { SoutData } from '@/types/sout.ts';
 
+import { HOST } from '@/constants/url';
+
 import pdfIcon from '/public/icons/file-type/pdf-icon.svg';
 import zipIcon from '/public/icons/file-type/zip-icon.svg';
 // import defaultIcon from '/public/triangle-logo.png';
@@ -45,7 +47,8 @@ const SoutItem: FC<SoutData> = ({
 
 	return (
 		<Link
-			href={url}
+			// href={url}
+			href={`${HOST}/${url}`}
 			className={styles.container}
 			target={target}
 			rel="noopener noreferrer"
