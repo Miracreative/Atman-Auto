@@ -23,6 +23,8 @@ export const fetchFilteredMainParamGoods = async (filterMainParam) => {
 
 	// console.log('Получение отфильтрованных продуктов в Товарах:', response.data);
 
+	// console.log('123123', `${FILTERED_MAIN_PARAM_GOODS_URL}/${filterMainParam}`);
+
 	return response.data;
 };
 
