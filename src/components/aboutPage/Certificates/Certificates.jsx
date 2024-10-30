@@ -37,7 +37,7 @@ export default function Certificates() {
 		}
 	};
 
-	console.log(certificatesData);
+	// console.log(certificatesData);
 
 
 	useEffect(() => {
@@ -63,20 +63,23 @@ export default function Certificates() {
 								slidesPerView={'auto'}
 
 
-							// breakpoints={{
-							// 	0: {
-							// 		slidesPerView: 1.5
-							// 	},
-							// 	576: {
-							// 		slidesPerView: 2.5,
-							// 	},
-							// 	768: {
-							// 		slidesPerView: 4.5,
-							// 	},
-							// 	1024: {
-							// 		slidesPerView: 'auto',
-							// 	},
-							// }}
+								breakpoints={{
+									0: {
+										slidesPerView: 1.5,
+										spaceBetween: 10,
+									},
+									576: {
+										slidesPerView: 2.5,
+
+										spaceBetween: 10,
+									},
+									768: {
+										slidesPerView: 4.5,
+									},
+									1024: {
+										slidesPerView: 'auto',
+									},
+								}}
 							>
 
 
@@ -86,9 +89,9 @@ export default function Certificates() {
 
 										<Image
 											className={styles.cert}
-											src={item.cert}
+											// src={item.cert}
+											src={`${process.env.HOST}/${item.imagesrc}`}
 											alt='certificate'
-											objectFit='cover'
 											width={item.type === 'album' ? 525 : 270}
 											height={384}
 										/>
