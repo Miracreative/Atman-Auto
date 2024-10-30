@@ -181,6 +181,11 @@
 }
 
 @media (max-width: 480px) {
+	.container {
+		// это костыль, да
+		margin-top: var(--header-and-backdrop-height-remove);
+	}
+
 	.backgroundLogo {
 		height: auto;
 		max-width: 100%;
