@@ -18,7 +18,7 @@ export default function GoodsSlider({ product }) {
 
 	// console.log('product', product);
 
-	console.log('products goodspersonalimages', product.goodspersonalimages);
+	// console.log('products goodspersonalimages', product.goodspersonalimages);
 
 	// console.log('название', `${product.brand} ${product.name}`);
 
