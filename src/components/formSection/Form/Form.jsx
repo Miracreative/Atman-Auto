@@ -42,9 +42,7 @@ const Form = ({ isOpen, onClose }) => {
 			comment: '',
 		},
 	});
-
-	// console.log(errors);
-
+	
 	const filePickerRef = useRef(null);
 
 	const [isChecked, setIsChecked] = useState(false);

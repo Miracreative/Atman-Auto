@@ -1,9 +1,11 @@
+//* --------------- *//
 //* Проверка работоспособности (вбить в браузере http://localhost:3000/api/formSubmit) *//
 
 // export default function handler(req, res) {
 // 	res.send('Ваше письмо успешно отправлено. Спасибо и пока.');
 // 	console.log(req.body);
 // }
+//* ---------------- *//
 
 import {
 	EMAIL_USER,
@@ -25,6 +27,17 @@ export default async function handler(req, res) {
 	const message = {
 		to: EMAIL_USER, // куда
 		subject: `Письмо с сайта Atman Auto от ${firstName} ${lastName}`,
+		text: `
+		Имя: ${firstName}
+		Фамилия: ${lastName}
+		Телефон: ${phoneNumber}
+		E-mail: ${email}
+		Сообщение:
+		${comment}
+		
+
+		Письмо сформировано системой автоматически, на него не нужно отвечать.
+	`,
 		html: `
 		<p><strong>Имя:</strong> ${firstName}</p>
 		<p><strong>Фамилия:</strong> ${lastName}</p>
