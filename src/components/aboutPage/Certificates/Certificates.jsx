@@ -74,12 +74,28 @@ export default function Certificates() {
 										spaceBetween: 10,
 									},
 									768: {
-										slidesPerView: 4.5,
+										spaceBetween: 20,
 									},
-									1024: {
-										slidesPerView: 'auto',
-									},
+
 								}}
+
+							// breakpoints={{
+							// 	0: {
+							// 		slidesPerView: 1.5,
+							// 		spaceBetween: 10,
+							// 	},
+							// 	576: {
+							// 		slidesPerView: 2.5,
+
+							// 		spaceBetween: 10,
+							// 	},
+							// 	768: {
+							// 		slidesPerView: 4.5,
+							// 	},
+							// 	1024: {
+							// 		slidesPerView: 'auto',
+							// 	},
+							// }}
 							>
 
 
