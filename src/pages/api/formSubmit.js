@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
 	const message = {
 		to: EMAIL_USER, // куда
-		subject: `Письмо с сайта Atman Auto от ${firstName}`,
+		subject: `Письмо с сайта Atman Auto от ${firstName} ${lastName}`,
 		// text: `
 		//   Имя: ${firstName}
 		//   Фамилия: ${lastName}

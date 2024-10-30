@@ -51,6 +51,8 @@ const Form = ({ isOpen, onClose }) => {
 
 	const [selectedFile, setSelectedFile] = useState(null);
 
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
 	const minLengthField = 2;
 
 	const handleCheckboxChange = () => {
@@ -75,8 +77,10 @@ const Form = ({ isOpen, onClose }) => {
 	const sendForm = async (data) => {
 		console.log('data', data);
 
+		setIsSubmitting(true);
+
 		try {
-			// Отправляем данные, переданные из onSubmit
+			// Отправляем данные, переданные из формы
 			const response = await axios.post(
 				'/api/formSubmit',
 				{
@@ -113,6 +117,8 @@ const Form = ({ isOpen, onClose }) => {
 				console.log('Ошибка:', error.message);
 				// alert('Произошла ошибка: ' + error.message);
 			}
+		} finally {
+			setIsSubmitting(false);
 		}
 	};
 
@@ -227,9 +233,10 @@ const Form = ({ isOpen, onClose }) => {
 						<button
 							className={`button ${styles.submitButton}`}
 							type="submit"
-							disabled={!isChecked}
+							disabled={!isChecked || isSubmitting}
 						>
-							Отправить
+							{/* Отправить */}
+							{isSubmitting ? 'Отправка...' : 'Отправить'}
 						</button>
 					</div>
 
