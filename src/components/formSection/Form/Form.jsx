@@ -13,10 +13,10 @@ import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 import {
 	MIN_LENGTH_FIELD,
 	REQUIRED_FIELD,
-	FORM_SUBMISSION_ERROR,
+	MAIL_SUBMISSION_ERROR,
 	INCORRECT_EMAIL,
 	INCORRECT_PHONE,
-	FORM_SUCCESSED,
+	MAIL_SUCCESSED,
 } from '@/utils/informMessages.js';
 
 import attachmentIcon from '../../../../public/attachment-icon.svg';
@@ -93,20 +93,26 @@ const Form = ({ isOpen, onClose }) => {
 				},
 			);
 
-			console.log('Форма успешно отправлена: ', response.data);
+			console.log(MAIL_SUCCESSED, response.data);
 
-			// Сброс значений полей формы
-			// reset({
-			// 	firstName: '',
-			// 	lastName: '',
-			// 	phoneNumber: '',
-			// 	email: '',
-			// 	comment: '',
-			// });
-
-			// reset();
+			reset();
 		} catch (error) {
-			console.log('Ошибка при отправке формы: ', error);
+			if (error.response) {
+				// Сервер ответил с ошибкой
+				console.log(MAIL_SUBMISSION_ERROR, error.response.data);
+				// alert('Ошибка при отправке формы: ' + error.response.data.message);
+			} else if (error.request) {
+				// Запрос был выполнен, но ответа не было
+				console.log(
+					'Запрос был сделан, но ответ не был получен:',
+					error.request,
+				);
+				// alert('Ошибка: Сервисы временно недоступны.');
+			} else {
+				// Что-то произошло при настройке запроса
+				console.log('Ошибка:', error.message);
+				// alert('Произошла ошибка: ' + error.message);
+			}
 		}
 	};
 
@@ -221,8 +227,6 @@ const Form = ({ isOpen, onClose }) => {
 						<button
 							className={`button ${styles.submitButton}`}
 							type="submit"
-							// type="button"
-							// onClick={sendForm}
 							disabled={!isChecked}
 						>
 							Отправить
