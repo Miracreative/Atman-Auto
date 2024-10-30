@@ -51,7 +51,11 @@ const Form = ({ isOpen, onClose }) => {
 
 	const [selectedFile, setSelectedFile] = useState(null);
 
+	// процесс отправки сообщения
 	const [isSubmitting, setIsSubmitting] = useState(false);
+
+	// факт отправки сообщения
+	const [isSubmit, setIsSubmit] = useState(false);
 
 	const minLengthField = 2;
 
@@ -61,8 +65,17 @@ const Form = ({ isOpen, onClose }) => {
 
 	const handleCloseForm = () => {
 		onClose(false);
+
+		if (isSubmitting) {
+			setTimeout(() => {
+				setIsSubmitting(false);
+			}, 300);
+		}
+
 		setTimeout(() => {
+			setIsSubmit(false);
 			reset();
+			setIsChecked(false);
 		}, 300);
 	};
 
@@ -119,6 +132,11 @@ const Form = ({ isOpen, onClose }) => {
 			}
 		} finally {
 			setIsSubmitting(false);
+			setIsSubmit(true);
+			setTimeout(() => {
+				handleCloseForm();
+				setIsSubmit(false);
+			}, 5000);
 		}
 	};
 
@@ -148,153 +166,172 @@ const Form = ({ isOpen, onClose }) => {
 					<span></span>
 				</button>
 
-				<h2 className={styles.title}>
-					Напишите <span>нам</span>
-				</h2>
-
-				<div className={styles.inputs}>
-					<FormInput
-						id="firstName"
-						label="Имя"
-						type="text"
-						placeholder="Имя"
-						register={register}
-						validations={{
-							required: REQUIRED_FIELD,
-							minLength: {
-								value: minLengthField,
-								message: MIN_LENGTH_FIELD,
-							},
-						}}
-						errors={errors}
-					/>
-
-					<FormInput
-						id="lastName"
-						label="Фамилия"
-						type="text"
-						placeholder="Фамилия"
-						register={register}
-						validations={{
-							required: REQUIRED_FIELD,
-							minLength: {
-								value: minLengthField,
-								message: MIN_LENGTH_FIELD,
-							},
-						}}
-						errors={errors}
-					/>
-
-					<FormInput
-						id="phoneNumber"
-						label="Номер телефона"
-						type="text"
-						placeholder="Номер телефона"
-						register={register}
-						validations={{
-							required: REQUIRED_FIELD,
-							pattern: {
-								value: PHONE_REGEXP,
-								message: INCORRECT_PHONE,
-							},
-						}}
-						errors={errors}
-					/>
-
-					<FormInput
-						id="email"
-						label="Почта"
-						type="email"
-						placeholder="Почта"
-						register={register}
-						validations={{
-							required: REQUIRED_FIELD,
-							pattern: {
-								value: EMAIL_REGEXP,
-								message: INCORRECT_EMAIL,
-							},
-						}}
-						errors={errors}
-					/>
-
-					<FormInput
-						id="comment"
-						label="Комментарий"
-						type="textarea"
-						placeholder="Комментарий"
-						register={register}
-						validations={{ required: false }}
-						errors={errors}
-					/>
-				</div>
-
-				<div className={styles.buttons}>
-					<div className={styles.submitButtonContainer}>
-						<button
-							className={`button ${styles.submitButton}`}
-							type="submit"
-							disabled={!isChecked || isSubmitting}
-						>
-							{/* Отправить */}
-							{isSubmitting ? 'Отправка...' : 'Отправить'}
-						</button>
-					</div>
-
-					<div className={styles.checkbox}>
-						<input
-							type="checkbox"
-							id="form-checkbox"
-							checked={isChecked}
-							onChange={handleCheckboxChange}
-						/>
-						<label htmlFor="form-checkbox"></label>
-						<Link
-							className={styles.link}
-							href="/about/personal-data-processing-policy"
-							onClick={onClose}
-						>
-							Согласие субъекта персональных данных на обработку его
-							персональных данных
-						</Link>
-					</div>
-
-					{!selectedFile && (
-						<div className={styles.attachmentContainer}>
-							<button className={styles.attachment} onClick={handlePickFile}>
-								<Image
-									className={styles.attachmentIcon}
-									src={attachmentIcon}
-									alt="Прикрепить документ"
-								/>
-								<p>Прикрепить документ</p>
-							</button>
+				{isSubmit && (
+					// {!isSubmit && (
+					<div className={styles.successContainer}>
+						<h2 className={styles.successTitle}>
+							Ваше сообщение <span>успешно отправлено</span>
+						</h2>
+						<div className={styles.successSubtitle}>
+							<p>Мы ответим Вам в ближайшее время.</p>
+							<p>Спасибо за заявку.</p>
 						</div>
-					)}
+					</div>
+				)}
 
-					{selectedFile && (
-						<div className={styles.attachmentContainer}>
-							<button
-								className={`${styles.attachment} ${styles.attachmentSuccessfully}`}
-								onClick={handlePickFile}
-							>
-								<Image
-									className={styles.attachmentIcon}
-									src={checkIcon}
-									alt="Документ прикреплен"
-								/>
-								<p>Документ прикреплен</p>
-							</button>
+				{!isSubmit && (
+					// {isSubmit && (
+					<>
+						<h2 className={styles.title}>
+							Напишите <span>нам</span>
+						</h2>
+						<div className={styles.inputs}>
+							<FormInput
+								id="firstName"
+								label="Имя"
+								type="text"
+								placeholder="Имя"
+								register={register}
+								validations={{
+									required: REQUIRED_FIELD,
+									minLength: {
+										value: minLengthField,
+										message: MIN_LENGTH_FIELD,
+									},
+								}}
+								errors={errors}
+							/>
+
+							<FormInput
+								id="lastName"
+								label="Фамилия"
+								type="text"
+								placeholder="Фамилия"
+								register={register}
+								validations={{
+									required: REQUIRED_FIELD,
+									minLength: {
+										value: minLengthField,
+										message: MIN_LENGTH_FIELD,
+									},
+								}}
+								errors={errors}
+							/>
+
+							<FormInput
+								id="phoneNumber"
+								label="Номер телефона"
+								type="text"
+								placeholder="Номер телефона"
+								register={register}
+								validations={{
+									required: REQUIRED_FIELD,
+									pattern: {
+										value: PHONE_REGEXP,
+										message: INCORRECT_PHONE,
+									},
+								}}
+								errors={errors}
+							/>
+
+							<FormInput
+								id="email"
+								label="Почта"
+								type="email"
+								placeholder="Почта"
+								register={register}
+								validations={{
+									required: REQUIRED_FIELD,
+									pattern: {
+										value: EMAIL_REGEXP,
+										message: INCORRECT_EMAIL,
+									},
+								}}
+								errors={errors}
+							/>
+
+							<FormInput
+								id="comment"
+								label="Комментарий"
+								type="textarea"
+								placeholder="Комментарий"
+								register={register}
+								validations={{ required: false }}
+								errors={errors}
+							/>
 						</div>
-					)}
 
-					<input
-						className={styles.filePickerHidden}
-						type="file"
-						// accept="image/*,.png,.jpg,.jpeg,.gif,.web"
-						ref={filePickerRef}
-						onChange={handleFileUpload}
-					/>
-				</div>
+						<div className={styles.buttons}>
+							<div className={styles.submitButtonContainer}>
+								<button
+									className={`button ${styles.submitButton}`}
+									type="submit"
+									disabled={!isChecked || isSubmitting}
+								>
+									{isSubmitting ? 'Отправка...' : 'Отправить'}
+								</button>
+							</div>
+
+							<div className={styles.checkbox}>
+								<input
+									type="checkbox"
+									id="form-checkbox"
+									checked={isChecked}
+									onChange={handleCheckboxChange}
+								/>
+								<label htmlFor="form-checkbox"></label>
+								<Link
+									className={styles.link}
+									href="/about/personal-data-processing-policy"
+									onClick={onClose}
+								>
+									Согласие субъекта персональных данных на обработку его
+									персональных данных
+								</Link>
+							</div>
+
+							{!selectedFile && (
+								<div className={styles.attachmentContainer}>
+									<button
+										className={styles.attachment}
+										onClick={handlePickFile}
+									>
+										<Image
+											className={styles.attachmentIcon}
+											src={attachmentIcon}
+											alt="Прикрепить документ"
+										/>
+										<p>Прикрепить документ</p>
+									</button>
+								</div>
+							)}
+
+							{selectedFile && (
+								<div className={styles.attachmentContainer}>
+									<button
+										className={`${styles.attachment} ${styles.attachmentSuccessfully}`}
+										onClick={handlePickFile}
+									>
+										<Image
+											className={styles.attachmentIcon}
+											src={checkIcon}
+											alt="Документ прикреплен"
+										/>
+										<p>Документ прикреплен</p>
+									</button>
+								</div>
+							)}
+
+							<input
+								className={styles.filePickerHidden}
+								type="file"
+								// accept="image/*,.png,.jpg,.jpeg,.gif,.web"
+								ref={filePickerRef}
+								onChange={handleFileUpload}
+							/>
+						</div>
+					</>
+				)}
 			</form>
 		</div>
 	);

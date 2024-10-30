@@ -1,5 +1,3 @@
-// import styles from './page.module.css';
-
 import Header from '@/components/headerSection/Header/Header.jsx';
 import Catalog from '@/components/Catalog/Catalog.jsx';
 import Survey from '@/components/surveySection/Survey/Survey.jsx';
