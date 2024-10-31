@@ -1,0 +1,28 @@
+@import '@/scss/_mixins';
+@import '@/scss/_functions';
+
+.messageContainer {
+	min-height: 60vh;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+
+	& p {
+		padding: 0 10px;
+	}
+}
+
+@media (max-width: 1920px) {
+	.messageContainer {
+		@include adaptive-font(32, 20);
+	}
+}
+
+@media (max-width: 768px) {
+	.messageContainer {
+		min-height: 40vh;
+		font-size: 20px;
+	}
+}
