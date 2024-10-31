@@ -1,10 +1,8 @@
 @import '../../../scss/functions';
 
 .section {
-	// width: 820px;
 	width: 100%;
 	position: relative;
-	// padding: 0 50px;
 }
 
 .wrapper {
@@ -44,44 +42,15 @@
 	position: relative;
 }
 
-// @media (max-width: 1920px) {
-// 	.section {
-// 		width: 43vw;
-// 	}
-// }
-
-@media (max-width: 1440px) {
-	// .swiperSlide img {
-	// 	max-height: 500px;
-	// }
-}
-
 @media (max-width: 1024px) {
 	.section {
-		// width: 100vw;
 		padding: 0;
 		margin-top: 50px;
 	}
-
-	// .swiperSlide img {
-	// 	max-height: 400px;
-	// }
 }
 
-@media (max-width: 820px) {
-	// .swiperSlide {
-	// 	max-height: 300px;
-	// }
-}
-
-@media (max-width: 430px) {
-	// .swiperSlide img {
-	// 	max-height: 200px;
-	// }
-}
-
-@media (max-width: 375px) {
-	// .swiperSlide img {
-	// 	max-height: 140px;
-	// }
+@media (max-width: 480px) {
+	.messageContainer {
+		font-size: 14px;
+	}
 }
