@@ -159,7 +159,7 @@ export default function Team() {
 
 									<div className={styles.textContainer}>
 										<div className={styles.name}> {item.name} </div>
-										<div className={styles.position}> {item.descr} </div>
+										<div className={styles.descr}> {item.descr} </div>
 										<div className={styles.whatsApp}>
 											<span className={styles.desktopSpan}>WhatsApp: </span>
 											<Link
