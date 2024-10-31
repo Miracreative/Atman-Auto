@@ -11,70 +11,70 @@ import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 
-const data = [
-	{
-		"name": "Павел Демин",
-		"descr": "Руководитель отдела оптовых продаж (потребительские товары упакованные для рынка DIY):",
-		"tel": "8-999-999-99-99",
-		"email": "p.demin@atman-auto.ru",
-		"id": "1",
-		"src": "/team/team1.jpg",
-	},
-	{
-		"name": "Петров Роман",
-		"descr": "",
-		"tel": "8-999-999-99-99",
-		"email": "email 2",
-		"id": "2",
-		"src": "/team/team2.jpg",
+// const data = [
+// 	{
+// 		"name": "Павел Демин",
+// 		"descr": "Руководитель отдела оптовых продаж (потребительские товары упакованные для рынка DIY):",
+// 		"tel": "8-999-999-99-99",
+// 		"email": "p.demin@atman-auto.ru",
+// 		"id": "1",
+// 		"src": "/team/team1.jpg",
+// 	},
+// 	{
+// 		"name": "Петров Роман",
+// 		"descr": "",
+// 		"tel": "8-999-999-99-99",
+// 		"email": "email 2",
+// 		"id": "2",
+// 		"src": "/team/team2.jpg",
 
-	},
-	{
-		"name": "Акимкин Максим",
-		"descr": "Директор",
-		"tel": "8-999-999-99-99",
-		"email": "email 3",
-		"id": "3",
-		"src": "/team/team3.jpg",
+// 	},
+// 	{
+// 		"name": "Акимкин Максим",
+// 		"descr": "Директор",
+// 		"tel": "8-999-999-99-99",
+// 		"email": "email 3",
+// 		"id": "3",
+// 		"src": "/team/team3.jpg",
 
-	},
-	{
-		"name": "Елена Аббасова",
-		"descr": "менеджер по закупкам",
-		"tel": "8-999-999-99-99",
-		"email": "email 4",
-		"id": "4",
-		"src": "/team/team4.jpg",
+// 	},
+// 	{
+// 		"name": "Елена Аббасова",
+// 		"descr": "менеджер по закупкам",
+// 		"tel": "8-999-999-99-99",
+// 		"email": "email 4",
+// 		"id": "4",
+// 		"src": "/team/team4.jpg",
 
-	},
-	{
-		"name": "Ирина Грушина",
-		"descr": "Менеджер СМК",
-		"tel": "8-999-999-99-99",
-		"email": "email 5",
-		"id": "5",
-		"src": "/team/team5.jpg",
+// 	},
+// 	{
+// 		"name": "Ирина Грушина",
+// 		"descr": "Менеджер СМК",
+// 		"tel": "8-999-999-99-99",
+// 		"email": "email 5",
+// 		"id": "5",
+// 		"src": "/team/team5.jpg",
 
-	},
-	{
-		"name": "Зайкина Светлана",
-		"descr": "менеджер по работе с клиентами.",
-		"tel": "8-999-999-99-99",
-		"email": "email 6",
-		"id": "6",
-		"src": "/team/team6.jpg",
+// 	},
+// 	{
+// 		"name": "Зайкина Светлана",
+// 		"descr": "менеджер по работе с клиентами.",
+// 		"tel": "8-999-999-99-99",
+// 		"email": "email 6",
+// 		"id": "6",
+// 		"src": "/team/team6.jpg",
 
-	},
-	{
-		"name": "Сергей Сатаров",
-		"descr": "Коммерческий директор",
-		"tel": "8-999-999-99-99",
-		"email": "email 7",
-		"id": "7",
-		"src": "/team/team7.jpg",
+// 	},
+// 	{
+// 		"name": "Сергей Сатаров",
+// 		"descr": "Коммерческий директор",
+// 		"tel": "8-999-999-99-99",
+// 		"email": "email 7",
+// 		"id": "7",
+// 		"src": "/team/team7.jpg",
 
-	}
-]
+// 	}
+// ]
 
 export default function Team() {
 
@@ -84,7 +84,7 @@ export default function Team() {
 
 	const fetchLastNews = async () => {
 		try {
-			const response = await axios.get('https://66e9883087e417609449d7dd.mockapi.io/api/knowledge/team');
+			const response = await axios.get(`${process.env.HOST}/api/person`);
 			setTeam(response.data);
 		} catch (err) {
 			setError(err.message);
@@ -143,14 +143,14 @@ export default function Team() {
 
 					>
 
-						{data.map((item) => (
+						{team.map((item) => (
 							<SwiperSlide key={item.id} className={styles.swiperSlide}>
 
 								<div className={styles.cardItem}>
 									<div className={styles.photo}>
 										<Image
 											className={styles.photoItem}
-											src={item.src}
+											src={`${process.env.HOST}/${item.imagesrc}`}
 											alt="team photo"
 											width={350}
 											height={350}
@@ -159,15 +159,15 @@ export default function Team() {
 
 									<div className={styles.textContainer}>
 										<div className={styles.name}> {item.name} </div>
-										<div className={styles.position}> {item.descr} </div>
+										<div className={styles.descr}> {item.descr} </div>
 										<div className={styles.whatsApp}>
 											<span className={styles.desktopSpan}>WhatsApp: </span>
 											<Link
-												href={`https://wa.me/${item.tel}`}
+												href={`https://wa.me/${item.watsapp}`}
 												target="_blank"
 												rel="noopener noreferrer"
 											>
-												{item.tel}
+												{item.watsapp}
 											</Link>
 										</div>
 
@@ -186,7 +186,6 @@ export default function Team() {
 						))}
 
 
-						{/* <div className="swiper-pagination"></div> */}
 
 					</Swiper>
 

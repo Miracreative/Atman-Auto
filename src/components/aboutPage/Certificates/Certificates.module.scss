@@ -17,6 +17,7 @@
 	border-bottom: 1px solid rgb(var(--gray-line-rgb));
 	color: white;
 	position: relative;
+	min-width: 320px;
 }
 
 .container {
@@ -32,10 +33,10 @@
 	border-radius: 20px;
 }
 
-.swiper {
+.section .swiper {
 	width: 100%;
 	display: flex;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .swiperWrapper {
@@ -53,15 +54,16 @@
 	}
 }
 
-.swiperSlide {
+.section .swiperSlide {
 	position: relative;
 	border-radius: 20px;
-	height: 24vw;
+	// height: 22vw;
+	width: auto !important;
 	max-height: 384px;
 	min-height: 284px;
 
 	filter: grayscale(100%);
-	background: #E4E5E7;
+	// background: #E4E5E7;
 }
 
 .slideInner {
@@ -81,7 +83,7 @@
 	object-fit: contain;
 
 	// max-width: 384px;
-	min-width: 284px;
+	min-height: 284px;
 	height: 100%;
 }
 
@@ -147,6 +149,11 @@
 
 	.titleCard {
 		margin-bottom: 10px;
+	}
+
+	.cert {
+		width: 100%;
+		height: 284px;
 	}
 }
 

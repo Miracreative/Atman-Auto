@@ -30,8 +30,6 @@ export default function PopupKnowledge({
 		}
 	};
 
-	// console.log(knowledge);
-	// console.log(knowledge.title); не может прочитать
 
 	return (
 		<>
@@ -75,7 +73,8 @@ export default function PopupKnowledge({
 						</div>
 
 						<Link
-							href={knowledge.file || '/knowledge'}
+							href={`${process.env.HOST}/${knowledge.file}`}
+
 							className={styles.download}
 							target="_blank"
 							rel="noopener noreferrer"

@@ -8,35 +8,64 @@ import DescriptionAfoam from '@/components/afoamPage/DescriptionAfoam/Descriptio
 import AdvantagesAfoam from '@/components/afoamPage/AdvantagesAfoam/AdvantagesAfoam.jsx';
 
 import afoamData from '@/data/afoamData.js';
+import {
+	LOADING_INFO,
+	LOADING_DATA_ERROR,
+	NOT_FOUND_INFO,
+	UNKNOWN_ERROR,
+} from '@/utils/informMessages';
+
+
+import styles from './afoamPage.module.scss';
 
 
 export default function Afoam() {
 
-	// const [afoamData, setAfoamData] = useState([]);
-	// const [error, setError] = useState(null);
+	const [afoamData, setAfoamData] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
 
-	// const fetchData = async () => {
-	// 	try {
-	// 		const response = await axios.get(`${process.env.HOST}/api/sertificate`);
-	// 		setAfoamData(response.data);
-	// 	} catch (err) {
-	// 		setError(err.message);
-	// 	}
-	// };
+	const fetchData = async () => {
+		try {
+			const response = await axios.get(`${process.env.HOST}/api/afoam`);
+			setAfoamData(response.data);
+		} catch (err) {
+			setError(err.message);
+		} finally {
+			setLoading(false);
+		}
+	};
 
-	// useEffect(() => {
-	// 	fetchData();
-	// }, []);
+	useEffect(() => {
+		fetchData();
+	}, []);
 
 	// console.log(afoamData);
 
-	const recommended1 = afoamData.recommended1;
-	const recommended2 = afoamData.recommended2;
-	const recommended3 = afoamData.recommended3;
 
-	const advantages1 = afoamData.advantages1;
-	const advantages2 = afoamData.advantages2;
-	const advantages3 = afoamData.advantages3;
+	const recommended1 = afoamData;
+	// const recommended2 = afoamData.recommended2;
+	// const recommended3 = afoamData.recommended3;
+
+	const advantages1 = afoamData[0]?.advantages;
+	const advantages2 = afoamData[0]?.advantages;
+	const advantages3 = afoamData[0]?.advantages;
+
+
+	// console.log(recommended1);
+
+
+	// const recommended1 = afoamData.recommended1;
+	// const recommended2 = afoamData.recommended2;
+	// const recommended3 = afoamData.recommended3;
+
+	// const advantages1 = afoamData.advantages1;
+	// const advantages2 = afoamData.advantages2;
+	// const advantages3 = afoamData.advantages3;
+
+
+
+
 	// const breadcrumbs = [
 	// 	{
 	// 		title: 'Главная', href: '/'
@@ -51,17 +80,31 @@ export default function Afoam() {
 
 	return (
 		<>
-			<AfoamSlider></AfoamSlider>
-			<DescriptionAfoam></DescriptionAfoam>
 
-			<AdvantagesAfoam advantages={advantages1} ></AdvantagesAfoam>
-			<RecommendationsAfoam recommended={recommended1}></RecommendationsAfoam>
+			{(loading || error || !afoamData) && (
+				<div className={styles.messageContainer}>
+					{loading && <p>{LOADING_INFO}</p>}
+					{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
+					{!loading && !error && !afoamData && <p>{NOT_FOUND_INFO}</p>}
+				</div>
+			)}
 
-			<AdvantagesAfoam advantages={advantages2} ></AdvantagesAfoam>
-			<RecommendationsAfoam recommended={recommended2} ></RecommendationsAfoam>
+			{!loading && !error && afoamData && (
+				<>
+					<AfoamSlider></AfoamSlider>
+					<DescriptionAfoam></DescriptionAfoam>
 
-			<AdvantagesAfoam advantages={advantages3} ></AdvantagesAfoam>
-			<RecommendationsAfoam recommended={recommended3} ></RecommendationsAfoam>
+					<AdvantagesAfoam advantages={advantages1} ></AdvantagesAfoam>
+					<RecommendationsAfoam recommended={recommended1}></RecommendationsAfoam>
+
+					<AdvantagesAfoam advantages={advantages2} ></AdvantagesAfoam>
+					<RecommendationsAfoam recommended={recommended1} ></RecommendationsAfoam>
+
+					<AdvantagesAfoam advantages={advantages3} ></AdvantagesAfoam>
+					<RecommendationsAfoam recommended={recommended1} ></RecommendationsAfoam>
+				</>
+			)}
+
 
 
 		</>

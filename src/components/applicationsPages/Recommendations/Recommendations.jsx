@@ -5,9 +5,39 @@ import recomendationsData from '@/data/recomendationsData.js';
 // import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+
+import {
+	LOADING_INFO,
+	LOADING_DATA_ERROR,
+	NOT_FOUND_INFO,
+	UNKNOWN_ERROR,
+} from '@/utils/informMessages';
 
 
 export default function Recommendations() {
+
+	const [recomendationsData, setRecomendationsData] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+
+	const fetchData = async () => {
+		try {
+			const response = await axios.get(`${process.env.HOST}/api/afoam`);
+			setRecomendationsData(response.data);
+		} catch (err) {
+			setError(err.message);
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+	console.log(recomendationsData);
 
 
 	return (
