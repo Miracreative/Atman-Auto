@@ -1,16 +1,10 @@
-// import {
-// 	useSelector,
-// } from 'react-redux';
+import { HOST } from '@/constants/url';
 
 import ProductCard from '@/components/ProductCard/ProductCard';
 
 import styles from './surveySlide.module.scss';
 
 const SurveySlide = ({ product }) => {
-	// const { isMobile, products, loading, error, filterAllParam } = useSelector(
-	// 	(state) => state.goods,
-	// );
-
 	return (
 		<li key={product.id} className={styles.slide}>
 			<ProductCard
@@ -18,7 +12,7 @@ const SurveySlide = ({ product }) => {
 				brand={product.brand}
 				title={product.name}
 				subtitle={product.type}
-				imageurl={'file://nanalit/' + product.imageurl}
+				imageurl={`${HOST}/${product.imageurl}`}
 				width="200px"
 				height="250px"
 			/>

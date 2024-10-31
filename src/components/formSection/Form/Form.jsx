@@ -31,7 +31,6 @@ const Form = ({ isOpen, onClose }) => {
 		register,
 		handleSubmit,
 		reset,
-		// watch,
 		formState: { errors },
 	} = useForm({
 		defaultValues: {
@@ -42,7 +41,7 @@ const Form = ({ isOpen, onClose }) => {
 			comment: '',
 		},
 	});
-	
+
 	const filePickerRef = useRef(null);
 
 	const [isChecked, setIsChecked] = useState(false);
@@ -115,18 +114,15 @@ const Form = ({ isOpen, onClose }) => {
 			if (error.response) {
 				// Сервер ответил с ошибкой
 				console.log(MAIL_SUBMISSION_ERROR, error.response.data);
-				// alert('Ошибка при отправке формы: ' + error.response.data.message);
 			} else if (error.request) {
 				// Запрос был выполнен, но ответа не было
 				console.log(
 					'Запрос был сделан, но ответ не был получен:',
 					error.request,
 				);
-				// alert('Ошибка: Сервисы временно недоступны.');
 			} else {
 				// Что-то произошло при настройке запроса
 				console.log('Ошибка:', error.message);
-				// alert('Произошла ошибка: ' + error.message);
 			}
 		} finally {
 			setIsSubmitting(false);

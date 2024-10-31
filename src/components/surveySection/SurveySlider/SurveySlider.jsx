@@ -29,23 +29,11 @@ const SurveySlider = () => {
 
 	// const [swiper, setSwiper] = useState(null);
 
-	const onSlideChange = (swiper) => {
-		// const isBeginning = swiper.isBeginning;
-		// const isEnd = swiper.isEnd;
-		// setCanGoPrev(!isBeginning);
-		// setCanGoNext(!isEnd);
-	};
-
-	// const goToPrevSlide = () => {
-	// 	if (swiper) {
-	// 		swiper.slidePrev();
-	// 	}
-	// };
-
-	// const goToNextSlide = () => {
-	// 	if (swiper) {
-	// 		swiper.slideNext();
-	// 	}
+	// const onSlideChange = (swiper) => {
+	// const isBeginning = swiper.isBeginning;
+	// const isEnd = swiper.isEnd;
+	// setCanGoPrev(!isBeginning);
+	// setCanGoNext(!isEnd);
 	// };
 
 	const shouldDisplayMessage =
@@ -61,23 +49,36 @@ const SurveySlider = () => {
 						modules={[Navigation, A11y, Controller]}
 						breakpoints={{
 							0: {
-								slidesPerView: 1.5,
+								slidesPerView: 1.3,
+								// spaceBetween: 10,
+							},
+							374: {
+								slidesPerView: 1.6,
+								// spaceBetween: 10,
 							},
 							767: {
 								slidesPerView: 2.5,
+								// slidesPerView: 3,
+								// spaceBetween: 10,
 							},
+							// 1281: {
 							1025: {
+								slidesPerView: 3.5,
+								// spaceBetween: 10,
+							},
+							1281: {
 								slidesPerView: 5,
-								// spaceBetween: 200,
+								// spaceBetween: 10,
 							},
 						}}
+						spaceBetween={10}
 						// onSwiper={setSwiper}
 						// navigation={{
 						// 	prevEl: '.prev',
 						// 	nextEl: '.next',
 						// }}
 						// slidesPerView={4.2}
-						onSlideChange={(swiper) => onSlideChange(swiper)}
+						// onSlideChange={(swiper) => onSlideChange(swiper)}
 					>
 						{!loading && !error && products.length > 0 && (
 							<ul className={styles.resultsList}>
@@ -101,44 +102,6 @@ const SurveySlider = () => {
 					</Swiper>
 				</div>
 			</div>
-
-			{/* <button
-				className={styles.prevBtn}
-				onClick={goToPrevSlide}
-				disabled={!canGoPrev}
-			>
-				<svg
-					width="30"
-					height="12"
-					viewBox="0 0 30 12"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z"
-						fill="white"
-					/>
-				</svg>
-			</button> */}
-
-			{/* <button
-				className={styles.nextBtn}
-				onClick={goToNextSlide}
-				disabled={!canGoNext}
-			>
-				<svg
-					width="30"
-					height="12"
-					viewBox="0 0 30 12"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z"
-						fill="white"
-					/>
-				</svg>
-			</button> */}
 		</section>
 	);
 };

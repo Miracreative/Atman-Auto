@@ -108,7 +108,7 @@ export default function Survey() {
 			updatedFilterAllParam[taskIndex] = 1; // Устанавливаем 1 для выбранной задачи
 		}
 
-		console.log('Задача', updatedFilterAllParam);
+		// console.log('Задача', updatedFilterAllParam);
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -124,7 +124,7 @@ export default function Survey() {
 			updatedFilterAllParam[typePosition + typeIndex] = 1;
 		}
 
-		console.log('Первый вид склеиваемых поверхностей', updatedFilterAllParam);
+		// console.log('Первый вид склеиваемых поверхностей', updatedFilterAllParam);
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -150,10 +150,10 @@ export default function Survey() {
 			updatedFilterAllParam[connectionPosition + connectionIndex] = 1;
 		}
 
-		console.log(
-			'Условия эксплуатации соединения, соединение',
-			updatedFilterAllParam,
-		);
+		// console.log(
+		// 	'Условия эксплуатации соединения, соединение',
+		// 	updatedFilterAllParam,
+		// );
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -175,10 +175,10 @@ export default function Survey() {
 			updatedFilterAllParam[temperaturePosition + temperatureIndex] = 1;
 		}
 
-		console.log(
-			'Условия эксплуатации соединения, температура',
-			updatedFilterAllParam,
-		);
+		// console.log(
+		// 	'Условия эксплуатации соединения, температура',
+		// 	updatedFilterAllParam,
+		// );
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -200,7 +200,7 @@ export default function Survey() {
 			updatedFilterAllParam[conditionPosition + conditionIndex] = 1;
 		}
 
-		console.log('Состояние соединяемых поверхностей', updatedFilterAllParam);
+		// console.log('Состояние соединяемых поверхностей', updatedFilterAllParam);
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
