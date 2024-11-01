@@ -57,7 +57,7 @@ export default function NewsSlider() {
 		}
 	};
 
-	console.log(lastNews);
+	// console.log(lastNews);
 
 
 	return (

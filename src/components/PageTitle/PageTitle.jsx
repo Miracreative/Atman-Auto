@@ -8,9 +8,7 @@ export default function PageTitle({ title, text, breadcrumbs }) {
 		<>
 			<section className={styles.section}>
 				<div className="container">
-					{/* <div className={styles.imgWrap}> */}
 
-					{/* </div> */}
 
 					<div className={styles.wrap}>
 						<Image

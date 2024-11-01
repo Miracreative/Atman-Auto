@@ -17,7 +17,7 @@ export default function RecommendationsAfoam({ recommended }) {
 
 
 						<div className={styles.content}>
-							{data.map((item) => (
+							{data && data.map((item) => (
 								<div className={styles.item} key={item.id}>
 
 									<div className={styles.nameItem}> {item.name} </div>
