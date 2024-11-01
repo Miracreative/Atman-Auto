@@ -8,7 +8,6 @@ import SurveySlide from '../SurveySlide/SurveySlide';
 
 import {
 	useSelector,
-	//  useDispatch,
 } from 'react-redux';
 
 import {
@@ -23,18 +22,6 @@ const SurveySlider = () => {
 	const { isMobile, products, loading, error, filterAllParam } = useSelector(
 		(state) => state.goods,
 	);
-
-	// const [canGoPrev, setCanGoPrev] = useState(false);
-	// const [canGoNext, setCanGoNext] = useState(true);
-
-	// const [swiper, setSwiper] = useState(null);
-
-	// const onSlideChange = (swiper) => {
-	// const isBeginning = swiper.isBeginning;
-	// const isEnd = swiper.isEnd;
-	// setCanGoPrev(!isBeginning);
-	// setCanGoNext(!isEnd);
-	// };
 
 	const shouldDisplayMessage =
 		!isMobile && (loading || error || products.length === 0);
