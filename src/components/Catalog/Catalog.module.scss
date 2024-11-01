@@ -1,8 +1,7 @@
-@import '../../scss/_functions.scss';
-@import '../../scss/_mixins.scss';
+@import '@/scss/_functions.scss';
+@import '@/scss/_mixins.scss';
 
 .catalog {
-	// width: 100%;
 	max-width: 1920px;
 	margin: 0 auto;
 	padding: 20px 0 20px 0;
@@ -60,6 +59,7 @@
 .image {
 	border-top-right-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
+	object-fit: cover;
 }
 
 .bg {

@@ -16,7 +16,7 @@ const nextConfig = {
 				pathname: '**',
 			},
 		],
-		//	formats: ['image/avif', 'image/webp'],
+		formats: ['image/avif', 'image/webp'],
 	},
 	env: {
 		HOST: process.env.HOST,
