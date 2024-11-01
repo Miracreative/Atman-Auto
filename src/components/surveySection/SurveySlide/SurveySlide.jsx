@@ -13,8 +13,8 @@ const SurveySlide = ({ product }) => {
 				title={product.name}
 				subtitle={product.type}
 				imageurl={`${HOST}/${product.imageurl}`}
-				width="200px"
-				height="250px"
+				// width="200px"
+				// height="250px"
 			/>
 		</li>
 	);

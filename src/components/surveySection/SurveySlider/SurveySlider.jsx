@@ -50,41 +50,28 @@ const SurveySlider = () => {
 						breakpoints={{
 							0: {
 								slidesPerView: 1.3,
-								// spaceBetween: 10,
 							},
 							374: {
 								slidesPerView: 1.6,
-								// spaceBetween: 10,
 							},
 							767: {
 								slidesPerView: 2.5,
-								// slidesPerView: 3,
-								// spaceBetween: 10,
 							},
-							// 1281: {
 							1025: {
 								slidesPerView: 3.5,
-								// spaceBetween: 10,
 							},
-							1281: {
+							1441: {
 								slidesPerView: 5,
-								// spaceBetween: 10,
 							},
 						}}
 						spaceBetween={10}
-						// onSwiper={setSwiper}
-						// navigation={{
-						// 	prevEl: '.prev',
-						// 	nextEl: '.next',
-						// }}
-						// slidesPerView={4.2}
-						// onSlideChange={(swiper) => onSlideChange(swiper)}
+						centeredSlides={false}
 					>
 						{!loading && !error && products.length > 0 && (
 							<ul className={styles.resultsList}>
 								{products.slice(0, 5).map((product) => (
 									<SwiperSlide key={product.id} className={styles.swiperSlide}>
-										<SurveySlide product={product}></SurveySlide>
+										<SurveySlide product={product} />
 									</SwiperSlide>
 								))}
 							</ul>

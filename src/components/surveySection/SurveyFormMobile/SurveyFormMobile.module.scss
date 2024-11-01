@@ -1,5 +1,5 @@
-@import '../../../scss/_functions.scss';
-@import '../../../scss/_mixins.scss';
+@import '@/scss/_functions.scss';
+@import '@/scss/_mixins.scss';
 
 .hiddenMenu {
 	opacity: 0;
@@ -31,15 +31,9 @@
 .optionsMenuMobile {
 	display: flex;
 	justify-content: space-between;
-	// align-items: center;
 	border: 1px solid rgba(var(--gray-line-rgb));
 	border-radius: 10px;
 	padding: 5px;
-
-	// &:first-child {
-	// 	font-size: 16px;
-	// 	font-weight: 500;
-	// }
 }
 
 .optionsSelected {

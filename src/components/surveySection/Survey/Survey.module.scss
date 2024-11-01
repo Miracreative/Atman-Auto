@@ -1,5 +1,5 @@
-@import '../../../scss/_functions.scss';
-@import '../../../scss/_mixins.scss';
+@import '@/scss/_functions.scss';
+@import '@/scss/_mixins.scss';
 
 .section {
 	border-bottom: 1px solid rgb(var(--gray-line-rgb));
@@ -210,7 +210,6 @@
 
 	&:hover {
 		opacity: 0.75;
-		// transition: opacity 0.3s;
 	}
 }
 
@@ -370,15 +369,6 @@
 		@include adaptive-font(32, 20);
 	}
 
-	// .surveyTitleResults {
-	// 	margin-bottom: calcVH(20);
-	// }
-
-	// .optionsTask {
-	// 	gap: calcVW(30) calcVH(50);
-	// 	margin-bottom: calcVH(90);
-	// }
-
 	.controls {
 		padding-top: calcVH(30);
 	}
@@ -436,7 +426,7 @@
 	}
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1366px) {
 	.content {
 		min-height: 580px;
 	}
@@ -485,11 +475,7 @@
 	}
 
 	.surveyFormResults {
-		// position: absolute;
-		// width: 92%;
 		width: 100%;
-		// margin-left: 15px;
-		// padding-left: 15px;
 	}
 }
 
@@ -511,8 +497,6 @@
 	}
 
 	.content {
-		// min-height: 620px;
-		// min-height: 920px;
 		flex-direction: column;
 	}
 
@@ -523,14 +507,12 @@
 
 		&::before {
 			content: '';
+			width: 100%;
+			height: 1px;
 			position: absolute;
 			right: 0;
 			left: 0;
 			bottom: 0;
-			// width: calc(100% - 15px - 15px);
-			width: 100%;
-			// transform: translateX(15px);
-			height: 1px;
 			background-color: rgb(var(--gray-line-rgb));
 		}
 	}
@@ -595,6 +577,7 @@
 
 		& h4 {
 			margin: 0 0 5px 15px;
+			font-weight: 400;
 		}
 	}
 
@@ -684,15 +667,17 @@
 	}
 
 	.surveyFormResults {
-		// position: absolute;
-		// width: 92%;
-		// width: 100%;
-		// margin-left: 15px;
 		padding-left: 15px;
 	}
 }
 
 @media (max-width: 375px) {
+	.surveyFormTypesMobile {
+		& h4 {
+			font-size: 14px;
+		}
+	}
+
 	.optionsTaskMenu {
 		& p {
 			font-size: 10px;
@@ -701,5 +686,9 @@
 
 	.image {
 		height: 200px;
+	}
+
+	.description {
+		font-size: 12px;
 	}
 }
