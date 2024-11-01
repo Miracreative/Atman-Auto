@@ -13,7 +13,6 @@ import {
 } from '@/store/goods/goodsSlice';
 
 import filters from '@/data/filters.js';
-
 import { menuItems } from '@/data/menuItems';
 
 import { TriangleIcon, DEFAULT_COLOR } from './../../TriangleIcon/TriangleIcon';
@@ -32,7 +31,6 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 
 		if (item.href === goodsLink) {
 			const filterIndex = items.findIndex((link) => link.text === item.text);
-			// console.log('filterIndex', filterIndex);
 
 			const filterMainParam = Array(8).fill(0); // Заполняем массив нулями
 
@@ -66,7 +64,9 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 				{title}
 				<TriangleIcon
 					className={styles.triangle}
-					color={isActiveLink ? 'var(--red)' : DEFAULT_COLOR}
+					color={
+						isOpen ? 'var(--red)' : isActiveLink ? 'var(--red)' : DEFAULT_COLOR
+					}
 					isOpen={isOpen}
 				/>
 			</button>
@@ -81,8 +81,9 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 							<Link
 								href={item.href}
 								className={`${styles.link} ${
-									pathname === item.href ? styles.linkActive : ''
+									pathname === item.href && index === 0 ? styles.linkActive : ''
 								}`}
+								// className={styles.link}
 								onClick={() => handleLinkClick(item)}
 							>
 								{item.text}
