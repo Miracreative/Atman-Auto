@@ -17,10 +17,6 @@ const GoodsCard = ({ id, brand, title, subtitle, imageurl }) => {
 						fill={true}
 						sizes="(max-width: 1920px) 100vw"
 						className={styles.backgroundImage}
-
-						// layout="fill"
-						// objectFit="cover"
-						// priority
 					/>
 				</div>
 				<p className={styles.subtitle}>{subtitle}</p>

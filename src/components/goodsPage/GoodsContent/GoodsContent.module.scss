@@ -2,13 +2,16 @@
 @import '@/scss/_mixins';
 
 .section {
+	max-width: 1920px;
 	min-height: 50vh;
+	margin: 0 auto;
 	padding: 100px;
 	background-color: rgb(var(--gray-background-img-rgb));
 	display: flex;
+
+	align-items: flex-start;
+
 	gap: 20px;
-	max-width: 1920px;
-	margin: 0 auto;
 }
 
 .messageContainer {
