@@ -103,7 +103,9 @@
 
 .swiper {
 	display: flex;
-
+	height: 31vw;
+	min-height: 284px;
+	max-height: 600px;
 }
 
 
@@ -116,7 +118,7 @@
 
 .swiperSlide {
 
-	// height: 29vw;
+	height: 100%;
 	max-height: 600px;
 	min-height: 284px;
 	display: flex;
@@ -133,7 +135,7 @@
 	
 	display: block;
 	width: 100%;
-	height: 100%;
+	// height: revert-laye;
 	max-height: 600px;
 	object-fit: cover;
 }
@@ -279,7 +281,9 @@
 		display: none;
 	}
 
-
+	.swiperSlide {
+		border-radius: 10px;
+	}
 
 
 }

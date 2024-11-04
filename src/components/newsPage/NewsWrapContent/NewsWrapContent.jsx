@@ -35,13 +35,13 @@ const NewsWrapContent = () => {
 	}, []);
 
 
-	if (error) {
-		return <p>Ошибка: {error}</p>;
-	}
+	// if (error) {
+	// 	return <p>Ошибка: {error}</p>;
+	// }
 
 	return loading ? (
 		<div className={styles.loading}>
-			<h2>Загрузка информации, подождите...</h2>
+			{/* <h2>Загрузка информации, подождите...</h2> */}
 		</div>
 	) : (
 		<section className={styles.section}>

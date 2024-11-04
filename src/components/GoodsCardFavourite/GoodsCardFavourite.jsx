@@ -5,7 +5,7 @@ import image from '/public/test-image.png';
 
 import styles from './GoodsCardFavourite.module.scss';
 
-const GoodsCardFavourite = ({ id, name, description }) => {
+const GoodsCardFavourite = ({ id, name, description, imageurl }) => {
 
 
 
@@ -20,16 +20,20 @@ const GoodsCardFavourite = ({ id, name, description }) => {
 				<p className={styles.description}>{description}</p>
 			</div>
 
+			<div className={styles.imgWrap}>
+				<Image
+					src={`${process.env.HOST}/${imageurl}`}
+					// src={image}
+					alt='img'
+					// layout="fill"
+					// objectFit="cover"
+					width={400}
+					height={300}
+					className={styles.img}
 
-			<Image
-				// src={imageurl}
-				src={image}
-				alt='img'
-				// layout="fill"
-				// objectFit="cover"
-				className={styles.img}
+				/>
+			</div>
 
-			/>
 		</Link>
 
 	);

@@ -39,7 +39,7 @@ export default function ProductsSlider() {
 
 	const fetchData = async () => {
 		try {
-			const response = await axios.get(`${process.env.HOST}/api/afoam`);
+			const response = await axios.get(`${process.env.HOST}/api/goods`);
 			setGoodsData(response.data);
 		} catch (err) {
 			setError(err.message);
@@ -53,7 +53,7 @@ export default function ProductsSlider() {
 	}, []);
 
 
-	// console.log(goodsData);
+	console.log(goodsData);
 
 
 
@@ -128,14 +128,17 @@ export default function ProductsSlider() {
 												spaceBetween: 10,
 											},
 											576: {
-												slidesPerView: 2.2,
+												slidesPerView: 1.5,
 												spaceBetween: 10,
 											},
 											768: {
 												slidesPerView: 2.5,
 												spaceBetween: 10,
 											},
-											1024: {
+											1200: {
+												slidesPerView: 3.2,
+											},
+											1500: {
 												slidesPerView: 4.2,
 											},
 										}}
@@ -153,17 +156,16 @@ export default function ProductsSlider() {
 
 										{goodsData && goodsData.map((item, index) => (
 											<SwiperSlide key={item.id} className={styles.swiperSlide}>
-												{/* <Link className={styles.imgWrap} href={item[index].href}> */}
 
 												<GoodsCardFavourite
 													id={item.id}
-													name={item.name}
-													description={item.description} >
+													name={`${item.brand}${item.name}`}
+													description={item.description}
+													imageurl={item.imageurl} >
 
 												</GoodsCardFavourite>
 
 
-												{/* </Link> */}
 
 											</SwiperSlide>
 										))}
@@ -195,7 +197,7 @@ export default function ProductsSlider() {
 								</div>
 
 
-								<Link className={styles.linkMobile} href='/applications'>
+								<Link className={styles.linkMobile} href='/goods'>
 									<div className={styles.linkTextMobile}  >
 										Все товары
 									</div>

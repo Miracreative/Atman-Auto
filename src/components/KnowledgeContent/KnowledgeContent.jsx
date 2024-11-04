@@ -144,21 +144,9 @@ export default function KnowledgeContent() {
 
 
 
-	// useEffect(() => {
-	// 	fetchNews();
-	// }, []);
-
-	// useEffect(() => {
-	// 	return <p>Loading...</p>;
-	// }, [loading]);
-	// if (loading) {
-	// 	return <p>Loading...</p>;
+	// if (error) {
+	// 	return <p>Ошибка: {error}</p>;
 	// }
-
-
-	if (error) {
-		return <p>Ошибка: {error}</p>;
-	}
 
 
 	return (
