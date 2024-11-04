@@ -1,6 +1,7 @@
 .policyNav {
 	width: 390px;
 	padding: 100px 50px 0 0;
+	margin-bottom: 30px;
 }
 
 .links {
@@ -29,6 +30,7 @@
 	.policyNav {
 		width: 360px;
 		padding: 80px 40px 0 0;
+		margin-bottom: 25px;
 	}
 
 	.links {
@@ -40,6 +42,7 @@
 	.policyNav {
 		width: 320px;
 		padding: 60px 30px 0 0;
+		margin-bottom: 20px;
 	}
 
 	.links {
@@ -51,6 +54,7 @@
 	.policyNav {
 		width: 270px;
 		padding: 50px 20px 0 0;
+		margin-bottom: 15px;
 	}
 
 	.links {
@@ -64,16 +68,11 @@
 	}
 }
 
-// @media (max-width: 768px) {
-// 	.policyNav {
-// 		width: 280px;
-// 	}
-// }
-
 @media (max-width: 480px) {
 	.policyNav {
 		width: 100%;
 		padding: 0 10px 10px;
+		margin-bottom: 0;
 		border-radius: 15px;
 		position: absolute;
 		z-index: 1;
