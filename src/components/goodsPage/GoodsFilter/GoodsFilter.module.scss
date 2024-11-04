@@ -3,3 +3,9 @@
 	flex-direction: column;
 	position: relative;
 }
+
+@media (max-width: 480px) {
+	.filterContainer {
+		width: 100%;
+	}
+}
