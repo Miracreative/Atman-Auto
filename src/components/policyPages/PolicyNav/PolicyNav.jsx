@@ -13,10 +13,6 @@ const PolicyNav = () => {
 
 	const { links, isOpenNav } = useSelector((state) => state.policyNav);
 
-	// console.log('links', links);
-
-	// console.log('isOpenNav', isOpenNav);
-
 	return (
 		<nav
 			className={`${styles.policyNav} ${

@@ -41,7 +41,7 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 			} else {
 				filterMainParam[filterIndex - 1] = 1; // Устанавливаем нужную цифру в массив, начиная со второго элемента
 
-				router.push(goodsLink); // Перенаправляем пользователя на /goods
+				router.push(goodsLink);
 
 				// Выполняем запрос
 				dispatch(setFilterMainParamGoods(filterMainParam));
@@ -83,7 +83,6 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 								className={`${styles.link} ${
 									pathname === item.href && index === 0 ? styles.linkActive : ''
 								}`}
-								// className={styles.link}
 								onClick={() => handleLinkClick(item)}
 							>
 								{item.text}

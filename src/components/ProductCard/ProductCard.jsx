@@ -16,7 +16,6 @@ const ProductCard = ({ id, brand, title, subtitle, imageurl }) => {
 						alt={title}
 						fill={true}
 						className={styles.backgroundImage}
-						// priority
 					/>
 				</div>
 				<p className={styles.subtitle}>{subtitle}</p>

@@ -3,6 +3,9 @@ export const HOST = process.env.HOST;
 
 console.log('Текущий HOST', HOST);
 
+//* DOMAIN *//
+export const DOMAIN = process.env.DONAIN;
+
 //* Базовый URL *//
 const BASE_URL = `${HOST}/api`;
 
@@ -19,8 +22,6 @@ export const FILTERED_MAIN_PARAM_GOODS_URL = `${BASE_URL}/goods-main`;
 
 //* URL новостей *//
 export const URL_NEWS = `${BASE_URL}/news`;
-
-export const DOMAIN = process.env.DONAIN;
 
 //* URL СОУТ *//
 export const SOUT_URL = `${BASE_URL}/sout`;

@@ -2,12 +2,13 @@
 @import '@/scss/_functions.scss';
 
 .button {
+	margin-bottom: 4px;
 	border: none;
 	font-size: 20px;
 	font-weight: 500;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
-	margin-bottom: 4px;
+	color: rgb(var(--foreground-rgb));
 
 	&:hover {
 		color: rgb(var(--red-rgb));
@@ -19,6 +20,7 @@
 
 	.triangle {
 		transform: rotate(180deg);
+
 		path {
 			fill: var(--red);
 		}
@@ -89,13 +91,11 @@
 
 @media (max-width: 1920px) {
 	.button {
-		// font-size: 20px;
 		@include adaptive-font(20, 12);
 	}
 
 	.triangle {
 		width: calcVW(11);
-		// height: calcVH(9);
 		margin-left: calcVW(5);
 	}
 
