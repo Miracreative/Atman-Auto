@@ -7,7 +7,6 @@ const SoutSection = () => {
 	return (
 		<section className={styles.section}>
 			<PolicyNavPanel />
-
 			<SoutContent />
 		</section>
 	);

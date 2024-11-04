@@ -1,6 +1,8 @@
 //* HOST *//
 export const HOST = process.env.HOST;
 
+console.log('Текущий HOST', HOST);
+
 //* Базовый URL *//
 const BASE_URL = `${HOST}/api`;
 
