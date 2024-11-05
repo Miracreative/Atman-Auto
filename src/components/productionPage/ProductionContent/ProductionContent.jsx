@@ -14,12 +14,6 @@ export default function ProductionContent() {
 	const [videoSrc, setVideoSrc] = useState('');
 
 
-	// useEffect(() => {
-	// 	if (popupActive) {
-	// 		// обновите источник видео здесь
-	// 		console.log('Источник видео обновлен:', videoSrc);
-	// 	}
-	// }, [popupActive, videoSrc]);
 
 	const handleButtonClick = (src) => {
 		setPopupActive(true);
@@ -31,11 +25,8 @@ export default function ProductionContent() {
 				<div className={styles.container}>
 
 					<div className={styles.wrap}>
-						{/* <PopupVideo active={popupActive} setActive={setPopupActive} /> */}
+
 						<PopupVideo active={popupActive} setActive={setPopupActive} videoSrc={videoSrc}></PopupVideo>
-						{/* <div id='video-popover' popover="true">
-							<span>Hi Bob</span>
-						</div> */}
 
 						<div className={styles.cardContainer}>
 							<div className={styles.card}>
@@ -47,6 +38,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
+										priority={true}
 									/>
 								</div>
 								<div className={styles.videoPart}>
@@ -56,6 +48,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
+										priority={true}
 									/>
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>
 										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,6 +86,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
+										priority={true}
 									/>
 								</div>
 
@@ -103,6 +97,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
+										priority={true}
 									/>
 
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>
@@ -138,6 +133,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
+										priority={true}
 									/>
 								</div>
 
@@ -148,6 +144,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
+										priority={true}
 									/>
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video1.mov')}>
 										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -191,6 +188,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
+										priority={true}
 									/>
 								</div>
 
@@ -201,6 +199,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
+										priority={true}
 									/>
 
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>
@@ -235,6 +234,7 @@ export default function ProductionContent() {
 									className={styles.cutIconMobile}
 									width={40}
 									height={40}
+									priority={true}
 								/>
 							</div>
 
@@ -245,6 +245,7 @@ export default function ProductionContent() {
 									className={styles.cutIcon}
 									width={100}
 									height={100}
+									priority={true}
 								/>
 
 								<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video1.mov')}>
@@ -280,6 +281,7 @@ export default function ProductionContent() {
 									className={styles.cutIconMobile}
 									width={40}
 									height={40}
+									priority={true}
 								/>
 							</div>
 
@@ -290,6 +292,7 @@ export default function ProductionContent() {
 									className={styles.cutIcon}
 									width={100}
 									height={100}
+									priority={true}
 								/>
 
 								<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>

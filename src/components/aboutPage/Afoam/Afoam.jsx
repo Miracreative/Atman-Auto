@@ -23,6 +23,7 @@ export default function Afoam() {
 									width={1068}
 									height={212}
 									alt='Afoam'
+									priority={true}
 								/>
 							</div>
 							<h2 className={styles.title}>
