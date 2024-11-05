@@ -48,6 +48,7 @@ export default function AfoamSlider() {
 											width={482}
 											height={96}
 											alt='Afoam'
+											priority={true}
 										/>
 
 									</div>
@@ -71,6 +72,7 @@ export default function AfoamSlider() {
 											width={482}
 											height={96}
 											alt='Afoam'
+											priority={true}
 										/>
 
 
@@ -80,6 +82,7 @@ export default function AfoamSlider() {
 											width={482}
 											height={96}
 											alt='Afoam'
+											priority={true}
 										/>
 									</div>
 

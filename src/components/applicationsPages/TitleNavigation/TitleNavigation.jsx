@@ -45,7 +45,9 @@ export default function TitleNavigation({ applicationIndustry, currentIndex, onN
 								src={applicationIndustry.image}
 								alt="img"
 								width={862}
-								height={500} />
+								height={500}
+								priority={true}
+							/>
 
 							<div className={styles.innerContent}>
 
@@ -62,7 +64,9 @@ export default function TitleNavigation({ applicationIndustry, currentIndex, onN
 									src={applicationIndustry.imageMobile}
 									alt="img"
 									width={320}
-									height={170} />
+									height={170}
+									priority={true}
+								/>
 
 								<div className={styles.description}>
 									{applicationIndustry.description}
