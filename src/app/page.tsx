@@ -9,26 +9,19 @@ import Team from '@/components/Team/Team.jsx';
 import Map from '@/components/Map/Map.jsx';
 import Footer from '@/components/Footer/Footer.jsx';
 
-// import { Counter } from '@/components/Counter/Counter';
-
 export default function Home() {
 	return (
 		<>
 			<Header />
 			<main>
 				<Catalog />
-
-				{/* Убрать перед продом */}
-				{/* <Counter></Counter> */}
-				{/* Убрать перед продом */}
-
 				<Survey />
 				<Decisions />
-				<ProductionCapabilities></ProductionCapabilities>
-				<ProductsSlider></ProductsSlider>
-				<NewsSlider></NewsSlider>
-				<Team></Team>
-				<Map></Map>
+				<ProductionCapabilities />
+				<ProductsSlider />
+				<NewsSlider />
+				<Team />
+				<Map />
 			</main>
 			<Footer />
 		</>
