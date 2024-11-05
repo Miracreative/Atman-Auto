@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+// import backgroundImage from '/public/not-found/404-background-logo.svg';
 import backgroundImage from '/public/not-found/404-background-logo.png';
 import backgroundImageMobile from '/public/not-found/404-background-logo-mobile.png';
 import image from '/public/not-found/404-image.png';
@@ -53,11 +54,20 @@ export default function NotFound() {
 								src={logoImage}
 								alt="Atman Auto logo"
 								className={styles.logo}
-								// priority
+								// placeholder="blur"
+								quality={90}
+								priority
 							/>
 						</Link>
 					</div>
-					<Image className={styles.image} src={image} alt="Image - 404" />
+					<Image
+						className={styles.image}
+						src={image}
+						alt="Error 404 image"
+						placeholder="blur"
+						quality={80}
+						// priority
+					/>
 					<h1 className={styles.title}>
 						Эта страница удалена или находится в работе
 					</h1>
@@ -68,12 +78,12 @@ export default function NotFound() {
 						На главную
 					</button>
 				</div>
-				{/* Image */}
 				<Image
 					className={styles.backgroundLogo}
-					// {isMobile && ()}
 					src={!isMobile ? backgroundImage : backgroundImageMobile}
-					alt="Background image - 404"
+					alt="The background image is part of the company's logo"
+					// placeholder="blur"
+					// quality={100}
 				/>
 			</div>
 		</div>
