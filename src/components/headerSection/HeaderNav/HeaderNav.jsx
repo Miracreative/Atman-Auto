@@ -53,7 +53,9 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 				<Link
 					href="/knowledge"
 					className={`${styles.link} ${
-						pathname === '/knowledge' ? styles.linkActive : ''
+						pathname === '/knowledge' || pathname.startsWith('/knowledge/')
+							? styles.linkActive
+							: ''
 					}`}
 				>
 					База знаний
@@ -61,7 +63,9 @@ const HeaderNav = ({ toggleDropdown, activeDropdown, isActiveLink }) => {
 				<Link
 					href="/news"
 					className={`${styles.link} ${
-						pathname === '/news' ? styles.linkActive : ''
+						pathname === '/news' || pathname.startsWith('/news/')
+							? styles.linkActive
+							: ''
 					}`}
 				>
 					Новости
