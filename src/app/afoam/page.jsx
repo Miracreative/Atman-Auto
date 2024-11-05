@@ -8,15 +8,8 @@ import DescriptionAfoam from '@/components/afoamPage/DescriptionAfoam/Descriptio
 import AdvantagesAfoam from '@/components/afoamPage/AdvantagesAfoam/AdvantagesAfoam.jsx';
 
 import afoamData from '@/data/afoamData.js';
-import {
-	LOADING_INFO,
-	LOADING_DATA_ERROR,
-	NOT_FOUND_INFO,
-	UNKNOWN_ERROR,
-} from '@/utils/informMessages';
 
 
-import styles from './afoamPage.module.scss';
 
 
 export default function Afoam() {
@@ -81,30 +74,19 @@ export default function Afoam() {
 	return (
 		<>
 
-			{(loading || error || !afoamData) && (
-				<div className={styles.messageContainer}>
-					{loading && <p>{LOADING_INFO}</p>}
-					{!loading && error && <p>{LOADING_DATA_ERROR}</p>}
-					{!loading && !error && !afoamData && <p>{NOT_FOUND_INFO}</p>}
-				</div>
-			)}
+			<>
+				<AfoamSlider></AfoamSlider>
+				<DescriptionAfoam></DescriptionAfoam>
 
-			{!loading && !error && afoamData && (
-				<>
-					<AfoamSlider></AfoamSlider>
-					<DescriptionAfoam></DescriptionAfoam>
+				<AdvantagesAfoam advantages={advantages1} ></AdvantagesAfoam>
+				<RecommendationsAfoam recommended={recommended1}></RecommendationsAfoam>
 
-					<AdvantagesAfoam advantages={advantages1} ></AdvantagesAfoam>
-					<RecommendationsAfoam recommended={recommended1}></RecommendationsAfoam>
+				<AdvantagesAfoam advantages={advantages2} ></AdvantagesAfoam>
+				<RecommendationsAfoam recommended={recommended1} ></RecommendationsAfoam>
 
-					<AdvantagesAfoam advantages={advantages2} ></AdvantagesAfoam>
-					<RecommendationsAfoam recommended={recommended1} ></RecommendationsAfoam>
-
-					<AdvantagesAfoam advantages={advantages3} ></AdvantagesAfoam>
-					<RecommendationsAfoam recommended={recommended1} ></RecommendationsAfoam>
-				</>
-			)}
-
+				<AdvantagesAfoam advantages={advantages3} ></AdvantagesAfoam>
+				<RecommendationsAfoam recommended={recommended1} ></RecommendationsAfoam>
+			</>
 
 
 		</>
