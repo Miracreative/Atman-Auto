@@ -294,6 +294,7 @@ const Form = ({ isOpen, onClose }) => {
 											className={styles.attachmentIcon}
 											src={attachmentIcon}
 											alt="Прикрепить документ"
+											loading="lazy"
 										/>
 										<p>Прикрепить документ</p>
 									</button>
@@ -310,6 +311,7 @@ const Form = ({ isOpen, onClose }) => {
 											className={styles.attachmentIcon}
 											src={checkIcon}
 											alt="Документ прикреплен"
+											loading="lazy"
 										/>
 										<p>Документ прикреплен</p>
 									</button>

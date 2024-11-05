@@ -55,8 +55,8 @@ export default function NotFound() {
 								alt="Atman Auto logo"
 								className={styles.logo}
 								// placeholder="blur"
-								quality={90}
-								priority
+								// quality={90}
+								// priority
 							/>
 						</Link>
 					</div>
@@ -64,8 +64,8 @@ export default function NotFound() {
 						className={styles.image}
 						src={image}
 						alt="Error 404 image"
-						placeholder="blur"
-						quality={80}
+						// placeholder="blur"
+						// quality={80}
 						// priority
 					/>
 					<h1 className={styles.title}>

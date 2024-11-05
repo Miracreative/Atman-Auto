@@ -1,5 +1,5 @@
-@import '../scss/mixins';
-@import '../scss/_functions.scss';
+@import '@/scss/mixins';
+@import '@/scss/_functions.scss';
 
 .container {
 	width: 100%;
@@ -11,7 +11,7 @@
 .background {
 	width: 100%;
 	height: 100%;
-	background-image: url('../../public/not-found/404-background.png');
+	background-image: url('/public/not-found/404-background.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
