@@ -8,6 +8,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"docker": "docker run -p 3000:3000 docker-atman-auto",
+		"docker-build": "docker build -t docker-atman-auto .",
 		"racio-merge": "git checkout Yoda && git pull && git merge racio && git push && git checkout racio && git merge Yoda && git push"
 	},
 	"dependencies": {
