@@ -6,7 +6,7 @@ export const menuItems = {
 	about: {
 		title: 'О нас',
 		items: [
-			{ href: '/about', text: 'О нас' },
+			{ href: '/about', text: 'О компании' },
 			{ href: '/about/quality-policy', text: 'Политика в области качества' },
 			{ href: '/about/corporate-ethics', text: 'Кодекс корпоративной этики' },
 			{
@@ -25,7 +25,7 @@ export const menuItems = {
 		items: [
 			{
 				href: '/applications',
-				text: 'Применения',
+				text: 'Применения по отраслям',
 			},
 			{
 				href: '/applications/automobile-industry',
@@ -56,7 +56,7 @@ export const menuItems = {
 		items: [
 			{
 				href: '/goods',
-				text: 'Товары',
+				text: 'Каталог товаров',
 			},
 			{
 				href: '/goods',
