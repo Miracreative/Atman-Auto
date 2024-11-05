@@ -78,7 +78,7 @@ export default function Decisions() {
 										className={styles.img}
 										width={1040}
 										height={600}
-									// priority='true'
+										priority='true'
 									/>
 
 									<Image
@@ -87,7 +87,7 @@ export default function Decisions() {
 										className={styles.img}
 										width={1040}
 										height={600}
-									// priority='true'
+										priority='true'
 									/>
 
 								</Link>

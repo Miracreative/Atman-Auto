@@ -33,8 +33,8 @@
 .wrapInner {
 	padding-left: 4vw;
 	padding-top: 60px;
-	padding-bottom: 80px;
-
+	padding-bottom: 205px;
+	max-height: 493px;
 }
 
 .content {
@@ -103,7 +103,7 @@
 @media (max-width: 1400px) {
 	.wrapInner {
 		padding-top: 30px;
-		padding-bottom: 40px;
+		padding-bottom: 97px;
 	}
 	.title {
 		margin: 25px 10px 20px 0;
@@ -122,7 +122,8 @@
 
 	.wrapInner {
 		padding-top: 15px;
-		padding-bottom: 20px;
+		padding-bottom: 84px;
+		max-height: 187px;
 	}
 }
 
@@ -167,6 +168,7 @@
 	}
 	.wrapInner {
 		padding: 40px 5px 80px 15px;
+		max-height: fit-content;
 	}
 
 

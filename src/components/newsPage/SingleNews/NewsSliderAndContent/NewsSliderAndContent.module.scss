@@ -89,8 +89,7 @@
 	overflow: hidden;
 
 	border-radius: 20px;
-
-  }
+}
 
 
 
@@ -102,6 +101,7 @@
 	border-radius: 20px;
 	top: 50%;	
 
+	z-index: 2;
 	transform: translate(0, -50%);
 	transition: all .3s ease-in-out;
 	background-color: var(--red-button);
