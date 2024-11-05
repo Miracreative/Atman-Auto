@@ -27,17 +27,10 @@ import {
 	conditions,
 } from '@/data/surveyOptions';
 
-// import {
-// 	LOADING_DATA_ERROR,
-// 	LOADING_INFO,
-// 	NOT_FOUND_INFO,
-// } from '@/utils/informMessages';
-
 import SurveyItem from '../SurveyItem/SurveyItem';
 import SurveyFormMobile from '../SurveyFormMobile/SurveyFormMobile';
 import SurveySlider from '../SurveySlider/SurveySlider';
 import ArrowButton from '@/components/ArrowButton/ArrowButton';
-// import ProductCard from '@/components/ProductCard/ProductCard';
 
 import image from '/public/survey/survey.png';
 
@@ -49,8 +42,6 @@ export default function Survey() {
 	const { isMobile, products, loading, error, filterAllParam } = useSelector(
 		(state) => state.goods,
 	);
-
-	// console.log('filterAllParam', filterAllParam);
 
 	useEffect(() => {
 		dispatch(getAllGoods());
@@ -108,7 +99,6 @@ export default function Survey() {
 			updatedFilterAllParam[taskIndex] = 1; // Устанавливаем 1 для выбранной задачи
 		}
 
-		// console.log('Задача', updatedFilterAllParam);
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -124,7 +114,6 @@ export default function Survey() {
 			updatedFilterAllParam[typePosition + typeIndex] = 1;
 		}
 
-		// console.log('Первый вид склеиваемых поверхностей', updatedFilterAllParam);
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -150,10 +139,6 @@ export default function Survey() {
 			updatedFilterAllParam[connectionPosition + connectionIndex] = 1;
 		}
 
-		// console.log(
-		// 	'Условия эксплуатации соединения, соединение',
-		// 	updatedFilterAllParam,
-		// );
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -175,10 +160,6 @@ export default function Survey() {
 			updatedFilterAllParam[temperaturePosition + temperatureIndex] = 1;
 		}
 
-		// console.log(
-		// 	'Условия эксплуатации соединения, температура',
-		// 	updatedFilterAllParam,
-		// );
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 
@@ -200,7 +181,6 @@ export default function Survey() {
 			updatedFilterAllParam[conditionPosition + conditionIndex] = 1;
 		}
 
-		// console.log('Состояние соединяемых поверхностей', updatedFilterAllParam);
 		dispatch(setFilterAllParamGoods(updatedFilterAllParam));
 	};
 

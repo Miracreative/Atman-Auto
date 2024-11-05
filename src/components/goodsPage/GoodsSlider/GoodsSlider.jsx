@@ -16,16 +16,6 @@ export default function GoodsSlider({ product }) {
 
 	const [swiper, setSwiper] = useState(null);
 
-	// console.log('product', product);
-
-	// console.log('products goodspersonalimages', product.goodspersonalimages);
-
-	// console.log('название', `${product.brand} ${product.name}`);
-
-	// console.log('Картинки с сервера', `${HOST}/${product.goodspersonalimages}`);
-
-	// console.log('Кнопки', product.goodspersonalimages.length);
-
 	const onSlideChange = (swiper) => {
 		const isBeginning = swiper.isBeginning;
 		const isEnd = swiper.isEnd;
@@ -70,7 +60,6 @@ export default function GoodsSlider({ product }) {
 							prevEl: '.prev',
 							nextEl: '.next',
 						}}
-						// slidesPerView={4.2}
 						onSlideChange={(swiper) => onSlideChange(swiper)}
 					>
 						{product.goodsindustrialimages.map((image) => (

@@ -1,15 +1,8 @@
 import { usePathname } from 'next/navigation';
 
-// import { menuItems } from '@/data/menuItems';
-
 import { useSelector, useDispatch } from 'react-redux';
 
-import {
-	// links,
-	setIsMobile,
-	setIsOpenNav,
-	// getFilteredMainParamGoods,
-} from '@/store/policyNav/polivyNavSlice.js';
+import { setIsMobile, setIsOpenNav } from '@/store/policyNav/polivyNavSlice.js';
 
 import { TriangleIcon } from '@/components/TriangleIcon/TriangleIcon';
 
@@ -22,7 +15,6 @@ const PolicyDropButton = () => {
 		(state) => state.policyNav,
 	);
 
-	// const handleOpen = () => setIsOpenNav(!isOpenNav);
 	const handleOpen = () => dispatch(setIsOpenNav(!isOpenNav));
 
 	const pathname = usePathname();
@@ -33,8 +25,6 @@ const PolicyDropButton = () => {
 
 		return foundItem ? foundItem.text : 'Раздел не определен';
 	};
-
-	// console.log('pathname:', pathname);
 
 	return (
 		<div className={styles.button} onClick={handleOpen}>

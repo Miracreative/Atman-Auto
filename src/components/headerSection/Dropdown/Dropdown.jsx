@@ -51,7 +51,10 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 		}
 	};
 
-	const isActiveLink = items.some((item) => pathname === item.href);
+	// const isActiveLink = items.some((item) => pathname === item.href);
+	const isActiveLink = items.some(
+		(item) => pathname === item.href || pathname.startsWith(item.href + '/'),
+	);
 
 	return (
 		<div className={styles.dropdown} ref={menuRef}>

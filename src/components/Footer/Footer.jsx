@@ -10,7 +10,6 @@ import FormButton from '../formSection/FormButton/FormButton';
 export default function Footer() {
 	return (
 		<footer className={styles.footer}>
-
 			<div className={styles.content}>
 				<div className={styles.textWrap}>
 					<div className={styles.title}>
@@ -44,35 +43,29 @@ export default function Footer() {
 						<div className={styles.columnWrap}>
 							<div className={styles.column}>
 								<div className={styles.pageLinks}>
-									{' '}
-									<Link href="/about">О нас</Link>{' '}
+									<Link href="/about">О нас</Link>
 								</div>
 
 								<ul className={styles.linksList}>
 									<li>
-										{' '}
 										<Link href="/about/quality-policy">
 											Политика в области качества
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/about/corporate-ethics">
 											Кодекс корпоративной этики
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/about/safety-and-health-policy">
 											Политика в области охраны труда
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/about/sout">Ведомости СОУТ</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/about/personal-data-processing-policy">
 											Политика обработка персональных данных
 										</Link>
@@ -81,108 +74,89 @@ export default function Footer() {
 							</div>
 							<div className={styles.column}>
 								<div className={styles.pageLinks}>
-									{' '}
-									<Link href="/applications">Применения</Link>{' '}
+									<Link href="/applications">Применения</Link>
 								</div>
 
 								<ul className={styles.linksList}>
 									<li>
-										{' '}
 										<Link href="/applications/automobile-industry">
 											Автомобильная промышленность
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/applications/manufacture-of-household-appliances">
 											Производство бытовой техники
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/applications/furniture-industry">
 											Мебельная промышленность
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/applications/electronics-manufacturing">
 											Производство электроники
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/applications/construction-and-renovation">
 											Строительство и ремонт
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/applications/transport">Транспорт</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/applications/ros">РОС</Link>
 									</li>
 								</ul>
 							</div>
 							<div className={styles.column}>
 								<div className={styles.pageLinks}>
-									{' '}
-									<Link href="/goods">Товары</Link>{' '}
+									<Link href="/goods">Товары</Link>
 								</div>
 
 								<ul className={styles.linksList}>
 									<li>
-										{' '}
 										<Link href="/goods/foamed-double-sided-adhesive-tapes">
 											Вспененные двусторонние клейкие ленты
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/goods/thin-double-sided-adhesive-tapes">
 											Тонкие двусторонние клейкие ленты
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/goods/single-sided-adhesive-tapes">
 											Односторонние клейкие ленты
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/goods/primers-and-cleaners">
 											Праймеры и очистители
 										</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/goods/tapes">Пленки</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/goods/tools">Инструменты</Link>
 									</li>
 									<li>
-										{' '}
 										<Link href="/goods/rubbers">Резины</Link>
 									</li>
 								</ul>
 							</div>
 							<div className={styles.column}>
 								<div className={styles.pageLinks}>
-									{' '}
-									<Link href="/production">Производство</Link>{' '}
+									<Link href="/production">Производство</Link>
 								</div>
 								<div className={styles.pageLinks}>
-									{' '}
-									<Link href="/knowledge">База знания</Link>{' '}
+									<Link href="/knowledge">База знания</Link>
 								</div>
 								<div className={styles.pageLinks}>
-									{' '}
-									<Link href="/news">Новости</Link>{' '}
+									<Link href="/news">Новости</Link>
 								</div>
 							</div>
 						</div>
@@ -299,7 +273,6 @@ export default function Footer() {
 					</div>
 				</nav>
 			</div>
-
 		</footer>
 	);
 }
