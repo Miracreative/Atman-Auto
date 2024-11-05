@@ -1,5 +1,6 @@
 //* HOST *//
-export const HOST = process.env.HOST;
+// export const HOST = process.env.HOST;
+export const HOST = 'http://83.147.246.205:5000';
 
 console.log('Текущий HOST', HOST);
 
