@@ -55,6 +55,15 @@ a {
 	text-decoration: none;
 }
 
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 .button {
 	width: 400px;
 	height: 100px;

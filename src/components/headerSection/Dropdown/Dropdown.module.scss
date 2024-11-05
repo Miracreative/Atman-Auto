@@ -8,9 +8,16 @@
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 	color: rgb(var(--foreground-rgb));
+	background-color: transparent;
 
 	&:hover {
 		color: rgb(var(--red-rgb));
+		background-color: transparent;
+	}
+
+	&:focus {
+		outline: none;
+		background-color: transparent;
 	}
 }
 
