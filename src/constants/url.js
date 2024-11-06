@@ -3,6 +3,24 @@ export const HOST = process.env.HOST;
 // export const HOST = 'http://83.147.246.205:5000';
 
 console.log('Текущий HOST', HOST);
+console.log('Текущий HOST из process.env', process.env.HOST);
+
+console.log('Текущий PORT из process.env', process.env.PORT);
+
+console.log('Текущий DOMAIN из process.env', process.env.DONAIN);
+
+console.log('Текущий EMAIL_HOST из process.env', process.env.EMAIL_HOST);
+
+console.log('Текущий EMAIL_PORT из process.env', process.env.EMAIL_PORT);
+
+console.log('Текущий EMAIL_USER из process.env', process.env.EMAIL_USER);
+
+console.log('Текущий EMAIL_PASS из process.env', process.env.EMAIL_PASS);
+
+console.log(
+	'Текущий DESTINATION_EMAIL из process.env',
+	process.env.DESTINATION_EMAIL,
+);
 
 //* DOMAIN *//
 export const DOMAIN = process.env.DONAIN;
