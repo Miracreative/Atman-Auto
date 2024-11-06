@@ -18,7 +18,7 @@ export default function KnowledgeContent() {
 		setLoading(true);
 		try {
 			// const response = await axios.get(URL_NEWS);
-			const response = await axios.get(`${process.env.HOST}/api/base`);
+			const response = await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/base`);
 			SetPosts(response.data);
 		} catch (err) {
 			setError(err.message);
@@ -55,7 +55,6 @@ export default function KnowledgeContent() {
 
 
 	const numOfPages = Math.ceil(posts.length / postPerPage);
-	// console.log(numOfPages);
 
 	const numOfButtons = [];
 	for (let i = 1; i <= numOfPages; i++) {
@@ -138,15 +137,10 @@ export default function KnowledgeContent() {
 	const handleCardClick = (cardId) => {
 		setPopupActive(true);
 		setCardId(cardId);
-		// console.log(cardId);
-
 	};
 
 
 
-	// if (error) {
-	// 	return <p>Ошибка: {error}</p>;
-	// }
 
 
 	return (
