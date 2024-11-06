@@ -35,9 +35,7 @@ const NewsWrapContent = () => {
 	}, []);
 
 
-	// if (error) {
-	// 	return <p>Ошибка: {error}</p>;
-	// }
+
 
 	return loading ? (
 		<div className={styles.loading}>
