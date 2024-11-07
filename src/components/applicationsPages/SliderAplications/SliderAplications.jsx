@@ -110,7 +110,6 @@ export default function SliderAplications({ applicationIndustry, currentIndex })
 
 
 							</Swiper>
-							{/* <SwiperNavButtouns /> */}
 
 
 							<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>

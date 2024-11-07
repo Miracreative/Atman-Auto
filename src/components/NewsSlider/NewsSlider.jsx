@@ -3,7 +3,6 @@
 import styles from './NewsSlider.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y } from 'swiper/modules';
-// import newsData from '@/data/newsData';
 import Link from 'next/link';
 import { Controller } from 'swiper/modules';
 import axios from 'axios';
@@ -57,7 +56,6 @@ export default function NewsSlider() {
 		}
 	};
 
-	// console.log(lastNews);
 
 
 	return (

@@ -55,12 +55,9 @@
 		transform: translate(-50%, -50%);
 		z-index: 1;
 	}
-	// height: auto;
   }
   
-//   .contentCard {
-// 	grid-column: 2;
-//   }
+
   
 
   .card:nth-child(even) {
@@ -116,7 +113,6 @@
 	border-radius: 20px;
 	max-width: 400px;
 	width: 100%;
-	// height: 100px;
 	height: 5vw;
 	max-height: 100px;
 	min-height: 60px;
@@ -205,7 +201,6 @@
 	}
 
 	.innerContainer {
-		// width: 100%;
 		margin: 10px 0 20px 0;
 	}
 

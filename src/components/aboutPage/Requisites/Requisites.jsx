@@ -1,5 +1,4 @@
 import styles from './Requisites.module.scss';
-// import Image from 'next/image';
 import Link from 'next/link';
 import CompanyInfo from '@/data/CompanyInfo.js';
 

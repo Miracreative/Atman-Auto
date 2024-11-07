@@ -57,13 +57,11 @@
 .section .swiperSlide {
 	position: relative;
 	border-radius: 20px;
-	// height: 22vw;
 	width: auto !important;
 	max-height: 384px;
 	min-height: 284px;
 
 	filter: grayscale(100%);
-	// background: #E4E5E7;
 }
 
 .slideInner {
@@ -81,8 +79,6 @@
 
 .cert {
 	object-fit: contain;
-
-	// max-width: 384px;
 	min-height: 284px;
 	height: 100%;
 }
@@ -113,8 +109,6 @@
 	.description {
 		font-size: calcVW(20);
 	}
-	
-
 }
 
 

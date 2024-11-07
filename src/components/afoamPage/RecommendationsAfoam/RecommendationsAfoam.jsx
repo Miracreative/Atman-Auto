@@ -1,7 +1,6 @@
-// 'use client';
+
 
 import styles from './RecommendationsAfoam.module.scss';
-// import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 

@@ -1,19 +1,13 @@
 'use client';
 
 import styles from './TitleNavigation.module.scss';
-import applicationData from '@/data/aplicationData';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs.tsx';
 
 
 export default function TitleNavigation({ applicationIndustry, currentIndex, onNavClick, breadcrumbs }) {
 
-
-	// const { namePage } = applicationData;
-	// const { transport } = applicationData;
-	// const section = automobileIndustry.sections[0];
 	const [isMobileNavActive, setIsMobileNavActive] = useState(false);
 
 	const handleMobileNavClick = () => {

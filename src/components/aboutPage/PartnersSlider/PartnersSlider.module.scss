@@ -41,10 +41,9 @@
 	border-radius: 20px;
 	border: 1px solid rgb(var(--foreground-rgb));
 	height: 24vw;
-	// max-height: 460px;
 	min-height: 200px;
 
-	display: flex; // Используем Flexbox
+	display: flex;
 	flex-direction: column;
 }
 
@@ -55,7 +54,6 @@
 }
 
 .imgContainer {
-	// height: 57%;
 	height: 14vw;
 	display: flex;
 	align-items: center;
@@ -65,7 +63,6 @@
 .logo {
 	object-fit: contain;
     max-height: 90%;
-    // max-width: 80%;
 }
 
 .titleCard {

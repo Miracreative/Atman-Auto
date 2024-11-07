@@ -27,7 +27,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
-										// style={{ height: 'auto' }}
+											priority={true}
 										/>
 									</div>
 
@@ -42,6 +42,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
+											priority={true}
 										/>
 									</div>
 								</div>
@@ -58,6 +59,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
+											priority={true}
 										/>
 									</div>
 
@@ -72,6 +74,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
+											priority={true}
 										/>
 									</div>
 								</div>
@@ -88,6 +91,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
+											priority={true}
 										/>
 									</div>
 
@@ -102,6 +106,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
+											priority={true}
 										/>
 									</div>
 								</div>
