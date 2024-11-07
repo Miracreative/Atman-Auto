@@ -19,8 +19,8 @@ import {
 	MAIL_SUCCESSED,
 } from '@/utils/informMessages.js';
 
-import attachmentIcon from '../../../../public/attachment-icon.svg';
-import checkIcon from '../../../../public/big-check.svg';
+import attachmentIcon from '/public/attachment-icon.svg';
+import checkIcon from '/public/big-check.svg';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
@@ -115,7 +115,6 @@ const Form = ({ isOpen, onClose }) => {
 				// Сервер ответил с ошибкой
 				console.log(MAIL_SUBMISSION_ERROR, error.response.data);
 			} else if (error.request) {
-				// Запрос был выполнен, но ответа не было
 				console.log(
 					'Запрос был сделан, но ответ не был получен:',
 					error.request,
