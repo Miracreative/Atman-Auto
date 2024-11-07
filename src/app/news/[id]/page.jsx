@@ -36,20 +36,8 @@ const NewsPage = () => {
 		fetchNews();
 	}, [id]);
 
-	if (loading) {
-		return <p>Загрузка...</p>;
-	}
-
-	// console.log(news);
 
 
-	if (error) {
-		return <p>Ошибка: {error}</p>;
-	}
-
-	if (!news) {
-		return <p>Новость не найдена.</p>;
-	}
 
 
 	const title = news.title;
@@ -57,7 +45,6 @@ const NewsPage = () => {
 	const content = news.content;
 	const imagessrc = news.imagessrc;
 
-	// console.log(typeof imagessrc);
 
 
 
