@@ -1,8 +1,7 @@
-import { useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useRef } from 'react';
 
-// import TriangleIcon from '../../TriangleIcon/TriangleIcon';
 import { TriangleIcon, DEFAULT_COLOR } from './../../TriangleIcon/TriangleIcon';
 
 import styles from './AccordionItem.module.scss';
@@ -29,12 +28,6 @@ export default function AccordionItem({
 				} ${isActiveLink ? styles.buttonLinkActive : ''}`}
 				onClick={() => onClick()}
 			>
-				{/* <button
-				className={`${styles.button} ${isOpen ? styles.buttonActive : ''} 
-								${isActiveLink ? styles.buttonLinkActive : ''} ${
-					isActiveLink ? styles.linkActive : ''
-				}
-						`} */}
 				{title}
 				<TriangleIcon
 					className={styles.accordionArrow}
@@ -55,7 +48,9 @@ export default function AccordionItem({
 								<Link
 									href={item.href}
 									className={`${styles.link} ${
-										pathname === item.href ? styles.linkActive : ''
+										pathname === item.href && index === 0
+											? styles.linkActive
+											: ''
 									}`}
 									onClick={() => setActive(false)}
 								>

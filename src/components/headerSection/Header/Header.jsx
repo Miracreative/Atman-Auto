@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 import useScrollVisibility from '@/hooks/useScrollVisibility';
 
@@ -33,8 +33,13 @@ export default function Header() {
 		setMenuActive((prevMenuActive) => !prevMenuActive);
 	};
 
+	// const isActiveLink = (items) => {
+	// 	return items.some((item) => pathname === item.href);
+	// };
 	const isActiveLink = (items) => {
-		return items.some((item) => pathname === item.href);
+		return items.some(
+			(item) => pathname === item.href || pathname.startsWith(item.href + '/'),
+		);
 	};
 
 	return (
