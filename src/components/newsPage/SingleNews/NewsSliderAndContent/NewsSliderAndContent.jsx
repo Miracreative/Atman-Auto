@@ -10,16 +10,11 @@ import { Controller } from 'swiper/modules';
 
 import decisionsSliderData from '@/data/decisionsSliderData.jsx';
 
-
+import { HOST } from '@/constants/url';
 
 import { useState, useEffect } from 'react';
 
-
-
 export default function NewsSliderAndContent({ imagessrc, content }) {
-
-
-
 	const [imgData, setImgData] = useState([]);
 	const [isImgDataReady, setIsImgDataReady] = useState(false);
 
@@ -29,18 +24,10 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 		setCanGoNext(imagessrc.length > 1);
 	}, []);
 
-
-
-
-
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);
 
-
 	const [swiper, setSwiper] = useState(null);
-
-
-
 
 	const onSlideChange = (swiper) => {
 		const isBeginning = swiper.isBeginning;
@@ -49,8 +36,6 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 		setCanGoPrev(!isBeginning);
 		setCanGoNext(!isEnd);
 	};
-
-
 
 	const goToPrevSlide = () => {
 		if (swiper) {
@@ -64,25 +49,17 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 		}
 	};
 
-
-
 	return (
 		<>
 			<section className={styles.section}>
 				<div className={styles.sectionInner}>
-
-					<div className='container'>
-
+					<div className="container">
 						<div className={styles.wrap}>
-
-
 							<div className={styles.swiperContainer}>
-
 								<Swiper
 									wrapperClass={styles.swiperWrapper}
 									className={styles.swiper}
 									modules={[Navigation, A11y, Controller]}
-
 									breakpoints={{
 										0: {
 											slidesPerView: 1.5,
@@ -97,69 +74,67 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 										prevEl: '.prev',
 										nextEl: '.next',
 									}}
-
-
 									spaceBetween={20}
 									slidesPerView={3}
 									onSlideChange={(swiper) => onSlideChange(swiper)}
 								>
-
-									{
-										imgData.map((srcImg, index) => (
-											<SwiperSlide key={index} className={styles.swiperSlide}>
-												<div className={styles.imgWrap} >
-													<img
-														src={`${process.env.HOST}/${srcImg}`}
-														width={300}
-														height={300}
-														alt="img"
-													/>
-
-												</div>
-
-											</SwiperSlide>
-										))
-									}
-
+									{imgData.map((srcImg, index) => (
+										<SwiperSlide key={index} className={styles.swiperSlide}>
+											<div className={styles.imgWrap}>
+												<img
+													src={`${HOST}/${srcImg}`}
+													width={300}
+													height={300}
+													alt="img"
+												/>
+											</div>
+										</SwiperSlide>
+									))}
 								</Swiper>
 
-
-
-								<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
-
-									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								<button
+									className={styles.prevBtn}
+									onClick={goToPrevSlide}
+									disabled={!canGoPrev}
+								>
+									<svg
+										width="30"
+										height="12"
+										viewBox="0 0 30 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z"
+											fill="white"
+										/>
 									</svg>
-
-
 								</button>
 
-
-								<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
-
-									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								<button
+									className={styles.nextBtn}
+									onClick={goToNextSlide}
+									disabled={!canGoNext}
+								>
+									<svg
+										width="30"
+										height="12"
+										viewBox="0 0 30 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z"
+											fill="white"
+										/>
 									</svg>
-
-
 								</button>
-
 							</div>
 
-
-
-							<div className={styles.textWrap}>
-								{content}
-							</div>
-
-
+							<div className={styles.textWrap}>{content}</div>
 						</div>
-
-
 					</div>
-
 				</div>
-
 			</section>
 		</>
 	);

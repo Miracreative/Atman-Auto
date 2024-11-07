@@ -10,9 +10,8 @@ import {
 export const fetchAllGoods = async () => {
 	const response = await axios.get(ALL_GOODS_URL);
 
-	console.log('Получение всех продуктов:', response.data);
-
-	console.log('Текущий адрес ALL_GOODS_URL', ALL_GOODS_URL);
+	// console.log('Получение всех продуктов:', response.data);
+	// console.log('Текущий адрес ALL_GOODS_URL', ALL_GOODS_URL);
 
 	return response.data;
 };

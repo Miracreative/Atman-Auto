@@ -76,76 +76,76 @@ export const SOUT_URL = `${BASE_URL}/sout`;
 //* TESTING HOST *//
 
 console.log('Текущий HOST', HOST);
-console.log('Текущий HOST из process.env', process.env.HOST);
+// console.log('Текущий HOST из process.env', process.env.HOST);
 
 // console.log('Текущий NEXT_PUBLIC_HOST', NEXT_PUBLIC_HOST);
-// console.log(
-// 	'Текущий NEXT_PUBLIC_HOST из process.env',
-// 	process.env.NEXT_PUBLIC_HOST,
-// );
+console.log(
+	'Текущий NEXT_PUBLIC_HOST из process.env',
+	process.env.NEXT_PUBLIC_HOST,
+);
 
 //* TESTING HOST *//
 
 //* TESTING DOMAIN *//
 
-console.log('Текущий DOMAIN из process.env', process.env.DOMAIN);
-// console.log(
-// 	'Текущий NEXT_PUBLIC_DOMAIN из process.env',
-// 	process.env.NEXT_PUBLIC_DOMAIN,
-// );
+// console.log('Текущий DOMAIN из process.env', process.env.DOMAIN);
+console.log(
+	'Текущий NEXT_PUBLIC_DOMAIN из process.env',
+	process.env.NEXT_PUBLIC_DOMAIN,
+);
 
 //* TESTING DOMAIN *//
 
 //* TESTING EMAIL_HOST *//
 
-console.log('Текущий EMAIL_HOST из process.env', process.env.EMAIL_HOST);
-// console.log(
-// 	'Текущий NEXT_PUBLIC_EMAIL_HOST из process.env',
-// 	process.env.NEXT_PUBLIC_EMAIL_HOST,
-// );
+// console.log('Текущий EMAIL_HOST из process.env', process.env.EMAIL_HOST);
+console.log(
+	'Текущий NEXT_PUBLIC_EMAIL_HOST из process.env',
+	process.env.NEXT_PUBLIC_EMAIL_HOST,
+);
 
 //* TESTING EMAIL_HOST *//
 
 //* TESTING EMAIL_PORT *//
 
-console.log('Текущий EMAIL_PORT из process.env', process.env.EMAIL_PORT);
-// console.log(
-// 	'Текущий NEXT_PUBLIC_EMAIL_PORT из process.env',
-// 	process.env.NEXT_PUBLIC_EMAIL_PORT,
-// );
+// console.log('Текущий EMAIL_PORT из process.env', process.env.EMAIL_PORT);
+console.log(
+	'Текущий NEXT_PUBLIC_EMAIL_PORT из process.env',
+	process.env.NEXT_PUBLIC_EMAIL_PORT,
+);
 
 //* TESTING EMAIL_PORT *//
 
 //* TESTING EMAIL_USER *//
 
-console.log('Текущий EMAIL_USER из process.env', process.env.EMAIL_USER);
-// console.log(
-// 	'Текущий NEXT_PUBLIC_EMAIL_USER из process.env',
-// 	process.env.NEXT_PUBLIC_EMAIL_USER,
-// );
+// console.log('Текущий EMAIL_USER из process.env', process.env.EMAIL_USER);
+console.log(
+	'Текущий NEXT_PUBLIC_EMAIL_USER из process.env',
+	process.env.NEXT_PUBLIC_EMAIL_USER,
+);
 
 //* TESTING EMAIL_USER *//
 
 //* TESTING EMAIL_PASS *//
 
-console.log('Текущий EMAIL_PASS из process.env', process.env.EMAIL_PASS);
-// console.log(
-// 	'Текущий NEXT_PUBLIC_EMAIL_PASS из process.env',
-// 	process.env.NEXT_PUBLIC_EMAIL_PASS,
-// );
+// console.log('Текущий EMAIL_PASS из process.env', process.env.EMAIL_PASS);
+console.log(
+	'Текущий NEXT_PUBLIC_EMAIL_PASS из process.env',
+	process.env.NEXT_PUBLIC_EMAIL_PASS,
+);
 
 //* TESTING EMAIL_PASS *//
 
 //* TESTING DESTINATION_EMAIL *//
 
-console.log(
-	'Текущий DESTINATION_EMAIL из process.env',
-	process.env.DESTINATION_EMAIL,
-);
 // console.log(
-// 	'Текущий NEXT_PUBLIC_DESTINATION_EMAIL из process.env',
-// 	process.env.NEXT_PUBLIC_DESTINATION_EMAIL,
+// 	'Текущий DESTINATION_EMAIL из process.env',
+// 	process.env.DESTINATION_EMAIL,
 // );
+console.log(
+	'Текущий NEXT_PUBLIC_DESTINATION_EMAIL из process.env',
+	process.env.NEXT_PUBLIC_DESTINATION_EMAIL,
+);
 
 //* TESTING DESTINATION_EMAIL *//
 

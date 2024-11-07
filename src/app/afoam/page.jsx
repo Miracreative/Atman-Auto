@@ -9,7 +9,7 @@ import AdvantagesAfoam from '@/components/afoamPage/AdvantagesAfoam/AdvantagesAf
 
 import afoamData from '@/data/afoamData.js';
 
-
+import {HOST} from '@/constants/url.js';
 
 
 export default function Afoam() {
@@ -20,7 +20,7 @@ export default function Afoam() {
 
 	const fetchData = async () => {
 		try {
-			const response = await axios.get(`${process.env.HOST}/api/afoam`);
+			const response = await axios.get(`${HOST}/api/afoam`);
 			setAfoamData(response.data);
 		} catch (err) {
 			setError(err.message);

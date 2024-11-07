@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
+import { HOST } from '@/constants/url';
 
 // const certificates = [
 // 	{ cert: '/about/Certificates/cert1.png', type: 'book' },
@@ -20,17 +20,13 @@ import axios from 'axios';
 // 	{ cert: '/about/Certificates/cert6.png', type: 'album' },
 // ];
 
-
-
 export default function Certificates() {
-
-
 	const [certificatesData, setCertificatesData] = useState([]);
 	const [error, setError] = useState(null);
 
 	const fetchCertificates = async () => {
 		try {
-			const response = await axios.get(`${process.env.HOST}/api/sertificate`);
+			const response = await axios.get(`${HOST}/api/sertificate`);
 			setCertificatesData(response.data);
 		} catch (err) {
 			setError(err.message);
@@ -38,7 +34,6 @@ export default function Certificates() {
 	};
 
 	// console.log(certificatesData);
-
 
 	useEffect(() => {
 		fetchCertificates();
@@ -51,8 +46,10 @@ export default function Certificates() {
 
 				<div className={styles.container}>
 					<div className={styles.wrap}>
-
-						<h2 className={styles.title}>Сертификаты <br /><span> Atman-Auto  </span></h2>
+						<h2 className={styles.title}>
+							Сертификаты <br />
+							<span> Atman-Auto </span>
+						</h2>
 
 						<div className={styles.swiperContainer}>
 							<Swiper
@@ -61,8 +58,6 @@ export default function Certificates() {
 								modules={[Navigation, Scrollbar, A11y]}
 								spaceBetween={20}
 								slidesPerView={'auto'}
-
-
 								breakpoints={{
 									0: {
 										slidesPerView: 1.5,
@@ -76,46 +71,42 @@ export default function Certificates() {
 									768: {
 										spaceBetween: 20,
 									},
-
 								}}
 
-							// breakpoints={{
-							// 	0: {
-							// 		slidesPerView: 1.5,
-							// 		spaceBetween: 10,
-							// 	},
-							// 	576: {
-							// 		slidesPerView: 2.5,
+								// breakpoints={{
+								// 	0: {
+								// 		slidesPerView: 1.5,
+								// 		spaceBetween: 10,
+								// 	},
+								// 	576: {
+								// 		slidesPerView: 2.5,
 
-							// 		spaceBetween: 10,
-							// 	},
-							// 	768: {
-							// 		slidesPerView: 4.5,
-							// 	},
-							// 	1024: {
-							// 		slidesPerView: 'auto',
-							// 	},
-							// }}
+								// 		spaceBetween: 10,
+								// 	},
+								// 	768: {
+								// 		slidesPerView: 4.5,
+								// 	},
+								// 	1024: {
+								// 		slidesPerView: 'auto',
+								// 	},
+								// }}
 							>
-
-
-
 								{certificatesData.map((item, index) => (
-									<SwiperSlide key={index} className={styles.swiperSlide} style={{ width: item.type === 'album' ? 525 : 270 }}>
-
+									<SwiperSlide
+										key={index}
+										className={styles.swiperSlide}
+										style={{ width: item.type === 'album' ? 525 : 270 }}
+									>
 										<Image
 											className={styles.cert}
 											// src={item.cert}
-											src={`${process.env.HOST}/${item.imagesrc}`}
-											alt='certificate'
+											src={`${HOST}/${item.imagesrc}`}
+											alt="certificate"
 											width={item.type === 'album' ? 525 : 270}
 											height={384}
 										/>
-
 									</SwiperSlide>
 								))}
-
-
 							</Swiper>
 						</div>
 					</div>

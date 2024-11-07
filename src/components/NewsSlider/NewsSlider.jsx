@@ -10,15 +10,15 @@ import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 
+import { HOST } from '@/constants/url';
+
 export default function NewsSlider() {
-
-
 	const [lastNews, setLastNews] = useState([]);
 	const [error, setError] = useState(null);
 
 	const fetchLastNews = async () => {
 		try {
-			const response = await axios.get(`${process.env.HOST}/api/news-last`);
+			const response = await axios.get(`${HOST}/api/news-last`);
 			setLastNews(response.data);
 		} catch (err) {
 			setError(err.message);
@@ -28,8 +28,6 @@ export default function NewsSlider() {
 	useEffect(() => {
 		fetchLastNews();
 	}, []);
-
-
 
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);
@@ -58,7 +56,6 @@ export default function NewsSlider() {
 	};
 
 	// console.log(lastNews);
-
 
 	return (
 		<>
@@ -112,7 +109,10 @@ export default function NewsSlider() {
 												className={styles.imgWrap}
 												href={`/news/${item.id}`}
 											>
-												<img src={`${process.env.HOST}/${item.imagessrc[0]}`} alt={item.title} />
+												<img
+													src={`${HOST}/${item.imagessrc[0]}`}
+													alt={item.title}
+												/>
 											</Link>
 										</SwiperSlide>
 									))}

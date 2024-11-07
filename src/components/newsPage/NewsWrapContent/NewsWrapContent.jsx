@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import NewsContent from '../NewsContent/NewsContent.jsx';
 
+import { HOST } from '@/constants/url';
 
 import styles from './NewsWrapContent.module.scss';
 
@@ -20,22 +21,18 @@ const NewsWrapContent = () => {
 		setLoading(true);
 		try {
 			// const response = await axios.get(URL_NEWS);
-			const response = await axios.get(`${process.env.HOST}/api/news`);
+			const response = await axios.get(`${HOST}/api/news`);
 			setNews(response.data);
 		} catch (err) {
 			setError(err.message);
 		} finally {
 			setLoading(false);
 		}
-
 	};
 
 	useEffect(() => {
 		fetchNews();
 	}, []);
-
-
-
 
 	return loading ? (
 		<div className={styles.loading}>
