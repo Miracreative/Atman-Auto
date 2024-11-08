@@ -10,7 +10,6 @@
 	max-width: 1920px;
 	margin: 0 auto;
 	overflow-x: hidden;
-	// border-top: 1px solid rgb(var(--foreground-rgb));
 }
 
 .sectionInner {
@@ -96,8 +95,6 @@
 .swiperSlide {
 	width: 100%;
 	display: flex;
-	// overflow: hidden;
-
 	background-color: rgb(var(--gray-background-img-rgb));
 }
 
@@ -126,16 +123,12 @@
 	justify-content: center;
 	border-radius: 20px;
 	overflow: hidden;
-
-	// background-color: rgb(var(--gray-background-img-rgb));
-	// border-radius: 20px;
 }
 
 .swiperSlide img {
 	
 	display: block;
 	width: 100%;
-	// height: revert-laye;
 	max-height: 600px;
 	object-fit: cover;
 }

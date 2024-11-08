@@ -87,14 +87,12 @@
 .swiper {
 	width: 100%;
 	display: flex;
-	// overflow: hidden;
 }
 
 .swiperBottom {
 	margin-top: 20px;
 	width: 100%;
 	display: flex;
-	// overflow: hidden;
 	position: relative;
 	z-index: 2;
 }
@@ -105,7 +103,6 @@
 }
 
 .swiperSlideOne {
-	// height: 29vw;
 	max-height: 300px;
 	min-height: 200px;
 	display: flex;

@@ -11,70 +11,6 @@ import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 
-// const data = [
-// 	{
-// 		"name": "Павел Демин",
-// 		"descr": "Руководитель отдела оптовых продаж (потребительские товары упакованные для рынка DIY):",
-// 		"tel": "8-999-999-99-99",
-// 		"email": "p.demin@atman-auto.ru",
-// 		"id": "1",
-// 		"src": "/team/team1.jpg",
-// 	},
-// 	{
-// 		"name": "Петров Роман",
-// 		"descr": "",
-// 		"tel": "8-999-999-99-99",
-// 		"email": "email 2",
-// 		"id": "2",
-// 		"src": "/team/team2.jpg",
-
-// 	},
-// 	{
-// 		"name": "Акимкин Максим",
-// 		"descr": "Директор",
-// 		"tel": "8-999-999-99-99",
-// 		"email": "email 3",
-// 		"id": "3",
-// 		"src": "/team/team3.jpg",
-
-// 	},
-// 	{
-// 		"name": "Елена Аббасова",
-// 		"descr": "менеджер по закупкам",
-// 		"tel": "8-999-999-99-99",
-// 		"email": "email 4",
-// 		"id": "4",
-// 		"src": "/team/team4.jpg",
-
-// 	},
-// 	{
-// 		"name": "Ирина Грушина",
-// 		"descr": "Менеджер СМК",
-// 		"tel": "8-999-999-99-99",
-// 		"email": "email 5",
-// 		"id": "5",
-// 		"src": "/team/team5.jpg",
-
-// 	},
-// 	{
-// 		"name": "Зайкина Светлана",
-// 		"descr": "менеджер по работе с клиентами.",
-// 		"tel": "8-999-999-99-99",
-// 		"email": "email 6",
-// 		"id": "6",
-// 		"src": "/team/team6.jpg",
-
-// 	},
-// 	{
-// 		"name": "Сергей Сатаров",
-// 		"descr": "Коммерческий директор",
-// 		"tel": "8-999-999-99-99",
-// 		"email": "email 7",
-// 		"id": "7",
-// 		"src": "/team/team7.jpg",
-
-// 	}
-// ]
 
 export default function Team() {
 
@@ -138,7 +74,6 @@ export default function Team() {
 							horizontalClass: styles.paginationWrap,
 						}}
 
-						// spaceBetween={10}
 						slidesPerView={4}
 
 					>

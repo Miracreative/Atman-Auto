@@ -1,5 +1,3 @@
-// 'use client';
-
 import styles from './Recommendations.module.scss';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';

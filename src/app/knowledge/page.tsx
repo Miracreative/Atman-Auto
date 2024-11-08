@@ -2,7 +2,6 @@
 
 import PageTitle from './../../components/PageTitle/PageTitle.jsx';
 import KnowledgeContent from './../../components/KnowledgeContent/KnowledgeContent.jsx';
-import PopupKnowledge from './../../components/PopupKnowledge/PopupKnowledge.jsx';
 
 
 export default function Knowledge() {
@@ -26,7 +25,6 @@ export default function Knowledge() {
 			></PageTitle>
 
 			<KnowledgeContent ></KnowledgeContent>
-			{/* // <PopupKnowledge></PopupKnowledge> */}
 		</div>
 
 

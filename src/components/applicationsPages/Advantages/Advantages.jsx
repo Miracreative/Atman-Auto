@@ -1,17 +1,8 @@
-// 'use client';
-
 import styles from './Advantages.module.scss';
-import applicationData from '@/data/aplicationData';
-// import { useState, useEffect } from 'react';
-import Link from 'next/link';
-
 
 
 export default function Advantages({ applicationIndustry, currentIndex }) {
-	// const { applicationIndustry } = applicationData;
 	const section = applicationIndustry.sections[currentIndex];
-
-
 
 	return (
 		<>

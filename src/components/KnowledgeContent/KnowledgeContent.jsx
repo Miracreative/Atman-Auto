@@ -17,7 +17,6 @@ export default function KnowledgeContent() {
 	const fetchNews = async () => {
 		setLoading(true);
 		try {
-			// const response = await axios.get(URL_NEWS);
 			const response = await axios.get(`${process.env.NEXT_PUBLIC_HOST}/api/base`);
 			SetPosts(response.data);
 		} catch (err) {

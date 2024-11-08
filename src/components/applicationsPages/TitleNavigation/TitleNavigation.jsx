@@ -110,7 +110,6 @@ export default function TitleNavigation({ applicationIndustry, currentIndex, onN
 
 
 											<a
-												// className={`${styles.navMobileBtn} ${isMobileNavActive ? styles.activeMobileList : ''}`}
 												className={styles.navMobileBtn}
 											>
 												{variation.section}

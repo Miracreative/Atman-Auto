@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import NewsTitle from '@/components/newsPage/SingleNews/NewsTitle/NewsTitle.jsx';
 import NewsSliderAndContent from '@/components/newsPage/SingleNews/NewsSliderAndContent/NewsSliderAndContent.jsx';
-// import { URL_NEWS } from '@/constants/url.js';
 
 import { useParams } from 'next/navigation'
 
