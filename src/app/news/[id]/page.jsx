@@ -44,15 +44,31 @@ const NewsPage = () => {
 	const content = news.content;
 	const imagessrc = news.imagessrc;
 
+	// console.log(imagessrc);
 
+	// if (loading) {
+	// 	<>
+	// 		<div>21421422</div>
+	// 	</>
+	// }
 
 
 
 	return (
 		<>
-			<NewsTitle title={title} descr={descr} ></NewsTitle>
+			{/* <NewsTitle title={title} descr={descr} ></NewsTitle>
 
-			<NewsSliderAndContent imagessrc={imagessrc} content={content} ></NewsSliderAndContent>
+			<NewsSliderAndContent imagessrc={imagessrc} content={content} ></NewsSliderAndContent> */}
+
+
+			{loading ? (
+				<div></div>
+			) : (
+				<>
+					<NewsTitle title={title} descr={descr} />
+					<NewsSliderAndContent imagessrc={imagessrc} content={content} />
+				</>
+			)}
 		</>
 	);
 };

@@ -27,7 +27,7 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 		setImgData(imagessrc);
 		setIsImgDataReady(true);
 		setCanGoNext(imagessrc.length > 1);
-	}, []);
+	}, [imagessrc]);
 
 
 
@@ -105,7 +105,7 @@ export default function NewsSliderAndContent({ imagessrc, content }) {
 								>
 
 									{
-										imgData.map((srcImg, index) => (
+										imgData && imgData.map((srcImg, index) => (
 											<SwiperSlide key={index} className={styles.swiperSlide}>
 												<div className={styles.imgWrap} >
 													<img
