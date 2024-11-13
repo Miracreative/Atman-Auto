@@ -21,6 +21,9 @@
 	url('../../../../public/PageTitle/background-dots.png') center / cover no-repeat;
 	border: 1px solid rgb(var(--gray-line-rgb));
 
+	min-height: 490px;
+	max-height: 490px;
+
 }
 
 .wrapInner {
@@ -28,6 +31,8 @@
 	padding-top: 60px;
 	padding-bottom: 80px;
 
+	min-height: 490px;
+	max-height: 490px;
 }
 
 .content {
@@ -86,6 +91,16 @@
 	.text {
 		font-size: calcVW(32);
 	}
+
+	.wrap {
+		min-height: calcVW(490);
+		max-height: calcVW(490);
+	}
+
+	.wrapInner {
+		min-height: calcVW(490);
+		max-height: calcVW(490);
+	}
 }
 
 
@@ -96,6 +111,14 @@
 	}
 	.title {
 		margin: 25px 10px 20px 0;
+	}
+}
+
+
+@media (max-width: 1024px) {
+
+	.title {
+		margin: 15px 10px 10px 0;
 	}
 }
 
@@ -124,7 +147,7 @@
 	}
 
 	.content {
-		width: auto;
+		width: 85%;
 	}
 
 	.title {
@@ -133,7 +156,7 @@
 	}
 	
 	.text {
-		font-size: 20px;
+		font-size: 12px;
 	}
 	.breadcrumbs {
 		display: none;
@@ -144,9 +167,11 @@
 		url('../../../../public/PageTitle/mobile-background-dots.png') center / cover no-repeat;
 		border: 1px solid rgb(var(--gray-line-rgb));
 
+		max-height: max-content;
 	}
 	.wrapInner {
 		padding: 40px 5px 80px 15px;
+		max-height: fit-content;
 	}
 
 

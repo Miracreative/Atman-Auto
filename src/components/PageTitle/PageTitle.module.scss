@@ -20,13 +20,19 @@
 	background: rgb(var(--foreground-rgb)) 
 	url('../../../public/PageTitle/background-dots.png') center / cover no-repeat;
 	border: 1px solid rgb(var(--gray-line-rgb));
+
+	min-height: 490px;
+	max-height: 490px;
+	
 }
 
 .wrapInner {
 	padding-left: 4vw;
 	padding-top: 60px;
 	padding-bottom: 205px;
-	max-height: 493px;
+	max-height: 490px;
+
+	min-height: 490px;
 }
 
 .content {
@@ -86,6 +92,16 @@
 	.text {
 		font-size: calcVW(32);
 	}
+
+	.wrap {
+		min-height: calcVW(490);
+		max-height: calcVW(490);
+	}
+
+	.wrapInner {
+		min-height: calcVW(490);
+		max-height: calcVW(490);
+	}
 }
 
 
@@ -98,6 +114,15 @@
 		margin: 25px 10px 20px 0;
 	}
 }
+
+
+@media (max-width: 1024px) {
+
+	.title {
+		margin: 15px 10px 10px 0;
+	}
+}
+
 
 @media (max-width: 768px) {
 
@@ -133,7 +158,7 @@
 	}
 	
 	.text {
-		font-size: 20px;
+		font-size: 12px;
 	}
 	.breadcrumbs {
 		display: none;
@@ -144,6 +169,7 @@
 		url('../../../public/PageTitle/mobile-background-dots.png') center / cover no-repeat;
 		border: 1px solid rgb(var(--gray-line-rgb));
 
+		max-height: max-content;
 	}
 	.wrapInner {
 		padding: 40px 5px 80px 15px;
