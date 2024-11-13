@@ -10,7 +10,7 @@ export default function Map() {
 				className={styles.mapImg}
 				width={1880}
 				height={1062}
-				loading="lazy"
+				priority={true}
 			/>
 		</section>
 	);

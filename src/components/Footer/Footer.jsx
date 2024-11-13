@@ -37,6 +37,7 @@ export default function Footer() {
 									className={styles.logo}
 									width={255}
 									height={88}
+									priority={true}
 								/>
 							</Link>
 						</div>

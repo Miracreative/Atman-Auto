@@ -79,6 +79,7 @@ export default function Certificates() {
 											alt='certificate'
 											width={item.type === 'album' ? 525 : 270}
 											height={384}
+											priority={true}
 										/>
 
 									</SwiperSlide>

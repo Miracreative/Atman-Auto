@@ -89,6 +89,7 @@ export default function Team() {
 											alt="team photo"
 											width={350}
 											height={350}
+											priority={true}
 										/>
 									</div>
 
