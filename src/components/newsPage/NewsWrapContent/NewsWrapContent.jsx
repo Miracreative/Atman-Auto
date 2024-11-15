@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-// import { URL_NEWS } from '@/constants/url.js';
 
 import NewsContent from '../NewsContent/NewsContent.jsx';
 
@@ -19,7 +18,6 @@ const NewsWrapContent = () => {
 	const fetchNews = async () => {
 		setLoading(true);
 		try {
-			// const response = await axios.get(URL_NEWS);
 			const response = await axios.get(`${process.env.HOST}/api/news`);
 			setNews(response.data);
 		} catch (err) {
@@ -39,7 +37,6 @@ const NewsWrapContent = () => {
 
 	return loading ? (
 		<div className={styles.loading}>
-			{/* <h2>Загрузка информации, подождите...</h2> */}
 		</div>
 	) : (
 		<section className={styles.section}>

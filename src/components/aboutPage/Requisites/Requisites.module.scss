@@ -64,22 +64,12 @@
 .text {
 	font-weight: 500;
 }
-// prob delete
-// .infoBlock {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	justify-content: space-between;
-//   }
-  
-//   .infoBlock > * {
-// 	flex: 1;
-//   }
+
 
 
 
 .content {
 	display: grid;
-	// grid-template-columns: 2.5fr 1.25fr 0.9fr 1.9fr;
 	grid-template-columns:416px 207px 153px 311px ;
 	grid-template-rows: repeat(5, 1fr);
 	gap: 30px 10px;
@@ -351,18 +341,7 @@
 			font-size: 16px;
 		}
 
-		// .content {
-		// 		grid-template-columns: 1fr 1fr;
-		// 		grid-template-rows: repeat(16, 1fr);
-		//   }
-		  
-		//   .content .infoBlock {
-		// 	grid-column: auto; /* occupy one column by default */
-		//   }
-		  
-		//   .infoBlock:nth-child(-n+9) {
-		// 	grid-column: 1 / -1; /* occupy both columns for elements 1-9 */
-		//   }
+
 		.content {
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: repeat(16, 1fr);

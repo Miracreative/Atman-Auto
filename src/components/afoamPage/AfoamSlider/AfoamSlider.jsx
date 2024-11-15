@@ -8,12 +8,6 @@ import styles from './AfoamSlider.module.scss';
 
 export default function AfoamSlider() {
 
-	// const pagination = {
-	// 	clickable: true,
-
-	// };
-
-
 	return (
 		<>
 			<section className={styles.section}>

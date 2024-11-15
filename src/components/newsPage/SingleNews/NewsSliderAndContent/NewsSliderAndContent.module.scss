@@ -4,7 +4,6 @@
 .section {
 	position: relative;
 	min-width: 320px;
-	// overflow-x: hidden;
 }
 
 .sectionInner {
@@ -16,7 +15,6 @@
 
 .wrap {
 	padding: 4vw ;
-	// background-color: rgb(var(--foreground-rgb));
 }
 
 
@@ -36,8 +34,6 @@
 .swiperSlide {
 	width: 100%;
 	display: flex;
-	// overflow: hidden;
-
 	background-color: rgb(var(--gray-background-img-rgb));
 }
 
@@ -55,8 +51,6 @@
 }
 
 .swiperSlide {
-
-	// height: 29vw;
 	max-height: 600px;
 	min-height: 284px;
 	display: flex;
@@ -64,9 +58,6 @@
 	justify-content: center;
 	border-radius: 20px;
 	overflow: hidden;
-
-	// background-color: rgb(var(--gray-background-img-rgb));
-	// border-radius: 20px;
 }
 
 .swiperSlide img {

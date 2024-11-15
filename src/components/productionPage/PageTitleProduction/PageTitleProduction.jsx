@@ -17,6 +17,7 @@ export default function PageTitleProduction({ title, text, breadcrumbs }) {
 							alt="img"
 							width={942}
 							height={498}
+							priority={true}
 						/>
 						<Image
 							className={styles.triangleImgMob}
@@ -24,6 +25,7 @@ export default function PageTitleProduction({ title, text, breadcrumbs }) {
 							alt="img"
 							width={240}
 							height={177}
+							priority={true}
 						/>
 						<div className={styles.wrapInner}>
 

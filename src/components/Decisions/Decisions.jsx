@@ -20,7 +20,6 @@ export default function Decisions() {
 
 	const decisionsData = decisionsSliderData;
 
-	// const [swiperInstance, setSwiperInstance] = useState(null);
 	const [canGoPrev, setCanGoPrev] = useState(false);
 	const [canGoNext, setCanGoNext] = useState(true);
 

@@ -17,7 +17,6 @@
 .wrap {
 	min-width: 305px;
 	border-radius: 20px;
-	// padding: 20px 0;
 	background: rgb(var(--foreground-rgb)); 
 	border: 1px solid rgb(var(--gray-line-rgb));
 
@@ -84,7 +83,6 @@
 
 @media (max-width: 768px) {
 	.title {
-		// font-size: 36px;
 		margin: 15px 10px 10px 0;
 	}
 

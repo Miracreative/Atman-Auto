@@ -13,7 +13,24 @@ RUN npm install
 # Копируем файл окружения (если необходимо)
 # COPY .env.production
 
-# ENV HOST='http://83.147.246.205:5000'
+# ENV HOST='https://83.147.246.205:5000'
+
+
+ENV HOST='https://miracreative-api-node-d018.twc1.net:5000'
+
+
+ENV DOMAIN='https://miracreative-atman-auto-6725.twc1.net'
+
+ENV EMAIL_HOST='smtp.yandex.ru'
+
+ENV EMAIL_PASS='gdwemxtnbfrgyabd'
+
+ENV EMAIL_PORT='465'
+
+ENV EMAIL_USER='radicall004@yandex.ru'
+
+ENV DESTINATION_EMAIL='radicall004@yandex.ru'
+
 
 # Копируем остальные файлы вашего приложения и переносим их в рабочий каталог
 COPY . .

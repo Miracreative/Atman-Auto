@@ -1,8 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-import image from '/public/test-image.png';
-
 import styles from './GoodsCardFavourite.module.scss';
 
 const GoodsCardFavourite = ({ id, name, description, imageurl }) => {
@@ -23,10 +20,7 @@ const GoodsCardFavourite = ({ id, name, description, imageurl }) => {
 			<div className={styles.imgWrap}>
 				<Image
 					src={`${process.env.HOST}/${imageurl}`}
-					// src={image}
 					alt='img'
-					// layout="fill"
-					// objectFit="cover"
 					width={400}
 					height={300}
 					className={styles.img}

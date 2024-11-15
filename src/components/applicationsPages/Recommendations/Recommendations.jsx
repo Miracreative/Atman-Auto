@@ -1,19 +1,10 @@
-// 'use client';
-
 import styles from './Recommendations.module.scss';
-import recomendationsData from '@/data/recomendationsData.js';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import axios from 'axios';
-import { useState, useEffect } from 'react';
 
-import {
-	LOADING_INFO,
-	LOADING_DATA_ERROR,
-	NOT_FOUND_INFO,
-	UNKNOWN_ERROR,
-} from '@/utils/informMessages';
+
 
 
 export default function Recommendations() {
@@ -37,7 +28,6 @@ export default function Recommendations() {
 		fetchData();
 	}, []);
 
-	console.log(recomendationsData);
 
 
 	return (

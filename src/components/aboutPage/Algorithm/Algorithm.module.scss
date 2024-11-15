@@ -87,7 +87,6 @@
 
 
 .img {
-	// height: 350px;
 	width: auto;
 	max-width: none;
 }
@@ -119,7 +118,6 @@
 	}
 	.img {
 		height: 270px;
-		// width: auto;
 	}
 
 	.arrow {
@@ -150,9 +148,7 @@
 		height: 70px;
 		width: 70px;
 		right: -35px;
-		// &:nth-child(2) {
-		// 	left: -35px;
-		// }	
+
 	}
 	.arrowImg {
 		height: 9px;
@@ -160,16 +156,9 @@
 	}
 	.row:nth-child(2) .card .arrow {
 		left: -35px;
-		// &:nth-child(1) {
-		// 	left: -35px;
-		// }		
+		
 	}
-	// .card:nth-child(2) .arrow {
-	// 	left: -35px;
-	// }
-	// .row:nth-child(2) .card:nth-child(1) .arrow {
-	// 	right: -35px;
-	// }
+
 }
 
 @media (max-width: 989px) {

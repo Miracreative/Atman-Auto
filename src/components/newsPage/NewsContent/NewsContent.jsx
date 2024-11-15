@@ -1,7 +1,6 @@
 'use client';
 
 import styles from './NewsContent.module.scss';
-// import newsData from '@/data/newsData.js';
 import Link from 'next/link';
 
 
@@ -115,7 +114,6 @@ export default function NewsContent({ news }) {
 
 						{
 							posts.slice(pageItem.start, pageItem.end).map((item) => {
-								// console.log(item.imagessrc[0]);
 
 								return (
 									<Link href={`${process.env.DOMAIN}/news/${item.id}`} params={item.id} key={item.id} className={styles.card}>

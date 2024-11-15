@@ -9,17 +9,6 @@ import axios from 'axios';
 
 
 
-// const certificates = [
-// 	{ cert: '/about/Certificates/cert1.png', type: 'book' },
-// 	{ cert: '/about/Certificates/cert2.png', type: 'book' },
-// 	{ cert: '/about/Certificates/cert3.png', type: 'book' },
-// 	{ cert: '/about/Certificates/cert4.png', type: 'book' },
-// 	{ cert: '/about/Certificates/cert5.png', type: 'book' },
-// 	{ cert: '/about/Certificates/cert6.png', type: 'album' },
-// 	{ cert: '/about/Certificates/cert5.png', type: 'book' },
-// 	{ cert: '/about/Certificates/cert6.png', type: 'album' },
-// ];
-
 
 
 export default function Certificates() {
@@ -36,8 +25,6 @@ export default function Certificates() {
 			setError(err.message);
 		}
 	};
-
-	// console.log(certificatesData);
 
 
 	useEffect(() => {
@@ -79,23 +66,6 @@ export default function Certificates() {
 
 								}}
 
-							// breakpoints={{
-							// 	0: {
-							// 		slidesPerView: 1.5,
-							// 		spaceBetween: 10,
-							// 	},
-							// 	576: {
-							// 		slidesPerView: 2.5,
-
-							// 		spaceBetween: 10,
-							// 	},
-							// 	768: {
-							// 		slidesPerView: 4.5,
-							// 	},
-							// 	1024: {
-							// 		slidesPerView: 'auto',
-							// 	},
-							// }}
 							>
 
 
@@ -105,11 +75,11 @@ export default function Certificates() {
 
 										<Image
 											className={styles.cert}
-											// src={item.cert}
 											src={`${process.env.HOST}/${item.imagesrc}`}
 											alt='certificate'
 											width={item.type === 'album' ? 525 : 270}
 											height={384}
+											priority={true}
 										/>
 
 									</SwiperSlide>

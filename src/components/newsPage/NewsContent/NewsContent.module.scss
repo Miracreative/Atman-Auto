@@ -23,8 +23,6 @@
 }
 
 .card {
-	// width: 400px;
-	// height: 400px;
 	background-color: white;
 	border-color: rgb(var(--gray-line-rgb));
 
@@ -40,11 +38,7 @@
 }
 
 
-// .card:nth-child(-n+2) {
-// 	// background-color: rgb(var(--foreground-rgb));
-// 	// color: white;
-// 	grid-column: 1 / 3;
-// }
+
 
 .card:nth-child(1) {
 	grid-column: 1 / 3;
