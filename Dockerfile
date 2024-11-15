@@ -13,7 +13,11 @@ RUN npm install
 # Копируем файл окружения (если необходимо)
 # COPY .env.production
 
-ENV HOST='https://83.147.246.205:5000'
+# ENV HOST='https://83.147.246.205:5000'
+
+
+ENV HOST='https://miracreative-api-node-d018.twc1.net:5000'
+
 
 ENV DOMAIN='https://miracreative-atman-auto-6725.twc1.net'
 
