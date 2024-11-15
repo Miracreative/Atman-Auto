@@ -13,7 +13,8 @@
 .title {
 	font-size: 96px;
 	font-weight: 700;
-	margin: 10vh 0;
+	// margin: 10vh 0;
+	margin: 120px 0 100px 80px;
 	& span {
 		color: #E41F26;
 	}
@@ -97,6 +98,8 @@
 @media (max-width: 1920px) {
 	.title {
 		font-size: calcVW(96);
+		margin-top: calcVW(120);
+		margin-bottom: calcVW(100);
 	}
 	.number {
 		font-size: calcVW(96);
@@ -110,9 +113,9 @@
 }
 
 @media (max-width: 1600px) {
-	.title {
-		margin: 7vh 0;
-	}
+	// .title {
+	// 	margin: 7vh 0;
+	// }
 	.card {
 		height: 270px;
 	}
@@ -134,9 +137,9 @@
 	.card {
 		height: 220px;
 	}
-	.title {
-		margin: 4vh 0;
-	}
+	// .title {
+	// 	margin: 4vh 0;
+	// }
 	.row {
 		padding: 0 10px;
 	}

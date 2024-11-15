@@ -1,0 +1,33 @@
+@import '@/scss/functions.scss';
+
+.section {
+	min-width: 320px;
+}
+
+.wrap {
+	margin-top: 80px;
+	margin-bottom: 80px;
+	margin-left: 80px;
+	line-height: 1.2;
+}
+
+
+@media (max-width: 1920px) {
+	.wrap {
+		margin-top: calcVW(80);
+		margin-bottom: calcVW(80);
+		font-size: calcVW(20);
+	}
+}
+
+@media (max-width: 1200px) {
+	.wrap {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 768px) {
+	.wrap {
+		margin: 30px 10px 30px 10px;
+	}
+}

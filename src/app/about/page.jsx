@@ -1,4 +1,5 @@
 import PageTitle from './../../components/PageTitle/PageTitle.jsx';
+import SubtitleAbout from '../../components/aboutPage/SubtitleAbout/SubtitleAbout.jsx';
 import Algorithm from '../../components/aboutPage/Algorithm/Algorithm.jsx';
 import Values from '../../components/aboutPage/Values/Values.jsx';
 import Certificates from '../../components/aboutPage/Certificates/Certificates.jsx';
@@ -33,6 +34,7 @@ export default function About() {
 				text="Мы думаем наперед и поддерживаем вас с помощью наших экспертов, которые лично консультируют и гарантируют высокое качество продукции."
 				breadcrumbs={breadcrumbs}
 			></PageTitle>
+			<SubtitleAbout></SubtitleAbout>
 			<Algorithm></Algorithm>
 			<Values></Values>
 			<Certificates></Certificates>
