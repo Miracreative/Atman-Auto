@@ -8,6 +8,7 @@ const FormInput = ({
 	register,
 	validations,
 	errors,
+	onBlur,
 }) => {
 	const inputClass = errors[id]
 		? `${styles.input} ${styles.errorInput}`
@@ -21,6 +22,7 @@ const FormInput = ({
 					id={id}
 					{...register(id, validations)}
 					className={inputClass}
+					onBlur={onBlur}
 					placeholder={placeholder}
 				/>
 			) : (
@@ -29,6 +31,7 @@ const FormInput = ({
 					{...register(id, validations)}
 					className={inputClass}
 					type={type}
+					onBlur={onBlur}
 					placeholder={placeholder}
 				/>
 			)}

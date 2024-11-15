@@ -29,6 +29,9 @@ export const URL_NEWS = `${BASE_URL}/news`;
 //* URL СОУТ *//
 export const SOUT_URL = `${BASE_URL}/sout`;
 
+//* Прибавочный URL для формы обратной связи *//
+export const FORM_SUBMIT_URL = '/api/formSubmit';
+
 //* Nodemailer *//
 export const EMAIL_HOST = process.env.EMAIL_HOST;
 export const EMAIL_PORT = process.env.EMAIL_PORT;
