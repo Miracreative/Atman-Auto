@@ -122,12 +122,6 @@
 }
 
 
-.swiperSlideOne {
-	width: 100%;
-	display: flex;
-
-	background-color: rgb(var(--gray-background-img-rgb));
-}
 
 .swiper {
 	display: flex;
@@ -149,7 +143,13 @@
 
 }
 
-.swiperSlideOne {
+.section .swiperSlideOne {
+
+	width: 100%;
+	height: auto;
+	display: flex;
+
+	background-color: rgb(var(--gray-background-img-rgb));
 
 	max-height: 490px;
 	min-height: 200px;
