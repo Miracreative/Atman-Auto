@@ -77,7 +77,7 @@ export default function Decisions() {
 										className={styles.img}
 										width={1040}
 										height={600}
-										priority={true}
+									// priority={true}
 									/>
 
 									<Image
@@ -161,7 +161,7 @@ export default function Decisions() {
 													className={styles.img}
 													width={415}
 													height={490}
-													priority={true}
+												// priority={true}
 												/>
 
 
@@ -171,7 +171,7 @@ export default function Decisions() {
 													className={styles.img}
 													width={415}
 													height={490}
-													priority={true}
+												// priority={true}
 												/>
 
 											</Link>
@@ -271,7 +271,7 @@ export default function Decisions() {
 											className={styles.imgMobile}
 											width={145}
 											height={170}
-											priority={true}
+										// priority={true}
 										/>
 
 

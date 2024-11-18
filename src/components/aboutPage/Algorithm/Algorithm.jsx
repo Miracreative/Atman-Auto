@@ -24,7 +24,7 @@ export default function Algorithm() {
 												alt="arrow"
 												width={30}
 												height={12}
-												priority={true}
+											// priority={true}
 											/>
 										</div>
 										<div className={styles.cardInner}>
@@ -45,7 +45,7 @@ export default function Algorithm() {
 												alt="arrow"
 												width={30}
 												height={12}
-												priority={true}
+											// priority={true}
 											/>
 										</div>
 										<div className={styles.cardInner}>
@@ -65,7 +65,7 @@ export default function Algorithm() {
 											alt="img"
 											width={436}
 											height={352}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 								</div>
@@ -80,7 +80,7 @@ export default function Algorithm() {
 											alt="img"
 											width={436}
 											height={352}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 
@@ -92,7 +92,7 @@ export default function Algorithm() {
 												alt="arrow"
 												width={30}
 												height={12}
-												priority={true}
+											// priority={true}
 											/>
 										</div>
 										<div className={styles.cardInner}>
@@ -113,7 +113,7 @@ export default function Algorithm() {
 												alt="arrow"
 												width={30}
 												height={12}
-												priority={true}
+											// priority={true}
 											/>
 										</div>
 										<div className={styles.cardInner}>
