@@ -38,7 +38,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
-										priority={true}
+									// priority={true}
 									/>
 								</div>
 								<div className={styles.videoPart}>
@@ -48,7 +48,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
-										priority={true}
+									// priority={true}
 									/>
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>
 										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
-										priority={true}
+									// priority={true}
 									/>
 								</div>
 
@@ -97,7 +97,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
-										priority={true}
+									// priority={true}
 									/>
 
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>
@@ -133,7 +133,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
-										priority={true}
+									// priority={true}
 									/>
 								</div>
 
@@ -144,7 +144,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
-										priority={true}
+									// priority={true}
 									/>
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video1.mov')}>
 										<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,7 +188,7 @@ export default function ProductionContent() {
 										className={styles.cutIconMobile}
 										width={40}
 										height={40}
-										priority={true}
+									// priority={true}
 									/>
 								</div>
 
@@ -199,7 +199,7 @@ export default function ProductionContent() {
 										className={styles.cutIcon}
 										width={100}
 										height={100}
-										priority={true}
+									// priority={true}
 									/>
 
 									<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>
@@ -234,7 +234,7 @@ export default function ProductionContent() {
 									className={styles.cutIconMobile}
 									width={40}
 									height={40}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 
@@ -245,7 +245,7 @@ export default function ProductionContent() {
 									className={styles.cutIcon}
 									width={100}
 									height={100}
-									priority={true}
+								// priority={true}
 								/>
 
 								<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video1.mov')}>
@@ -281,7 +281,7 @@ export default function ProductionContent() {
 									className={styles.cutIconMobile}
 									width={40}
 									height={40}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 
@@ -292,7 +292,7 @@ export default function ProductionContent() {
 									className={styles.cutIcon}
 									width={100}
 									height={100}
-									priority={true}
+								// priority={true}
 								/>
 
 								<button className={styles.playBtn} onClick={() => handleButtonClick('../../../video/video2.mov')}>

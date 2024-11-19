@@ -29,7 +29,7 @@ export default function Delivery() {
 												alt="logo"
 												width={337}
 												height={72}
-												priority={true}
+											// priority={true}
 											/>
 										</div>
 
@@ -51,7 +51,7 @@ export default function Delivery() {
 												alt="logo"
 												width={175}
 												height={72}
-												priority={true}
+											// priority={true}
 											/>
 										</div>
 
@@ -73,7 +73,7 @@ export default function Delivery() {
 												alt="logo"
 												width={455}
 												height={72}
-												priority={true}
+											// priority={true}
 											/>
 										</div>
 

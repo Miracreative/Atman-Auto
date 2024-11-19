@@ -19,7 +19,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority='true'
+								// priority='true'
 								/>
 								<Image
 									src="/ApplicationsContent/avto-hover.png"
@@ -27,7 +27,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority='true'
+								// priority='true'
 								/>
 							</div>
 							<div className={styles.contentCard}>
@@ -51,7 +51,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 								<Image
 									src="/ApplicationsContent/appliances-hover.png"
@@ -59,7 +59,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 							<div className={styles.contentCard}>
@@ -84,7 +84,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 								<Image
 									src="/ApplicationsContent/furniture-hover.png"
@@ -92,7 +92,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 							<div className={styles.contentCard}>
@@ -116,7 +116,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 								<Image
 									src="/ApplicationsContent/electronics-hover.png"
@@ -124,7 +124,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 							<div className={styles.contentCard}>
@@ -148,7 +148,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 								<Image
 									src="/ApplicationsContent/build-hover.png"
@@ -156,7 +156,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 							<div className={styles.contentCard}>
@@ -180,7 +180,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 								<Image
 									src="/ApplicationsContent/transport-hover.png"
@@ -188,7 +188,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 							<div className={styles.contentCard}>
@@ -213,7 +213,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 								<Image
 									src="/ApplicationsContent/vending-hover.png"
@@ -221,7 +221,7 @@ export default function ApplicationsContent() {
 									className={styles.img}
 									width={860}
 									height={600}
-									priority={true}
+								// priority={true}
 								/>
 							</div>
 							<div className={styles.contentCard}>

@@ -27,7 +27,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 
@@ -42,7 +42,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 								</div>
@@ -59,7 +59,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 
@@ -74,7 +74,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 								</div>
@@ -91,7 +91,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 
@@ -106,7 +106,7 @@ export default function Values() {
 											className={styles.img}
 											width={120}
 											height={120}
-											priority={true}
+										// priority={true}
 										/>
 									</div>
 								</div>
