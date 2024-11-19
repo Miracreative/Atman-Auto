@@ -36,7 +36,7 @@ export default function Catalog() {
 									alt="Процесс применения самоклеящейся ленты"
 									placeholder="blur"
 									quality={100}
-								// priority
+									priority
 								/>
 								<button
 									className={`${styles.button} button`}
@@ -60,7 +60,7 @@ export default function Catalog() {
 									alt="Установка для наматывания самоклеящейся ленты"
 									placeholder="blur"
 									quality={100}
-								// priority
+									priority
 								/>
 							</div>
 						</div>
@@ -74,9 +74,9 @@ export default function Catalog() {
 							quality={100}
 							fill={true}
 							sizes="(max-width: 1920px) 100vw"
-						// layout="fill"
-						// objectFit="cover"
-						// priority
+							// layout="fill"
+							// objectFit="cover"
+							priority
 						/>
 					</div>
 				</div>
