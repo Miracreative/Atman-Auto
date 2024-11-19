@@ -35,7 +35,7 @@ export default function Catalog() {
 									src={CatalogImageMobile}
 									alt="Процесс применения самоклеящейся ленты"
 									placeholder="blur"
-									quality={100}
+									quality={85}
 									priority
 								/>
 								<button
@@ -59,7 +59,7 @@ export default function Catalog() {
 									src={CatalogBGMobile}
 									alt="Установка для наматывания самоклеящейся ленты"
 									placeholder="blur"
-									quality={100}
+									quality={80}
 									priority
 								/>
 							</div>
@@ -71,7 +71,7 @@ export default function Catalog() {
 							src={CatalogImage}
 							alt="Процесс применения самоклеящейся ленты"
 							placeholder="blur"
-							quality={100}
+							quality={85}
 							fill={true}
 							sizes="(max-width: 1920px) 100vw"
 							// layout="fill"
