@@ -4,6 +4,7 @@ import counterReducer from './counter/counterSlice';
 import goodsReducer from './goods/goodsSlice';
 import soutReducer from './sout/soutSlice';
 import policyNavReducer from './policyNav/polivyNavSlice';
+import scrollReducer from './scrollSlice/scrollSlice';
 
 export const store = configureStore({
 	reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
 		goods: goodsReducer,
 		sout: soutReducer,
 		policyNav: policyNavReducer,
+		scroll: scrollReducer,
 	},
 });
 
