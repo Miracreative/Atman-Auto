@@ -12,13 +12,13 @@
 }
 
 .wrap {
-	margin: 6vw 0 5vw 5vw;
+	margin: 6vw 5vw 5vw 5vw;
 }
 
-.swiper {
+.section .swiper {
 	width: 100%;
 	display: flex;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .swiperWrapper {
