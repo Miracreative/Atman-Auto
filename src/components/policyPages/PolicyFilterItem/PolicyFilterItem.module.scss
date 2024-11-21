@@ -37,6 +37,11 @@
 	}
 }
 
+.item.disabled {
+	pointer-events: none;
+	cursor: default;;
+}
+
 .checkbox {
 	width: 30px;
 	height: 30px;

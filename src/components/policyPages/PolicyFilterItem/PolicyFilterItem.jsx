@@ -7,7 +7,7 @@ import styles from './PolicyFilterItem.module.scss';
 
 const PolicyFilterItem = ({ link, checked, onChange, text }) => {
 	return (
-		<Link href={link} className={styles.item} onClick={onChange}>
+		<Link href={link} className={`${styles.item} ${checked ? styles.disabled : ''}`} onClick={onChange}>
 			<div>
 				<div className={`${styles.checkbox} ${checked ? styles.checked : ''}`}>
 					{checked && (

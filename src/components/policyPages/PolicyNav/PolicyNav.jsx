@@ -15,9 +15,8 @@ const PolicyNav = () => {
 
 	return (
 		<nav
-			className={`${styles.policyNav} ${
-				isOpenNav ? styles.visibleMenu : styles.hiddenMenu
-			}`}
+			className={`${styles.policyNav} ${isOpenNav ? styles.visibleMenu : styles.hiddenMenu
+				}`}
 		>
 			<ul className={styles.links}>
 				{links.about.items.slice(1).map((link) => (
@@ -26,9 +25,13 @@ const PolicyNav = () => {
 							link={link.href}
 							text={link.text}
 							checked={pathname === link.href}
-							onChange={() => {
-								router.push(link.href);
-							}}
+
+						// onChange={() => {
+						// 	if (link.href !== pathname) {
+						// 		router.push(link.href);
+						// 	}
+
+						// }}
 						/>
 					</li>
 				))}
