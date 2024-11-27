@@ -10,7 +10,7 @@ import {
 
 import { AppDispatch } from '@/store/store';
 
-import { getAllSout, setIsMobile } from '@/store/sout/soutSlice';
+import { getAllSout } from '@/store/sout/soutSlice';
 
 import type { SoutData } from '@/types/sout';
 
