@@ -19,7 +19,14 @@ import { TriangleIcon, DEFAULT_COLOR } from './../../TriangleIcon/TriangleIcon';
 
 import styles from './Dropdown.module.scss';
 
-const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
+const Dropdown = ({
+	title,
+	items,
+	isActiveLink,
+	isOpen,
+	toggleOpen,
+	menuRef,
+}) => {
 	const pathname = usePathname();
 	const router = useRouter();
 	const dispatch = useDispatch();
@@ -50,11 +57,6 @@ const Dropdown = ({ title, items, isOpen, toggleOpen, menuRef }) => {
 			}
 		}
 	};
-
-	// const isActiveLink = items.some((item) => pathname === item.href);
-	const isActiveLink = items.some(
-		(item) => pathname === item.href || pathname.startsWith(item.href + '/'),
-	);
 
 	return (
 		<div className={styles.dropdown} ref={menuRef}>

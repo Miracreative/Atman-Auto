@@ -6,13 +6,10 @@
 
 //* HOST *//
 export const HOST = process.env.HOST;
-// export const HOST = process.env.NEXT_PUBLIC_HOST;
-// export const HOST = 'http://83.147.246.205:5000';
 // export const HOST = 'http://83.147.246.205:5000';
 
 //* DOMAIN *//
 export const DOMAIN = process.env.DOMAIN;
-// export const DOMAIN = process.env.NEXT_PUBLIC_DESTINATION_EMAIL;
 
 //* Базовый URL *//
 const BASE_URL = `${HOST}/api`;
@@ -32,23 +29,17 @@ export const URL_NEWS = `${BASE_URL}/news`;
 //* URL СОУТ *//
 export const SOUT_URL = `${BASE_URL}/sout`;
 
+//* Прибавочный URL для формы обратной связи *//
+export const FORM_SUBMIT_URL = '/api/formSubmit';
+
 //* Nodemailer *//
 export const EMAIL_HOST = process.env.EMAIL_HOST;
-// export const EMAIL_HOST = process.env.NEXT_PUBLIC_EMAIL_HOST;
-
 export const EMAIL_PORT = process.env.EMAIL_PORT;
-// export const EMAIL_PORT = process.env.NEXT_PUBLIC_EMAIL_PORT;
-
 export const EMAIL_USER = process.env.EMAIL_USER;
-// export const EMAIL_USER = process.env.NEXT_PUBLIC_EMAIL_USER;
-
 export const EMAIL_PASS = process.env.EMAIL_PASS;
-// export const EMAIL_PASS = process.env.NEXT_PUBLIC_EMAIL_PASS;
-
 export const DESTINATION_EMAIL = process.env.DESTINATION_EMAIL;
-// export const DESTINATION_EMAIL = process.env.NEXT_PUBLIC_DESTINATION_EMAIL;
 
-/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
 //*
 //*
@@ -69,7 +60,7 @@ export const DESTINATION_EMAIL = process.env.DESTINATION_EMAIL;
 // export const EMAIL_PASS = process.env.NEXT_PUBLIC_EMAIL_PASS;
 // export const DESTINATION_EMAIL = process.env.NEXT_PUBLIC_DESTINATION_EMAIL;
 
-/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
 //*
 //*

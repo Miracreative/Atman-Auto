@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 
-import axios from 'axios';
+import { submitFormData } from '@/api/formService.js';
 
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
@@ -19,8 +19,8 @@ import {
 	MAIL_SUCCESSED,
 } from '@/utils/informMessages.js';
 
-import attachmentIcon from '../../../../public/attachment-icon.svg';
-import checkIcon from '../../../../public/big-check.svg';
+import attachmentIcon from '/public/attachment-icon.svg';
+import checkIcon from '/public/big-check.svg';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
@@ -31,7 +31,8 @@ const Form = ({ isOpen, onClose }) => {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors },
+		trigger,
+		formState: { errors, isValid },
 	} = useForm({
 		defaultValues: {
 			firstName: '',
@@ -40,6 +41,9 @@ const Form = ({ isOpen, onClose }) => {
 			email: '',
 			comment: '',
 		},
+		// валидация по умолчанию без потери фокуса (onBlur)
+		mode: 'onChange',
+		// mode: 'onBlur',
 	});
 
 	const filePickerRef = useRef(null);
@@ -91,21 +95,7 @@ const Form = ({ isOpen, onClose }) => {
 
 		try {
 			// Отправляем данные, переданные из формы
-			const response = await axios.post(
-				'/api/formSubmit',
-				{
-					firstName: data.firstName,
-					lastName: data.lastName,
-					phoneNumber: data.phoneNumber,
-					email: data.email,
-					comment: data.comment,
-				},
-				{
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				},
-			);
+			const response = await submitFormData(data);
 
 			console.log(MAIL_SUCCESSED, response.data);
 
@@ -115,7 +105,6 @@ const Form = ({ isOpen, onClose }) => {
 				// Сервер ответил с ошибкой
 				console.log(MAIL_SUBMISSION_ERROR, error.response.data);
 			} else if (error.request) {
-				// Запрос был выполнен, но ответа не было
 				console.log(
 					'Запрос был сделан, но ответ не был получен:',
 					error.request,
@@ -186,6 +175,7 @@ const Form = ({ isOpen, onClose }) => {
 								type="text"
 								placeholder="Имя"
 								register={register}
+								onBlur={() => trigger('firstName')}
 								validations={{
 									required: REQUIRED_FIELD,
 									minLength: {
@@ -202,6 +192,7 @@ const Form = ({ isOpen, onClose }) => {
 								type="text"
 								placeholder="Фамилия"
 								register={register}
+								onBlur={() => trigger('lastName')}
 								validations={{
 									required: REQUIRED_FIELD,
 									minLength: {
@@ -218,6 +209,7 @@ const Form = ({ isOpen, onClose }) => {
 								type="text"
 								placeholder="Номер телефона"
 								register={register}
+								onBlur={() => trigger('phoneNumber')}
 								validations={{
 									required: REQUIRED_FIELD,
 									pattern: {
@@ -234,6 +226,7 @@ const Form = ({ isOpen, onClose }) => {
 								type="email"
 								placeholder="Почта"
 								register={register}
+								onBlur={() => trigger('email')}
 								validations={{
 									required: REQUIRED_FIELD,
 									pattern: {
@@ -260,7 +253,7 @@ const Form = ({ isOpen, onClose }) => {
 								<button
 									className={`button ${styles.submitButton}`}
 									type="submit"
-									disabled={!isChecked || isSubmitting}
+									disabled={!isChecked || isSubmitting || !isValid}
 								>
 									{isSubmitting ? 'Отправка...' : 'Отправить'}
 								</button>

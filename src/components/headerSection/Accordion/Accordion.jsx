@@ -58,7 +58,9 @@ export default function Accordion({ setActive, isActiveLink, isActive }) {
 				</li>
 				<li
 					className={`${styles.link} ${
-						pathname === '/knowledge' ? styles.linkActive : ''
+						pathname === '/knowledge' || pathname.startsWith('/knowledge/')
+							? styles.linkActive
+							: ''
 					}`}
 				>
 					<Link href="/knowledge" onClick={() => setActive(false)}>
@@ -67,7 +69,9 @@ export default function Accordion({ setActive, isActiveLink, isActive }) {
 				</li>
 				<li
 					className={`${styles.link} ${
-						pathname === '/news' ? styles.linkActive : ''
+						pathname === '/news' || pathname.startsWith('/news/')
+							? styles.linkActive
+							: ''
 					}`}
 				>
 					<Link href="/news" onClick={() => setActive(false)}>
