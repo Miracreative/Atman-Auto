@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 
-import { submitFormData } from '@/api/formService.js';
+// import { submitFormData } from '@/api/formService.js';
 
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
@@ -47,10 +47,10 @@ const Form = ({ isOpen, onClose }) => {
 	});
 
 	const filePickerRef = useRef(null);
+	const [file, setFile] = useState(null);
+	const [selectedFile, setSelectedFile] = useState(null);
 
 	const [isChecked, setIsChecked] = useState(false);
-
-	const [selectedFile, setSelectedFile] = useState(null);
 
 	// процесс отправки сообщения
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,7 +81,19 @@ const Form = ({ isOpen, onClose }) => {
 	};
 
 	const handleFileUpload = (event) => {
-		setSelectedFile(event.target.files[0]);
+		if (event.target.files.length > 0) {
+			const reader = new FileReader();
+
+			reader.onload = () => {
+				setFile({
+					name: event.target.files[0].name,
+					content: reader.result.split(',')[1],
+				});
+				setSelectedFile(event.target.files[0]);
+			};
+
+			reader.readAsDataURL(event.target.files[0]);
+		}
 	};
 
 	const handlePickFile = () => {
@@ -90,29 +102,29 @@ const Form = ({ isOpen, onClose }) => {
 
 	const sendForm = async (data) => {
 		console.log('data', data);
-
 		setIsSubmitting(true);
 
 		try {
-			// Отправляем данные, переданные из формы
-			const response = await submitFormData(data);
+			const payload = { ...data, file };
 
-			console.log(MAIL_SUCCESSED, response.data);
+			const response = await fetch('/api/sendEmail', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload),
+			});
 
-			reset();
-		} catch (error) {
-			if (error.response) {
-				// Сервер ответил с ошибкой
-				console.log(MAIL_SUBMISSION_ERROR, error.response.data);
-			} else if (error.request) {
-				console.log(
-					'Запрос был сделан, но ответ не был получен:',
-					error.request,
-				);
+			// const result = await response.json();
+
+			if (response.ok) {
+				// console.log(MAIL_SUCCESSED, result.data);
+				console.log(MAIL_SUCCESSED);
+				reset();
 			} else {
-				// Что-то произошло при настройке запроса
-				console.log('Ошибка:', error.message);
+				// console.log(MAIL_SUBMISSION_ERROR, result.error);
+				console.log(MAIL_SUBMISSION_ERROR);
 			}
+		} catch (error) {
+			console.error('Ошибка:', error.message);
 		} finally {
 			setIsSubmitting(false);
 			setIsSubmit(true);
@@ -168,6 +180,7 @@ const Form = ({ isOpen, onClose }) => {
 						<h2 className={styles.title}>
 							Напишите <span>нам</span>
 						</h2>
+
 						<div className={styles.inputs}>
 							<FormInput
 								id="firstName"
@@ -314,6 +327,7 @@ const Form = ({ isOpen, onClose }) => {
 							<input
 								className={styles.filePickerHidden}
 								type="file"
+								// Если хотим ограничить картинками
 								// accept="image/*,.png,.jpg,.jpeg,.gif,.web"
 								ref={filePickerRef}
 								onChange={handleFileUpload}

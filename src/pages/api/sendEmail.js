@@ -1,3 +1,5 @@
+import nodemailer from 'nodemailer';
+
 import {
 	EMAIL_HOST,
 	EMAIL_PORT,
@@ -5,7 +7,6 @@ import {
 	EMAIL_PASS,
 	DESTINATION_EMAIL,
 } from '@/constants/url.js';
-import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
 	if (req.method !== 'POST') {
@@ -21,8 +22,8 @@ export default async function handler(req, res) {
 		port: EMAIL_PORT,
 		secure: true,
 		auth: {
-			user: EMAIL_USER, // Your email
-			pass: EMAIL_PASS, // Your email's password
+			user: EMAIL_USER,
+			pass: EMAIL_PASS,
 		},
 		tls: { rejectUnauthorized: false },
 	});
