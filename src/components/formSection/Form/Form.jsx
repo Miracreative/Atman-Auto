@@ -294,6 +294,7 @@ const Form = ({ isOpen, onClose }) => {
 								<div className={styles.attachmentContainer}>
 									<button
 										className={styles.attachment}
+										type="button"
 										onClick={handlePickFile}
 									>
 										<Image
@@ -311,6 +312,7 @@ const Form = ({ isOpen, onClose }) => {
 								<div className={styles.attachmentContainer}>
 									<button
 										className={`${styles.attachment} ${styles.attachmentSuccessfully}`}
+										type="button"
 										onClick={handlePickFile}
 									>
 										<Image
