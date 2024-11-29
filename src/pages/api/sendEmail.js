@@ -33,7 +33,6 @@ export default async function handler(req, res) {
 
 	// Configuration for the email
 	const message = {
-		// from: EMAIL_USER,
 		from: `Запрос на обратную связь <${DESTINATION_EMAIL}>`,
 		to: EMAIL_USER,
 		subject: `Письмо с сайта Atman Auto от ${firstName} ${lastName}`,

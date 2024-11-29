@@ -64,6 +64,7 @@ const Form = ({ isOpen, onClose }) => {
 
 	const handleCloseForm = () => {
 		onClose(false);
+		// setFile(null);
 
 		if (isSubmitting) {
 			setTimeout(() => {
@@ -75,6 +76,8 @@ const Form = ({ isOpen, onClose }) => {
 			setIsSubmit(false);
 			reset();
 			setIsChecked(false);
+			setSelectedFile(null);
+			setFile(null);
 		}, 300);
 	};
 
@@ -117,6 +120,8 @@ const Form = ({ isOpen, onClose }) => {
 				// console.log(MAIL_SUCCESSED, result.data);
 				console.log(MAIL_SUCCESSED);
 				reset();
+				setSelectedFile(null);
+				setFile(null);
 			} else {
 				// console.log(MAIL_SUBMISSION_ERROR, result.error);
 				console.log(MAIL_SUBMISSION_ERROR);
