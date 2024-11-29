@@ -6,11 +6,12 @@ import {
 	EMAIL_USER,
 	EMAIL_PASS,
 	DESTINATION_EMAIL,
+	MAIL_SUCCESSED,
 } from '@/constants/url.js';
 
 export default async function handler(req, res) {
 	if (req.method !== 'POST') {
-		res.status(405).send('Method Not Allowed');
+		res.status(405).send('Метод не разрешен');
 		return;
 	}
 
@@ -30,9 +31,10 @@ export default async function handler(req, res) {
 
 	// Configuration for the email
 	const message = {
-		from: EMAIL_USER,
-		to: DESTINATION_EMAIL,
-		subject: `Письмо с сайта от ${firstName} ${lastName}`,
+		// from: EMAIL_USER,
+		from: `Запрос на обратную связь <${DESTINATION_EMAIL}>`,
+		to: EMAIL_USER,
+		subject: `Письмо с сайта Atman Auto от ${firstName} ${lastName}`,
 		text: `
 		Имя: ${firstName}
 		Фамилия: ${lastName}
@@ -60,10 +62,10 @@ export default async function handler(req, res) {
 
 	try {
 		await transporter.sendMail(message);
-		res.status(200).send({ message: 'Email sent successfully' });
+		res.status(200).send({ message: MAIL_SUCCESSED });
 	} catch (error) {
-		console.error('Error sending mail:', error);
-		res.status(500).send({ error: 'Failed to send email' });
+		console.error('Ошибка при отправке письма:', error);
+		res.status(500).send({ error: 'Не удалось отправить электронное письмо' });
 	} finally {
 		transporter.close();
 	}
