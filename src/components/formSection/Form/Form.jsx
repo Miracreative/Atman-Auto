@@ -6,8 +6,6 @@ import Link from 'next/link';
 
 import { useForm } from 'react-hook-form';
 
-// import { submitFormData } from '@/api/formService.js';
-
 import { EMAIL_REGEXP, PHONE_REGEXP } from '@/constants/regexp.js';
 
 import {

@@ -21,6 +21,7 @@ const REQUIRED_FIELD = 'Обязательное поле';
 const INCORRECT_EMAIL = 'Некорректный адрес электронной почты';
 const INCORRECT_PHONE = 'Некорректный номер телефона';
 const MAIL_SUBMISSION_ERROR = 'Ошибка при отправке письма';
+const NOT_SEND_MAIL = 'Не удалось отправить электронное письмо';
 
 export {
 	LOADING_INFO,
@@ -30,6 +31,7 @@ export {
 	MIN_LENGTH_FIELD,
 	REQUIRED_FIELD,
 	MAIL_SUBMISSION_ERROR,
+	NOT_SEND_MAIL,
 	INCORRECT_EMAIL,
 	INCORRECT_PHONE,
 	UNKNOWN_ERROR,

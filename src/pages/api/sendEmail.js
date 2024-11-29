@@ -7,11 +7,13 @@ import {
 	EMAIL_PASS,
 	DESTINATION_EMAIL,
 	MAIL_SUCCESSED,
+	METHOD_NOT_ALLOWED,
+	NOT_SEND_MAIL,
 } from '@/constants/url.js';
 
 export default async function handler(req, res) {
 	if (req.method !== 'POST') {
-		res.status(405).send('Метод не разрешен');
+		res.status(405).send(METHOD_NOT_ALLOWED);
 		return;
 	}
 
@@ -64,8 +66,8 @@ export default async function handler(req, res) {
 		await transporter.sendMail(message);
 		res.status(200).send({ message: MAIL_SUCCESSED });
 	} catch (error) {
-		console.error('Ошибка при отправке письма:', error);
-		res.status(500).send({ error: 'Не удалось отправить электронное письмо' });
+		console.error(MAIL_SUBMISSION_ERROR, error);
+		res.status(500).send({ error: NOT_SEND_MAIL });
 	} finally {
 		transporter.close();
 	}
