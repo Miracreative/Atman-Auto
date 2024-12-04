@@ -71,7 +71,7 @@ export const DESTINATION_EMAIL = process.env.DESTINATION_EMAIL;
 //* TESTING HOST *//
 
 console.log('Текущий HOST', HOST);
-console.log('Текущий HOST из process.env', process.env.HOST);
+console.log('Текущий HOST из process.env', process.env);
 
 // console.log('Текущий NEXT_PUBLIC_HOST', NEXT_PUBLIC_HOST);
 // console.log(

@@ -1,11 +1,13 @@
 import styles from './AdvantagesAfoam.module.scss';
-
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 
 export default function AdvantagesAfoam({ advantages }) {
 	const data = advantages;
-
-
+	useEffect(() => {
+		console.log('data', advantages)
+	}, [])
+	
 
 	return (
 		<>
@@ -26,7 +28,8 @@ export default function AdvantagesAfoam({ advantages }) {
 
 									<li key={index} className={styles.advantagesListItem}>
 										<div className={styles.advantagesPoint}>
-											{advantage}
+											{advantage.advantages.join(', ')}
+											{/* sada */}
 										</div>
 									</li>
 
