@@ -55,7 +55,9 @@ export default function Ros() {
 			currentIndex={currentIndex}>
 
 		</Advantages>
-		<Recommendations></Recommendations>
+		<Recommendations
+			requestAddress={'/api/goods-recommend/0,0,0,0,0,0,1'}
+			></Recommendations>
 	</>;
 }
 

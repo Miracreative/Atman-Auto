@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-export default function Recommendations() {
+export default function Recommendations({requestAddress}) {
 
 	const [recomendationsData, setRecomendationsData] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -15,7 +15,8 @@ export default function Recommendations() {
 
 	const fetchData = async () => {
 		try {
-			const response = await axios.get(`${process.env.HOST}/api/afoam`);
+			const response = await axios.get(`${process.env.HOST}${requestAddress}`);
+			console.log(process.env.HOST, requestAddress ,response.data)
 			setRecomendationsData(response.data);
 		} catch (err) {
 			setError(err.message);
@@ -42,22 +43,23 @@ export default function Recommendations() {
 
 
 						<div className={styles.content}>
-							{recomendationsData.map((item) => (
+							
+							{
+								recomendationsData.length > 0 ?
+								recomendationsData.map((item) => (
 								<div className={styles.item} key={item.id}>
 
 									<div className={styles.nameItem}> {item.name} </div>
 									<div className={styles.description}> {item.description} </div>
 
 									<div className={styles.linkWrap}>
-										<Link className={styles.link} href='/'> Подробнее </Link>
+										<Link className={styles.link} href={`/goods/${item.id}`}> Подробнее </Link>
 									</div>
 								</div>
-							))}
+							)) : 
+							<p>Пока нет товаров в данной категории</p>
+						}
 						</div>
-
-
-
-
 					</div>
 				</div>
 			</section>

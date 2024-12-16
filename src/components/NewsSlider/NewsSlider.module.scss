@@ -9,7 +9,7 @@
 	border-bottom: 1px solid rgb(var(--foreground-rgb));
 	border-top: 1px solid rgb(var(--foreground-rgb));
 	min-width: 320px;
-	max-width: 1920px;
+	// max-width: 1920px;
 	margin: 0 auto;
 	overflow-x: hidden;
 }
@@ -32,7 +32,7 @@
 
 .wrap {
 	border: 1px solid rgb(var(--gray-line-rgb));
-	padding: 6vw 4vw 4vw 4vw ;
+	padding: 6vw 0 4vw 4vw ;
 	border-radius: 20px;
 	background-color: rgb(var(--foreground-rgb));
 }
@@ -61,7 +61,7 @@
 	border-radius: 20px;
 	background-color: white;
 	color: rgb(var(--foreground-rgb));
-
+	margin-right: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -87,6 +87,7 @@
 .swiper {
 	width: 100%;
 	display: flex;
+	padding-right: 4vw !important;
 }
 
 .swiperBottom {
@@ -113,12 +114,10 @@
 }
 
 .swiperSlideOne img {
-	
 	display: block;
 	border-radius: 20px;
 	width: 100%;
-	height: 100%;
-	max-height: 560px;
+	height: 300px;
 	object-fit: cover;
 }
 
@@ -162,36 +161,29 @@
 	}
 }
 
-
-
 .prevBtn {
 	left: -50px;
 	transform: translate(0, -50%) rotate(180deg);
 }
 
 .nextBtn {
-	right: -50px;
+	right: 50px;
 }
-
-
-
-
-
-
-
 
 @media (max-width: 1920px) {
 
 	.title {
 		font-size: calcVW(96);
 	}
-
 	.titleCard {
 		font-size: calcVW(36);
 	}
-
+	.swiperSlideOne img {
+		height: calcVW(300);
+	}
 	.link {
 		width: calcVW(400);
+		margin-right: calcVW(80);
 	}
 }
 
@@ -209,11 +201,14 @@
 	}
 	
 	.nextBtn {
-		right: -40px;
+		right: 40px;
 	}
 
 	.description {
 		font-size: 15px;
+	}
+	.swiperSlideOne img {
+		height: 250px;
 	}
 
 	.linkText {
@@ -234,12 +229,15 @@
 	}
 	
 	.nextBtn {
-		right: -30px;
+		right: 30px;
 	}
 
 	.link {
 		height: 60px;
 		border-radius: 10px;
+	}
+	.swiperSlideOne img {
+		height: 180px;
 	}
 }
 
@@ -263,9 +261,7 @@
 		display: none;
 	}
 
-	.link {
-		display: none;
-	}
+	
 
 
 }
@@ -279,15 +275,16 @@
 	.swiperSlideOne img {
 		border-radius: 10px;
 	}
-
+	.link {
+		display: none;
+	}
 
 	.linkMobile {
 		height: 60px;
-		width: 100%;
+		width: calc(100% - 20px);
 		border-radius: 10px;
 		background-color: white;
 		color: rgb(var(--foreground-rgb));
-	
 		display: flex;
 		justify-content: center;
 		align-items: center;

@@ -21,7 +21,7 @@ export default function Transport() {
 		},
 		{
 			title: 'Применения',
-			href: '/applications',
+			href: '/applications', 
 		},
 		{
 			title: 'Транспорт',
@@ -56,7 +56,9 @@ export default function Transport() {
 			currentIndex={currentIndex}>
 
 		</Advantages>
-		<Recommendations></Recommendations>
+		<Recommendations
+			requestAddress={'/api/goods-recommend/0,0,0,0,0,1,0'}
+		></Recommendations>
 	</>;
 }
 

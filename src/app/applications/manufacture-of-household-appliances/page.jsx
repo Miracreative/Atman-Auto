@@ -55,6 +55,8 @@ export default function ManufactureOfHouseholdAppliances() {
 			currentIndex={currentIndex}>
 
 		</Advantages>
-		<Recommendations></Recommendations>
+		<Recommendations
+			requestAddress={'/api/goods-recommend/0,1,0,0,0,0,0'}
+			></Recommendations>
 	</>;
 }

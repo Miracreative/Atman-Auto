@@ -56,6 +56,8 @@ export default function FurnitureIndustry() {
 
 		</Advantages>
 
-		<Recommendations></Recommendations>
+		<Recommendations
+			requestAddress={'/api/goods-recommend/0,0,1,0,0,0,0'}
+			></Recommendations>
 	</>;
 }

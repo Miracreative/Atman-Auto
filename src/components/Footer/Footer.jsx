@@ -10,23 +10,32 @@ import FormButton from '../formSection/FormButton/FormButton';
 export default function Footer() {
 	return (
 		<footer className={styles.footer}>
+			
 			<div className={styles.content}>
 				<div className={styles.textWrap}>
-					<div className={styles.title}>
-						Обратитесь к нашим<span> специалистам</span>
-					</div>
-					<div className={styles.text}>
-						Получите профессиональную консультацию по подбору продуктов,
-						особенностям их применения или разместите заказ.
+					<div className="container">
+						<div className={styles.title}>
+							Обратитесь к нашим<span> специалистам</span>
+						</div>
+						<div className={styles.text}>
+							Получите профессиональную консультацию по подбору продуктов,
+							особенностям их применения или разместите заказ.
+						</div>
 					</div>
 				</div>
 				<div className={styles.contacts}>
-					<Link className={styles.contactLink} href={`tel:${contacts.phone}`}>
-						<div className={styles.contactItem}>{contacts.phone}</div>
-					</Link>
-					<FormButton />
+					<div className="container ">
+						<div className={styles.contactsContainer}>
+							<Link className={styles.contactLink} href={`tel:${contacts.phone}`}>
+								<div className={styles.contactItem}>{contacts.phone}</div>
+							</Link>
+							<FormButton />
+						</div>
+							
+					</div>
 				</div>
-
+				
+				<div className="container">
 				<nav className={styles.nav}>
 					<div className={styles.topLinks}>
 						<div className={styles.logoWrap}>
@@ -273,6 +282,8 @@ export default function Footer() {
 						</Link>
 					</div>
 				</nav>
+				</div>
+				
 			</div>
 		</footer>
 	);
