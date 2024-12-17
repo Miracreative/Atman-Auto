@@ -4,9 +4,8 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'http',
-				hostname: '83.147.246.205',
-				port: '5000',
+				protocol: 'https',
+				hostname: 'api.atman-auto.ru',
 				pathname: '**',
 			},
 		],
