@@ -1,13 +1,14 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-	distDir: "build",   
-	output: "export", 
+
 	images: {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'api.atman-auto.ru',
+				hostname: '45.130.43.29',
+				port: '5000',
+                pathname: '**',
 				pathname: '**',
 			},
 		],

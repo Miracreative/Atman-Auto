@@ -8,7 +8,7 @@ import NewsSliderAndContent from '@/components/newsPage/SingleNews/NewsSliderAnd
 import { useParams } from 'next/navigation'
 
 
-const NewsPage = () => {
+const NewsPage = async() => {
 
 
 	const [news, setNews] = useState([]);
