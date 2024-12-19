@@ -7,7 +7,7 @@
 .section {
 	position: relative;
 	min-width: 320px;
-	max-width: 1920px;
+	// max-width: 1920px;
 	margin: 0 auto;
 	overflow-x: hidden;
 }
@@ -31,7 +31,8 @@
 
 
 .wrap {
-	padding: 4vw ;
+	padding-left: calc((100vw - 1880px) / 2);
+	padding-bottom: 4vw;
 }
 
 
@@ -103,6 +104,7 @@
 	height: 31vw;
 	min-height: 284px;
 	max-height: 600px;
+	padding-right: calc(((108vw - 1880px) / 2)) !important;
 }
 
 
@@ -186,7 +188,7 @@
 }
 
 .nextBtn {
-	right: -50px;
+	right: calc((108vw - 1880px)/2);
 }
 
 
@@ -201,9 +203,15 @@
 	.title {
 		font-size: calcVW(96);
 	}
-
-
-
+	.swiper {
+		padding-right:40px !important;
+	}
+	.wrap {
+		padding-left: calc(4vw + 20px);
+	}
+	.nextBtn {
+		right: calc(4vw - 25px);
+	}
 	.link {
 		width: calcVW(400);
 	}
@@ -223,7 +231,7 @@
 	}
 	
 	.nextBtn {
-		right: -40px;
+		right: calc(4vw - 20px);
 	}
 
 	.description {
@@ -248,7 +256,7 @@
 	}
 	
 	.nextBtn {
-		right: -30px;
+		right: calc(4vw - 15px);
 	}
 
 	.link {

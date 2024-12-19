@@ -55,6 +55,8 @@ export default function AutomobileIndustry() {
 			currentIndex={currentIndex}>
 
 		</Advantages>
-		<Recommendations></Recommendations>
+		<Recommendations
+			requestAddress={'/api/goods-recommend/1,0,0,0,0,0,0'}
+			></Recommendations>
 	</>;
 }

@@ -98,10 +98,6 @@ export default function ProductsSlider() {
 
 							<div className={styles.wrap}>
 
-
-
-
-
 								<div className={styles.titleWrap}>
 									<h2 className={styles.title}> <span>Товары </span><br />  </h2>
 
@@ -112,102 +108,96 @@ export default function ProductsSlider() {
 									</Link>
 								</div>
 
+							</div>
+
+						</div>
+						<div className={styles.wrap}>
+							<div className={styles.swiperContainer}>
+
+							<Swiper
+								wrapperClass={styles.swiperWrapper}
+								className={styles.swiper}
+								modules={[Navigation, A11y, Controller]}
+
+								breakpoints={{
+									0: {
+										slidesPerView: 1.5,
+										spaceBetween: 10,
+									},
+									576: {
+										slidesPerView: 1.5,
+										spaceBetween: 10,
+									},
+									768: {
+										slidesPerView: 2.5,
+										spaceBetween: 10,
+									},
+									1200: {
+										slidesPerView: 3.2,
+									},
+									1500: {
+										slidesPerView: 4.2,
+									},
+								}}
+								onSwiper={setSwiper}
+								navigation={{
+									prevEl: '.prev',
+									nextEl: '.next',
+								}}
+								spaceBetween={20}
+								slidesPerView={4.2}
+								onSlideChange={(swiper) => onSlideChange(swiper)}
+							>
+
+								{goodsData && goodsData.map((item, index) => (
+									<SwiperSlide key={item.id} className={styles.swiperSlide}>
+
+										<GoodsCardFavourite
+											id={item.id}
+											name={`${item.brand}${item.name}`}
+											description={item.description}
+											imageurl={item.imageurl} >
+
+										</GoodsCardFavourite>
+
+									</SwiperSlide>
+								))}
+
+
+							</Swiper>
 
 
 
-								<div className={styles.swiperContainer}>
+							<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
 
-									<Swiper
-										wrapperClass={styles.swiperWrapper}
-										className={styles.swiper}
-										modules={[Navigation, A11y, Controller]}
-
-										breakpoints={{
-											0: {
-												slidesPerView: 1.5,
-												spaceBetween: 10,
-											},
-											576: {
-												slidesPerView: 1.5,
-												spaceBetween: 10,
-											},
-											768: {
-												slidesPerView: 2.5,
-												spaceBetween: 10,
-											},
-											1200: {
-												slidesPerView: 3.2,
-											},
-											1500: {
-												slidesPerView: 4.2,
-											},
-										}}
-										onSwiper={setSwiper}
-										navigation={{
-											prevEl: '.prev',
-											nextEl: '.next',
-										}}
+								<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								</svg>
 
 
-										spaceBetween={20}
-										slidesPerView={4.2}
-										onSlideChange={(swiper) => onSlideChange(swiper)}
-									>
-
-										{goodsData && goodsData.map((item, index) => (
-											<SwiperSlide key={item.id} className={styles.swiperSlide}>
-
-												<GoodsCardFavourite
-													id={item.id}
-													name={`${item.brand}${item.name}`}
-													description={item.description}
-													imageurl={item.imageurl} >
-
-												</GoodsCardFavourite>
+							</button>
 
 
+							<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
 
-											</SwiperSlide>
-										))}
-
-
-									</Swiper>
-
+								<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
+								</svg>
 
 
-									<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
+							</button>
 
-										<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
-										</svg>
-
-
-									</button>
-
-
-									<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
-
-										<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
-										</svg>
-
-
-									</button>
-
-								</div>
-
-
+							</div>
+						</div>
+						<div className="container">
+							<div className={styles.wrap}>
 								<Link className={styles.linkMobile} href='/goods'>
 									<div className={styles.linkTextMobile}  >
 										Все товары
 									</div>
 								</Link>
-
 							</div>
-
-
 						</div>
-
 					</div>
 
 				</section>

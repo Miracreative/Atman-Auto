@@ -106,7 +106,35 @@ export default function Decisions() {
 
 						</div>
 
-						<div className={styles.wrap}>
+						
+
+
+						<div className={styles.mobileContent}>
+							{decisionsData.map((item) => (
+								<Link key={item.id} className={styles.mobileSlide} href={item.href}>
+
+
+									<div className={styles.imgMobileWrap} >
+
+										<Image
+											src={item.imageHover}
+											alt="img"
+											className={styles.imgMobile}
+											width={145}
+											height={170}
+											quality={80}
+										/>
+
+
+									</div>
+									<div className={styles.titleMobile}>{item.title}</div>
+								</Link>
+							))}
+						</div>
+
+
+					</div>
+					<div className={styles.wrap}>
 
 
 
@@ -119,7 +147,7 @@ export default function Decisions() {
 								<Swiper
 									wrapperClass={styles.swiperWrapper}
 									className={styles.swiper}
-									modules={[Navigation, A11y, Controller]}
+									modules={[Navigation, A11y, Controller]} 
 
 									controller={{ control: secondSwiper }}
 									breakpoints={{
@@ -180,38 +208,21 @@ export default function Decisions() {
 										</SwiperSlide>
 									))}
 
-
-
-
 								</Swiper>
 
-
-
 								<button className={styles.prevBtn} onClick={goToPrevSlide} disabled={!canGoPrev}>
-
 									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
 									</svg>
-
-
 								</button>
 
-
 								<button className={styles.nextBtn} onClick={goToNextSlide} disabled={!canGoNext}>
-
 									<svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M30 5.99989L20 0.226425L20 11.7734L30 5.99989ZM3.63191e-06 7L21 6.99992L21 4.99992L-3.63191e-06 5L3.63191e-06 7Z" fill="white" />
 									</svg>
-
-
 								</button>
 
 							</div>
-
-
-
-
-
 
 							<Swiper
 								wrapperClass={styles.swiperWrapper}
@@ -219,8 +230,6 @@ export default function Decisions() {
 								modules={[Navigation, A11y, Controller]}
 								onSwiper={setSecondSwiper}
 								onSlideChange={(swiper) => onSlideChange(swiper)}
-
-
 								controller={{ control: firstSwiper }}
 								breakpoints={{
 									0: {
@@ -250,40 +259,7 @@ export default function Decisions() {
 								))}
 							</Swiper>
 
-
-
-
-
-
 						</div>
-
-
-						<div className={styles.mobileContent}>
-							{decisionsData.map((item) => (
-								<Link key={item.id} className={styles.mobileSlide} href={item.href}>
-
-
-									<div className={styles.imgMobileWrap} >
-
-										<Image
-											src={item.imageHover}
-											alt="img"
-											className={styles.imgMobile}
-											width={145}
-											height={170}
-											quality={80}
-										/>
-
-
-									</div>
-									<div className={styles.titleMobile}>{item.title}</div>
-								</Link>
-							))}
-						</div>
-
-
-					</div>
-
 				</div>
 
 			</section>
